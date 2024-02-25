@@ -1,2 +1,1 @@
-# clean-ddd
-clearn architecture with domain-driven design for .NET
+# Clean Architecture with Domain-Driven Design
