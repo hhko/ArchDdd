@@ -16,4 +16,5 @@
 - [ ] .template.config
 - [ ] .nuspec
 ---
+- [ ] DocFx
 - [ ] 소스 연동(GitVersion?)
