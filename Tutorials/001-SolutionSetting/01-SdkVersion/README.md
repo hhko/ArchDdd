@@ -1,4 +1,5 @@
-# 솔루션 빌드를 위한 .NET SDK 버전 지정하기
+# .NET SDK 버전 지정하기
+> `global.json` 파일은 dotnet CLI 명령을 이용하여 실행할 .NET SDK 버전을 정의합니다.
 
 ## .NET SDK 버전 체계
 ```
@@ -22,9 +23,7 @@ dotnet --list-runtimes
   - [.NET SDK 최신 버전](https://github.com/dotnet/core/tree/main/release-notes)
   - [.NET이 설치되어 있는지 확인하는 방법](https://learn.microsoft.com/ko-kr/dotnet/core/install/how-to-detect-installed-versions?pivots=os-windows)
 
-## 솔루션에 .NET SDK 버전 지정하기
-- `global.json` 파일은 dotnet CLI 명령을 이용하여 실행할 .NET SDK 버전을 정의합니다.
-
+## 솔루션 .NET SDK 구성하기
 ```shell
 # 솔루션 생성하기
 dotnet new sln -o SdkVersion

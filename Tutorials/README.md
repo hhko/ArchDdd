@@ -1,9 +1,9 @@
 # 튜토리얼
 
-## 솔루션 설정
-- [x] SDK 버전
-- [x] Directory.Build.props
-- [x] Directory.Package.props
+## 1. 솔루션 설정
+- [x] `global.json` .NET SDK 버전 지정하기
+- [x] `Directory.Build.props` 빌드 중앙 관라히기
+- [x] `Directory.Packages.props` 패키지 중앙 관리하기
   ```
   !--#if (!UseApiOnly)-->
   ```

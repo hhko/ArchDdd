@@ -8,9 +8,16 @@ If builders built buildings the way programmers wrote programs, then the first w
 - Architecting is a series of **trade-offs**.
 - The architecture should scream **the intent of the system**.
 
-
-
-
 ## 목차
 - [튜토리얼](./Tutorials/)
 
+## 개발 환경
+- .NET 8.x
+- Visual Studio Code
+  - C#
+  - ~~C# Dev Kit~~
+  - Code Spell Checker
+  - Git Graph
+  - Paste Image
+  - Trailing Spaces
+  - Markdown Preview Enhanced
