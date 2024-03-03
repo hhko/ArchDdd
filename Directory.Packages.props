@@ -1,13 +1,12 @@
 <Project>
 
-  <!--
-  Central Package Management 활성화
-  -->
+  <!-- Central Package Management 활성화 -->
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- Test -->
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.6.0" />
     <PackageVersion Include="xunit" Version="2.4.2" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="2.4.5" />

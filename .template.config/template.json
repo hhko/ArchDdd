@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "고형호",
+  "classifications": [
+    "Web",
+    "ASP.NET",
+    "Clean Architecture",
+    "DDD"
+  ],
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "identity": "clean-ddd",
+  "name": "ASP.NET Clean Architecture with DDD Solution",
+  "shortName": "clean-ddd",
+  "description": "ASP.NET .NET 8 Clean Architecture with DDD Solution Template",
+  "sourceName": "CleanDdd",
+  "preferNameDirectory": true,
+  "sources": [
+    {
+      "source": "./",
+      "target": "./",
+      "exclude": [
+        ".git/**",
+        ".gitignore",
+        ".template.config/**/*",
+        "Tutorials/**"
+      ]
+    }
+  ]
+}

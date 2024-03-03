@@ -21,3 +21,9 @@ If builders built buildings the way programmers wrote programs, then the first w
   - Paste Image
   - Trailing Spaces
   - Markdown Preview Enhanced
+
+## 참고 자료
+- https://github.com/jasontaylordev/CleanArchitecture/
+- https://github.com/ardalis/CleanArchitecture/
+- https://github.com/dotnet-architecture/eShopOnWeb
+- https://github.com/amantinband/clean-architecture
