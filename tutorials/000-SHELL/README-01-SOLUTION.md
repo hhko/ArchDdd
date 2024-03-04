@@ -50,6 +50,22 @@ dotnet new nuget.config
 dotnet build
 dotnet test
 ```
+
+```shell
+# docfx 도구 설치
+dotnet tool install -g docfx
+
+# 사이트 생성
+docfx init -y -o ./site
+cd ./site
+
+# 빌드: http://localhost:8080
+docfx docfx.json --serve
+docfx docfx.json --serve -p 8080
+docfx docfx.json
+docfx
+```
+
 ```
 dotnet tool install -g dotnet-format
 ```
