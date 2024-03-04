@@ -28,7 +28,7 @@
     <readme>README.md</readme>
   </metadata>
   <files>
-    <file src=".\**" target="content" exclude="**\bin\**;**\obj\**;**\.git\**;**\.github\**;**\*.user;**\.vs\**;**\.vscode\**;**\.gitignore;**\Tutorials\**" />
+    <file src=".\**" target="content" exclude=".\nuget.exe;**\bin\**;**\obj\**;**\.git\**;**\.github\**;**\*.user;**\.vs\**;**\.vscode\**;**\.gitignore;**\Tutorials\**" />
     <file src="README.md" />
   </files>
 </package>

@@ -107,5 +107,9 @@ dotnet add .\PackagesProps.Console\ package Serilog
 </Project>
 ```
 
+## TODO
+- TODO 옵션: `#if (!UseApiOnly)`
+- TODO 소스: https://github.com/jasontaylordev/CleanArchitecture/blob/main/Directory.Packages.props
+
 ## 참고 자료
 - [Introducing Central Package Management](https://devblogs.microsoft.com/nuget/introducing-central-package-management/)
