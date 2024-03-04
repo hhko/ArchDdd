@@ -9,7 +9,7 @@ If builders built buildings the way programmers wrote programs, then the first w
 - The architecture should scream **the intent of the system**.
 
 ## 목차
-- [튜토리얼](./Tutorials/)
+- [튜토리얼](./tutorials/)
 
 ## 개발 환경
 - .NET 8.x
