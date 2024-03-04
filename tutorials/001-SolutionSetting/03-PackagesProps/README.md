@@ -107,6 +107,14 @@ dotnet add .\PackagesProps.Console\ package Serilog
 </Project>
 ```
 
+```
+error NU1008:
+  중앙 패키지 버전 관리를 사용하는 프로젝트에서는
+  PackageReference 항목에 대한 버전이 아니라
+  PackageVersion 항목 Microsoft.NET.Test.Sdk;xunit;xunit.runner.visualstudio;coverlet.collector에 대한
+  버전을 정의해야 합니다.
+```
+
 ## TODO
 - TODO 옵션: `#if (!UseApiOnly)`
 - TODO 소스: https://github.com/jasontaylordev/CleanArchitecture/blob/main/Directory.Packages.props

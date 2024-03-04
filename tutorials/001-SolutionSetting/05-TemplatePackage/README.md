@@ -32,7 +32,11 @@
     <readme>README.md</readme>
   </metadata>
   <files>
-    <file src=".\**" target="content" exclude="**\bin\**;**\obj\**;**\.git\**;**\.github\**;**\*.user;**\.vs\**;**\.vscode\**;**\.gitignore;**\Tutorials\**" />
+    <!--
+      **\.template.config\**;
+      템플릿 정의를 위해서 .template.config 폴더는 반드시 포함시켜야 한다.
+    -->
+    <file src=".\**" target="content" exclude=".\nuget.exe;**\bin\**;**\obj\**;**\.git\**;**\.github\**;**\*.user;**\.vs\**;**\.vscode\**;**\.gitignore;**\Tutorials\**" />
     <file src="README.md" />
   </files>
 </package>

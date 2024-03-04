@@ -8,16 +8,19 @@ dotnet new sln -o CleanDdd
 cd ./CleanDdd
 
 # 프로젝트 생성
-dotnet new classlib -o ./Src/CleanDdd.Domain
-dotnet new classlib -o ./Src/CleanDdd.Application
+dotnet new classlib -o ./src/CleanDdd.Domain
+dotnet new classlib -o ./src/CleanDdd.Application
+dotnet new classlib -o ./src/CleanDdd.Adapters.Presentation
+dotnet new classlib -o ./src/CleanDdd.Adapters.Persistence
+dotnet new classlib -o ./src/CleanDdd.Adapters.Infrastructure
 
 # 테스트 프로젝트 생성
-dotnet new xunit -o ./Tests/CleanDdd.Tests.Unit
-dotnet new xunit -o ./Tests/CleanDdd.Test.Integration
+dotnet new xunit -o ./tests/CleanDdd.Tests.Unit
+dotnet new xunit -o ./tests/CleanDdd.Test.Integration
 
 # 프로젝트 추가
-dotnet sln add (ls -r ./Src/**/*.csproj)
-dotnet sln add (ls -r ./Tests/**/*.csproj)
+dotnet sln add (ls -r ./src/**/*.csproj)
+dotnet sln add (ls -r ./tests/**/*.csproj)
 
 # -------------------------------------------------
 # 솔루션 설정 구성

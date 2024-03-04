@@ -483,5 +483,13 @@ $RECYCLE.BIN/
 # Vim temporary swap files
 *.swp
 
+# -----------------------------
+# 사용자 정의 .gitignore
+# -----------------------------
+
 # NuGet Packages
 nuget.exe
+
+# docfx
+_site/
+api/
