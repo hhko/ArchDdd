@@ -26,7 +26,8 @@ T1.T2{.T3}
   - Presentation, Infrastructure, Persistence, ...
 
 ### tests 폴더 구성
-![](./.images/2024-03-05-09-28-43.png)
+![](./.images/2024-03-05-09-36-01.png)
+
 ```
 T1.T2{.T3}
 ```

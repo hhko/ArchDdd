@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanDdd.Adapters.Persisten
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanDdd.Adapters.Presentation", "src\CleanDdd.Adapters.Presentation\CleanDdd.Adapters.Presentation.csproj", "{4C8EB575-B5ED-4F1F-915E-CE647DDD0E69}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanDdd.Tests.Integration", "tests\CleanDdd.Tests.Integration\CleanDdd.Tests.Integration.csproj", "{52DAF18E-B847-4431-BBF2-312668754AC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{4C8EB575-B5ED-4F1F-915E-CE647DDD0E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C8EB575-B5ED-4F1F-915E-CE647DDD0E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C8EB575-B5ED-4F1F-915E-CE647DDD0E69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52DAF18E-B847-4431-BBF2-312668754AC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52DAF18E-B847-4431-BBF2-312668754AC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52DAF18E-B847-4431-BBF2-312668754AC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52DAF18E-B847-4431-BBF2-312668754AC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{07C33D71-3A40-4B21-877A-CCCC6C5F0CF1} = {9252A34D-E6EA-4309-86AA-DF56E11D1B6F}
@@ -60,5 +66,6 @@ Global
 		{D750BA4B-9FDC-487B-8486-2F387B596DEE} = {9252A34D-E6EA-4309-86AA-DF56E11D1B6F}
 		{83CFFF93-7A88-4BE1-A636-97F0AF650403} = {9252A34D-E6EA-4309-86AA-DF56E11D1B6F}
 		{4C8EB575-B5ED-4F1F-915E-CE647DDD0E69} = {9252A34D-E6EA-4309-86AA-DF56E11D1B6F}
+		{52DAF18E-B847-4431-BBF2-312668754AC4} = {45398DD3-F141-4C97-8F77-99C2966951BE}
 	EndGlobalSection
 EndGlobal
