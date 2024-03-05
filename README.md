@@ -12,10 +12,10 @@ If builders built buildings the way programmers wrote programs, then the first w
 - [튜토리얼](./tutorials/)
 
 ## 폴더 구성
-### src
-![](./.images/2024-03-05-09-13-52.png)
+### src 폴더 구성
+![](./.images/2024-03-05-09-23-13.png)
 ```
-T1_T2{_T3}
+T1.T2{.T3}
 ```
 - `T1`: 솔루션 이름
 - `T2`: 레이어 이름
@@ -24,6 +24,16 @@ T1_T2{_T3}
   - `Domain`
 - `T3`: 세부 이름
   - Presentation, Infrastructure, Persistence, ...
+
+### tests 폴더 구성
+![](./.images/2024-03-05-09-28-43.png)
+```
+T1.T2{.T3}
+```
+- `T1`: 솔루션 이름
+- `T2`: `Tests`
+- `T3`: 테스트 피라미드
+  - Unit, Integration, E2E
 
 ## 개발 환경
 - .NET 8.x
