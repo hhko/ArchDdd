@@ -11,6 +11,20 @@ If builders built buildings the way programmers wrote programs, then the first w
 ## 목차
 - [튜토리얼](./tutorials/)
 
+## 폴더 구성
+### src
+![](./.images/2024-03-05-09-13-52.png)
+```
+T1_T2{_T3}
+```
+- `T1`: 솔루션 이름
+- `T2`: 레이어 이름
+  - `Adaper`
+  - `Application`
+  - `Domain`
+- `T3`: 세부 이름
+  - Presentation, Infrastructure, Persistence, ...
+
 ## 개발 환경
 - .NET 8.x
 - Visual Studio Code
