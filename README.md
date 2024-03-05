@@ -47,8 +47,22 @@ T1.T2{.T3}
   - Trailing Spaces
   - Markdown Preview Enhanced
 
+### dotnet tools
+```shell
+# docfx
+dotnet tool install -g docfx --version 2.75.3
+
+# dotnet-format
+dotnet tool install -g dotnet-format --version 5.1.250801
+```
+
 ## 참고 자료
-- https://github.com/jasontaylordev/CleanArchitecture/
-- https://github.com/ardalis/CleanArchitecture/
-- https://github.com/dotnet-architecture/eShopOnWeb
-- https://github.com/amantinband/clean-architecture
+### GitHub
+- [jasontaylordev/CleanArchitecture](https://github.com/jasontaylordev/CleanArchitecture/)
+- [ardalis/CleanArchitecture](https://github.com/ardalis/CleanArchitecture/)
+- [amantinband/CleanArchitecture](https://github.com/amantinband/clean-architecture)
+- [eShopOnWeb](https://github.com/dotnet-architecture/eShopOnWeb)
+
+
+### 문서
+- [The Testing Pyramid: How to Structure Your Test Suite](https://semaphoreci.com/blog/testing-pyramid)

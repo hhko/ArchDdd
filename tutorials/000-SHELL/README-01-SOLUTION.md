@@ -1,4 +1,12 @@
 ```shell
+# docfx
+dotnet tool install -g docfx --version 2.75.3
+
+# dotnet-format
+dotnet tool install -g dotnet-format --version 5.1.250801
+```
+
+```shell
 # -------------------------------------------------
 # 솔루션 구성
 # -------------------------------------------------
@@ -53,7 +61,7 @@ dotnet test
 
 ```shell
 # docfx 도구 설치
-dotnet tool install -g docfx
+dotnet tool install -g docfx --version 2.75.3
 
 # 사이트 생성
 docfx init -y -o ./site
