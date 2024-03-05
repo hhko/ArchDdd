@@ -63,6 +63,5 @@ dotnet tool install -g dotnet-format --version 5.1.250801
 - [amantinband/CleanArchitecture](https://github.com/amantinband/clean-architecture)
 - [eShopOnWeb](https://github.com/dotnet-architecture/eShopOnWeb)
 
-
 ### 문서
 - [The Testing Pyramid: How to Structure Your Test Suite](https://semaphoreci.com/blog/testing-pyramid)

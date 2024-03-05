@@ -30,3 +30,8 @@ docfx docfx.json
 - 한국어 검색: 내용
 - 컨테이너 배포
 - GitHub Actions 통합
+
+```
+Win32Exception: An error occurred trying to start process 'C:\Users\{계정}\.dotnet\tools\.store\docfx\2.75.3\docfx\2.75.3\tools\.playwright\node\win32_x64\playwright.cmd' with working directory
+'{docfx.json 파일이 있는 경로}'. 액세스가 거부되었습니다.
+```

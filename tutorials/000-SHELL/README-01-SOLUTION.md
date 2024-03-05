@@ -1,3 +1,5 @@
+# SSG(Static Site Generator)
+
 ```shell
 # docfx
 dotnet tool install -g docfx --version 2.75.3
