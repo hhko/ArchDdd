@@ -1,4 +1,4 @@
-namespace CleanDdd.Test.Integration;
+namespace CleanDdd.Tests.Integration;
 
 public class UnitTest1
 {
