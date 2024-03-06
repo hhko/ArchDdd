@@ -26,3 +26,6 @@
 
   dotnet format --verify-no-changes --report issues.json
   dotnet format –verify-no-changes –report issues.json
+
+- .NET Notebook Update - Distribution of a Common EditorConfig File to Multiple .NET Projects The .NET Notebook has been updat
+   https://devzone.channeladam.com/tags/analyzerconfig/
