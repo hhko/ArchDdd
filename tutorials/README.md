@@ -1,38 +1,35 @@
 # 튜토리얼
 
-## 1. 솔루션 구성
-### 1. 솔루션 설정
-- [x] 1. [`global.json` .NET SDK 버전 지정하기](./001-SolutionSetting/01-SdkVersion/)
-- [x] 2. [`Directory.Build.props` 빌드 중앙 관라히기](./001-SolutionSetting/02-BuildProps/)
-- [x] 3. [`Directory.Packages.props` 패키지 중앙 관리하기](./001-SolutionSetting/03-PackagesProps/)
-- [x] 4. [`.template.config` 템플릿 생성하기](./001-SolutionSetting/04-Template/)
-- [x] 5. [`.nuspec` 템플릿 배포하기](./001-SolutionSetting/05-TemplatePackage/)
-- [ ] 6. DocFx
----
-- [ ] .editorconfig
-  ```
-  dotnet tool install -g dotnet-format --version "8.*" --add-source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet8/nuget/v3/index.json
-  dotnet format --verify-no-changes
-  ```
-- [ ] StyleCop
----
-- [ ] 소스 연동(GitVersion?)
-- [ ] .gitattributes
-- [ ] .dockerignore
+## [1. 솔루션 구성](./01-SolutionSetting/)
+### [1. 솔루션 설정](./01-SolutionSetting/01-SolutionConfig/)
+- [x] 1. [`global.json` .NET SDK 버전 지정하기](./01-SolutionSetting/01-SolutionConfig/01-SdkVersion/)
+- [x] 2. [`Directory.Build.props` 빌드 중앙 관라히기](./01-SolutionSetting/01-SolutionConfig/02-BuildProps/)
+- [x] 3. [`Directory.Packages.props` 패키지 중앙 관리하기](./01-SolutionSetting/01-SolutionConfig/03-PackagesProps/)
+- [x] 4. [`docfx` 문서화하기](./01-SolutionSetting/01-SolutionConfig/04-SSG/)
+- [x] 5. [`.eidtorconfig` 코딩 스타일 정의하기](./01-SolutionSetting/01-SolutionConfig/05-CodingStyle/)
+- [x] 6. [`.template.config` 템플릿 정의하기](./01-SolutionSetting/01-SolutionConfig/06-Template/)
+- [x] 7. [`.nuspec` 템플릿 배포하기](./01-SolutionSetting/01-SolutionConfig/07-TemplatePackage/)
 
-### 2. 컨테이너화
-- 솔루션
-- docfx
-- 디버깅
+### 2. 솔루션 배포
+- 컨테이너화
+  - 솔루션
+  - docfx
+- 컨테이너 디버깅
   - linux 파일 생성?
 
-### 3. CI/CD
-- loca
+### 3. 솔루션 CI/CD
+- local
 - github actions
+- 코딩 스타일
+  - local
+  - remote
 - 코드 커버리지
-- format
+  - local
+  - remote
+  - visual stuido code
+  - visual studio
 
-### 4. 관측 시스템
+### 4. 솔루션 관측 시스템
 - 로그
 - 자원
   - 운영체제
@@ -40,8 +37,9 @@
   - .NET
 - 헬스체크
 
-## 2. 솔루션 ?
+## 2. ?
 ### 1. 설정
+- 실행
 ### 2. DI
 ### 3. Pipeline(Behavior)
 
@@ -49,3 +47,5 @@
 ### 1. 기본 타입
 - Result
 - ValidationResult
+
+### 2. 사용 시나리오

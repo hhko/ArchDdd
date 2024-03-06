@@ -1,3 +1,11 @@
+# Static Site Generator 문서화하기
+
+## 설치 요구사항
+- [docfx v2.75.3](https://github.com/dotnet/docfx?tab=readme-ov-file#prerequisites)
+  - Install Visual Studio 2022 (Community or higher) and make sure you have the latest updates.
+  - Install .NET SDK 6.x, 7.x and 8.x.
+  - Install NodeJS (20.x.x).
+
 ```shell
 dotnet new nuget.config
 

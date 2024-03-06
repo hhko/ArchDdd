@@ -50,6 +50,9 @@ T1.T2{.T3}
 ### dotnet tools
 ```shell
 # docfx
+#   - Install Visual Studio 2022 (Community or higher) and make sure you have the latest updates.
+#   - Install .NET SDK 6.x, 7.x and 8.x.
+#   - Install NodeJS (20.x.x).
 dotnet tool install -g docfx --version 2.75.3
 
 # dotnet-format

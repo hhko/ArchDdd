@@ -77,7 +77,7 @@ dotnet add .\PackagesProps.Console\ package Serilog
 <Project>
 
   <PropertyGroup>
-    <!-- 
+    <!--
     패키지 중앙 관리 활성화하기: warning NU1701
     -->
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>

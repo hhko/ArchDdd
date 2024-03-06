@@ -1,4 +1,4 @@
-# 템플릿 만들기
+# 템플릿 정의하기
 
 ![](./.images/2024-03-03-17-07-04.png)
 
@@ -68,6 +68,9 @@ dotnet new install .\
 # 로컬 템플릿 제거하기
 dotnet new uninstall .\
 ```
+
+## TODO
+- [ ] local nuget 파일 명시적 삭제하기
 
 ## 참고 자료
 - 템플릿 예제: https://github.com/dotnet/templating/tree/main/dotnet-template-samples

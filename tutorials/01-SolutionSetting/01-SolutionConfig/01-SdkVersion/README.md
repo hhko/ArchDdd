@@ -34,5 +34,5 @@ dotnet --list-sdks
 
 # global.json 파일 생성하기
 #   - latestPatch: 3.1.2xx
-dotnet new global.json --sdk-version 8.0.102 --roll-forward latestPatch
+dotnet new global.json --sdk-version 8.0.x --roll-forward latestFeature
 ```
