@@ -13,26 +13,36 @@ If builders built buildings the way programmers wrote programs, then the first w
 
 ## 폴더 구성
 ### src 폴더 구성
-![](./.images/2024-03-05-09-23-13.png)
+![](./.images/2024-03-09-18-07-05.png)
+
 ```
 T1.T2{.T3}
+
+CleanDdd.Domain                   : Domain
+CleanDdd.Application              : Application
+CleanDdd.Adapters.Infrastructure  : Adapter
+CleanDdd.Adapters.Persistence     : Adapter
+CleanDdd.Adapters.Presentation    : Adapter
+CleanDdd.Host                     : Host
 ```
 - `T1`: 솔루션 이름
 - `T2`: 레이어 이름
-  - `Adaper`
-  - `Application`
-  - `Domain`
-- `T3`: 세부 이름
+  - `Domain`, `Application`, `Adapter`, `Host`
+- `T3`: 세부 이름(생략 가능)
   - Presentation, Infrastructure, Persistence, ...
 
 ### tests 폴더 구성
 ![](./.images/2024-03-05-09-36-01.png)
 
 ```
-T1.T2{.T3}
+T1.T2.T3
+
+CleanDdd.Tests.Integration        : Test
+CleanDdd.Tests.Unit               : Test
 ```
 - `T1`: 솔루션 이름
-- `T2`: `Tests`
+- `T2`: 레이어 이름
+  - `Test`
 - `T3`: 테스트 피라미드
   - Unit, Integration, E2E
 
