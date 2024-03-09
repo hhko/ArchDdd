@@ -2,3 +2,9 @@
   href: introduction.md
 - name: Getting Started
   href: getting-started.md
+- name: Solution
+  items:
+  - name: Class1
+    href: class1.md
+  - name: Class2
+    href: class2.md
