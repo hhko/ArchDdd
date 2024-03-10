@@ -34,7 +34,7 @@ src
   - Presentation, Infrastructure, Persistence, ...
 
 ### tests 폴더 구성
-![](./.images/2024-03-10-15-07-38.png)
+![](./.images/2024-03-10-15-25-32.png)
 
 ```
 T1.T2.T3
