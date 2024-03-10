@@ -9,6 +9,8 @@ If builders built buildings the way programmers wrote programs, then the first w
 - Architecting is a series of **trade-offs**.
 - The architecture should scream **the intent of the system**.
 
+![](./.images/2024-03-10-16-03-25.png)
+
 ## 목차
 - [튜토리얼](./tutorials/)
 
@@ -57,6 +59,8 @@ site
   └─ _site                             : 빌드 결과
 ```
 
+## 솔루션 구성
+
 ## 개발 환경
 - .NET 8.x
 - Visual Studio Code
@@ -79,14 +83,3 @@ dotnet tool install -g docfx --version 2.75.3
 # dotnet-format
 dotnet tool install -g dotnet-format --version 5.1.250801
 ```
-
-## 참고 자료
-### GitHub
-- [jasontaylordev/CleanArchitecture](https://github.com/jasontaylordev/CleanArchitecture/)
-- [ardalis/CleanArchitecture](https://github.com/ardalis/CleanArchitecture/)
-- [amantinband/CleanArchitecture](https://github.com/amantinband/clean-architecture)
-- [eShopOnWeb](https://github.com/dotnet-architecture/eShopOnWeb)
-
-
-### 문서
-- [The Testing Pyramid: How to Structure Your Test Suite](https://semaphoreci.com/blog/testing-pyramid)
