@@ -4,6 +4,7 @@
 > 배움은 **겸손**이다.  
 > 배움은 **이타심**이다.
 
+건축업자가 프로그래머의 프로그램 작성 방식에 따라 건물을 짓는다면 가장 먼저 도착하는 딱따구리가 문명을 파괴할 것입니다.  
 If builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy civilization. - Gerald Weinberg
 - Architecting is a series of **trade-offs**.
 - The architecture should scream **the intent of the system**.
@@ -18,7 +19,7 @@ If builders built buildings the way programmers wrote programs, then the first w
 ```
 T1.T2{.T3}
 
- src
+src
   ├─ CleanDdd.Domain                   : Domain
   ├─ CleanDdd.Application              : Application
   ├─ CleanDdd.Adapters.Infrastructure  : Adapter
@@ -38,7 +39,7 @@ T1.T2{.T3}
 ```
 T1.T2.T3
 
- tests
+tests
   ├─ CleanDdd.Tests.Integration        : Test
   └─ CleanDdd.Tests.Unit               : Test
 ```
@@ -50,7 +51,7 @@ T1.T2.T3
 
 ### site 폴더 구성
 ```
- site
+site
   ├─ docs                              : .md 파일 문서화
   ├─ api                               : .cs XML 주석 문서화
   └─ _site                             : 빌드 결과
@@ -85,6 +86,7 @@ dotnet tool install -g dotnet-format --version 5.1.250801
 - [ardalis/CleanArchitecture](https://github.com/ardalis/CleanArchitecture/)
 - [amantinband/CleanArchitecture](https://github.com/amantinband/clean-architecture)
 - [eShopOnWeb](https://github.com/dotnet-architecture/eShopOnWeb)
+
 
 ### 문서
 - [The Testing Pyramid: How to Structure Your Test Suite](https://semaphoreci.com/blog/testing-pyramid)
