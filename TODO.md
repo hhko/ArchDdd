@@ -1,3 +1,7 @@
+## 코딩 스타일
+- [ ] https://hackernoon.com/how-to-use-common-editorconfig-as-a-nuget-package
+- [ ] https://github.com/thomasgalliker/Superdev.Editorconfig/tree/develop
+
 ## 소스
 ### 템플릿 이해
 - [ ] [jasontaylordev/CleanArchitecture](https://github.com/jasontaylordev/CleanArchitecture/)
