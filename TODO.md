@@ -1,5 +1,6 @@
 ## 코딩 스타일
 - [ ] https://hackernoon.com/how-to-use-common-editorconfig-as-a-nuget-package
+- [ ] https://devzone.channeladam.com/notebooks/languages/dotnet/editorconfig-distribution/?ref=hackernoon.com
 - [ ] https://github.com/thomasgalliker/Superdev.Editorconfig/tree/develop
 
 ## 소스
