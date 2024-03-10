@@ -9,7 +9,7 @@ If builders built buildings the way programmers wrote programs, then the first w
 - Architecting is a series of **trade-offs**.
 - The architecture should scream **the intent of the system**.
 
-![](./.images/2024-03-10-16-03-25.png)
+![](./.images/2024-03-10-16-06-05.png)
 
 ## 목차
 - [튜토리얼](./tutorials/)
