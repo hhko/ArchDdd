@@ -5,6 +5,7 @@
 
 ## 소스
 ### 템플릿 이해
+- [ ] [clean-architecture-demo/repo-and-uow](https://github.com/matthewrenze/clean-architecture-demo)
 - [ ] [jasontaylordev/CleanArchitecture](https://github.com/jasontaylordev/CleanArchitecture/)
 - [ ] [ardalis/CleanArchitecture](https://github.com/ardalis/CleanArchitecture/)
 - [ ] [amantinband/CleanArchitecture](https://github.com/amantinband/clean-architecture)
@@ -13,6 +14,7 @@
 
 ### DDD 학습
 - [ ] [DDD-NoDuplicates](https://github.com/ardalis/DDD-NoDuplicates/tree/master)
+- [ ] [iDDD](https://github.com/VaughnVernon/IDDD_Samples_NET)
 
 ### 템플릿 변환
 - [ ] [jasontaylordev/CleanArchitecture](https://github.com/jasontaylordev/CleanArchitecture/)
@@ -26,6 +28,7 @@
 - [x] [The Testing Pyramid: How to Structure Your Test Suite](https://semaphoreci.com/blog/testing-pyramid)
 
 ### 설계
+- [ ] [designing-with-types](https://fsharpforfunandprofit.com/series/designing-with-types/)
 - [ ] [Nesting a Value Object inside an Entity](https://enterprisecraftsmanship.com/posts/nesting-value-object-inside-entity/)
 - [ ] [Discriminated Unions in C#](https://ijrussell.github.io/posts/csharp-discriminated-union/)
 - [ ] [Functional BDD 1/3](https://medium.com/@bddkickstarter/functional-bdd-5014c880c935)
@@ -82,6 +85,7 @@
   - 컨테이너
   - API
     - API Signature(PublicApiGenerator)
+  - Trace 테스트
   - 의존성
     - 네트워크
       - WebApi
@@ -93,3 +97,4 @@
     - 이벤트 브로커
       - RabbitMQ
       - Kafka
+
