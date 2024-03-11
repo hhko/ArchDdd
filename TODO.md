@@ -3,7 +3,33 @@
 - [ ] https://devzone.channeladam.com/notebooks/languages/dotnet/editorconfig-distribution/?ref=hackernoon.com
 - [ ] https://github.com/thomasgalliker/Superdev.Editorconfig/tree/develop
 
-## 소스
+## dotnet 템플릿
+```shell
+dotnet new install .\
+
+dotnet new uninstall
+```
+
+### 참고 자료
+- [ ] https://github.com/dotnet/templating/wiki
+- [ ] https://devblogs.microsoft.com/dotnet/how-to-create-your-own-templates-for-dotnet-new/
+- [ ] https://learn.microsoft.com/en-us/dotnet/core/tutorials/cli-templates-create-project-template
+
+### 참고 동영상
+- [ ] https://www.youtube.com/watch?v=GDNcxU0_OuE
+- [ ] https://www.youtube.com/watch?v=3QBL5bWlOPw
+
+### 참고 저장소
+- [ ] https://github.com/sayedihashimi/dotnet-new-samples
+- [ ] https://github.com/sayedihashimi/template-sample
+- [ ] https://github.com/onelioubov/DotnetTemplateDemo
+- [ ] https://github.com/ardalis/CleanArchitecture/tree/main
+- [ ] https://github.com/sayedihashimi/dotnet-new-samples/tree/master
+- [ ] https://devblogs.microsoft.com/dotnet/how-to-create-your-own-templates-for-dotnet-new/
+- [ ] https://github.com/onelioubov/DotnetTemplateDemo
+
+
+## 아키텍처
 ### 템플릿 이해
 - [ ] [clean-architecture-demo/repo-and-uow](https://github.com/matthewrenze/clean-architecture-demo)
 - [ ] [jasontaylordev/CleanArchitecture](https://github.com/jasontaylordev/CleanArchitecture/)
