@@ -7,8 +7,13 @@ public class UnitTest1
     [Fact]
     public void Test1()
     {
+        // Arrange
         Domain.Class1 c1 = new();
 
-        c1.Should().NotBeNull();
+        // Act
+        int actual = c1.Add(1, 6);
+
+        // Assert
+        actual.Should().Be(7);
     }
 }
