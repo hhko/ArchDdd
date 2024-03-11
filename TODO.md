@@ -1,3 +1,8 @@
+- [ ] 로컬 CI
+- [ ] GitHub 코드 매트릭스
+- [ ] 어셈블리
+
+
 ## 코딩 스타일
 - [ ] https://hackernoon.com/how-to-use-common-editorconfig-as-a-nuget-package
 - [ ] https://devzone.channeladam.com/notebooks/languages/dotnet/editorconfig-distribution/?ref=hackernoon.com
