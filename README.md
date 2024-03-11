@@ -1,4 +1,5 @@
 # Clean Architecture with Domain-Driven Design
+[![CleanDdd CI](https://github.com/hhko/CleanDdd/actions/workflows/dotnet-ci.yml/badge.svg)](https://github.com/hhko/CleanDdd/actions/workflows/dotnet-ci.yml)
 
 > 배움은 **설렘**이다.  
 > 배움은 **겸손**이다.  
@@ -59,7 +60,7 @@ site
   └─ _site                             : 빌드 결과
 ```
 
-## 솔루션 구성
+
 
 ## 개발 환경
 - .NET 8.x

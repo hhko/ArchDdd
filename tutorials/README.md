@@ -18,13 +18,15 @@
   - linux 파일 생성?
 
 ### 3. 솔루션 CI/CD
-- [ ] 1. [GitHub Actions]()
-- local
-- github actions
-- 코딩 스타일
+- [ ] 1. [GitHub Actions](./01-SolutionSetting/03-CInCD/01-GitHubActions/)
+- [ ] local
+- [ ] xUnit Traits
+- [ ] 환경 변수?
+- [ ] 코드 품질
+- [ ] 코딩 스타일
   - local
   - remote
-- 코드 커버리지
+- [ ] 코드 커버리지
   - local
   - remote
   - visual stuido code
