@@ -1,7 +1,15 @@
 - [ ] 로컬 CI
+- [ ] GitHuab 코드 커버리지 확인?
 - [ ] GitHub 코드 매트릭스
 - [ ] 어셈블리
+---
+- [ ] WebApi 프로젝트
+- [ ] 환경 설정 파일 읽기
+- [ ] 환경 설정 파일 읽기 테스트 통합
+---
+- [ ] Background 서비스
 
+<br/>
 
 ## 코딩 스타일
 - [ ] https://hackernoon.com/how-to-use-common-editorconfig-as-a-nuget-package
