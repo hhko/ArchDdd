@@ -30,10 +30,9 @@ jobs:
     #  - 규칙: ${{ env.환경_변수_이름 }}
     #  - 예제: ${{ env.solution_dir }}
     env:
-        solution_dir: .
+        solution_path: ./CleanDdd.sln
         codecoverage_dir: ./testresults/codecoverage
         codecoverage_path: ./testresults/codecoverage/coverage.cobertura.merged.xml
-        solution_file: ./CleanDdd.sln
 
     steps:
         # 형상관리 최신 소스 받기
@@ -61,15 +60,15 @@ jobs:
           with:
             dotnet-version: ${{ matrix.dotnet-version }}
 
-        # 패키지 복원
+        # 솔루션 패키지 복원
         - name: Restore nuget packages
           run: |
-            dotnet restore ${{ env.solution_file }}
+            dotnet restore ${{ env.solution_path }}
 
-        # 빌드
+        # 솔루션 빌드
         - name: Build
           run: |
-            dotnet build ${{ env.solution_file }} \
+            dotnet build ${{ env.solution_path }} \
                 --configuration ${{ matrix.configuration }} \
                 --no-restore
 
@@ -88,9 +87,10 @@ jobs:
         #     run: |
         #       cp $(find . -name "coverage.cobertura.xml") .
 
+        # 솔루션 테스트
         - name: Test
           run: |
-            dotnet test ${{ env.solution_file }} \
+            dotnet test ${{ env.solution_path }} \
                 --configuration ${{ matrix.configuration }} \
                 --results-directory ${{ env.codecoverage_dir }} \
                 --no-build \
@@ -101,26 +101,27 @@ jobs:
         - name: Install dotnet-coverage
           run: dotnet tool install -g dotnet-coverage --version 17.9.6
 
-        # N개 coverage.cobertura.xml 파일을 머지한 코드 커버리지 merged-coverage.cobertura.xml 파일 생성
+        # 솔루션 코드 커버지리 통합
+        #   N개 coverage.cobertura.xml 파일을 1개 coverage.cobertura.merged.xml로 통합
         - name: Convert .coverage.xml to .cobertura.merged.xml
           run: |
             dotnet-coverage merge ${{ env.codecoverage_dir }}/**/*.cobertura.xml \
                 -f cobertura \
                 -o ${{ env.codecoverage_path }}
 
-        # merged-coverage.cobertura.xml 파일 기반으로 코드 커버리지 SummaryGithub.md 파일 생성
+        # 솔루션 코드 커버리지 보고서 생성
         - name: Create coverage markdown file
           uses: danielpalme/ReportGenerator-GitHub-Action@5.2.0
           with:
             reports: '${{ env.codecoverage_path }}'
             targetdir: '${{ env.codecoverage_dir }}/report'
-            reporttypes: 'MarkdownSummaryGithub'
+            reporttypes: 'MarkdownSummaryGithub;Html'
 
-        # 코드 커버리지 SummaryGithub.md 파일 Summary 업로드
+         # 솔루션 코드 커버리지 보고서 SummaryGithub.md을 Summary 업로드
         - name: Upload coverage markdown into github actions summary
           run: cat ${{ env.codecoverage_dir }}/report/SummaryGithub.md >> $GITHUB_STEP_SUMMARY
 
-        # N개 코드 커버리지 coverage.cobertura.xml 파일을 압축하여 Artifacts 업로드
+        # 솔루션 테스트 결과을 Artifacts 업로드
         - name: Upload coverage files into github actions artifacts
           uses: actions/upload-artifact@v3
           with:

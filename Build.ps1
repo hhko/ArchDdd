@@ -27,7 +27,7 @@ if (Test-Path -Path $codecoverage_dir) {
     Remove-Item -Path (Join-Path $codecoverage_dir "*") -Recurse -Force
 }
 
-# NuGet 패키지 복원
+# 솔루션 패키지 복원
 dotnet restore $solution_path
 
 # 솔루션 빌드
@@ -44,12 +44,12 @@ dotnet test $solution_path `
     --collect "XPlat Code Coverage" `
     --verbosity normal
 
-# 코드 커버리지 머지
+# 솔루션 코드 커버지리 통합
 dotnet-coverage merge (Join-Path $codecoverage_dir "**/*.cobertura.xml") `
     -f cobertura `
     -o $codecoverage_path
 
-# 코드 커버리지 HTML
+# 솔루션 코드 커버리지 보고서 생성
 reportgenerator `
 	-reports:$codecoverage_path `
 	-targetdir:(Join-Path $codecoverage_dir "report") `
