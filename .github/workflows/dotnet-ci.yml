@@ -30,7 +30,9 @@ jobs:
     #  - 규칙: ${{ env.환경_변수_이름 }}
     #  - 예제: ${{ env.solution_dir }}
     env:
-        solution_dir: ./
+        solution_dir: .
+        codecoverage_dir: ./testresults/codecoverage
+        codecoverage_path: ./testresults/codecoverage/coverage.cobertura.merged.xml
         solution_file: ./CleanDdd.sln
 
     steps:
@@ -71,18 +73,15 @@ jobs:
                 --configuration ${{ matrix.configuration }} \
                 --no-restore
 
-        #
-        # 테스트 결과 폴더 구성
-        #
-        #  /home/runner/work/CleanDdd
-        #    /CleanDdd                                          // 저장소 Root
-        #       /testresults                                    // 테스트 자동화 결과
-        #           /19f5be57-f7f1-4902-a22d-ca2dcd8fdc7a       // dotnet test: 코드 커버리지 N개           <- Artifacts 업로드
-        #               /coverage.cobertura.xml
-        #
-        #           /merged-coverage.cobertura.xml              // dotnet-coverage: Merged 코드 커버리지
-        #           /CodeCoverageReport                         // ReportGenerator: 코드 커버리지 Markdown  <- Summary 업로드
-        #               /SummaryGithub.md
+        # testresults\                                      // dotnet test 결과
+        #   codecoverage\                                   // 코드 커버리지
+        #       19f5be57-f7f1-4902-a22d-ca2dcd8fdc7a\       // dotnet test 프로젝트 1개 결과
+        #            coverage.cobertura.xml
+        #       ed0ebd65-448e-4cfc-9f8f-21ea450effc5\       // dotnet test 프로젝트 1개 결과
+        #            coverage.cobertura.xml
+        #       coverage.cobertura.merged.xml               // dotnet test 프로젝트 N개 통합 결과
+        #       report                                      // 코드 커버리지 보고서: Html, Badges, Markdown
+        #           ...
 
         # 테스트와 코드 커버리지 coverage.cobertura.xml 파일 생성
         #   - name: Find coverage output path
@@ -93,37 +92,37 @@ jobs:
           run: |
             dotnet test ${{ env.solution_file }} \
                 --configuration ${{ matrix.configuration }} \
-                --results-directory ${{ env.solution_dir }}/testresults \
+                --results-directory ${{ env.codecoverage_dir }} \
                 --no-build \
                 --collect "XPlat Code Coverage" \
                 --verbosity normal
 
         # dotnet-coverage 도구 설치
         - name: Install dotnet-coverage
-          run: dotnet tool install -g dotnet-coverage --version 17.10.3
+          run: dotnet tool install -g dotnet-coverage --version 17.9.6
 
         # N개 coverage.cobertura.xml 파일을 머지한 코드 커버리지 merged-coverage.cobertura.xml 파일 생성
-        - name: Convert .coverage report to cobertura
+        - name: Convert .coverage.xml to .cobertura.merged.xml
           run: |
-            dotnet-coverage merge ${{ env.solution_dir }}/testresults/**/*.cobertura.xml \
+            dotnet-coverage merge ${{ env.codecoverage_dir }}/**/*.cobertura.xml \
                 -f cobertura \
-                -o ${{ env.solution_dir }}/testresults/merged-coverage.cobertura.xml
+                -o ${{ env.codecoverage_path }}
 
         # merged-coverage.cobertura.xml 파일 기반으로 코드 커버리지 SummaryGithub.md 파일 생성
         - name: Create coverage markdown file
           uses: danielpalme/ReportGenerator-GitHub-Action@5.2.0
           with:
-            reports: '${{ env.solution_dir }}/testresults/merged-coverage.cobertura.xml'
-            targetdir: '${{ env.solution_dir }}/testresults/CodeCoverageReport'
+            reports: '${{ env.codecoverage_path }}'
+            targetdir: '${{ env.codecoverage_dir }}/report'
             reporttypes: 'MarkdownSummaryGithub'
 
         # 코드 커버리지 SummaryGithub.md 파일 Summary 업로드
         - name: Upload coverage markdown into github actions summary
-          run: cat ${{ env.solution_dir }}/testresults/CodeCoverageReport/SummaryGithub.md >> $GITHUB_STEP_SUMMARY
+          run: cat ${{ env.codecoverage_dir }}/report/SummaryGithub.md >> $GITHUB_STEP_SUMMARY
 
         # N개 코드 커버리지 coverage.cobertura.xml 파일을 압축하여 Artifacts 업로드
         - name: Upload coverage files into github actions artifacts
           uses: actions/upload-artifact@v3
           with:
             name: CodeCoverageReport_${{ matrix.dotnet-version }}_sha-${{ steps.vars.outputs.short_sha }}
-            path: ${{ env.solution_dir }}/testresults/**/*.cobertura.xml
+            path: ${{ env.codecoverage_dir }}
