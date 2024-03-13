@@ -1,4 +1,4 @@
-# Clean Architecture with Domain-Driven Design
+# Clean Domain-Driven Design with Architecture
 [![CleanDdd CI](https://github.com/hhko/CleanDdd/actions/workflows/dotnet-ci.yml/badge.svg)](https://github.com/hhko/CleanDdd/actions/workflows/dotnet-ci.yml)
 
 > 배움은 **설렘**이다.  

@@ -1,6 +1,16 @@
 - [x] 로컬 CI
 - [x] GitHuab 코드 커버리지
+- [ ] 코드 커버리지 GitHub Actions
+  - https://josh-ops.com/posts/github-code-coverage/
+---
+- [ ] 배포 Release
+- [ ] 배포 Package
+- [ ] 배포 Container
+---
 - [ ] 코드 매트릭스 로컬
+  - Maintainability Index 아이콘
+  - 요약 테이블
+  - `` 값
 - [ ] 코드 매트릭스 GitHub
 - [ ] 어셈블리
 ---
