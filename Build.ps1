@@ -13,9 +13,13 @@ $coverage_path      = Join-Path $coverage_dir "coverage.cobertura.merged.xml"
 New-Item $coverage_dir -ItemType Directory -Force | Out-Null
 
 #
-# 솔루션 빌드
+# 솔루션 패키지 복원
 #
 dotnet restore $sln_path
+
+#
+# 솔루션 빌드
+#
 dotnet build $sln_path `
     --no-restore `
     --configuration Release `
@@ -57,7 +61,7 @@ dotnet-coverage merge "**/TestResults/*/*.cobertura.xml" `
     -o $coverage_path
 
 #
-# 솔루션 코드 커버리지 보고서
+# 솔루션 코드 커버리지 보고서 생성
 #
 
 # {솔루션}

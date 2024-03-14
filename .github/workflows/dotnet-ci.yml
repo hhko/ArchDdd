@@ -92,7 +92,6 @@ jobs:
       #     run: |
       #       cp $(find . -name "coverage.cobertura.xml") .
 
-      # 솔루션 테스트
       - name: Test
         run: |
           dotnet test ${{ env.solution_path }} \
@@ -106,11 +105,11 @@ jobs:
       - name: Install dotnet-coverage
         run: dotnet tool install -g dotnet-coverage --version 17.9.6
 
-      # 코드 커버리지 경로 생성
+      # 솔루션 코드 커버리지 경로 생성
       - name: Create coverage folder
         run: mkdir -p ${{ env.coverage_dir }}
 
-      # 솔루션 코드 커버지리 통합
+      # 솔루션 코드 커버지리 병합
       #   N개 coverage.cobertura.xml 파일을 1개 coverage.cobertura.merged.xml로 통합
       - name: Convert .coverage.xml to .cobertura.merged.xml
         run: |
@@ -134,5 +133,13 @@ jobs:
       - name: Upload coverage files into github actions artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: Coverage_${{ matrix.dotnet-version }}_sha-${{ steps.vars.outputs.short_sha }}
-          path: ${{ env.coverage_dir }}
+          name: coverage_${{ matrix.dotnet-version }}_sha-${{ steps.vars.outputs.short_sha }}
+          path: ${{ env.coverage_dir }}/report
+
+      - name: Test reports
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: UnitTests report
+          path: '"**/logs.trx"'
+          reporter: dotnet-trx
