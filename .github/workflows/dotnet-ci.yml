@@ -112,7 +112,7 @@ jobs:
         uses: dorny/test-reporter@v1
         if: always()
         with:
-          name: UnitTests report
+          name: Test Detail Report
           path: "tests/**/logs.trx"
           reporter: dotnet-trx
 

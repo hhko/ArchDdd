@@ -2,6 +2,7 @@
 - [x] GitHuab 코드 커버리지
 - [x] 코드 커버리지 GitHub Actions
   - https://josh-ops.com/posts/github-code-coverage/
+- [x] 테스트 상세 보고서 생성
 - [ ] Github Actions에 Gradle Test 추가
   - https://devs0n.tistory.com/25
 ---
