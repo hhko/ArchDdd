@@ -52,7 +52,7 @@ dotnet test $sln_path `
 #   └─testresults
 #       └─coverage
 #           └─coverage.cobertura.merged.xml
-dotnet-coverage merge "**/testresults/*/*.cobertura.xml" `
+dotnet-coverage merge "**/TestResults/*/*.cobertura.xml" `
     -f cobertura `
     -o $coverage_path
 
