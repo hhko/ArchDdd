@@ -16,6 +16,7 @@ If builders built buildings the way programmers wrote programs, then the first w
 - Hexagonal Architecture
 - Onion Architecture
 - Clean Architecture
+- ...
 
 ![](./.images/2024-03-10-16-06-05.png)
 
