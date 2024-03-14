@@ -10,6 +10,15 @@ If builders built buildings the way programmers wrote programs, then the first w
 - Architecting is a series of **trade-offs**.
 - The architecture should scream **the intent of the system**.
 
+## 아키텍처 이해
+- 아키텍처 첫번째 원칙은 관심사의 분리(Separation of Concerns, SoC)입니다.
+- 아키텍처는 분리된 관심사를 레이어(Layer)로 관리한다.
+- 아키텍처 역사를 통해 이를 재확인할 수 있습니다. 모든 아키텍처가 레이어의 배치와 관계를 구성하는 방법에 따라 아키텍처 패턴을 구분할 수 있습니다.
+  - Layered Architecture
+  - Hexagonal Architecture
+  - Onion Architecture
+  - Clean Architecture
+
 ![](./.images/2024-03-10-16-06-05.png)
 
 ## 목차
