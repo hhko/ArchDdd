@@ -141,5 +141,5 @@ jobs:
         if: always()
         with:
           name: UnitTests report
-          path: '"**/logs.trx"'
+          path: '"**/*.trx"'
           reporter: dotnet-trx

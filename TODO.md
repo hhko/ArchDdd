@@ -1,7 +1,9 @@
 - [x] 로컬 CI
 - [x] GitHuab 코드 커버리지
-- [ ] 코드 커버리지 GitHub Actions
+- [x] 코드 커버리지 GitHub Actions
   - https://josh-ops.com/posts/github-code-coverage/
+- [ ] Github Actions에 Gradle Test 추가
+  - https://devs0n.tistory.com/25
 ---
 - [ ] 배포 Release
 - [ ] 배포 Package
