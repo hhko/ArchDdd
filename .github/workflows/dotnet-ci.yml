@@ -11,6 +11,12 @@ on:
     #     - '**.pptx'
     #     - '**.png'
 
+# 솔루션 테스트 결과 trx 추가
+#   - dorny/test-reporter@v1
+#   - Error: HttpError: Resource not accessible by integration
+permissions:
+  checks: write
+
 jobs:
   build:
     name: Build
@@ -101,6 +107,7 @@ jobs:
               --logger "trx;LogFileName=logs.trx" \
               --verbosity normal
 
+      # 솔루션 테스트 보고서
       - name: Test reports
         uses: dorny/test-reporter@v1
         if: always()
