@@ -108,7 +108,7 @@ jobs:
 
       # 코드 커버리지 경로 생성
       - name: Create coverage folder
-        run: mkdir ${{ env.coverage_dir }}
+        run: mkdir -p ${{ env.coverage_dir }}
 
       # 솔루션 코드 커버지리 통합
       #   N개 coverage.cobertura.xml 파일을 1개 coverage.cobertura.merged.xml로 통합
