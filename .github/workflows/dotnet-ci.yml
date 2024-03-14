@@ -101,6 +101,14 @@ jobs:
               --logger "trx;LogFileName=logs.trx" \
               --verbosity normal
 
+      - name: Test reports
+        uses: dorny/test-reporter@v1
+        if: always()
+        with:
+          name: UnitTests report
+          path: '"**/*.trx"'
+          reporter: dotnet-trx
+
       # dotnet-coverage 도구 설치
       - name: Install dotnet-coverage
         run: dotnet tool install -g dotnet-coverage --version 17.9.6
@@ -135,11 +143,3 @@ jobs:
         with:
           name: coverage_${{ matrix.dotnet-version }}_sha-${{ steps.vars.outputs.short_sha }}
           path: ${{ env.coverage_dir }}/report
-
-      - name: Test reports
-        uses: dorny/test-reporter@v1
-        if: always()
-        with:
-          name: UnitTests report
-          path: '"**/*.trx"'
-          reporter: dotnet-trx
