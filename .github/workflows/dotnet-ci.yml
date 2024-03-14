@@ -99,6 +99,7 @@ jobs:
               --configuration ${{ matrix.configuration }} \
               --no-build \
               --collect "XPlat Code Coverage" \
+              --results-directory "./testresults" \
               --logger "trx;LogFileName=logs.trx" \
               --verbosity normal
 
