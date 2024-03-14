@@ -106,7 +106,7 @@ jobs:
         if: always()
         with:
           name: UnitTests report
-          path: '"**/*.trx"'
+          path: "tests/**/logs.trx"
           reporter: dotnet-trx
 
       # dotnet-coverage 도구 설치
