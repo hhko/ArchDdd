@@ -1,57 +1,75 @@
-# 패키지 ID                              버전           명령
-# --------------------------------------------------------------------
-# dotnet-coverage                        17.9.6        dotnet-coverage
-# dotnet-reportgenerator-globaltool      5.2.0         reportgenerator
+# 기본 경로
+$sln_dir            = split-path -parent $MyInvocation.MyCommand.Definition
+$sln_path           = Join-Path $sln_dir "CleanDdd.sln"
+$testresults_dir    = Join-Path $sln_dir "testresults"
+$coverage_dir       = Join-Path $testresults_dir "coverage"
+$coverage_path      = Join-Path $coverage_dir "coverage.cobertura.merged.xml"
 
-# testresults\                                      // dotnet test 결과
-#   codecoverage\                                   // 코드 커버리지
-#       19f5be57-f7f1-4902-a22d-ca2dcd8fdc7a\       // dotnet test 프로젝트 1개 결과
-#            coverage.cobertura.xml
-#       ed0ebd65-448e-4cfc-9f8f-21ea450effc5\       // dotnet test 프로젝트 1개 결과
-#            coverage.cobertura.xml
-#       coverage.cobertura.merged.xml               // dotnet test 프로젝트 N개 통합 결과
-#       report                                      // 코드 커버리지 보고서: Html, Badges, Markdown
-#           ...
+#
+# 준비
+#   - **/testresults 모든 폴더 삭제
+#   - ./testresults/coverage 폴더 생성
+(Get-ChildItem -Path $sln_dir -Directory -Recurse -Filter "testresults").FullName | ForEach-Object { Write-Output $_; Remove-Item $_ -Recurse -Force }
+New-Item $coverage_dir -ItemType Directory -Force | Out-Null
 
-$solution_file = "CleanDdd.sln"
-$current_dir = split-path -parent $MyInvocation.MyCommand.Definition
-$solution_path = Join-Path $current_dir $solution_file
-$codecoverage_dir = Join-Path $current_dir "testresults" "codecoverage"
-$codecoverage_path = Join-Path $codecoverage_dir "coverage.cobertura.merged.xml"
-
-# 솔루션 파일 경로 출력
-Write-Output $("Solution Path: " + $solution_path)
-
-# 이전 테스트 결과 정리(TestResults 폴더 정리)
-if (Test-Path -Path $codecoverage_dir) {
-    Remove-Item -Path (Join-Path $codecoverage_dir "*") -Recurse -Force
-}
-
-# 솔루션 패키지 복원
-dotnet restore $solution_path
-
+#
 # 솔루션 빌드
-dotnet build $solution_path `
+#
+dotnet restore $sln_path
+dotnet build $sln_path `
     --no-restore `
     --configuration Release `
     --verbosity m
 
+#
 # 솔루션 테스트
-dotnet test $solution_path `
+#
+
+# {테스트 프로젝트}
+#   ├─.csproj
+#   └─TestResults
+#       ├─0ca60e99-32fb-43ac-bbd3-01f5a5ef6886        : XPlat Code Coverage 폴더
+#       │   └─coverage.cobertura.xml                  : 코드 커버리지 파일(병합 대상)
+#       ├─{username}_{hostname}_2024-03-14_15_16_30   : trx 로그 폴더
+#       │   └─In
+#       │       └─{hostname}
+#       │           └─coverage.cobertura.xml          : 코드 커버리지 파일(사용 안함)
+#       └─logs.trx                                    : trx 로그 파일
+dotnet test $sln_path `
     --configuration Release `
-    --results-directory $codecoverage_dir `
     --no-build `
     --collect "XPlat Code Coverage" `
+    --logger "trx;LogFileName=logs.trx" `
     --verbosity normal
 
-# 솔루션 코드 커버지리 통합
-dotnet-coverage merge (Join-Path $codecoverage_dir "**/*.cobertura.xml") `
-    -f cobertura `
-    -o $codecoverage_path
+#
+# 솔루션 코드 커버리지 병합
+#   -o 출력 경로(폴더)는 사전에 명령어 실행 전에 존재해야 합니다(자동 생성되지 않습니다: 실패).
 
-# 솔루션 코드 커버리지 보고서 생성
+# 솔루션 테스트
+# {솔루션}
+#   ├─.sln
+#   └─testresults
+#       └─coverage
+#           └─coverage.cobertura.merged.xml
+dotnet-coverage merge "**/testresults/*/*.cobertura.xml" `
+    -f cobertura `
+    -o $coverage_path
+
+#
+# 솔루션 코드 커버리지 보고서
+#
+
+# {솔루션}
+#   ├─.sln
+#   └─testresults
+#       ├─coverage
+#       │   └─coverage.cobertura.merged.xml
+#       └─report
+#           ├─ ...
+#           └─SummaryGithub.md
 reportgenerator `
-	-reports:$codecoverage_path `
-	-targetdir:(Join-Path $codecoverage_dir "report") `
-	-reporttypes:"Html;Badges;MarkdownSummaryGithub" `
+    -reports:$coverage_path `
+    -targetdir:(Join-Path $coverage_dir "report") `
+    -reporttypes:"Html;Badges;MarkdownSummaryGithub" `
     -verbosity:Info

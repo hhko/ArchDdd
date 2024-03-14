@@ -6,4 +6,14 @@ public class Class1
     {
         return x + y;
     }
+
+    public int DoSomething()
+    {
+        int x;
+        int y;
+        x = 3;
+        y = 6;
+        x += y;
+        return x;
+    }
 }

@@ -17,10 +17,10 @@ jobs:
 
     # 빌드 환경 경우의 수 정의
     strategy:
-        matrix:
-            dotnet-version: [ '8.0.x' ]
-            configuration: [ Release ]
-            os: [ ubuntu-22.04 ]
+      matrix:
+        dotnet-version: [ '8.0.x' ]
+        configuration: [ Release ]
+        os: [ ubuntu-22.04 ]
 
     # 빌드 환경 지정
     runs-on: ${{ matrix.os }}
@@ -30,100 +30,105 @@ jobs:
     #  - 규칙: ${{ env.환경_변수_이름 }}
     #  - 예제: ${{ env.solution_dir }}
     env:
-        solution_path: ./CleanDdd.sln
-        codecoverage_dir: ./testresults/codecoverage
-        codecoverage_path: ./testresults/codecoverage/coverage.cobertura.merged.xml
+      solution_path: ./CleanDdd.sln
+      coverage_dir: ./testresults/coverage
+      coverage_path: ./testresults/coverage/coverage.cobertura.merged.xml
 
     steps:
-        # 형상관리 최신 소스 받기
-        - name: Checkout
-          uses: actions/checkout@v3
+      # 형상관리 최신 소스 받기
+      - name: Checkout
+        uses: actions/checkout@v3
 
-        # Git Commit SHA 얻기
-        #   - Deprecating save-state and set-output commands: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
-        #   - GitHub Actions에서 output 변수의 문법 변경: https://blog.outsider.ne.kr/1651
-        #   - Github Actions and creating a short SHA hash: https://dev.to/hectorleiva/github-actions-and-creating-a-short-sha-hash-8b7
-        #
-        # 동적 변수 만들기
-        # 규칙 1. $GITHUB_OUTPUT은 "steps.vars.outputs"을 지정한다.
-        # 규칙 2. "키=값" 형식으로 outputs을 정의한다.
-        # 예. ${{ steps.vars.outputs.short_sha }}
-        - name: Set short git commit SHA
-          id: vars
-          run: |
-            calculatedSha=$(git rev-parse --short ${{ github.sha }})
-            echo "short_sha=$calculatedSha" >> $GITHUB_OUTPUT
+      # Git Commit SHA 얻기
+      #   - Deprecating save-state and set-output commands: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+      #   - GitHub Actions에서 output 변수의 문법 변경: https://blog.outsider.ne.kr/1651
+      #   - Github Actions and creating a short SHA hash: https://dev.to/hectorleiva/github-actions-and-creating-a-short-sha-hash-8b7
+      #
+      # 동적 변수 만들기
+      # 규칙 1. $GITHUB_OUTPUT은 "steps.vars.outputs"을 지정한다.
+      # 규칙 2. "키=값" 형식으로 outputs을 정의한다.
+      # 예. ${{ steps.vars.outputs.short_sha }}
+      - name: Set short git commit SHA
+        id: vars
+        run: |
+          calculatedSha=$(git rev-parse --short ${{ github.sha }})
+          echo "short_sha=$calculatedSha" >> $GITHUB_OUTPUT
 
-        # .NET SDK 설치
-        - name: Setup .NET SDK ${{ matrix.dotnet-version }}
-          uses: actions/setup-dotnet@v3
-          with:
-            dotnet-version: ${{ matrix.dotnet-version }}
+      # .NET SDK 설치
+      - name: Setup .NET SDK ${{ matrix.dotnet-version }}
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ matrix.dotnet-version }}
 
-        # 솔루션 패키지 복원
-        - name: Restore nuget packages
-          run: |
-            dotnet restore ${{ env.solution_path }}
+      # 솔루션 패키지 복원
+      - name: Restore nuget packages
+        run: |
+          dotnet restore ${{ env.solution_path }}
 
-        # 솔루션 빌드
-        - name: Build
-          run: |
-            dotnet build ${{ env.solution_path }} \
-                --configuration ${{ matrix.configuration }} \
-                --no-restore
+      # 솔루션 빌드
+      - name: Build
+        run: |
+          dotnet build ${{ env.solution_path }} \
+              --no-restore \
+              --configuration ${{ matrix.configuration }}
 
-        # testresults\                                      // dotnet test 결과
-        #   codecoverage\                                   // 코드 커버리지
-        #       19f5be57-f7f1-4902-a22d-ca2dcd8fdc7a\       // dotnet test 프로젝트 1개 결과
-        #            coverage.cobertura.xml
-        #       ed0ebd65-448e-4cfc-9f8f-21ea450effc5\       // dotnet test 프로젝트 1개 결과
-        #            coverage.cobertura.xml
-        #       coverage.cobertura.merged.xml               // dotnet test 프로젝트 N개 통합 결과
-        #       report                                      // 코드 커버리지 보고서: Html, Badges, Markdown
-        #           ...
+      #
+      # 솔루션 테스트
+      #
 
-        # 테스트와 코드 커버리지 coverage.cobertura.xml 파일 생성
-        #   - name: Find coverage output path
-        #     run: |
-        #       cp $(find . -name "coverage.cobertura.xml") .
+      # {테스트 프로젝트}
+      #   ├─.csproj
+      #   └─TestResults
+      #       ├─0ca60e99-32fb-43ac-bbd3-01f5a5ef6886        : XPlat Code Coverage 폴더
+      #       │   └─coverage.cobertura.xml                  : 코드 커버리지 파일(병합 대상)
+      #       ├─{username}_{hostname}_2024-03-14_15_16_30   : trx 로그 폴더
+      #       │   └─In
+      #       │       └─{hostname}
+      #       │           └─coverage.cobertura.xml          : 코드 커버리지 파일(사용 안함)
+      #       └─logs.trx                                    : trx 로그 파일
 
-        # 솔루션 테스트
-        - name: Test
-          run: |
-            dotnet test ${{ env.solution_path }} \
-                --configuration ${{ matrix.configuration }} \
-                --results-directory ${{ env.codecoverage_dir }} \
-                --no-build \
-                --collect "XPlat Code Coverage" \
-                --verbosity normal
+      # 테스트와 코드 커버리지 coverage.cobertura.xml 파일 생성
+      #   - name: Find coverage output path
+      #     run: |
+      #       cp $(find . -name "coverage.cobertura.xml") .
 
-        # dotnet-coverage 도구 설치
-        - name: Install dotnet-coverage
-          run: dotnet tool install -g dotnet-coverage --version 17.9.6
+      # 솔루션 테스트
+      - name: Test
+        run: |
+          dotnet test ${{ env.solution_path }} \
+              --configuration ${{ matrix.configuration }} \
+              --no-build \
+              --collect "XPlat Code Coverage" \
+              --logger "trx;LogFileName=logs.trx" \
+              --verbosity normal
 
-        # 솔루션 코드 커버지리 통합
-        #   N개 coverage.cobertura.xml 파일을 1개 coverage.cobertura.merged.xml로 통합
-        - name: Convert .coverage.xml to .cobertura.merged.xml
-          run: |
-            dotnet-coverage merge ${{ env.codecoverage_dir }}/**/*.cobertura.xml \
-                -f cobertura \
-                -o ${{ env.codecoverage_path }}
+      # dotnet-coverage 도구 설치
+      - name: Install dotnet-coverage
+        run: dotnet tool install -g dotnet-coverage --version 17.9.6
 
-        # 솔루션 코드 커버리지 보고서 생성
-        - name: Create coverage markdown file
-          uses: danielpalme/ReportGenerator-GitHub-Action@5.2.0
-          with:
-            reports: '${{ env.codecoverage_path }}'
-            targetdir: '${{ env.codecoverage_dir }}/report'
-            reporttypes: 'MarkdownSummaryGithub;Html'
+      # 솔루션 코드 커버지리 통합
+      #   N개 coverage.cobertura.xml 파일을 1개 coverage.cobertura.merged.xml로 통합
+      - name: Convert .coverage.xml to .cobertura.merged.xml
+        run: |
+          dotnet-coverage merge "**/testresults/*/*.cobertura.xml" \
+              -f cobertura \
+              -o ${{ env.coverage_path }}
 
-         # 솔루션 코드 커버리지 보고서 SummaryGithub.md을 Summary 업로드
-        - name: Upload coverage markdown into github actions summary
-          run: cat ${{ env.codecoverage_dir }}/report/SummaryGithub.md >> $GITHUB_STEP_SUMMARY
+      # 솔루션 코드 커버리지 보고서 생성
+      - name: Create coverage markdown file
+        uses: danielpalme/ReportGenerator-GitHub-Action@5.2.0
+        with:
+          reports: '${{ env.coverage_path }}'
+          targetdir: '${{ env.coverage_dir }}/report'
+          reporttypes: 'MarkdownSummaryGithub;Html'
 
-        # 솔루션 테스트 결과을 Artifacts 업로드
-        - name: Upload coverage files into github actions artifacts
-          uses: actions/upload-artifact@v3
-          with:
-            name: CodeCoverageReport_${{ matrix.dotnet-version }}_sha-${{ steps.vars.outputs.short_sha }}
-            path: ${{ env.codecoverage_dir }}
+        # 솔루션 코드 커버리지 보고서 SummaryGithub.md을 Summary 업로드
+      - name: Upload coverage markdown into github actions summary
+        run: cat ${{ env.coverage_dir }}/report/SummaryGithub.md >> $GITHUB_STEP_SUMMARY
+
+      # 솔루션 테스트 결과을 Artifacts 업로드
+      - name: Upload coverage files into github actions artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: Coverage_${{ matrix.dotnet-version }}_sha-${{ steps.vars.outputs.short_sha }}
+          path: ${{ env.coverage_dir }}
