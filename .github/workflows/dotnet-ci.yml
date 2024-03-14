@@ -37,7 +37,7 @@ jobs:
     steps:
       # 형상관리 최신 소스 받기
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Git Commit SHA 얻기
       #   - Deprecating save-state and set-output commands: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
@@ -56,7 +56,7 @@ jobs:
 
       # .NET SDK 설치
       - name: Setup .NET SDK ${{ matrix.dotnet-version }}
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
 
@@ -120,7 +120,7 @@ jobs:
 
       # 솔루션 코드 커버리지 보고서 생성
       - name: Create coverage markdown file
-        uses: danielpalme/ReportGenerator-GitHub-Action@5.2.0
+        uses: danielpalme/ReportGenerator-GitHub-Action@5.2.2
         with:
           reports: '${{ env.coverage_path }}'
           targetdir: '${{ env.coverage_dir }}/report'
@@ -132,7 +132,7 @@ jobs:
 
       # 솔루션 테스트 결과을 Artifacts 업로드
       - name: Upload coverage files into github actions artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Coverage_${{ matrix.dotnet-version }}_sha-${{ steps.vars.outputs.short_sha }}
           path: ${{ env.coverage_dir }}
