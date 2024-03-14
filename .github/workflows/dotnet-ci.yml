@@ -99,7 +99,6 @@ jobs:
               --configuration ${{ matrix.configuration }} \
               --no-build \
               --collect "XPlat Code Coverage" \
-              --results-directory "./testresults" \
               --logger "trx;LogFileName=logs.trx" \
               --verbosity normal
 
@@ -111,7 +110,7 @@ jobs:
       #   N개 coverage.cobertura.xml 파일을 1개 coverage.cobertura.merged.xml로 통합
       - name: Convert .coverage.xml to .cobertura.merged.xml
         run: |
-          dotnet-coverage merge "**/testresults/*/*.cobertura.xml" \
+          dotnet-coverage merge "**/TestResults/*/*.cobertura.xml" \
               -f cobertura \
               -o ${{ env.coverage_path }}
 
