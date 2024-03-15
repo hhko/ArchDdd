@@ -6,8 +6,9 @@
 - [x] testresults -> .results
 - [x] .results 형상관리 제외
 - [ ] ~~TestResults 변수화~~
-- [ ] Github Actions에 Gradle Test 추가
+- [x] Github Actions에 Gradle Test 추가
   - https://devs0n.tistory.com/25
+- [ ] .editorconfig https://m.blog.naver.com/bluekms21/222403405125
 ---
 - [ ] 배포 Release
 - [ ] 배포 Package
