@@ -1,3 +1,21 @@
+- [ ] 레이어 문서
+- [ ] 폴더 문서
+  - UseCases 폴더
+  - UseCase 사례 이미지
+  - UseCase Known/Unknown(Side Effect) 출력
+    - Known: 리턴 타입
+    - Unknown: ?
+---
+- [ ] docfx github actions
+- [ ] docfx Build.ps1
+---
+- [ ] 코드 품질 GitHub
+---
+- [ ] 코드 스타일?
+  - https://hackernoon.com/how-to-use-common-editorconfig-as-a-nuget-package
+
+<br/>
+
 - [x] 로컬 CI
 - [x] GitHuab 코드 커버리지
 - [x] 코드 커버리지 GitHub Actions

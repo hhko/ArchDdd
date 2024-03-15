@@ -13,32 +13,25 @@
 - [x] 7. [템플릿 만들기: `.template.config`](./01-SolutionSetting/01-SolutionConfig/07-Template/)
 - [x] 8. [템플릿 배포하기: `.nuspec`](./01-SolutionSetting/01-SolutionConfig/08-TemplatePackage/)
 
-```
-테스트
-코드 커버리지(VS, VSCode)
-코드 스타일(VS, VSCode)
-코드 매트릭
-코드 보안?
-코드 문서화
-```
+### 2. 솔루션 CI/CD
+| 구분          | Build.ps1 | Actions | Actions 이력 | Actions PR |
+|---------|-------|---------|------------|------------|
+| 빌드          | O     | O       |            |            |
+| 테스트        | O     | O       |            |            |
+| 코드 커버리지 | O     | O       |            |            |
+| 코드 스타일   |       |         |            |            |
+| 코드 매트릭   |       |         |            |            |
+| 코드 보안?    |       |         |            |            |
+| 코드 문서화   |       |         |            |            |
+| Release       | X     |         | X          | X          |
 
-### 2. 솔루션 배포
+### 3. 솔루션 배포
 - 컨테이너화
   - 솔루션
   - docfx
+  - opensearch
 - 컨테이너 디버깅
   - linux 파일 생성?
-
-### 3. 솔루션 CI/CD
-- [x] 1. [Remote CI: `GitHub Actions`](./01-SolutionSetting/03-CInCD/01-GitHubActions/)
-- [x] 2. [Local CI: `PowerShell`]
-- [ ] 3. Visual Studio 코드 커버리지
-- [ ] 4. Visual Studio Code 코드 커버리지
-- [ ] xUnit Traits
-- [ ] 환경 변수?
-- [ ] 코딩 스타일
-  - local
-  - remote
 
 ### 4. 솔루션 관측 시스템
 - 로그
