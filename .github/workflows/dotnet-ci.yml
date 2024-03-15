@@ -37,11 +37,13 @@ jobs:
     #  - 예제: ${{ env.solution_dir }}
     env:
       solution_path: ./CleanDdd.sln
-      coverage_dir: ./testresults/coverage
-      coverage_path: ./testresults/coverage/coverage.cobertura.merged.xml
+      coverage_dir: ./.results/coverage
+      coverage_path: ./.results/coverage/coverage.cobertura.merged.xml
 
     steps:
+      #
       # 형상관리 최신 소스 받기
+      #
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -83,21 +85,19 @@ jobs:
       #
 
       # {테스트 프로젝트}
-      #   ├─.csproj
       #   └─TestResults
       #       ├─0ca60e99-32fb-43ac-bbd3-01f5a5ef6886        : XPlat Code Coverage 폴더
-      #       │   └─coverage.cobertura.xml                  : 코드 커버리지 파일(병합 대상)
+      #       │   └─coverage.cobertura.xml                  : 코드 커버리지 파일(dotnet-coverage merge 대상)
       #       ├─{username}_{hostname}_2024-03-14_15_16_30   : trx 로그 폴더
       #       │   └─In
       #       │       └─{hostname}
-      #       │           └─coverage.cobertura.xml          : 코드 커버리지 파일(사용 안함)
+      #       │           └─coverage.cobertura.xml          : 코드 커버리지 파일(사용 안함, Junit 로그 생성시 자동 생성됨)
       #       └─logs.trx                                    : trx 로그 파일
 
       # 테스트와 코드 커버리지 coverage.cobertura.xml 파일 생성
       #   - name: Find coverage output path
       #     run: |
       #       cp $(find . -name "coverage.cobertura.xml") .
-
       - name: Test
         run: |
           dotnet test ${{ env.solution_path }} \
@@ -131,6 +131,14 @@ jobs:
           dotnet-coverage merge "**/TestResults/*/*.cobertura.xml" \
               -f cobertura \
               -o ${{ env.coverage_path }}
+
+      # {솔루션}
+      #  └─.results
+      #      └─coverage
+      #           ├─report
+      #           │    ├─...
+      #           │    └─SummaryGithub.md
+      #           └─coverage.cobertura.xml
 
       # 솔루션 코드 커버리지 보고서 생성
       - name: Create coverage markdown file
