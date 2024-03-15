@@ -3,9 +3,9 @@
 - [x] 코드 커버리지 GitHub Actions
   - https://josh-ops.com/posts/github-code-coverage/
 - [x] 테스트 상세 보고서 생성
-- [ ] testresults -> .results
-- [ ] .results 형상관리 제외
-- [ ] TestResults 변수화
+- [x] testresults -> .results
+- [x] .results 형상관리 제외
+- [ ] ~~TestResults 변수화~~
 - [ ] Github Actions에 Gradle Test 추가
   - https://devs0n.tistory.com/25
 ---
