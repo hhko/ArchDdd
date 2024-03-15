@@ -9,6 +9,7 @@
 - [x] Github Actions에 Gradle Test 추가
   - https://devs0n.tistory.com/25
 - [ ] .editorconfig https://m.blog.naver.com/bluekms21/222403405125
+- [ ] C# Code Reviews https://microsoft.github.io/code-with-engineering-playbook/code-reviews/recipes/csharp/
 ---
 - [ ] 배포 Release
 - [ ] 배포 Package
