@@ -1,9 +1,9 @@
 @echo off
 
-REM Tests 패키지 추가일 때
+REM Tests 프로젝트에 패키지 제거할 때
 set param=Tests
 
-REM Src 패키지 추가일 때
+REM Src 프로젝트에 패키지 제거할 때
 REM set param=
 
 powershell -File "./Packages-Remove.ps1" "%param%"

@@ -41,9 +41,7 @@ jobs:
       coverage_path: ./.results/coverage/coverage.cobertura.merged.xml
 
     steps:
-      #
       # 형상관리 최신 소스 받기
-      #
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -80,9 +78,7 @@ jobs:
               --no-restore \
               --configuration ${{ matrix.configuration }}
 
-      #
       # 솔루션 테스트
-      #
 
       # {테스트 프로젝트}
       #   └─TestResults
@@ -107,8 +103,8 @@ jobs:
               --logger "trx;LogFileName=logs.trx" \
               --verbosity normal
 
-      # 솔루션 테스트 보고서
-      - name: Test reports
+      # 솔루션 테스트 상세 보고서 생성
+      - name: Create test detail report
         uses: dorny/test-reporter@v1
         if: always()
         with:
@@ -120,7 +116,7 @@ jobs:
       - name: Install dotnet-coverage
         run: dotnet tool install -g dotnet-coverage --version 17.9.6
 
-      # 솔루션 코드 커버리지 경로 생성
+      # 솔루션 코드 커버리지 폴더 생성
       - name: Create coverage folder
         run: mkdir -p ${{ env.coverage_dir }}
 
@@ -132,15 +128,15 @@ jobs:
               -f cobertura \
               -o ${{ env.coverage_path }}
 
+      # 솔루션 코드 커버리지 보고서 생성
+
       # {솔루션}
       #  └─.results
       #      └─coverage
-      #           ├─report
-      #           │    ├─...
-      #           │    └─SummaryGithub.md
-      #           └─coverage.cobertura.xml
-
-      # 솔루션 코드 커버리지 보고서 생성
+      #           ├─coverage.cobertura.merged.xml
+      #           └─report
+      #                ├─...
+      #                └─SummaryGithub.md
       - name: Create coverage markdown file
         uses: danielpalme/ReportGenerator-GitHub-Action@5.2.2
         with:
@@ -148,11 +144,11 @@ jobs:
           targetdir: '${{ env.coverage_dir }}/report'
           reporttypes: 'MarkdownSummaryGithub;Html'
 
-        # 솔루션 코드 커버리지 보고서 SummaryGithub.md을 Summary 업로드
+      # 솔루션 코드 커버리지 보고서 Summary 업로드
       - name: Upload coverage markdown into github actions summary
         run: cat ${{ env.coverage_dir }}/report/SummaryGithub.md >> $GITHUB_STEP_SUMMARY
 
-      # 솔루션 테스트 결과을 Artifacts 업로드
+      # 솔루션 테스트 결과 Artifacts 업로드
       - name: Upload coverage files into github actions artifacts
         uses: actions/upload-artifact@v4
         with:

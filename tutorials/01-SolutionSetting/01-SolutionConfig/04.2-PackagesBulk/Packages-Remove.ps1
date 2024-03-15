@@ -10,15 +10,15 @@ foreach ($packageName in $packages) {
     Write-Output "$packageName"
 }
 
-$dirs = @()
+$project_dirs = @()
 if ($param -ieq "tests") {
-    $dirs = Get-ChildItem -Path (Join-Path $root_dir "..\..\") -Recurse -Filter *.csproj -Include *.Tests.* -ErrorAction SilentlyContinue
+    $project_dirs = Get-ChildItem -Path (Join-Path $root_dir "..\..\") -Recurse -Filter *.csproj -Include *.Tests.* -ErrorAction SilentlyContinue
 }
 else {
-    $dirs = Get-ChildItem -Path (Join-Path $root_dir "..\..\") -Recurse -Filter *.csproj -Exclude *.Tests.* -ErrorAction SilentlyContinue
+    $project_dirs = Get-ChildItem -Path (Join-Path $root_dir "..\..\") -Recurse -Filter *.csproj -Exclude *.Tests.* -ErrorAction SilentlyContinue
 }
 
-$dirs | ForEach-Object {
+$project_dirs | ForEach-Object {
     foreach ($packageName in $packages) {
         dotnet remove "$($_.FullName)" package $packageName
     }

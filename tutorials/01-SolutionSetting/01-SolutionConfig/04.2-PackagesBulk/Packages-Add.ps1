@@ -11,15 +11,23 @@ foreach ($package in $packages) {
     Write-Output "$packageName, $packageVersion"
 }
 
-$dirs = @()
+$project_dirs = @()
 if ($param -ieq "tests") {
-    $dirs = Get-ChildItem -Path (Join-Path $root_dir "..\..\") -Recurse -Filter *.csproj -Include *.Tests.* -ErrorAction SilentlyContinue
+    $project_dirs = Get-ChildItem -Path (Join-Path $root_dir "..\..\") `
+        -Recurse `
+        -Filter *.csproj `
+        -Include *.Tests.* `
+        -ErrorAction SilentlyContinue
 }
 else {
-    $dirs = Get-ChildItem -Path (Join-Path $root_dir "..\..\") -Recurse -Filter *.csproj -Exclude *.Tests.* -ErrorAction SilentlyContinue
+    $project_dirs = Get-ChildItem -Path (Join-Path $root_dir "..\..\") `
+        -Recurse `
+        -Filter *.csproj `
+        -Exclude *.Tests.* `
+        -ErrorAction SilentlyContinue
 }
 
-$dirs | ForEach-Object {
+$project_dirs | ForEach-Object {
     foreach ($package in $packages) {
         $packageName, $packageVersion = $package -split ' '
         dotnet add "$($_.FullName)" package $packageName --version $packageVersion

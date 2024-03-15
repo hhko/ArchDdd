@@ -5,12 +5,22 @@
 - [x] 1. [프로젝트 레이어 구성](./01-SolutionSetting/01-SolutionConfig/01-Layer/)
 - [x] 2. [.NET SDK 버전 지정하기: `global.json`](./01-SolutionSetting/01-SolutionConfig/02-SdkVersion/)
 - [x] 3. [빌드 중앙 관라히기: `Directory.Build.props`](./01-SolutionSetting/01-SolutionConfig/03-BuildProps/)
-- [x] 4. [패키지 중앙 관리하기: `Directory.Packages.props`, `nuget.config`](./01-SolutionSetting/01-SolutionConfig/04-PackagesProps/)
+- [x] 4.1 [패키지 중앙 관리하기: `Directory.Packages.props`, `nuget.config`](./01-SolutionSetting/01-SolutionConfig/04.1-PackagesProps/)
+- [x] 4.2 [패키지 Bulk 추가/제거하기](./01-SolutionSetting/01-SolutionConfig/04.2-PackagesBulk/)
 - [x] 5. [문서화하기: `docfx`](./01-SolutionSetting/01-SolutionConfig/05-Docfx/)
 - [ ] 6. 코드 매트릭
 - [ ] 6. [코딩 스타일 정의하기: `.eidtorconfig`](./01-SolutionSetting/01-SolutionConfig/06-CodingStyle/)
 - [x] 7. [템플릿 만들기: `.template.config`](./01-SolutionSetting/01-SolutionConfig/07-Template/)
 - [x] 8. [템플릿 배포하기: `.nuspec`](./01-SolutionSetting/01-SolutionConfig/08-TemplatePackage/)
+
+```
+테스트
+코드 커버리지(VS, VSCode)
+코드 스타일(VS, VSCode)
+코드 매트릭
+코드 보안?
+코드 문서화
+```
 
 ### 2. 솔루션 배포
 - 컨테이너화

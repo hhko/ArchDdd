@@ -11,14 +11,17 @@ If builders built buildings the way programmers wrote programs, then the first w
 - The architecture should scream **the intent of the system**.
 
 ## 아키텍처 이해
-아키텍처 첫번째 원칙은 **관심사의 분리**(Separation of Concerns, SoC)입니다. 분리한 관심사를 아키텍처는 **레이어**(Layer)로 정의하여 관심사를 관리합니다. 아키텍처 역사를 통해 이를 재확인할 수 있습니다. 아키텍처는 레이어 정의, 배치 그리고 관계를 기준으로 **아키텍처 패턴**을 구성하고 있습니다.
+아키텍처 첫 번째 원칙은 **관심사의 분리**(Separation of Concerns, SoC)입니다.   
+아키텍처는 관심사 기준으로 분리된 한 것을 **레이어**(Layer)로 정의하여 관리합니다.
+
+관심사를 관리합니다. 아키텍처 역사를 통해 이를 재확인할 수 있습니다. 아키텍처는 레이어 정의, 배치 그리고 관계를 기준으로 **아키텍처 패턴**을 구성하고 있습니다.
 - Layered Architecture
 - Hexagonal Architecture
 - Onion Architecture
 - Clean Architecture
 - ...
 
-![](./.images/2024-03-10-16-06-05.png)
+![ArchitecturePatternHistory](./.images/2024-03-10-16-06-05.png)
 
 ## 목차
 - [튜토리얼](./tutorials/)
