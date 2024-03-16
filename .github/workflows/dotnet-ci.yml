@@ -156,7 +156,7 @@ jobs:
           name: coverage_${{ matrix.dotnet-version }}_sha-${{ steps.vars.outputs.short_sha }}
           path: ${{ env.coverage_dir }}/report
 
-      - run: dotnet tool install --g docfx --version 2.75.3
+      - run: dotnet tool install -g docfx --version 2.75.3
       - run: docfx ${{ env.docfx_dir }}/docfx.json
 
       - name: Upload docfx files into github actions artifacts
