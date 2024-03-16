@@ -39,7 +39,7 @@ jobs:
       solution_path: ./CleanDdd.sln
       coverage_dir: ./.results/coverage
       coverage_path: ./.results/coverage/coverage.cobertura.merged.xml
-      docfx_dir: ./site
+      doc_dir: ./site
 
     steps:
       # 형상관리 최신 소스 받기
@@ -159,10 +159,10 @@ jobs:
       - name: Install docfx tool
         run: dotnet tool install -g docfx --version 2.75.3
       - name: Build docfx
-        run: docfx ${{ env.docfx_dir }}/docfx.json
+        run: docfx ${{ env.doc_dir }}/docfx.json
 
       - name: Upload docfx files into github actions artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          name: docfx_${{ matrix.dotnet-version }}_sha-${{ steps.vars.outputs.short_sha }}
-          path: ${{ env.docfx_dir }}/_site
+          name: doc_${{ matrix.dotnet-version }}_sha-${{ steps.vars.outputs.short_sha }}
+          path: ${{ env.doc_dir }}/_site

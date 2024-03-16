@@ -4,6 +4,7 @@ $sln_path       = Join-Path $sln_dir "CleanDdd.sln"
 $results_dir    = Join-Path $sln_dir ".results"
 $coverage_dir   = Join-Path $results_dir "coverage"
 $coverage_path  = Join-Path $coverage_dir "coverage.cobertura.merged.xml"
+$doc_dir        = Join-Path $sln_dir "site"
 
 #
 # 준비
@@ -75,3 +76,13 @@ reportgenerator `
     -targetdir:(Join-Path $coverage_dir "report") `
     -reporttypes:"Html;Badges;MarkdownSummaryGithub" `
     -verbosity:Info
+
+#
+# 문서 빌드
+#
+
+# {솔루션}
+#  └─site
+#      ├─...
+#      └─docfx.json
+docfx (Join-Path $doc_dir docfx.json)

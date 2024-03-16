@@ -6,16 +6,15 @@
     - Known: 리턴 타입
     - Unknown: ?
 ---
-- [ ] docfx github actions
-- [ ] docfx Build.ps1
----
 - [ ] 코드 품질 GitHub
----
+- [ ] 코드 스타일 GitHub
 - [ ] 코드 스타일?
   - https://hackernoon.com/how-to-use-common-editorconfig-as-a-nuget-package
 
 <br/>
 
+- [x] docfx github actions
+- [x] docfx Build.ps1
 - [x] 로컬 CI
 - [x] GitHuab 코드 커버리지
 - [x] 코드 커버리지 GitHub Actions
