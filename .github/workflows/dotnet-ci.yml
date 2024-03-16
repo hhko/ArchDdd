@@ -163,4 +163,4 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           name: docfx_${{ matrix.dotnet-version }}_sha-${{ steps.vars.outputs.short_sha }}
-          path: ${{ env.docfx_dir }}/_site'
+          path: ${{ env.docfx_dir }}/_site
