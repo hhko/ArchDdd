@@ -162,7 +162,8 @@ jobs:
         run: docfx ${{ env.doc_dir }}/docfx.json
 
       - name: Upload docfx files into github actions artifacts
-        uses: actions/upload-pages-artifact@v3
+        #uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: doc_${{ matrix.dotnet-version }}_sha-${{ steps.vars.outputs.short_sha }}
           path: ${{ env.doc_dir }}/_site
