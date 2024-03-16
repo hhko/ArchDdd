@@ -39,6 +39,7 @@ jobs:
       solution_path: ./CleanDdd.sln
       coverage_dir: ./.results/coverage
       coverage_path: ./.results/coverage/coverage.cobertura.merged.xml
+      docfx_dir: ./site
 
     steps:
       # 형상관리 최신 소스 받기
@@ -113,7 +114,7 @@ jobs:
           reporter: dotnet-trx
 
       # dotnet-coverage 도구 설치
-      - name: Install dotnet-coverage
+      - name: Install dotnet-coverage tool
         run: dotnet tool install -g dotnet-coverage --version 17.9.6
 
       # 솔루션 코드 커버리지 폴더 생성
@@ -154,3 +155,12 @@ jobs:
         with:
           name: coverage_${{ matrix.dotnet-version }}_sha-${{ steps.vars.outputs.short_sha }}
           path: ${{ env.coverage_dir }}/report
+
+      - run: dotnet tool install --g docfx --version 2.75.3
+      - run: docfx ${{ env.docfx_dir }}/docfx.json
+
+      - name: Upload docfx files into github actions artifacts
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: docfx_${{ matrix.dotnet-version }}_sha-${{ steps.vars.outputs.short_sha }}
+          path: ${{ env.docfx_dir }}/_site'
