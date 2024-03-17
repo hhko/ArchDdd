@@ -9,9 +9,20 @@ $doc_dir        = Join-Path $sln_dir "site"
 #
 # 준비
 #   - **/TestResults 모든 폴더 삭제
-#   - ./.results/coverage 폴더 생성
-#(Get-ChildItem -Path $sln_dir -Directory -Recurse -Filter "TestResults").FullName | ForEach-Object { Write-Output $_; Remove-Item $_ -Recurse -Force }
-(Get-ChildItem -Path $sln_dir -Directory -Recurse -Filter "TestResults").FullName | ForEach-Object { Write-Output $_; }
+$testResultDirs = (Get-ChildItem -Path $sln_dir -Directory -Recurse -Filter "TestResults").FullName
+if ($testResultDirs) {
+    $testResultDirs | ForEach-Object {
+        Write-Host "Removing folder: $($_)"
+        Remove-Item -Path $_ -Recurse -Force
+    }
+} else {
+    Write-Host "No TestResults folders found."
+}
+
+#   - ./.results/coverage 폴더 삭제 및 생성
+if (Test-Path $coverage_dir) {
+    Remove-Item $coverage_dir -Recurse -Force 
+}
 New-Item $coverage_dir -ItemType Directory -Force | Out-Null
 
 #
