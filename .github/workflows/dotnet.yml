@@ -1,15 +1,16 @@
-name: "CleanDdd CI"
+name: CleanDdd Build
 
 # TODO: PR일 때 코드 커버리지 댓글 추가
 on:
   push:
-    branches: [ "main" ]
-    paths: [ 'src/**', 'tests/**', '.github/workflows/dotnet-ci.yml' ]
-    # TODO: 특정 확장자 Actions 제외
-    # paths-ignore:
-    #     - '**.md'
-    #     - '**.pptx'
-    #     - '**.png'
+    branches: [ main ]
+    # paths: [ 'src/**', 'tests/**', '.github/workflows/dotnet-ci.yml' ]
+    paths-ignore:
+      - '**.md'
+      - '**.pptx'
+      - '**.png'
+  pull_request:
+    branches: [ main ]
 
 # 솔루션 테스트 결과 trx 추가
 #   - dorny/test-reporter@v1
@@ -39,6 +40,7 @@ jobs:
       solution_path: ./CleanDdd.sln
       coverage_dir: ./.results/coverage
       coverage_path: ./.results/coverage/coverage.cobertura.merged.xml
+      docfx_dir: ./site
 
     steps:
       # 형상관리 최신 소스 받기
@@ -155,48 +157,25 @@ jobs:
           name: coverage_${{ matrix.dotnet-version }}_sha-${{ steps.vars.outputs.short_sha }}
           path: ${{ env.coverage_dir }}/report
 
-  docfx:
-    name: Build docfx
-
-    # 빌드 환경 경우의 수 정의
-    strategy:
-      matrix:
-        #dotnet-version: [ '8.0.x' ]
-        #configuration: [ Release ]
-        os: [ ubuntu-22.04 ]
-
-    # 빌드 환경 지정
-    runs-on: ${{ matrix.os }}
-    #runs-on: ubuntu-22.04
-
-    # 환경 변수
-    env:
-      docfx_dir: ./site
-
-    steps:
-      # 형상관리 최신 소스 받기
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      # Git Commit SHA 얻기
-      - name: Set short git commit SHA
-        id: vars
-        run: |
-          calculatedSha=$(git rev-parse --short ${{ github.sha }})
-          echo "short_sha=$calculatedSha" >> $GITHUB_OUTPUT
-
       # docfx 도구 설치
       - name: Install docfx tool
         run: dotnet tool install -g docfx --version 2.75.3
 
-      # 문서 빌드
+      # docfx 문서 빌드
       - name: Build docfx
         run: docfx ${{ env.docfx_dir }}/docfx.json
 
-      # 문서 사이트 Artifacts 업로드
+      # docfx 문서 사이트 Artifacts 업로드
       - name: Upload docfx files into github actions artifacts
         #uses: actions/upload-pages-artifact@v3
         uses: actions/upload-artifact@v4
         with:
           name: docfx_sha-${{ steps.vars.outputs.short_sha }}
           path: ${{ env.docfx_dir }}/_site
+
+      # 솔루션 코드 커버리지 전송(Codecov)
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: hhko/CleanDdd
