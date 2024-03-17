@@ -159,6 +159,7 @@ dotnet new uninstall
   - 아키텍처 테스트
   - 단위 테스트
   - 통합 테스트
+    - ASP.NET Core: https://github.com/JasperFx/alba
   - E2E 테스트
   - 성능 테스트
   - 시나리오 테스트
