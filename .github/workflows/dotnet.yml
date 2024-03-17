@@ -9,8 +9,8 @@ on:
       - '**.md'
       - '**.pptx'
       - '**.png'
-  pull_request:
-    branches: [ main ]
+  # pull_request:
+  #   branches: [ main ]
 
 # 솔루션 테스트 결과 trx 추가
 #   - dorny/test-reporter@v1
