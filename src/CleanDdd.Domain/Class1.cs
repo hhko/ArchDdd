@@ -30,6 +30,7 @@ public class Class1
         }
         catch
         {
+            result = default;
             return false;
         }
 

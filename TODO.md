@@ -1,3 +1,6 @@
+- [ ] 코드 커버리지 GitHub
+- [ ] 코드 품질 CodeQL GitHub
+
 - [ ] 레이어 문서
 - [ ] 폴더 문서
   - UseCases 폴더
