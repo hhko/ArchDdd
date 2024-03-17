@@ -1,5 +1,5 @@
 # Domain-Driven Design with Clean Architecture
-[![CleanDdd CI](https://github.com/hhko/CleanDdd/actions/workflows/dotnet-ci.yml/badge.svg)](https://github.com/hhko/CleanDdd/actions/workflows/dotnet-ci.yml)
+[![CleanDdd Build](https://github.com/hhko/CleanDdd/actions/workflows/dotnet.yml/badge.svg)](https://github.com/hhko/CleanDdd/actions/workflows/dotnet.yml)
 
 > 배움은 **설렘**이다.  
 > 배움은 **겸손**이다.  
