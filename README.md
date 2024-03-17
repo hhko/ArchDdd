@@ -83,6 +83,8 @@ site
   - Trailing Spaces
   - Markdown Preview Enhanced
   - VSCode Progressive Increment
+  - GitHub Actions
+  - Codecov YAML Validator
 
 ### dotnet tools
 ```shell
