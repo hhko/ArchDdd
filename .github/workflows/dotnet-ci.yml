@@ -176,6 +176,17 @@ jobs:
       docfx_dir: ./site
 
     steps:
+      # 형상관리 최신 소스 받기
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Git Commit SHA 얻기
+      - name: Set short git commit SHA
+        id: vars
+        run: |
+          calculatedSha=$(git rev-parse --short ${{ github.sha }})
+          echo "short_sha=$calculatedSha" >> $GITHUB_OUTPUT
+
       # docfx 도구 설치
       - name: Install docfx tool
         run: dotnet tool install -g docfx --version 2.75.3
