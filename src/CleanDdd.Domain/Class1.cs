@@ -21,4 +21,18 @@ public class Class1
     {
         return x / y;
     }
+
+    public bool TryDivide(int x, int y, out int result)
+    {
+        try
+        {
+            result = x / y;
+        }
+        catch
+        {
+            return false;
+        }
+
+        return true;
+    }
 }
