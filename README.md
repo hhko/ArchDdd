@@ -1,5 +1,6 @@
 # Domain-Driven Design with Clean Architecture
 [![CleanDdd Build](https://github.com/hhko/CleanDdd/actions/workflows/dotnet.yml/badge.svg)](https://github.com/hhko/CleanDdd/actions/workflows/dotnet.yml)
+[![codecov](https://codecov.io/gh/hhko/CleanDdd/graph/badge.svg?token=VK8HUZTA7K)](https://codecov.io/gh/hhko/CleanDdd)
 
 > 배움은 **설렘**이다.  
 > 배움은 **겸손**이다.  
