@@ -6,6 +6,10 @@
 
 dotnet tool install --global dotnet-coverage --version 17.9.6
 dotnet tool install --global dotnet-reportgenerator-globaltool --version 5.2.0
+
+# Install Visual Studio 2022 (Community or higher) and make sure you have the latest updates.
+# Install .NET SDK 6.x, 7.x and 8.x.
+# Install NodeJS (20.x.x).
 dotnet tool install --global docfx --version 2.75.3
 
 dotnet tool list --global

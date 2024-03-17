@@ -12,8 +12,7 @@ If builders built buildings the way programmers wrote programs, then the first w
 
 ## 아키텍처 이해
 아키텍처 첫 번째 원칙은 **관심사의 분리**(Separation of Concerns, SoC)입니다. 아키텍처는 관심사 기준으로 분리하여 **레이어**(Layer)로 정의합니다. 초창기 아키텍처 패턴 `Layered Architecture`부터 모든 아키텍처 패턴은 **레이어** 단위로 구성합니다.
-> **아키텍처 패턴의 역사는 레이어 배치의 역사입니다.**  
-> **아키텍처가 존재한다는 것은 레이어가 존재하는 것입니다.**
+> **아키텍처 패턴의 역사는 레이어 배치의 역사입니다.**
 
 - Layered Architecture
 - Hexagonal Architecture
@@ -83,15 +82,10 @@ site
   - Paste Image
   - Trailing Spaces
   - Markdown Preview Enhanced
+  - VSCode Progressive Increment
 
 ### dotnet tools
 ```shell
-# docfx
-#   - Install Visual Studio 2022 (Community or higher) and make sure you have the latest updates.
-#   - Install .NET SDK 6.x, 7.x and 8.x.
-#   - Install NodeJS (20.x.x).
-dotnet tool install -g docfx --version 2.75.3
-
 # dotnet-format
 dotnet tool install -g dotnet-format --version 5.1.250801
 ```
