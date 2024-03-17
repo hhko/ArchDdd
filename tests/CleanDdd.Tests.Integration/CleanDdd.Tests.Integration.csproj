@@ -20,12 +20,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src_\CleanDdd.Adapters.Infrastructure\CleanDdd.Adapters.Infrastructure.csproj" />
-    <ProjectReference Include="..\..\src_\CleanDdd.Adapters.Persistence\CleanDdd.Adapters.Persistence.csproj" />
-    <ProjectReference Include="..\..\src_\CleanDdd.Adapters.Presentation\CleanDdd.Adapters.Presentation.csproj" />
-    <ProjectReference Include="..\..\src_\CleanDdd.Application\CleanDdd.Application.csproj" />
-    <ProjectReference Include="..\..\src_\CleanDdd.Domain\CleanDdd.Domain.csproj" />
-    <ProjectReference Include="..\..\src_\CleanDdd.Host\CleanDdd.Host.csproj" />
+    <ProjectReference Include="..\..\src\CleanDdd.Adapters.Infrastructure\CleanDdd.Adapters.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\CleanDdd.Adapters.Persistence\CleanDdd.Adapters.Persistence.csproj" />
+    <ProjectReference Include="..\..\src\CleanDdd.Adapters.Presentation\CleanDdd.Adapters.Presentation.csproj" />
+    <ProjectReference Include="..\..\src\CleanDdd.Application\CleanDdd.Application.csproj" />
+    <ProjectReference Include="..\..\src\CleanDdd.Domain\CleanDdd.Domain.csproj" />
+    <ProjectReference Include="..\..\src\CleanDdd.Host\CleanDdd.Host.csproj" />
   </ItemGroup>
 
 </Project>

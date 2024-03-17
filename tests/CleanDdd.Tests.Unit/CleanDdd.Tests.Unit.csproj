@@ -20,8 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src_\CleanDdd.Application\CleanDdd.Application.csproj" />
-    <ProjectReference Include="..\..\src_\CleanDdd.Domain\CleanDdd.Domain.csproj" />
+    <ProjectReference Include="..\..\src\CleanDdd.Application\CleanDdd.Application.csproj" />
+    <ProjectReference Include="..\..\src\CleanDdd.Domain\CleanDdd.Domain.csproj" />
   </ItemGroup>
 
 </Project>
