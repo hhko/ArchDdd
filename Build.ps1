@@ -10,7 +10,8 @@ $doc_dir        = Join-Path $sln_dir "site"
 # 준비
 #   - **/TestResults 모든 폴더 삭제
 #   - ./.results/coverage 폴더 생성
-(Get-ChildItem -Path $sln_dir -Directory -Recurse -Filter "TestResults").FullName | ForEach-Object { Write-Output $_; Remove-Item $_ -Recurse -Force }
+#(Get-ChildItem -Path $sln_dir -Directory -Recurse -Filter "TestResults").FullName | ForEach-Object { Write-Output $_; Remove-Item $_ -Recurse -Force }
+(Get-ChildItem -Path $sln_dir -Directory -Recurse -Filter "TestResults").FullName | ForEach-Object { Write-Output $_; }
 New-Item $coverage_dir -ItemType Directory -Force | Out-Null
 
 #
@@ -25,6 +26,12 @@ dotnet build $sln_path `
     --no-restore `
     --configuration Release `
     --verbosity m
+
+if ($LASTEXITCODE -ne 0) {
+#if ($LASTEXITCODE -eq 0) {
+    Write-Output "Build failed"
+    exit 1
+}
 
 #
 # 솔루션 테스트
