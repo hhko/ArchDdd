@@ -16,4 +16,9 @@ public class Class1
         x += y;
         return x;
     }
+
+    public int Divide(int x, int y)
+    {
+        return x / y;
+    }
 }
