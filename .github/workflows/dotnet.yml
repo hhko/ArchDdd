@@ -155,50 +155,48 @@ jobs:
           name: coverage_${{ matrix.dotnet-version }}_sha-${{ steps.vars.outputs.short_sha }}
           path: ${{ env.coverage_dir }}/report
 
-  # docfx:
-  #   name: Build docfx
+  docfx:
+    name: Build docfx
 
-  #   # 빌드 환경 경우의 수 정의
-  #   strategy:
-  #     matrix:
-  #       dotnet-version: [ '8.0.x' ]
-  #       configuration: [ Release ]
-  #       os: [ ubuntu-22.04 ]
+    # 빌드 환경 경우의 수 정의
+    strategy:
+      matrix:
+        #dotnet-version: [ '8.0.x' ]
+        #configuration: [ Release ]
+        os: [ ubuntu-22.04 ]
 
-  #   # 빌드 환경 지정
-  #   runs-on: ${{ matrix.os }}
-  #   #runs-on: ubuntu-22.04
+    # 빌드 환경 지정
+    runs-on: ${{ matrix.os }}
+    #runs-on: ubuntu-22.04
 
-  #   # 환경 변수
-  #   #  - 규칙: ${{ env.환경_변수_이름 }}
-  #   #  - 예제: ${{ env.solution_dir }}
-  #   env:
-  #     docfx_dir: ./site
+    # 환경 변수
+    env:
+      docfx_dir: ./site
 
-  #   steps:
-  #     # 형상관리 최신 소스 받기
-  #     - name: Checkout
-  #       uses: actions/checkout@v4
+    steps:
+      # 형상관리 최신 소스 받기
+      - name: Checkout
+        uses: actions/checkout@v4
 
-  #     # Git Commit SHA 얻기
-  #     - name: Set short git commit SHA
-  #       id: vars
-  #       run: |
-  #         calculatedSha=$(git rev-parse --short ${{ github.sha }})
-  #         echo "short_sha=$calculatedSha" >> $GITHUB_OUTPUT
+      # Git Commit SHA 얻기
+      - name: Set short git commit SHA
+        id: vars
+        run: |
+          calculatedSha=$(git rev-parse --short ${{ github.sha }})
+          echo "short_sha=$calculatedSha" >> $GITHUB_OUTPUT
 
-  #     # docfx 도구 설치
-  #     - name: Install docfx tool
-  #       run: dotnet tool install -g docfx --version 2.75.3
+      # docfx 도구 설치
+      - name: Install docfx tool
+        run: dotnet tool install -g docfx --version 2.75.3
 
-  #     # 문서 빌드
-  #     - name: Build docfx
-  #       run: docfx ${{ env.docfx_dir }}/docfx.json
+      # 문서 빌드
+      - name: Build docfx
+        run: docfx ${{ env.docfx_dir }}/docfx.json
 
-  #     # 문서 사이트 Artifacts 업로드
-  #     - name: Upload docfx files into github actions artifacts
-  #       #uses: actions/upload-pages-artifact@v3
-  #       uses: actions/upload-artifact@v4
-  #       with:
-  #         name: docfx_${{ matrix.dotnet-version }}_sha-${{ steps.vars.outputs.short_sha }}
-  #         path: ${{ env.docfx_dir }}/_site
+      # 문서 사이트 Artifacts 업로드
+      - name: Upload docfx files into github actions artifacts
+        #uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v4
+        with:
+          name: docfx_sha-${{ steps.vars.outputs.short_sha }}
+          path: ${{ env.docfx_dir }}/_site
