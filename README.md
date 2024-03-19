@@ -12,8 +12,8 @@ If builders built buildings the way programmers wrote programs, then the first w
 - The architecture should scream **the intent of the system**.
 
 ## 아키텍처 이해
-**관심사의 분리**(Separation of Concerns, SoC)은 아키텍처 핵심 원칙입니다. 아키텍처에서는 관심사를 레이어(Layer)로 정의합니다.
-> **아키텍처 패턴의 역사는 관심사를 중심으로 소프트웨어를 유지보수하기 위한 레이어 배치의 역사입니다.**
+**관심사의 분리**(Separation of Concerns, SoC)은 아키텍처 핵심 원칙입니다. 아키텍처 수준의 관심사는 레이어(Layer)로 정의하여 관리합니다.
+> **아키텍처 패턴의 역사는 관심사를 중심으로 소프트웨어를 관리하기 위한 레이어 배치의 역사입니다.**
 
 - Layered Architecture
 - Hexagonal Architecture
@@ -64,13 +64,6 @@ tests
   - `Unit` ⊂ `Integration` ⊂ `E2E`
 
 ### site 폴더 구성
-```
-site
-  ├─ docs                              : .md 파일 문서화
-  ├─ api                               : .cs XML 주석 문서화
-  └─ _site                             : 빌드 결과
-```
-
 
 
 ## 개발 환경
