@@ -1,6 +1,10 @@
-- [ ] 코드 커버리지 GitHub
+- [x] 패키지 GitHub 읽기
+  - https://www.dotnetcurry.com/dotnetcore/custom-dotnet-code-github-actions
+- [ ] 패키지 GitHub Actions
+- [ ] dotnet tool install ... by GitHub Registry
+---
+- [x] 코드 커버리지 GitHub
 - [ ] 코드 품질 CodeQL GitHub
-
 - [ ] 레이어 문서
 - [ ] 폴더 문서
   - UseCases 폴더
@@ -183,4 +187,18 @@ dotnet new uninstall
     - 이벤트 브로커
       - RabbitMQ
       - Kafka
+
+
+
+GitHub → User → Settings → Developer settings
+
+
+Personal access tokens → Tokens (classic)
+  [Generate new token]
+    Note: GITHUB_TOKEN
+    Expiration: No expiration
+
+    write:packages
+    read:packages
+
 

@@ -11,6 +11,7 @@ on:
       - '**.png'
   # pull_request:
   #   branches: [ main ]
+  workflow_dispatch:
 
 # 솔루션 테스트 결과 trx 추가
 #   - dorny/test-reporter@v1
