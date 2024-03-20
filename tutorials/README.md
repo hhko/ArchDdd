@@ -7,7 +7,8 @@
 - [x] 3. [빌드 중앙 관라히기: `Directory.Build.props`](./01-SolutionSetting/01-SolutionConfig/03-BuildProps/)
 - [x] 4.1 [패키지 중앙 관리하기: `Directory.Packages.props`, `nuget.config`](./01-SolutionSetting/01-SolutionConfig/04.1-PackagesProps/)
 - [x] 4.2 [패키지 Bulk 추가/제거하기](./01-SolutionSetting/01-SolutionConfig/04.2-PackagesBulk/)
-- [x] 5. [문서화하기: `docfx`](./01-SolutionSetting/01-SolutionConfig/05-Docfx/)
+- [x] 5. [문서화하기: `docusaurus`](./01-SolutionSetting/01-SolutionConfig/05-Docusaurus/)
+- [x] 5. ~~[문서화하기: `docfx`](./01-SolutionSetting/01-SolutionConfig/05-Docfx/)~~
 - [ ] 6. 코드 매트릭
 - [ ] 6. [코딩 스타일 정의하기: `.eidtorconfig`](./01-SolutionSetting/01-SolutionConfig/06-CodingStyle/)
 - [x] 7. [템플릿 만들기: `.template.config`](./01-SolutionSetting/01-SolutionConfig/07-Template/)

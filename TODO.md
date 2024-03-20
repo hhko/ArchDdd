@@ -1,3 +1,15 @@
+- [x] docusaurus
+- [ ] docusaurus GitHub Actions 연동
+- [ ] docusaurus GitHub Pages?
+---
+- [ ] docusaurus 문서
+- [ ] docusaurus 메뉴
+- [ ] docusaurus 기본 페이지
+---
+- [ ] docusaurus 한국어 검색
+- [ ] docusaurus PDF
+- [ ] docusaurus 이미지 확대
+---
 - [x] 패키지 GitHub 읽기
   - https://www.dotnetcurry.com/dotnetcore/custom-dotnet-code-github-actions
 - [ ] 패키지 GitHub Actions

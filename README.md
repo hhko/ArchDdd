@@ -13,7 +13,7 @@ If builders built buildings the way programmers wrote programs, then the first w
 
 ## 아키텍처 이해
 `Separation of Concerns(SoC)`은 중요한 아키텍처 원칙 중 하나입니다. 이는 **관심사**를 분리함으로써 코드를 더 잘 관리할 수 있다는 개념입니다. 아키텍처 수준의 관심사는 각각의 **레이어**로 나눠져 관리됩니다.
-> **아키텍처 패턴의 역사는 관심사를 중심으로 소프트웨어를 관리하기 위한 레이어 배치의 역사입니다.**
+> **아키텍처 패턴의 역사는 관심사를 관리하기 위한 레이어 배치의 역사입니다.**
 
 - Layered Architecture
 - Hexagonal Architecture
