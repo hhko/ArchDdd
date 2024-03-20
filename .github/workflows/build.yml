@@ -5,8 +5,9 @@ on:
   push:
     branches: [ main ]
     # paths: [ 'src/**', 'tests/**', '.github/workflows/dotnet-ci.yml' ]
+
     paths-ignore:
-      - '**.md'
+      #- '**.md'
       - '**.pptx'
       - '**.png'
   # pull_request:
