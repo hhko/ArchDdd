@@ -1,4 +1,4 @@
-# 패키지 중앙 관리하기
+# 중앙 패키지 관리하기
 > `Directory.Packages.props` 파일은 프로젝트의 패키지 설정을 중앙에서 관리합니다.
 
 ```shell
@@ -17,12 +17,12 @@ dotnet new classlib -o PackagesProps.ClassLibrary
 # 프로젝트 추가
 dotnet sln add (ls -r **/*.csproj)
 
-# 빌드 중앙 관리
+# 중앙 빌드 관리
 "" > Directory.Build.props
 # - Directory.Build.props 파일 편집
 # - 프로젝트 .csproj 파일 편집
 
-# 패키지 중앙 관리
+# 중앙 패키지 관리
 dotnet new nuget.config
 "" > Directory.Packages.props
 # - nuget.config 파일 편집
@@ -54,19 +54,19 @@ When using central package management,
 | `PackageVersion`      | Directory.Packages.props |
 | `PackageReference`    | .csproj                   |
 
-- `Directory.Packages.props` 파일에 패키지 중앙 관리 활성화를 정의합니다.
+- `Directory.Packages.props` 파일에 중앙 패키지 관리 활성화를 정의합니다.
 
 ```xml
 <Project>
 
   <PropertyGroup>
-    <!-- 패키지 중앙 관리 활성화하기 -->
+    <!-- 중앙 패키지 관리 활성화하기 -->
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
 </Project>
 ```
 
-## 패키지 중앙 관리 적용하기
+## 중앙 패키지 관리 적용하기
 ```shell
 dotnet add .\PackagesProps.Console\ package Serilog
 ```
@@ -78,12 +78,12 @@ dotnet add .\PackagesProps.Console\ package Serilog
 
   <PropertyGroup>
     <!--
-    패키지 중앙 관리 활성화하기: warning NU1701
+    중앙 패키지 관리 활성화하기: warning NU1701
     -->
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
 
-  <!-- 패키지 버전 중앙 관리: PackageVersion -->
+  <!-- 중앙 패키지 버전 관리: PackageVersion -->
   <ItemGroup>
     <PackageVersion Include="Serilog" Version="3.1.1" />
   </ItemGroup>
