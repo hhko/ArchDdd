@@ -1,9 +1,12 @@
-```shell
-# -------------------------------------------------
-# 솔루션 구성
-# -------------------------------------------------
+---
+sidebar_position: 1
+---
 
 # 솔루션 생성
+
+## 솔루션 프로젝트 생성
+```shell
+# 솔루션 파일 생성
 dotnet new sln -o CleanDdd
 cd ./CleanDdd
 
@@ -21,11 +24,10 @@ dotnet new xunit -o ./tests/CleanDdd.Test.Integration
 # 프로젝트 추가
 dotnet sln add (ls -r ./src/**/*.csproj)
 dotnet sln add (ls -r ./tests/**/*.csproj)
+```
 
-# -------------------------------------------------
-# 솔루션 설정 구성
-# -------------------------------------------------
-
+## 솔루션 빌드 설정
+```shell
 # .gitignore
 dotnet new .gitignore
 
@@ -43,29 +45,15 @@ dotnet new nuget.config
 "" > Directory.Packages.props
 #   - Directory.Packages.props 파일 편집
 #   - 프로젝트 .csproj 파일 편집
+```
+- `.gitignore`
+- `global.json`
+- `Directory.Build.props`
+- `Directory.Packages.props`
+- `nuget.config`
 
-# -------------------------------------------------
-# 솔루션 빌드
-# -------------------------------------------------
+## 솔루션 빌드
+```shell
 dotnet build
 dotnet test
-```
-
-```shell
-# docfx 도구 설치
-dotnet tool install -g docfx
-
-# 사이트 생성
-docfx init -y -o ./site
-cd ./site
-
-# 빌드: http://localhost:8080
-docfx docfx.json --serve
-docfx docfx.json --serve -p 8080
-docfx docfx.json
-docfx
-```
-
-```
-dotnet tool install -g dotnet-format
 ```

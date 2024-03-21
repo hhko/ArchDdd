@@ -25,6 +25,9 @@ If builders built buildings the way programmers wrote programs, then the first w
 ![ArchitecturePatternHistory](./.images/ArchitecturePatternHistor.png)
 
 ## 목차
+### 솔루션 구성
+- 솔루션 설정
+  - 솔루션 생성
 - [튜토리얼](./tutorials/)
 
 ## 폴더 구성
