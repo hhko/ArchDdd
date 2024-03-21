@@ -27,7 +27,7 @@ If builders built buildings the way programmers wrote programs, then the first w
 ## 목차
 ### 솔루션 구성
 - 솔루션 설정
-  - 솔루션 생성
+  - [솔루션 생성](./docs/docs/solution-organization/solution-configuration/solution-creation.md)
 - [튜토리얼](./tutorials/)
 
 ## 폴더 구성
