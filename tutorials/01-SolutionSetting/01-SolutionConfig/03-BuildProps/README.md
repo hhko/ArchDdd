@@ -1,4 +1,4 @@
-# 빌드 중앙 관라히기
+# 중앙 빌드 관라히기
 > `Directory.Build.props` 파일은 프로젝트의 빌드 설정을 중앙에서 관리합니다.
 
 ```shell
@@ -17,7 +17,7 @@ dotnet new classlib -o BuildProps.ClassLibrary
 # 프로젝트 추가
 dotnet sln add (ls -r **/*.csproj)
 
-# 빌드 중앙 관리
+# 중앙 빌드 관리
 "" > Directory.Build.props
 # - Directory.Build.props 파일 편집
 # - 프로젝트 .csproj 파일 편집

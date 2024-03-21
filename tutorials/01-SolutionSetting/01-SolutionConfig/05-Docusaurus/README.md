@@ -11,12 +11,9 @@ node -v
 # create-docusaurus 패키지 버전
 npm show create-docusaurus versions
 
+# https://docusaurus.io/docs/typescript-support
 # latest: create-docusaurus 패키지 최신 버전
-# site: 폴더 이름
-npx create-docusaurus@latest site classic --typescript --yes
-
-# 3.1.1: create-docusaurus 패키지 특정 버전
-# site: 폴더 이름
+npx --yes create-docusaurus@latest site classic --typescript
 npx --yes create-docusaurus@3.1.1 site classic --typescript
 
 #
