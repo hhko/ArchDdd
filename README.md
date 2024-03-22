@@ -75,9 +75,6 @@ tests
 - `T3`: Feature 이름(테스트 피라미드)
   - `Unit` ⊂ `Integration` ⊂ `E2E`
 
-### site 폴더 구성
-
-
 ## 개발 환경
 - .NET 8.x
 - Visual Studio Code
