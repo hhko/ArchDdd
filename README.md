@@ -25,10 +25,18 @@ If builders built buildings the way programmers wrote programs, then the first w
 ![ArchitecturePatternHistory](./docs/docs/01-architecture/img/ArchitecturePatternHistor.png)
 
 ## 목차
+### 아키텍처
 ### 솔루션 구성
 - 솔루션 설정
-  - [솔루션 생성](./docs/docs/solution-organization/solution-configuration/solution-creation.md)
-- [튜토리얼](./tutorials/)
+  - [솔루션 구성 Script](./docs/docs/02-solution-organization/01-solution-configuration/01-script/README.md)
+  - [.NET SDK 버전 지정하기](./docs/docs/02-solution-organization/01-solution-configuration/02-sdkversion/README.md)
+  - [중앙 빌드 관라히기](./docs/docs/02-solution-organization/01-solution-configuration/03-buildprops/README.md)
+  - [중앙 패키지 관리하기](./docs/docs/02-solution-organization/01-solution-configuration/04-packagesprops/README.md)
+  - [패키지 Bulk 추가/제거하기](./docs/docs/02-solution-organization/01-solution-configuration/05-packagesbulk/README.md)
+  - [SDK 템플릿 만들기](./docs/docs/02-solution-organization/01-solution-configuration/06-sdktemplate/README.md)
+  - [SDK 템플릿 패키지 만들기](./docs/docs/02-solution-organization/01-solution-configuration/07-sdktemplate-package/README.md)
+  - [문서 사이트 구축하기](./docs/docs/02-solution-organization/01-solution-configuration/08-docusaurus/README.md)
+- 솔루션 DevOps
 
 ## 폴더 구성
 ### src 폴더 구성

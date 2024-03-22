@@ -2,7 +2,7 @@
 sidebar_position: 8
 ---
 
-# docusaurus 문서화하기
+# 문서 사이트 구축하기
 
 ## 사이트 생성
 ```shell

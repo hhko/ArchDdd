@@ -6,6 +6,7 @@
 
 dotnet tool install --global dotnet-coverage --version 17.9.6
 dotnet tool install --global dotnet-reportgenerator-globaltool --version 5.2.0
+dotnet tool install --global dotnet-format --version 5.1.250801
 
 # Install Visual Studio 2022 (Community or higher) and make sure you have the latest updates.
 # Install .NET SDK 6.x, 7.x and 8.x.
