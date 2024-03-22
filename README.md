@@ -22,7 +22,7 @@ If builders built buildings the way programmers wrote programs, then the first w
 - Clean Architecture
 - ...
 
-![ArchitecturePatternHistory](./.images/ArchitecturePatternHistor.png)
+![ArchitecturePatternHistory](./docs/docs/01-architecture/img/ArchitecturePatternHistor.png)
 
 ## 목차
 ### 솔루션 구성
@@ -32,7 +32,7 @@ If builders built buildings the way programmers wrote programs, then the first w
 
 ## 폴더 구성
 ### src 폴더 구성
-![](./.images/2024-03-10-15-06-17.png)
+![](./docs/docs/01-architecture/img/2024-03-10-15-06-17.png)
 
 ```
 T1.T2{.T3}
@@ -52,7 +52,7 @@ src
   - Presentation, Infrastructure, Persistence, ...
 
 ### tests 폴더 구성
-![](./.images/2024-03-10-15-25-32.png)
+![](./docs/docs/01-architecture/img/2024-03-10-15-25-32.png)
 
 ```
 T1.T2.T3

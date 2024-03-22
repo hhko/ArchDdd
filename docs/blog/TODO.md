@@ -1,15 +1,16 @@
-| 구분             | Local    | CI      | CI > Badge | CI > History | CD > Release | CI > PR |
-|-----------------|----------|--------|------------|---------------|--------------|---------|
-| **빌드**         | 완료     | 완료     | 완료      | -             |   -          |         |
-| **테스트**       | 완료     | 완료     | -         | -             | -            |         |
-| **코드 커버리지** | 완료     | 완료     |           | 완료           |              |         |
-| **코드 스타일**   |         |         | -         | -              | -            |         |
-| **코드 매트릭**   | 개선     |         | -         | -              |              |         |
-| **코드 중복**    |          |         | -         | -              |              |         |
-| **코드 문서**    | 완료      |         | -        | -              |              |         |
-| **패키지**       |          |         |          | -              |              |         |
-| **컨테이너**     |          |         |           | -             |              |         |
+---
+slug: todo
+title: TODO
+tags: [todo]
+---
 
+## 2023-03-23(토)
+- [x] docusaurus docs 폴더 재구성
+  ```
+  tutorials --> docs
+  ```
+
+## TODO
 - [x] docusaurus
 - [ ] docusaurus GitHub Actions 연동
 - [ ] docusaurus GitHub Pages?
@@ -212,7 +213,7 @@ dotnet new uninstall
       - RabbitMQ
       - Kafka
 
-
+```
 
 GitHub → User → Settings → Developer settings
 
@@ -225,7 +226,4 @@ Personal access tokens → Tokens (classic)
     write:packages
     read:packages
 
-
-
-## 읽기
-- [ ] [전술적 DDD를 사용하여 마이크로 서비스 설계](https://learn.microsoft.com/ko-kr/azure/architecture/microservices/model/tactical-ddd)
+```
