@@ -11,6 +11,7 @@ on:
       - '**.md'
       - '**.pptx'
       - '**.png'
+      - '.github/workflows/build-docs.yml'
   # pull_request:
   #   branches: [ main ]
 
