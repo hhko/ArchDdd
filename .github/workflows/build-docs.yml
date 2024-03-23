@@ -31,12 +31,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: ls
+        run: |
+          pwd
+          echo '목록'
+          ls -al
+
       - name: Setup nodejs
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: yarn
-          cache-dependency-path: ./docs/yarn.lock
+          #cache-dependency-path: ./docs/yarn.lock
+          cache-dependency-path: ./package-lock.json
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
