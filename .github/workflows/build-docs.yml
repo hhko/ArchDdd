@@ -31,25 +31,35 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: ls
+      - name: ls 1
         run: |
           pwd
-          echo '목록'
           ls -al
 
       - name: Setup nodejs
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: yarn
-          #cache-dependency-path: ./docs/yarn.lock
+          cache: npm
           cache-dependency-path: ./docs/package-lock.json
 
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-      - name: Build docs
-        run: yarn build
+      # - name: Install dependencies
+      #   run: yarn install --frozen-lockfile
 
+      # - name: Build docs
+      #   run: yarn build
+
+      - name: npm ci
+        run: npm ci
+        # npm ci --only=production
+
+      - name: npm test
+        run: npm test
+
+      - name: ls 2
+        run: |
+          pwd
+          ls -al
       # # Popular action to deploy to GitHub Pages:
       # # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
       # - name: Deploy to GitHub Pages
