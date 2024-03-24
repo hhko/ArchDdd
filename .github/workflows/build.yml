@@ -12,6 +12,7 @@ on:
       - '**.pptx'
       - '**.png'
       - '.github/workflows/build-docs.yml'
+      - './docs/**'
   # pull_request:
   #   branches: [ main ]
 
