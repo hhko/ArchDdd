@@ -25,7 +25,7 @@
 </ul>
 </li>
 <li>바닥글 정리</li>
-<li>페이지 변경할 때 GitHub 연동</li>
+<li>페이지 편집 링크 GitHub 연동</li>
 </ul>]]></content:encoded>
             <category>todo</category>
             <category>docusaurus</category>
@@ -202,14 +202,16 @@
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->시작 페이지 타이틀 배경 색상</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->docs 폴더 이름 변경</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->blog 폴더 이름 변경</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->시작 페이지 3개 키워드</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Blog 페이지 Count 증가시?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->blog 페이지 Count 증가시?</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->버전</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->다국어</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->한국어 검색 Web</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->한국어 검색 Host</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->이미지 확대</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->소스 바로보기?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->drawio</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->mermaid</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->mermaid(C4 Model)</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->PDF</li>
 </ul>]]></content:encoded>
             <category>todo</category>
