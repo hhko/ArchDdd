@@ -9,20 +9,23 @@ $doc_dir        = Join-Path $sln_dir "site"
 #
 # 준비
 #   - **/TestResults 모든 폴더 삭제
+#   - ./.results/coverage 폴더 삭제 및 생성
+#
 $testResultDirs = (Get-ChildItem -Path $sln_dir -Directory -Recurse -Filter "TestResults").FullName
 if ($testResultDirs) {
     $testResultDirs | ForEach-Object {
-        Write-Host "Removing folder: $($_)"
+        Write-Host "Removing: $($_)"
         Remove-Item -Path $_ -Recurse -Force
     }
 } else {
-    Write-Host "No TestResults folders found."
+    Write-Host "Removing: No TestResults folders found."
 }
 
-#   - ./.results/coverage 폴더 삭제 및 생성
 if (Test-Path $coverage_dir) {
-    Remove-Item $coverage_dir -Recurse -Force 
+    Write-Host "Removing: $coverage_dir"
+    Remove-Item $coverage_dir -Recurse -Force
 }
+Write-Host "Creating: $coverage_dir"
 New-Item $coverage_dir -ItemType Directory -Force | Out-Null
 
 #
@@ -94,13 +97,3 @@ reportgenerator `
     -targetdir:(Join-Path $coverage_dir "report") `
     -reporttypes:"Html;Badges;MarkdownSummaryGithub" `
     -verbosity:Info
-
-#
-# 문서 빌드
-#
-
-# {솔루션}
-#  └─site
-#      ├─...
-#      └─docfx.json
-docfx (Join-Path $doc_dir docfx.json)

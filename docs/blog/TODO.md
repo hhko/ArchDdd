@@ -1,46 +1,27 @@
 ---
+date: 2024-01-01T00:00
 slug: todo
 title: Todo
-authors: [고형호]
 tags: [todo]
 ---
 
-| 구분             | Host CI  | CI     | CI Badge | CI History | CI PR  | CD Release |
-|-----------------|----------|---------|----------|-----------|--------|--------------|
-| **빌드**         | 완료     | 완료    | 완료      | -         |         |   -      |
-| **테스트**       | 완료     | 완료    | -        | -         |         |    -     |
-| **코드 커버리지** | 완료     | 완료    |          | 완료       |        |          |
-| **코드 스타일**   |         |        | -         | -          |         |   -     |
-| **코드 매트릭**   | 개선     |        | -         | -          |        |         |
-| **코드 중복**    |          |        | -         | -          |        |          |
-| **코드 문서**    | 완료      |        | -        | -          |        |          |
-| **패키지**       |          |        |           | -          |        |         |
-| **컨테이너**     |          |        |           | -         |         |         |
+| 구분             | Host CI  | CI     | CI Badge | CI History | CI PR  | CD Release | CD Deployment  |
+|-----------------|----------|---------|----------|-----------|---------|------------|----------------|
+| **빌드**         | 완료     | 완료    | 완료      | -         |        |   -        |                 |
+| **테스트**       | 완료     | 완료    | -        | -         |         |    -       |                 |
+| **코드 커버리지** | 완료     | 완료    |          | 완료      |         |           |                 |
+| **코드 스타일**   |         |        | -         | -         |         |   -       |                 |
+| **코드 매트릭**   | 개선     |        | -         | -         |        |           |                 |
+| **코드 중복**    |          |        | -         | -         |         |           |                 |
+| **코드 문서**    | 완료      | 완료   | -        | -          |         |  -        | 완료(GitHug Page) |
+| **패키지**       |          |        |           | -         |         |           |                 |
+| **컨테이너**     |          |        |           | -         |         |           |                 |
 
-## 2024-03-23(토)
-- [x] docusaurus 기반으로 문서 재구성
-- [x] docusaurus 폴더 문서 이해
-  - 사용자 정의: `README.mdx`
-  - 자동 생성: `_category_.json` -> `"type": "generated-index"`
-- [x] docusaurus URL 체계 이해
-  - 폴더 이름에서 `숫자-`은 자동으로 제외된다.
-  - `README.md`일 때 `폴더 이름`으로 URL을 생성한다
 
-## 2024-03-21(목)
-- [x] docusaurus 기반 문서 사이트 구축
+
 
 ## TODO
-- [ ] docusaurus GitHub Actions 연동
-- [ ] docusaurus GitHub Pages?
----
-- [ ] docusaurus blog 페이지
-- [ ] docusaurus PDF
-- [ ] docusaurus 이미지 확대
-- [ ] docusaurus 버전
-- [ ] docusaurus 다국어
-- [ ] docusaurus 한국어 검색
-- [ ] docusaurus 소스 바로보기?
-- [ ] docusaurus GitHub 연동(바로 수정하기)?
+
 ---
 - [x] 패키지 GitHub 읽기
   - https://www.dotnetcurry.com/dotnetcore/custom-dotnet-code-github-actions

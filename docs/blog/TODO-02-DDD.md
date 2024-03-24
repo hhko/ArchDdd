@@ -1,7 +1,7 @@
 ---
-slug: ddd
-title: 도메인 주도 설계
-authors: [고형호]
+date: 2024-01-01T02:00
+slug: todo-ddd
+title: Todo 도메인 주도 설계
 tags: [todo, ddd]
 ---
 
@@ -16,3 +16,5 @@ tags: [todo, ddd]
 - [ ] Domain 타입 | Enum
 - [ ] Domain 타입 | Entity
 - [ ] Domain 타입 | AggregateRoot
+---
+- [ ] WebApi Background 서비스

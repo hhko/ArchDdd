@@ -4,17 +4,17 @@
   "classifications": [
     "Web",
     "ASP.NET",
-    "Clean Architecture",
-    "DDD"
+    "DDD",
+    "Clean Architecture"
   ],
   "tags": {
     "language": "C#",
     "type": "project"
   },
-  "identity": "clean-ddd",
-  "name": "ASP.NET Clean Architecture with DDD Solution",
-  "shortName": "clean-ddd",
-  "description": "ASP.NET .NET 8 Clean Architecture with DDD Solution Template",
+  "identity": "cleanddd",
+  "name": "ASP.NET DDD with Clean Architecture Solution",
+  "shortName": "cleanddd",
+  "description": "ASP.NET DDD with Clean Architecture Solution Template",
   "sourceName": "CleanDdd",
   "preferNameDirectory": true,
   "sources": [
@@ -25,7 +25,7 @@
         ".git/**",
         ".gitignore",
         ".template.config/**/*",
-        "Tutorials/**"
+        "docs/**"
       ]
     }
   ]

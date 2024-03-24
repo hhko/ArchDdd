@@ -1,7 +1,5 @@
 ---
-slug: todo-2024-03-23
-title: 2024-03-23(토)
-authors: [고형호]
+title: 2024-03-23(토) Docusaurus Page 이해
 tags: [todo, docusaurus]
 ---
 

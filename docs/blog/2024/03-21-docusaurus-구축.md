@@ -1,7 +1,5 @@
 ---
-slug: todo-2024-03-21
-title: 2024-03-21(목)
-authors: [고형호]
+title: 2024-03-21(목) Docusaurus 구축
 tags: [todo, docusaurus]
 ---
 

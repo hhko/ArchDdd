@@ -20,8 +20,8 @@ npm show create-docusaurus versions
 
 # https://docusaurus.io/docs/typescript-support
 # latest: create-docusaurus 패키지 최신 버전
-npx --yes create-docusaurus@latest site classic --typescript
-npx --yes create-docusaurus@3.1.1 site classic --typescript
+npx --yes create-docusaurus@latest docs classic --typescript
+npx --yes create-docusaurus@3.1.1 docs classic --typescript
 
 #
 # 명령
@@ -30,17 +30,40 @@ npm start
 npm run build
 npm run serve
 npm run deploy
+
+# Self-Hosting
+# https://docusaurus.io/docs/deployment#self-hosting
+npm run serve -- --build --port 80 --host 0.0.0.0
 ```
 
 ## docusaurus.config.ts 설정
 ```
-baseUrl: '/CleanDdd/',
+baseUrl: '/cleanddd/',
+```
+- `cleanddd` 저장소 이름
+
+
+```ts
+const config: Config = {
+  title: 'CleanDDD',
+  tagline: 'Domain-Driven Design with Clean Architecture are cool',
 ```
 
-## TODO
-- [X] 특정 버전 사이트 생성
-- [X] docs 메뉴 생성 `_category_.json`
-- [x] docs 페이지 생성 `sidebar_position`
-- [x] docs 페이지를 위한 폴더 구성 `폴더 이름`
-- [x] GitHub actions 연동
-- [x] BaseUrl 이해
+```ts
+const config: Config = {
+  themeConfig: {
+    navbar: {
+      title: 'CleanDDD',
+```
+
+```ts
+const config: Config = {
+  presets: [
+    [
+      'classic',
+      {
+        blog: {
+          showReadingTime: true,
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
+```
