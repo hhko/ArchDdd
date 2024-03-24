@@ -23,7 +23,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        코드 품질을 컴파일 타임과 런타임에 확인할 수 있다.
+        컴파일 타임과 런타임에 코드를 이해할 수 있다.
       </>
     ),
   },
@@ -32,7 +32,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        코드에 감동이 있어야한다.
+        코드에 감동이 있다.
       </>
     ),
   },
