@@ -10,32 +10,29 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: '아키텍처',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        레이어(관심사) 단위로 코드 배치를 논할 수 있다.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: '기본',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        코드 품질을 컴파일 타임과 런타임에 확인할 수 있다.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: '실전',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        코드에 감동이 있어야한다.
       </>
     ),
   },

@@ -17,12 +17,14 @@ tags: [todo, docs, docusaurus]
 - [ ] 시작 페이지 타이틀 배경 색상
 - [ ] docs 폴더 이름 변경
 - [ ] blog 폴더 이름 변경
-- [ ] 시작 페이지 3개 키워드
-- [ ] Blog 페이지 Count 증가시?
+- [ ] blog 페이지 Count 증가시?
 - [ ] 버전
 - [ ] 다국어
 - [ ] 한국어 검색 Web
 - [ ] 한국어 검색 Host
 - [ ] 이미지 확대
 - [ ] 소스 바로보기?
+- [ ] drawio
+- [ ] mermaid
+- [ ] mermaid(C4 Model)
 - [ ] PDF
