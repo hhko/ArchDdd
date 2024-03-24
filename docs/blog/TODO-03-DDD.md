@@ -1,5 +1,5 @@
 ---
-date: 2024-01-01T02:00
+date: 2024-01-01T03:00
 slug: todo-ddd
 title: Todo 도메인 주도 설계
 tags: [todo, ddd]
@@ -15,6 +15,12 @@ tags: [todo, ddd]
 - [ ] Domain 타입 | ValueObject
 - [ ] Domain 타입 | Enum
 - [ ] Domain 타입 | Entity
+- [ ] Doamin 타입 | (Domain Service)
 - [ ] Domain 타입 | AggregateRoot
+- [ ] Domain 타입 | Domain Event
+---
+- [ ] DTO
+- [ ] Validation
+- [ ] Specification Pattern
 ---
 - [ ] WebApi Background 서비스

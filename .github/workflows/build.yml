@@ -168,22 +168,3 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: hhko/CleanDdd
-
-      # -----------------------------
-      # docfx 비활성화
-      # -----------------------------
-      # # docfx 도구 설치
-      # - name: Install docfx tool
-      #   run: dotnet tool install -g docfx --version 2.75.3
-      #
-      # # docfx 문서 빌드
-      # - name: Build docfx
-      #   run: docfx ${{ env.docfx_dir }}/docfx.json
-      #
-      # # docfx 문서 사이트 Artifacts 업로드
-      # - name: Upload docfx files into github actions artifacts
-      #   #uses: actions/upload-pages-artifact@v3
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: docfx_sha-${{ steps.vars.outputs.short_sha }}
-      #     path: ${{ env.docfx_dir }}/_site

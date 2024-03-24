@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'CleanDDD',
-  tagline: 'Domain-Driven Design with Clean Architecture are cool',
+  tagline: '도메인 주도 설계 with 클린 아키텍처',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -38,7 +38,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/hhko/cleanddd/docstree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/hhko/cleanddd/tree/main/docs/',
         },
         blog: {
           blogSidebarTitle: 'All posts',
@@ -46,7 +46,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/hhko/cleanddd/tree/main/docs/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -71,9 +71,13 @@ const config: Config = {
           position: 'left',
           label: 'Tutorial',
         },
-        {to: '/blog', label: 'Todo', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          to: '/blog',
+          label: 'Todo',
+          position: 'left'
+        },
+        {
+          href: 'https://github.com/hhko/cleanddd',
           label: 'GitHub',
           position: 'right',
         },
@@ -81,48 +85,7 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `배움은 <b>설렘</b>이다. 배움은 <b>겸손</b>이다. 배움은 <b>이타심</b>이다.`,
     },
     prism: {
       theme: prismThemes.github,
