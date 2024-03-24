@@ -32,8 +32,15 @@ npm run serve
 npm run deploy
 ```
 
+## docusaurus.config.ts 설정
+```
+baseUrl: '/CleanDdd/',
+```
+
 ## TODO
 - [X] 특정 버전 사이트 생성
 - [X] docs 메뉴 생성 `_category_.json`
 - [x] docs 페이지 생성 `sidebar_position`
 - [x] docs 페이지를 위한 폴더 구성 `폴더 이름`
+- [x] GitHub actions 연동
+- [x] BaseUrl 이해
