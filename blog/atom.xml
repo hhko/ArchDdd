@@ -1,52 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://your-docusaurus-site.example.com/CleanDdd/blog</id>
-    <title>CleanDdd Blog</title>
-    <updated>2024-03-24T07:43:08.000Z</updated>
+    <id>https://your-docusaurus-site.example.com/cleanddd/blog</id>
+    <title>CleanDDD Blog</title>
+    <updated>2024-03-24T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://your-docusaurus-site.example.com/CleanDdd/blog"/>
-    <subtitle>CleanDdd Blog</subtitle>
-    <icon>https://your-docusaurus-site.example.com/CleanDdd/img/favicon.ico</icon>
+    <link rel="alternate" href="https://your-docusaurus-site.example.com/cleanddd/blog"/>
+    <subtitle>CleanDDD Blog</subtitle>
+    <icon>https://your-docusaurus-site.example.com/cleanddd/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[도메인 주도 설계]]></title>
-        <id>https://your-docusaurus-site.example.com/CleanDdd/blog/ddd</id>
-        <link href="https://your-docusaurus-site.example.com/CleanDdd/blog/ddd"/>
-        <updated>2024-03-24T07:43:08.000Z</updated>
-        <summary type="html"><![CDATA[- [ ] 프로그램 설정]]></summary>
-        <content type="html"><![CDATA[<ul class="contains-task-list containsTaskList_mC6p">
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->프로그램 설정</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->DI</li>
+        <title type="html"><![CDATA[2024-03-24(일) 저장소 변경]]></title>
+        <id>https://your-docusaurus-site.example.com/cleanddd/blog/2024/03/24/저장소-변경</id>
+        <link href="https://your-docusaurus-site.example.com/cleanddd/blog/2024/03/24/저장소-변경"/>
+        <updated>2024-03-24T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[GitHub 저장소 이름 변경]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="github-저장소-이름-변경">GitHub 저장소 이름 변경<a href="https://your-docusaurus-site.example.com/cleanddd/blog/2024/03/24/%EC%A0%80%EC%9E%A5%EC%86%8C-%EB%B3%80%EA%B2%BD#github-%EC%A0%80%EC%9E%A5%EC%86%8C-%EC%9D%B4%EB%A6%84-%EB%B3%80%EA%B2%BD" class="hash-link" aria-label="Direct link to GitHub 저장소 이름 변경" title="Direct link to GitHub 저장소 이름 변경">​</a></h2>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">CleanDdd -&gt; cleanddd</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<ul>
+<li>소문자로 변경</li>
+<li>관련 문서 변경<!-- -->
+<ul>
+<li>nuspec</li>
 </ul>
-<hr>
-<ul class="contains-task-list containsTaskList_mC6p">
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->결과 타입 | Result</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->결과 타입 | Error</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->결과 타입 | ValidationResult</li>
-</ul>
-<hr>
-<ul class="contains-task-list containsTaskList_mC6p">
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Domain 타입 | ValueObject</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Domain 타입 | Enum</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Domain 타입 | Entity</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Domain 타입 | AggregateRoot</li>
+</li>
 </ul>]]></content>
-        <author>
-            <name>고형호</name>
-        </author>
         <category label="todo" term="todo"/>
-        <category label="ddd" term="ddd"/>
+        <category label="docusaurus" term="docusaurus"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[테스트]]></title>
-        <id>https://your-docusaurus-site.example.com/CleanDdd/blog/test</id>
-        <link href="https://your-docusaurus-site.example.com/CleanDdd/blog/test"/>
-        <updated>2024-03-24T07:43:08.000Z</updated>
-        <summary type="html"><![CDATA[- [x] 코드 커버리지]]></summary>
+        <title type="html"><![CDATA[2024-03-23(토) Docusaurus Page 이해]]></title>
+        <id>https://your-docusaurus-site.example.com/cleanddd/blog/2024/03/23/docusaurus-page-이해</id>
+        <link href="https://your-docusaurus-site.example.com/cleanddd/blog/2024/03/23/docusaurus-page-이해"/>
+        <updated>2024-03-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[docusaurus 기반으로 문서 재구성]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="docusaurus-기반으로-문서-재구성">docusaurus 기반으로 문서 재구성<a href="https://your-docusaurus-site.example.com/cleanddd/blog/2024/03/23/docusaurus-page-%EC%9D%B4%ED%95%B4#docusaurus-%EA%B8%B0%EB%B0%98%EC%9C%BC%EB%A1%9C-%EB%AC%B8%EC%84%9C-%EC%9E%AC%EA%B5%AC%EC%84%B1" class="hash-link" aria-label="Direct link to docusaurus 기반으로 문서 재구성" title="Direct link to docusaurus 기반으로 문서 재구성">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="docusaurus-폴더-문서-이해">docusaurus 폴더 문서 이해<a href="https://your-docusaurus-site.example.com/cleanddd/blog/2024/03/23/docusaurus-page-%EC%9D%B4%ED%95%B4#docusaurus-%ED%8F%B4%EB%8D%94-%EB%AC%B8%EC%84%9C-%EC%9D%B4%ED%95%B4" class="hash-link" aria-label="Direct link to docusaurus 폴더 문서 이해" title="Direct link to docusaurus 폴더 문서 이해">​</a></h2>
+<ul>
+<li>사용자 정의: <code>README.mdx</code></li>
+<li>자동 생성: <code>_category_.json</code> -&gt; <code>"type": "generated-index"</code></li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="docusaurus-url-체계-이해">docusaurus URL 체계 이해<a href="https://your-docusaurus-site.example.com/cleanddd/blog/2024/03/23/docusaurus-page-%EC%9D%B4%ED%95%B4#docusaurus-url-%EC%B2%B4%EA%B3%84-%EC%9D%B4%ED%95%B4" class="hash-link" aria-label="Direct link to docusaurus URL 체계 이해" title="Direct link to docusaurus URL 체계 이해">​</a></h2>
+<ul>
+<li>폴더 이름에서 <code>숫자-</code>은 자동으로 제외된다.</li>
+<li><code>README.md</code>일 때 <code>폴더 이름</code>으로 URL을 생성한다</li>
+</ul>]]></content>
+        <category label="todo" term="todo"/>
+        <category label="docusaurus" term="docusaurus"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2024-03-21(목) Docusaurus 구축]]></title>
+        <id>https://your-docusaurus-site.example.com/cleanddd/blog/2024/03/21/docusaurus-구축</id>
+        <link href="https://your-docusaurus-site.example.com/cleanddd/blog/2024/03/21/docusaurus-구축"/>
+        <updated>2024-03-21T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[docusaurus 기반 문서 사이트 구축]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="docusaurus-기반-문서-사이트-구축">docusaurus 기반 문서 사이트 구축<a href="https://your-docusaurus-site.example.com/cleanddd/blog/2024/03/21/docusaurus-%EA%B5%AC%EC%B6%95#docusaurus-%EA%B8%B0%EB%B0%98-%EB%AC%B8%EC%84%9C-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EA%B5%AC%EC%B6%95" class="hash-link" aria-label="Direct link to docusaurus 기반 문서 사이트 구축" title="Direct link to docusaurus 기반 문서 사이트 구축">​</a></h2>
+<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">npm show create-docusaurus versions</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">npx --yes create-docusaurus@latest site classic --typescript</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">npx --yes create-docusaurus@3.1.1 site classic --typescript</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>]]></content>
+        <category label="todo" term="todo"/>
+        <category label="docusaurus" term="docusaurus"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Todo 테스트 자동화]]></title>
+        <id>https://your-docusaurus-site.example.com/cleanddd/blog/todo-test</id>
+        <link href="https://your-docusaurus-site.example.com/cleanddd/blog/todo-test"/>
+        <updated>2024-01-01T03:00:00.000Z</updated>
+        <summary type="html"><![CDATA[- [x] 코드 커버리지 Build.ps1]]></summary>
         <content type="html"><![CDATA[<ul class="contains-task-list containsTaskList_mC6p">
-<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->코드 커버리지</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->코드 커버리지 <code>Build.ps1</code></li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->코드 커버리지 <code>GitHub Actions</code></li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->코드 커버리지 이력 <code>Codecov</code></li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->코드 커버리지 Build.ps1 ?% 출력</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->아키텍처 테스트</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->BDD 시나리오 테스트</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->dotnet-stryker?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->mutation testing  dotnet-stryker?</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->단위 테스트</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->통합 테스트<!-- -->
 <ul class="contains-task-list containsTaskList_mC6p">
@@ -71,66 +95,86 @@
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Trace 테스트</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->의존성<!-- -->
 <ul class="contains-task-list containsTaskList_mC6p">
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->네트워크 |</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->네트워크 | WebApi</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->네트워크 | gRPC</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->네트워크 | FTP</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->데이터 저장소 | ileSystem</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->데이터 저장소 | FileSystem</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->데이터 저장소 | PostgreSQL</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->이벤트 브로커 | RabbitMQ</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->이벤트 브로커 | Kafka</li>
 </ul>
 </li>
 </ul>]]></content>
-        <author>
-            <name>고형호</name>
-        </author>
         <category label="todo" term="todo"/>
         <category label="test" term="test"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Todo]]></title>
-        <id>https://your-docusaurus-site.example.com/CleanDdd/blog/todo</id>
-        <link href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo"/>
-        <updated>2024-03-24T07:43:08.000Z</updated>
-        <summary type="html"><![CDATA[| 구분             | Host CI  | CI     | CI Badge | CI History | CI PR  | CD Release |]]></summary>
-        <content type="html"><![CDATA[<table><thead><tr><th>구분</th><th>Host CI</th><th>CI</th><th>CI Badge</th><th>CI History</th><th>CI PR</th><th>CD Release</th></tr></thead><tbody><tr><td><strong>빌드</strong></td><td>완료</td><td>완료</td><td>완료</td><td>-</td><td></td><td>-</td></tr><tr><td><strong>테스트</strong></td><td>완료</td><td>완료</td><td>-</td><td>-</td><td></td><td>-</td></tr><tr><td><strong>코드 커버리지</strong></td><td>완료</td><td>완료</td><td></td><td>완료</td><td></td><td></td></tr><tr><td><strong>코드 스타일</strong></td><td></td><td></td><td>-</td><td>-</td><td></td><td>-</td></tr><tr><td><strong>코드 매트릭</strong></td><td>개선</td><td></td><td>-</td><td>-</td><td></td><td></td></tr><tr><td><strong>코드 중복</strong></td><td></td><td></td><td>-</td><td>-</td><td></td><td></td></tr><tr><td><strong>코드 문서</strong></td><td>완료</td><td></td><td>-</td><td>-</td><td></td><td></td></tr><tr><td><strong>패키지</strong></td><td></td><td></td><td></td><td>-</td><td></td><td></td></tr><tr><td><strong>컨테이너</strong></td><td></td><td></td><td></td><td>-</td><td></td><td></td></tr></tbody></table>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="2024-03-23토">2024-03-23(토)<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo#2024-03-23%ED%86%A0" class="hash-link" aria-label="Direct link to 2024-03-23(토)" title="Direct link to 2024-03-23(토)">​</a></h2>
-<ul class="contains-task-list containsTaskList_mC6p">
-<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->docusaurus 기반으로 문서 재구성</li>
-<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->docusaurus 폴더 문서 이해<!-- -->
-<ul>
-<li>사용자 정의: <code>README.mdx</code></li>
-<li>자동 생성: <code>_category_.json</code> -&gt; <code>"type": "generated-index"</code></li>
-</ul>
-</li>
-<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->docusaurus URL 체계 이해<!-- -->
-<ul>
-<li>폴더 이름에서 <code>숫자-</code>은 자동으로 제외된다.</li>
-<li><code>README.md</code>일 때 <code>폴더 이름</code>으로 URL을 생성한다</li>
-</ul>
-</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="2024-03-21목">2024-03-21(목)<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo#2024-03-21%EB%AA%A9" class="hash-link" aria-label="Direct link to 2024-03-21(목)" title="Direct link to 2024-03-21(목)">​</a></h2>
-<ul class="contains-task-list containsTaskList_mC6p">
-<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->docusaurus 기반 문서 사이트 구축</li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="todo">TODO<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo#todo" class="hash-link" aria-label="Direct link to TODO" title="Direct link to TODO">​</a></h2>
-<ul class="contains-task-list containsTaskList_mC6p">
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->docusaurus GitHub Actions 연동</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->docusaurus GitHub Pages?</li>
+        <title type="html"><![CDATA[Todo 도메인 주도 설계]]></title>
+        <id>https://your-docusaurus-site.example.com/cleanddd/blog/todo-ddd</id>
+        <link href="https://your-docusaurus-site.example.com/cleanddd/blog/todo-ddd"/>
+        <updated>2024-01-01T02:00:00.000Z</updated>
+        <summary type="html"><![CDATA[- [ ] 프로그램 설정]]></summary>
+        <content type="html"><![CDATA[<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->프로그램 설정</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->DI</li>
 </ul>
 <hr>
 <ul class="contains-task-list containsTaskList_mC6p">
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->docusaurus blog 페이지</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->docusaurus PDF</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->docusaurus 이미지 확대</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->docusaurus 버전</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->docusaurus 다국어</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->docusaurus 한국어 검색</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->docusaurus 소스 바로보기?</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->docusaurus GitHub 연동(바로 수정하기)?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->결과 타입 | Result</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->결과 타입 | Error</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->결과 타입 | ValidationResult</li>
 </ul>
+<hr>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Domain 타입 | ValueObject</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Domain 타입 | Enum</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Domain 타입 | Entity</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Domain 타입 | AggregateRoot</li>
+</ul>
+<hr>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->WebApi Background 서비스</li>
+</ul>]]></content>
+        <category label="todo" term="todo"/>
+        <category label="ddd" term="ddd"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Todo 문서화]]></title>
+        <id>https://your-docusaurus-site.example.com/cleanddd/blog/todo-docs</id>
+        <link href="https://your-docusaurus-site.example.com/cleanddd/blog/todo-docs"/>
+        <updated>2024-01-01T01:00:00.000Z</updated>
+        <summary type="html"><![CDATA[- [X] 특정 버전 사이트 생성]]></summary>
+        <content type="html"><![CDATA[<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->특정 버전 사이트 생성</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->docs 메뉴 생성 <code>_category_.json</code></li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->docs 페이지 생성 <code>sidebar_position</code></li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->docs 페이지를 위한 폴더 구성 <code>숫자-폴더 이름</code></li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->GitHub Actions 연동</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->BaseUrl 이해</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->docusaurus blog 문서 순서</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Blog 페이지 Count 증가시?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->GitHub 페이지 바로 편집</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->버전</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->다국어</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->한국어 검색 Web</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->한국어 검색 Host</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->시작 페이지</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->이미지 확대</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->소스 바로보기?</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->PDF</li>
+</ul>]]></content>
+        <category label="todo" term="todo"/>
+        <category label="docs" term="docs"/>
+        <category label="docusaurus" term="docusaurus"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Todo]]></title>
+        <id>https://your-docusaurus-site.example.com/cleanddd/blog/todo</id>
+        <link href="https://your-docusaurus-site.example.com/cleanddd/blog/todo"/>
+        <updated>2024-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[| 구분             | Host CI  | CI     | CI Badge | CI History | CI PR  | CD Release | CD Deployment  |]]></summary>
+        <content type="html"><![CDATA[<table><thead><tr><th>구분</th><th>Host CI</th><th>CI</th><th>CI Badge</th><th>CI History</th><th>CI PR</th><th>CD Release</th><th>CD Deployment</th></tr></thead><tbody><tr><td><strong>빌드</strong></td><td>완료</td><td>완료</td><td>완료</td><td>-</td><td></td><td>-</td><td></td></tr><tr><td><strong>테스트</strong></td><td>완료</td><td>완료</td><td>-</td><td>-</td><td></td><td>-</td><td></td></tr><tr><td><strong>코드 커버리지</strong></td><td>완료</td><td>완료</td><td></td><td>완료</td><td></td><td></td><td></td></tr><tr><td><strong>코드 스타일</strong></td><td></td><td></td><td>-</td><td>-</td><td></td><td>-</td><td></td></tr><tr><td><strong>코드 매트릭</strong></td><td>개선</td><td></td><td>-</td><td>-</td><td></td><td></td><td></td></tr><tr><td><strong>코드 중복</strong></td><td></td><td></td><td>-</td><td>-</td><td></td><td></td><td></td></tr><tr><td><strong>코드 문서</strong></td><td>완료</td><td>완료</td><td>-</td><td>-</td><td></td><td>-</td><td>완료(GitHug Page)</td></tr><tr><td><strong>패키지</strong></td><td></td><td></td><td></td><td>-</td><td></td><td></td><td></td></tr><tr><td><strong>컨테이너</strong></td><td></td><td></td><td></td><td>-</td><td></td><td></td><td></td></tr></tbody></table>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="todo">TODO<a href="https://your-docusaurus-site.example.com/cleanddd/blog/todo#todo" class="hash-link" aria-label="Direct link to TODO" title="Direct link to TODO">​</a></h2>
 <hr>
 <ul class="contains-task-list containsTaskList_mC6p">
 <li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->패키지 GitHub 읽기<!-- -->
@@ -231,26 +275,26 @@
 <li>GitHub 컨테이너 배포</li>
 </ul>
 <br>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="코딩-스타일">코딩 스타일<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo#%EC%BD%94%EB%94%A9-%EC%8A%A4%ED%83%80%EC%9D%BC" class="hash-link" aria-label="Direct link to 코딩 스타일" title="Direct link to 코딩 스타일">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="코딩-스타일">코딩 스타일<a href="https://your-docusaurus-site.example.com/cleanddd/blog/todo#%EC%BD%94%EB%94%A9-%EC%8A%A4%ED%83%80%EC%9D%BC" class="hash-link" aria-label="Direct link to 코딩 스타일" title="Direct link to 코딩 스타일">​</a></h2>
 <ul class="contains-task-list containsTaskList_mC6p">
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://hackernoon.com/how-to-use-common-editorconfig-as-a-nuget-package" target="_blank" rel="noopener noreferrer">https://hackernoon.com/how-to-use-common-editorconfig-as-a-nuget-package</a></li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://devzone.channeladam.com/notebooks/languages/dotnet/editorconfig-distribution/?ref=hackernoon.com" target="_blank" rel="noopener noreferrer">https://devzone.channeladam.com/notebooks/languages/dotnet/editorconfig-distribution/?ref=hackernoon.com</a></li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://github.com/thomasgalliker/Superdev.Editorconfig/tree/develop" target="_blank" rel="noopener noreferrer">https://github.com/thomasgalliker/Superdev.Editorconfig/tree/develop</a></li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="dotnet-템플릿">dotnet 템플릿<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo#dotnet-%ED%85%9C%ED%94%8C%EB%A6%BF" class="hash-link" aria-label="Direct link to dotnet 템플릿" title="Direct link to dotnet 템플릿">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="dotnet-템플릿">dotnet 템플릿<a href="https://your-docusaurus-site.example.com/cleanddd/blog/todo#dotnet-%ED%85%9C%ED%94%8C%EB%A6%BF" class="hash-link" aria-label="Direct link to dotnet 템플릿" title="Direct link to dotnet 템플릿">​</a></h2>
 <div class="language-shell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-shell codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">dotnet new install .\</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">dotnet new uninstall</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="참고-자료">참고 자료<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo#%EC%B0%B8%EA%B3%A0-%EC%9E%90%EB%A3%8C" class="hash-link" aria-label="Direct link to 참고 자료" title="Direct link to 참고 자료">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="참고-자료">참고 자료<a href="https://your-docusaurus-site.example.com/cleanddd/blog/todo#%EC%B0%B8%EA%B3%A0-%EC%9E%90%EB%A3%8C" class="hash-link" aria-label="Direct link to 참고 자료" title="Direct link to 참고 자료">​</a></h3>
 <ul class="contains-task-list containsTaskList_mC6p">
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://github.com/dotnet/templating/wiki" target="_blank" rel="noopener noreferrer">https://github.com/dotnet/templating/wiki</a></li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://devblogs.microsoft.com/dotnet/how-to-create-your-own-templates-for-dotnet-new/" target="_blank" rel="noopener noreferrer">https://devblogs.microsoft.com/dotnet/how-to-create-your-own-templates-for-dotnet-new/</a></li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://learn.microsoft.com/en-us/dotnet/core/tutorials/cli-templates-create-project-template" target="_blank" rel="noopener noreferrer">https://learn.microsoft.com/en-us/dotnet/core/tutorials/cli-templates-create-project-template</a></li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="참고-동영상">참고 동영상<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo#%EC%B0%B8%EA%B3%A0-%EB%8F%99%EC%98%81%EC%83%81" class="hash-link" aria-label="Direct link to 참고 동영상" title="Direct link to 참고 동영상">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="참고-동영상">참고 동영상<a href="https://your-docusaurus-site.example.com/cleanddd/blog/todo#%EC%B0%B8%EA%B3%A0-%EB%8F%99%EC%98%81%EC%83%81" class="hash-link" aria-label="Direct link to 참고 동영상" title="Direct link to 참고 동영상">​</a></h3>
 <ul class="contains-task-list containsTaskList_mC6p">
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://www.youtube.com/watch?v=GDNcxU0_OuE" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=GDNcxU0_OuE</a></li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://www.youtube.com/watch?v=3QBL5bWlOPw" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=3QBL5bWlOPw</a></li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="참고-저장소">참고 저장소<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo#%EC%B0%B8%EA%B3%A0-%EC%A0%80%EC%9E%A5%EC%86%8C" class="hash-link" aria-label="Direct link to 참고 저장소" title="Direct link to 참고 저장소">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="참고-저장소">참고 저장소<a href="https://your-docusaurus-site.example.com/cleanddd/blog/todo#%EC%B0%B8%EA%B3%A0-%EC%A0%80%EC%9E%A5%EC%86%8C" class="hash-link" aria-label="Direct link to 참고 저장소" title="Direct link to 참고 저장소">​</a></h3>
 <ul class="contains-task-list containsTaskList_mC6p">
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://github.com/sayedihashimi/dotnet-new-samples" target="_blank" rel="noopener noreferrer">https://github.com/sayedihashimi/dotnet-new-samples</a></li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://github.com/sayedihashimi/template-sample" target="_blank" rel="noopener noreferrer">https://github.com/sayedihashimi/template-sample</a></li>
@@ -260,8 +304,8 @@
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://devblogs.microsoft.com/dotnet/how-to-create-your-own-templates-for-dotnet-new/" target="_blank" rel="noopener noreferrer">https://devblogs.microsoft.com/dotnet/how-to-create-your-own-templates-for-dotnet-new/</a></li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://github.com/onelioubov/DotnetTemplateDemo" target="_blank" rel="noopener noreferrer">https://github.com/onelioubov/DotnetTemplateDemo</a></li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="아키텍처">아키텍처<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo#%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98" class="hash-link" aria-label="Direct link to 아키텍처" title="Direct link to 아키텍처">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="템플릿-이해">템플릿 이해<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo#%ED%85%9C%ED%94%8C%EB%A6%BF-%EC%9D%B4%ED%95%B4" class="hash-link" aria-label="Direct link to 템플릿 이해" title="Direct link to 템플릿 이해">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="아키텍처">아키텍처<a href="https://your-docusaurus-site.example.com/cleanddd/blog/todo#%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98" class="hash-link" aria-label="Direct link to 아키텍처" title="Direct link to 아키텍처">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="템플릿-이해">템플릿 이해<a href="https://your-docusaurus-site.example.com/cleanddd/blog/todo#%ED%85%9C%ED%94%8C%EB%A6%BF-%EC%9D%B4%ED%95%B4" class="hash-link" aria-label="Direct link to 템플릿 이해" title="Direct link to 템플릿 이해">​</a></h3>
 <ul class="contains-task-list containsTaskList_mC6p">
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://github.com/matthewrenze/clean-architecture-demo" target="_blank" rel="noopener noreferrer">clean-architecture-demo/repo-and-uow</a></li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://github.com/jasontaylordev/CleanArchitecture/" target="_blank" rel="noopener noreferrer">jasontaylordev/CleanArchitecture</a></li>
@@ -270,12 +314,12 @@
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://github.com/fullstackhero/dotnet-webapi-starter-kit" target="_blank" rel="noopener noreferrer">fullstackhero/dotnet-webapi-starter-kit</a></li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://github.com/dotnet-architecture/eShopOnWeb" target="_blank" rel="noopener noreferrer">eShopOnWeb</a></li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ddd-학습">DDD 학습<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo#ddd-%ED%95%99%EC%8A%B5" class="hash-link" aria-label="Direct link to DDD 학습" title="Direct link to DDD 학습">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="ddd-학습">DDD 학습<a href="https://your-docusaurus-site.example.com/cleanddd/blog/todo#ddd-%ED%95%99%EC%8A%B5" class="hash-link" aria-label="Direct link to DDD 학습" title="Direct link to DDD 학습">​</a></h3>
 <ul class="contains-task-list containsTaskList_mC6p">
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://github.com/ardalis/DDD-NoDuplicates/tree/master" target="_blank" rel="noopener noreferrer">DDD-NoDuplicates</a></li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://github.com/VaughnVernon/IDDD_Samples_NET" target="_blank" rel="noopener noreferrer">iDDD</a></li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="템플릿-변환">템플릿 변환<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo#%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%B3%80%ED%99%98" class="hash-link" aria-label="Direct link to 템플릿 변환" title="Direct link to 템플릿 변환">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="템플릿-변환">템플릿 변환<a href="https://your-docusaurus-site.example.com/cleanddd/blog/todo#%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%B3%80%ED%99%98" class="hash-link" aria-label="Direct link to 템플릿 변환" title="Direct link to 템플릿 변환">​</a></h3>
 <ul class="contains-task-list containsTaskList_mC6p">
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://github.com/jasontaylordev/CleanArchitecture/" target="_blank" rel="noopener noreferrer">jasontaylordev/CleanArchitecture</a></li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://github.com/ardalis/CleanArchitecture/" target="_blank" rel="noopener noreferrer">ardalis/CleanArchitecture</a></li>
@@ -283,12 +327,12 @@
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://github.com/fullstackhero/dotnet-webapi-starter-kit" target="_blank" rel="noopener noreferrer">fullstackhero/dotnet-webapi-starter-kit</a></li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://github.com/dotnet-architecture/eShopOnWeb" target="_blank" rel="noopener noreferrer">eShopOnWeb</a></li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="문서">문서<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo#%EB%AC%B8%EC%84%9C" class="hash-link" aria-label="Direct link to 문서" title="Direct link to 문서">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="테스트">테스트<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo#%ED%85%8C%EC%8A%A4%ED%8A%B8" class="hash-link" aria-label="Direct link to 테스트" title="Direct link to 테스트">​</a></h3>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="문서">문서<a href="https://your-docusaurus-site.example.com/cleanddd/blog/todo#%EB%AC%B8%EC%84%9C" class="hash-link" aria-label="Direct link to 문서" title="Direct link to 문서">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="테스트">테스트<a href="https://your-docusaurus-site.example.com/cleanddd/blog/todo#%ED%85%8C%EC%8A%A4%ED%8A%B8" class="hash-link" aria-label="Direct link to 테스트" title="Direct link to 테스트">​</a></h3>
 <ul class="contains-task-list containsTaskList_mC6p">
 <li class="task-list-item"><input type="checkbox" disabled="" checked=""> <a href="https://semaphoreci.com/blog/testing-pyramid" target="_blank" rel="noopener noreferrer">The Testing Pyramid: How to Structure Your Test Suite</a></li>
 </ul>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="설계">설계<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo#%EC%84%A4%EA%B3%84" class="hash-link" aria-label="Direct link to 설계" title="Direct link to 설계">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="설계">설계<a href="https://your-docusaurus-site.example.com/cleanddd/blog/todo#%EC%84%A4%EA%B3%84" class="hash-link" aria-label="Direct link to 설계" title="Direct link to 설계">​</a></h3>
 <ul class="contains-task-list containsTaskList_mC6p">
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://fsharpforfunandprofit.com/series/designing-with-types/" target="_blank" rel="noopener noreferrer">designing-with-types</a></li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://enterprisecraftsmanship.com/posts/nesting-value-object-inside-entity/" target="_blank" rel="noopener noreferrer">Nesting a Value Object inside an Entity</a></li>
@@ -301,7 +345,7 @@
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://tech.osci.kr/hexagonal-architecture/" target="_blank" rel="noopener noreferrer">헥사고날 아키텍처(Hexagonal Architecture) : 유연하고 확장 가능한 소프트웨어 디자인 </a></li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://mesh.dev/20210910-dev-notes-007-hexagonal-architecture/" target="_blank" rel="noopener noreferrer">헥사고날(Hexagonal) 아키텍처 in 메쉬코리아</a></li>
 </ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="목차">목차<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo#%EB%AA%A9%EC%B0%A8" class="hash-link" aria-label="Direct link to 목차" title="Direct link to 목차">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="목차">목차<a href="https://your-docusaurus-site.example.com/cleanddd/blog/todo#%EB%AA%A9%EC%B0%A8" class="hash-link" aria-label="Direct link to 목차" title="Direct link to 목차">​</a></h2>
 <ul>
 <li>솔루션 구성<!-- -->
 <ul>
@@ -411,135 +455,6 @@
 </li>
 </ul>
 <div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">GitHub → User → Settings → Developer settings</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Personal access tokens → Tokens (classic)</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">  [Generate new token]</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    Note: GITHUB_TOKEN</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    Expiration: No expiration</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    write:packages</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    read:packages</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>]]></content>
-        <author>
-            <name>고형호</name>
-        </author>
         <category label="todo" term="todo"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[2024-03-23(토)]]></title>
-        <id>https://your-docusaurus-site.example.com/CleanDdd/blog/todo-2024-03-23</id>
-        <link href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo-2024-03-23"/>
-        <updated>2023-03-23T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[docusaurus 기반으로 문서 재구성]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="docusaurus-기반으로-문서-재구성">docusaurus 기반으로 문서 재구성<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo-2024-03-23#docusaurus-%EA%B8%B0%EB%B0%98%EC%9C%BC%EB%A1%9C-%EB%AC%B8%EC%84%9C-%EC%9E%AC%EA%B5%AC%EC%84%B1" class="hash-link" aria-label="Direct link to docusaurus 기반으로 문서 재구성" title="Direct link to docusaurus 기반으로 문서 재구성">​</a></h2>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="docusaurus-폴더-문서-이해">docusaurus 폴더 문서 이해<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo-2024-03-23#docusaurus-%ED%8F%B4%EB%8D%94-%EB%AC%B8%EC%84%9C-%EC%9D%B4%ED%95%B4" class="hash-link" aria-label="Direct link to docusaurus 폴더 문서 이해" title="Direct link to docusaurus 폴더 문서 이해">​</a></h2>
-<ul>
-<li>사용자 정의: <code>README.mdx</code></li>
-<li>자동 생성: <code>_category_.json</code> -&gt; <code>"type": "generated-index"</code></li>
-</ul>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="docusaurus-url-체계-이해">docusaurus URL 체계 이해<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo-2024-03-23#docusaurus-url-%EC%B2%B4%EA%B3%84-%EC%9D%B4%ED%95%B4" class="hash-link" aria-label="Direct link to docusaurus URL 체계 이해" title="Direct link to docusaurus URL 체계 이해">​</a></h2>
-<ul>
-<li>폴더 이름에서 <code>숫자-</code>은 자동으로 제외된다.</li>
-<li><code>README.md</code>일 때 <code>폴더 이름</code>으로 URL을 생성한다</li>
-</ul>]]></content>
-        <author>
-            <name>고형호</name>
-        </author>
-        <category label="todo" term="todo"/>
-        <category label="docusaurus" term="docusaurus"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[2024-03-21(목)]]></title>
-        <id>https://your-docusaurus-site.example.com/CleanDdd/blog/todo-2024-03-21</id>
-        <link href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo-2024-03-21"/>
-        <updated>2023-03-21T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[docusaurus 기반 문서 사이트 구축]]></summary>
-        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="docusaurus-기반-문서-사이트-구축">docusaurus 기반 문서 사이트 구축<a href="https://your-docusaurus-site.example.com/CleanDdd/blog/todo-2024-03-21#docusaurus-%EA%B8%B0%EB%B0%98-%EB%AC%B8%EC%84%9C-%EC%82%AC%EC%9D%B4%ED%8A%B8-%EA%B5%AC%EC%B6%95" class="hash-link" aria-label="Direct link to docusaurus 기반 문서 사이트 구축" title="Direct link to docusaurus 기반 문서 사이트 구축">​</a></h2>
-<div class="codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">npm show create-docusaurus versions</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">npx --yes create-docusaurus@latest site classic --typescript</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">npx --yes create-docusaurus@3.1.1 site classic --typescript</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>]]></content>
-        <author>
-            <name>고형호</name>
-        </author>
-        <category label="todo" term="todo"/>
-        <category label="docusaurus" term="docusaurus"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Welcome]]></title>
-        <id>https://your-docusaurus-site.example.com/CleanDdd/blog/welcome</id>
-        <link href="https://your-docusaurus-site.example.com/CleanDdd/blog/welcome"/>
-        <updated>2021-08-26T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Docusaurus blogging features are powered by the blog plugin.]]></summary>
-        <content type="html"><![CDATA[<p><a href="https://docusaurus.io/docs/blog" target="_blank" rel="noopener noreferrer">Docusaurus blogging features</a> are powered by the <a href="https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog" target="_blank" rel="noopener noreferrer">blog plugin</a>.</p>
-<p>Simply add Markdown files (or folders) to the <code>blog</code> directory.</p>
-<p>Regular blog authors can be added to <code>authors.yml</code>.</p>
-<p>The blog post date can be extracted from filenames, such as:</p>
-<ul>
-<li><code>2019-05-30-welcome.md</code></li>
-<li><code>2019-05-30-welcome/index.md</code></li>
-</ul>
-<p>A blog post folder can be convenient to co-locate blog post images:</p>
-<p><img decoding="async" loading="lazy" alt="Docusaurus Plushie" src="https://your-docusaurus-site.example.com/CleanDdd/assets/images/docusaurus-plushie-banner-a60f7593abca1e3eef26a9afa244e4fb.jpeg" width="1500" height="500" class="img_ev3q"></p>
-<p>The blog supports tags as well!</p>
-<p><strong>And if you don't want a blog</strong>: just delete this directory, and use <code>blog: false</code> in your Docusaurus config.</p>]]></content>
-        <author>
-            <name>Sébastien Lorber</name>
-            <uri>https://sebastienlorber.com</uri>
-        </author>
-        <author>
-            <name>Yangshun Tay</name>
-            <uri>https://github.com/yangshun</uri>
-        </author>
-        <category label="facebook" term="facebook"/>
-        <category label="hello" term="hello"/>
-        <category label="docusaurus" term="docusaurus"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[MDX Blog Post]]></title>
-        <id>https://your-docusaurus-site.example.com/CleanDdd/blog/mdx-blog-post</id>
-        <link href="https://your-docusaurus-site.example.com/CleanDdd/blog/mdx-blog-post"/>
-        <updated>2021-08-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Blog posts support Docusaurus Markdown features, such as MDX.]]></summary>
-        <content type="html"><![CDATA[<p>Blog posts support <a href="https://docusaurus.io/docs/markdown-features" target="_blank" rel="noopener noreferrer">Docusaurus Markdown features</a>, such as <a href="https://mdxjs.com/" target="_blank" rel="noopener noreferrer">MDX</a>.</p>
-<div class="theme-admonition theme-admonition-tip admonition_xJq3 alert alert--success"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</div><div class="admonitionContent_BuS1"><p>Use the power of React to create interactive blog posts.</p><div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token operator" style="color:#393A34">&lt;</span><span class="token plain">button onClick</span><span class="token operator" style="color:#393A34">=</span><span class="token punctuation" style="color:#393A34">{</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token arrow operator" style="color:#393A34">=&gt;</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">alert</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">'button clicked!'</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">}</span><span class="token operator" style="color:#393A34">&gt;</span><span class="token maybe-class-name">Click</span><span class="token plain"> me</span><span class="token operator" style="color:#393A34">!</span><span class="token operator" style="color:#393A34">&lt;</span><span class="token operator" style="color:#393A34">/</span><span class="token plain">button</span><span class="token operator" style="color:#393A34">&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><button>Click me!</button></div></div>]]></content>
-        <author>
-            <name>Sébastien Lorber</name>
-            <uri>https://sebastienlorber.com</uri>
-        </author>
-        <category label="docusaurus" term="docusaurus"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Long Blog Post]]></title>
-        <id>https://your-docusaurus-site.example.com/CleanDdd/blog/long-blog-post</id>
-        <link href="https://your-docusaurus-site.example.com/CleanDdd/blog/long-blog-post"/>
-        <updated>2019-05-29T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[This is the summary of a very long blog post,]]></summary>
-        <content type="html"><![CDATA[<p>This is the summary of a very long blog post,</p>
-<p>Use a <code>&lt;!--</code> <code>truncate</code> <code>--&gt;</code> comment to limit blog post size in the list view.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content>
-        <author>
-            <name>Endilie Yacop Sucipto</name>
-            <uri>https://github.com/endiliey</uri>
-        </author>
-        <category label="hello" term="hello"/>
-        <category label="docusaurus" term="docusaurus"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[First Blog Post]]></title>
-        <id>https://your-docusaurus-site.example.com/CleanDdd/blog/first-blog-post</id>
-        <link href="https://your-docusaurus-site.example.com/CleanDdd/blog/first-blog-post"/>
-        <updated>2019-05-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet]]></summary>
-        <content type="html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content>
-        <author>
-            <name>Gao Wei</name>
-            <uri>https://github.com/wgao19</uri>
-        </author>
-        <category label="hola" term="hola"/>
-        <category label="docusaurus" term="docusaurus"/>
     </entry>
 </feed>
