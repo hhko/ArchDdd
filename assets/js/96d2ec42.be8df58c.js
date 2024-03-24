@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[3334],{8376:s=>{s.exports=JSON.parse('{"label":"github-actions","permalink":"/cleanddd/blog/tags/github-actions","allTagsPath":"/cleanddd/blog/tags","count":1,"unlisted":false}')}}]);

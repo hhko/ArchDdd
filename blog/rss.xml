@@ -21,8 +21,11 @@
 <li>관련 문서 변경<!-- -->
 <ul>
 <li>nuspec</li>
+<li>template.json</li>
 </ul>
 </li>
+<li>바닥글 정리</li>
+<li>페이지 변경할 때 GitHub 연동</li>
 </ul>]]></content:encoded>
             <category>todo</category>
             <category>docusaurus</category>
@@ -62,7 +65,7 @@
             <title><![CDATA[Todo 테스트 자동화]]></title>
             <link>https://your-docusaurus-site.example.com/cleanddd/blog/todo-test</link>
             <guid>https://your-docusaurus-site.example.com/cleanddd/blog/todo-test</guid>
-            <pubDate>Mon, 01 Jan 2024 03:00:00 GMT</pubDate>
+            <pubDate>Mon, 01 Jan 2024 04:00:00 GMT</pubDate>
             <description><![CDATA[- [x] 코드 커버리지 Build.ps1]]></description>
             <content:encoded><![CDATA[<ul class="contains-task-list containsTaskList_mC6p">
 <li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->코드 커버리지 <code>Build.ps1</code></li>
@@ -113,7 +116,7 @@
             <title><![CDATA[Todo 도메인 주도 설계]]></title>
             <link>https://your-docusaurus-site.example.com/cleanddd/blog/todo-ddd</link>
             <guid>https://your-docusaurus-site.example.com/cleanddd/blog/todo-ddd</guid>
-            <pubDate>Mon, 01 Jan 2024 02:00:00 GMT</pubDate>
+            <pubDate>Mon, 01 Jan 2024 03:00:00 GMT</pubDate>
             <description><![CDATA[- [ ] 프로그램 설정]]></description>
             <content:encoded><![CDATA[<ul class="contains-task-list containsTaskList_mC6p">
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->프로그램 설정</li>
@@ -130,7 +133,15 @@
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Domain 타입 | ValueObject</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Domain 타입 | Enum</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Domain 타입 | Entity</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Doamin 타입 | (Domain Service)</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Domain 타입 | AggregateRoot</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Domain 타입 | Domain Event</li>
+</ul>
+<hr>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->DTO</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Validation</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Specification Pattern</li>
 </ul>
 <hr>
 <ul class="contains-task-list containsTaskList_mC6p">
@@ -138,6 +149,39 @@
 </ul>]]></content:encoded>
             <category>todo</category>
             <category>ddd</category>
+        </item>
+        <item>
+            <title><![CDATA[Todo GitHub Actions]]></title>
+            <link>https://your-docusaurus-site.example.com/cleanddd/blog/todo-github-actions</link>
+            <guid>https://your-docusaurus-site.example.com/cleanddd/blog/todo-github-actions</guid>
+            <pubDate>Mon, 01 Jan 2024 02:00:00 GMT</pubDate>
+            <description><![CDATA[- [X] 제외]]></description>
+            <content:encoded><![CDATA[<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->제외</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->pull-request</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->빌드</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->테스트</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->테스트 보고서</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->코드 커버리지 파일 통합</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->코드 커버리지 보고서</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->코드 커버리지 보고서 GitHub Summary</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->코드 커버리지 Artifact</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->코드 커버리지 Codecov</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->문서 GitHub Pages 배포</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->GitHub Packages 읽기<!-- -->
+<ul>
+<li><a href="https://www.dotnetcurry.com/dotnetcore/custom-dotnet-code-github-actions" target="_blank" rel="noopener noreferrer">https://www.dotnetcurry.com/dotnetcore/custom-dotnet-code-github-actions</a></li>
+</ul>
+</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->GitHub Packages 배포</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->도커 컨테이너 배포<!-- -->
+<ul>
+<li><a href="https://laurentkempe.com/2023/10/30/publish-dotnet-docker-images-using-dotnet-sdk-and-github-actions/" target="_blank" rel="noopener noreferrer">Publish .NET Docker images using .NET SDK and GitHub Actions</a></li>
+</ul>
+</li>
+</ul>]]></content:encoded>
+            <category>todo</category>
+            <category>github-actions</category>
         </item>
         <item>
             <title><![CDATA[Todo 문서화]]></title>
@@ -149,17 +193,21 @@
 <li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->특정 버전 사이트 생성</li>
 <li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->docs 메뉴 생성 <code>_category_.json</code></li>
 <li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->docs 페이지 생성 <code>sidebar_position</code></li>
-<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->docs 페이지를 위한 폴더 구성 <code>숫자-폴더 이름</code></li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->docs 폴더 페이지이지를 위한 폴더 구성 <code>숫자-폴더 이름</code></li>
 <li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->GitHub Actions 연동</li>
 <li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->BaseUrl 이해</li>
-<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->docusaurus blog 문서 순서</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->blog 문서 순서 이해</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->바닥글</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->GitHub 페이지 바로 편집</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->시작 페이지 타이틀 배경 색상</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->docs 폴더 이름 변경</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->blog 폴더 이름 변경</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->시작 페이지 3개 키워드</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Blog 페이지 Count 증가시?</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->GitHub 페이지 바로 편집</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->버전</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->다국어</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->한국어 검색 Web</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->한국어 검색 Host</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->시작 페이지</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->이미지 확대</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->소스 바로보기?</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->PDF</li>
@@ -173,16 +221,10 @@
             <link>https://your-docusaurus-site.example.com/cleanddd/blog/todo</link>
             <guid>https://your-docusaurus-site.example.com/cleanddd/blog/todo</guid>
             <pubDate>Mon, 01 Jan 2024 00:00:00 GMT</pubDate>
-            <description><![CDATA[| 구분             | Host CI  | CI     | CI Badge | CI History | CI PR  | CD Release | CD Deployment  |]]></description>
-            <content:encoded><![CDATA[<table><thead><tr><th>구분</th><th>Host CI</th><th>CI</th><th>CI Badge</th><th>CI History</th><th>CI PR</th><th>CD Release</th><th>CD Deployment</th></tr></thead><tbody><tr><td><strong>빌드</strong></td><td>완료</td><td>완료</td><td>완료</td><td>-</td><td></td><td>-</td><td></td></tr><tr><td><strong>테스트</strong></td><td>완료</td><td>완료</td><td>-</td><td>-</td><td></td><td>-</td><td></td></tr><tr><td><strong>코드 커버리지</strong></td><td>완료</td><td>완료</td><td></td><td>완료</td><td></td><td></td><td></td></tr><tr><td><strong>코드 스타일</strong></td><td></td><td></td><td>-</td><td>-</td><td></td><td>-</td><td></td></tr><tr><td><strong>코드 매트릭</strong></td><td>개선</td><td></td><td>-</td><td>-</td><td></td><td></td><td></td></tr><tr><td><strong>코드 중복</strong></td><td></td><td></td><td>-</td><td>-</td><td></td><td></td><td></td></tr><tr><td><strong>코드 문서</strong></td><td>완료</td><td>완료</td><td>-</td><td>-</td><td></td><td>-</td><td>완료(GitHug Page)</td></tr><tr><td><strong>패키지</strong></td><td></td><td></td><td></td><td>-</td><td></td><td></td><td></td></tr><tr><td><strong>컨테이너</strong></td><td></td><td></td><td></td><td>-</td><td></td><td></td><td></td></tr></tbody></table>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="todo">TODO<a href="https://your-docusaurus-site.example.com/cleanddd/blog/todo#todo" class="hash-link" aria-label="Direct link to TODO" title="Direct link to TODO">​</a></h2>
+            <description><![CDATA[TODO]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="todo">TODO<a href="https://your-docusaurus-site.example.com/cleanddd/blog/todo#todo" class="hash-link" aria-label="Direct link to TODO" title="Direct link to TODO">​</a></h2>
 <hr>
 <ul class="contains-task-list containsTaskList_mC6p">
-<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->패키지 GitHub 읽기<!-- -->
-<ul>
-<li><a href="https://www.dotnetcurry.com/dotnetcore/custom-dotnet-code-github-actions" target="_blank" rel="noopener noreferrer">https://www.dotnetcurry.com/dotnetcore/custom-dotnet-code-github-actions</a></li>
-</ul>
-</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->패키지 GitHub Actions</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->dotnet tool install ... by GitHub Registry</li>
 </ul>
@@ -329,7 +371,7 @@
 <li class="task-list-item"><input type="checkbox" disabled=""> <a href="https://github.com/dotnet-architecture/eShopOnWeb" target="_blank" rel="noopener noreferrer">eShopOnWeb</a></li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="문서">문서<a href="https://your-docusaurus-site.example.com/cleanddd/blog/todo#%EB%AC%B8%EC%84%9C" class="hash-link" aria-label="Direct link to 문서" title="Direct link to 문서">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="테스트">테스트<a href="https://your-docusaurus-site.example.com/cleanddd/blog/todo#%ED%85%8C%EC%8A%A4%ED%8A%B8" class="hash-link" aria-label="Direct link to 테스트" title="Direct link to 테스트">​</a></h3>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="테스트">테스트<a href="https://your-docusaurus-site.example.com/cleanddd/blog/todo#%ED%85%8C%EC%8A%A4%ED%8A%B8" class="hash-link" aria-label="Direct link to 테스�트" title="Direct link to 테스트">​</a></h3>
 <ul class="contains-task-list containsTaskList_mC6p">
 <li class="task-list-item"><input type="checkbox" disabled="" checked=""> <a href="https://semaphoreci.com/blog/testing-pyramid" target="_blank" rel="noopener noreferrer">The Testing Pyramid: How to Structure Your Test Suite</a></li>
 </ul>
