@@ -28,7 +28,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: '실전',
+    title: '실력',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
