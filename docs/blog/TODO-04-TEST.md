@@ -10,6 +10,8 @@ tags: [todo, test]
 - [x] 코드 커버리지 이력 `Codecov`
 - [ ] 코드 커버리지 Build.ps1 ?% 출력
 - [ ] 아키텍처 테스트
+  - [x] 의존성 테스트: `HaveDependencyOnAny` vs `HaveDependencyOnAll`
+  - [ ] 네이밍
 - [ ] BDD 시나리오 테스트
 - [ ] mutation testing  dotnet-stryker?
 - [ ] 단위 테스트

@@ -1,5 +1,3 @@
-using FluentAssertions;
-
 namespace CleanDdd.Tests.Unit;
 
 public class UnitTest1

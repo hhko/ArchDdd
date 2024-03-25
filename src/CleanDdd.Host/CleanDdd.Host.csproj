@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CleanDdd.Adapters.Persistence\CleanDdd.Adapters.Persistence.csproj" />
     <ProjectReference Include="..\CleanDdd.Adapters.Presentation\CleanDdd.Adapters.Presentation.csproj" />
+    <ProjectReference Include="..\CleanDdd.Domain\CleanDdd.Domain.csproj" />
   </ItemGroup>
 
 </Project>

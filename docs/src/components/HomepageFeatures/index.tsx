@@ -23,7 +23,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        런타임 관점(객체지향)에서 코드를 설계한다.
+        런타임(객체) 관점으로 코드 설계를 논한다.
       </>
     ),
   },

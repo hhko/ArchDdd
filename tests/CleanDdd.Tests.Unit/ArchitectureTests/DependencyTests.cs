@@ -1,129 +1,112 @@
 ﻿using NetArchTest.Rules;
+using static CleanDdd.Tests.Unit.Applications.Constants.Constants;
 
 namespace CleanDdd.Tests.Unit.ArchitectureTests;
 
+[Trait(nameof(UnitTest), UnitTest.Architecture)]
 public sealed class DependencyTests
 {
+    // HaveDependencyOnAny
+    // HaveDependencyOnAll
     [Fact]
-    public void DomainLayer_ShouldNotHaveDependency_OnOtherLayers()
+    public void HostLayer_ShouldNotDependOn_AnythingOtherThanAdapterLayer()
     {
         // Arrange
-        var assembly = Domain.AssemblyReference.Assembly;
+        var assembly = Host.AssemblyReference.Assembly;
 
         var otherAssemblies = new[]
         {
             Application.AssemblyReference.Assembly.GetName().Name,
-            Adapters.Infrastructure.AssemblyReference.Assembly.GetName().Name,
-            Adapters.Persistence.AssemblyReference.Assembly.GetName().Name,
-            Adapters.Presentation.AssemblyReference.Assembly.GetName().Name,
-            Host.AssemblyReference.Assembly.GetName().Name,
+            Domain.AssemblyReference.Assembly.GetName().Name,
         };
 
         // Act
         var actual = Types
             .InAssembly(assembly)
             .ShouldNot()
-            .HaveDependencyOnAll(otherAssemblies)
+            .HaveDependencyOnAny(otherAssemblies)
             .GetResult();
 
         // Assert
         actual.IsSuccessful.Should().BeTrue();
     }
 
-    //[Fact]
-    //public void Application_ShouldNotHaveDependencyOnOtherProjectsThanDomain()
-    //{
-    //    //Arrange
-    //    var assembly = Application.AssemblyReference.Assembly;
+    [Fact]
+    public void AdapterLayer_ShouldNotDependOn_AnthingOtherThanApplicationLayer()
+    {
+        // Arrange
+        var assemblies = new[]
+        {
+            Adapters.Persistence.AssemblyReference.Assembly,
+            Adapters.Infrastructure.AssemblyReference.Assembly,
+            Adapters.Presentation.AssemblyReference.Assembly
+        };
 
-    //    var otherAssemblies = new[]
-    //    {
-    //        Infrastructure.AssemblyReference.Assembly.GetName().Name,
-    //        Persistence.AssemblyReference.Assembly.GetName().Name,
-    //        Presentation.AssemblyReference.Assembly.GetName().Name,
-    //        App.AssemblyReference.Assembly.GetName().Name,
-    //    };
+        var otherAssemblies = new[]
+        {
+            Host.AssemblyReference.Assembly.GetName().Name,
+            Domain.AssemblyReference.Assembly.GetName().Name,
+        };
 
-    //    //Act
-    //    var result = Types
-    //        .InAssembly(assembly)
-    //        .ShouldNot()
-    //        .HaveDependencyOnAll(otherAssemblies)
-    //        .GetResult();
+        // Act
+        var actual = Types
+            .InAssemblies(assemblies)
+            .ShouldNot()
+            .HaveDependencyOnAny(otherAssemblies)
+            .GetResult();
 
-    //    //Assert
-    //    result.IsSuccessful.Should().BeTrue();
-    //}
+        // Assert
+        actual.IsSuccessful.Should().BeTrue();
+    }
 
+    [Fact]
+    public void ApplicationLayer_ShouldNotDependOn_AnythingOtherThanDomainLayer()
+    {
+        // Arrange
+        var assembly = Application.AssemblyReference.Assembly;
 
-    //[Fact]
-    //public void Infrastructure_ShouldNotHaveDependencyOnOtherProjectsThanApplicationAndDomain()
-    //{
-    //    //Arrange
-    //    var assembly = Infrastructure.AssemblyReference.Assembly;
+        var otherAssemblies = new[]
+        {
+            Host.AssemblyReference.Assembly.GetName().Name,
+            Adapters.Persistence.AssemblyReference.Assembly.GetName().Name,
+            Adapters.Infrastructure.AssemblyReference.Assembly.GetName().Name,
+            Adapters.Presentation.AssemblyReference.Assembly.GetName().Name,
+        };
 
-    //    var otherAssemblies = new[]
-    //    {
-    //        Persistence.AssemblyReference.Assembly.GetName().Name,
-    //        Presentation.AssemblyReference.Assembly.GetName().Name,
-    //        App.AssemblyReference.Assembly.GetName().Name,
-    //    };
+        // Act
+        var actual = Types
+            .InAssembly(assembly)
+            .ShouldNot()
+            .HaveDependencyOnAny(otherAssemblies)
+            .GetResult();
 
-    //    //Act
-    //    var result = Types
-    //        .InAssembly(assembly)
-    //        .ShouldNot()
-    //        .HaveDependencyOnAll(otherAssemblies)
-    //        .GetResult();
+        // Assert
+        actual.IsSuccessful.Should().BeTrue();
+    }
 
-    //    //Assert
-    //    result.IsSuccessful.Should().BeTrue();
-    //}
+    [Fact]
+    public void DomainLayer_ShouldNotDependOn_OtherLayers()
+    {
+        // Arrange
+        var assembly = Domain.AssemblyReference.Assembly;
 
-    //[Fact]
-    //public void Persistence_ShouldNotHaveDependencyOnOtherProjectsThanInfrastructureAndApplicationAndDomain()
-    //{
-    //    //Arrange
-    //    var assembly = Persistence.AssemblyReference.Assembly;
+        var otherAssemblies = new[]
+        {
+            Host.AssemblyReference.Assembly.GetName().Name,
+            Adapters.Persistence.AssemblyReference.Assembly.GetName().Name,
+            Adapters.Infrastructure.AssemblyReference.Assembly.GetName().Name,
+            Adapters.Presentation.AssemblyReference.Assembly.GetName().Name,
+            Application.AssemblyReference.Assembly.GetName().Name,
+        };
 
-    //    var otherAssemblies = new[]
-    //    {
-    //        Presentation.AssemblyReference.Assembly.GetName().Name,
-    //        App.AssemblyReference.Assembly.GetName().Name,
-    //    };
+        // Act
+        var actual = Types
+            .InAssembly(assembly)
+            .ShouldNot()
+            .HaveDependencyOnAny(otherAssemblies)
+            .GetResult();
 
-    //    //Act
-    //    var result = Types
-    //        .InAssembly(assembly)
-    //        .ShouldNot()
-    //        .HaveDependencyOnAll(otherAssemblies)
-    //        .GetResult();
-
-    //    //Assert
-    //    result.IsSuccessful.Should().BeTrue();
-    //}
-
-    //[Fact]
-    //public void Presentation_ShouldNotHaveDependencyOnOtherProjectsThanApplicationAndDomain()
-    //{
-    //    //Arrange
-    //    var assembly = Presentation.AssemblyReference.Assembly;
-
-    //    var otherAssemblies = new[]
-    //    {
-    //        Infrastructure.AssemblyReference.Assembly.GetName().Name,
-    //        Persistence.AssemblyReference.Assembly.GetName().Name,
-    //        App.AssemblyReference.Assembly.GetName().Name,
-    //    };
-
-    //    //Act
-    //    var result = Types
-    //        .InAssembly(assembly)
-    //        .ShouldNot()
-    //        .HaveDependencyOnAll(otherAssemblies)
-    //        .GetResult();
-
-    //    //Assert
-    //    result.IsSuccessful.Should().BeTrue();
-    //}
+        // Assert
+        actual.IsSuccessful.Should().BeTrue();
+    }
 }
