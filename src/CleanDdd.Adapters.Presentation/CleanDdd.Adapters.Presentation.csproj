@@ -1,3 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+  <ItemGroup>
+    <ProjectReference Include="..\CleanDdd.Application\CleanDdd.Application.csproj" />
+  </ItemGroup>
 </Project>

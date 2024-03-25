@@ -1,6 +1,6 @@
 ﻿namespace CleanDdd.Domain;
 
-public class Class1
+public class ClassDomain
 {
     public int Add(int x, int y)
     {

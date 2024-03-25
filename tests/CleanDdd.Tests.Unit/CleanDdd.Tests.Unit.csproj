@@ -8,6 +8,7 @@
   <ItemGroup>
     <PackageReference Include="FluentAssertions" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="NetArchTest.Rules" />
     <PackageReference Include="xunit" />
     <PackageReference Include="xunit.runner.visualstudio">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -20,8 +21,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\CleanDdd.Adapters.Infrastructure\CleanDdd.Adapters.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\CleanDdd.Adapters.Persistence\CleanDdd.Adapters.Persistence.csproj" />
+    <ProjectReference Include="..\..\src\CleanDdd.Adapters.Presentation\CleanDdd.Adapters.Presentation.csproj" />
     <ProjectReference Include="..\..\src\CleanDdd.Application\CleanDdd.Application.csproj" />
     <ProjectReference Include="..\..\src\CleanDdd.Domain\CleanDdd.Domain.csproj" />
+    <ProjectReference Include="..\..\src\CleanDdd.Host\CleanDdd.Host.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+    <Using Include="FluentAssertions" />
   </ItemGroup>
 
 </Project>

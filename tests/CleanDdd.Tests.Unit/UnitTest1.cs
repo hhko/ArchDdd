@@ -8,7 +8,7 @@ public class UnitTest1
     public void Test1()
     {
         // Arrange
-        Domain.Class1 c1 = new();
+        Domain.ClassDomain c1 = new();
 
         // Act
         int actual = c1.Add(1, 6);

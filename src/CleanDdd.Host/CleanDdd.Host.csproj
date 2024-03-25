@@ -4,4 +4,9 @@
     <OutputType>Exe</OutputType>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CleanDdd.Adapters.Persistence\CleanDdd.Adapters.Persistence.csproj" />
+    <ProjectReference Include="..\CleanDdd.Adapters.Presentation\CleanDdd.Adapters.Presentation.csproj" />
+  </ItemGroup>
+
 </Project>

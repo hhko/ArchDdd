@@ -14,7 +14,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        레이어(관심사) 단위로 코드 배치를 논할 수 있다.
+        레이어(관심사) 단위로 코드 배치를 논한다.
       </>
     ),
   },
@@ -23,7 +23,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        컴파일 타임과 런타임에 코드를 이해할 수 있다.
+        런타임 관점(객체지향)에서 코드를 설계한다.
       </>
     ),
   },
