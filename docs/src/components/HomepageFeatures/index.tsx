@@ -32,7 +32,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        코드에 감동이 있다.
+        코드에 감동이 있어야 한다.
       </>
     ),
   },
