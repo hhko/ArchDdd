@@ -7,17 +7,17 @@ tags: [todo, test]
 
 - [x] 코드 커버리지 `Build.ps1`
 - [x] 코드 커버리지 `GitHub Actions`
-- [x] 코드 커버리지 이력 `Codecov`
+- [x] 2024-02 | 코드 커버리지 이력 `Codecov`
 - [ ] 코드 커버리지 Build.ps1 ?% 출력
-- [ ] 아키텍처 테스트
-  - [x] 의존성 테스트: `HaveDependencyOnAny` vs `HaveDependencyOnAll`
-  - [ ] 네이밍
+- [x] 2024-03-26(월) | xUnit 메서드 범주화: `Trait`
+- [x] 2024-03-26(월) | 아키텍처 의존성 테스트: `HaveDependencyOnAny` vs `HaveDependencyOnAll`
+- [x] 2024-03-27(화) | xUnit 메서드 이름만 표시: `xunit.runner.json`
+- [ ] 아키텍처 네이밍 규칙 테스트
 - [ ] BDD 시나리오 테스트
 - [ ] mutation testing  dotnet-stryker?
 - [ ] 단위 테스트
-- [ ] 통합 테스트
-  - [ ] ASP.NET Core: https://github.com/JasperFx/alba
-  - [ ] API Signature(PublicApiGenerator)
+- [ ] 통합 테스트 ASP.NET Core: https://github.com/JasperFx/alba
+- [ ] 통합 테스트 API Signature(PublicApiGenerator)
 - [ ] E2E 테스트
 - [ ] 성능 테스트
 - [ ] Arrange

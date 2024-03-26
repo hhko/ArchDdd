@@ -1,11 +1,29 @@
 ---
-title: 2024-03-25(월) 아키텍처 의존성 테스트
-tags: [todo, test, architecture]
+sidebar_position: 2
 ---
+
+# 레이어 의존성 테스트
+
+## 프로젝트 구분하기
+```cs
+using System.Reflection;
+
+// 어셈블리 식별을 위한 네임스페이스
+namespace ArchDdd.Domain;
+
+public static class AssemblyReference
+{
+    public static readonly Assembly Assembly = typeof(AssemblyReference).Assembly;
+}
+```
+- 레이어 기준으로 모든 프로젝트(어셈블리)를 쉽게 접근하기 위해 `AssemblyReference` 클래스를 구현합니다.
+
+## 레이어 의존성 테스트하기
+![](./img/2024-03-27-00-42-25.png)
 
 ```cs
 [Fact]
-public void DomainLayer_ShouldNotDependOn_OtherLayers()
+public void DomainLayer_ShouldNotDependOn_AnyLayers()
 {
     // Arrange
     var assembly = Domain.AssemblyReference.Assembly;
@@ -28,21 +46,5 @@ public void DomainLayer_ShouldNotDependOn_OtherLayers()
 
     // Assert
     actual.IsSuccessful.Should().BeTrue();
-}
-```
-
-- `NetArchTest.Rules` 패키지를 이용하여 의존성을 테스트한다.
-- 어셈블리를 접근하기 위해 모든 프로젝트에 `AssemblyReference`을 추가한다.
-
-![](./img/2024-03-26-07-18-15.png)
-
-```cs
-using System.Reflection;
-
-namespace ArchDdd.Domain;
-
-public static class AssemblyReference
-{
-    public static readonly Assembly Assembly = typeof(AssemblyReference).Assembly;
 }
 ```

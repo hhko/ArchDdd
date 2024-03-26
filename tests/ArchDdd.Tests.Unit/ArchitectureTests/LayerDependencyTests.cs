@@ -1,15 +1,16 @@
 ﻿using NetArchTest.Rules;
 using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ArchDdd.Tests.Unit.ArchitectureTests;
 
 [Trait(nameof(UnitTest), UnitTest.Architecture)]
-public sealed class DependencyTests
+public sealed class LayerDependencyTests
 {
     // HaveDependencyOnAny
     // HaveDependencyOnAll
     [Fact]
-    public void HostLayer_ShouldNotDependOn_AnythingOtherThanAdapterLayer()
+    public void HostLayer_ShouldNotDependOn_AnyLayersOtherThanAdapterLayer()
     {
         // Arrange
         var assembly = Host.AssemblyReference.Assembly;
@@ -32,7 +33,7 @@ public sealed class DependencyTests
     }
 
     [Fact]
-    public void AdapterLayer_ShouldNotDependOn_AnthingOtherThanApplicationLayer()
+    public void AdapterLayer_ShouldNotDependOn_AnyLayersOtherThanApplicationLayer()
     {
         // Arrange
         var assemblies = new[]
@@ -60,7 +61,7 @@ public sealed class DependencyTests
     }
 
     [Fact]
-    public void ApplicationLayer_ShouldNotDependOn_AnythingOtherThanDomainLayer()
+    public void ApplicationLayer_ShouldNotDependOn_AnyLayersOtherThanDomainLayer()
     {
         // Arrange
         var assembly = Application.AssemblyReference.Assembly;
@@ -85,7 +86,7 @@ public sealed class DependencyTests
     }
 
     [Fact]
-    public void DomainLayer_ShouldNotDependOn_OtherLayers()
+    public void DomainLayer_ShouldNotDependOn_AnyLayers()
     {
         // Arrange
         var assembly = Domain.AssemblyReference.Assembly;
