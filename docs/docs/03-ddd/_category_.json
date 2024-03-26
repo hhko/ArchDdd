@@ -1,4 +1,7 @@
 {
   "label": "도메인 주도 설계",
-  "position": 3
+  "position": 3,
+  "link": {
+    "type": "generated-index"
+  }
 }
