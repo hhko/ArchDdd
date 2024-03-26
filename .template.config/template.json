@@ -4,6 +4,7 @@
   "classifications": [
     "Web",
     "ASP.NET",
+    "Architecture",
     "DDD",
     "Clean Architecture"
   ],
@@ -11,11 +12,11 @@
     "language": "C#",
     "type": "project"
   },
-  "identity": "cleanddd",
-  "name": "ASP.NET DDD with Clean Architecture Solution",
-  "shortName": "cleanddd",
-  "description": "ASP.NET DDD with Clean Architecture Solution Template",
-  "sourceName": "CleanDdd",
+  "identity": "archddd",
+  "name": "ASP.NET Architecture with DDD Solution",
+  "shortName": "archddd",
+  "description": "ASP.NET Architecture with DDD Solution Template",
+  "sourceName": "ArchDdd",
   "preferNameDirectory": true,
   "sources": [
     {

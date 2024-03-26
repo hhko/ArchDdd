@@ -9,7 +9,7 @@ sidebar_position: 7
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>CleanDdd.Template</id>
+    <id>ArchDdd.Template</id>
     <title>ASP.NET Clean Architecture with DDD Solution</title>
     <version>1.0.0-alpha.1</version>
     <authors>고형호</authors>
@@ -19,8 +19,8 @@ sidebar_position: 7
     <!--
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     -->
-    <projectUrl>https://github.com/hhko/CleanDdd</projectUrl>
-    <repository type="git" url="https://github.com/hhko/CleanDdd" branch="main" />
+    <projectUrl>https://github.com/hhko/ArchDdd</projectUrl>
+    <repository type="git" url="https://github.com/hhko/ArchDdd" branch="main" />
     <!--
     <releaseNotes>
       Minor updates to dependencies. Fixed Releases on GitHub.
@@ -54,16 +54,16 @@ sidebar_position: 7
 #       .nupkg' 파일이 패키지에 추가되지 않았습니다.
 #       '.'으로 시작하거나 '.nupkg'로 끝나는 파일 및 폴더는 기본적으로 제외됩니다.
 #       이 파일을 포함하려면 명령줄에서 -NoDefaultExcludes를 사용하세요.
-.\nuget.exe pack .\CleanDdd.nuspec -NoDefaultExcludes
+.\nuget.exe pack .\ArchDdd.nuspec -NoDefaultExcludes
 
 # 패키지 설치
-dotnet new install .\CleanDdd.Template.1.0.0-alpha.1.nupkg 
+dotnet new install .\ArchDdd.Template.1.0.0-alpha.1.nupkg 
 
 # 패키지 제거
-dotnet new uninstall CleanDdd.Template
+dotnet new uninstall ArchDdd.Template
 
 # 패키지 세부 정보
-dotnet new details CleanDdd.Template
+dotnet new details ArchDdd.Template
 ```
 
 ## TODO
@@ -79,7 +79,7 @@ dotnet new details CleanDdd.Template
 - 설치한 nupkg 파일 삭제하기
 
 ```
-오류 :파일 C:\Users\고형호\.templateengine\packages\CleanDdd.Template.1.0.0-alpha.1.nupkg이(가) 이미 있습니다.
+오류 :파일 C:\Users\고형호\.templateengine\packages\ArchDdd.Template.1.0.0-alpha.1.nupkg이(가) 이미 있습니다.
 ```
 
 ```powershell

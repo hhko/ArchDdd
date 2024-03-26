@@ -42,7 +42,7 @@ jobs:
     #  - 규칙: ${{ env.환경_변수_이름 }}
     #  - 예제: ${{ env.solution_dir }}
     env:
-      solution_path: ./CleanDdd.sln
+      solution_path: ./ArchDdd.sln
       coverage_dir: ./.results/coverage
       coverage_path: ./.results/coverage/coverage.cobertura.merged.xml
       docfx_dir: ./site
@@ -167,4 +167,4 @@ jobs:
         uses: codecov/codecov-action@v4.0.1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: hhko/CleanDdd
+          slug: hhko/ArchDdd

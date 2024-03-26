@@ -39,7 +39,7 @@ public void DomainLayer_ShouldNotDependOn_OtherLayers()
 ```cs
 using System.Reflection;
 
-namespace CleanDdd.Domain;
+namespace ArchDdd.Domain;
 
 public static class AssemblyReference
 {

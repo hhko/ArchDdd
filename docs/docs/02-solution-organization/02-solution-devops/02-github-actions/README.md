@@ -7,7 +7,7 @@
 
 ## CI 이름
 ```yml
-name: "CleanDdd CI"
+name: "ArchDdd CI"
 ```
 ![](./.images/2024-03-12-00-08-11.png)
 - GitHub Actions 이름
@@ -52,7 +52,7 @@ jobs:
     #  - 예제: ${{ env.solution_dir }}
     env:
         solution_dir: ./
-        solution_file: ./CleanDdd.sln
+        solution_file: ./ArchDdd.sln
 ```
 ![](./.images/2024-03-12-00-22-45.png)
 
@@ -107,8 +107,8 @@ jobs:
         #
         # 테스트 결과 폴더 구성
         #
-        #  /home/runner/work/CleanDdd
-        #    /CleanDdd                                          // 저장소 Root
+        #  /home/runner/work/ArchDdd
+        #    /ArchDdd                                          // 저장소 Root
         #       /testresults                                    // 테스트 자동화 결과
         #           /19f5be57-f7f1-4902-a22d-ca2dcd8fdc7a       // dotnet test: 코드 커버리지 N개           <- Artifacts 업로드
         #               /coverage.cobertura.xml

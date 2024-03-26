@@ -14,19 +14,19 @@ dotnet tool install --global dotnet-format --version 5.1.250801
 ## 솔루션 생성
 ```shell
 # 솔루션 파일 생성
-dotnet new sln -o CleanDdd
-cd ./CleanDdd
+dotnet new sln -o ArchDdd
+cd ./ArchDdd
 
 # 프로젝트 생성
-dotnet new classlib -o ./src/CleanDdd.Domain
-dotnet new classlib -o ./src/CleanDdd.Application
-dotnet new classlib -o ./src/CleanDdd.Adapters.Presentation
-dotnet new classlib -o ./src/CleanDdd.Adapters.Persistence
-dotnet new classlib -o ./src/CleanDdd.Adapters.Infrastructure
+dotnet new classlib -o ./src/ArchDdd.Domain
+dotnet new classlib -o ./src/ArchDdd.Application
+dotnet new classlib -o ./src/ArchDdd.Adapters.Presentation
+dotnet new classlib -o ./src/ArchDdd.Adapters.Persistence
+dotnet new classlib -o ./src/ArchDdd.Adapters.Infrastructure
 
 # 테스트 프로젝트 생성
-dotnet new xunit -o ./tests/CleanDdd.Tests.Unit
-dotnet new xunit -o ./tests/CleanDdd.Test.Integration
+dotnet new xunit -o ./tests/ArchDdd.Tests.Unit
+dotnet new xunit -o ./tests/ArchDdd.Test.Integration
 
 # 프로젝트 추가
 dotnet sln add (ls -r ./src/**/*.csproj)

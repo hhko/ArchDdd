@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ArchDdd.Adapters.Infrastructure\ArchDdd.Adapters.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\ArchDdd.Adapters.Persistence\ArchDdd.Adapters.Persistence.csproj" />
+    <ProjectReference Include="..\..\src\ArchDdd.Adapters.Presentation\ArchDdd.Adapters.Presentation.csproj" />
+    <ProjectReference Include="..\..\src\ArchDdd.Application\ArchDdd.Application.csproj" />
+    <ProjectReference Include="..\..\src\ArchDdd.Domain\ArchDdd.Domain.csproj" />
+    <ProjectReference Include="..\..\src\ArchDdd.Host\ArchDdd.Host.csproj" />
+  </ItemGroup>
+
+</Project>

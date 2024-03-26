@@ -1,6 +1,6 @@
 # Domain-Driven Design with Clean Architecture
-[![CleanDdd Build](https://github.com/hhko/CleanDdd/actions/workflows/build.yml/badge.svg)](https://github.com/hhko/CleanDdd/actions/workflows/build.yml)
-[![codecov](https://codecov.io/gh/hhko/CleanDdd/graph/badge.svg?token=VK8HUZTA7K)](https://codecov.io/gh/hhko/CleanDdd)
+[![ArchDdd Build](https://github.com/hhko/ArchDdd/actions/workflows/build.yml/badge.svg)](https://github.com/hhko/ArchDdd/actions/workflows/build.yml)
+[![codecov](https://codecov.io/gh/hhko/ArchDdd/graph/badge.svg?token=VK8HUZTA7K)](https://codecov.io/gh/hhko/ArchDdd)
 
 > 배움은 **설렘**이다.  
 > 배움은 **겸손**이다.  
@@ -46,12 +46,12 @@ If builders built buildings the way programmers wrote programs, then the first w
 T1.T2{.T3}
 
 src
-  ├─ CleanDdd.Domain                   : Domain
-  ├─ CleanDdd.Application              : Application
-  ├─ CleanDdd.Adapters.Infrastructure  : Adapter
-  ├─ CleanDdd.Adapters.Persistence     : Adapter
-  ├─ CleanDdd.Adapters.Presentation    : Adapter
-  └─ CleanDdd.Host                     : Host
+  ├─ ArchDdd.Domain                   : Domain
+  ├─ ArchDdd.Application              : Application
+  ├─ ArchDdd.Adapters.Infrastructure  : Adapter
+  ├─ ArchDdd.Adapters.Persistence     : Adapter
+  ├─ ArchDdd.Adapters.Presentation    : Adapter
+  └─ ArchDdd.Host                     : Host
 ```
 - `T1`: Solution 이름
 - `T2`: Layer 이름
@@ -66,8 +66,8 @@ src
 T1.T2.T3
 
 tests
-  ├─ CleanDdd.Tests.Integration        : Test
-  └─ CleanDdd.Tests.Unit               : Test
+  ├─ ArchDdd.Tests.Integration        : Test
+  └─ ArchDdd.Tests.Unit               : Test
 ```
 - `T1`: Solution 이름
 - `T2`: Layer 이름

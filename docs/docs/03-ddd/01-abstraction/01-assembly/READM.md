@@ -4,7 +4,7 @@
 using System.Reflection;
 
 // 어셈블리 식별을 위한 네임스페이스
-namespace CleanDdd.Domain;
+namespace ArchDdd.Domain;
 
 public static class AssemblyReference
 {

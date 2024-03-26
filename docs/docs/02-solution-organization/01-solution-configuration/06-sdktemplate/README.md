@@ -8,7 +8,7 @@ sidebar_position: 6
 
 ```json
 {
-  "sourceName": "CleanDdd"
+  "sourceName": "ArchDdd"
 }
 ```
 - `sourceName`은 템플릿 생성시 사용자가 지정한 이름으로 바꿀 소스 이름입니다.
@@ -33,7 +33,7 @@ sidebar_position: 6
   "name": "ASP.NET Clean Architecture with DDD Solution",
   "shortName": "clean-ddd",
   "description": "ASP.NET .NET 8 Clean Architecture with DDD Solution Template",
-  "sourceName": "CleanDdd",
+  "sourceName": "ArchDdd",
   "preferNameDirectory": true,
   "sources": [
     {

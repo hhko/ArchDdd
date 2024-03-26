@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ArchDdd.Adapters.Persistence\ArchDdd.Adapters.Persistence.csproj" />
+    <ProjectReference Include="..\ArchDdd.Adapters.Presentation\ArchDdd.Adapters.Presentation.csproj" />
+    <ProjectReference Include="..\ArchDdd.Domain\ArchDdd.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
