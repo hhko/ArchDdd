@@ -5,7 +5,8 @@ title: Todo 도메인 주도 설계
 tags: [todo, ddd]
 ---
 
-- [ ] 프로그램 설정
+- [ ] 설정 값(appsettings.Development.json) 처리
+  - 2024-03-27(수) 기본 코드 구현: XxxOptionsSetup, XxxOptionsValidator, XxxOptions
 - [ ] DI
 ---
 - [ ] 결과 타입 | Result
