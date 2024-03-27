@@ -1,4 +1,6 @@
-﻿using NetArchTest.Rules;
+﻿using ArchDdd.Tests.Unit.Abstractions.Utilities;
+using NetArchTest.Rules;
+using Xunit.Abstractions;
 using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
@@ -7,10 +9,15 @@ namespace ArchDdd.Tests.Unit.ArchitectureTests;
 [Trait(nameof(UnitTest), UnitTest.Architecture)]
 public sealed class LayerDependencyTests
 {
-    // HaveDependencyOnAny
-    // HaveDependencyOnAll
+    private readonly ITestOutputHelper _output;
+
+    public LayerDependencyTests(ITestOutputHelper output)
+    {
+        _output = output;
+    }
+
     [Fact]
-    public void HostLayer_ShouldNotDependOn_AnyLayersOtherThanAdapterLayer()
+    public void HostLayer_ShouldNotHaveDependency_OnOtherLayersThanAdapter()
     {
         // Arrange
         var assembly = Host.AssemblyReference.Assembly;
@@ -29,11 +36,11 @@ public sealed class LayerDependencyTests
             .GetResult();
 
         // Assert
-        actual.IsSuccessful.Should().BeTrue();
+        actual.ShouldBeTrue(_output);
     }
 
     [Fact]
-    public void AdapterLayer_ShouldNotDependOn_AnyLayersOtherThanApplicationLayer()
+    public void AdapterLayer_ShouldNotHaveDependency_OnOtherLayersThanApplication()
     {
         // Arrange
         var assemblies = new[]
@@ -57,11 +64,11 @@ public sealed class LayerDependencyTests
             .GetResult();
 
         // Assert
-        actual.IsSuccessful.Should().BeTrue();
+        actual.ShouldBeTrue(_output);
     }
 
     [Fact]
-    public void ApplicationLayer_ShouldNotDependOn_AnyLayersOtherThanDomainLayer()
+    public void ApplicationLayer_ShouldNotHaveDependency_OnOtherLayersThanDomain()
     {
         // Arrange
         var assembly = Application.AssemblyReference.Assembly;
@@ -82,11 +89,11 @@ public sealed class LayerDependencyTests
             .GetResult();
 
         // Assert
-        actual.IsSuccessful.Should().BeTrue();
+        actual.ShouldBeTrue(_output);
     }
 
     [Fact]
-    public void DomainLayer_ShouldNotDependOn_AnyLayers()
+    public void DomainLayer_ShouldNotHaveDependency_OnOtherLayers()
     {
         // Arrange
         var assembly = Domain.AssemblyReference.Assembly;
@@ -108,6 +115,6 @@ public sealed class LayerDependencyTests
             .GetResult();
 
         // Assert
-        actual.IsSuccessful.Should().BeTrue();
+        actual.ShouldBeTrue(_output);
     }
 }

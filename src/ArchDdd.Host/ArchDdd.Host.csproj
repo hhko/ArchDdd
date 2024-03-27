@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -7,7 +7,6 @@
   <ItemGroup>
     <ProjectReference Include="..\ArchDdd.Adapters.Persistence\ArchDdd.Adapters.Persistence.csproj" />
     <ProjectReference Include="..\ArchDdd.Adapters.Presentation\ArchDdd.Adapters.Presentation.csproj" />
-    <ProjectReference Include="..\ArchDdd.Domain\ArchDdd.Domain.csproj" />
   </ItemGroup>
 
 </Project>
