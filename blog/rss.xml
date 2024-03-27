@@ -78,9 +78,13 @@
             <link>https://your-docusaurus-site.example.com/archddd/blog/todo-ddd</link>
             <guid>https://your-docusaurus-site.example.com/archddd/blog/todo-ddd</guid>
             <pubDate>Mon, 01 Jan 2024 03:00:00 GMT</pubDate>
-            <description><![CDATA[- [ ] 프로그램 설정]]></description>
+            <description><![CDATA[- [ ] 설정 값(appsettings.Development.json) 처리]]></description>
             <content:encoded><![CDATA[<ul class="contains-task-list containsTaskList_mC6p">
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->프로그램 설정</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->설정 값(appsettings.Development.json) 처리<!-- -->
+<ul>
+<li>2024-03-27(수) 기본 코드 구현: XxxOptionsSetup, XxxOptionsValidator, XxxOptions</li>
+</ul>
+</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->DI</li>
 </ul>
 <hr>
