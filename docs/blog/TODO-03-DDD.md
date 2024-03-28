@@ -26,20 +26,24 @@ tags: [todo, ddd]
 - [ ] Domain 타입 | AggregateRoot
 - [ ] Domain 타입 | Domain Event
 ---
-- [ ] Mediator pattern
-- [ ] MidiatR Pipeline
+- [ ] MediatR
+  - 메시지
+  - 이벤트
+- [ ] MediatR Behavior
   - 예외
   - 장시간 연산 로그
   - 유효성 검사
 - [ ] DTO
 - [ ] Application service(UseCase)
+---
+- [ ] EfCore
 - [ ] Specification Pattern?
+- [ ] RabbitMQ
 ---
 - [ ] WebApi
   - 인증
   - 문서화 swagger
+  - Pipeline
 - [ ] WebApi Background 서비스
-- [ ] Pipeline
-- [ ] EF Core
 ---
 - [ ] Blazor
