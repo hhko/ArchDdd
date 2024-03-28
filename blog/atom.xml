@@ -77,14 +77,21 @@
         <id>https://your-docusaurus-site.example.com/archddd/blog/todo-ddd</id>
         <link href="https://your-docusaurus-site.example.com/archddd/blog/todo-ddd"/>
         <updated>2024-01-01T03:00:00.000Z</updated>
-        <summary type="html"><![CDATA[- [ ] 설정 값(appsettings.Development.json) 처리]]></summary>
+        <summary type="html"><![CDATA[- [x] 레이어]]></summary>
         <content type="html"><![CDATA[<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->레이어</li>
+<li class="task-list-item"><input type="checkbox" disabled="" checked=""> <!-- -->레이어 의존성 테스트</li>
+</ul>
+<hr>
+<ul class="contains-task-list containsTaskList_mC6p">
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->설정 값(appsettings.Development.json) 처리<!-- -->
 <ul>
 <li>2024-03-27(수) 기본 코드 구현: XxxOptionsSetup, XxxOptionsValidator, XxxOptions</li>
+<li>FluentValidation</li>
+<li>DI</li>
 </ul>
 </li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->DI</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->구조적 로그</li>
 </ul>
 <hr>
 <ul class="contains-task-list containsTaskList_mC6p">
@@ -96,6 +103,9 @@
 <ul class="contains-task-list containsTaskList_mC6p">
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Domain 타입 | ValueObject</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Domain 타입 | Enum</li>
+</ul>
+<hr>
+<ul class="contains-task-list containsTaskList_mC6p">
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Domain 타입 | Entity</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Doamin 타입 | (Domain Service)</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Domain 타입 | AggregateRoot</li>
@@ -103,13 +113,33 @@
 </ul>
 <hr>
 <ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Mediator pattern</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->MidiatR Pipeline<!-- -->
+<ul>
+<li>예외</li>
+<li>장시간 연산 로그</li>
+<li>유효성 검사</li>
+</ul>
+</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->DTO</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Validation</li>
-<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Specification Pattern</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Application service(UseCase)</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Specification Pattern?</li>
 </ul>
 <hr>
 <ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->WebApi<!-- -->
+<ul>
+<li>인증</li>
+<li>문서화 swagger</li>
+</ul>
+</li>
 <li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->WebApi Background 서비스</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Pipeline</li>
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->EF Core</li>
+</ul>
+<hr>
+<ul class="contains-task-list containsTaskList_mC6p">
+<li class="task-list-item"><input type="checkbox" disabled=""> <!-- -->Blazor</li>
 </ul>]]></content>
         <category label="todo" term="todo"/>
         <category label="ddd" term="ddd"/>
