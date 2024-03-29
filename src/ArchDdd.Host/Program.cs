@@ -7,23 +7,21 @@
 
 //using ArchDdd.Host.Abstractions.Registration;
 
-using Microsoft.Extensions.Options;
-
-///
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
     Args = args,
     ContentRootPath = Directory.GetCurrentDirectory()
 });
 
-builder.Services.RegisterHostOptions();
+builder.Services.RegisterAdapterInfrastructureLayer()
+                .RegisterAdapterPersistenceLayer(builder.Environment);
 
 WebApplication webApplication = builder.Build();
 
 //var x = builder.Services.GetOptions<DatabaseOptions>();
 
-var serviceProvider = builder.Services.BuildServiceProvider();
-var x = serviceProvider.GetRequiredService<IOptions<DatabaseOptions>>().Value;
+//var serviceProvider = builder.Services.BuildServiceProvider();
+//var x = serviceProvider.GetRequiredService<IOptions<DatabaseOptions>>().Value;
 
 //webApplication
 //    .UseHttpsRedirection()

@@ -1,5 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <ItemGroup>
     <ProjectReference Include="..\ArchDdd.Adapters.Infrastructure\ArchDdd.Adapters.Infrastructure.csproj" />
   </ItemGroup>
+
 </Project>

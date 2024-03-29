@@ -1,5 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <ItemGroup>
     <ProjectReference Include="..\ArchDdd.Domain\ArchDdd.Domain.csproj" />
   </ItemGroup>
+
 </Project>
