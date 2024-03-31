@@ -7,6 +7,14 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "applicationUrl": "https://localhost:50803;http://localhost:50804"
+    },
+    "고형호.ArchDdd.Host": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "고형호"
+      },
+      "applicationUrl": "https://localhost:50803;http://localhost:50804"
     }
   }
 }

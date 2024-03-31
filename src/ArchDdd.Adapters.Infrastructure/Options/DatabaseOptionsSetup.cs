@@ -20,14 +20,14 @@ internal sealed class DatabaseOptionsSetup(IConfiguration configuration,
 
     public void Configure(DatabaseOptions options)
     {
-        if (_environment.IsProduction() is true)
-        {
-            options.ConnectionString = _configuration.GetConnectionString(_defaultConnectionSectionName);
-        }
-        else if (_environment.IsDevelopment() is true)
-        {
-            options.ConnectionString = _configuration.GetConnectionString(_testConnectionSectionName);
-        }
+        //if (_environment.IsProduction() is true)
+        //{
+        //    options.ConnectionString = _configuration.GetConnectionString(_defaultConnectionSectionName);
+        //}
+        //else if (_environment.IsDevelopment() is true)
+        //{
+        //    options.ConnectionString = _configuration.GetConnectionString(_testConnectionSectionName);
+        //}
 
         _configuration
             .GetSection(_configurationSectionName)

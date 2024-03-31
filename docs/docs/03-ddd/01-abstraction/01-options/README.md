@@ -38,7 +38,11 @@ XxxOptionsValidator   // 옵션 값 유효성 검사
 XxxOptions            // 옵션 값
 ```
 
+![](./img/2024-04-01-08-01-32.png)
+
 ![](./img/2024-03-29-17-31-12.png)
+
+![](./img/2024-04-01-07-43-11.png)
 
 ```
 services.GetOptions<DatabaseOptions>();
@@ -51,4 +55,21 @@ services.GetOptions<DatabaseOptions>();
 - [ ] Application 또는 Domain 레이어, 생성자에서 옵션 값 접근하기?
 - [ ] FluentValidation 통합
 - [ ] 단위 테스트
-- [ ] 설정 개인화 appsettings.HHKO.json
+- [ ] 설정 개인화 appsettings.{호스트명}.json
+
+- [x] [Options pattern in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-8.0)
+
+- [ ] [ASP.NET Core Configuration – Options Validation](https://code-maze.com/aspnet-configuration-options-validation/)
+
+
+- [ ] [Use multiple environments in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/environments?view=aspnetcore-8.0)
+  - Production
+  - Development
+    - 호스트명
+
+- [ ] [ASP.NET Core performance](https://learn.microsoft.com/en-us/aspnet/core/performance/overview?view=aspnetcore-8.0)
+
+```
+dotnet run --environment Production
+dotnet run --launch-profile "EnvironmentsSample"
+```

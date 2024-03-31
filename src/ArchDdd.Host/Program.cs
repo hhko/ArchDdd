@@ -7,6 +7,11 @@
 
 //using ArchDdd.Host.Abstractions.Registration;
 
+using ArchDdd.Adapters.Infrastructure.Options;
+using FluentValidation;
+using Microsoft.Extensions.Options;
+using System.ComponentModel.DataAnnotations;
+
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
     Args = args,
@@ -15,6 +20,19 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 
 builder.Services.RegisterAdapterInfrastructureLayer()
                 .RegisterAdapterPersistenceLayer(builder.Environment);
+
+//builder.Services.AddWithValidation<SlackApiSettings, SlackApiSettingsValidator>("SlackApi");
+
+//builder.Services.AddScoped<IValidator<SlackApiSettings>, SlackApiSettingsValidator>();
+
+//builder.Services.AddOptions<SlackApiSettings>()
+//    .BindConfiguration("SlackApi")
+//    .ValidateFluentValidation() // <- Enable validation
+//    .ValidateOnStart(); // <- Validate on app start
+
+//// Optional: Explicitly register the settings object by delegating to the IOptions object
+//builder.Services.AddSingleton(resolver =>
+//        resolver.GetRequiredService<IOptions<SlackApiSettings>>().Value);
 
 WebApplication webApplication = builder.Build();
 
@@ -33,3 +51,8 @@ WebApplication webApplication = builder.Build();
 
 //Run the application
 webApplication.Run();
+
+
+
+
+

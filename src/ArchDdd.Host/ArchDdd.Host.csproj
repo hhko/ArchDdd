@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ArchDdd.Adapters.Persistence\ArchDdd.Adapters.Persistence.csproj" />
     <ProjectReference Include="..\ArchDdd.Adapters.Presentation\ArchDdd.Adapters.Presentation.csproj" />
   </ItemGroup>

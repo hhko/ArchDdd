@@ -3,6 +3,11 @@
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="FluentValidation" />
+	  <PackageReference Include="FluentValidation.DependencyInjectionExtensions" />
+	</ItemGroup>
 	
   <ItemGroup>
     <ProjectReference Include="..\ArchDdd.Application\ArchDdd.Application.csproj" />

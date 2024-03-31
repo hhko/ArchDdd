@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using FluentValidation;
+using Microsoft.Extensions.Options;
 
 namespace ArchDdd.Adapters.Infrastructure.Options;
 
@@ -37,5 +38,18 @@ public sealed class DatabaseOptionsValidator : IValidateOptions<DatabaseOptions>
         //  'Command timeout is less than one. '
         //return ValidateOptionsResult.Fail(validationResult);
         return ValidateOptionsResult.Success;
+    }
+}
+
+public class DatabaseOptionsValidator2 : AbstractValidator<DatabaseOptions>
+{
+    public DatabaseOptionsValidator2()
+    {
+        RuleFor(x => x.MaxRetryCount)
+            .GreaterThan(1);
+        RuleFor(x => x.MaxRetryDelay)
+            .GreaterThan(1);
+        RuleFor(x => x.CommandTimeout)
+            .GreaterThan(1);
     }
 }

@@ -4,7 +4,18 @@
 //Reason: No parameterless constructor defined.'
 public sealed class DatabaseOptions
 {
-    public string? ConnectionString { get; set; } = string.Empty;
+    public const string ConnectionStrings = nameof(ConnectionStrings);
+    public const string DatabaseCountOptions = nameof(DatabaseCountOptions);
+
+    public DatabaseOptions()
+    {
+        
+    }
+
+    // ConnectionStrings
+    public string? DefaultConnection { get; set; } = string.Empty;
+
+    // DatabaseCountOptions
     public int MaxRetryCount { get; set; }
     public int MaxRetryDelay { get; set; }
     public int CommandTimeout { get; set; }
