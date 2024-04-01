@@ -22,7 +22,7 @@ If builders built buildings the way programmers wrote programs, then the first w
 - Clean Architecture
 - ...
 
-![ArchitecturePatternHistory](./docs/docs/01-architecture/img/ArchitecturePatternHistor.png)
+![ArchitecturePatternHistory](./docs/docs/01-architecture/01-overview/img/ArchitecturePatternHistor.png)
 
 
 ## 개발 환경
@@ -39,8 +39,18 @@ If builders built buildings the way programmers wrote programs, then the first w
   - GitHub Actions
   - Codecov YAML Validator
 
-### 패키지
-- `Microsoft.Extensions.Options`: IValidateOptions
+## 패키지
+- `FluentValidation`: Validation 선언형
+- `FluentValidation.DependencyInjectionExtensions`: Validation 선언형 의존성
+
+### 테스트
+- `FluentAssertions`: Assert 선언형
+- `Microsoft.NET.Test.Sdk`: 단위 테스트 SDK
+- `NetArchTest`.Rules: 아키텍처 단위 테스트
+- `xunit`: 단위 테스트
+- `xunit.runner.visualstudio`: 단위 테스트 실행기
+- `coverlet.collector`: 코드 커버리지
+
 
 ### dotnet tools
 ```shell
