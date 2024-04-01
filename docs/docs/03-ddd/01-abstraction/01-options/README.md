@@ -106,6 +106,8 @@ public class DatabaseOptionsValidator : AbstractValidator<DatabaseOptions>
 - [x] 설정 개인화 `appsettings.{호스트명}.json`
 - [x] CLI 모드 지정?
 - [ ] 단위 테스트
+- [ ] Quartz: https://www.youtube.com/watch?v=iD3jrj3RBuc
+- [ ] IConfigureOptions?
 
 ## 참고 자료
 - [x] [Options pattern in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/configuration/options?view=aspnetcore-8.0)
