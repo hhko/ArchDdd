@@ -1,0 +1,2 @@
+# Install dependencies
+npm install
