@@ -2,41 +2,52 @@
 sidebar_position: 1
 ---
 
-# 옵션(appsettings.json)
+# appsettings.json
 
-## Registration 클래스 구성
-```cs
-ArchDdd.Adapters.Infrastructure
-  Abstractions
-    Registration
-      AdapterInfrastructureLayerRegistration.cs
-      XxxRegistration
-      YyyRegistration
-      ZzzRegistration
-      ...
 ```
-- `Registration` 폴더에 있는 모든 클래스의 네임스페이스는 `Microsoft.Extensions.DependencyInjection`으로 정의합니다.
-- `Microsoft.Extensions.DependencyInjection` 네임스페이스 지정으로 인해 `Host`에서 모든 어셈블리를 직접 참조하지 않고도 간접 참조만으로도`...Registration.cs`에 정의한 `IServiceCollection` 확장 메서드를 접근할 수 있게있다.
+Abstractions
+  Registration                네임스페이스: Microsoft.Extensions.DependencyInjection
+    AdapterInfrastructureLayerRegistration
+    OptionsRegistration
+Options                       호출 순서: XxxOptionsSetup -> XxxOptionsValidator
+  DatabaseOptions
+  DatabaseOptionsSetup        상속: IConfigureOptions<DatabaseOptions>
+  DatabaseOptionsValidator    상속: IValidateOptions<DatabaseOptions>
+```
 
-## Registration 클래스 이름
+## Registration
 ```cs
+namespace Microsoft.Extensions.DependencyInjection;
+
+public static class AdapterInfrastructureLayerRegistration
+{
+    public static IServiceCollection RegisterAdapterInfrastructureLayer(this IServiceCollection services)
+    {
+        services.RegisterOptions();
+
+        return services;
+    }
+}
+```
+- `Registration` 폴더에 있는 모든 클래스 네임스페이스는 `Microsoft.Extensions.DependencyInjection`입니다.
+- `Host`에서 추가적인 `using` 구문 없이 `...Registration.cs`에 정의한 `Register...` 확장 메서드를 호출할 수 있습니다.
+
+```cs
+namespace Microsoft.Extensions.DependencyInjection;
+
 public static class OptionsRegistration
 {
     internal static IServiceCollection RegisterOptions(this IServiceCollection services)
-```
+    {
+        services.ConfigureOptions<DatabaseOptionsSetup>();
+        services.AddSingleton<IValidateOptions<DatabaseOptions>, DatabaseOptionsValidator>();
 
+        return services;
+    }
+}
+```
 `XxxRegistration`: 클래스 이름
 `RegisterXxx`: 메서드 이름(IServiceCollection` 확장 메서드)
-
-## Options 클래스 구성
-```cs
-// 호출 순서
-// XxxOptionsSetup -> XxxOptionsValidator
-
-XxxOptionsSetup       // 옵션 값 읽기
-XxxOptionsValidator   // 옵션 값 유효성 검사
-XxxOptions            // 옵션 값
-```
 
 ## 실행 및 설정 파일
 

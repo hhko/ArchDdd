@@ -2,8 +2,6 @@
 
 public sealed class DatabaseOptions
 {
-    public const string DatabaseConfig = nameof(DatabaseConfig);
-
     public DatabaseOptions()
     {
         

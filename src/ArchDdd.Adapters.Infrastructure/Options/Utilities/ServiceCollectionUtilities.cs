@@ -3,7 +3,7 @@ using Microsoft.Extensions.Options;
 
 namespace ArchDdd.Adapters.Infrastructure.Utilities;
 
-public static class ServiceCollectionOptionsUtilities
+public static class ServiceCollectionUtilities
 {
     public static TOptions GetOptions<TOptions>(this IServiceCollection services)
         where TOptions : class, new()

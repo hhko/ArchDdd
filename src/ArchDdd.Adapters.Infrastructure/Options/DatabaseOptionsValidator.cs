@@ -1,15 +1,40 @@
-﻿using FluentValidation;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
+using ArchDdd.Domain.Abstractions.Utilities;
 
 namespace ArchDdd.Adapters.Infrastructure.Options;
 
-public class DatabaseOptionsValidator : AbstractValidator<DatabaseOptions>
+public class DatabaseOptionsValidator
+    : IValidateOptions<DatabaseOptions>
 {
-    public DatabaseOptionsValidator()
+    public ValidateOptionsResult Validate(string? name, DatabaseOptions options)
     {
-        RuleFor(x => x.ConnectionString).NotEmpty();
-        RuleFor(x => x.MaxRetryCount).GreaterThan(0);
-        RuleFor(x => x.MaxRetryDelay).GreaterThan(0);
-        RuleFor(x => x.CommandTimeout).GreaterThan(0);
+        List<string> validationResult = new();
+
+        if (options.ConnectionString.IsNullOrEmptyOrWhiteSpace())
+        {
+            validationResult.Add("Connection string is missing. ");
+        }
+
+        if (options.MaxRetryCount < 1)
+        {
+            validationResult.Add("Retry Count is less than one. ");
+        }
+
+        if (options.MaxRetryDelay < 1)
+        {
+            validationResult.Add("Retry delay is less than one. ");
+        }
+
+        if (options.CommandTimeout < 1)
+        {
+            validationResult.Add("Command timeout is less than one. ");
+        }
+
+        if (validationResult.Count is not 0)
+        {
+            return ValidateOptionsResult.Fail(validationResult);
+        }
+
+        return ValidateOptionsResult.Success;
     }
 }
