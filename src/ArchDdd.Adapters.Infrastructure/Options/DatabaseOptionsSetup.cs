@@ -8,9 +8,10 @@ internal sealed class DatabaseOptionsSetup(
     IConfiguration configuration,
     IWebHostEnvironment environment) : IConfigureOptions<DatabaseOptions>
 {
-    private const string _configurationSectionName = "DatabaseOptions";
     private readonly IConfiguration _configuration = configuration;
     private readonly IWebHostEnvironment _environment = environment;
+
+    private const string _configurationSectionName = "DatabaseOptions";.
 
     public void Configure(DatabaseOptions options)
     {
