@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[2075],{8691:s=>{s.exports=JSON.parse('{"label":"github-actions","permalink":"/archddd/blog/tags/github-actions","allTagsPath":"/archddd/blog/tags","count":1,"unlisted":false}')}}]);
