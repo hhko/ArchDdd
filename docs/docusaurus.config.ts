@@ -40,14 +40,14 @@ const config: Config = {
           editUrl:
             'https://github.com/hhko/archddd/tree/main/docs/',
         },
-        blog: {
-          blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/hhko/archddd/tree/main/docs/',
-        },
+        // blog: {
+        //   blogSidebarTitle: 'All posts',
+        //   blogSidebarCount: 'ALL',
+        //   // Please change this to your repo.
+        //   // Remove this to remove the "edit this page" links.
+        //   editUrl:
+        //     'https://github.com/hhko/archddd/tree/main/docs/',
+        // },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -71,11 +71,11 @@ const config: Config = {
           position: 'left',
           label: 'Tutorial',
         },
-        {
-          to: '/blog',
-          label: 'Todo',
-          position: 'left'
-        },
+        // {
+        //   to: '/blog',
+        //   label: 'Todo',
+        //   position: 'left'
+        // },
         {
           href: 'https://github.com/hhko/archddd',
           label: 'GitHub',

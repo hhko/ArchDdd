@@ -4,8 +4,10 @@
     ContentRootPath = Directory.GetCurrentDirectory()
 });
 
-builder.Services.RegisterAdapterInfrastructureLayer()
-                .RegisterAdapterPersistenceLayer(builder.Environment);
+builder.Services
+    .RegisterAdapterInfrastructureLayer()
+    .RegisterAdapterPersistenceLayer();
+    //.RegisterAdapterPersistenceLayer(builder.Environment);
 
 WebApplication webApplication = builder.Build();
 

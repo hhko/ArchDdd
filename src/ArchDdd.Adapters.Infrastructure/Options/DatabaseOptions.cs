@@ -2,11 +2,6 @@
 
 public sealed class DatabaseOptions
 {
-    public DatabaseOptions()
-    {
-        
-    }
-
     public string ConnectionString { get; set; } = default!;
 
     public int MaxRetryCount { get; set; }

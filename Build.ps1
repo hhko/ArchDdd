@@ -42,7 +42,6 @@ dotnet build $sln_path `
     --verbosity m
 
 if ($LASTEXITCODE -ne 0) {
-#if ($LASTEXITCODE -eq 0) {
     Write-Output "Build failed"
     exit 1
 }
