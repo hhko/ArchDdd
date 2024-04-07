@@ -1,4 +1,4 @@
-﻿namespace ArchDdd.Domain.Abstractions.Utilities;
+﻿namespace PrimitiveUtilities;
 
 public static class StringUtilities
 {

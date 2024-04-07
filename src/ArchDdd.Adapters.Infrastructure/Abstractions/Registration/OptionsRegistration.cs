@@ -17,8 +17,7 @@ public static class OptionsRegistration
 {
     internal static IServiceCollection RegisterOptions(this IServiceCollection services)
     {
-        services.ConfigureOptions<DatabaseOptionsSetup>()
-                .AddOptionsWithValidateOnStart<DatabaseOptions>();
+        services.ConfigureOptions<DatabaseOptionsSetup>();
 
         services.AddSingleton<IValidateOptions<DatabaseOptions>, DatabaseOptionsValidator>();
 

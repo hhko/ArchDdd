@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Options;
-using ArchDdd.Domain.Abstractions.Utilities;
+using PrimitiveUtilities;
 
 namespace ArchDdd.Adapters.Infrastructure.Options;
 
