@@ -10,6 +10,10 @@
 - Background 테스트?
 ---
 - docusaurus 업데이트
+---
+- 도커 컴포즈
+- appsettings.json 환경변수
+- appsettings.json 볼륨 매핑
 
 ## DDD
 ### 레이어
