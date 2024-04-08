@@ -370,3 +370,6 @@ dotnet new list
 
 ### 컨테이너
 - [ ] [Use Docker Compose Named Volumes as Non Root within your containers](https://pratikpc.medium.com/use-docker-compose-named-volumes-as-non-root-within-your-containers-1911eb30f731)
+
+### 테스트
+- [ ] [Using xUnit to Test your C# Code](https://auth0.com/blog/xunit-to-test-csharp-code/)
