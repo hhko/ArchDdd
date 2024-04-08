@@ -40,7 +40,7 @@ public class DatabaseOptionsTests
 
     [Theory]
     [ClassData(typeof(DatabaseOptionsValidationData))]
-    public void DatabaseOptions_WhenIsValid_ShouldNotThrow(Dictionary<string, string> inMemorySettings)
+    public void DatabaseOptions_WhenAppsettingsIsValid_ShouldNotThrow(Dictionary<string, string> inMemorySettings)
     {
         // Arrange
         IConfiguration configuration = new ConfigurationBuilder()
@@ -62,7 +62,7 @@ public class DatabaseOptionsTests
 
     [Theory]
     [ClassData(typeof(DatabaseOptionsInvalidationData))]
-    public void DatabaseOptions_WhenIsInvalid_ShouldThrow(Dictionary<string, string> inMemorySettings)
+    public void DatabaseOptions_WhenAppsettingsIsInvalid_ShouldThrow(Dictionary<string, string> inMemorySettings)
     {
         // Arrange
         IConfiguration configuration = new ConfigurationBuilder()

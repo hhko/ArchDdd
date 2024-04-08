@@ -42,6 +42,8 @@ public class DatabaseOptionsInvalidationData : IEnumerable<object[]>
                 { "DatabaseOptions:MaxRetryDelay", "0"},        // Invalid
                 { "DatabaseOptions:CommandTimeout", "0"}        // Invalid
             } };
+        yield return new object[] { new Dictionary<string, string>()
+            };
     }
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
