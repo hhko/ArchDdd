@@ -1,6 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <PackageReference Include="Quartz.Extensions.Hosting" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ArchDdd.Adapters.Infrastructure\ArchDdd.Adapters.Infrastructure.csproj" />
   </ItemGroup>
 

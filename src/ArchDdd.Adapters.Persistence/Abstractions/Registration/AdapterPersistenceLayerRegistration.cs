@@ -16,7 +16,9 @@ public static class AdapterPersistenceLayerRegistration
     public static IServiceCollection RegisterAdapterPersistenceLayer(
         this IServiceCollection services)
     {
-        services.RegisterDatabaseContext();
+        services
+            .RegisterDatabaseContext()
+            .RegisterBackgroundJobs();
 
         return services;
     }

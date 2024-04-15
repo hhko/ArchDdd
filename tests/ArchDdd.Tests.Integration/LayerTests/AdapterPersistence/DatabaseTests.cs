@@ -4,21 +4,21 @@ using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants.Collecti
 using Microsoft.Extensions.Options;
 using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants;
 
-namespace ArchDdd.Tests.Integration;
+namespace ArchDdd.Tests.Integration.LayerTests.AdapterPersistence;
 
 [Collection(ProductControllerCollection)]
 [Trait(nameof(IntegrationTest), IntegrationTest.DatabaseOptions)]
-public sealed class UnitTest1
+public sealed class DatabaseTests
 {
     private readonly ServiceProviderFixture _fixture;
 
-    public UnitTest1(ServiceProviderFixture serviceProviderFixture)
+    public DatabaseTests(ServiceProviderFixture serviceProviderFixture)
     {
         _fixture = serviceProviderFixture;
     }
 
     [Fact]
-    public void Test1()
+    public void DatabaseConnection_ShouldSucceed()
     {
         DatabaseOptions databaseOptions = _fixture.GetRequiredService<IOptions<DatabaseOptions>>().Value!;
     }

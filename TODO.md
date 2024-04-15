@@ -1,13 +1,21 @@
-- appsettings.json 테스트 시나리오 추가
-- 의존성 호출 순서?
+- [ ] xUnit Shared 클래스 이름 변경
+- [ ] 단위 테스트 이름 형식 변경
+  - T1: Arrange, 주체
+  - T2: Act, 시나리오
+  - T3: Assert, 결과
+---
+- Outbox BackgroundJob N개?
+---
+- [x] Background 서비스
+- [x] Background 테스트?
+---
+- [x] appsettings.json 테스트 시나리오 추가
+- [x] 의존성 호출 순서?
   ```
   services
     .AddTransient(_ => configuration)
     .RegisterAdapterInfrastructureLayer();
   ```
----
-- Background 서비스
-- Background 테스트?
 ---
 - docusaurus 업데이트
 ---
