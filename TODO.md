@@ -381,3 +381,7 @@ dotnet new list
 
 ### 테스트
 - [ ] [Using xUnit to Test your C# Code](https://auth0.com/blog/xunit-to-test-csharp-code/)
+
+
+## Scott Wlaschin
+- [x] [Moving IO to the edges of your app: Functional Core, Imperative Shell - Scott Wlaschin](https://www.youtube.com/watch?v=P1vES9AgfC4&t=3140s)
