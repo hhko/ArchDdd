@@ -24,6 +24,10 @@ public sealed class LayerDependencyTests
 
         var otherAssemblies = new[]
         {
+            // Host.AssemblyReference.Assembly.GetName().Name,
+            // Adapters.Infrastructure.AssemblyReference.Assembly.GetName().Name,
+            // Adapters.Persistence.AssemblyReference.Assembly.GetName().Name,
+            // Adapters.Presentation.AssemblyReference.Assembly.GetName().Name,
             Application.AssemblyReference.Assembly.GetName().Name,
             Domain.AssemblyReference.Assembly.GetName().Name,
         };
@@ -53,6 +57,10 @@ public sealed class LayerDependencyTests
         var otherAssemblies = new[]
         {
             Host.AssemblyReference.Assembly.GetName().Name,
+            // Adapters.Infrastructure.AssemblyReference.Assembly.GetName().Name,
+            // Adapters.Persistence.AssemblyReference.Assembly.GetName().Name,
+            // Adapters.Presentation.AssemblyReference.Assembly.GetName().Name,
+            // Application.AssemblyReference.Assembly.GetName().Name,
             Domain.AssemblyReference.Assembly.GetName().Name,
         };
 
@@ -76,9 +84,11 @@ public sealed class LayerDependencyTests
         var otherAssemblies = new[]
         {
             Host.AssemblyReference.Assembly.GetName().Name,
-            Adapters.Persistence.AssemblyReference.Assembly.GetName().Name,
             Adapters.Infrastructure.AssemblyReference.Assembly.GetName().Name,
+            Adapters.Persistence.AssemblyReference.Assembly.GetName().Name,
             Adapters.Presentation.AssemblyReference.Assembly.GetName().Name,
+            // Application.AssemblyReference.Assembly.GetName().Name,
+            // Domain.AssemblyReference.Assembly.GetName().Name,
         };
 
         // Act
@@ -101,10 +111,11 @@ public sealed class LayerDependencyTests
         var otherAssemblies = new[]
         {
             Host.AssemblyReference.Assembly.GetName().Name,
-            Adapters.Persistence.AssemblyReference.Assembly.GetName().Name,
             Adapters.Infrastructure.AssemblyReference.Assembly.GetName().Name,
+            Adapters.Persistence.AssemblyReference.Assembly.GetName().Name,
             Adapters.Presentation.AssemblyReference.Assembly.GetName().Name,
             Application.AssemblyReference.Assembly.GetName().Name,
+            // Domain.AssemblyReference.Assembly.GetName().Name,
         };
 
         // Act

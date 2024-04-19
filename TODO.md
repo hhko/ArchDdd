@@ -3,6 +3,16 @@
   - T1: Arrange, 주체
   - T2: Act, 시나리오
   - T3: Assert, 결과
+- [ ] Result 타입 구현
+  - Result
+  - ValidationResult
+- [ ] BaseType 타입 구현
+  - ValueObject
+  - Enum..
+  - Entity
+  - AggregateRoot
+  - DomainEvent
+  - ...
 ---
 - Outbox BackgroundJob N개?
 ---
