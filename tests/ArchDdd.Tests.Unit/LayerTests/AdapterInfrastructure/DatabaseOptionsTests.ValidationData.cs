@@ -60,26 +60,26 @@ public partial class DatabaseOptionsTests
         act.Should().NotThrow();
     }
 
-    public static IEnumerable<object[]> ValidationData =>
-        new List<object[]>
+    public static TheoryData<Dictionary<string, string>> ValidationData =>
+        new()
         {
-            new object[] { new Dictionary<string, string> {
+            new Dictionary<string, string> {
                 { "DatabaseOptions:ConnectionString", "appsettings.메모리.json... ConnectionString" },
                 { "DatabaseOptions:MaxRetryCount", "1"},
                 { "DatabaseOptions:MaxRetryDelay", "1"},
                 { "DatabaseOptions:CommandTimeout", "1"}
-            } },
-            new object[] { new Dictionary<string, string> {
+            },
+            new Dictionary<string, string> {
                 { "DatabaseOptions:ConnectionString", "appsettings.메모리.json... ConnectionString" },
                 { "DatabaseOptions:MaxRetryCount", "2"},
                 { "DatabaseOptions:MaxRetryDelay", "2"},
                 { "DatabaseOptions:CommandTimeout", "2"}
-            } },
-            new object[] { new Dictionary<string, string> {
+            },
+            new Dictionary<string, string> {
                 { "DatabaseOptions:ConnectionString", "appsettings.메모리.json... ConnectionString" },
                 { "DatabaseOptions:MaxRetryCount", "3"},
                 { "DatabaseOptions:MaxRetryDelay", "3"},
                 { "DatabaseOptions:CommandTimeout", "3"}
-            } }
+            }
         };
 }

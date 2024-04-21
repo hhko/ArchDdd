@@ -32,45 +32,45 @@ public partial class DatabaseOptionsTests
         act.Should().ThrowExactly<OptionsValidationException>();
     }
 
-    public static IEnumerable<object[]> InvalidationData =>
-        new List<object[]>
+    public static TheoryData<Dictionary<string, string>> InvalidationData =>
+        new()
         {
-            new object[] { new Dictionary<string, string> {
+            new Dictionary<string, string> {
                 { "DatabaseOptions:ConnectionString", "appsettings.메모리.json... ConnectionString" },
                 { "DatabaseOptions:MaxRetryCount", "0"},        // Invalid
                 { "DatabaseOptions:MaxRetryDelay", "1"},
                 { "DatabaseOptions:CommandTimeout", "1"}
-            } },
-            new object[] { new Dictionary<string, string> {
+            },
+            new Dictionary<string, string> {
                 { "DatabaseOptions:ConnectionString", "appsettings.메모리.json... ConnectionString" },
                 { "DatabaseOptions:MaxRetryCount", "1"},
                 { "DatabaseOptions:MaxRetryDelay", "0"},        // Invalid
                 { "DatabaseOptions:CommandTimeout", "1"}
-            } },
-            new object[] { new Dictionary<string, string> {
+            },
+            new Dictionary<string, string> {
                 { "DatabaseOptions:ConnectionString", "appsettings.메모리.json... ConnectionString" },
                 { "DatabaseOptions:MaxRetryCount", "1"},
                 { "DatabaseOptions:MaxRetryDelay", "1"},
                 { "DatabaseOptions:CommandTimeout", "0"}        // Invalid
-            } },
-            new object[] { new Dictionary<string, string> {
+            },
+            new Dictionary<string, string> {
                 { "DatabaseOptions:ConnectionString", "appsettings.메모리.json... ConnectionString" },
                 { "DatabaseOptions:MaxRetryCount", "0"},        // Invalid
                 { "DatabaseOptions:MaxRetryDelay", "0"},        // Invalid
                 { "DatabaseOptions:CommandTimeout", "0"}        // Invalid
-            } },
-            new object[] { new Dictionary<string, string> {
+            },
+            new Dictionary<string, string> {
                 { "DatabaseOptions:ConnectionString", "" },     // Invalid
                 { "DatabaseOptions:MaxRetryCount", "1"},
                 { "DatabaseOptions:MaxRetryDelay", "1"},
                 { "DatabaseOptions:CommandTimeout", "1"}
-            } },
-            new object[] { new Dictionary<string, string> {
+            },
+            new Dictionary<string, string> {
                 { "DatabaseOptions:ConnectionString", "" },     // Invalid
                 { "DatabaseOptions:MaxRetryCount", "0"},        // Invalid
                 { "DatabaseOptions:MaxRetryDelay", "0"},        // Invalid
                 { "DatabaseOptions:CommandTimeout", "0"}        // Invalid
-            } },
-            new object[] { new Dictionary<string, string>() }   // Invalid
+            },
+            new Dictionary<string, string>()                    // Invalid
         };
 }
