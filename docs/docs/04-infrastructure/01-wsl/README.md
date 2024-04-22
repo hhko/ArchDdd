@@ -1,4 +1,4 @@
-# WSL2 구축
+# WSL2
 
 ## 사전 준비
 ### Windows Terminal 설치
@@ -12,7 +12,7 @@
 
 <br/>
 
-## WSL2
+## WSL2 구축
 ### WSL2 설치
 ```shell
 # 1. 관리자 권한 Windows Terminal 실행
