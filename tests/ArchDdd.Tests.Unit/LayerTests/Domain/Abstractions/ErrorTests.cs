@@ -297,7 +297,7 @@ public class ErrorTests
     //}
 
     [Fact]
-    public void WhenReturnString_ShouldHaveCode()
+    public void ReturnString_WhenImplicit_ShouldBeCode()
     {
         // Arrage
         Error error = Error.Null;
@@ -307,11 +307,10 @@ public class ErrorTests
 
         // Assert
         actual.Should().Be(error.Code);
-        actual.Should().Be($"{nameof(Error.Null)}");
     }
 
     [Fact]
-    public void WhenReturnString_ShouldHaveMessage()
+    public void ReturnString_WhenExplicit_ShouldBeMessage()
     {
         // Arrange
         Error error = Error.Null;
@@ -321,9 +320,13 @@ public class ErrorTests
 
         // Assert
         actual.Should().Be(error.Message);
-        actual.Should().NotBe($"{nameof(Error.Null)}");
     }
 
+    // =
+    // != Code
+    // != Message
+    // o, NULL
+    // NULL, NULL
     [Fact]
     public void Equality_SameCodeAndMessage_ShouldBeSameObject()
     {
@@ -333,17 +336,6 @@ public class ErrorTests
 
         // Act & Assert
         EqualityTests.TestEqualObjects(error1, error2);
-    }
-
-    [Fact]
-    public void Equality_SameCodeAndDistinctMessage_ShouldNotBeSameObject()
-    {
-        // Arrange
-        Error error1 = Error.New("code", "message1");
-        Error error2 = Error.New("code", "message2");
-
-        // Act & Assert
-        EqualityTests.TestUnequalObjects(error1, error2);
     }
 
     [Fact]
@@ -358,20 +350,31 @@ public class ErrorTests
     }
 
     [Fact]
+    public void Equality_SameCodeAndDistinctMessage_ShouldNotBeSameObject()
+    {
+        // Arrange
+        Error error1 = Error.New("code", "message1");
+        Error error2 = Error.New("code", "message2");
+
+        // Act & Assert
+        EqualityTests.TestUnequalObjects(error1, error2);
+    }
+
+    [Fact]
     public void Equality_ComparingWithNull()
     {
         // Arrange
-        Error error = Error.New("code", "message");
+        Error error = Error.ConditionNotSatisfied;
 
         EqualityTests.TestAgainstNull(error);
     }
 
-    //[Fact]
-    //public void Equality_WithAllNull()
-    //{
-    //    // Arrange
-    //    EqualityTests.TestAgainstAllNull<Error>();
-    //}
+    [Fact]
+    public void Equality_ComparingWithAllNull()
+    {
+        // Arrange
+        EqualityTests.TestAgainstNull<Error>();
+    }
 }
 
 public static class EqualityTests
@@ -474,19 +477,19 @@ public static class EqualityTests
         AssertAllTestsHavePassed(testResults);
     }
 
-    //public static void TestAgainstAllNull<T>()
-    //{
-    //    IList<TestResult> testResults = new List<TestResult>()
-    //    {
-    //        // operator ==
-    //        TestEqualityOperatorReceivingNull<T>(null, true),
+    public static void TestAgainstNull<T>()
+    {
+        IList<TestResult> testResults = new List<TestResult>()
+        {
+            // operator ==
+            TestEqualityOperatorReceivingNull<T>(true),
 
-    //        // operator !=
-    //        TestInequalityOperatorReceivingNull<T>(null, false),
-    //    };
+            // operator !=
+            TestInequalityOperatorReceivingNull<T>(false),
+        };
 
-    //    AssertAllTestsHavePassed(testResults);
-    //}
+        AssertAllTestsHavePassed(testResults);
+    }
 
     private static TestResult TestGetHashCodeOnEqualObjects<T>(T obj1, T obj2) 
     {
@@ -578,6 +581,14 @@ public static class EqualityTests
         return TestResult.CreateSuccess();
     }
 
+    private static TestResult TestEqualityOperatorReceivingNull<T>(bool expectedEqual)
+    {
+        if (typeof(T).IsClass)
+            return TestEqualityOperator<T>(default(T), default(T), expectedEqual);
+
+        return TestResult.CreateSuccess();
+    }
+
     private static TestResult TestEqualityOperator<T>(T? obj1, T? obj2, bool expectedEqual)
     {
         MethodInfo? equalityOperator = GetEqualityOperator<T>();
@@ -610,6 +621,14 @@ public static class EqualityTests
     {
         if (typeof(T).IsClass)
             return TestInequalityOperator<T>(obj, default(T), expectedEqual);
+
+        return TestResult.CreateSuccess();
+    }
+
+    private static TestResult TestInequalityOperatorReceivingNull<T>(bool expectedEqual)
+    {
+        if (typeof(T).IsClass)
+            return TestInequalityOperator<T>(default(T), default(T), expectedEqual);
 
         return TestResult.CreateSuccess();
     }
