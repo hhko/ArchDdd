@@ -2,7 +2,7 @@
 
 namespace Microsoft.Extensions.DependencyInjection;
 
-public static class AdapterPersistenceLayerRegistration
+public static class AdaptersPersistenceLayerRegistration
 {
     //public static IServiceCollection RegisterAdapterPersistenceLayer(
     //    this IServiceCollection services,
@@ -13,7 +13,7 @@ public static class AdapterPersistenceLayerRegistration
     //    return services;
     //}
 
-    public static IServiceCollection RegisterAdapterPersistenceLayer(
+    public static IServiceCollection RegisterAdaptersPersistenceLayer(
         this IServiceCollection services)
     {
         services

@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using NSubstitute;
 using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
 
-namespace ArchDdd.Tests.Unit.LayerTests.Adapter;
+namespace ArchDdd.Tests.Unit.LayerTests.Adapters.Infrastructure;
 
 [Trait(nameof(UnitTest), UnitTest.Infrastructure)]
 public partial class DatabaseOptionsTests
@@ -51,7 +51,7 @@ public partial class DatabaseOptionsTests
         services
             .AddTransient(_ => configuration)
             .AddTransient(_ => Substitute.For<IWebHostEnvironment>())
-            .RegisterAdapterInfrastructureLayer();
+            .RegisterAdaptersInfrastructureLayer();
 
         // Act
         Action act = () => services.GetOptions<DatabaseOptions>();

@@ -5,8 +5,8 @@
 });
 
 builder.Services
-    .RegisterAdapterInfrastructureLayer()
-    .RegisterAdapterPersistenceLayer();
+    .RegisterAdaptersInfrastructureLayer()
+    .RegisterAdaptersPersistenceLayer();
     //.RegisterAdapterPersistenceLayer(builder.Environment);
 
 WebApplication webApplication = builder.Build();

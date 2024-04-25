@@ -2,8 +2,6 @@
 
 public sealed partial class Error : IEquatable<Error>
 {
-    #region 기본 타입
-
     // 성공 Error 타입
     public static readonly Error None = new(string.Empty, string.Empty);
 
@@ -15,11 +13,12 @@ public sealed partial class Error : IEquatable<Error>
     public static readonly Error ConditionNotSatisfied = new($"{nameof(ConditionNotSatisfied)}", "The specified condition was not satisfied.");
     public static readonly Error Validation = new($"{nameof(Validation)}", "A validation problem occurred.");
 
-    #endregion
+    //
+    // 생성 메서드
+    //  - Error New(string code, string message)
+    //  - Error FromException<TException>(TException exception)
+    //
 
-    #region 생성 메서드
-
-    // 기존(기존 Error 데이터로부터 생성) 
     private Error(string code, string message)
     {
         Code = code;
@@ -29,26 +28,24 @@ public sealed partial class Error : IEquatable<Error>
     public string Code { get; }
     public string Message { get; }
 
-    // 신규
     public static Error New(string code, string message)
     {
         return new Error(code, message);
     }
 
-    // 신규 | 예외
     public static Error FromException<TException>(TException exception)
         where TException : Exception
     {
-        // 예외 구분
-        //  - 형식 있음
+        // exception.Message 값에 예외 형식 제공 유/무
+        //  - 형식 있음: One or more errors occurred. ([0] Message 값) ([1] Message 값) ...
         //      1. InnerException가 없을 예외
         //      2. AggregateException 예외
         //  - 형식 없음
         //      3. InnerException가 있는 예외
 
-
-        // InnerException가 없는 예외
-        // AggregateException 예외
+        // 형식 있음
+        //  - InnerException가 없는 예외
+        //  - AggregateException 예외
         if (exception.InnerException is null || exception is AggregateException)
         {
             // AggregateException일 때
@@ -65,19 +62,20 @@ public sealed partial class Error : IEquatable<Error>
                 exception.Message);
         }
 
-        // InnerException가 있는 예외
+        // 형식 없음
+        // InnerException이 있는 예외
         //  exception.InnerException.Message
         //      - Invalid argument
-        //  exception.Message: 입력 값 (InnerException Message 값)
+        //  exception.Message(사용자 정의 형식): 입력 값 (InnerException Message 값)
         //      - This was invalid operation (Invalid argument)
         return New(
             $"{nameof(Exception)}.{exception.GetType().Name}", 
             $"{exception.Message}. ({exception.InnerException.Message})");
     }
 
-    #endregion
-
-    #region 비교 메서드
+    //
+    // 비교 메서드
+    //
 
     public static bool operator ==(Error? error, Error? other)
     {
@@ -111,8 +109,8 @@ public sealed partial class Error : IEquatable<Error>
         if (obj is null)
             return false;
 
-        //if (obj.GetType() != GetType())
-        //    return false;
+        if (obj.GetType() != GetType())
+            return false;
 
         if (obj is not Error other)
             return false;
@@ -125,9 +123,9 @@ public sealed partial class Error : IEquatable<Error>
         return HashCode.Combine(Code, Message);
     }
 
-    #endregion
-
-    #region string 반환 메서드
+    //
+    // string 반환 메서드
+    //
 
     public static implicit operator string(Error error)
     {
@@ -139,11 +137,11 @@ public sealed partial class Error : IEquatable<Error>
         return Message;
     }
 
-    #endregion
+    //
+    // 기본 메서드
+    //
 
-    #region 기본 메서드
-
-    // 실패 객체 샐성할 때
+    // 실패 객체 샐성할 때, 에러는 반드시 존재해야 한다.
     public void ThrowIfErrorNone()
     {
         if (this == None)
@@ -157,64 +155,4 @@ public sealed partial class Error : IEquatable<Error>
 
     //    return Message;
     //}
-
-    #endregion
 }
-
-//public class Vehicle : IEquatable<Vehicle>
-//{
-
-//    private string manufacturer;
-//    private string model;
-//    private int productionYear;
-
-//    public Vehicle(string manufacturer, string model, int productionYear)
-//    {
-//        this.manufacturer = manufacturer;
-//        this.model = model;
-//        this.productionYear = productionYear;
-//    }
-
-//    public string GetLabel()
-//    {
-//        return string.Format("{0} {1}", this.manufacturer, this.model);
-//    }
-
-//    public override int GetHashCode()
-//    {
-//        return this.manufacturer.GetHashCode() ^ this.model.GetHashCode();
-//    }
-
-//    public override bool Equals(object? obj)
-//    {
-//        return this.Equals(obj as Vehicle);
-//    }
-
-//    public bool Equals(Vehicle? other)
-//    {
-//        if (other != null)
-//            return this.manufacturer.Equals(other.manufacturer) &&
-//                   this.model.Equals(other.model);
-//        return false;
-//    }
-
-//    public static bool operator ==(Vehicle vehicle, Vehicle other)
-//    {
-//        bool isVehicleNull = object.ReferenceEquals(vehicle, null);
-//        bool isOtherNull = object.ReferenceEquals(other, null);
-
-//        if (isVehicleNull && isOtherNull)
-//            return true;
-//        else if (isVehicleNull)
-//            return false;
-//        else
-//            return vehicle.Equals(other);
-
-//    }
-
-//    public static bool operator !=(Vehicle vehicle, Vehicle other)
-//    {
-//        return !(vehicle == other);
-//    }
-
-//}

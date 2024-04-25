@@ -22,7 +22,22 @@ public class Result<TValue> : Result, IResult<TValue>
 
 public class Result : IResult
 {
+    // 재사용
     private static readonly Result _success = new(Error.None);
+
+    //
+    // 생성 메서드
+    //  - 동적 성공/실패
+    //    - Result Create(bool condition)
+    //    - Result<TValue> Create<TValue>(TValue? value)
+    //  - 정적 성공 
+    //    - Result Success()
+    //    - Result<TValue> Success<TValue>(TValue value)
+    //  - 정적 실패
+    //    - Result Failure(Error error)
+    //    - Result<TValue> Failure<TValue>(Error error)
+    //    - Result<TValue> Failure<TValue>()  
+    //
 
     private protected Result(Error error)
     {
@@ -35,11 +50,6 @@ public class Result : IResult
 
     public Error Error { get; }
 
-    #region 생성
-
-    // 생성
-    //  - 조건 기준 생성
-    //  - 값 기준 생성: NULL, Error 
     public static Result Create(bool condition)
     {
         return condition
@@ -57,8 +67,6 @@ public class Result : IResult
 
         return Success(value);
     }
-
-    #endregion
 
     public static Result Success()
     {
@@ -82,6 +90,16 @@ public class Result : IResult
         return new(default, error);
     }
 
+    // 기존 Result로부터 새로운 Result을 생성할 때
+    // 예.
+    //      public IResult<ChangeOrderHeaderStatusResponse>
+    //      {
+    //          Result statusChangeResult = ...;
+    //          if (statusChangeResult.IsFailure)
+    //          {
+    //              return statusChangeResult.Failure<ChangeOrderHeaderStatusResponse>();
+    //          }
+    //      }
     public Result<TValue> Failure<TValue>()
     {
         return Failure<TValue>(Error);

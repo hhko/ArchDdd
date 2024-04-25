@@ -322,11 +322,6 @@ public class ErrorTests
         actual.Should().Be(error.Message);
     }
 
-    // =
-    // != Code
-    // != Message
-    // o, NULL
-    // NULL, NULL
     [Fact]
     public void Equality_SameCodeAndMessage_ShouldBeSameObject()
     {

@@ -1,8 +1,8 @@
 ﻿namespace Microsoft.Extensions.DependencyInjection;
 
-public static class AdapterInfrastructureLayerRegistration
+public static class AdaptersInfrastructureLayerRegistration
 {
-    public static IServiceCollection RegisterAdapterInfrastructureLayer(
+    public static IServiceCollection RegisterAdaptersInfrastructureLayer(
         this IServiceCollection services)
     {
         services

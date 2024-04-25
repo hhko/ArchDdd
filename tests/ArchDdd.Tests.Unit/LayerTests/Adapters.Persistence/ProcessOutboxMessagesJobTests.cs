@@ -3,7 +3,7 @@ using NSubstitute;
 using Quartz;
 using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
 
-namespace ArchDdd.Tests.Unit.LayerTests.AdapterPersistence;
+namespace ArchDdd.Tests.Unit.LayerTests.Adapters.Persistence;
 
 [Trait(nameof(UnitTest), UnitTest.Persistence)]
 public class ProcessOutboxMessagesJobTests

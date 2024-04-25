@@ -45,8 +45,8 @@ public static class ServiceProviderFactory
         services
             .AddTransient(_ => configurations)
             .AddTransient(_ => Substitute.For<IWebHostEnvironment>())
-            .RegisterAdapterInfrastructureLayer()
-            .RegisterAdapterPersistenceLayer();
+            .RegisterAdaptersInfrastructureLayer()
+            .RegisterAdaptersPersistenceLayer();
 
         return services.BuildServiceProvider();
     }
