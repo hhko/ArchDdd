@@ -34,9 +34,9 @@ public class ErrorTests
     public static TheoryData<Error> PredefinedErrorTypes =>
         new()
         {
-            Error.Null,
-            Error.ConditionNotSatisfied,
-            Error.Validation
+            Error.NullError,
+            Error.ConditionNotSatisfiedError,
+            Error.ValidationError
         };
 
     [Theory]
@@ -157,7 +157,7 @@ public class ErrorTests
     //public void Compare_Predefined_NotSame()
     //{
     //    Error errorFirst = Error.None;
-    //    Error errorSecond = Error.Validation;
+    //    Error errorSecond = Error.ValidationError;
 
     //    var actual = errorFirst != errorSecond;
 
@@ -211,7 +211,7 @@ public class ErrorTests
     //[Fact]
     //public void CompareEqualsError_WhenNull()
     //{
-    //    Error errorFirst = Error.Null;
+    //    Error errorFirst = Error.NullError;
     //    Error? errorSecond = null;
 
     //    var actual = errorFirst.Equals(errorSecond);
@@ -222,7 +222,7 @@ public class ErrorTests
     //[Fact]
     //public void CompareEqualsObject_WhenNull()
     //{
-    //    Error errorFirst = Error.Null;
+    //    Error errorFirst = Error.NullError;
     //    object? errorSecond = null;
 
     //    var actual = errorFirst.Equals(errorSecond);
@@ -233,7 +233,7 @@ public class ErrorTests
     //[Fact]
     //public void CompareEqualsObject_When()
     //{
-    //    Error errorFirst = Error.Null;
+    //    Error errorFirst = Error.NullError;
     //    string errorSecond = "fun.";
 
     //    var actual = errorFirst.Equals(errorSecond);
@@ -244,8 +244,8 @@ public class ErrorTests
     //[Fact]
     //public void CompareEqualsObject_WhenError()
     //{
-    //    Error errorFirst = Error.Null;
-    //    Error errorSeconde = Error.Validation;
+    //    Error errorFirst = Error.NullError;
+    //    Error errorSeconde = Error.ValidationError;
 
     //    var actual = errorFirst.Equals(errorSeconde);
 
@@ -263,7 +263,7 @@ public class ErrorTests
     //[Fact]
     //public void Compare_Null_First()
     //{
-    //    Error error = Error.Null;
+    //    Error error = Error.NullError;
 
     //    var actual = (Error?)null == error;
 
@@ -273,7 +273,7 @@ public class ErrorTests
     //[Fact]
     //public void Compare_Null_Second()
     //{
-    //    Error error = Error.Null;
+    //    Error error = Error.NullError;
 
     //    var actual = error == (Error?)null;
 
@@ -300,7 +300,7 @@ public class ErrorTests
     public void ReturnString_WhenImplicit_ShouldBeCode()
     {
         // Arrage
-        Error error = Error.Null;
+        Error error = Error.NullError;
 
         // Act
         string actual = error;
@@ -313,7 +313,7 @@ public class ErrorTests
     public void ReturnString_WhenExplicit_ShouldBeMessage()
     {
         // Arrange
-        Error error = Error.Null;
+        Error error = Error.NullError;
 
         // Act
         string actual = error.ToString();
@@ -359,7 +359,7 @@ public class ErrorTests
     public void Equality_ComparingWithNull()
     {
         // Arrange
-        Error error = Error.ConditionNotSatisfied;
+        Error error = Error.ConditionNotSatisfiedError;
 
         EqualityTests.TestAgainstNull(error);
     }

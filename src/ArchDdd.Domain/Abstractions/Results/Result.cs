@@ -1,25 +1,5 @@
 ﻿namespace ArchDdd.Domain.Abstractions.Results;
 
-public class Result<TValue> : Result, IResult<TValue>
-{
-    private readonly TValue? _value;
-
-    public TValue Value => IsSuccess
-        ? _value!
-        : throw new InvalidOperationException($"The value of a failure result can not be accessed. Type '{typeof(TValue).FullName}'.");
-
-    protected internal Result(TValue? value, Error error)
-        : base(error)
-    {
-        _value = value;
-    }
-
-    public static implicit operator Result<TValue>(TValue? value)
-    {
-        return Create(value);
-    }
-}
-
 public class Result : IResult
 {
     // 재사용
@@ -29,14 +9,19 @@ public class Result : IResult
     // 생성 메서드
     //  - 동적 성공/실패
     //    - Result Create(bool condition)
-    //    - Result<TValue> Create<TValue>(TValue? value)
-    //  - 정적 성공 
+    //  - 성공, 값 有
+    //    - implicit operator Result<TValue>(TValue? value)     // NULL 허용: NULL은 실패로 처히아 행성한다. 암시적 Result<T> 생성
+    //          ↓
+    //    - Result<TValue> Create<TValue>(TValue? value)        // NULL 허용: NULL은 실패로 처히아 행성한다. 명시적 Result<T> 생성
+    //          ↓
+    //    - Result<TValue> Success<TValue>(TValue value)        // NULL 제외 생성
+    //  - 성공, 값 無
     //    - Result Success()
-    //    - Result<TValue> Success<TValue>(TValue value)
-    //  - 정적 실패
-    //    - Result Failure(Error error)
+    //  - 실패, 값 有
     //    - Result<TValue> Failure<TValue>(Error error)
-    //    - Result<TValue> Failure<TValue>()  
+    //    - Result<TValue> Failure<TValue>()                    // 기존 실패 Result --전환--> 새 실패 Result<T>
+    //  - 실패, 값 無
+    //    - Result Failure(Error error)
     //
 
     private protected Result(Error error)
@@ -54,13 +39,13 @@ public class Result : IResult
     {
         return condition
             ? Success()
-            : Failure(Error.ConditionNotSatisfied);
+            : Failure(Error.ConditionNotSatisfiedError);
     }
 
     public static Result<TValue> Create<TValue>(TValue? value)
     {
         if (value is null)
-            return Failure<TValue>(Error.Null);
+            return Failure<TValue>(Error.NullError);
 
         if (value is Error)
             throw new InvalidOperationException("Provided value is an Error");
@@ -90,7 +75,7 @@ public class Result : IResult
         return new(default, error);
     }
 
-    // 기존 Result로부터 새로운 Result을 생성할 때
+    // 기존 실패 Result --전환--> 새 실패 Result<T>
     // 예.
     //      public IResult<ChangeOrderHeaderStatusResponse>
     //      {
@@ -104,9 +89,24 @@ public class Result : IResult
     {
         return Failure<TValue>(Error);
     }
+}
 
-    //public static Result<TValue> BatchFailure<TValue>(TValue value)
-    //{
-    //    return new(value, Error.None);
-    //}
+public class Result<TValue> : Result, IResult<TValue>
+{
+    private readonly TValue? _value;
+
+    public TValue Value => IsSuccess
+        ? _value!
+        : throw new InvalidOperationException($"The value of a failure result can not be accessed. Type '{typeof(TValue).FullName}'.");
+
+    protected internal Result(TValue? value, Error error)
+        : base(error)
+    {
+        _value = value;
+    }
+
+    public static implicit operator Result<TValue>(TValue? value)
+    {
+        return Create(value);
+    }
 }

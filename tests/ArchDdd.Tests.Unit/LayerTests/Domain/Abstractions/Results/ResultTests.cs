@@ -24,7 +24,7 @@ public class ResultTests
     public void GettingValueFromGenericResult_ShouldThrowAnException_WhenResultIsFailureStringResult()
     {
         // Arrange
-        var result = Result.Failure<string>(Error.ConditionNotSatisfied);
+        var result = Result.Failure<string>(Error.ConditionNotSatisfiedError);
         string GetValueFromFailureResult() => result.Value;
 
         // Act
@@ -42,7 +42,7 @@ public class ResultTests
     public void GettingValueFromGenericResult_ShouldThrowAnException_WhenResultIsFailureIntResult()
     {
         // Arrange
-        var result = Result.Failure<int>(Error.ConditionNotSatisfied);
+        var result = Result.Failure<int>(Error.ConditionNotSatisfiedError);
         var action = () => result.Value;
 
         // Act

@@ -9,9 +9,9 @@ public sealed partial class Error : IEquatable<Error>
     //  - NULL
     //  - 조건
     //  - 유효성 검사
-    public static readonly Error Null = new($"{nameof(Null)}", "The result value is null.");
-    public static readonly Error ConditionNotSatisfied = new($"{nameof(ConditionNotSatisfied)}", "The specified condition was not satisfied.");
-    public static readonly Error Validation = new($"{nameof(Validation)}", "A validation problem occurred.");
+    public static readonly Error NullError = new($"{nameof(NullError)}", "The result value is null.");
+    public static readonly Error ConditionNotSatisfiedError = new($"{nameof(ConditionNotSatisfiedError)}", "The specified condition was not satisfied.");
+    public static readonly Error ValidationError = new($"{nameof(ValidationError)}", "A validation problem occurred.");
 
     //
     // 생성 메서드
@@ -36,40 +36,40 @@ public sealed partial class Error : IEquatable<Error>
     public static Error FromException<TException>(TException exception)
         where TException : Exception
     {
-        // exception.Message 값에 예외 형식 제공 유/무
-        //  - 형식 있음: One or more errors occurred. ([0] Message 값) ([1] Message 값) ...
-        //      1. InnerException가 없을 예외
-        //      2. AggregateException 예외
-        //  - 형식 없음
-        //      3. InnerException가 있는 예외
+        // exception.Message 형식 有/無
+        // 1. 형식 있음: One or more errors occurred. ([0] Message 값) ([1] Message 값) ...
+        //    - InnerException가 없는 예외
+        //    - AggregateException 예외
+        // 2. 형식 없음
+        //    - InnerException가 있는 예외
 
-        // 형식 있음
-        //  - InnerException가 없는 예외
-        //  - AggregateException 예외
+        // exception.Message 형식 有
+        // - 일반 예외(InnerException가 없는 예외)
+        // - AggregateException 예외
         if (exception.InnerException is null || exception is AggregateException)
         {
+            // 일반 예외(InnerException가 없는 예외)
+            //  .Message: 입력 값 
+            //
             // AggregateException일 때
             //  exception.InnerExceptions
             //      - [0] This was invalid operation
             //      - [1] Invalid argument
             //  exception.Message: One or more errors occurred. ([0] Message 값) ([1] Message 값)
             //      - One or more errors occurred. (This was invalid operation) (Invalid argument)
-            //
-            // 일반 예외
-            //  .Message: 입력 값 
             return New(
-                $"{nameof(Exception)}.{exception.GetType().Name}", 
+                $"{nameof(Exception)}.{exception.GetType().Name}",
                 exception.Message);
         }
 
-        // 형식 없음
-        // InnerException이 있는 예외
-        //  exception.InnerException.Message
+        // exception.Message 형식 無
+        // - InnerException이 있는 예외
+        //   exception.InnerException.Message
         //      - Invalid argument
-        //  exception.Message(사용자 정의 형식): 입력 값 (InnerException Message 값)
+        //   exception.Message(사용자 정의 형식): 입력 값 (InnerException Message 값)
         //      - This was invalid operation (Invalid argument)
         return New(
-            $"{nameof(Exception)}.{exception.GetType().Name}", 
+            $"{nameof(Exception)}.{exception.GetType().Name}",
             $"{exception.Message}. ({exception.InnerException.Message})");
     }
 

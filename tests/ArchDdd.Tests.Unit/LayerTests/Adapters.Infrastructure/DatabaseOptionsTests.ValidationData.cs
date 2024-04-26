@@ -37,9 +37,8 @@ public partial class DatabaseOptionsTests
     //    {"ArrayKey:2", "3"},
     //};
 
-    [Theory]
-    //[ClassData(typeof(DatabaseOptionsValidationData))]
-    [MemberData(nameof(ValidationData))]
+        [Theory]
+    [ClassData(typeof(ValidData))]
     public void DatabaseOptions_WhenAppsettingsIsValid_ShouldNotThrow(Dictionary<string, string> inMemorySettings)
     {
         // Arrange
@@ -47,11 +46,11 @@ public partial class DatabaseOptionsTests
             .AddInMemoryCollection(inMemorySettings!)
             .Build();
 
-        ServiceCollection services = new();
+        var services = new ServiceCollection();
         services
             .AddTransient(_ => configuration)
             .AddTransient(_ => Substitute.For<IWebHostEnvironment>())
-            .RegisterAdaptersInfrastructureLayer();
+            .RegisterAdapterInfrastructureLayer();
 
         // Act
         Action act = () => services.GetOptions<DatabaseOptions>();
@@ -60,26 +59,34 @@ public partial class DatabaseOptionsTests
         act.Should().NotThrow();
     }
 
-    public static TheoryData<Dictionary<string, string>> ValidationData =>
-        new()
+    private class ValidData : IEnumerable<object[]>
+    {
+        public IEnumerator<object[]> GetEnumerator()
         {
-            new Dictionary<string, string> {
-                { "DatabaseOptions:ConnectionString", "appsettings.메모리.json... ConnectionString" },
-                { "DatabaseOptions:MaxRetryCount", "1"},
-                { "DatabaseOptions:MaxRetryDelay", "1"},
-                { "DatabaseOptions:CommandTimeout", "1"}
-            },
-            new Dictionary<string, string> {
-                { "DatabaseOptions:ConnectionString", "appsettings.메모리.json... ConnectionString" },
-                { "DatabaseOptions:MaxRetryCount", "2"},
-                { "DatabaseOptions:MaxRetryDelay", "2"},
-                { "DatabaseOptions:CommandTimeout", "2"}
-            },
-            new Dictionary<string, string> {
-                { "DatabaseOptions:ConnectionString", "appsettings.메모리.json... ConnectionString" },
-                { "DatabaseOptions:MaxRetryCount", "3"},
-                { "DatabaseOptions:MaxRetryDelay", "3"},
-                { "DatabaseOptions:CommandTimeout", "3"}
-            }
-        };
+            yield return new object[] { new Dictionary<string, string> {
+                    { "DatabaseOptions:ConnectionString", "appsettings.메모리.json... ConnectionString" },
+                    { "DatabaseOptions:MaxRetryCount", "1"},
+                    { "DatabaseOptions:MaxRetryDelay", "1"},
+                    { "DatabaseOptions:CommandTimeout", "1"}
+                } };
+            yield return new object[] { new Dictionary<string, string> {
+                    { "DatabaseOptions:ConnectionString", "appsettings.메모리.json... ConnectionString" },
+                    { "DatabaseOptions:MaxRetryCount", "2"},
+                    { "DatabaseOptions:MaxRetryDelay", "2"},
+                    { "DatabaseOptions:CommandTimeout", "2"}
+                } };
+            yield return new object[] { new Dictionary<string, string> {
+                    { "DatabaseOptions:ConnectionString", "appsettings.메모리.json... ConnectionString" },
+                    { "DatabaseOptions:MaxRetryCount", "3"},
+                    { "DatabaseOptions:MaxRetryDelay", "3"},
+                    { "DatabaseOptions:CommandTimeout", "3"}
+                }
+            };
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
