@@ -37,7 +37,7 @@ public partial class DatabaseOptionsTests
     //    {"ArrayKey:2", "3"},
     //};
 
-        [Theory]
+    [Theory]
     [ClassData(typeof(ValidData))]
     public void DatabaseOptions_WhenAppsettingsIsValid_ShouldNotThrow(Dictionary<string, string> inMemorySettings)
     {

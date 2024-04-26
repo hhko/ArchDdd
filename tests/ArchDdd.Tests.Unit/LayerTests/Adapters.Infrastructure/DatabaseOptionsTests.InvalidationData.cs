@@ -10,7 +10,7 @@ namespace ArchDdd.Tests.Unit.LayerTests.Adapters.Infrastructure;
 
 public partial class DatabaseOptionsTests
 {
-    [[Theory]
+    [Theory]
     [ClassData(typeof(InvalidData))]
     public void DatabaseOptions_WhenAppsettingsIsInvalid_ShouldThrow(Dictionary<string, string> inMemorySettings)
     {
