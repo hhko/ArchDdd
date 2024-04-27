@@ -1,3 +1,28 @@
+## ValueObject
+- [ ] ValueObject Value 재정의 방법?
+- [ ] Result 테스트
+- [ ] ValidationResult 테스트
+- [ ] ValueObject 테스트
+- [ ] Username ValueObject 테스트
+- [ ] Email ValueObject 테스트
+
+## Enum
+- [ ] Enum 구현
+- [ ] Enum 적용 클래스
+- [ ] Enum 테스트
+- [ ] Enum 적용 클래스
+
+## Entity
+
+## UseCase
+- [ ] UseCase 클래스
+- [ ] Mediator 패턴?
+
+## Logs
+
+<br/>
+
+---
 - [ ] xUnit Shared 클래스 이름 변경
 - [ ] 단위 테스트 이름 형식 변경
   - T1: Arrange, 주체
