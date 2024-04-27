@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ArchDdd.Domain.Abstractions.BaseTypes;
+using System.ComponentModel.DataAnnotations;
 
 namespace ArchDdd.Domain.Abstractions.Results;
 
@@ -21,25 +22,18 @@ public static class ErrorUtilities
     //    return (TResult)validationResult;
     //}
 
-    //public static ValidationResult<TValueObject> CreateValidationResult<TValueObject>
-    //(
-    //    this ICollection<Error> errors,
-    //    Func<TValueObject> createValueObject
-    //)
-    //    where TValueObject : ValueObject
-    //{
-    //    if (errors is null)
-    //    {
-    //        throw new ArgumentNullException($"{nameof(errors)} must not be null");
-    //    }
+    public static ValidationResult<TValueObject> CreateValidationResult<TValueObject>(
+        this ICollection<Error> errors,
+        Func<TValueObject> createValueObject) where TValueObject : ValueObject
+    {
+        if (errors is null)
+            throw new ArgumentNullException($"{nameof(errors)} must not be null");
 
-    //    if (errors.Count != 0)
-    //    {
-    //        return ValidationResult<TValueObject>.WithErrors(errors.ToArray());
-    //    }
+        if (errors.Count != 0)
+            return ValidationResult<TValueObject>.WithErrors(errors.ToArray());
 
-    //    return ValidationResult<TValueObject>.WithoutErrors(createValueObject.Invoke());
-    //}
+        return ValidationResult<TValueObject>.WithoutErrors(createValueObject.Invoke());
+    }
 
     public static IList<Error> If(
         this IList<Error> errors,

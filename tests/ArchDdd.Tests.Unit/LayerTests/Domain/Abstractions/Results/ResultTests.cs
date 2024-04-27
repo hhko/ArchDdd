@@ -4,7 +4,7 @@ using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
 namespace ArchDdd.Tests.Unit.LayerTests.Domain.Abstractions;
 
 [Trait(nameof(UnitTest), UnitTest.Domain)]
-public class ResultTests
+public sealed class ResultTests
 {
     [Fact]
     public void TwoSuccessResults_ShouldReferTheSameCachedResultInstance_WhenTwoNonGenericSuccessResultsAreCreated()

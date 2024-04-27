@@ -6,7 +6,7 @@ using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
 namespace ArchDdd.Tests.Unit.LayerTests.Adapters.Persistence;
 
 [Trait(nameof(UnitTest), UnitTest.Persistence)]
-public class ProcessOutboxMessagesJobTests
+public sealed class ProcessOutboxMessagesJobTests
 {
     [Fact]
     public async Task ProcessOutboxMessagesJob_ShouldSucceed()

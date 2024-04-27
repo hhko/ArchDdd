@@ -10,7 +10,7 @@ using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
 namespace ArchDdd.Tests.Unit.LayerTests.Adapters.Infrastructure;
 
 [Trait(nameof(UnitTest), UnitTest.Infrastructure)]
-public partial class DatabaseOptionsTests
+public sealed partial class DatabaseOptionsTests
 {
     //{
     //    "TopLevelKey": "TopLevelValue",

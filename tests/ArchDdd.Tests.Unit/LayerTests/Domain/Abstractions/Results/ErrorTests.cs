@@ -5,7 +5,7 @@ using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
 namespace ArchDdd.Tests.Unit.LayerTests.Domain.Abstractions;
 
 [Trait(nameof(UnitTest), UnitTest.Domain)]
-public class ErrorTests
+public sealed class ErrorTests
 {
     private const string InvalidOperationExceptionMessage = "This was invalid operation";
     private const string ArgumentExceptionMessage = "Invalid argument";

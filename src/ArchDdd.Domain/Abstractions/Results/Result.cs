@@ -8,20 +8,20 @@ public class Result : IResult
     //
     // 생성 메서드
     //  - 동적 성공/실패
-    //    - Result Create(bool condition)
+    //    - Result Create(bool condition)                       // 동적 성공
     //  - 성공, 값 有
-    //    - implicit operator Result<TValue>(TValue? value)     // NULL 허용: NULL은 실패로 처히아 행성한다. 암시적 Result<T> 생성
+    //    - implicit operator Result<TValue>(TValue? value)     // 암시적 성공(NULL 허용): NULL은 실패로 처히아 행성한다. 암시적 Result<T> 생성
     //          ↓
-    //    - Result<TValue> Create<TValue>(TValue? value)        // NULL 허용: NULL은 실패로 처히아 행성한다. 명시적 Result<T> 생성
+    //    - Result<TValue> Create<TValue>(TValue? value)        // 동적 성공(NULL 허용): NULL은 실패로 처히아 행성한다. 명시적 Result<T> 생성
     //          ↓
-    //    - Result<TValue> Success<TValue>(TValue value)        // NULL 제외 생성
+    //    - Result<TValue> Success<TValue>(TValue value)        // 명시적 성공(NULL 제외 생성)
     //  - 성공, 값 無
-    //    - Result Success()
+    //    - Result Success()                                    // 명시적 성공
     //  - 실패, 값 有
-    //    - Result<TValue> Failure<TValue>(Error error)
-    //    - Result<TValue> Failure<TValue>()                    // 기존 실패 Result --전환--> 새 실패 Result<T>
+    //    - Result<TValue> Failure<TValue>(Error error)         // 명시적 실패
+    //    - Result<TValue> Failure<TValue>()                    // 명시적 실패: 기존 실패 Result --전환--> 새 실패 Result<T>
     //  - 실패, 값 無
-    //    - Result Failure(Error error)
+    //    - Result Failure(Error error)                         // 명시적 실패
     //
 
     private protected Result(Error error)

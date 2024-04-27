@@ -2,7 +2,6 @@
 using NetArchTest.Rules;
 using Xunit.Abstractions;
 using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ArchDdd.Tests.Unit.ArchitectureTests;
 

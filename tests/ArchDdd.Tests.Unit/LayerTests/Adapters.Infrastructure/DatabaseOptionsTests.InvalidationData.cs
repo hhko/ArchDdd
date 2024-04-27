@@ -9,7 +9,7 @@ using System.Collections;
 
 namespace ArchDdd.Tests.Unit.LayerTests.Adapters.Infrastructure;
 
-public partial class DatabaseOptionsTests
+public sealed partial class DatabaseOptionsTests
 {
     [Theory]
     [ClassData(typeof(InvalidData))]

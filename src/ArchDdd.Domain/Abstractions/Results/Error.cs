@@ -98,8 +98,7 @@ public sealed partial class Error : IEquatable<Error>
         if (other is null)
             return false;
 
-        return Code == other.Code
-            && Message == other.Message;
+        return ValuesAreEqual(other);
     }
 
     public override bool Equals(object? obj)
@@ -121,6 +120,12 @@ public sealed partial class Error : IEquatable<Error>
     public override int GetHashCode()
     {
         return HashCode.Combine(Code, Message);
+    }
+
+    private bool ValuesAreEqual(Error other)
+    {
+        return Code == other.Code
+            && Message == other.Message;
     }
 
     //
