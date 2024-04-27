@@ -4,28 +4,51 @@ sidebar_position: 2
 
 # 아키텍처 규칙
 
-## 프로젝트 이름
-- 목표
-  - 프로젝트 단위로 레이어를 구성한다.
-- 규칙
+## 솔루션 구성
+```
+솔루션명
+  프로젝트명1
+    src
+      프로젝트명1.Adapters.Infrastructure
+      프로젝트명1.Adapters.Persistence
+      프로젝트명1.Adapters.Presentation
+      프로젝트명1.Application
+      프로젝트명1.Domain
+      프로젝트명1
+    tests
+      프로젝트명1.Tests.Integration
+      프로젝트명1.Tests.Unit
+  프로젝트명2
+    src
+      ...
+    tests
+      ...
+  ...
+  tests
+    솔루션명.Tests.E2E
+```
+
+- 프로젝트 규칙
   ```
   T1.T2.T3
   ```
-  - `T1`: 프로세스 이름
+  - `T1`: 프로젝트 이름
   - `T2`: 레이어 이름
     - Adapter
     - Application
     - Domain
-  - `T3`: 레이어 세부 이름
-- 적용 예
+  - `T3`: 기능 이름
+- **테스트** 프로젝트 규칙
   ```
-  ArchiDdd.Adapters.Infrastructure       // T1.T2.T3
-  ArchiDdd.Adapters.Persistence          // T1.T2.T3
-  ArchiDdd.Adapters.Presentation         // T1.T2.T3
-  ArchiDdd.Application                   // T1.T2
-  ArchiDdd.Domain                        // T1.T2
-  ArchiDdd                               // T1
+  T1.T2.T3
   ```
+  - `T1`: 프로젝트 이름
+  - `T2`: 레이어 이름
+    - Test
+  - `T3`: 기능 이름
+    - `E2E`
+    - `Integration`
+    - `Unit`
 
 ## 어셈블리 식별
 - 목표
