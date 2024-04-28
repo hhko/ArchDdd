@@ -16,7 +16,7 @@ public abstract class ValueObject : IEquatable<ValueObject>
     //  - Validate
 
     //
-    // 비교 메서드
+    // 비교 메서드 | IEquatable
     //
 
     public static bool operator ==(ValueObject? valueObject, ValueObject? other)
@@ -59,16 +59,16 @@ public abstract class ValueObject : IEquatable<ValueObject>
         return ValuesAreEqual(other);
     }
 
-    public override int GetHashCode()
-    {
-        return GetAtomicValues()
-            .Aggregate(default(int), (hashcode, value) => HashCode.Combine(hashcode, value.GetHashCode()));
-    }
-
     private bool ValuesAreEqual(ValueObject other)
     {
         return GetAtomicValues()
             .SequenceEqual(other.GetAtomicValues());
+    }
+
+    public override int GetHashCode()
+    {
+        return GetAtomicValues()
+            .Aggregate(default(int), (hashcode, value) => HashCode.Combine(hashcode, value.GetHashCode()));
     }
 
     //

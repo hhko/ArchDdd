@@ -1,6 +1,7 @@
 ﻿using ArchDdd.Domain.Abstractions.BaseTypes;
 using ArchDdd.Tests.Unit.ArchitectureTests.Utilities;
 using NetArchTest.Rules;
+using Xunit.Abstractions;
 using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
 
 namespace ArchDdd.Tests.Unit.ArchitectureTests;
@@ -8,6 +9,13 @@ namespace ArchDdd.Tests.Unit.ArchitectureTests;
 [Trait(nameof(UnitTest), UnitTest.Architecture)]
 public sealed class ValueObjectTests
 {
+    private readonly ITestOutputHelper _output;
+
+    public ValueObjectTests(ITestOutputHelper output)
+    {
+        _output = output;
+    }
+
     [Fact]
     public void ValueObjects_ShouldBeImmutable()
     {
@@ -15,16 +23,13 @@ public sealed class ValueObjectTests
         var assembly = Domain.AssemblyReference.Assembly;
 
         // Act
-        var result = Types
-            .InAssembly(assembly)
-            .That()
-            .Inherit(typeof(ValueObject))
-            .Should()
-            .BeImmutable()
+        var actual = Types
+            .InAssembly(assembly).That().Inherit(typeof(ValueObject))
+            .Should().BeImmutable()      // { get; } : 성공
             .GetResult();
 
         // Assert
-        result.IsSuccessful.Should().BeTrue();
+        actual.ShouldBeTrue(_output);
     }
 
     [Theory]
@@ -36,15 +41,12 @@ public sealed class ValueObjectTests
         var assembly = Domain.AssemblyReference.Assembly;
 
         // Act
-        var result = Types
-            .InAssembly(assembly)
-            .That()
-            .Inherit(typeof(ValueObject))
-            .Should()
-            .DefineMethod(methodName)
+        var actual = Types
+            .InAssembly(assembly).That().Inherit(typeof(ValueObject))
+            .Should().DefineMethod(methodName)
             .GetResult();
 
         // Assert
-        result.IsSuccessful.Should().BeTrue();
+        actual.ShouldBeTrue(_output);
     }
 }

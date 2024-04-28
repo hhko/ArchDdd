@@ -1,3 +1,5 @@
+using ArchDdd.Domain.Abstractions.Results.Contracts;
+
 namespace ArchDdd.Domain.Abstractions.Results;
 
 public sealed class ValidationResult : Result, IValidationResult

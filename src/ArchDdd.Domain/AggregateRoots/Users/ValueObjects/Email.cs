@@ -13,12 +13,12 @@ public sealed class Email : ValueObject
 
     private static readonly Regex _regex = new(@"^([a-zA-Z])([a-zA-Z0-9]+)\.?([a-zA-Z0-9]+)@([a-z]+)\.[a-z]{2,3}$", Compiled | CultureInvariant | Singleline, TimeSpan.FromMilliseconds(100));
 
-    public new string Value { get; }
-
     private Email(string value)
     {
         Value = value;
     }
+
+    public new string Value { get; }
 
     public static ValidationResult<Email> Create(string email)
     {

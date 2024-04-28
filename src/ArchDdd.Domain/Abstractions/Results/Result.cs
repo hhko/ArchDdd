@@ -1,4 +1,6 @@
-﻿namespace ArchDdd.Domain.Abstractions.Results;
+﻿using ArchDdd.Domain.Abstractions.Results.Contracts;
+
+namespace ArchDdd.Domain.Abstractions.Results;
 
 public class Result : IResult
 {

@@ -1,5 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
+    <PackageReference Include="MediatR.Contracts" />
+    <PackageReference Include="Ulid" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\utilities\PrimitiveUtilities\PrimitiveUtilities.csproj" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,20 @@
+{
+  "profiles": {
+    "ArchDdd": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:54010;http://localhost:54011"
+    },
+    "고형호 | ArchDdd": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "고형호"
+      },
+      "applicationUrl": "https://localhost:54010;http://localhost:54011"
+    }
+  }
+}

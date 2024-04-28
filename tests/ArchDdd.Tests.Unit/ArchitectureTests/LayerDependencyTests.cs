@@ -1,4 +1,4 @@
-﻿using ArchDdd.Tests.Unit.Abstractions.Utilities;
+﻿using ArchDdd.Tests.Unit.ArchitectureTests.Utilities;
 using NetArchTest.Rules;
 using Xunit.Abstractions;
 using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
@@ -34,8 +34,7 @@ public sealed class LayerDependencyTests
         // Act
         var actual = Types
             .InAssembly(assembly)
-            .ShouldNot()
-            .HaveDependencyOnAny(otherAssemblies)
+            .ShouldNot().HaveDependencyOnAny(otherAssemblies)
             .GetResult();
 
         // Assert
@@ -66,8 +65,7 @@ public sealed class LayerDependencyTests
         // Act
         var actual = Types
             .InAssemblies(assemblies)
-            .ShouldNot()
-            .HaveDependencyOnAny(otherAssemblies)
+            .ShouldNot().HaveDependencyOnAny(otherAssemblies)
             .GetResult();
 
         // Assert
@@ -93,8 +91,7 @@ public sealed class LayerDependencyTests
         // Act
         var actual = Types
             .InAssembly(assembly)
-            .ShouldNot()
-            .HaveDependencyOnAny(otherAssemblies)
+            .ShouldNot().HaveDependencyOnAny(otherAssemblies)
             .GetResult();
 
         // Assert
@@ -120,8 +117,7 @@ public sealed class LayerDependencyTests
         // Act
         var actual = Types
             .InAssembly(assembly)
-            .ShouldNot()
-            .HaveDependencyOnAny(otherAssemblies)
+            .ShouldNot().HaveDependencyOnAny(otherAssemblies)
             .GetResult();
 
         // Assert

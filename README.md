@@ -11,6 +11,10 @@ If builders built buildings the way programmers wrote programs, then the first w
 - Architecting is a series of **trade-offs**.
 - The architecture should scream **the intent of the system**.
 
+## 목표
+- 도메인 주도 설계 기술로 아키텍처를 구현합니다.
+- 주요 설계 기술을 중심으로 구현 위한 구체적인 실천 방법을 공유합니다.
+
 ## 아키텍처 이해
 **Separation of Concerns(SoC)은** 중요한 아키텍처 원칙 중 하나입니다. 이는 **관심사**를 분리함으로써 코드를 더 잘 관리할 수 있다는 개념입니다. 아키텍처 수준의 관심사는 각각의 **레이어**로 나눠져 관리됩니다.
 > **아키텍처 패턴의 역사**는 **관심사**를 관리하기 위한 **레이어 배치의 역사**입니다.

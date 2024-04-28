@@ -74,7 +74,7 @@ public sealed partial class Error : IEquatable<Error>
     }
 
     //
-    // 비교 메서드
+    // 비교 메서드 | IEquatable
     //
 
     public static bool operator ==(Error? error, Error? other)
@@ -117,15 +117,15 @@ public sealed partial class Error : IEquatable<Error>
         return Equals(other);
     }
 
-    public override int GetHashCode()
-    {
-        return HashCode.Combine(Code, Message);
-    }
-
     private bool ValuesAreEqual(Error other)
     {
         return Code == other.Code
             && Message == other.Message;
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(Code, Message);
     }
 
     //

@@ -1,5 +1,39 @@
+- [ ] User 등록 API 구현
+- [ ] `TestResults` VS에서 제외 시키기
+- [ ] Enumeration<T> vs. enum 사용처 구분?
+- [ ] operator >, .. 비교 연산자
+  ```cs
+  public static bool operator >(UserId a, UserId b) => a.CompareTo(b) is 1;
+  public static bool operator <(UserId a, UserId b) => a.CompareTo(b) is -1;
+  public static bool operator >=(UserId a, UserId b) => a.CompareTo(b) >= 0;
+  public static bool operator <=(UserId a, UserId b) => a.CompareTo(b) <= 0;
+  ```
+- [ ] record
+  ```
+  record class
+  record
+  ```
+- [ ] Type -> IEnumerable<TEnum> -> Dictionary<int, TEnum>
+```cs
+    private static IEnumerable<TEnum> GetFieldsForType(Type enumType)
+    {
+        return enumType
+            .GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)
+            .Where(fieldInfo => enumType.IsAssignableFrom(fieldInfo.FieldType))
+            .Select(fieldInfo => (TEnum)fieldInfo.GetValue(default)!);
+    }
+
+    private static Dictionary<int, TEnum> CreateEnumerationDictionary(Type enumType)
+    {
+        return GetFieldsForType(enumType)
+            .ToDictionary(t => t.Id);
+    }
+
+```
+
 ## ValueObject
-- [ ] ValueObject Value 재정의 방법?
+- [x] ~~ValueObject Value 재정의 방법?~~
+  - 재정의해야할 메서드가 protected
 - [ ] Result 테스트
 - [ ] ValidationResult 테스트
 - [ ] ValueObject 테스트
