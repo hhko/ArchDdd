@@ -15,7 +15,7 @@
 
 ## Domain
 - [x] [ValueObject | C# 9 Records as DDD Value Objects](https://enterprisecraftsmanship.com/posts/csharp-records-value-objects/)
-  - 1. **IEquatable<T> 세부 제어 부족**
+  - 1. **IEquatable&ltT&gt 세부 제어 부족**
     - 대상 선택 불가: 멤버 변수 중에서 선택적으로 지정할 수 없음
       ```cs
       protected override IEnumerable<object> GetEqualityComponents()
