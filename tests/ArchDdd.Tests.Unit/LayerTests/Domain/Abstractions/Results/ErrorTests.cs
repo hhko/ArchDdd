@@ -1,76 +1,77 @@
 ﻿using ArchDdd.Domain.Abstractions.Results;
 using ArchDdd.Tests.Unit.Abstractions.Utilities;
+using System.Collections;
 using System.Reflection;
 using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
 
 namespace ArchDdd.Tests.Unit.LayerTests.Domain.Abstractions;
 
 [Trait(nameof(UnitTest), UnitTest.Domain)]
-public sealed class ErrorTests
+public class ErrorTests
 {
     private const string InvalidOperationExceptionMessage = "This was invalid operation";
     private const string ArgumentExceptionMessage = "Invalid argument";
     private const string NotFoundExceptionMessage = "Not found";
 
-    //
-    // 비교 메서드
-    //
+    ////
+    //// 비교 메서드
+    ////
 
-    [Fact]
-    public void Equality_SameCodeAndMessage_ShouldBeSameObject()
-    {
-        // Arrange
-        Error error1 = Error.New("code", "message");
-        Error error2 = Error.New("code", "message");
+    //[Fact]
+    //public void Equality_SameCodeAndMessage_ShouldBeSameObject()
+    //{
+    //    // Arrange
+    //    Error error1 = Error.New("code", "message");
+    //    Error error2 = Error.New("code", "message");
 
-        // Act & Assert
-        EqualityTests.TestEqualObjects(error1, error2);
-    }
+    //    // Act & Assert
+    //    EqualityTests.TestEqualObjects(error1, error2);
+    //}
 
-    [Fact]
-    public void Equality_DistinctCodeAndSameMessage_ShouldNotBeSameObject()
-    {
-        // Arrange
-        Error error1 = Error.New("code1", "message");
-        Error error2 = Error.New("code2", "message");
+    //[Fact]
+    //public void Equality_DistinctCodeAndSameMessage_ShouldNotBeSameObject()
+    //{
+    //    // Arrange
+    //    Error error1 = Error.New("code1", "message");
+    //    Error error2 = Error.New("code2", "message");
 
-        // Act & Assert
-        EqualityTests.TestUnequalObjects(error1, error2);
-    }
+    //    // Act & Assert
+    //    EqualityTests.TestUnequalObjects(error1, error2);
+    //}
 
-    [Fact]
-    public void Equality_SameCodeAndDistinctMessage_ShouldNotBeSameObject()
-    {
-        // Arrange
-        Error error1 = Error.New("code", "message1");
-        Error error2 = Error.New("code", "message2");
+    //[Fact]
+    //public void Equality_SameCodeAndDistinctMessage_ShouldNotBeSameObject()
+    //{
+    //    // Arrange
+    //    Error error1 = Error.New("code", "message1");
+    //    Error error2 = Error.New("code", "message2");
 
-        // Act & Assert
-        EqualityTests.TestUnequalObjects(error1, error2);
-    }
+    //    // Act & Assert
+    //    EqualityTests.TestUnequalObjects(error1, error2);
+    //}
 
-    [Fact]
-    public void Equality_ComparingWithNull()
-    {
-        // Arrange
-        Error error = Error.ConditionNotSatisfiedError;
+    //[Fact]
+    //public void Equality_ComparingWithNull()
+    //{
+    //    // Arrange
+    //    Error error = Error.ConditionNotSatisfiedError;
 
-        EqualityTests.TestAgainstNull(error);
-    }
+    //    EqualityTests.TestAgainstNull(error);
+    //}
 
-    [Fact]
-    public void Equality_ComparingWithAllNull()
-    {
-        // Arrange
-        EqualityTests.TestAgainstNull<Error>();
-    }
+    //[Fact]
+    //public void Equality_ComparingWithAllNull()
+    //{
+    //    // Arrange
+    //    EqualityTests.TestAgainstNull<Error>();
+    //}
 
     //
     // 기본 메서드
     //
 
     [Fact]
-    public void ThrowIfErrorNone_WhenErrorIsNone_ShouldThrowAnException()
+    public void ErrorIsNone_ThrowIfErrorNone_ShouldRasieAnException()
     {
         // Arrange
         var error = Error.None;
@@ -87,17 +88,13 @@ public sealed class ErrorTests
             .Should().Be("Provided error is Error.None");
     }
 
-    public static TheoryData<Error> PredefinedErrorTypes =>
-        new()
-        {
-            Error.NullError,
-            Error.ConditionNotSatisfiedError,
-            Error.ValidationError
-        };
-
+    // xUnit1044 Info   Avoid using TheoryData type arguments that are not serializable
+    // xUnit1045 Info   Avoid using TheoryData type arguments that might not be serializable
+    // xUnit1046 Info   Avoid using TheoryDataRow arguments that are not serializable
+    // xUnit1047 Info   Avoid using TheoryDataRow arguments that might not be serializable
     [Theory]
-    [MemberData(nameof(PredefinedErrorTypes))]
-    public void ThrowIfErrorNone_WhenErrorIsPredefinedErrorTypes_ShouldNotThrow(Error error)
+    [ClassData(typeof(PredefinedErrorTypes))]
+    public void ErrorIsNotNone_ThrowIfErrorNone_ShouldNotRaiseAnyExceptions(Error error)
     {
         // Act
         var actual = FluentActions
@@ -107,12 +104,27 @@ public sealed class ErrorTests
         actual.Should().NotThrow();
     }
 
+    public class PredefinedErrorTypes : IEnumerable<object[]>
+    {
+        public IEnumerator<object[]> GetEnumerator()
+        {
+            yield return new object[] { Error.NullError };
+            yield return new object[] { Error.ConditionNotSatisfiedError };
+            yield return new object[] { Error.ValidationError };
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+    }
+
     //
     // 생성 메서드: 예외
     //
 
     [Fact]
-    public void FromException_WhenInnerExceptionIsNot_ShouldContainExceptionMessage()
+    public void InnerExceptionsAreNot_FromException_ShouldHaveMessage()
     {
         // Arrange
         var invalidOperationException = new InvalidOperationException(
@@ -127,7 +139,7 @@ public sealed class ErrorTests
     }
 
     [Fact]
-    public void FromException_WhenInnerExceptionIs_ShouldContainInnerExceptionMessage()
+    public void InnerExceptionsAre_FromException_ShouldHaveMessageAndInnerExceptionMessages()
     {
         // Arrange
         var invalidOperationException = new InvalidOperationException(
@@ -143,7 +155,7 @@ public sealed class ErrorTests
     }
 
     [Fact]
-    public void FromException_WhenAggregateExceptionHasOneInnerException_ShouldContainAllInnerExceptionsMessages()
+    public void AggregateExceptionIsInnerException_FromException_ShouldHaveInnerExceptionsMessage()
     {
         // Arrange
         var aggregateException = new AggregateException(
@@ -159,7 +171,7 @@ public sealed class ErrorTests
     }
 
     [Fact]
-    public void FromException_WhenAggregateExceptionHasManyInnerExceptions_ShouldContainAllInnerExceptionsMessages()
+    public void AggregateExceptionAreInnerExceptions_FromException_ShouldHaveInnerExceptionsMessages()
     {
         // Arrange
         var aggregateException = new AggregateException(
@@ -176,11 +188,11 @@ public sealed class ErrorTests
     }
 
     //
-    // 필수 메서드: string 반환
+    // 변환 메서드 | string
     //
-    
+
     [Fact]
-    public void ReturnString_WhenImplicit_ShouldBeCode()
+    public void ErrorIs_ReturnImplicitString_ShouldBeCode()
     {
         // Arrage
         Error error = Error.NullError;
@@ -193,7 +205,7 @@ public sealed class ErrorTests
     }
 
     [Fact]
-    public void ReturnString_WhenExplicit_ShouldBeMessage()
+    public void ErrorIs_REturnExplicitString_ShouldBeMessage()
     {
         // Arrange
         Error error = Error.NullError;

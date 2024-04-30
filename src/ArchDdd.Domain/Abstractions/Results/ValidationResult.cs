@@ -53,8 +53,9 @@ public sealed class ValidationResult<TValue> : Result<TValue>, IValidationResult
     //    - ValidationResult<TValue> WithErrors(params Error[] validationErrors)
     //
 
-    // TODO: value가 NULL일 때???
     // 성공
+    // - TValue?일 때 NULL이면
+    //   Result<T>에서 Value 값을 참조할 때 InvalidOperationException 예외를 발생 시킨다.
     private ValidationResult(TValue? value)
         : base(value, Error.None)
     {

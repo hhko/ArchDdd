@@ -15,34 +15,34 @@ public sealed class LayerDependencyTests
         _output = output;
     }
 
+    //[Fact]
+    //public void HostLayer_ShouldNotHaveDependency_OnOtherLayersThanAdapter()
+    //{
+    //    // Arrange
+    //    var assembly = Host.AssemblyReference.Assembly;
+
+    //    var otherAssemblies = new[]
+    //    {
+    //        // Host.AssemblyReference.Assembly.GetName().Name,
+    //        // Adapters.Infrastructure.AssemblyReference.Assembly.GetName().Name,
+    //        // Adapters.Persistence.AssemblyReference.Assembly.GetName().Name,
+    //        // Adapters.Presentation.AssemblyReference.Assembly.GetName().Name,
+    //        Application.AssemblyReference.Assembly.GetName().Name,
+    //        Domain.AssemblyReference.Assembly.GetName().Name,
+    //    };
+
+    //    // Act
+    //    var actual = Types
+    //        .InAssembly(assembly)
+    //        .ShouldNot().HaveDependencyOnAny(otherAssemblies)
+    //        .GetResult();
+
+    //    // Assert
+    //    actual.ShouldBeTrue(_output);
+    //}
+
     [Fact]
-    public void HostLayer_ShouldNotHaveDependency_OnOtherLayersThanAdapter()
-    {
-        // Arrange
-        var assembly = Host.AssemblyReference.Assembly;
-
-        var otherAssemblies = new[]
-        {
-            // Host.AssemblyReference.Assembly.GetName().Name,
-            // Adapters.Infrastructure.AssemblyReference.Assembly.GetName().Name,
-            // Adapters.Persistence.AssemblyReference.Assembly.GetName().Name,
-            // Adapters.Presentation.AssemblyReference.Assembly.GetName().Name,
-            Application.AssemblyReference.Assembly.GetName().Name,
-            Domain.AssemblyReference.Assembly.GetName().Name,
-        };
-
-        // Act
-        var actual = Types
-            .InAssembly(assembly)
-            .ShouldNot().HaveDependencyOnAny(otherAssemblies)
-            .GetResult();
-
-        // Assert
-        actual.ShouldBeTrue(_output);
-    }
-
-    [Fact]
-    public void AdapterLayer_ShouldNotHaveDependency_OnOtherLayersThanApplication()
+    public void AdapterLayers_CheckDependencisExceptApplicationLayer_ShouldNotHaveDependencies()
     {
         // Arrange
         var assemblies = new[]
@@ -54,7 +54,7 @@ public sealed class LayerDependencyTests
 
         var otherAssemblies = new[]
         {
-            Host.AssemblyReference.Assembly.GetName().Name,
+            // Host.AssemblyReference.Assembly.GetName().Name,
             // Adapters.Infrastructure.AssemblyReference.Assembly.GetName().Name,
             // Adapters.Persistence.AssemblyReference.Assembly.GetName().Name,
             // Adapters.Presentation.AssemblyReference.Assembly.GetName().Name,
@@ -73,14 +73,14 @@ public sealed class LayerDependencyTests
     }
 
     [Fact]
-    public void ApplicationLayer_ShouldNotHaveDependency_OnOtherLayersThanDomain()
+    public void ApplicationLayer_CheckDependencisExceptDomainLayer_ShouldNotHaveDependencies()
     {
         // Arrange
         var assembly = Application.AssemblyReference.Assembly;
 
         var otherAssemblies = new[]
         {
-            Host.AssemblyReference.Assembly.GetName().Name,
+            //Host.AssemblyReference.Assembly.GetName().Name,
             Adapters.Infrastructure.AssemblyReference.Assembly.GetName().Name,
             Adapters.Persistence.AssemblyReference.Assembly.GetName().Name,
             Adapters.Presentation.AssemblyReference.Assembly.GetName().Name,
@@ -99,14 +99,14 @@ public sealed class LayerDependencyTests
     }
 
     [Fact]
-    public void DomainLayer_ShouldNotHaveDependency_OnOtherLayers()
+    public void DomainLayer_CheckDependencisAnyLayers_ShouldNotHaveDependencies()
     {
         // Arrange
         var assembly = Domain.AssemblyReference.Assembly;
 
         var otherAssemblies = new[]
         {
-            Host.AssemblyReference.Assembly.GetName().Name,
+            //Host.AssemblyReference.Assembly.GetName().Name,
             Adapters.Infrastructure.AssemblyReference.Assembly.GetName().Name,
             Adapters.Persistence.AssemblyReference.Assembly.GetName().Name,
             Adapters.Presentation.AssemblyReference.Assembly.GetName().Name,

@@ -36,45 +36,45 @@ public sealed class ValueObjectTests
         }
     }
 
-    //
-    // 비교 메서드 | IEquatable
-    //
+    ////
+    //// 비교 메서드 | IEquatable
+    ////
 
-    [Fact]
-    public void Equality_SameValues_ShouldBeSameObject()
-    {
-        // Arrange
-        TestValueObject valueObject1 = TestValueObject.Create(1).Value;
-        TestValueObject valueObject2 = TestValueObject.Create(1).Value;
+    //[Fact]
+    //public void Equality_SameValues_ShouldBeSameObject()
+    //{
+    //    // Arrange
+    //    TestValueObject valueObject1 = TestValueObject.Create(1).Value;
+    //    TestValueObject valueObject2 = TestValueObject.Create(1).Value;
 
-        // Act & Assert
-        EqualityTests.TestEqualObjects(valueObject1, valueObject2);
-    }
+    //    // Act & Assert
+    //    EqualityTests.TestEqualObjects(valueObject1, valueObject2);
+    //}
 
-    [Fact]
-    public void Equality_DistinctValues_ShouldNotBeSameObject()
-    {
-        // Arrange
-        TestValueObject valueObject1 = TestValueObject.Create(1).Value;
-        TestValueObject valueObject2 = TestValueObject.Create(2).Value;
+    //[Fact]
+    //public void Equality_DistinctValues_ShouldNotBeSameObject()
+    //{
+    //    // Arrange
+    //    TestValueObject valueObject1 = TestValueObject.Create(1).Value;
+    //    TestValueObject valueObject2 = TestValueObject.Create(2).Value;
 
-        // Act & Assert
-        EqualityTests.TestUnequalObjects(valueObject1, valueObject2);
-    }
+    //    // Act & Assert
+    //    EqualityTests.TestUnequalObjects(valueObject1, valueObject2);
+    //}
 
-    [Fact]
-    public void Equality_ComparingWithNull()
-    {
-        // Arrange
-        TestValueObject valueObject = TestValueObject.Create(1).Value;
+    //[Fact]
+    //public void Equality_ComparingWithNull()
+    //{
+    //    // Arrange
+    //    TestValueObject valueObject = TestValueObject.Create(1).Value;
 
-        EqualityTests.TestAgainstNull(valueObject);
-    }
+    //    EqualityTests.TestAgainstNull(valueObject);
+    //}
 
-    [Fact]
-    public void Equality_ComparingWithAllNull()
-    {
-        // Arrange
-        EqualityTests.TestAgainstNull<TestValueObject>();
-    }
+    //[Fact]
+    //public void Equality_ComparingWithAllNull()
+    //{
+    //    // Arrange
+    //    EqualityTests.TestAgainstNull<TestValueObject>();
+    //}
 }

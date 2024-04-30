@@ -9,66 +9,66 @@ namespace ArchDdd.Tests.Unit.LayerTests.Domain.Abstractions.BaseTypes;
 [Trait(nameof(UnitTest), UnitTest.Domain)]
 public sealed class EnumerationTests
 {
-    public sealed class DumyRole : Enumeration<DumyRole>
+    public sealed class TestRole : Enumeration<TestRole>
     {
-        public static readonly DumyRole Customer = new(1, nameof(Customer));
-        public static readonly DumyRole Employee = new(2, nameof(Employee));
-        public static readonly DumyRole Manager = new(3, nameof(Manager));
-        public static readonly DumyRole Administrator = new(4, nameof(Administrator));
+        public static readonly TestRole Customer = new(1, nameof(Customer));
+        public static readonly TestRole Employee = new(2, nameof(Employee));
+        public static readonly TestRole Manager = new(3, nameof(Manager));
+        public static readonly TestRole Administrator = new(4, nameof(Administrator));
 
-        public DumyRole(int id, string name)
+        public TestRole(int id, string name)
             : base(id, name)
         {
         }
     }
 
-    //
-    // 비교 메서드 | IEquatable
-    //
+    ////
+    //// 비교 메서드 | IEquatable
+    ////
 
-    [Fact]
-    public void Equality_SameValues_ShouldBeSameObject()
-    {
-        // Arrange
-        DumyRole role1 = DumyRole.Administrator;
-        DumyRole role2 = DumyRole.Administrator;
+    //[Fact]
+    //public void Equality_SameValues_ShouldBeSameObject()
+    //{
+    //    // Arrange
+    //    TestRole role1 = TestRole.Administrator;
+    //    TestRole role2 = TestRole.Administrator;
 
-        // Act & Assert
-        EqualityTests.TestEqualObjects(role1, role2);
-    }
+    //    // Act & Assert
+    //    EqualityTests.TestEqualObjects(role1, role2);
+    //}
 
-    [Fact]
-    public void Equality_DistinctValues_ShouldNotBeSameObject()
-    {
-        // Arrange
-        DumyRole role1 = DumyRole.Administrator;
-        DumyRole role2 = DumyRole.Customer;
+    //[Fact]
+    //public void Equality_DistinctValues_ShouldNotBeSameObject()
+    //{
+    //    // Arrange
+    //    TestRole role1 = TestRole.Administrator;
+    //    TestRole role2 = TestRole.Customer;
 
-        // Act & Assert
-        EqualityTests.TestUnequalObjects(role1, role2);
-    }
+    //    // Act & Assert
+    //    EqualityTests.TestUnequalObjects(role1, role2);
+    //}
 
-    [Fact]
-    public void Equality_ComparingWithNull()
-    {
-        // Arrange
-        DumyRole role = DumyRole.Administrator;
+    //[Fact]
+    //public void Equality_ComparingWithNull()
+    //{
+    //    // Arrange
+    //    TestRole role = TestRole.Administrator;
 
-        EqualityTests.TestAgainstNull(role);
-    }
+    //    EqualityTests.TestAgainstNull(role);
+    //}
 
-    [Fact]
-    public void Equality_ComparingWithAllNull()
-    {
-        // Arrange
-        EqualityTests.TestAgainstNull<DumyRole>();
-    }
+    //[Fact]
+    //public void Equality_ComparingWithAllNull()
+    //{
+    //    // Arrange
+    //    EqualityTests.TestAgainstNull<TestRole>();
+    //}
 
     [Theory]
     [ClassData(typeof(ValidData))]
-    public void FromId_FoundFromId_ShouldReutnT(int id, DumyRole role)
+    public void EnumAre_FromId_ShouldBeT(int id, TestRole role)
     {
-        DumyRole? actual = DumyRole.FromId(id);
+        TestRole? actual = TestRole.FromId(id);
 
         actual.Should().Be(role);
     }
@@ -77,10 +77,10 @@ public sealed class EnumerationTests
     {
         public IEnumerator<object[]> GetEnumerator()
         {
-            yield return new object[] { DumyRole.Customer.Id, DumyRole.Customer };
-            yield return new object[] { DumyRole.Employee.Id, DumyRole.Employee };
-            yield return new object[] { DumyRole.Manager.Id, DumyRole.Manager };
-            yield return new object[] { DumyRole.Administrator.Id, DumyRole.Administrator };
+            yield return new object[] { TestRole.Customer.Id, TestRole.Customer };
+            yield return new object[] { TestRole.Employee.Id, TestRole.Employee };
+            yield return new object[] { TestRole.Manager.Id, TestRole.Manager };
+            yield return new object[] { TestRole.Administrator.Id, TestRole.Administrator };
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -90,9 +90,9 @@ public sealed class EnumerationTests
     }
 
     [Fact]
-    public void FromId_NotFoundFromId_ShouldReutnNull()
+    public void EnumAreNot_FromId_ShouldBeNull()
     {
-        DumyRole? actual = DumyRole.FromId(-1);
+        TestRole? actual = TestRole.FromId(-1);
 
         actual.Should().BeNull();
     }

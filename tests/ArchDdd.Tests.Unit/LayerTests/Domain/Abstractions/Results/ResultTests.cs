@@ -4,24 +4,24 @@ using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
 namespace ArchDdd.Tests.Unit.LayerTests.Domain.Abstractions;
 
 [Trait(nameof(UnitTest), UnitTest.Domain)]
-public sealed class ResultTests
+public class ResultTests
 {
     [Fact]
-    public void TwoSuccessResults_ShouldReferTheSameCachedResultInstance_WhenTwoNonGenericSuccessResultsAreCreated()
+    public void TwoNonGenericSuccessResultsAreCreated_CompareTwoResultsOfReference_ShouldBeTheSameCachedResultInstance()
     {
-        //Arrange
+        // Arrange
         var firstResult = Result.Success();
         var secondResult = Result.Success();
 
-        //Act
+        // Act
         var actual = ReferenceEquals(firstResult, secondResult);
 
-        //Assert
+        // Assert
         actual.Should().BeTrue();
     }
 
     [Fact]
-    public void GettingValueFromGenericResult_ShouldThrowAnException_WhenResultIsFailureStringResult()
+    public void ResultIsFailureGenericResultOfString_GetValue_ShouldThrowAnException()
     {
         // Arrange
         var result = Result.Failure<string>(Error.ConditionNotSatisfiedError);
@@ -39,7 +39,7 @@ public sealed class ResultTests
     }
 
     [Fact]
-    public void GettingValueFromGenericResult_ShouldThrowAnException_WhenResultIsFailureIntResult()
+    public void ResultIsFailureGenericResultOfInt_GetValue_ShouldThrowAnException()
     {
         // Arrange
         var result = Result.Failure<int>(Error.ConditionNotSatisfiedError);
@@ -47,7 +47,7 @@ public sealed class ResultTests
 
         // Act
         var actual = FluentActions.Invoking(action);
-        
+
         // Assert
         actual
             .Should().ThrowExactly<InvalidOperationException>()
