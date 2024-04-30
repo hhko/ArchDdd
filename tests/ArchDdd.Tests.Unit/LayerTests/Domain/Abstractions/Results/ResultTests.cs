@@ -43,7 +43,7 @@ public class ResultTests
     {
         // Arrange
         var result = Result.Failure<int>(Error.ConditionNotSatisfiedError);
-        var action = () => result.Value;
+        int action() => result.Value;
 
         // Act
         var actual = FluentActions.Invoking(action);
