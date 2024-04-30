@@ -1,6 +1,9 @@
 ﻿using ArchDdd.Domain.Abstractions.BaseTypes;
 using ArchDdd.Tests.Unit.ArchitectureTests.Utilities;
+using Mono.Cecil;
+using Mono.Cecil.Rocks;
 using NetArchTest.Rules;
+using System.Reflection;
 using Xunit.Abstractions;
 using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
 
@@ -14,6 +17,38 @@ public sealed class ValueObjectTests
     public ValueObjectTests(ITestOutputHelper output)
     {
         _output = output;
+    }
+
+    [Fact]
+    public void ValueObjects_BeSealedClass_ShouldBeTrue()
+    {
+        // Arrange
+        var assembly = Domain.AssemblyReference.Assembly;
+
+        // Act
+        var actual = Types
+            .InAssembly(assembly).That().Inherit(typeof(ValueObject))
+            .Should().BeSealed()        // sealed class
+            .GetResult();
+
+        // Assert
+        actual.ShouldBeTrue(_output);
+    }
+
+    [Fact]
+    public void ValueObject_HavePrivateParametersConstructor_ShouldBeTrue()
+    {
+        // Arrange
+        var assembly = Domain.AssemblyReference.Assembly;
+
+        // Act
+        var actual = Types
+            .InAssembly(assembly).That().Inherit(typeof(ValueObject))
+            .Should().HavePrivateParametersConstructor()
+            .GetResult();
+
+        // Assert
+        actual.ShouldBeTrue(_output);
     }
 
     [Fact]
@@ -35,7 +70,7 @@ public sealed class ValueObjectTests
     [Theory]
     [InlineData("Validate")]
     [InlineData("Create")]
-    public void ValueObjects_ShouldDefineMethod(string methodName)
+    public void ValueObjects_HaveDefineMethods_ShouldBeTrue(string methodName)
     {
         // Arrange
         var assembly = Domain.AssemblyReference.Assembly;
@@ -43,7 +78,7 @@ public sealed class ValueObjectTests
         // Act
         var actual = Types
             .InAssembly(assembly).That().Inherit(typeof(ValueObject))
-            .Should().DefineMethod(methodName)
+            .Should().HaveMethod(methodName)
             .GetResult();
 
         // Assert

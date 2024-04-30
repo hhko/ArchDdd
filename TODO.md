@@ -1,14 +1,18 @@
+- [ ] Equality 테스트 재사용 코드 구현
+- [ ] ValueObject object -> T 비교
+- [ ] : ICustomRule 2번 호출됨
+---
 - [ ] User 등록 API 구현
 - [ ] `TestResults` VS에서 제외 시키기
 - [ ] Enumeration<T> vs. enum 사용처 구분?
-- [ ] operator >, .. 비교 연산자
+- [ ] operator >, .. 비교 연산자 이해
   ```cs
   public static bool operator >(UserId a, UserId b) => a.CompareTo(b) is 1;
   public static bool operator <(UserId a, UserId b) => a.CompareTo(b) is -1;
   public static bool operator >=(UserId a, UserId b) => a.CompareTo(b) >= 0;
   public static bool operator <=(UserId a, UserId b) => a.CompareTo(b) <= 0;
   ```
-- [ ] record
+- [x] record
   ```
   record class
   record
