@@ -1,0 +1,7 @@
+
+POST {{host}}/user/register
+content-type: application/json
+
+{
+
+}

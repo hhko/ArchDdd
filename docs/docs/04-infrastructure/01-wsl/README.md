@@ -1,24 +1,15 @@
-# WSL2 설치
+# WSL2
 
-## 설치
+## 사전 설치
 ### Windows Terminal
 - [Windows Terminal v1.19.10821.0 파일](https://github.com/microsoft/terminal/releases/download/v1.19.10821.0/Microsoft.WindowsTerminal_1.19.10821.0_8wekyb3d8bbwe.msixbundle)
   - https://github.com/microsoft/terminal/releases
-
 
 ### VSCode
 - [VSCode 파일](https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user)
 - 확장 도구
   - [Remote Development 파일](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)
   - [Docker 파일](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
-
-### WSL2
-- [wsl_update_x64.msi 파일](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
-- Ubuntu
-  - 24-04 LTS `noble`: [ubuntu-noble-wsl-amd64-wsl.rootfs.tar.gz](https://cloud-images.ubuntu.com/wsl/noble/current/ubuntu-noble-wsl-amd64-wsl.rootfs.tar.gz)
-  - 22.04 LTS `jammy`: [ubuntu-jammy-wsl-amd64-wsl.rootfs.tar.gz](https://cloud-images.ubuntu.com/wsl/jammy/current/ubuntu-jammy-wsl-amd64-wsl.rootfs.tar.gz)
-  - 20.04 LTS `focal`: [ubuntu-20.04-server-cloudimg-amd64-wsl.rootfs.tar.gz 파일](https://cloud-images.ubuntu.com/releases/focal/release/ubuntu-20.04-server-cloudimg-amd64-wsl.rootfs.tar.gz)
-  - 18.04 LTS `bionic`: [ubuntu-18.04-server-cloudimg-amd64-wsl.rootfs.tar.gz 파일](https://cloud-images.ubuntu.com/releases/bionic/release/ubuntu-18.04-server-cloudimg-amd64-wsl.rootfs.tar.gz)
 
 <br/>
 
@@ -49,11 +40,19 @@ https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
 wsl --set-default-version 2
 ```
 
+### WSL2 가상화 운영체제 파일
+- [wsl_update_x64.msi 파일](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
+- Ubuntu
+  - 24-04 LTS `noble`: [ubuntu-noble-wsl-amd64-wsl.rootfs.tar.gz](https://cloud-images.ubuntu.com/wsl/noble/current/ubuntu-noble-wsl-amd64-wsl.rootfs.tar.gz)
+  - 22.04 LTS `jammy`: [ubuntu-jammy-wsl-amd64-wsl.rootfs.tar.gz](https://cloud-images.ubuntu.com/wsl/jammy/current/ubuntu-jammy-wsl-amd64-wsl.rootfs.tar.gz)
+  - 20.04 LTS `focal`: [ubuntu-20.04-server-cloudimg-amd64-wsl.rootfs.tar.gz 파일](https://cloud-images.ubuntu.com/releases/focal/release/ubuntu-20.04-server-cloudimg-amd64-wsl.rootfs.tar.gz)
+  - 18.04 LTS `bionic`: [ubuntu-18.04-server-cloudimg-amd64-wsl.rootfs.tar.gz 파일](https://cloud-images.ubuntu.com/releases/bionic/release/ubuntu-18.04-server-cloudimg-amd64-wsl.rootfs.tar.gz)
+
 ### WSL2 가상화 설치
 ```powershell
 # 폴더 생성
-#   - WSL 볼륨 경로: E:\Workspace\wsl\Ubuntu\20.04\Volume
-#   - WSL 가상화 경로: E:\Workspace\wsl\Ubuntu\20.04\Releases
+#   - WSL 가상화 볼륨 경로: E:\Workspace\wsl\Ubuntu\20.04\Volume
+#   - WSL 가상화 운영체제 경로: E:\Workspace\wsl\Ubuntu\20.04\Releases
 mkdir -p E:\Workspace\wsl\Ubuntu\20.04\Volume
 mkdir -p E:\Workspace\wsl\Ubuntu\20.04\Releases
 #   - 파일 복사

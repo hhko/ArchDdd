@@ -1,5 +1,6 @@
 ﻿using ArchDdd.Domain.Abstractions.BaseTypes;
 using ArchDdd.Tests.Unit.ArchitectureTests.Utilities;
+using ArchDdd.Tests.Unit.ArchitectureTests.Utilities.CustomRules;
 using Mono.Cecil;
 using Mono.Cecil.Rocks;
 using NetArchTest.Rules;
@@ -44,7 +45,7 @@ public sealed class ValueObjectTests
         // Act
         var actual = Types
             .InAssembly(assembly).That().Inherit(typeof(ValueObject))
-            .Should().HavePrivateParametersConstructor()
+            .Should().MeetCustomRule(new HavePrivateParametersConstructor())
             .GetResult();
 
         // Assert
@@ -78,7 +79,7 @@ public sealed class ValueObjectTests
         // Act
         var actual = Types
             .InAssembly(assembly).That().Inherit(typeof(ValueObject))
-            .Should().HaveMethod(methodName)
+            .Should().MeetCustomRule(new HaveMethod(methodName))
             .GetResult();
 
         // Assert

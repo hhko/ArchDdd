@@ -6,15 +6,15 @@ namespace ArchDdd.Tests.Unit.ArchitectureTests.Utilities;
 
 public static class ArchTestUtilities
 {
-    public static ConditionList HaveMethod(this Conditions conditions, string methodName)
-    {
-        return conditions.MeetCustomRule(new HaveMethod(methodName));
-    }
+    //public static ConditionList HaveMethod(this Conditions conditions, string methodName)
+    //{
+    //    return conditions.MeetCustomRule(new HaveMethod(methodName));
+    //}
 
-    public static ConditionList HavePrivateParametersConstructor(this Conditions conditions)
-    {
-        return conditions.MeetCustomRule(new HavePrivateParametersConstructor());
-    }
+    //public static ConditionList HavePrivateParametersConstructor(this Conditions conditions)
+    //{
+    //    return conditions.MeetCustomRule(new HavePrivateParametersConstructor());
+    //}
 
     public static void ShouldBeTrue(this TestResult testResult, ITestOutputHelper output)
     {
