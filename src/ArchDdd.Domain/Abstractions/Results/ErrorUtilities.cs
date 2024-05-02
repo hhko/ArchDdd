@@ -26,11 +26,12 @@ public static class ErrorUtilities
         this ICollection<Error> errors,
         Func<TValueObject> createValueObject) where TValueObject : ValueObject
     {
-        if (errors is null)
-            throw new ArgumentNullException($"{nameof(errors)} must not be null");
+        // if (errors is null)
+        //     throw new ArgumentNullException($"{nameof(errors)} must not be null");
+        ArgumentNullException.ThrowIfNull(errors);
 
         if (errors.Count != 0)
-            return ValidationResult<TValueObject>.WithErrors(errors.ToArray());
+            return ValidationResult<TValueObject>.WithErrors(errors);
 
         return ValidationResult<TValueObject>.WithoutErrors(createValueObject.Invoke());
     }
