@@ -12,7 +12,16 @@ GET {{host}}/api/greeting/foo
 GET {{host}}/api/weatherforecast
 
 ###
+# URL과 Json 모두 대/소문자를 구분하지 않는다
+POST {{host}}/api/user/register
+content-type: application/json
 
+{
+    "username": "x1",
+    "email": "x2",
+    "password": "x3",
+    "confirmPassword": "x4"
+}
 
 # ### Success
 # GET {{host}}/api/users/foo
@@ -21,4 +30,5 @@ GET {{host}}/api/weatherforecast
 # GET {{host}}/api/users/1234567890123456789012345678901
 
 # ### Failure | Exception
+
 # GET {{host}}/api/users/throw
