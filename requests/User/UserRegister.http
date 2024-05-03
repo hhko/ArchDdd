@@ -1,7 +1,24 @@
 
-POST {{host}}/user/register
-content-type: application/json
+@hostname=localhost
+@port=54011
+@host = http://{{hostname}}:{{port}}
+@contentType = application/json
 
-{
 
-}
+###
+GET {{host}}/api/greeting/foo
+
+###
+GET {{host}}/api/weatherforecast
+
+###
+
+
+# ### Success
+# GET {{host}}/api/users/foo
+
+# ### Failure | Validation
+# GET {{host}}/api/users/1234567890123456789012345678901
+
+# ### Failure | Exception
+# GET {{host}}/api/users/throw

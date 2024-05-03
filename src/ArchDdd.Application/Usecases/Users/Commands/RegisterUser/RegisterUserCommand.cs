@@ -1,7 +1,7 @@
 ﻿using ArchDdd.Domain.Abstractions.Results.Contracts;
 using MediatR;
 
-namespace ArchDdd.Application.Usecases.Users.Commands.RegisterUser;
+namespace ArchDdd.Application.UseCases.Users.Commands.RegisterUser;
 
 public sealed record RegisterUserCommand(
     string Username,

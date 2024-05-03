@@ -13,6 +13,40 @@
   public static bool operator >=(UserId a, UserId b) => a.CompareTo(b) >= 0;
   public static bool operator <=(UserId a, UserId b) => a.CompareTo(b) <= 0;
   ```
+
+## WebApi
+- [ ] 속성 이해
+  ```
+  [HttpPost("[action]")]
+  [HttpDelete($"{{orderHeaderId}}/{OrderLines}/{{orderLineId}}")]   $ 사용시 {{ 외부 }}, { 내부(변수) }
+
+  [ProducesResponseType(StatusCodes.Status200OK)]
+  [ProducesResponseType<ProblemDetails>(StatusCodes.Status400BadRequest)]
+  ```
+- [ ] 타이틀, public class OpenApiOptionsSetup : IConfigureOptions<SwaggerGenOptions>
+- [ ] 예제
+- [ ] 버전, URL 기반, 기본 버전
+  ```
+  [Route("api/v{version:apiVersion}/[controller]")]
+
+  [ApiVersion(1.0, Deprecated = true)]
+  [ApiVersion(2.0)]
+  ```
+- [ ] 실패 메시지
+- [ ] openapi 초기화 개선?
+  ```cs
+  .ConfigureApiBehaviorOptions(options =>
+      options.InvalidModelStateResponseFactory = ApiBehaviorOptions.InvalidModelStateResponse)
+  .AddNewtonsoftJson(options =>
+  {
+      options.SerializerSettings.ContractResolver = new RequiredPropertiesCamelCaseContractResolver();
+      options.SerializerSettings.Formatting = Indented;
+      options.SerializerSettings.Converters.Add(new StringEnumConverter());
+      options.SerializerSettings.ReferenceLoopHandling = Ignore;
+  });
+  ```
+
+
 ---
 - [ ] Equality 테스트 재사용 코드 구현
 - [ ] ValueObject object -> T 비교

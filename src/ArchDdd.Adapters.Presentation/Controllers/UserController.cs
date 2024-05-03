@@ -1,35 +1,39 @@
-﻿using ArchDdd.Adapters.Presentation.Abstractions.Controllers;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System.Reflection;
+﻿//using ArchDdd.Adapters.Presentation.Abstractions.Controllers;
+//using Microsoft.AspNetCore.Http.HttpResults;
+//using Microsoft.AspNetCore.Http;
+//using Microsoft.AspNetCore.Mvc;
+//using System.Reflection;
+//using ArchDdd.Application.UseCases.Users.Commands.RegisterUser;
+//using MediatR;
 
-namespace ArchDdd.Adapters.Presentation.Controllers;
+//namespace ArchDdd.Adapters.Presentation.Controllers;
 
-public class UserController : ApiController
-{
-    //[HttpPost("[action]")]
-    ////[ProducesResponseType(StatusCodes.Status200OK)]
-    ////[ProducesResponseType<ProblemDetails>(StatusCodes.Status400BadRequest)]
-    //public async Task<Results<Ok<RegisterUserResponse>, ProblemHttpResult>> Register
-    //(
-    //    [FromBody] RegisterUserCommand command,
-    //    CancellationToken cancellationToken
-    //)
-    //{
-    //    var result = await Sender.Send(command, cancellationToken);
+////public class UserController(ISender sender) : ApiController(sender)
+//public class UserController : ApiController
+//{
+//    [HttpPost("[action]")]
+//    [ProducesResponseType(StatusCodes.Status200OK)]
+//    [ProducesResponseType<ProblemDetails>(StatusCodes.Status400BadRequest)]
+//    public async Task<Results<Ok<RegisterUserResponse>, ProblemHttpResult>> Register(
+//        [FromBody] RegisterUserCommand command,
+//        CancellationToken cancellationToken
+//    )
+//    {
+//        //var result = await Sender.Send(command, cancellationToken);
 
-    //    if (result.IsFailure)
-    //    {
-    //        return HandleFailure(result);
-    //    }
+//        //if (result.IsFailure)
+//        //{
+//        //    return HandleFailure(result);
+//        //}
 
-    //    return TypedResults.Ok(result.Value);
-    //}
+//        //return TypedResults.Ok(result.Value);
 
-    [HttpPost("[action]")]
-    public async Task Register()
-    {
-        await Task.CompletedTask;
-    }
-}
+//        return TypedResults.Ok(new RegisterUserResponse(Ulid.NewUlid()));
+//    }
+
+//    //[HttpPost("[action]")]
+//    //public async Task Register()
+//    //{
+//    //    await Task.CompletedTask;
+//    //}
+//}

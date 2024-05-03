@@ -14,7 +14,8 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "고형호"
       },
-      "applicationUrl": "https://localhost:54010;http://localhost:54011"
+      "applicationUrl": "http://localhost:54011",
+      "launchUrl": "swagger/index.html"
     }
   }
 }

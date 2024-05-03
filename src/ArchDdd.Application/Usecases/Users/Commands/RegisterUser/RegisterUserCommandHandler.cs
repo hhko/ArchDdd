@@ -2,7 +2,7 @@
 using ArchDdd.Domain.Abstractions.Results.Contracts;
 using MediatR;
 
-namespace ArchDdd.Application.Usecases.Users.Commands.RegisterUser;
+namespace ArchDdd.Application.UseCases.Users.Commands.RegisterUser;
 
 internal sealed class RegisterUserCommandHandler
     : IRequestHandler<RegisterUserCommand, IResult<RegisterUserResponse>>

@@ -36,7 +36,7 @@
     <ProjectReference Include="..\..\src\ArchDdd.Adapters.Presentation\ArchDdd.Adapters.Presentation.csproj" />
     <ProjectReference Include="..\..\src\ArchDdd.Application\ArchDdd.Application.csproj" />
     <ProjectReference Include="..\..\src\ArchDdd.Domain\ArchDdd.Domain.csproj" />
-    <ProjectReference Include="..\..\src\ArchDdd.Host\ArchDdd.Host.csproj" />
+    <ProjectReference Include="..\..\src\ArchDdd\ArchDdd.csproj" />
   </ItemGroup>
 
   <ItemGroup>

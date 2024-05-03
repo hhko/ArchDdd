@@ -4,12 +4,17 @@
     ContentRootPath = Directory.GetCurrentDirectory()
 });
 
-// builder.Environment
 builder.Services
     .RegisterAdaptersInfrastructureLayer()
     .RegisterAdaptersPersistenceLayer()
-    .RegisterAdaptersPresentationLayer();
+    .RegisterAdaptersPresentationLayer()
+    .RegisterApplicationLayer();
 
-WebApplication webApplication = builder.Build();
+WebApplication app = builder.Build();
 
-webApplication.Run();
+// UseHttpsRedirection()
+// UseAuthorization()
+app.UseAdaptersPresentationLayer();
+
+app.MapControllers();
+app.Run();

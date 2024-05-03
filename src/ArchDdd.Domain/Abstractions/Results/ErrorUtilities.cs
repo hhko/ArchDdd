@@ -31,7 +31,7 @@ public static class ErrorUtilities
         ArgumentNullException.ThrowIfNull(errors);
 
         if (errors.Count != 0)
-            return ValidationResult<TValueObject>.WithErrors(errors);
+            return ValidationResult<TValueObject>.WithErrors(errors.ToArray());
 
         return ValidationResult<TValueObject>.WithoutErrors(createValueObject.Invoke());
     }
