@@ -11,6 +11,6 @@ internal sealed class RegisterUserCommandHandler
     {
         await Task.CompletedTask;
 
-        return Result.Success(new RegisterUserResponse(Ulid.NewUlid()));
+        return Result.Success(new RegisterUserResponse(Ulid.NewUlid().ToString()));
     }
 }

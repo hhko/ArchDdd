@@ -13,7 +13,7 @@ public class UserController(ISender sender) : ApiController(sender)
     [HttpPost("[action]")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType<ProblemDetails>(StatusCodes.Status400BadRequest)]
-    public async Task<Results<Ok<RegisterUserResponse>, ProblemHttpResult>> Register(
+    public async Task<Results<Ok<string>, ProblemHttpResult>> Register(
         [FromBody] RegisterUserCommand command,
         CancellationToken cancellationToken)
     {
@@ -26,6 +26,7 @@ public class UserController(ISender sender) : ApiController(sender)
 
         //return TypedResults.Ok(result.Value);
 
-        return TypedResults.Ok(new RegisterUserResponse(Ulid.NewUlid()));
+        //return TypedResults.Ok(new RegisterUserResponse(Ulid.NewUlid()));
+        return TypedResults.Ok(result.Value.Id);
     }
 }

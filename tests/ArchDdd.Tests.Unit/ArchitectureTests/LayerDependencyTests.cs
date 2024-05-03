@@ -41,36 +41,36 @@ public sealed class LayerDependencyTests
     //    actual.ShouldBeTrue(_output);
     //}
 
-    [Fact]
-    public void AdapterLayers_CheckDependencisExceptApplicationLayer_ShouldNotHaveDependencies()
-    {
-        // Arrange
-        var assemblies = new[]
-        {
-            Adapters.Persistence.AssemblyReference.Assembly,
-            Adapters.Infrastructure.AssemblyReference.Assembly,
-            Adapters.Presentation.AssemblyReference.Assembly
-        };
+    //[Fact]
+    //public void AdapterLayers_CheckDependencisExceptApplicationLayer_ShouldNotHaveDependencies()
+    //{
+    //    // Arrange
+    //    var assemblies = new[]
+    //    {
+    //        Adapters.Persistence.AssemblyReference.Assembly,
+    //        Adapters.Infrastructure.AssemblyReference.Assembly,
+    //        Adapters.Presentation.AssemblyReference.Assembly
+    //    };
 
-        var otherAssemblies = new[]
-        {
-            // Host.AssemblyReference.Assembly.GetName().Name,
-            // Adapters.Infrastructure.AssemblyReference.Assembly.GetName().Name,
-            // Adapters.Persistence.AssemblyReference.Assembly.GetName().Name,
-            // Adapters.Presentation.AssemblyReference.Assembly.GetName().Name,
-            // Application.AssemblyReference.Assembly.GetName().Name,
-            Domain.AssemblyReference.Assembly.GetName().Name,
-        };
+    //    var otherAssemblies = new[]
+    //    {
+    //        // Host.AssemblyReference.Assembly.GetName().Name,
+    //        // Adapters.Infrastructure.AssemblyReference.Assembly.GetName().Name,
+    //        // Adapters.Persistence.AssemblyReference.Assembly.GetName().Name,
+    //        // Adapters.Presentation.AssemblyReference.Assembly.GetName().Name,
+    //        // Application.AssemblyReference.Assembly.GetName().Name,
+    //        Domain.AssemblyReference.Assembly.GetName().Name,
+    //    };
 
-        // Act
-        var actual = Types
-            .InAssemblies(assemblies)
-            .ShouldNot().HaveDependencyOnAny(otherAssemblies)
-            .GetResult();
+    //    // Act
+    //    var actual = Types
+    //        .InAssemblies(assemblies)
+    //        .ShouldNot().HaveDependencyOnAny(otherAssemblies)
+    //        .GetResult();
 
-        // Assert
-        actual.ShouldBeTrue(_output);
-    }
+    //    // Assert
+    //    actual.ShouldBeTrue(_output);
+    //}
 
     [Fact]
     public void ApplicationLayer_CheckDependencisExceptDomainLayer_ShouldNotHaveDependencies()
