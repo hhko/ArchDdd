@@ -3,7 +3,7 @@
 //using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants;
 //using ArchDdd.Adapters.Persistence.BackgroundJobs;
 
-//namespace ArchDdd.Tests.Integration.LayerTests.AdapterPersistence;
+//namespace ArchDdd.Tests.Integration.LayerTests.AdaptersPersistence;
 
 //[Trait(nameof(IntegrationTest), IntegrationTest.BackgroundJobs)]
 //public class ProcessOutboxMessagesJobTests

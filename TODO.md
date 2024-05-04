@@ -1,3 +1,10 @@
+- [ ] WebApi 통합 테스트
+- [ ] Quartz.SchedulerException : Scheduler with name 'QuartzScheduler' already exists.
+- [ ] WebApi 통합 테스트 snapshot 테스트
+- [ ] WebApi 성능 테스트
+
+<br/>
+
 - [ ] Error 데이터 타입 선언?
   ```
   public Error[] ValidationErrors { get; }
@@ -16,7 +23,7 @@
 
 ## WebApi
 ### 테스트
-- [ ] 통합 테스트 구축
+- [x] 통합 테스트 구축
 - [ ] 통합 테스트 결과값 Snapshot 테스트
 - [ ] 성능 테스트
 

@@ -9,4 +9,8 @@
     <ProjectReference Include="..\ArchDdd.Adapters.Presentation\ArchDdd.Adapters.Presentation.csproj" />
   </ItemGroup>
 
+<ItemGroup>
+     <InternalsVisibleTo Include="ArchDdd.Tests.Integration" />
+</ItemGroup>
+	
 </Project>

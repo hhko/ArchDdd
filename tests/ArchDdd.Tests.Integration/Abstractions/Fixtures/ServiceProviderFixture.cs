@@ -1,14 +1,16 @@
-﻿using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants.CollectionName;
-using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants.IntegrationTest;
+﻿using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants.IntegrationTest;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Hosting;
 using NSubstitute;
+using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants;
 
 namespace ArchDdd.Tests.Integration.Abstractions.Fixtures;
 
-[CollectionDefinition(ProductControllerCollection)]
-public sealed class ProductControllerTestCollection
+// Collection 정의: [CollectionDefinition(ProductControllerCollection)]
+// Collection 사용: [Collection(ProductControllerCollection)]
+[CollectionDefinition(CollectionName.ServiceProviderFixtureCollection)]
+public sealed class ServiceProviderFixtureCollection
     : ICollectionFixture<ServiceProviderFixture>
 {
 }

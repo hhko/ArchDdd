@@ -1,4 +1,4 @@
-# Architecture with Domain-Driven Design
+# Architecture made Domain-Driven Design
 [![ArchDdd Build](https://github.com/hhko/ArchDdd/actions/workflows/build.yml/badge.svg)](https://github.com/hhko/ArchDdd/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/hhko/ArchDdd/graph/badge.svg?token=VK8HUZTA7K)](https://codecov.io/gh/hhko/ArchDdd)
 
@@ -40,24 +40,21 @@ If builders built buildings the way programmers wrote programs, then the first w
   - Trailing Spaces
   - Markdown Preview Enhanced
   - VSCode Progressive Increment
-  - GitHub Actions
-  - Codecov YAML Validator
+  - ~~GitHub Actions~~
+  - ~~Codecov YAML Validator~~
 
-## 패키지
-- `FluentValidation`: Validation 선언형
-- `FluentValidation.DependencyInjectionExtensions`: Validation 선언형 의존성
+### 패키지
+- `Ulid`: GUID
+- `MediatR`: Mediator 패턴
+- `Quartz`: 백그라운드 작업
+- `FluentValidation`: 유효성 검사 선언형
 
 ### 테스트
-- `FluentAssertions`: Assert 선언형
-- `Microsoft.NET.Test.Sdk`: 단위 테스트 SDK
-- `NetArchTest`.Rules: 아키텍처 단위 테스트
 - `xunit`: 단위 테스트
-- `xunit.runner.visualstudio`: 단위 테스트 실행기
-- `coverlet.collector`: 코드 커버리지
+- `FluentAssertions`: 단위 테스트 Assert 선언형
+- `NetArchTest.Rules`: 아키텍처 단위 테스트
+- `coverlet.collector`: 단위 테스트 코드 커버리지
+- `Microsoft.AspNetCore.Mvc.Testing`: 통합 테스트
 
-
-### dotnet tools
-```shell
-# dotnet-format
-dotnet tool install -g dotnet-format --version 5.1.250801
-```
+### 문서
+- `docusaurus`

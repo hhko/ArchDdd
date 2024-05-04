@@ -5,18 +5,17 @@
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
 
+	<ItemGroup>
+		<None Remove="TestResults\**" />
+	</ItemGroup>
+	
   <ItemGroup>
-    <None Remove="xunit.runner.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="xunit.runner.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+	  <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FluentAssertions" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <PackageReference Include="NSubstitute" />
     <PackageReference Include="xunit" />
@@ -42,6 +41,11 @@
   <ItemGroup>
     <Using Include="Xunit" />
     <Using Include="FluentAssertions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ControllersUnderTest\UserControllers\" />
+    <Folder Include="LayerTests\AdaptersPresentation\" />
   </ItemGroup>
 
 </Project>

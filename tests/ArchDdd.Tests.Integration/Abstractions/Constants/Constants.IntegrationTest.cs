@@ -8,5 +8,6 @@ public static partial class Constants
 
         public const string DatabaseOptions = nameof(DatabaseOptions);
         public const string BackgroundJobs = nameof(BackgroundJobs);
+        public const string WebApi = nameof(WebApi);
     }
 }

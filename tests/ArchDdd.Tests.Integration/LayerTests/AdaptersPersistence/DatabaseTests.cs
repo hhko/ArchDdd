@@ -4,9 +4,9 @@ using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants.Collecti
 using Microsoft.Extensions.Options;
 using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants;
 
-namespace ArchDdd.Tests.Integration.LayerTests.AdapterPersistence;
+namespace ArchDdd.Tests.Integration.LayerTests.AdaptersPersistence;
 
-[Collection(ProductControllerCollection)]
+[Collection(CollectionName.ServiceProviderFixtureCollection)]
 [Trait(nameof(IntegrationTest), IntegrationTest.DatabaseOptions)]
 public sealed class DatabaseTests
 {

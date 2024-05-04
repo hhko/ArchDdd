@@ -25,7 +25,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utilities", "utilities", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimitiveUtilities", "utilities\PrimitiveUtilities\PrimitiveUtilities.csproj", "{4797BCF5-595A-46C6-9599-9C5F2F270B4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchDdd", "src\ArchDdd\ArchDdd.csproj", "{F282C0E3-9F8B-4357-BDB6-82E1B3568E15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchDdd", "src\ArchDdd\ArchDdd.csproj", "{F282C0E3-9F8B-4357-BDB6-82E1B3568E15}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "requests", "requests", "{1532464C-5B42-4F05-BFEC-14091B614AB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "User", "User", "{7B96B651-1025-4F46-918C-840D5B341689}"
+	ProjectSection(SolutionItems) = preProject
+		requests\User\UserRegister.http = requests\User\UserRegister.http
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +90,7 @@ Global
 		{34FD5A03-C989-44CE-A582-D241C99CA127} = {1DFE66C6-3A79-4119-8566-E9A02E0605A0}
 		{4797BCF5-595A-46C6-9599-9C5F2F270B4C} = {D60FC3B0-D7F7-46F0-BF7B-B786BC535FD7}
 		{F282C0E3-9F8B-4357-BDB6-82E1B3568E15} = {AD650E5B-BCD6-4616-8E6B-79D7DE8CEBBA}
+		{7B96B651-1025-4F46-918C-840D5B341689} = {1532464C-5B42-4F05-BFEC-14091B614AB9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0B9A1AB2-BA7F-4659-B18C-FF426148BEB1}
