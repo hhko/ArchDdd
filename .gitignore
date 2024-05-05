@@ -496,3 +496,6 @@ api/
 
 # test
 .[Rr]esult*/
+
+# Verify
+*.received.txt

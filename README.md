@@ -42,6 +42,7 @@ If builders built buildings the way programmers wrote programs, then the first w
   - VSCode Progressive Increment
   - ~~GitHub Actions~~
   - ~~Codecov YAML Validator~~
+  - REST Client
 
 ### 패키지
 - `Ulid`: GUID
@@ -51,10 +52,14 @@ If builders built buildings the way programmers wrote programs, then the first w
 
 ### 테스트
 - `xunit`: 단위 테스트
-- `FluentAssertions`: 단위 테스트 Assert 선언형
-- `NetArchTest.Rules`: 아키텍처 단위 테스트
-- `coverlet.collector`: 단위 테스트 코드 커버리지
+- `FluentAssertions`: Assert 선언형
+- `NetArchTest.Rules`: 아키텍처 테스트
+- `coverlet.collector`: 코드 커버리지
 - `Microsoft.AspNetCore.Mvc.Testing`: 통합 테스트
+- `Verify.Xunit`: Snapshot 테스트
 
 ### 문서
 - `docusaurus`
+
+### 도구
+- `verify.tool`

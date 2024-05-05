@@ -6,9 +6,9 @@ using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants;
 
 namespace ArchDdd.Tests.Integration.Abstractions.WebApi;
 
-// WebAppFactoryCollection          : CollectionFixture 이름
-// WebAppFactoryCollectionFixture   : CollectionFixture 연결 클래스
-// WebAppFactoryFixture             : Fixture 클래스 
+// WebAppFactoryCollection          : Collection 사용
+// WebAppFactoryCollectionFixture   : Collection 정의
+// WebAppFactoryFixture             : Fixture
 
 [CollectionDefinition(CollectionName.WebAppFactoryCollection)]
 public sealed class WebAppFactoryCollectionFixture

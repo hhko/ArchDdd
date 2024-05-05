@@ -1,6 +1,6 @@
 {
-  "label": "Q&A",
-  "position": 5,
+  "label": "테스트",
+  "position": 4,
   "link": {
     "type": "generated-index"
   }

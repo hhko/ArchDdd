@@ -1,3 +1,25 @@
+```
+1. webapi snapshot 테스트
+1. webapi 성능 테스트
+---
+1. 유효성 검사
+1. dto
+---
+1. 컨테이너
+1. 컨테이너 커스텀: 필수 추가 패키지 설치
+1. 로그: docker 로그 통합?, 자체 로그
+1. 로그 모니터링
+1. 지표 모니터링
+1. webapi 성능 테스트 통합
+1. background job 성능 테스트?
+---
+1. QuartzScheduler 통합 테스트 개선
+1. operator >, ...
+1. Equality 테스트 재사용 코드 구현
+1. ValueObject object -> T 비교
+1. <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+```
+
 - [ ] WebApi 통합 테스트
 - [ ] Quartz.SchedulerException : Scheduler with name 'QuartzScheduler' already exists.
 - [ ] WebApi 통합 테스트 snapshot 테스트
@@ -68,7 +90,7 @@
 - [ ] : ICustomRule 2번 호출됨
 ---
 - [ ] User 등록 API 구현
-- [ ] `TestResults` VS에서 제외 시키기
+- [x] `TestResults` VS에서 제외 시키기
 - [ ] Enumeration<T> vs. enum 사용처 구분?
 
 - [x] record

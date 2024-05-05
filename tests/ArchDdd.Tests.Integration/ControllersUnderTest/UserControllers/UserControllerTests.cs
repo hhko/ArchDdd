@@ -30,11 +30,25 @@ public sealed class UserControllerTests : ControllerTestsBase
         RegisterUserResponse? response = await actual.Content.ReadFromJsonAsync<RegisterUserResponse>();
 
         actual.StatusCode.Should().Be(HttpStatusCode.OK);
+
+        //await Verify(response!);
+    }
+
+    public class Person
+    {
+        public Guid Id { get; set; }
+        public string Title { get; set; }
     }
 
     [Fact]
-    public void Hello2()
+    public async Task Hello2()
     {
+        var person = new Person()
+        {
+            Id = new("ebced679-45d3-4653-8791-3d969c4a986c"),
+            Title = "Title.Mr",
+        };
 
+        await Verify(person);
     }
 }

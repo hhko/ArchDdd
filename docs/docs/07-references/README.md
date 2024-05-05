@@ -26,3 +26,6 @@
 
 ### 통합 테스트
 - [ ] [How to test your C# Web API](https://timdeschryver.dev/blog/how-to-test-your-csharp-web-api)
+
+### 빌드 환경
+- [ ] [Understand Directory.Build.props: Centralizing .NET Project Configurations](https://blog.ndepend.com/directory-build-props/)
