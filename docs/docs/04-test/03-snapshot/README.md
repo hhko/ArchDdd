@@ -21,85 +21,22 @@ dotnet verify accept -y -w 특정_경로
 # 모든 .received. 파일을 삭제한다.
 dotnet verify reject -y -w 특정_경로
 ```
+![](./img/2024-05-06-15-54-04.png)
 
-| 구분 | URL | 기능 |
-| === | --- | --- |
-| GET     | /api/students/{id}                | Student 조회 |
-| POST    | /api/students                     | Student 추가 |
-| POST    | /api/students/{id}/enrollments    | Student의 Enrollments 추가 |
-| PUT     | /api/students/{id}                | Student 변경 |
 
-```
-curl -X POST --location "https://localhost:7230/people" \
-    -H "Content-Type: application/json" \
-    -d "{ \"FirstName\": \"Maarten\" }"
 
-Invoke-WebRequest `
-    -Uri https://localhost:7230/people `
-    -Method Post `
-    -ContentType "application/json" `
-    -Body '{"FirstName": "Maarten"}'
-```
-
-## 디버깅 환경
-### VS 디버깅일 때 Web Browser 활성화 비활성화
-- launchSettings.json
-  ```
-  {
-    "profiles": {
-      "Api": {
-        "launchBrowser": false,
-      }
-    }
-  }
-  ```
-
-### REST Client VS 확장 도구
-- 확장 도구: https://github.com/madskristensen/RestClientVS
-- 단축키: Ctrl+Alt+S
-
-```http
-@hostname=localhost
-@port=5168
-@host = {{hostname}}:{{port}}
-@contentType = application/json
-
-### GET
-GET http://{{host}}/api/students/1
-
-### PUT & POST
-PUT http://{{host}}/api/students/2
-Content-Type:{{contentType}}
-
-{
-    "name": "foo",
-    "address": "hello world 1004"
-}
-```
 
 ### WebAPI 통합 테스트
 - WebAPI 생성: Microsoft.AspNetCore.Mvc.Testing
   ```cs
-  // 
   var webAppFactory = new WebApplicationFactory<Program>();
   using var httpClient = webAppFactory.CreateDefaultClient();
   ```
 - WebAPI 호출: System.Net.Http.Json
   ```cs
-  PostAsJsonAsync<T>    
+  PostAsJsonAsync<T>
   ReadFromJsonAsync<T>
   ```
-- TODO
-  - [ ] [How to test ASP.NET Core Minimal APIs](https://www.twilio.com/blog/test-aspnetcore-minimal-apis)
-  - [ ] [Integration tests in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-7.0)
-  - [ ] Get & Put 테스트 분리?
-  - [ ] Assert 코드 개선(Act 포함됨)
-    ```cs
-    using var response = await httpClient.GetAsync($"api/students/{id}");
-    var student = await response.Content.ReadAsStringAsync();
-    await VerifyJson(student)
-        .UseParameters(id);
-    ```
 
 ### Verify 테스트 자동화
 - 폴더 지정
@@ -111,14 +48,11 @@ Content-Type:{{contentType}}
       {
           // https://github.com/VerifyTests/Verify/blob/main/docs/naming.md
           Verifier.UseProjectRelativeDirectory("Snapshots");
+
+          // 실패시 파일 비교창 비활성화
+          DiffRunner.Disabled = true;
       }
   }
-  ```
-- 클래스 지정
-  ```cs
-  [UsesVerify]
-  public class 단위테스트_클래스
-  { }
   ```
 - 파라미터 지정
   ```
@@ -145,12 +79,5 @@ Content-Type:{{contentType}}
   - [x] 특정 폴더 결과 생성: `Verifier.UseProjectRelativeDirectory`
   - [x] InlineData 처리: `UseParameters`
   - [ ] .txt -> .json 확장자 변경
-  - [ ] 실패시 파일 비교 표시
-  - [ ] [Testing an incremental generator with snapshot testing](https://andrewlock.net/creating-a-source-generator-part-2-testing-an-incremental-generator-with-snapshot-testing/)
-  - [ ] [OSS Power-Ups: Verify – Webinar Recording](https://blog.jetbrains.com/dotnet/2021/07/15/oss-power-ups-verify-webinar-recording/)
-    - [ ] [Snapshot Testing with Verify](https://www.danclarke.com/snapshot-testing-with-verify)
-
----
-- [ASP.NET Core Integration Tests with Test Containers & Postgres](https://www.azureblue.io/asp-net-core-integration-tests-with-test-containers-and-postgres/)
-- [Integration Testing ASP.NET Core APIs incl. auth and database](https://www.fearofoblivion.com/asp-net-core-integration-testing)
+  - [x] 실패시 파일 비교 비활성화
 

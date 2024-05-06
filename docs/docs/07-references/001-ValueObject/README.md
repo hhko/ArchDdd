@@ -1,7 +1,7 @@
 # C# 9 Records as DDD Value Objects
 - [C# 9 Records as DDD Value Objects](https://enterprisecraftsmanship.com/posts/csharp-records-value-objects/)
 
-## C# 9 Records는 Value Object로 적합하지 않습니다.
+> C# 9 Records는 Value Object로 적합하지 않습니다.
 
 ### 설계 관점
 1. 행위 부족

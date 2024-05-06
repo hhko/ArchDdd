@@ -3,7 +3,21 @@
 ## 패키지
 - Microsoft.AspNetCore.Mvc.Testing
 
-## 테스트 단위
+## WebApi 호출
+```shell
+curl -X POST --location "https://localhost:7230/people" \
+    -H "Content-Type: application/json" \
+    -d "{ \"FirstName\": \"Maarten\" }"
+
+Invoke-WebRequest `
+    -Uri https://localhost:7230/people `
+    -Method Post `
+    -ContentType "application/json" `
+    -Body '{"FirstName": "Maarten"}'
+```
+
+## WebApplicationFactory 생성 방법
+### 테스트 단위
 ```cs
 public class HelloControllerTests_Step1_ExplicitCreation
 {
@@ -27,9 +41,7 @@ public class HelloControllerTests_Step1_ExplicitCreation
 }
 ```
 
-<br/>
-
-## 클래스 단위
+### 클래스 1개 단위
 ```cs
 public class HelloControllerTests_Step2_ClassFixture
     : IClassFixture<WebApplicationFactory<Program>>
@@ -64,9 +76,7 @@ public class HelloControllerTests_Step2_ClassFixture
 }
 ```
 
-<br/>
-
-## 클래스 단위(자신 클래스)
+### 클래스 1개 단위(자신 클래스)
 ```cs
 public class ApiWebApplicationFactory : WebApplicationFactory<Program>
 {
@@ -118,12 +128,10 @@ public class HelloControllerTests_Step3_OwnClassFixture
 - dotnet test --filter Category = Integration
 - dotnet test --filter Category != Integration
 
-<br/>
-
-## 어셈블리
+### 클래스 N개 단위
 ```cs
 // WebAppFactoryCollection          : Collection 사용
-// WebAppFactoryCollectionFixture   : Collection 정의
+// WebAppFactoryCollectionFixture   : CollectionDefinition 정의
 // WebAppFactoryFixture             : Fixture
 
 [CollectionDefinition(CollectionName.WebAppFactoryCollection)]
@@ -151,3 +159,40 @@ public sealed class UserControllerTests
 }
 ```
 
+<br/>
+
+## 디버깅 환경
+### VS 디버깅일 때 Web Browser 활성화 비활성화
+- launchSettings.json
+  ```
+  {
+    "profiles": {
+      "Api": {
+        "launchBrowser": false,
+      }
+    }
+  }
+  ```
+
+### REST Client VS 확장 도구
+- 확장 도구: https://github.com/madskristensen/RestClientVS
+- 단축키: Ctrl+Alt+S
+
+```http
+@hostname=localhost
+@port=5168
+@host = http://{{hostname}}:{{port}}
+@contentType = application/json
+
+### GET
+GET {{host}}/api/students/1
+
+### PUT & POST
+PUT {{host}}/api/students/2
+Content-Type:{{contentType}}
+
+{
+    "name": "foo",
+    "address": "hello world 1004"
+}
+```

@@ -1,6 +1,7 @@
 ```
-1. webapi snapshot 테스트
-1. webapi 성능 테스트
+1. [x] webapi snapshot 테스트
+1. [ ] webapi 성능 테스트, NBomber
+1. [ ] webapi 성능 테스트, k6
 ---
 1. 유효성 검사
 1. dto
