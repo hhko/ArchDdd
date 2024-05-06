@@ -4,7 +4,7 @@ public static partial class Constants
 {
     public static class IntegrationTest
     {
-        public const string AppsettingsTestJson = "appsettings.Test.json";
+        public const string AppsettingsIntegrationJson = "appsettings.Integration.json";
 
         public const string DatabaseOptions = nameof(DatabaseOptions);
         public const string BackgroundJobs = nameof(BackgroundJobs);

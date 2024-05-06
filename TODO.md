@@ -1,6 +1,12 @@
 ```
 1. [x] webapi snapshot 테스트
-1. [ ] webapi 성능 테스트, NBomber
+1. [ ] NBomber | webapi 성능 테스트, NBomber
+1. [ ] NBomber | 테스트 --filter "UnitTest=Application|UnitTest=Architecture|UnitTest=Domain|UnitTest=Utility"
+1. [ ] NBomber | 성능 테스트
+   - 프로세스 싷행
+   - 테스트 실행
+   - 프로젝트 종료?
+1. [ ] NBomber | reports 폴더 변경
 1. [ ] webapi 성능 테스트, k6
 ---
 1. 유효성 검사

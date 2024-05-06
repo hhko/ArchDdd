@@ -59,7 +59,7 @@ public static class ServiceProviderFactory
             .AddEnvironmentVariables();
 
         var path = Directory.GetParent(Environment.CurrentDirectory)!.Parent!.Parent!.FullName;
-        builder.AddJsonFile(Path.Combine(path, AppsettingsTestJson));
+        builder.AddJsonFile(Path.Combine(path, AppsettingsIntegrationJson));
 
         return builder.Build();
     }

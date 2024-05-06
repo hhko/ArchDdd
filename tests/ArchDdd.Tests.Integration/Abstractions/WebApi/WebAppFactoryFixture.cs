@@ -44,7 +44,7 @@ public sealed class WebAppFactoryFixture
             //  - Content
             //  - PreserveNewest
             IConfiguration configuration = new ConfigurationBuilder()
-                .AddJsonFile(IntegrationTest.AppsettingsTestJson)
+                .AddJsonFile(IntegrationTest.AppsettingsIntegrationJson)
                 .AddEnvironmentVariables()
                 .Build();
 
@@ -55,5 +55,8 @@ public sealed class WebAppFactoryFixture
         {
             // 의존성
         });
+
+        // Environment
+        //builder.UseEnvironment("Development");
     }
 }

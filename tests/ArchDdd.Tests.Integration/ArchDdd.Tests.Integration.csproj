@@ -10,7 +10,7 @@
 	</ItemGroup>
 
   <ItemGroup>
-	  <Content Include="appsettings.Test.json" CopyToOutputDirectory="PreserveNewest" />
+	  <Content Include="appsettings.Integration.json" CopyToOutputDirectory="PreserveNewest" />
 	  <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
