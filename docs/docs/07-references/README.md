@@ -10,6 +10,18 @@
 - [ ] 소스 | [Hands-On-Domain-Driven-Design-with-.NET-Core](https://github.com/PacktPublishing/Hands-On-Domain-Driven-Design-with-.NET-Core/tree/master)
 - [ ] 소스 | [Stop using Entity Framework as a DTO provider](https://github.com/ChrisKlug/efcore-dto-demo/tree/main)
 - [ ] 영상 | [Stop using Entity Framework as a DTO provider](https://www.youtube.com/watch?v=N_eLotlcjXo)
+- [ ] 소스 | **[refactoring-from-anemic-to-rich-domain-model-example](https://github.com/kgrzybek/refactoring-from-anemic-to-rich-domain-model-example/tree/master)**
+- [ ] 문서 | **Modular Monolith: A Primer** | [한글](https://github.com/ijung/ijung.github.io/blob/main/_posts/development-contents/modular-monolith/2023-05-26-modular-monolith-a-primer.md), [영문](https://www.kamilgrzybek.com/blog/posts/modular-monolith-primer)
+- [ ] 문서 | **Modular Monolith: Architectural Drivers** | [한글](https://github.com/ijung/ijung.github.io/blob/main/_posts/development-contents/modular-monolith/2023-06-03-modular-monolith-architectural-drivers.md), [영문](https://www.kamilgrzybek.com/blog/posts/modular-monolith-architectural-drivers)
+- [ ] 문서 | **Modular Monolith: Architecture Enforcement** | [한글](https://github.com/ijung/ijung.github.io/blob/main/_posts/development-contents/modular-monolith/2023-06-04-modular-monolith-architecture-enforcement.md), [영문](https://www.kamilgrzybek.com/blog/posts/modular-monolith-architecture-enforcement)
+- [ ] 문서 | **Modular Monolith: Integration Styles** | [한글](https://github.com/ijung/ijung.github.io/blob/main/_posts/development-contents/modular-monolith/2023-06-05-modular-monolith-integration-styles.md), [영문](https://www.kamilgrzybek.com/blog/posts/modular-monolith-integration-styles)
+- [ ] 문서 | **Modular Monolith: Domain-Centric Design** | [한글](https://github.com/ijung/ijung.github.io/blob/main/_posts/development-contents/modular-monolith/2023-06-10-modular-monolith-centric-design.md), [영문](https://www.kamilgrzybek.com/blog/posts/modular-monolith-domain-centric-design)
+- [ ] 소스 | **[modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd)**
+- [ ] 문서 | **[SIMPLE CQRS IMPLEMENTATION WITH RAW SQL AND DDD](https://www.kamilgrzybek.com/blog/posts/simple-cqrs-implementation-raw-sql-ddd)**
+
+## EF Core
+- [ ] 소스 | [efcore-concurrency-handling](https://github.com/kgrzybek/efcore-concurrency-handling)
+
 
 ## Primitives
 - [ ] 문서 | [IComparable vs IComparer vs Comparison Delegate](https://code-maze.com/csharp-icomparable-icomparer-comparison-delegate/)
