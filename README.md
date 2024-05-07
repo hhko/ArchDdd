@@ -12,8 +12,7 @@ If builders built buildings the way programmers wrote programs, then the first w
 - The architecture should scream **the intent of the system**.
 
 ## 목표
-- 도메인 주도 설계 기술로 아키텍처를 구현합니다.
-- 주요 설계 기술을 중심으로 구현 위한 구체적인 실천 방법을 공유합니다.
+- 실용적 도메인 주도 설계로 아키텍처를 구현합니다.
 
 ## 아키텍처 이해
 **Separation of Concerns(SoC)은** 중요한 아키텍처 원칙 중 하나입니다. 이는 **관심사**를 분리함으로써 코드를 더 잘 관리할 수 있다는 개념입니다. 아키텍처 수준의 관심사는 각각의 **레이어**로 나눠져 관리됩니다.
@@ -28,6 +27,9 @@ If builders built buildings the way programmers wrote programs, then the first w
 
 ![ArchitecturePatternHistory](./docs/docs/01-architecture/01-overview/img/ArchitecturePatternHistor.png)
 
+
+## 아키텍처 구성
+![](./.images/2024-05-08-00-39-02.png)
 
 ## 개발 환경
 - .NET 8.x
