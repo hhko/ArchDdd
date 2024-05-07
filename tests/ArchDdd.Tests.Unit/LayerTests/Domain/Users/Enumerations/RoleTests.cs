@@ -1,8 +1,7 @@
 ﻿using ArchDdd.Domain.AggregateRoots.Users.Enumerations;
+using ArchDdd.Tests.Unit.Abstractions.Constants;
 using ArchDdd.Tests.Unit.Abstractions.Utilities;
 using System.Collections;
-using System.Data;
-using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
 
 namespace ArchDdd.Tests.Unit.LayerTests.Domain.Users.Enumerations;
 

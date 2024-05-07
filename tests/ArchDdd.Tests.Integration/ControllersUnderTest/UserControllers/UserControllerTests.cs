@@ -1,9 +1,9 @@
 ﻿using ArchDdd.Application.UseCases.Users.Commands.RegisterUser;
+using ArchDdd.Tests.Integration.Abstractions.Constants;
 using ArchDdd.Tests.Integration.Abstractions.WebApi;
 using Microsoft.AspNetCore.Http;
 using System.Net;
 using System.Net.Http.Json;
-using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants;
 
 namespace ArchDdd.Tests.Integration.ControllersUnderTest.UserControllers;
 

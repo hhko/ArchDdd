@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using ArchDdd.Tests.Integration.Abstractions.Constants;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
-using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants;
 
 namespace ArchDdd.Tests.Integration.Abstractions.WebApi;
 

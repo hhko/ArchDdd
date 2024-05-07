@@ -1,11 +1,11 @@
 ﻿using ArchDdd.Adapters.Infrastructure.Options;
 using ArchDdd.Adapters.Infrastructure.Utilities;
+using ArchDdd.Tests.Unit.Abstractions.Constants;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NSubstitute;
 using System.Collections;
-using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
 
 namespace ArchDdd.Tests.Unit.LayerTests.Adapters.Infrastructure;
 

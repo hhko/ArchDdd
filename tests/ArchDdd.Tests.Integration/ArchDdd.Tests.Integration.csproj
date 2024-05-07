@@ -45,8 +45,4 @@
     <Using Include="FluentAssertions" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="LayerTests\AdaptersPresentation\" />
-  </ItemGroup>
-
 </Project>

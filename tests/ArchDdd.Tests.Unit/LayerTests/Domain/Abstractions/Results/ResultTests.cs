@@ -1,5 +1,5 @@
 ﻿using ArchDdd.Domain.Abstractions.Results;
-using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
+using ArchDdd.Tests.Unit.Abstractions.Constants;
 
 namespace ArchDdd.Tests.Unit.LayerTests.Domain.Abstractions;
 

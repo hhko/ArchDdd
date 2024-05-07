@@ -1,8 +1,8 @@
-﻿using ArchDdd.Tests.Unit.ArchitectureTests.Utilities;
+﻿using ArchDdd.Tests.Unit.Abstractions.Constants;
+using ArchDdd.Tests.Unit.ArchitectureTests.Utilities;
 using NetArchTest.Rules;
 using Quartz;
 using Xunit.Abstractions;
-using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
 
 namespace ArchDdd.Tests.Unit.ArchitectureTests.NamingConventions;
 

@@ -1,12 +1,11 @@
 using ArchDdd.Adapters.Infrastructure.Options;
+using ArchDdd.Tests.Integration.Abstractions.Constants;
 using ArchDdd.Tests.Integration.Abstractions.Fixtures;
-using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants.CollectionName;
 using Microsoft.Extensions.Options;
-using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants;
 
 namespace ArchDdd.Tests.Integration.LayerTests.AdaptersPersistence;
 
-[Collection(CollectionName.ServiceProviderFixtureCollection)]
+[Collection(CollectionName.ServiceProviderCollection)]
 [Trait(nameof(IntegrationTest), IntegrationTest.DatabaseOptions)]
 public sealed class DatabaseTests
 {

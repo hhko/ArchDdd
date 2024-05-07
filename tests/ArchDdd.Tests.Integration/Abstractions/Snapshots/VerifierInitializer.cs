@@ -1,7 +1,7 @@
 ﻿using DiffEngine;
 using System.Runtime.CompilerServices;
 
-namespace ArchDdd.Tests.Integration.Abstractions.VerifyInitializers;
+namespace ArchDdd.Tests.Integration.Abstractions.Snapshots;
 
 public static class VerifierInitializer
 {

@@ -1,7 +1,7 @@
 ﻿using ArchDdd.Adapters.Persistence.BackgroundJobs;
+using ArchDdd.Tests.Unit.Abstractions.Constants;
 using NSubstitute;
 using Quartz;
-using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
 
 namespace ArchDdd.Tests.Unit.LayerTests.Adapters.Persistence;
 
