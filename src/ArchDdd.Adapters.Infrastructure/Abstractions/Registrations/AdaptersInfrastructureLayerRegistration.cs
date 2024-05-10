@@ -6,7 +6,8 @@ public static class AdaptersInfrastructureLayerRegistration
         this IServiceCollection services)
     {
         services
-            .RegisterOptions();
+            .RegisterOptions()
+            .RegisterServices();
 
         return services;
     }

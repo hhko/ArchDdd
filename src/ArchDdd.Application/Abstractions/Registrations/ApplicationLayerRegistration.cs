@@ -6,8 +6,9 @@ public static class ApplicationLayerRegistration
         this IServiceCollection services)
     {
         services
-            .RegisterMediator();
-        
+            .RegisterMediator()
+            .RegisterValidator();
+
         return services;
     }
 }

@@ -22,6 +22,8 @@
 ## EF Core
 - [ ] 소스 | [efcore-concurrency-handling](https://github.com/kgrzybek/efcore-concurrency-handling)
 
+## ASP.NET
+- [ ] 문서 | [Using the ProblemDetails Class in ASP.NET Core Web API](https://code-maze.com/using-the-problemdetails-class-in-asp-net-core-web-api/)
 
 ## Primitives
 - [ ] 문서 | [IComparable vs IComparer vs Comparison Delegate](https://code-maze.com/csharp-icomparable-icomparer-comparison-delegate/)
@@ -49,6 +51,10 @@
 - [ ] 문서 | [Testing an incremental generator with snapshot testing](https://andrewlock.net/creating-a-source-generator-part-2-testing-an-incremental-generator-with-snapshot-testing/)
 - [ ] 문서 | [Snapshot Testing with Verify](https://www.danclarke.com/snapshot-testing-with-verify)
 - [ ] 영상 | [OSS Power-Ups: Verify](https://www.youtube.com/watch?v=4ZrNoB_wdYU)
+
+### Fake 데이터
+- [ ] 문서 | [Fake data substitution for tests in C# with Bogus](https://prographers.com/blog/fake-data-substitution-for-tests-in-c-with-bogus)
+- [ ] 문서 | [Realistic Data Generation in .NET With Bogus](https://code-maze.com/data-generation-bogus-dotnet/)
 
 ## 구성
 ### 빌드 환경

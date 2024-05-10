@@ -1,4 +1,21 @@
 ```
+```
+1. [x] WebApi 실패 처리
+1. [x] WebApi 실패 처리 통합 테스트
+1. [x] WebApi 실패 처리 데이터 랜덤 생성
+1. [ ] WebApi 실패 처리 Verify
+```
+```
+1. [x] 유효성 검새 클래스
+1. [x] 유효성 검사 자동 등록
+1. [ ] 유효성 검사 + Mediator 패턴 통합
+1. [ ] 유효성 검사 + Result 통합
+1. [ ] Application Handler 유효성 검사 제거
+
+
+입력 --{유효성 검사}--> 연산 --{유효성 검사 None}--> 출력
+```
+```
 1. [x] webapi snapshot 테스트
 1. [ ] NBomber | webapi 성능 테스트, NBomber
 1. [ ] NBomber | 테스트 --filter "UnitTest=Application|UnitTest=Architecture|UnitTest=Domain|UnitTest=Utility"

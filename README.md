@@ -54,11 +54,12 @@ If builders built buildings the way programmers wrote programs, then the first w
 
 ### 테스트
 - `xunit`: 단위 테스트
+- `Verify.Xunit`: Snapshot 테스트
 - `FluentAssertions`: Assert 선언형
 - `NetArchTest.Rules`: 아키텍처 테스트
 - `coverlet.collector`: 코드 커버리지
+- `Xunit.DependencyInjection`: xUnit 의존성
 - `Microsoft.AspNetCore.Mvc.Testing`: 통합 테스트
-- `Verify.Xunit`: Snapshot 테스트
 
 ### 문서
 - `docusaurus`

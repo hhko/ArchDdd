@@ -4,6 +4,83 @@ sidebar_position: 2
 
 # 아키텍처 규칙
 
+```
+솔루션명
+  프로젝트명1
+    src
+      프로젝트명1.Adapters.Infrastructure
+        Abstractions
+          Constants
+          Registrations
+            {레이어_이름}LayerRegistration.cs     // 외부 호출
+            {의존주입_이름}Registration.cs        // 내부 개별
+            ...
+            ServiceRegistration.cs               // 내부 통합
+          Constants
+        AssemblyReference.cs
+      프로젝트명1.Adapters.Persistence
+      프로젝트명1.Adapters.Presentation
+      프로젝트명1.Application
+        Abstractions
+          Constants
+          CQRS
+          Registrations
+        UseCases
+          {UseCase_이름}
+            Commands
+              {}Command.cs
+              {}CommandHandler.cs
+              {}CommandValidator.cs
+              {}Response.cs
+            Events
+              {}Evnet.cs
+              {}EvnetHandler.cs
+              ?
+            Queries
+              {}Query.cs
+              {}QueryHandler.cs
+              {}QueryValidator.cs
+              {}Response.cs
+        AssemblyReference.cs
+      프로젝트명1.Domain
+        Abstractions
+          Constants
+        AggregateRoots
+          {AggregateRoot_이름}
+            ValueObjects
+            Events
+            Errors
+            Enumerations
+            {Entity}.cs
+            {인터페이스}.cs
+            {도메인서비스?}.cs
+        AssemblyReference.cs
+    tests
+      프로젝트명1.Tests.Integration
+      프로젝트명1.Tests.Unit
+  프로젝트명2
+    src
+      ...
+    tests
+      ...
+  ...
+  tests
+    솔루션명.Tests.E2E
+```
+
+
+```
+Request   {}Command
+          {}CommandHandler
+          {}CommandValidator
+          {}Response            // ? DTO
+
+Response  {}Query
+          {}QueryHandler
+          {}QueryValidator
+          {}Response            // ? DTO
+```
+
 ## 솔루션 구성
 ```
 솔루션명

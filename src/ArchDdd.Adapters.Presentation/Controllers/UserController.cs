@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Reflection;
 using ArchDdd.Application.UseCases.Users.Commands.RegisterUser;
 using MediatR;
+using ArchDdd.Domain.Abstractions.Results.Contracts;
 
 namespace ArchDdd.Adapters.Presentation.Controllers;
 
@@ -17,12 +18,12 @@ public class UserController(ISender sender) : ApiController(sender)
         [FromBody] RegisterUserCommand command,
         CancellationToken cancellationToken)
     {
-        var result = await Sender.Send(command, cancellationToken);
+        IResult<RegisterUserResponse> result = await Sender.Send(command, cancellationToken);
 
-        //if (result.IsFailure)
-        //{
-        //    return HandleFailure(result);
-        //}
+        if (result.IsFailure)
+        {
+            return HandleFailure(result);
+        }
 
         return TypedResults.Ok(result.Value);
     }

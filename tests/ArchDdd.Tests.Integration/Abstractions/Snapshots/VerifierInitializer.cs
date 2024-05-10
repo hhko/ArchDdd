@@ -22,5 +22,7 @@ public static class VerifierInitializer
         // 실패 때, 파일 비교 창을 disable한다.
         //  - https://github.com/VerifyTests/DiffEngine/blob/main/docs/diff-tool.md
         DiffRunner.Disabled = true;
+
+        VerifyAspNetCore.Initialize();
     }
 }

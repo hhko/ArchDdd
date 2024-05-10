@@ -12,15 +12,15 @@ public static class ListUtilities
         return [];
     }
 
-    //public static bool NotNullOrEmpty<TValue>(this IList<TValue> list)
-    //{
-    //    return list is not null && list.Any();
-    //}
+    public static bool NotNullOrEmpty<TValue>(this IList<TValue> list)
+    {
+        return list is not null && list.Any();
+    }
 
-    //public static bool IsNullOrEmpty<TValue>(this IList<TValue> list)
-    //{
-    //    return list.NotNullOrEmpty() is false;
-    //}
+    public static bool IsNullOrEmpty<TValue>(this IList<TValue> list)
+    {
+        return list.NotNullOrEmpty() is false;
+    }
 
     //public static bool NotContains<TValue>(this IList<TValue> list, TValue value)
     //{
