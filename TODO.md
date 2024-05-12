@@ -8,13 +8,172 @@
 ```
 1. [x] 유효성 검새 클래스
 1. [x] 유효성 검사 자동 등록
-1. [ ] 유효성 검사 + Mediator 패턴 통합
-1. [ ] 유효성 검사 + Result 통합
+1. [x] 유효성 검사 + Mediator 패턴 통합
+1. [x] 유효성 검사 + Result 통합
 1. [ ] Application Handler 유효성 검사 제거
-
+1. [ ] 로그 SkipEnabledCheck = true?
+1. [ ] ~~Error[] validationErrors -> "ValidationErrors": "ArchDdd.Domain.Abstractions.Results.Error[]",~~
+1. [ ] 단위 테스트에서 Option 재정의 불가능?
 
 입력 --{유효성 검사}--> 연산 --{유효성 검사 None}--> 출력
 ```
+```cs
+public static TResult CreateValidationResult<TResult>(this ICollection<Error> errors)
+    where TResult : class, IResult
+{
+    if (typeof(TResult) == typeof(Result))
+    {
+        return (ValidationResult.WithErrors(errors) as TResult)!;
+    }
+
+    object validationResult = typeof(ValidationResult<>)
+        .GetGenericTypeDefinition()
+        .MakeGenericType(typeof(TResult).GenericTypeArguments[0])
+        .GetMethod(nameof(ValidationResult.WithErrors))!
+        .Invoke(null, [errors])!;
+
+    return (TResult)validationResult;
+}
+```
+```
+info: ArchDdd.Application.Abstractions.Pipelines.LoggingPipeline[1]
+      Starting request RegisterUserCommand, 05/12/2024 21:34:36
+      LogRecord.Timestamp:               2024-05-12T21:34:36.6452033Z
+      LogRecord.TraceId:                 125f9bb574cdac37fa3aa0fdd41e0217
+      LogRecord.SpanId:                  e563f4a5dfcf4297
+      LogRecord.TraceFlags:              None
+      LogRecord.CategoryName:            ArchDdd.Application.Abstractions.Pipelines.LoggingPipeline
+      LogRecord.Severity:                Info
+      LogRecord.SeverityText:            Information
+      LogRecord.FormattedMessage:        Starting request RegisterUserCommand, 05/12/2024 21:34:36
+      LogRecord.Body:                    Starting request {RequestName}, {DateTimeUtc}
+      LogRecord.Attributes (Key:Value):
+          RequestName: RegisterUserCommand
+          DateTimeUtc: 2024-05-12 오후 9:34:36
+          OriginalFormat (a.k.a Body): Starting request {RequestName}, {DateTimeUtc}
+      LogRecord.EventId:                 1
+      LogRecord.EventName:               StartingRequest in LoggingPipeline
+      LogRecord.ScopeValues (Key:Value):
+          [Scope.0]:SpanId: e563f4a5dfcf4297
+          [Scope.0]:TraceId: 125f9bb574cdac37fa3aa0fdd41e0217
+          [Scope.0]:ParentId: a4115191a2e888bc
+          [Scope.1]:ConnectionId: 0HN3IPCJ1VHBE
+          [Scope.2]:RequestId: 0HN3IPCJ1VHBE:00000001
+          [Scope.2]:RequestPath: /api/user/register
+          [Scope.3]:ActionId: abab2683-85e4-4cf0-9d5b-db509f4c76d6
+          [Scope.3]:ActionName: ArchDdd.Adapters.Presentation.Controllers.UserController.Register (ArchDdd.Adapters.Presentation)
+
+      Resource associated with LogRecord:
+      telemetry.sdk.name: opentelemetry
+      telemetry.sdk.language: dotnet
+      telemetry.sdk.version: 1.8.1
+      service.name: unknown_service:ArchDdd
+
+fail: ArchDdd.Application.Abstractions.Pipelines.LoggingPipeline[4]
+      Request failed RegisterUserCommand, Username name must be at most 30 characters., Username contains illegal character., 05/12/2024 21:34:36
+      LogRecord.Timestamp:               2024-05-12T21:34:36.8299984Z
+      LogRecord.TraceId:                 125f9bb574cdac37fa3aa0fdd41e0217
+      LogRecord.SpanId:                  e563f4a5dfcf4297
+      LogRecord.TraceFlags:              None
+      LogRecord.CategoryName:            ArchDdd.Application.Abstractions.Pipelines.LoggingPipeline
+      LogRecord.Severity:                Error
+      LogRecord.SeverityText:            Error
+      LogRecord.FormattedMessage:        Request failed RegisterUserCommand, Username name must be at most 30 characters., Username contains illegal character., 05/12/2024 21:34:36
+      LogRecord.Body:                    Request failed {RequestName}, {ValidationErrors}, {DateTimeUtc}
+      LogRecord.Attributes (Key:Value):
+          RequestName: RegisterUserCommand
+          ValidationErrors: ["Username name must be at most 30 characters.","Username contains illegal character."]
+          DateTimeUtc: 2024-05-12 오후 9:34:36
+          OriginalFormat (a.k.a Body): Request failed {RequestName}, {ValidationErrors}, {DateTimeUtc}
+      LogRecord.EventId:                 4
+      LogRecord.EventName:               FailedRequestBasedOnValidationErrors in LoggingPipeline
+      LogRecord.ScopeValues (Key:Value):
+          [Scope.0]:SpanId: e563f4a5dfcf4297
+          [Scope.0]:TraceId: 125f9bb574cdac37fa3aa0fdd41e0217
+          [Scope.0]:ParentId: a4115191a2e888bc
+          [Scope.1]:ConnectionId: 0HN3IPCJ1VHBE
+          [Scope.2]:RequestId: 0HN3IPCJ1VHBE:00000001
+          [Scope.2]:RequestPath: /api/user/register
+          [Scope.3]:ActionId: abab2683-85e4-4cf0-9d5b-db509f4c76d6
+          [Scope.3]:ActionName: ArchDdd.Adapters.Presentation.Controllers.UserController.Register (ArchDdd.Adapters.Presentation)
+
+      Resource associated with LogRecord:
+      telemetry.sdk.name: opentelemetry
+      telemetry.sdk.language: dotnet
+      telemetry.sdk.version: 1.8.1
+      service.name: unknown_service:ArchDdd
+```
+
+## none
+```
+info: ArchDdd.Application.Abstractions.Pipelines.LoggingPipeline[1]
+      Starting request RegisterUserCommand, 05/12/2024 21:41:33
+      LogRecord.Timestamp:               2024-05-12T21:41:33.4189288Z
+      LogRecord.TraceId:                 125f9bb574cdac37fa3aa0fdd41e0217
+      LogRecord.SpanId:                  f9000caf19b2796f
+      LogRecord.TraceFlags:              None
+      LogRecord.CategoryName:            ArchDdd.Application.Abstractions.Pipelines.LoggingPipeline
+      LogRecord.Severity:                Info
+      LogRecord.SeverityText:            Information
+      LogRecord.FormattedMessage:        Starting request RegisterUserCommand, 05/12/2024 21:41:33
+      LogRecord.Body:                    Starting request {RequestName}, {DateTimeUtc}
+      LogRecord.Attributes (Key:Value):
+          RequestName: RegisterUserCommand
+          DateTimeUtc: 2024-05-12 오후 9:41:33
+          OriginalFormat (a.k.a Body): Starting request {RequestName}, {DateTimeUtc}
+      LogRecord.EventId:                 1
+      LogRecord.EventName:               StartingRequest in LoggingPipeline
+      LogRecord.ScopeValues (Key:Value):
+          [Scope.0]:SpanId: f9000caf19b2796f
+          [Scope.0]:TraceId: 125f9bb574cdac37fa3aa0fdd41e0217
+          [Scope.0]:ParentId: d2edca91fa2be7fa
+          [Scope.1]:ConnectionId: 0HN3IPGTDVP61
+          [Scope.2]:RequestId: 0HN3IPGTDVP61:00000001
+          [Scope.2]:RequestPath: /api/user/register
+          [Scope.3]:ActionId: 9250ff53-d40f-41dc-90a2-09a55d18b36a
+          [Scope.3]:ActionName: ArchDdd.Adapters.Presentation.Controllers.UserController.Register (ArchDdd.Adapters.Presentation)
+
+      Resource associated with LogRecord:
+      telemetry.sdk.name: opentelemetry
+      telemetry.sdk.language: dotnet
+      telemetry.sdk.version: 1.8.1
+      service.name: unknown_service:ArchDdd
+
+fail: ArchDdd.Application.Abstractions.Pipelines.LoggingPipeline[4]
+      Request failed RegisterUserCommand, Username name must be at most 30 characters., Username contains illegal character., 05/12/2024 21:41:33
+LogRecord.Timestamp:               2024-05-12T21:41:33.4667256Z
+LogRecord.TraceId:                 125f9bb574cdac37fa3aa0fdd41e0217
+LogRecord.SpanId:                  f9000caf19b2796f
+LogRecord.TraceFlags:              None
+LogRecord.CategoryName:            ArchDdd.Application.Abstractions.Pipelines.LoggingPipeline
+LogRecord.Severity:                Error
+LogRecord.SeverityText:            Error
+LogRecord.FormattedMessage:        Request failed RegisterUserCommand, Username name must be at most 30 characters., Username contains illegal character., 05/12/2024 21:41:33
+LogRecord.Body:                    Request failed {RequestName}, {ValidationErrors}, {DateTimeUtc}
+LogRecord.Attributes (Key:Value):
+    RequestName: RegisterUserCommand
+    ValidationErrors: ["Username name must be at most 30 characters.","Username contains illegal character."]
+    DateTimeUtc: 2024-05-12 오후 9:41:33
+    OriginalFormat (a.k.a Body): Request failed {RequestName}, {ValidationErrors}, {DateTimeUtc}
+LogRecord.EventId:                 4
+LogRecord.EventName:               FailedRequestBasedOnValidationErrors in LoggingPipeline
+LogRecord.ScopeValues (Key:Value):
+[Scope.0]:SpanId: f9000caf19b2796f
+[Scope.0]:TraceId: 125f9bb574cdac37fa3aa0fdd41e0217
+[Scope.0]:ParentId: d2edca91fa2be7fa
+[Scope.1]:ConnectionId: 0HN3IPGTDVP61
+[Scope.2]:RequestId: 0HN3IPGTDVP61:00000001
+[Scope.2]:RequestPath: /api/user/register
+[Scope.3]:ActionId: 9250ff53-d40f-41dc-90a2-09a55d18b36a
+[Scope.3]:ActionName: ArchDdd.Adapters.Presentation.Controllers.UserController.Register (ArchDdd.Adapters.Presentation)
+
+Resource associated with LogRecord:
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.8.1
+service.name: unknown_service:ArchDdd
+```
+
 ```
 1. [x] webapi snapshot 테스트
 1. [ ] NBomber | webapi 성능 테스트, NBomber
@@ -66,6 +225,8 @@
   public static bool operator >=(UserId a, UserId b) => a.CompareTo(b) >= 0;
   public static bool operator <=(UserId a, UserId b) => a.CompareTo(b) <= 0;
   ```
+- [ ] IValidateOptions 인터페이스 구현 선언형으로 개선
+
 
 ## WebApi
 ### 테스트

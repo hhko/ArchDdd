@@ -7,7 +7,7 @@ public static class ApplicationLayerRegistration
     {
         services
             .RegisterMediator()
-            .RegisterValidator();
+            .RegisterValidation();
 
         return services;
     }

@@ -2,9 +2,9 @@
 
 namespace Microsoft.Extensions.DependencyInjection;
 
-internal static class ValidatorRegistration
+internal static class ValidationRegistration
 {
-    internal static IServiceCollection RegisterValidator(this IServiceCollection services)
+    internal static IServiceCollection RegisterValidation(this IServiceCollection services)
     {
         services.AddValidatorsFromAssembly(
                 assembly: ArchDdd.Application.AssemblyReference.Assembly,

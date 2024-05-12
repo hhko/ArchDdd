@@ -1,26 +1,26 @@
 ﻿using ArchDdd.Domain.Abstractions.BaseTypes;
-using System.ComponentModel.DataAnnotations;
+using ArchDdd.Domain.Abstractions.Results.Contracts;
 
 namespace ArchDdd.Domain.Abstractions.Results;
 
 public static class ErrorUtilities
 {
-    //public static TResult CreateValidationResult<TResult>(this ICollection<Error> errors)
-    //    where TResult : class, IResult
-    //{
-    //    if (typeof(TResult) == typeof(Result))
-    //    {
-    //        return (ValidationResult.WithErrors(errors) as TResult)!;
-    //    }
+    public static TResult CreateValidationResult<TResult>(this ICollection<Error> errors)
+        where TResult : class, IResult
+    {
+        if (typeof(TResult) == typeof(Result))
+        {
+            return (ValidationResult.WithErrors(errors) as TResult)!;
+        }
 
-    //    object validationResult = typeof(ValidationResult<>)
-    //        .GetGenericTypeDefinition()
-    //        .MakeGenericType(typeof(TResult).GenericTypeArguments[0])
-    //        .GetMethod(nameof(ValidationResult.WithErrors))!
-    //        .Invoke(null, [errors])!;
+        object validationResult = typeof(ValidationResult<>)
+            .GetGenericTypeDefinition()
+            .MakeGenericType(typeof(TResult).GenericTypeArguments[0])
+            .GetMethod(nameof(ValidationResult.WithErrors))!
+            .Invoke(null, [errors])!;
 
-    //    return (TResult)validationResult;
-    //}
+        return (TResult)validationResult;
+    }
 
     public static ValidationResult<TValueObject> CreateValidationResult<TValueObject>(
         this ICollection<Error> errors,
@@ -30,7 +30,7 @@ public static class ErrorUtilities
         //     throw new ArgumentNullException($"{nameof(errors)} must not be null");
         ArgumentNullException.ThrowIfNull(errors);
 
-        if (errors.Count != 0)
+        if (errors.Count is not 0)
             return ValidationResult<TValueObject>.WithErrors(errors.ToArray());
 
         return ValidationResult<TValueObject>.WithoutErrors(createValueObject.Invoke());

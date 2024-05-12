@@ -1,11 +1,13 @@
-﻿var builder = WebApplication.CreateBuilder(new WebApplicationOptions
+﻿using System.Text.Json;
+
+var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
     Args = args,
     ContentRootPath = Directory.GetCurrentDirectory()
 });
 
 builder.Services
-    .RegisterAdaptersInfrastructureLayer()
+    .RegisterAdaptersInfrastructureLayer(builder.Logging)
     .RegisterAdaptersPersistenceLayer()
     .RegisterAdaptersPresentationLayer()
     .RegisterApplicationLayer();

@@ -4,6 +4,86 @@ sidebar_position: 2
 
 # 아키텍처 규칙
 
+## 레이어
+### 레이어 이름
+```
+솔루션명
+  프로젝트명1
+    src                             // 애플리케이션 레이어
+      프로젝트명1
+      프로젝트명1.Adapters.Infrastructure
+      프로젝트명1.Adapters.Persistence
+      프로젝트명1.Adapters.Presentation
+      프로젝트명1.Application
+      프로젝트명1.Domain
+    tests                           // 테스트 레이어
+      프로젝트명1.Tests.Integration
+      프로젝트명1.Tests.Performance
+      프로젝트명1.Tests.Unit
+  프로젝트명2
+  tests
+    솔루션명.Tests.E2E
+```
+- 애플리케이션 레이어
+  - `Adapter`
+  - `Application`
+  - `Domain`
+- 테스트 레이어
+  - `E2E`
+  - `Integration`, Performance, ...
+  - `Unit`
+
+### 레이어 의존성 관계
+```
+Host            // 프로젝트명1
+ ↓
+Adapters. ...   // 프로젝트명.Adapters.Infrastructure, ...
+ ↓
+Application     // 프로젝트명1.Application
+ ↓
+Domain          // 프로젝트명1.Domain
+```
+
+### 프로젝트 어셈블리
+```cs
+using System.Reflection;
+
+namespace ArchDdd;
+
+public static class AssemblyReference
+{
+    public static readonly Assembly Assembly = typeof(AssemblyReference).Assembly;
+}
+```
+- 네임스페이스를 이용하여 모든 어셈블리를 직관적으로 참조하기 위해 `AssemblyReference.cs` 파일을 생성합니다.
+
+```
+솔루션명
+  프로젝트명1
+    src                             // 애플리케이션 레이어
+      프로젝트명1
+        AssemblyReference.cs        // 어셈블리 참조를 위한 공통 파일
+      프로젝트명1.Adapters.Infrastructure
+        AssemblyReference.cs
+      프로젝트명1.Adapters.Persistence
+        AssemblyReference.cs
+      프로젝트명1.Adapters.Presentation
+        AssemblyReference.cs
+      프로젝트명1.Application
+        AssemblyReference.cs
+      프로젝트명1.Domain
+        AssemblyReference.cs
+```
+
+### 레이어 의존성 관계 테스트
+```
+```
+
+<br/>
+<br/>
+
+
+
 ```
 솔루션명
   프로젝트명1

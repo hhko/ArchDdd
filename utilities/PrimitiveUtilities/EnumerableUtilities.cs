@@ -73,20 +73,20 @@ public static class IEnumerableUtilities
     //    return source.Where(predicate).FirstOr(alternate);
     //}
 
-    //public static bool Any(this IEnumerable source)
-    //{
-    //    foreach (var _ in source)
-    //    {
-    //        return true;
-    //    }
+    public static bool Any(this IEnumerable source)
+    {
+        foreach (var _ in source)
+        {
+            return true;
+        }
 
-    //    return false;
-    //}
+        return false;
+    }
 
-    //public static bool IsEmpty(this IEnumerable source)
-    //{
-    //    return source.Any() is false;
-    //}
+    public static bool IsEmpty(this IEnumerable source)
+    {
+        return source.Any() is false;
+    }
 
     //public static async Task<List<TSource>> ToListAsync<TSource>(this IAsyncEnumerable<TSource> source, CancellationToken cancellationToken = default)
     //{

@@ -51,6 +51,7 @@ If builders built buildings the way programmers wrote programs, then the first w
 - `MediatR`: Mediator 패턴
 - `Quartz`: 백그라운드 작업
 - `FluentValidation`: 유효성 검사 선언형
+- `OpenTelemetry`: Telemetry
 
 ### 테스트
 - `xunit`: 단위 테스트

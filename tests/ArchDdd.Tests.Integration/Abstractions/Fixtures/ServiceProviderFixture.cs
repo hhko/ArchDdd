@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Hosting;
 using NSubstitute;
 using ArchDdd.Tests.Integration.Abstractions.Constants;
+using Microsoft.Extensions.Logging;
 
 namespace ArchDdd.Tests.Integration.Abstractions.Fixtures;
 
@@ -49,7 +50,7 @@ public static class ServiceProviderFactory
         services
             .AddTransient(_ => configurations)
             .AddTransient(_ => Substitute.For<IWebHostEnvironment>())
-            .RegisterAdaptersInfrastructureLayer()
+            .RegisterAdaptersInfrastructureLayer(Substitute.For<ILoggingBuilder>())
             .RegisterAdaptersPersistenceLayer();
 
         return services.BuildServiceProvider();
