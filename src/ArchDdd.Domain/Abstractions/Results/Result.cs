@@ -9,6 +9,9 @@ public class Result : IResult
 
     //
     // 생성 메서드
+    //      Success     vs. Failure
+    //      Create      vs. -
+    //
     //  - 성공
     //    - 값 有
     //      - implicit operator Result<TValue>(TValue? value)   // 암시적 동적 성공/실패(NULL 허용): NULL은 실패로 처히아 생성한다

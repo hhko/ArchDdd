@@ -16,7 +16,8 @@ public static class AdaptersPersistenceLayerRegistration
     {
         services
             .RegisterDatabaseContext()
-            .RegisterBackgroundJobs();
+            .RegisterBackgroundJobs()
+            .RegisterRepositories();
 
         return services;
     }
