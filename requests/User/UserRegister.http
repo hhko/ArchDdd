@@ -29,10 +29,23 @@ content-type: application/json
 
 {
     "username": "1234567890",
-    "email": "x2",
+    "email": "hello@world.com",
     "password": "x3",
     "confirmPassword": "x4"
 }
+
+# curl -X 'POST' \
+#   'http://localhost:54011/api/User/Register' \
+#   -H 'accept: */*' \
+#   -H 'Content-Type: application/json' \
+#   -d '{
+#   "username": "1234567890",
+#   "email": "hello@world.com",
+#   "password": "x3",
+#   "confirmPassword": "x4"
+# }'
+
+
 
 # ### Success
 # GET {{host}}/api/users/foo

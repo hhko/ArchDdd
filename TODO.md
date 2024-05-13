@@ -1,5 +1,4 @@
 ```
-```
 1. [x] WebApi 실패 처리
 1. [x] WebApi 실패 처리 통합 테스트
 1. [x] WebApi 실패 처리 데이터 랜덤 생성
@@ -17,6 +16,12 @@
 
 입력 --{유효성 검사}--> 연산 --{유효성 검사 None}--> 출력
 ```
+
+```cs
+public override IEnumerable<object> GetAtomicValues()
+  object -> T
+```
+
 ```cs
 public static TResult CreateValidationResult<TResult>(this ICollection<Error> errors)
     where TResult : class, IResult
