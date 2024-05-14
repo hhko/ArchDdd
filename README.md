@@ -11,7 +11,7 @@
 
 ## 아키텍처 이해
 **관심사의 분리(SoC, Separation of Concerns)은** 중요한 아키텍처 원칙 중 하나입니다. 이는 **관심사**를 분리함으로써 코드를 더 잘 관리할 수 있다는 개념입니다. 아키텍처 수준의 관심사는 각각의 **레이어**로 나눠져 관리됩니다.
-> **레이어 아키텍처 패턴의 역사**는 **관심사**를 관리하기 위한 **레이어 배치의 역사**입니다.
+> **레이어 기반 아키텍처 패턴의 역사**는 **관심사**를 관리하기 위한 **레이어 배치의 역사**입니다.
 
 - Layered Architecture
 - Hexagonal Architecture
@@ -19,7 +19,7 @@
 - Clean Architecture
 - ...
 
-![ArchitecturePatternHistory](./docs/docs/01-architecture/01-overview/img/ArchitecturePatternHistory.png)
+![ArchitecturePatternHistory](./docs//docs/01-architecture/01-overview/img/ArchitecturePatternHistory.png)
 
 - [PPT](./README_Summary.pptx)
 

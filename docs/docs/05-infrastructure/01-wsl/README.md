@@ -209,6 +209,45 @@ Host *
 ### Docker Desktop 설치
 - https://www.docker.com/products/docker-desktop/
 
+### 자원 할당
+- 설정 범위
+  - 전역 설정: **%userprofile%**, `.wslconfig`
+  - 지역 설정: `wsl.conf`
+
+```ini
+[wsl2]
+memory=6GB
+swap=0
+kernelCommandLine="sysctl.vm.max_map_count=262144"
+```
+
+### 이미지 기본 경로 변경
+- Case 1.
+```
+wsl --shutdown
+wsl --export docker-desktop-data docker-desktop-data.tar
+wsl --unregister docker-desktop-data
+wsl --import docker-desktop-data D:\docker-new-repo\ docker-desktop-data.tar --version 2
+```
+
+- Case 2.
+```
+C:\ProgramData\Docker\config and add daemon.json
+
+{
+ "data-root": "E:\\ProgramData\\Docker"
+}
+```
+
+- Case 3.
+```
+# Link AppData - Replace youruser with actual user
+mklink /j "C:\Users\youruser\AppData\Local\Docker" "E:\Docker\AppData"
+
+# Link ProgramData
+mklink /j "C:\ProgramData\Docker" "E:\Docker\ProgramData"
+```
+
 <br/>
 
 ## 참고 동영상

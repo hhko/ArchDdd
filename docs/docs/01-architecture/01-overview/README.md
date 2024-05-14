@@ -20,7 +20,7 @@ If builders built buildings the way programmers wrote programs, then the first w
 - Clean Architecture
 - ...
 
-![ArchitecturePatternHistory](./img/ArchitecturePatternHistor.png)
+![ArchitecturePatternHistory](./img/ArchitecturePatternHistory.png)
 
 ## 폴더 구성
 ### src 폴더 구성
