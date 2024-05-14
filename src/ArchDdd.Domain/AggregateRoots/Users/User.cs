@@ -23,6 +23,8 @@ public sealed class User : AggregateRoot<UserId>, IAuditable
     public Email Email { get; }
     public IReadOnlyCollection<Role> Roles => _roles.AsReadOnly();
 
+    public PasswordHash PasswordHash { get; set; }
+
     //
     // IAuditable
     //
@@ -37,5 +39,10 @@ public sealed class User : AggregateRoot<UserId>, IAuditable
         var user = new User(id, username, email);
         user.RaiseDomainEvent(UserRegisteredDomainEvent.New(user.Id));
         return user;
+    }
+
+    public void SetHashedPassword(PasswordHash passwordHash)
+    {
+        PasswordHash = passwordHash;
     }
 }

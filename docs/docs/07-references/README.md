@@ -1,7 +1,7 @@
 # 링크
 
 ## 아키텍처
-### 아키텍처 개요
+### 아키텍처 기초
 - [ ] 문서 | [아키텍처 (Architecture)란 무엇인가](https://brunch.co.kr/@taehyo/223)
   ```
   아키텍처는 다양한 영역과 관련된 의사결정의 집약체이며, 이후 이어질 활동에 대한 기준이 된다.
@@ -42,31 +42,38 @@
 - [ ] 소스 | [Clean Architecture Template, Jason Taylordev](https://github.com/jasontaylordev/CleanArchitecture)
 - [ ] 소스 | [Clean Architecture Template, SSW](https://github.com/SSWConsulting/SSW.CleanArchitecture)
 - [ ] 소스 | [Clean Architecture Template, Phong Nguyen](https://github.com/phongnguyend/Practical.CleanArchitecture)
+- [ ] 소스 | [Clean Architecture Template, Casey](https://github.com/cbcrouse/CleanArchitecture)
 
 ### 아키텍처 예제
+- [ ] 소스 | [sample-dotnet-core-cqrs-api, Kamil Grzybek](https://github.com/kgrzybek/sample-dotnet-core-cqrs-api?tab=readme-ov-file)
 - [ ] 소스 | [MauiCleanTodos](https://github.com/matt-goldman/MauiCleanTodos)
 - [ ] 소스 | [dotnet-modular-monolith](https://github.com/SSWConsulting/dotnet-modular-monolith)
+- [ ] 소스 | [Clean-Architecture-with-.NET, PacktPublishing](https://github.com/PacktPublishing/Clean-Architecture-with-.NET/tree/main)
+- [ ] 소스 | [TodoApi](https://github.com/davidfowl/TodoApi)
 
 
 ## 도메인 주도 설계
-- [ ] 소스 | [Hands-On-Domain-Driven-Design-with-.NET-Core](https://github.com/PacktPublishing/Hands-On-Domain-Driven-Design-with-.NET-Core/tree/master)
-- [ ] 소스 | [Stop using Entity Framework as a DTO provider](https://github.com/ChrisKlug/efcore-dto-demo/tree/main)
-- [ ] 영상 | [Stop using Entity Framework as a DTO provider](https://www.youtube.com/watch?v=N_eLotlcjXo)
-- [ ] 소스 | [refactoring-from-anemic-to-rich-domain-model-example](https://github.com/kgrzybek/refactoring-from-anemic-to-rich-domain-model-example/tree/master)
 - [ ] 문서 | Modular Monolith: A Primer | [한글](https://github.com/ijung/ijung.github.io/blob/main/_posts/development-contents/modular-monolith/2023-05-26-modular-monolith-a-primer.md), [영문](https://www.kamilgrzybek.com/blog/posts/modular-monolith-primer)
 - [ ] 문서 | Modular Monolith: Architectural Drivers | [한글](https://github.com/ijung/ijung.github.io/blob/main/_posts/development-contents/modular-monolith/2023-06-03-modular-monolith-architectural-drivers.md), [영문](https://www.kamilgrzybek.com/blog/posts/modular-monolith-architectural-drivers)
 - [ ] 문서 | Modular Monolith: Architecture Enforcement | [한글](https://github.com/ijung/ijung.github.io/blob/main/_posts/development-contents/modular-monolith/2023-06-04-modular-monolith-architecture-enforcement.md), [영문](https://www.kamilgrzybek.com/blog/posts/modular-monolith-architecture-enforcement)
 - [ ] 문서 | Modular Monolith: Integration Styles | [한글](https://github.com/ijung/ijung.github.io/blob/main/_posts/development-contents/modular-monolith/2023-06-05-modular-monolith-integration-styles.md), [영문](https://www.kamilgrzybek.com/blog/posts/modular-monolith-integration-styles)
 - [ ] 문서 | Modular Monolith: Domain-Centric Design | [한글](https://github.com/ijung/ijung.github.io/blob/main/_posts/development-contents/modular-monolith/2023-06-10-modular-monolith-centric-design.md), [영문](https://www.kamilgrzybek.com/blog/posts/modular-monolith-domain-centric-design)
-- [ ] 소스 | [modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd)
 - [ ] 문서 | [SIMPLE CQRS IMPLEMENTATION WITH RAW SQL AND DDD](https://www.kamilgrzybek.com/blog/posts/simple-cqrs-implementation-raw-sql-ddd)
+- [ ] 소스 | [modular-monolith-with-ddd, Kamil Grzybek](https://github.com/kgrzybek/modular-monolith-with-ddd)
+- [ ] 소스 | [DDD-NoDuplicates](https://github.com/ardalis/DDD-NoDuplicates)
+- [ ] 소스 | [Hands-On-Domain-Driven-Design-with-.NET-Core](https://github.com/PacktPublishing/Hands-On-Domain-Driven-Design-with-.NET-Core/tree/master)
+- [ ] 소스 | [Stop using Entity Framework as a DTO provider](https://github.com/ChrisKlug/efcore-dto-demo/tree/main)
+- [ ] 영상 | [Stop using Entity Framework as a DTO provider](https://www.youtube.com/watch?v=N_eLotlcjXo)
+- [ ] 소스 | [refactoring-from-anemic-to-rich-domain-model-example](https://github.com/kgrzybek/refactoring-from-anemic-to-rich-domain-model-example/tree/master)
 - [ ] 소스 | [dotnet-domain-driven-design](https://github.com/danielmackay/dotnet-domain-driven-design/tree/main)
+- [ ] 소스 | [pluralsight-ddd-fundamentals](https://github.com/ardalis/pluralsight-ddd-fundamentals/tree/main)
 
 ## EF Core
 - [ ] 소스 | [efcore-concurrency-handling](https://github.com/kgrzybek/efcore-concurrency-handling)
 
 ## ASP.NET
 - [ ] 문서 | [Using the ProblemDetails Class in ASP.NET Core Web API](https://code-maze.com/using-the-problemdetails-class-in-asp-net-core-web-api/)
+- [ ] 소스 | [AspNetCoreDiagnosticScenarios](https://github.com/davidfowl/AspNetCoreDiagnosticScenarios)
 
 ## Primitives
 - [ ] 문서 | [IComparable vs IComparer vs Comparison Delegate](https://code-maze.com/csharp-icomparable-icomparer-comparison-delegate/)

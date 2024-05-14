@@ -30,7 +30,7 @@ content-type: application/json
 {
     "username": "1234567890",
     "email": "hello@world.com",
-    "password": "x3",
+    "password": "123456789#aB",
     "confirmPassword": "x4"
 }
 

@@ -53,15 +53,15 @@ internal sealed class RegisterUserCommandHandler(
         var user = User.Create(UserId.New(), username, email);
 
         ValidationResult<PasswordHash> passwordHashResult = PasswordHash.Create(_passwordHasher.HashPassword(user, password.Value));
-        //_validator
-        //    .Validate(passwordHashResult);
+        _validator
+            .Validate(passwordHashResult);
 
-        //if (_validator.IsInvalid)
-        //{
-        //    return _validator.Failure<RegisterUserResponse>();
-        //}
+        if (_validator.IsInvalid)
+        {
+            return _validator.Failure<RegisterUserResponse>();
+        }
 
-        //user.SetHashedPassword(passwordHashResult.Value);
+        user.SetHashedPassword(passwordHashResult.Value);
 
         _userRepository.Add(user);
 
