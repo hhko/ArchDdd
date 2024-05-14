@@ -1,13 +1,40 @@
 # 링크
 
 ## 아키텍처
-### 아키텍처 개념
+### 아키텍처 개요
 - [ ] 문서 | [아키텍처 (Architecture)란 무엇인가](https://brunch.co.kr/@taehyo/223)
   ```
   아키텍처는 다양한 영역과 관련된 의사결정의 집약체이며, 이후 이어질 활동에 대한 기준이 된다.
   ```
 - [ ] 소스 | [code-maze, Hexagonal Architectural Pattern in C#](https://code-maze.com/csharp-hexagonal-architectural-pattern/)
 - [ ] 소스 | [code-maze, Clean Architecture in .NET](https://code-maze.com/dotnet-clean-architecture/)
+- [x] 문서 | [Do you keep your domain layer independent of the data access concerns?](https://www.ssw.com.au/rules/keep-your-domain-layer-independent-of-the-data-access-concerns/)
+  ```
+  개선 전
+  - Attribute을 이용한 데이터베이스 제약 조건 정의
+    [MaxLength(15)]
+    public string City { get; set; }
+
+  개선 후: 데이터베이스 제약 조건 분리
+  - IEntityTypeConfiguration<T>
+    Config(EntityTypeBuilder<T> builder)
+    {
+      builder.Property(e => e.City).HasMaxLength(15);
+    }
+  ```
+- [x] 문서 | [Do you know when to use value objects?](https://www.ssw.com.au/rules/when-to-use-value-objects/)
+  ```
+  개선 전
+  - string AcACCount { get; set; }
+
+  개선 후: ValueObject(= logic + validation), ValueObject을 Entity 테이블에 통합
+  - IEntityTypeConfiguration<T>
+    Config(EntityTypeBuilder<T> builder)
+    {
+      builder.OwnsOne(e => e.AdAccount);
+    }
+  ```
+- [ ] 문서 | [Do you use Strongly Typed IDs to avoid Primitive Obsession](https://www.ssw.com.au/rules/do-you-use-strongly-typed-ids/)
 
 ### 아키텍처 템플릿
 - [ ] 소스 | [Clean Architecture Template, Ardalis](https://github.com/ardalis/CleanArchitecture)
