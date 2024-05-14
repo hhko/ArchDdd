@@ -67,6 +67,7 @@
 - [ ] 소스 | [refactoring-from-anemic-to-rich-domain-model-example](https://github.com/kgrzybek/refactoring-from-anemic-to-rich-domain-model-example/tree/master)
 - [ ] 소스 | [dotnet-domain-driven-design](https://github.com/danielmackay/dotnet-domain-driven-design/tree/main)
 - [ ] 소스 | [pluralsight-ddd-fundamentals](https://github.com/ardalis/pluralsight-ddd-fundamentals/tree/main)
+- [ ] 문서 | Scaffold Your Clean DDD Web Application | [Part 6: Domain-Driven Design Workflow Patterns](https://blog.jacobsdata.com/2021/04/11/scaffold-your-clean-ddd-web-application-part-6-domain-driven-design-workflow-patterns)
 
 ## EF Core
 - [ ] 소스 | [efcore-concurrency-handling](https://github.com/kgrzybek/efcore-concurrency-handling)
