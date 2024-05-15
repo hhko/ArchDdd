@@ -42,7 +42,8 @@
 
    public interface IRequestHandler<in TRequest, TResponse>
        where TRequest : IRequest<TResponse>
-
+1. [x] InternalsVisibleTo
+ 
 ICachedQuery
 IHasCursor
 ```

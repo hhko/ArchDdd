@@ -11,4 +11,8 @@
     <ProjectReference Include="..\ArchDdd.Domain\ArchDdd.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <InternalsVisibleTo Include="ArchDdd.Tests.Unit" />
+  </ItemGroup>
+
 </Project>
