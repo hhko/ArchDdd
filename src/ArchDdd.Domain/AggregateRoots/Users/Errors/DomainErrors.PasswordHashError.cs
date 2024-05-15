@@ -7,12 +7,26 @@ public static partial class DomainErrors
 {
     public static class PasswordHashError
     {
-        public static readonly Error Empty = Error.New(
+        public static Error Empty()
+        {
+            return Error.New(
             $"{nameof(DomainErrors)}.{nameof(PasswordHash)}.{nameof(Empty)}",
             $"{nameof(PasswordHash)} is empty.");
+        }
 
-        public static readonly Error BytesLong = Error.New(
-            $"{nameof(DomainErrors)}.{nameof(PasswordHash)}.{nameof(BytesLong)}",
-            $"{nameof(PasswordHash)} needs to be less than {PasswordHash.BytesLong} bytes long.");
+        public static Error BytesLong(string value)
+        {
+            return Error.New(
+                $"{nameof(DomainErrors)}.{nameof(PasswordHash)}.{nameof(BytesLong)}",
+                $"{nameof(PasswordHash)} needs to be less than {PasswordHash.BytesLong} bytes long.");
+        }
+
+        //public static readonly Error Empty = Error.New(
+        //    $"{nameof(DomainErrors)}.{nameof(PasswordHash)}.{nameof(Empty)}",
+        //    $"{nameof(PasswordHash)} is empty.");
+
+        //public static readonly Error BytesLong = Error.New(
+        //    $"{nameof(DomainErrors)}.{nameof(PasswordHash)}.{nameof(BytesLong)}",
+        //    $"{nameof(PasswordHash)} needs to be less than {PasswordHash.BytesLong} bytes long.");
     }
 }

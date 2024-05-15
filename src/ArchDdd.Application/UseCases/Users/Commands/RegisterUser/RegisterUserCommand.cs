@@ -7,5 +7,4 @@ public sealed record RegisterUserCommand(
     string Email,
     string Password,
     string ConfirmPassword
-//) : IRequest<IResult<RegisterUserResponse>>;
-) : ICommand<RegisterUserResponse>;
+) : ICommand<RegisterUserResponse>;     // IRequest<IResult<RegisterUserResponse>>

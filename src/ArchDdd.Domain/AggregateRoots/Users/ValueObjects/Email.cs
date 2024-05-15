@@ -29,9 +29,9 @@ public sealed class Email : ValueObject
     public static IList<Error> Validate(string email)
     {
         return EmptyList<Error>()
-            .If(email.IsNullOrEmptyOrWhiteSpace(), EmailError.Empty)
-            .If(email.Length > MaxLength, EmailError.TooLong)
-            .If(_regex.NotMatch(email), EmailError.Invalid);
+            .If(email.IsNullOrEmptyOrWhiteSpace(), EmailError.Empty())
+            .If(email.Length > MaxLength, EmailError.TooLong(email))
+            .If(_regex.NotMatch(email), EmailError.Invalid(email));
     }
 
     public override IEnumerable<object> GetAtomicValues()

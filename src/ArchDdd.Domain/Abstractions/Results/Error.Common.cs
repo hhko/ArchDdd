@@ -1,54 +1,56 @@
-﻿//using System.Security.Principal;
+﻿using ArchDdd.Domain.Abstractions.BaseTypes.Contracts;
 
-//namespace ArchDdd.Domain.Abstractions.Results;
+namespace ArchDdd.Domain.Abstractions.Results;
 
-//public sealed partial class Error
-//{
-//    public static Error NullReference(string subject)
-//    {
-//        return New($"{subject}.{nameof(NullReference)}", $"{subject} is null.");
-//    }
+public sealed partial class Error
+{
+    //    public static Error NullReference(string subject)
+    //    {
+    //        return New($"{subject}.{nameof(NullReference)}", $"{subject} is null.");
+    //    }
 
-//    public static Error NullOrEmpty(string collectionName)
-//    {
-//        return New($"{collectionName}.{nameof(NullOrEmpty)}", $"{collectionName} is null or empty.");
-//    }
+    //    public static Error NullOrEmpty(string collectionName)
+    //    {
+    //        return New($"{collectionName}.{nameof(NullOrEmpty)}", $"{collectionName} is null or empty.");
+    //    }
 
-//    ///// <summary>
-//    ///// Create an Error based on the entity type name and the id that was not found
-//    ///// </summary>
-//    ///// <param name="name">name of the entity type. Use "nameof(TValue)" syntax</param>
-//    ///// <param name="id">id of the entity that was not found</param>
-//    ///// <returns>NotFound error</returns>
-//    //public static Error NotFound<TEntity>(IEntityId id)
-//    //    where TEntity : class, IEntity
-//    //{
-//    //    return New($"{typeof(TEntity).Name}.{nameof(NotFound)}", $"{typeof(TEntity).Name} with id '{id.Value}' was not found.");
-//    //}
+    //    ///// <summary>
+    //    ///// Create an Error based on the entity type name and the id that was not found
+    //    ///// </summary>
+    //    ///// <param name="name">name of the entity type. Use "nameof(TValue)" syntax</param>
+    //    ///// <param name="id">id of the entity that was not found</param>
+    //    ///// <returns>NotFound error</returns>
+    //    //public static Error NotFound<TEntity>(IEntityId id)
+    //    //    where TEntity : class, IEntity
+    //    //{
+    //    //    return New($"{typeof(TEntity).Name}.{nameof(NotFound)}", $"{typeof(TEntity).Name} with id '{id.Value}' was not found.");
+    //    //}
 
-//    ///// <summary>
-//    ///// Create an NotFount Error based on the entity type name and the unique key
-//    ///// </summary>
-//    ///// <param name="name">name of the entity type. Use "nameof(TValue)" syntax</param>
-//    ///// <param name="key">Key of the entity that was not found</param>
-//    ///// <returns>NotFound error</returns>
-//    //public static Error NotFound<TEntity>(IUniqueKey key)
-//    //    where TEntity : class, IEntity
-//    //{
-//    //    return New($"{typeof(TEntity).Name}.{nameof(NotFound)}", $"{typeof(TEntity).Name} with key '{key}' was not found.");
-//    //}
+    //    ///// <summary>
+    //    ///// Create an NotFount Error based on the entity type name and the unique key
+    //    ///// </summary>
+    //    ///// <param name="name">name of the entity type. Use "nameof(TValue)" syntax</param>
+    //    ///// <param name="key">Key of the entity that was not found</param>
+    //    ///// <returns>NotFound error</returns>
+    //    //public static Error NotFound<TEntity>(IUniqueKey key)
+    //    //    where TEntity : class, IEntity
+    //    //{
+    //    //    return New($"{typeof(TEntity).Name}.{nameof(NotFound)}", $"{typeof(TEntity).Name} with key '{key}' was not found.");
+    //    //}
 
-//    ///// <summary>
-//    ///// Create an NotFound Error based on the entity type name and the unique value
-//    ///// </summary>
-//    ///// <param name="name">name of the entity type. Use "nameof(TValue)" syntax</param>
-//    ///// <param name="uniqueValue">unique value of the entity that was not found</param>
-//    ///// <returns>NotFound error</returns>
-//    //public static Error NotFound<TEntity>(string uniqueValue)
-//    //    where TEntity : class, IEntity
-//    //{
-//    //    return New($"{typeof(TEntity).Name}.{nameof(NotFound)}", $"{typeof(TEntity).Name} for '{uniqueValue}' was not found.");
-//    //}
+    //    ///// <summary>
+    //    ///// Create an NotFound Error based on the entity type name and the unique value
+    //    ///// </summary>
+    //    ///// <param name="name">name of the entity type. Use "nameof(TValue)" syntax</param>
+    //    ///// <param name="uniqueValue">unique value of the entity that was not found</param>
+    //    ///// <returns>NotFound error</returns>
+    //public static Error NotFound<TEntity>(string uniqueValue)
+    //    where TEntity : class, IEntity
+    //{
+    //    return New(
+    //        $"{typeof(TEntity).Name}.{nameof(NotFound)}", 
+    //        $"{typeof(TEntity).Name} for '{uniqueValue}' was not found.");
+    //}
 
 //    ///// <summary>
 //    ///// Create an NotFound Error based on the entity type name and the unique value
@@ -178,4 +180,4 @@
 //    //{
 //    //    return New($"{nameof(ParseFailure)}", $"Parsing '{valueParsedName}' to type '{nameof(ParseType)}' failed.");
 //    //}
-//}
+}

@@ -81,6 +81,11 @@ public abstract class ValueObject : IEquatable<ValueObject>
             .Join(", ");
     }
 
+    public static implicit operator string(ValueObject valueObject)
+    {
+        return valueObject.ToString();
+    }
+
     //
     // 기본 메서드
     //

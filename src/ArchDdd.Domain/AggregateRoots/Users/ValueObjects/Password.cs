@@ -31,10 +31,10 @@ public sealed class Password : ValueObject
     public static IList<Error> Validate(string password)
     {
         return EmptyList<Error>()
-            .If(password.IsNullOrEmptyOrWhiteSpace(), PasswordError.Empty)
-            .If(password.Length < MinLength, PasswordError.TooShort)
-            .If(password.Length > MaxLength, PasswordError.TooLong)
-            .If(_regex.NotMatch(password), PasswordError.Invalid);
+            .If(password.IsNullOrEmptyOrWhiteSpace(), PasswordError.Empty())
+            .If(password.Length < MinLength, PasswordError.TooShort(password))
+            .If(password.Length > MaxLength, PasswordError.TooLong(password))
+            .If(_regex.NotMatch(password), PasswordError.Invalid(password));
     }
 
     public override IEnumerable<object> GetAtomicValues()

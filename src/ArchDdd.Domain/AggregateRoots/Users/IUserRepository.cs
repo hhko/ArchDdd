@@ -9,13 +9,13 @@ public interface IUserRepository
 
     //Task<User?> GetByEmailAsync(Email email, CancellationToken cancellationToken);
 
-    //Task<User?> GetByUsernameAsync(Username username, CancellationToken cancellationToken);
+    Task<User?> GetByUsernameAsync(Username username, CancellationToken cancellationToken);
 
     //Task<Role?> GetRolePermissionsAsync(Role role, CancellationToken cancellationToken);
 
     //Task<bool> IsEmailUniqueAsync(Email email, CancellationToken cancellationToken);
 
-    //Task<bool> IsEmailTakenAsync(Email email, CancellationToken cancellationToken);
+    Task<bool> IsEmailTakenAsync(Email email, CancellationToken cancellationToken);
 
     void Add(User user);
 

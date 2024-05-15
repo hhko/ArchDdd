@@ -1,4 +1,12 @@
 ```
+개선
+1. .prop
+1. xxxError에 오류 값
+1. 데이터 유효성 -> .Fluent, Business Rule 유효성 Handler
+
+질문
+1. enum vs. Enumeration
+```
 1. [x] WebApi 실패 처리
 1. [x] WebApi 실패 처리 통합 테스트
 1. [x] WebApi 실패 처리 데이터 랜덤 생성
@@ -16,6 +24,33 @@
 
 입력 --{유효성 검사}--> 연산 --{유효성 검사 None}--> 출력
 ```
+
+```
+# CQRS
+
+1. [x] IRequest
+1. [x] IRequestHandler -> ICommandHandler
+1. [ ] IQueryHandler<in? ... >
+   // IQueryHandler 인터페이스 정의?
+   public interface IQueryHandler<in TQuery, TResponse>  // <-- in? 
+   public interface IQueryHandler<TQuery, TResponse> 
+       : IRequestHandler<TQuery, IResult<TResponse>>
+       where TQuery : IQuery<TResponse>
+       where TResponse : IResponse
+   {
+   }
+
+   public interface IRequestHandler<in TRequest, TResponse>
+       where TRequest : IRequest<TResponse>
+
+ICachedQuery
+IHasCursor
+```
+
+- [ ] Ulid 모든 레이어에서 사용할 수 있는 Primitive 타입화? 의존성 검사 실패됨
+- [ ] IValidator 인터페이스 이름이 FluentValidation과 겹침
+- [ ] Error.Common?
+
 
 ```cs
 public override IEnumerable<object> GetAtomicValues()
@@ -178,6 +213,8 @@ telemetry.sdk.language: dotnet
 telemetry.sdk.version: 1.8.1
 service.name: unknown_service:ArchDdd
 ```
+
+
 
 ```
 1. [x] webapi snapshot 테스트

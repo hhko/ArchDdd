@@ -27,8 +27,8 @@ public sealed class PasswordHash : ValueObject
     public static IList<Error> Validate(string passwordHash)
     {
         return EmptyList<Error>()
-            .If(passwordHash.IsNullOrEmptyOrWhiteSpace(), PasswordHashError.Empty)
-            .If(Encoding.ASCII.GetByteCount(passwordHash) > BytesLong, PasswordHashError.BytesLong);
+            .If(passwordHash.IsNullOrEmptyOrWhiteSpace(), PasswordHashError.Empty())
+            .If(Encoding.ASCII.GetByteCount(passwordHash) > BytesLong, PasswordHashError.BytesLong(passwordHash));
     }
 
     public override IEnumerable<object> GetAtomicValues()

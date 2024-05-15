@@ -37,9 +37,9 @@ public sealed class Username : ValueObject
     public static IList<Error> Validate(string username)
     {
         return EmptyList<Error>()
-            .If(username.IsNullOrEmptyOrWhiteSpace(), UsernameError.Empty)
-            .If(username.Length > MaxLength, UsernameError.TooLong)
-            .If(username.ContainsIllegalCharacter(_illeagalCharacterSearchValues), UsernameError.ContainsIllegalCharacter);
+            .If(username.IsNullOrEmptyOrWhiteSpace(), UsernameError.Empty())
+            .If(username.Length > MaxLength, UsernameError.TooLong(username))
+            .If(username.ContainsIllegalCharacter(_illeagalCharacterSearchValues), UsernameError.ContainsIllegalCharacter(username));
     }
 
     public override IEnumerable<object> GetAtomicValues()
