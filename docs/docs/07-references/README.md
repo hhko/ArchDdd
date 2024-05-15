@@ -58,7 +58,9 @@
 - [ ] 문서 | Modular Monolith: Architecture Enforcement | [한글](https://github.com/ijung/ijung.github.io/blob/main/_posts/development-contents/modular-monolith/2023-06-04-modular-monolith-architecture-enforcement.md), [영문](https://www.kamilgrzybek.com/blog/posts/modular-monolith-architecture-enforcement)
 - [ ] 문서 | Modular Monolith: Integration Styles | [한글](https://github.com/ijung/ijung.github.io/blob/main/_posts/development-contents/modular-monolith/2023-06-05-modular-monolith-integration-styles.md), [영문](https://www.kamilgrzybek.com/blog/posts/modular-monolith-integration-styles)
 - [ ] 문서 | Modular Monolith: Domain-Centric Design | [한글](https://github.com/ijung/ijung.github.io/blob/main/_posts/development-contents/modular-monolith/2023-06-10-modular-monolith-centric-design.md), [영문](https://www.kamilgrzybek.com/blog/posts/modular-monolith-domain-centric-design)
-- [ ] 문서 | [SIMPLE CQRS IMPLEMENTATION WITH RAW SQL AND DDD](https://www.kamilgrzybek.com/blog/posts/simple-cqrs-implementation-raw-sql-ddd)
+- [ ] 문서 | Kamil Grzybek | [REST API DATA VALIDATION](https://www.kamilgrzybek.com/blog/posts/rest-api-data-validation)
+- [ ] 문서 | Kamil Grzybek | [DOMAIN MODEL VALIDATION](https://www.kamilgrzybek.com/blog/posts/domain-model-validation)
+- [ ] 문서 | Kamil Grzybek | [SIMPLE CQRS IMPLEMENTATION WITH RAW SQL AND DDD](https://www.kamilgrzybek.com/blog/posts/simple-cqrs-implementation-raw-sql-ddd)
 - [ ] 소스 | [modular-monolith-with-ddd, Kamil Grzybek](https://github.com/kgrzybek/modular-monolith-with-ddd)
 - [ ] 소스 | [DDD-NoDuplicates](https://github.com/ardalis/DDD-NoDuplicates)
 - [ ] 소스 | [Hands-On-Domain-Driven-Design-with-.NET-Core](https://github.com/PacktPublishing/Hands-On-Domain-Driven-Design-with-.NET-Core/tree/master)
@@ -68,6 +70,7 @@
 - [ ] 소스 | [dotnet-domain-driven-design](https://github.com/danielmackay/dotnet-domain-driven-design/tree/main)
 - [ ] 소스 | [pluralsight-ddd-fundamentals](https://github.com/ardalis/pluralsight-ddd-fundamentals/tree/main)
 - [ ] 문서 | Scaffold Your Clean DDD Web Application | [Part 6: Domain-Driven Design Workflow Patterns](https://blog.jacobsdata.com/2021/04/11/scaffold-your-clean-ddd-web-application-part-6-domain-driven-design-workflow-patterns)
+
 
 ## EF Core
 - [ ] 소스 | [efcore-concurrency-handling](https://github.com/kgrzybek/efcore-concurrency-handling)
