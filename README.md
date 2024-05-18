@@ -23,6 +23,12 @@
 
 - [PPT](./README_Summary.pptx)
 
+### 소프트웨어 아키텍처의 중요성 
+[![](https://img.youtube.com/vi/4E1BHTvhB7Y/0.jpg)](https://www.youtube.com/watch?v=4E1BHTvhB7Y)
+
+### 테스트 주도 개발(TDD)의 장단점
+[![](https://img.youtube.com/vi/eRxc4PD6RN0/0.jpg)](https://www.youtube.com/watch?v=eRxc4PD6RN0)
+
 ## 개발 환경
 - .NET 8.x
 - Visual Studio Code
