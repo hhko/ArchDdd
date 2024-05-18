@@ -146,7 +146,7 @@ public abstract class Enumeration<TEnum>
     public static TEnum? FromName(string name)
     {
         return EnumerationsDictionary
-            .Value
+            .Value      // Dictionary<int, TEnum>
             .Values
             .SingleOrDefault(x => x.Name == name);
     }

@@ -21,14 +21,4 @@ app.UseAdaptersPresentationLayer();
 app.MapControllers();
 app.Run();
 
-public sealed partial class Program : IDisposable
-{
-    public Program()
-    {
-        
-    }
-
-    public void Dispose()
-    {
-    }
-}
+sealed partial class Program { }

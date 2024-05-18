@@ -14,14 +14,14 @@ namespace ArchDdd.Application.UseCases.Users.Commands.RegisterUser;
 
 internal sealed class RegisterUserCommandHandler(
     IUserRepository userRepository,
-    IValidator validator,
-    IPasswordHasher<User> passwordHasher)
+    IPasswordHasher<User> passwordHasher,
+    IValidator validator)
     //: IRequestHandler<RegisterUserCommand, IResult<RegisterUserResponse>>
     : ICommandHandler<RegisterUserCommand, RegisterUserResponse>
 {
     private readonly IUserRepository _userRepository = userRepository;
-    private readonly IValidator _validator = validator;
     private readonly IPasswordHasher<User> _passwordHasher = passwordHasher;
+    private readonly IValidator _validator = validator;
 
     public async Task<IResult<RegisterUserResponse>> Handle(RegisterUserCommand command, CancellationToken cancellationToken)
     {
@@ -29,6 +29,8 @@ internal sealed class RegisterUserCommandHandler(
         ValidationResult<Username> usernameResult = Username.Create(command.Username);
         ValidationResult<Password> passwordResult = Password.Create(command.Password);
 
+        // 버그
+        //  - emailResult이 실패일 때 emailResult.Value에서 예외가 발생합니다.
         bool emailIsTaken = await _userRepository
             .IsEmailTakenAsync(emailResult.Value, cancellationToken);
 

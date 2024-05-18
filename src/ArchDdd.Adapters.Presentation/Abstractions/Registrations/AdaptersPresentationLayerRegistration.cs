@@ -9,14 +9,16 @@ public static class AdaptersPresentationLayerRegistration
     {
         services
             .RegisterControllers()
-            .RegisterOpenApi();
+            .RegisterOpenApi()
+            .RegisterMiddlewares();
 
         return services;
     }
 
     public static IApplicationBuilder UseAdaptersPresentationLayer(this IApplicationBuilder app)
     {
-        app.UseOpenApi();
+        app.UseOpenApi()
+           .UseMiddlewares();
 
         return app;
     }

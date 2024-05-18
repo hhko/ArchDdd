@@ -6,76 +6,89 @@
 
 질문
 1. enum vs. Enumeration
-```
-1. [x] WebApi 실패 처리
-1. [x] WebApi 실패 처리 통합 테스트
-1. [x] WebApi 실패 처리 데이터 랜덤 생성
-1. [ ] WebApi 실패 처리 Verify
-```
-```
-1. [x] 유효성 검새 클래스
-1. [x] 유효성 검사 자동 등록
-1. [x] 유효성 검사 + Mediator 패턴 통합
-1. [x] 유효성 검사 + Result 통합
-1. [ ] Application Handler 유효성 검사 제거
-1. [ ] 로그 SkipEnabledCheck = true?
-1. [ ] ~~Error[] validationErrors -> "ValidationErrors": "ArchDdd.Domain.Abstractions.Results.Error[]",~~
-1. [ ] 단위 테스트에서 Option 재정의 불가능?
 
-입력 --{유효성 검사}--> 연산 --{유효성 검사 None}--> 출력
+버그
+1. Query in
+1. command 파라미터 이름
+1. emailResult.Value 유효성 검사 사전 필요?
+bool emailIsTaken = await _userRepository
+    .IsEmailTakenAsync(emailResult.Value, cancellationToken);
+1. nameof opentelemtry
+1. service 이름
+   options.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(
+      serviceName: nameof(ArchDdd)))
+1. Middleware 위치
+   app -> presentation
 ```
 
-```
-# CQRS
+- [ ] `FormBody`, `FormRute`?
+- [ ] `Constants` 폴더, 클래스 이름 구분?
+- [ ] NSubstitute 모든 메서드 명시적 정의?
+- [x] WebApi 실패 처리
+- [x] WebApi 실패 처리 통합 테스트
+- [x] WebApi 실패 처리 데이터 랜덤 생성
+- [ ] WebApi 실패 처리 Verify
+- [x] 유효성 검새 클래스
+- [x] 유효성 검사 자동 등록
+- [x] 유효성 검사 + Mediator 패턴 통합
+- [x] 유효성 검사 + Result 통합
+- [ ] Application Handler 유효성 검사 제거
+- [ ] 로그 SkipEnabledCheck = true?
+- [ ] ~~Error[] validationErrors -> "ValidationErrors": "ArchDdd.Domain.Abstractions.Results.Error[]",~~
+- [ ] 단위 테스트에서 Option 재정의 불가능?
+  ```
+  입력 --{유효성 검사}--> 연산 --{유효성 검사 None}--> 출력
+  ```
 
-1. [x] IRequest
-1. [x] IRequestHandler -> ICommandHandler
-1. [ ] IQueryHandler<in? ... >
-   // IQueryHandler 인터페이스 정의?
-   public interface IQueryHandler<in TQuery, TResponse>  // <-- in? 
-   public interface IQueryHandler<TQuery, TResponse> 
-       : IRequestHandler<TQuery, IResult<TResponse>>
-       where TQuery : IQuery<TResponse>
-       where TResponse : IResponse
-   {
-   }
 
-   public interface IRequestHandler<in TRequest, TResponse>
-       where TRequest : IRequest<TResponse>
-1. [x] InternalsVisibleTo
- 
-ICachedQuery
-IHasCursor
-```
 
+## CQRS
+- [x] IRequest
+- [x] IRequestHandler -> ICommandHandler
+- [ ] IQueryHandler<in? ... >
+  ```cs
+  // IQueryHandler 인터페이스 정의?
+  public interface IQueryHandler<in TQuery, TResponse>  // <-- in? 
+  public interface IQueryHandler<TQuery, TResponse> 
+      : IRequestHandler<TQuery, IResult<TResponse>>
+      where TQuery : IQuery<TResponse>
+      where TResponse : IResponse
+  {
+  }
+
+  public interface IRequestHandler<in TRequest, TResponse>
+      where TRequest : IRequest<TResponse>
+  ```
+- [x] InternalsVisibleTo
+- [ ] ICachedQuery
+- [ ] IHasCursor
 - [ ] Ulid 모든 레이어에서 사용할 수 있는 Primitive 타입화? 의존성 검사 실패됨
 - [ ] IValidator 인터페이스 이름이 FluentValidation과 겹침
 - [ ] Error.Common?
+- [ ] GetAtomicValues object -> T
+  ```cs
+  public override IEnumerable<object> GetAtomicValues()
+    object -> T
+  ```
+- [ ] ?
+  ```cs
+  public static TResult CreateValidationResult<TResult>(this ICollection<Error> errors)
+      where TResult : class, IResult
+  {
+      if (typeof(TResult) == typeof(Result))
+      {
+          return (ValidationResult.WithErrors(errors) as TResult)!;
+      }
 
+      object validationResult = typeof(ValidationResult<>)
+          .GetGenericTypeDefinition()
+          .MakeGenericType(typeof(TResult).GenericTypeArguments[0])
+          .GetMethod(nameof(ValidationResult.WithErrors))!
+          .Invoke(null, [errors])!;
 
-```cs
-public override IEnumerable<object> GetAtomicValues()
-  object -> T
-```
-
-```cs
-public static TResult CreateValidationResult<TResult>(this ICollection<Error> errors)
-    where TResult : class, IResult
-{
-    if (typeof(TResult) == typeof(Result))
-    {
-        return (ValidationResult.WithErrors(errors) as TResult)!;
-    }
-
-    object validationResult = typeof(ValidationResult<>)
-        .GetGenericTypeDefinition()
-        .MakeGenericType(typeof(TResult).GenericTypeArguments[0])
-        .GetMethod(nameof(ValidationResult.WithErrors))!
-        .Invoke(null, [errors])!;
-
-    return (TResult)validationResult;
-}
-```
+      return (TResult)validationResult;
+  }
+  ```
 ```
 info: ArchDdd.Application.Abstractions.Pipelines.LoggingPipeline[1]
       Starting request RegisterUserCommand, 05/12/2024 21:34:36

@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'ArchDDD',
-  tagline: '아키텍처 with 도메인 주도 설계',
+  title: 'ArchDdd',
+  tagline: '아키텍처 made 도메인 주도 설계',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

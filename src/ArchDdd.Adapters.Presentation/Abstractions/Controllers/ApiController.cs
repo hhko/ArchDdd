@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using IResult = ArchDdd.Domain.Abstractions.Results.Contracts.IResult;
-using static ArchDdd.Application.Abstractions.Constants.ProblemDetails;
+using static ArchDdd.Application.Abstractions.Constants.Constants.ProblemDetails;
 using ArchDdd.Domain.Abstractions.Results.Contracts;
 using static ArchDdd.Adapters.Presentation.Abstractions.Controllers.ProblemDetailsUtilities;
 

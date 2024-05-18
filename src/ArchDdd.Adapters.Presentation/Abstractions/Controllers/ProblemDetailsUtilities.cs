@@ -1,7 +1,7 @@
 ﻿using ArchDdd.Domain.Abstractions.Results;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using static ArchDdd.Application.Abstractions.Constants.ProblemDetails;
+using static ArchDdd.Application.Abstractions.Constants.Constants.ProblemDetails;
 
 namespace ArchDdd.Adapters.Presentation.Abstractions.Controllers;
 

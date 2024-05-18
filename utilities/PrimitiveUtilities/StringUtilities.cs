@@ -88,10 +88,10 @@ public static class StringUtilities
     //    return input.Contains(value) is false;
     //}
 
-    //public static bool NotContains(this string input, char character)
-    //{
-    //    return input.Contains(character) is false;
-    //}
+    public static bool NotContains(this string input, char character)
+    {
+        return input.Contains(character) is false;
+    }
 
     //public static bool NotContains(this string input, params string[] strings)
     //{

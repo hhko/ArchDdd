@@ -12,7 +12,7 @@ namespace ArchDdd.Tests.Unit.LayerTests.Application.Uers;
 public sealed class RegisterUserTests
 {
     [Fact]
-    public async Task Test()
+    public async Task RegisterUser_IsValid_ShouldBeSuccess()
     {
         // Arrange
         IUserRepository userRepository = Substitute.For<IUserRepository>();
@@ -20,20 +20,28 @@ public sealed class RegisterUserTests
             .IsEmailTakenAsync(Arg.Any<Email>(), Arg.Any<CancellationToken>())
             .Returns(Task.FromResult(false));
 
-        IValidator validator = Substitute.For<IValidator>();
-        validator.IsValid.Returns(true);
-
         IPasswordHasher<User> passwordHasher = Substitute.For<IPasswordHasher<User>>();
-        
-        RegisterUserCommandHandler sut = new(userRepository, validator, passwordHasher);
+        passwordHasher
+            .HashPassword(Arg.Any<User>(), Arg.Any<string>())
+            .Returns("AQAAAAIAAYagAAAAEG4tygYdv9yuXah7zgy7Phri32rp0R0Uca9ik5iMjZd5TOyg2VrTcbAAXJlKmxzRrw==");
 
-        //// Act
-        //var actual = await sut.Handle(
-        //    new RegisterUserCommand(
-        //        "username",
-        //        "hello@world.com",
-        //        "1234567890#aB",
-        //        "1234567890#aB"), 
-        //    CancellationToken.None);
+        IValidator validator = Substitute.For<IValidator>();
+        validator
+            .IsValid
+            .Returns(true);
+
+        var sut = new RegisterUserCommandHandler(userRepository, passwordHasher, validator);
+
+        // Act
+        var actual = await sut.Handle(
+            new RegisterUserCommand(
+                "username",
+                "hello@world.com",
+                "1234567890#aB",
+                "1234567890#aB"),
+            CancellationToken.None);
+
+        // Assert
+        actual.IsSuccess.Should().BeTrue();
     }
 }

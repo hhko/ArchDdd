@@ -25,37 +25,41 @@ sidebar_position: 2
     솔루션명.Tests.E2E
 ```
 - 애플리케이션 레이어
-  - `Adapter`
-  - `Application`
-  - `Domain`
+  - 기술 관심사
+    - `Host`: 생략
+    - `Adapter`: 기능
+  - 비즈니스 관심사
+    - `Application`: UseCase
+    - `Domain`: AggregateRoot
 - 테스트 레이어
   - `E2E`
-  - `Integration`, Performance, ...
+  - `Integration`, `Performance`, ...
   - `Unit`
 
 ### 레이어 의존성 관계
 ```
-Host            // 프로젝트명1
+Host            // 기술 관심사: 프로세스
  ↓
-Adapters. ...   // 프로젝트명.Adapters.Infrastructure, ...
+Adapters. ...   // 기술 관심사: Infrastructure, Persistence, Presentation
  ↓
-Application     // 프로젝트명1.Application
+Application     // 비즈니스 관심사: UseCase
  ↓
-Domain          // 프로젝트명1.Domain
+Domain          // 비즈니스 관심사: AggregateRoot
 ```
 
 ### 프로젝트 어셈블리
+- 네임스페이스와 정적 클래스를 이용하여 어셈블리를 식별하기 위해 `AssemblyReference.cs` 파일을 모든 프로젝트에 생성합니다.
+
 ```cs
 using System.Reflection;
 
-namespace ArchDdd;
+namespace ArchDdd.Application;    // Application 레이어
 
 public static class AssemblyReference
 {
     public static readonly Assembly Assembly = typeof(AssemblyReference).Assembly;
 }
 ```
-- 네임스페이스를 이용하여 모든 어셈블리를 직관적으로 참조하기 위해 `AssemblyReference.cs` 파일을 생성합니다.
 
 ```
 솔루션명
@@ -78,6 +82,17 @@ public static class AssemblyReference
 ### 레이어 의존성 관계 테스트
 ```
 ```
+
+## 유스케이스
+### 유스케이스
+### 유스케이스 단위 구현 방법
+- **Entity가 없을(無) 때**
+  - `논리 1개 : 인터페이스 메서드 1개 호출(순수 기술)`: 인터페이스 메서드 호출
+  - `논리 1개 : 인터페이스 메서드 N개 호출(비즈니스 조합)`: private 메서드에서 N개 인터페이스 메서드 호출
+- **Entity가 있을(有) 때**
+  - `논리 1개 : Entity 인스턴스 1개`: Entity 메서드 호출
+  - `논리 1개 : Entity 인스턴스 N개`: Domain Service 메서드 호출
+
 
 <br/>
 <br/>

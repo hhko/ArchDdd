@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using OpenTelemetry;
 using OpenTelemetry.Exporter;
 using OpenTelemetry.Logs;
+using OpenTelemetry.Resources;
 using System.Diagnostics;
 
 namespace Microsoft.Extensions.DependencyInjection;
@@ -31,6 +32,15 @@ internal static class TelemetryRegistration
             {
                 options.AddOtlpExporter(options => ConfigureOtlpCollectorExporter(options, openTelemetryOptions.OtlpCollectorHost));
             }
+
+            // 로그 출력
+            //
+            // Resource associated with LogRecord:
+            // service.name: ArchDdd
+            // service.version: 2022.6.7
+            options.SetResourceBuilder(ResourceBuilder.CreateDefault().AddService(
+                serviceName: nameof(ArchDdd)));
+                //serviceVersion: "2022.6.7"));
 
             options.AddProcessor(new ActivityEventLogProcessor());
         });
