@@ -17,7 +17,8 @@ public sealed class WebAppFactoryCollectionFixture
 }
 
 public sealed class WebAppFactoryFixture
-    : WebApplicationFactory<Program>
+    //: WebApplicationFactory<Program>
+    : WebApplicationFactory<IAppMarker>
     , IAsyncLifetime
 {
     // 컨테이너
