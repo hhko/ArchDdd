@@ -83,6 +83,76 @@ public static class AssemblyReference
 ```
 ```
 
+## 의존성 등록
+```
+
+```
+
+## Host 인터페이스
+```cs
+// Program 어셈블리
+//public sealed partial class Program { }
+public interface IAppMaker
+{
+
+}
+
+// Integration 테스트
+public sealed class WebAppFactoryFixture
+    //: WebApplicationFactory<Program>
+    : WebApplicationFactory<IAppMarker>
+    , IAsyncLifetime
+{
+  // ...
+}
+```
+
+## Middleware & Pipeline
+```
+Middleware                 --> WebApi Controller --> Pipeline            --> Handler
+ErrorHandlingMiddleware                             LoggingPipeline
+RequestTimeMiddleware                               ValidatorPipeline
+```
+- Middleware: WebApi
+- Pipeline: MediatR
+
+| 순서 | 구분 | 로그 | 기능 |
+| --- | --- | --- | --- |
+| 1   | ErrorHandlingMiddleware | Error               | 전역 예외 처리 |
+| 2   | RequestTimeMiddleware   | Warning             | 4초 이상 |
+| 3   | LoggingPipeline         | Information, Error  | 모든 메시지 |
+| 4   | ValidatorPipeline       | -                   | 메시지 유효성 검사 |
+
+## 로그
+### 구조화 패키지
+
+### 전용 메서드
+- 로그 전용 메서드를 이용하여 로그 출력에 의미(예. LogRequestTime)와 형식을 표준화한다.
+  - 형식
+    - EventId: 로그 식별 값
+    - Message: 로그 구조화
+
+```cs
+
+// _log.LogRequestTime
+public static partial class LoggerMessageDefinitionsUtilities
+{
+    [LoggerMessage(
+        EventId = 0,
+        EventName = $"{nameof(RequestTimeMiddleware)}",
+        Level = LogLevel.Warning,
+        Message = "Request [{Method}] at {Path} took {Milliseconds} ms",
+        SkipEnabledCheck = true)]
+    public static partial void LogRequestTime(this ILogger logger,
+        string method,
+        PathString path,
+        double milliseconds);
+}
+```
+
+
+
+
 ## 유스케이스
 ### 유스케이스
 ### 유스케이스 단위 구현 방법

@@ -3,6 +3,7 @@
 1. .prop
 1. xxxError에 오류 값
 1. 데이터 유효성 -> .Fluent, Business Rule 유효성 Handler
+1. 예외 로그 구조화
 
 질문
 1. enum vs. Enumeration
@@ -19,8 +20,11 @@ bool emailIsTaken = await _userRepository
       serviceName: nameof(ArchDdd)))
 1. Middleware 위치
    app -> presentation
+1. error: Error.Exception(exception.Message), -> error: Error.FromException(exception),
 ```
 
+
+- [ ] 로그 예외 구조화 -> Serilog
 - [ ] `FormBody`, `FormRute`?
 - [ ] `Constants` 폴더, 클래스 이름 구분?
 - [ ] NSubstitute 모든 메서드 명시적 정의?
