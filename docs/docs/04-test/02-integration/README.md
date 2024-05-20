@@ -24,7 +24,7 @@ public class HelloControllerTests_Step1_ExplicitCreation
     [Fact]
     public async Task WebApi_GetGretting_ShouldBeTrue()
     {
-         Arrange
+        // Arrange
         await using var application = new WebApplicationFactory<Program>();
 
         // 1. CreateClient 메서드를 호출하면 Program 인스턴스를 생성합니다.
@@ -32,10 +32,10 @@ public class HelloControllerTests_Step1_ExplicitCreation
         using var sut = application.CreateClient();
         using var sut2 = application.CreateClient();
 
-         Act
+        // Act
         var actual = await sut.GetAsync("/api/greeting/Foo");
 
-         Assert
+        // Assert
         actual.StatusCode.Should().Be(HttpStatusCode.OK);
     }
 }
@@ -61,10 +61,10 @@ public class HelloControllerTests_Step2_ClassFixture
     [Fact]
     public async Task WebApi_GetGretting_ShouldBeTrue()
     {
-         Act
+        // Act
         var actual = await _sut.GetAsync("/api/greeting/Foo");
 
-         Assert
+        // Assert
         actual.StatusCode.Should().Be(HttpStatusCode.OK);
     }
 
@@ -117,10 +117,10 @@ public class HelloControllerTests_Step3_OwnClassFixture
     [Fact]
     public async Task WebApi_GetGretting_ShouldBeTrue()
     {
-         Act
+        // Act
         var actual = await _sut.GetAsync("/api/greeting/Foo");
 
-         Assert
+        // Assert
         actual.StatusCode.Should().Be(HttpStatusCode.OK);
     }
 }

@@ -22,7 +22,7 @@
 ![ArchitecturePatternHistory](./docs//docs/01-architecture/01-overview/img/ArchitecturePatternHistory.png)
 
 관심사를 **비즈니스와 기술** 중심으로 분리하고, 비즈니스 유스케이스 중심으로 관심사를 구성합니다.
-![](./docs//docs/01-architecture/01-overview/img/soc.png)
+![](./docs/docs/01-architecture/01-overview/img/soc.png)
 
 
 ### 소프트웨어 아키텍처의 중요성 

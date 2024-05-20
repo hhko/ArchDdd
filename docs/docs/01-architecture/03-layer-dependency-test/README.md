@@ -16,7 +16,7 @@ public static class AssemblyReference
     public static readonly Assembly Assembly = typeof(AssemblyReference).Assembly;
 }
 ```
-- 레이어 기준으로 모든 프로젝트(어셈블리)를 쉽게 접근하기 위해 `AssemblyReference` 클래스를 구현합니다.
+- 레이어를 구성하는 모든 어셈블리(프로젝트)을 접근하기 위해 `AssemblyReference` 클래스를 구현합니다.
 
 ## 레이어 의존성 테스트하기
 ![](./img/2024-03-27-00-42-25.png)
