@@ -10,20 +10,20 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: '아키텍처',
+    title: '클린 아키텍처',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        레이어(관심사) 단위로 코드 배치를 논한다.
+        관심사를 레이어 단위로 코드 배치를 논한다.
       </>
     ),
   },
   {
-    title: '기본',
+    title: '도메인 주도 설계',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        런타임(객체) 관점으로 코드 설계를 논한다.
+        관심사를 객체 단위로 코드 배치를 논한다.
       </>
     ),
   },
@@ -32,7 +32,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        코드에 감동이 있어야 한다.
+        코드 배치에 감동이 있어야 한다.
       </>
     ),
   },

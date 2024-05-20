@@ -1,4 +1,4 @@
-# Architecture made Domain-Driven Design
+# 클린 아키텍처와 도메인 주도 설계
 [![ArchDdd Build](https://github.com/hhko/ArchDdd/actions/workflows/build.yml/badge.svg)](https://github.com/hhko/ArchDdd/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/hhko/ArchDdd/graph/badge.svg?token=VK8HUZTA7K)](https://codecov.io/gh/hhko/ArchDdd)
 
@@ -21,7 +21,9 @@
 
 ![ArchitecturePatternHistory](./docs//docs/01-architecture/01-overview/img/ArchitecturePatternHistory.png)
 
-- [PPT](./README_Summary.pptx)
+관심사를 **비즈니스와 기술** 중심으로 분리하고, 비즈니스 유스케이스 중심으로 관심사를 구성합니다.
+![](./docs//docs/01-architecture/01-overview/img/soc.png)
+
 
 ### 소프트웨어 아키텍처의 중요성 
 [![](https://img.youtube.com/vi/4E1BHTvhB7Y/0.jpg)](https://www.youtube.com/watch?v=4E1BHTvhB7Y)
