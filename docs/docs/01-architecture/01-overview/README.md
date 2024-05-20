@@ -22,7 +22,7 @@ If builders built buildings the way programmers wrote programs, then the first w
 
 ![ArchitecturePatternHistory](./img/ArchitecturePatternHistory.png)
 
-관심사를 **비즈니스와 기술** 중심으로 분리하고, 비즈니스 유스케이스 중심으로 관심사를 구성합니다.
+관심사를 **비즈니스와 기술**로 분리하고, **비즈니스 유스케이스 중심**으로 관심사를 구성합니다.
 ![](./img/soc.png)
 
 ## 참고 자료
