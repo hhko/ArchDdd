@@ -88,8 +88,9 @@ const config: Config = {
       copyright: `배움은 <b>설렘</b>이다. 배움은 <b>겸손</b>이다. 배움은 <b>이타심</b>이다.`,
     },
     prism: {
-      theme: prismThemes.github,
+      theme: prismThemes.dracula,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: ['powershell', 'csharp'],
     },
   } satisfies Preset.ThemeConfig,
 };

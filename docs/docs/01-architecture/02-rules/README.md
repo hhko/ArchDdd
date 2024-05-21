@@ -4,20 +4,7 @@ sidebar_position: 2
 
 # 아키텍처 규칙
 
-## 레이어
-### 레이어 이름
-- 애플리케이션 레이어
-  - 기술 관심사
-    - `Host`: 프로세스(생략)
-    - `Adapter`: 기능
-  - 비즈니스 관심사
-    - `Application`: UseCase
-    - `Domain`: AggregateRoot
-- 테스트 레이어
-  - `E2E`
-  - `Integration`, `Performance`, ...
-  - `Unit`
-
+## 솔루션
 ![](./img/2024-05-20-23-44-39.png)
 
 ```
@@ -39,7 +26,20 @@ sidebar_position: 2
     솔루션명.Tests.E2E
 ```
 
-### 애플리케이션 폴더 구성
+### 레이어 이름
+- 애플리케이션 레이어
+  - 기술 관심사
+    - `Host`: 프로세스(생략)
+    - `Adapter`: 기능
+  - 비즈니스 관심사
+    - `Application`: UseCase
+    - `Domain`: AggregateRoot
+- 테스트 레이어
+  - `E2E`
+  - `Integration`, `Performance`, ...
+  - `Unit`
+
+### 애플리케이션 레이어 구성
 ```
 T1.T2{.T3}
 
@@ -51,7 +51,7 @@ src
   ├─ ArchDdd.Application              : Application
   └─ ArchDdd.Domain                   : Domain
 ```
-- `T1`: Service 이름
+- `T1`: Process 이름
 - `T2`: Layer 이름
   - `Domain` ⊂ `Application` ⊂ `Adapter` ⊂ `Host`
 - `T3`: Feature 이름(생략 가능)
@@ -59,7 +59,7 @@ src
 
 ![](./img/2024-03-10-15-06-17.png)
 
-### 테스트 폴더 구성
+### 테스트 레이어 구성
 ```
 T1.T2.T3
 
@@ -68,7 +68,7 @@ tests
   ├─ ArchDdd.Tests.Integration        : Test
   └─ ArchDdd.Tests.Unit               : Test
 ```
-- `T1`: Service 이름
+- `T1`: Process 이름
 - `T2`: Layer 이름
   - `Test`
 - `T3`: Feature 이름(테스트 피라미드)
@@ -76,21 +76,8 @@ tests
 
 ![](./img/2024-03-10-15-25-32.png)
 
-
-### 레이어 의존 관계
-```
-Host            // 기술 관심사: 프로세스
- ↓
-Adapter         // 기술 관심사: Infrastructure, Persistence, Presentation
- ↓
-Application     // 비즈니스 관심사: UseCase
- ↓
-Domain          // 비즈니스 관심사: AggregateRoot
-```
-![](./img/2024-05-21-00-13-39.png)
-
-### 프로젝트 어셈블리
-- 네임스페이스와 정적 클래스를 이용하여 어셈블리를 식별하기 위해 `AssemblyReference.cs` 파일을 모든 프로젝트에 생성합니다.
+### 레이어 식별
+- 네임스페이스와 정적 클래스를 이용하여 레이어를 식별하기 위해 `AssemblyReference.cs` 파일을 모든 프로젝트에 생성합니다.
 
 ```cs
 using System.Reflection;
@@ -103,34 +90,52 @@ public static class AssemblyReference
 }
 ```
 
+![](./img/2024-05-21-23-29-44.png)
+
+### 레이어 관계
 ```
-솔루션명
-  프로젝트명1
-    src                             // 애플리케이션 레이어
-      프로젝트명1
-        AssemblyReference.cs        // 어셈블리 참조를 위한 공통 파일
-      프로젝트명1.Adapters.Infrastructure
-        AssemblyReference.cs
-      프로젝트명1.Adapters.Persistence
-        AssemblyReference.cs
-      프로젝트명1.Adapters.Presentation
-        AssemblyReference.cs
-      프로젝트명1.Application
-        AssemblyReference.cs
-      프로젝트명1.Domain
-        AssemblyReference.cs
+Host            // 기술 관심사: 프로세스
+ ↓
+Adapter         // 기술 관심사: Infrastructure, Persistence, Presentation
+ ↓
+Application     // 비즈니스 관심사: UseCase
+ ↓
+Domain          // 비즈니스 관심사: AggregateRoot
+```
+![](./img/2024-05-21-00-13-39.png)
+
+### 레이어 관계 테스트
+![](./img/2024-03-27-00-42-25.png)
+
+```cs
+[Fact]
+public void DomainLayer_ShouldNotDependOn_AnyLayers()
+{
+    // Arrange
+    var assembly = Domain.AssemblyReference.Assembly;
+
+    var otherAssemblies = new[]
+    {
+        Host.AssemblyReference.Assembly.GetName().Name,
+        Adapters.Persistence.AssemblyReference.Assembly.GetName().Name,
+        Adapters.Infrastructure.AssemblyReference.Assembly.GetName().Name,
+        Adapters.Presentation.AssemblyReference.Assembly.GetName().Name,
+        Application.AssemblyReference.Assembly.GetName().Name,
+    };
+
+    // Act
+    var actual = Types
+        .InAssembly(assembly)
+        .ShouldNot()
+        .HaveDependencyOnAny(otherAssemblies)
+        .GetResult();
+
+    // Assert
+    actual.IsSuccessful.Should().BeTrue();
+}
 ```
 
-### 레이어 의존성 관계 테스트
-```
-```
-
-## 의존성 등록
-```
-
-```
-
-## Host 인터페이스
+### Host 레이어 인터페이스
 ```cs
 // Program 어셈블리
 //public sealed partial class Program { }
@@ -149,14 +154,22 @@ public sealed class WebAppFactoryFixture
 }
 ```
 
-## Middleware & Pipeline
+## 의존성 등록
 ```
-Middleware                 --> WebApi Controller --> Pipeline            --> Handler
-ErrorHandlingMiddleware                              LoggingPipeline
-RequestTimeMiddleware                                ValidatorPipeline
+
 ```
-- Middleware: WebApi
-- Pipeline: MediatR
+
+## 레이어 소통
+### 메시지 처리
+```
+Middleware --> WebApi Controller --> Pipeline --> UseCase
+```
+- `Middleware`: ASP.NET WebApi
+  - ErrorHandlingMiddleware: 예외 처리
+  - RequestTimeMiddleware: 4초 이상 작업 로그
+- `Pipeline`: MediatR
+  - LoggingPipeline: 성공/실패 로그
+  - ValidatorPipeline: UseCase 데이터 유효성 검사
 
 | 순서 | 구분 | 로그 | 기능 |
 | --- | --- | --- | --- |

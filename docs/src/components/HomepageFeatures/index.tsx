@@ -14,7 +14,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        관심사를 레이어 단위로 코드 배치를 논한다.
+        레이어 단위로 관심사를 배치한다.
       </>
     ),
   },
@@ -23,7 +23,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        관심사를 객체 단위로 코드 배치를 논한다.
+        객체 단위로 관심사를 배치한다.
       </>
     ),
   },
