@@ -4,7 +4,6 @@ using MediatR;
 namespace ArchDdd.Application.Abstractions.CQRS;
 
 // MediatR 원본 정의
-//
 // public interface IRequestHandler<in TRequest>
 //    where TRequest : IRequest
 public interface ICommandHandler<in TCommand> 
@@ -14,7 +13,6 @@ public interface ICommandHandler<in TCommand>
 }
 
 // MediatR 원본 정의
-//
 // public interface IRequestHandler<in TRequest, TResponse>
 //    where TRequest : IRequest<TResponse>
 //
