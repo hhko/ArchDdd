@@ -81,9 +81,24 @@ const config: Config = {
           label: 'GitHub',
           position: 'right',
         },
+        // {
+        //   type: 'search',
+        //   position: 'right',
+        // },
       ],
     },
     footer: {
+      // links: [
+      //   {
+      //     title: 'Community',
+      //     items: [
+      //       {
+      //         label: 'GitHub',
+      //         href: 'https://github.com/hhko/archddd',
+      //       },
+      //     ],
+      //   },
+      // ],
       style: 'dark',
       copyright: `배움은 <b>설렘</b>이다. 배움은 <b>겸손</b>이다. 배움은 <b>이타심</b>이다.`,
     },
