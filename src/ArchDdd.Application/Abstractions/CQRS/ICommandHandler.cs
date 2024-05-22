@@ -3,13 +3,21 @@ using MediatR;
 
 namespace ArchDdd.Application.Abstractions.CQRS;
 
-
+// MediatR 원본 정의
+//
+// public interface IRequestHandler<in TRequest>
+//    where TRequest : IRequest
 public interface ICommandHandler<in TCommand> 
     : IRequestHandler<TCommand, IResult>
     where TCommand : ICommand
 {
 }
 
+// MediatR 원본 정의
+//
+// public interface IRequestHandler<in TRequest, TResponse>
+//    where TRequest : IRequest<TResponse>
+//
 // 변경 전
 // : IRequestHandler<RegisterUserCommand, IResult<RegisterUserResponse>>
 //
@@ -21,3 +29,4 @@ public interface ICommandHandler<in TCommand, TResponse>
     where TResponse : IResponse
 {
 }
+
