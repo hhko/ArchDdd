@@ -6,8 +6,8 @@ namespace ArchDdd.Application.Abstractions.Middlewares;
 
 public sealed class RequestTimeMiddleware(ILogger<RequestTimeMiddleware> logger) : IMiddleware
 {
-    private const int RequestDurationSecondsLogLevel = 4;
     private readonly ILogger<RequestTimeMiddleware> _logger = logger;
+    private const int RequestDurationSecondsLogLevel = 4;
 
     public async Task InvokeAsync(HttpContext context, RequestDelegate next)
     {

@@ -49,6 +49,15 @@ public sealed class ErrorHandlingMiddleware(ILogger<ErrorHandlingMiddleware> log
             exception.Message,
             exception.StackTrace);
 
+        // {
+        //   "type": "Exception.InvalidOperationException",
+        //   "title": "ExceptionOccurred",
+        //   "status": 500,
+        //   "detail": "The value of a failure result can not be accessed. Type 'ArchDdd.Domain.AggregateRoots.Users.ValueObjects.Email'.",
+        //   "instance": "/api/user/register",
+        //   "errors": null,
+        //   "RequestId": "0HN3NR8MLI1RO:00000001"
+        // }
         await context.Response.WriteAsJsonAsync(
             problemDetails,
             typeof(ProblemDetails),

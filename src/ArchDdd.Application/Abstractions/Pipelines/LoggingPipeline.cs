@@ -1,7 +1,5 @@
-﻿using ArchDdd.Application.UseCases.Users.Commands.RegisterUser;
-using ArchDdd.Domain.Abstractions.Results;
+﻿using ArchDdd.Domain.Abstractions.Results;
 using ArchDdd.Domain.Abstractions.Results.Contracts;
-using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
@@ -31,7 +29,6 @@ public sealed class LoggingPipeline<TRequest, TResponse>(ILogger<LoggingPipeline
 
         if (result is IValidationResult validationResult)
         {
-            //
             // fail: ArchDdd.Application.Abstractions.Pipelines.LoggingPipeline[4]
             //       Request failed RegisterUserCommand, Username name must be at most 30 characters., Username contains illegal character., 05/12/2024 08:08:40
             _logger.LogFailedRequestBasedOnValidationErrors(typeof(TRequest).Name, validationResult.ValidationErrors, DateTime.UtcNow);
