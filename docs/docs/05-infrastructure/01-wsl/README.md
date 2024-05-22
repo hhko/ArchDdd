@@ -83,19 +83,33 @@ passwd
 wsl -t ubuntu20.04
 ```
 
-### WSL2 계정 로그인
+### WSL2 계정
 ```shell
+# root 암호
+sudo passwd root
+
 # 계정 생성
-adduser {접속 계정}
+adduser {사용자명}
+
+# sudo 그룹 추가
+usermod -aG sudo {사용자명}
+
+# sudo 그룹 추가 확인 1/2
+cat /etc/group
+	sudo:x:27:{사용자명}
+
+# sudo 그룹 추가 확인 2/2: 사용자명 로인 후
+{사용자명}@{호스트명}:~$ id
+	uid=27(sudo)
 
 # 계정 접속 테스트
-su - {접속 계정}       # {접속 계정} 계정 로그인
-exit                  # {접속 계정} 계정 로그 아웃
+su - {사용자명}       # {사용자명} 계정 로그인
+exit                  # {사용자명} 계정 로그 아웃
 
 # 기본 계정 지정: /etc/wsl.conf 파일을 생성한다
 tee /etc/wsl.conf <<_EOF
 [user]
-default={접속 계정}
+default={사용자명}
 _EOF
 
 # 기본 계정 테스트
@@ -106,7 +120,7 @@ wsl -d ubuntu20.04
 # 계정 로그인: --user, -u
 wsl -d ubuntu20.04            # 기본 계정 로그인
 wsl -d ubuntu20.04 -u root    # root 계정 로그인
-wsl -d ubuntu20.04 -u {접속 계정}    # {접속 계정} 계정 로그인
+wsl -d ubuntu20.04 -u {사용자명}    # {사용자명} 계정 로그인
 ```
 
 ### WSL2 기본 가상화 실행
@@ -175,7 +189,7 @@ ip a
 ### SSH 클라이언트: 윈도우
 ```shell
 # 1. WSL 서버: Home 디렉토리에 .ssh 폴더를 생성하기(없다면)
-ssh {접속 계정}@{접속 IP}
+ssh {사용자명}@{접속 IP}
 mkdir ~/.ssh
 ls -al
 
@@ -185,10 +199,10 @@ ls -al
 ssh-keygen
 
 # 3. 윈도우: SSH Public 키 내용 복사
-type $env:USERPROFILE\.ssh\id_rsa.pub | ssh {접속 계정}@{접속 IP} "cat >> .ssh/authorized_keys"
+type $env:USERPROFILE\.ssh\id_rsa.pub | ssh {사용자명}@{접속 IP} "cat >> .ssh/authorized_keys"
 
 # 4. 윈도우: SSH 접속
-ssh {접속 계정}@{접속 IP}
+ssh {사용자명}@{접속 IP}
 ```
 
 ### VSCode 접속 정보
@@ -197,7 +211,7 @@ ssh {접속 계정}@{접속 IP}
 ```
 Host "WSL | {접속 IP}"
     HostName {접속 IP}
-    User {접속 계정}
+    User {사용자명}
 
 Host *
     StrictHostKeyChecking no
