@@ -35,6 +35,7 @@
     }
   ```
 - [ ] 문서 | [Do you use Strongly Typed IDs to avoid Primitive Obsession](https://www.ssw.com.au/rules/do-you-use-strongly-typed-ids/)
+- [ ] 영상 | [This Is My FAVORITE Error Handling Class](https://www.youtube.com/watch?v=MiLN2vs2Oe0)
 
 ### 아키텍처 템플릿
 - [ ] 소스 | [Clean Architecture Template, Ardalis](https://github.com/ardalis/CleanArchitecture)
