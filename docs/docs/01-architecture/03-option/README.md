@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 ---
 
-# 환경 설정
+# 환경 설정 설계
 
 ![](./img/2024-05-06-16-32-26.png)
 
