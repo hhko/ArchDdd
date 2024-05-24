@@ -44,7 +44,7 @@ sidebar_position: 2
 T1.T2{.T3}
 
 src
-  ├─ ArchDdd.Host                     : Host
+  ├─ ArchDdd                          : Host(생략)
   ├─ ArchDdd.Adapters.Infrastructure  : Adapter
   ├─ ArchDdd.Adapters.Persistence     : Adapter
   ├─ ArchDdd.Adapters.Presentation    : Adapter
@@ -332,12 +332,12 @@ Response  {}Query
 - 실행 구성
   {
     "profiles": {
-      "ArchDdd.Host": {
+      "ArchDdd": {
         "environmentVariables": {
           "ASPNETCORE_ENVIRONMENT": "Development"
         }
       },
-      "고형호 | ArchDdd.Host": {
+      "고형호 | ArchDdd": {
         "environmentVariables": {
           "ASPNETCORE_ENVIRONMENT": "고형호"
         }

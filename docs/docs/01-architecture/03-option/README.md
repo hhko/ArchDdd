@@ -73,10 +73,10 @@ public static TOptions GetOptions<TOptions>(this IServiceCollection services)
 
 ## CLI
 ```
-dotnet run --project .\src\ArchDdd.Host\ --launch-profile "고형호.ArchDdd.Host"
-dotnet run --project .\src\ArchDdd.Host\ --environment "고형호"
+dotnet run --project .\src\ArchDdd\ --launch-profile "고형호.ArchDdd"
+dotnet run --project .\src\ArchDdd\ --environment "고형호"
 
-.\ArchDdd.Host.exe --environment "고형호"
+.\ArchDdd.exe --environment "고형호"
 ```
 
 ## 주요 인터페이스

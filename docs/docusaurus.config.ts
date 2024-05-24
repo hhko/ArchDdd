@@ -3,7 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'ArchDDD',
+  title: 'ArchDdd',
   tagline: '클린 아키텍처와 도메인 주도 설계',
   favicon: 'img/favicon.ico',
 
@@ -11,12 +11,12 @@ const config: Config = {
   url: 'https://your-docusaurus-site.example.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/archddd/',
+  baseUrl: '/ArchDdd/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'hhko', // Usually your GitHub org/user name.
-  projectName: 'archddd', // Usually your repo name.
+  projectName: 'ArchDdd', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -38,7 +38,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/hhko/archddd/tree/main/docs/',
+            'https://github.com/hhko/ArchDdd/tree/main/docs/',
         },
         // blog: {
         //   blogSidebarTitle: 'All posts',
@@ -46,7 +46,7 @@ const config: Config = {
         //   // Please change this to your repo.
         //   // Remove this to remove the "edit this page" links.
         //   editUrl:
-        //     'https://github.com/hhko/archddd/tree/main/docs/',
+        //     'https://github.com/hhko/ArchDdd/tree/main/docs/',
         // },
         theme: {
           customCss: './src/css/custom.css',
@@ -59,7 +59,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'ArchDDD',
+      title: 'ArchDdd',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -77,7 +77,7 @@ const config: Config = {
         //   position: 'left'
         // },
         {
-          href: 'https://github.com/hhko/archddd',
+          href: 'https://github.com/hhko/ArchDdd',
           label: 'GitHub',
           position: 'right',
         },
@@ -94,7 +94,7 @@ const config: Config = {
       //     items: [
       //       {
       //         label: 'GitHub',
-      //         href: 'https://github.com/hhko/archddd',
+      //         href: 'https://github.com/hhko/ArchDdd',
       //       },
       //     ],
       //   },
