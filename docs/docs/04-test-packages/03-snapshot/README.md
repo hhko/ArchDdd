@@ -1,4 +1,8 @@
-# Snapshot 테스트
+---
+sidebar_position: 3
+---
+
+# Snapshot 테스트 Verify
 
 ## 구성
 - .gitattributes
