@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'ArchDdd',
-  tagline: '클린 아키텍처와 도메인 주도 설계',
+  tagline: '클린 아키텍처와 도메인 주도 설계 MORE fun.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

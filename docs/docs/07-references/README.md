@@ -54,16 +54,16 @@
 
 
 ## 도메인 주도 설계
+### 도메인 주도 설계 개념
+- [ ] 문서 | Kamil Grzybek | [REST API DATA VALIDATION](https://www.kamilgrzybek.com/blog/posts/rest-api-data-validation)
+- [ ] 문서 | Kamil Grzybek | [DOMAIN MODEL VALIDATION](https://www.kamilgrzybek.com/blog/posts/domain-model-validation)
+- [ ] 문서 | Kamil Grzybek | [SIMPLE CQRS IMPLEMENTATION WITH RAW SQL AND DDD](https://www.kamilgrzybek.com/blog/posts/simple-cqrs-implementation-raw-sql-ddd)
+- [ ] 소스 | [modular-monolith-with-ddd, Kamil Grzybek](https://github.com/kgrzybek/modular-monolith-with-ddd)
 - [ ] 문서 | Modular Monolith: A Primer | [한글](https://github.com/ijung/ijung.github.io/blob/main/_posts/development-contents/modular-monolith/2023-05-26-modular-monolith-a-primer.md), [영문](https://www.kamilgrzybek.com/blog/posts/modular-monolith-primer)
 - [ ] 문서 | Modular Monolith: Architectural Drivers | [한글](https://github.com/ijung/ijung.github.io/blob/main/_posts/development-contents/modular-monolith/2023-06-03-modular-monolith-architectural-drivers.md), [영문](https://www.kamilgrzybek.com/blog/posts/modular-monolith-architectural-drivers)
 - [ ] 문서 | Modular Monolith: Architecture Enforcement | [한글](https://github.com/ijung/ijung.github.io/blob/main/_posts/development-contents/modular-monolith/2023-06-04-modular-monolith-architecture-enforcement.md), [영문](https://www.kamilgrzybek.com/blog/posts/modular-monolith-architecture-enforcement)
 - [ ] 문서 | Modular Monolith: Integration Styles | [한글](https://github.com/ijung/ijung.github.io/blob/main/_posts/development-contents/modular-monolith/2023-06-05-modular-monolith-integration-styles.md), [영문](https://www.kamilgrzybek.com/blog/posts/modular-monolith-integration-styles)
 - [ ] 문서 | Modular Monolith: Domain-Centric Design | [한글](https://github.com/ijung/ijung.github.io/blob/main/_posts/development-contents/modular-monolith/2023-06-10-modular-monolith-centric-design.md), [영문](https://www.kamilgrzybek.com/blog/posts/modular-monolith-domain-centric-design)
-- [ ] 문서 | Kamil Grzybek | [REST API DATA VALIDATION](https://www.kamilgrzybek.com/blog/posts/rest-api-data-validation)
-- [ ] 문서 | Kamil Grzybek | [DOMAIN MODEL VALIDATION](https://www.kamilgrzybek.com/blog/posts/domain-model-validation)
-- [ ] 문서 | Kamil Grzybek | [SIMPLE CQRS IMPLEMENTATION WITH RAW SQL AND DDD](https://www.kamilgrzybek.com/blog/posts/simple-cqrs-implementation-raw-sql-ddd)
-- [ ] 소스 | [modular-monolith-with-ddd, Kamil Grzybek](https://github.com/kgrzybek/modular-monolith-with-ddd)
-- [ ] 소스 | [DDD-NoDuplicates](https://github.com/ardalis/DDD-NoDuplicates)
 - [ ] 소스 | [Hands-On-Domain-Driven-Design-with-.NET-Core](https://github.com/PacktPublishing/Hands-On-Domain-Driven-Design-with-.NET-Core/tree/master)
 - [ ] 소스 | [Stop using Entity Framework as a DTO provider](https://github.com/ChrisKlug/efcore-dto-demo/tree/main)
 - [ ] 영상 | [Stop using Entity Framework as a DTO provider](https://www.youtube.com/watch?v=N_eLotlcjXo)
@@ -72,17 +72,26 @@
 - [ ] 소스 | [pluralsight-ddd-fundamentals](https://github.com/ardalis/pluralsight-ddd-fundamentals/tree/main)
 - [ ] 문서 | Scaffold Your Clean DDD Web Application | [Part 6: Domain-Driven Design Workflow Patterns](https://blog.jacobsdata.com/2021/04/11/scaffold-your-clean-ddd-web-application-part-6-domain-driven-design-workflow-patterns)
 
+### 도메인 주도 리팩토링
+- [ ] 소스 | [DDD-NoDuplicates](https://github.com/ardalis/DDD-NoDuplicates)
+- [ ] 소스 | [How To Use Domain-Driven Design In Clean Architecture](https://www.youtube.com/watch?v=1Lcr2c3MVF4)
+- [ ] 소스 | [Refactoring From Transaction Script to Domain-Driven Design](https://www.youtube.com/watch?v=KTSpDZNfjhU)
+- [ ] 소스 | [Domain-Driven Refactoring - Jimmy Bogard](https://www.youtube.com/watch?v=f64tZ90Dntg)
+
 
 ## EF Core
 - [ ] 소스 | [efcore-concurrency-handling](https://github.com/kgrzybek/efcore-concurrency-handling)
+
 
 ## ASP.NET
 - [ ] 문서 | [Using the ProblemDetails Class in ASP.NET Core Web API](https://code-maze.com/using-the-problemdetails-class-in-asp-net-core-web-api/)
 - [ ] 소스 | [AspNetCoreDiagnosticScenarios](https://github.com/davidfowl/AspNetCoreDiagnosticScenarios)
 
+
 ## Primitives
 - [ ] 문서 | [IComparable vs IComparer vs Comparison Delegate](https://code-maze.com/csharp-icomparable-icomparer-comparison-delegate/)
 - [ ] 문서 | [문자열 이야기 (6) - Equals 와 == 연산자](http://www.simpleisbest.net/archive/2005/08/17/206.aspx)
+
 
 ## 테스트
 ### 단위 테스트
@@ -110,6 +119,7 @@
 ### Fake 데이터
 - [ ] 문서 | [Fake data substitution for tests in C# with Bogus](https://prographers.com/blog/fake-data-substitution-for-tests-in-c-with-bogus)
 - [ ] 문서 | [Realistic Data Generation in .NET With Bogus](https://code-maze.com/data-generation-bogus-dotnet/)
+
 
 ## 구성
 ### 빌드 환경
