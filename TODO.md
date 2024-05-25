@@ -1,4 +1,30 @@
 ```
+verify 클래스 이름 제외
+username validation 통합 테스트 N개
+User 유스케이스 구현
+SQLite
+로그
+opentelemetry collector
+  Json 로그
+  Windows 로그
+  Linux 로그
+  Container 로그
+예외 로그
+opensearch
+opentelemetry 매트릭
+opentelemetry collector
+  Windows 자원
+  Windows 프로세스 자원
+  Linux 자원
+  Linux Container 자원
+성능 테스트
+캐시
+코딩 컨벤션?
+Constants 이름
+유스케이스 IValidator 단순화?
+```
+
+```
 개선
 1. .prop
 1. xxxError에 오류 값
@@ -31,7 +57,7 @@ bool emailIsTaken = await _userRepository
 - [x] WebApi 실패 처리
 - [x] WebApi 실패 처리 통합 테스트
 - [x] WebApi 실패 처리 데이터 랜덤 생성
-- [ ] WebApi 실패 처리 Verify
+- [x] WebApi 실패 처리 Verify
 - [x] 유효성 검새 클래스
 - [x] 유효성 검사 자동 등록
 - [x] 유효성 검사 + Mediator 패턴 통합
