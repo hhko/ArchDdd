@@ -6,7 +6,7 @@ namespace ArchDdd.Application.Abstractions.CQRS;
 // MediatR 원본 정의
 // public interface IRequestHandler<in TRequest>
 //    where TRequest : IRequest
-public interface ICommandHandler<in TCommand> 
+public interface ICommandUseCase<in TCommand> 
     : IRequestHandler<TCommand, IResult>
     where TCommand : ICommand
 {
@@ -21,10 +21,9 @@ public interface ICommandHandler<in TCommand>
 //
 // 변경 후
 // : ICommandHandler<RegisterUserCommand, RegisterUserResponse>
-public interface ICommandHandler<in TCommand, TResponse> 
+public interface ICommandUseCase<in TCommand, TResponse> 
     : IRequestHandler<TCommand, IResult<TResponse>>
     where TCommand : ICommand<TResponse>
     where TResponse : IResponse
 {
 }
-

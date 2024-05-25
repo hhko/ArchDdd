@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # WSL2
 
 ## 사전 설치
@@ -84,10 +88,7 @@ wsl -t ubuntu20.04
 ```
 
 ### WSL2 계정
-```shell
-# root 암호
-sudo passwd root
-
+```bash
 # 계정 생성
 adduser {사용자명}
 
@@ -104,19 +105,17 @@ cat /etc/group
 
 # 계정 접속 테스트
 su - {사용자명}       # {사용자명} 계정 로그인
-exit                  # {사용자명} 계정 로그 아웃
+```
 
-# 기본 계정 지정: /etc/wsl.conf 파일을 생성한다
+```bash
+# root 권한, 기본 계정 지정: /etc/wsl.conf 파일을 생성한다
 tee /etc/wsl.conf <<_EOF
 [user]
 default={사용자명}
 _EOF
+```
 
-# 기본 계정 테스트
-exit
-wsl -t ubuntu20.04
-wsl -d ubuntu20.04
-
+```powershell
 # 계정 로그인: --user, -u
 wsl -d ubuntu20.04            # 기본 계정 로그인
 wsl -d ubuntu20.04 -u root    # root 계정 로그인
@@ -124,7 +123,7 @@ wsl -d ubuntu20.04 -u {사용자명}    # {사용자명} 계정 로그인
 ```
 
 ### WSL2 기본 가상화 실행
-```shell
+```powershell
 # 기본: --set-default, -s
 wsl -s ubuntu20.04
 
@@ -140,7 +139,7 @@ wsl -d ubuntu20.04    # ubuntu20.04 가상화 실행
 ```
 
 ### WSL2 파일 공유
-```shell
+```powershell
 # 윈도우 -> WSL
 \\wsl$                # 윈도우 탐색기에서 입력
 
@@ -159,7 +158,7 @@ ls -al
 - `%USERPROFILE%\.wslconfig`
 - [Advanced settings configuration in WSL](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)
 
-```
+```ini
 [wsl2]
 memory=48GB
 processors=8
@@ -171,7 +170,7 @@ localhostForwarding=true
 
 ## SSH 구성
 ### SSH 서버: WSL Ubuntu 서버
-```shell
+```bash
 # 시스템에 대한 모든 호스트 키를 생성합니다
 sudo ssh-keygen -A
 
@@ -187,7 +186,7 @@ ip a
 ```
 
 ### SSH 클라이언트: 윈도우
-```shell
+```powershell
 # 1. WSL 서버: Home 디렉토리에 .ssh 폴더를 생성하기(없다면)
 ssh {사용자명}@{접속 IP}
 mkdir ~/.ssh
@@ -237,7 +236,7 @@ kernelCommandLine="sysctl.vm.max_map_count=262144"
 
 ### 이미지 기본 경로 변경
 - Case 1.
-```
+```powershell
 wsl --shutdown
 wsl --export docker-desktop-data docker-desktop-data.tar
 wsl --unregister docker-desktop-data
@@ -245,7 +244,7 @@ wsl --import docker-desktop-data D:\docker-new-repo\ docker-desktop-data.tar --v
 ```
 
 - Case 2.
-```
+```powershell
 C:\ProgramData\Docker\config and add daemon.json
 
 {
@@ -254,7 +253,7 @@ C:\ProgramData\Docker\config and add daemon.json
 ```
 
 - Case 3.
-```
+```powershell
 # Link AppData - Replace youruser with actual user
 mklink /j "C:\Users\youruser\AppData\Local\Docker" "E:\Docker\AppData"
 

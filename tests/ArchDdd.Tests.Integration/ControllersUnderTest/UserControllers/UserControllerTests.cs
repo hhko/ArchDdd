@@ -1,11 +1,7 @@
-﻿using ArchDdd.Application.Abstractions.CQRS;
-using ArchDdd.Application.UseCases.Users.Commands.RegisterUser;
-using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
+﻿using ArchDdd.Application.UseCases.Users.Commands.RegisterUser;
 using ArchDdd.Tests.Integration.Abstractions.Constants;
 using ArchDdd.Tests.Integration.Abstractions.WebApi;
-using Bogus;
-using Microsoft.AspNetCore.Http;
-using System.Net;
+using System.Net.Http;
 using System.Net.Http.Json;
 
 namespace ArchDdd.Tests.Integration.ControllersUnderTest.UserControllers;
@@ -28,14 +24,19 @@ public sealed class UserControllerTests : ControllerTestsBase
         //  Reason: No parameterless constructor defined.'
 
         // Arrange
-        var registerUserCommandFaker = new Faker<RegisterUserCommand>();
-        registerUserCommandFaker.CustomInstantiator(_ => new RegisterUserCommand(
-            // "1234567890123456789012345678901", 
-            Username: _.Random.String2(31),         // 최대 30
-            _.Random.String(),
-            _.Random.String(),
-            _.Random.String()));
-        var registerUserCommand = registerUserCommandFaker.Generate();
+        //var registerUserCommandFaker = new Faker<RegisterUserCommand>();
+        //registerUserCommandFaker.CustomInstantiator(_ => new RegisterUserCommand(
+        //    // "1234567890123456789012345678901", 
+        //    Username: _.Random.String2(31),         // 최대 30
+        //    Email: _.Random.String(),
+        //    Password: _.Random.String(),
+        //    ConfirmPassword: _.Random.String()));
+        //var registerUserCommand = registerUserCommandFaker.Generate();
+        RegisterUserCommand registerUserCommand = new(
+            Username: "",                           // Invalid
+            Email: "hello@world.com",
+            Password: "123456890#aB",
+            ConfirmPassword: "123456890#aB");
 
         HttpResponseMessage actual = await _sut.PostAsJsonAsync(
            "/api/user/register",
@@ -44,8 +45,26 @@ public sealed class UserControllerTests : ControllerTestsBase
         // Assert
         actual.IsSuccessStatusCode.Should().BeFalse();
 
-        // await Verify(actual);
+        string responseContent = await actual.Content.ReadAsStringAsync();
+        //ExceptionResponse exceptionResponse = JsonConvert.DeserializeObject<ExceptionResponse>(responseContent);
+        //return exceptionResponse;
+
+        //await Verify(responseContent);
     }
+
+    //    {
+    //      "type":"ValidationError",
+    //      "title":"ValidationError",
+    //      "status":400,
+    //      "detail":"A validation problem occurred.",
+    //      "errors":[
+    //        {
+    //            "code":"DomainErrors.Username.Empty",
+    //            "message":"Username name is empty."
+    //        }
+    //      ]
+    //    }
+
 
     //[Fact]
     //public async Task Hello1()

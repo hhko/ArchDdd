@@ -14,7 +14,7 @@ namespace ArchDdd.Application.UseCases.Users.Commands.AddPermissionToRole;
 internal sealed class AddPermissionToRoleCommandHandler(
     IUserRepository userRepository,
     IValidator validator)
-    : ICommandHandler<AddPermissionToRoleCommand>
+    : ICommandUseCase<AddPermissionToRoleCommand>
 {
     private readonly IUserRepository _userRepository = userRepository;
     private readonly IValidator _validator = validator;

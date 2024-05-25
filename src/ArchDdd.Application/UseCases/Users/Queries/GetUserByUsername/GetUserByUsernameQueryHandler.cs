@@ -15,7 +15,7 @@ internal sealed class GetUserByUsernameQueryHandler(
     IUserRepository userRepository, 
     IValidator validator)
     //: IRequestHandler<GetUserByUsernameQuery, IResult<UserResponse>>
-    : IQueryHandler<GetUserByUsernameQuery, UserResponse>
+    : IQueryUseCase<GetUserByUsernameQuery, UserResponse>
 {
     private readonly IUserRepository _userRepository = userRepository;
     private readonly IValidator _validator = validator;

@@ -43,7 +43,10 @@ public sealed class ValidatorPipeline<TRequest, TResponse>(IEnumerable<IValidato
             .Select(validator => validator.Validate(request))               // Validate 메서드
             .SelectMany(validationResult => validationResult.Errors)        // Errors 타입
             .Where(validationFailure => validationFailure is not null)      // ValidationFailure 타입
-            .Select(failure => Error.New(failure.PropertyName, failure.ErrorMessage))
+            .Select(failure =>
+                {
+                    return Error.New(failure.PropertyName, failure.ErrorMessage);
+                })
             .Distinct()
             .ToArray();
 

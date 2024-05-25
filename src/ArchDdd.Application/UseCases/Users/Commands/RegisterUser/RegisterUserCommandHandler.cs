@@ -17,7 +17,7 @@ internal sealed class RegisterUserCommandHandler(
     IPasswordHasher<User> passwordHasher,
     IValidator validator)
     //: IRequestHandler<RegisterUserCommand, IResult<RegisterUserResponse>>
-    : ICommandHandler<RegisterUserCommand, RegisterUserResponse>
+    : ICommandUseCase<RegisterUserCommand, RegisterUserResponse>
 {
     private readonly IUserRepository _userRepository = userRepository;
     private readonly IPasswordHasher<User> _passwordHasher = passwordHasher;
@@ -25,27 +25,22 @@ internal sealed class RegisterUserCommandHandler(
 
     public async Task<IResult<RegisterUserResponse>> Handle(RegisterUserCommand command, CancellationToken cancellationToken)
     {
-        ValidationResult<Email> emailResult = Email.Create(command.Email);
-        ValidationResult<Username> usernameResult = Username.Create(command.Username);
-        ValidationResult<Password> passwordResult = Password.Create(command.Password);
+        Email email = Email.Create(command.Email).Value;
+        Username username = Username.Create(command.Username).Value;
+        Password password = Password.Create(command.Password).Value;
 
-        // 버그
-        //  - emailResult이 실패일 때 emailResult.Value에서 예외가 발생합니다.
         bool emailIsTaken = await _userRepository
-            .IsEmailTakenAsync(emailResult.Value, cancellationToken);
+            .IsEmailTakenAsync(email, cancellationToken);
 
         _validator
-            .Validate(emailResult)
-            .Validate(usernameResult)
-            .Validate(passwordResult)
-            .If(emailIsTaken, thenError: EmailError.EmailAlreadyTaken(emailResult.Value));
+            .If(emailIsTaken, thenError: EmailError.EmailAlreadyTaken(email));
 
         if (_validator.IsInvalid)
         {
             return _validator.Failure<RegisterUserResponse>();
         }
 
-        return RegisterUser(emailResult.Value, usernameResult.Value, passwordResult.Value);
+        return RegisterUser(email, username, password);
     }
 
     private IResult<RegisterUserResponse> RegisterUser(Email email, Username username, Password password)

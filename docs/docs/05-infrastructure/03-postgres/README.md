@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Postgres
 
 - [x] [1. 기본 설치](./step01/)

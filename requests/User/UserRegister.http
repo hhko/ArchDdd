@@ -18,10 +18,70 @@ content-type: application/json
 
 {
     "username": "1234567890123456789012345678901@",
-    "email": "x2",
-    "password": "x3",
-    "confirmPassword": "x4"
+    "email": "hello@world.com",
+    "password": "123456789#aB",
+    "confirmPassword": "123456789#aB"
 }
+
+### Failure
+POST {{host}}/api/user/register
+content-type: application/json
+
+{
+    "username": "",
+    "email": "hello@world.com",
+    "password": "123456789#aB",
+    "confirmPassword": "123456789#aB"
+}
+
+#{
+#  "type": "ValidationError",
+#  "title": "ValidationError",
+#  "status": 400,
+#  "detail": "A validation problem occurred.",
+#  "errors": [
+#    {
+#      "code": "DomainErrors.Username.Empty",
+#      "message": "Username name is empty."
+#    }
+#  ]
+#}
+
+#application/problem+json
+#{
+#  "type": "ValidationError",
+#  "title": "ValidationError",
+#  "status": 400,
+#  "detail": "A validation problem occurred.",
+#  "errors": [
+#    {
+#      "code": "Username",
+#      "message": "DomainErrors.Username.TooLong: Username name must be at most 30 characters."
+#    },
+#    {
+#      "code": "Username",
+#      "message": "DomainErrors.Username.ContainsIllegalCharacter: Username contains illegal character."
+#    }
+#  ]
+#}
+
+#application/problem+json
+#{
+#  "type": "ValidationError",
+#  "title": "ValidationError",
+#  "status": 400,
+#  "detail": "A validation problem occurred.",
+#  "errors": [
+#    {
+#      "code": "DomainErrors.Username.TooLong",
+#      "message": "Username name must be at most 30 characters."
+#    },
+#    {
+#      "code": "DomainErrors.Username.ContainsIllegalCharacter",
+#      "message": "Username contains illegal character."
+#    }
+#  ]
+#}
 
 ### Success
 POST {{host}}/api/user/register
