@@ -5,13 +5,13 @@
     <IsTestProject>true</IsTestProject>
   </PropertyGroup>
 
-	<ItemGroup>
-		<None Remove="TestResults\**" />
-	</ItemGroup>
+  <ItemGroup>
+    <None Remove="TestResults\**" />
+  </ItemGroup>
 
   <ItemGroup>
-	  <Content Include="appsettings.Integration.json" CopyToOutputDirectory="PreserveNewest" />
-	  <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="appsettings.Integration.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>

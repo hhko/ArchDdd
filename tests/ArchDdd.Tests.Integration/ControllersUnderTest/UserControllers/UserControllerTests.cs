@@ -1,6 +1,7 @@
 ﻿using ArchDdd.Application.UseCases.Users.Commands.RegisterUser;
 using ArchDdd.Tests.Integration.Abstractions.Constants;
 using ArchDdd.Tests.Integration.Abstractions.WebApi;
+using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
 using System.Net.Http.Json;
 
@@ -45,59 +46,8 @@ public sealed class UserControllerTests : ControllerTestsBase
         // Assert
         actual.IsSuccessStatusCode.Should().BeFalse();
 
+        //ProblemDetails problem = await actual.Content.ReadFromJsonAsync<ProblemDetails>();
         string responseContent = await actual.Content.ReadAsStringAsync();
-        //ExceptionResponse exceptionResponse = JsonConvert.DeserializeObject<ExceptionResponse>(responseContent);
-        //return exceptionResponse;
-
-        //await Verify(responseContent);
+        await VerifyJson(responseContent);
     }
-
-    //    {
-    //      "type":"ValidationError",
-    //      "title":"ValidationError",
-    //      "status":400,
-    //      "detail":"A validation problem occurred.",
-    //      "errors":[
-    //        {
-    //            "code":"DomainErrors.Username.Empty",
-    //            "message":"Username name is empty."
-    //        }
-    //      ]
-    //    }
-
-
-    //[Fact]
-    //public async Task Hello1()
-    //{
-    //    // Act
-    //    HttpResponseMessage actual = await _sut.PostAsJsonAsync(
-    //        "/api/user/register", 
-    //        new RegisterUserCommand("x1", "x2", "x3", "x4444"));
-
-    //    // Assert
-
-    //    RegisterUserResponse? response = await actual.Content.ReadFromJsonAsync<RegisterUserResponse>();
-
-    //    actual.StatusCode.Should().Be(HttpStatusCode.OK);
-
-    //    //await Verify(response!);
-    //}
-
-    //public class Person
-    //{
-    //    public Guid Id { get; set; }
-    //    public string Title { get; set; }
-    //}
-
-    //[Fact]
-    //public async Task Hello2()
-    //{
-    //    var person = new Person()
-    //    {
-    //        Id = new("ebced679-45d3-4653-8791-3d969c4a986c"),
-    //        Title = "Title.Mr",
-    //    };
-
-    //    await Verify(person);
-    //}
 }

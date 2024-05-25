@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# 스냅샷 테스트 Verify
+# Verify
 
 ## 구성
 - .gitattributes

@@ -2,10 +2,7 @@
 sidebar_position: 2
 ---
 
-# 통합 테스트 WebApi
-
-## 패키지
-- Microsoft.AspNetCore.Mvc.Testing
+# Microsoft.AspNetCore.Mvc.Testing
 
 ## WebApi 호출
 ```shell
