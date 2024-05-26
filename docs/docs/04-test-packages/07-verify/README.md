@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 7
 ---
 
 # Verify
@@ -20,7 +20,7 @@ sidebar_position: 8
   dotnet tool install -g verify.tool
   ```
 
-## verify CLI
+## Verify CLI
 ```powershell
 # *.received.txt 모든 파일을 .verified.txt 파일로 변환한다.
 dotnet verify accept -y
@@ -41,6 +41,7 @@ dotnet verify review
 ![](./img/2024-05-06-15-54-04.png)
 
 
+## WebApi 적용
 ### WebAPI 통합 테스트
 - WebAPI 생성: Microsoft.AspNetCore.Mvc.Testing
   ```cs
@@ -61,6 +62,9 @@ dotnet verify review
       [ModuleInitializer]
       public static void Initialize()
       {
+          // 특정 경로에 비교 파일 생성하기
+          //  - 기본은 [Fact]가 있는 경로입니다.
+          //  - 이름은 {클래스명}_{메서드명}.received.txt
           // https://github.com/VerifyTests/Verify/blob/main/docs/naming.md
           Verifier.UseProjectRelativeDirectory("Snapshots");
 

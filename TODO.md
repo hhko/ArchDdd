@@ -1,7 +1,7 @@
 ```
-
 username validation 통합 테스트 N개
 https://github.com/VerifyTests/Verify/blob/main/docs/parameterised.md
+verify 클래스 이름(TypeName) 생략
 ---
 SQLite
 ---
