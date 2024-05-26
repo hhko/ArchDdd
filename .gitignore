@@ -502,3 +502,6 @@ api/
 
 # NBomber
 reports/
+
+# SQLite
+*.db

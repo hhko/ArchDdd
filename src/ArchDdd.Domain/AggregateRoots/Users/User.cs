@@ -17,6 +17,11 @@ public sealed class User : AggregateRoot<UserId>, IAuditable
         Email = email;
     }
 
+    // Empty constructor in this case is required by EF Core
+    private User()
+    {
+    }
+
     //public Username Username { get; set; }
     //public Email Email { get; set; }
     public Username Username { get; }

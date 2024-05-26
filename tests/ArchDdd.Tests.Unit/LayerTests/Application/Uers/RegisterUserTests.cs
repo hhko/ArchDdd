@@ -2,9 +2,9 @@
 using ArchDdd.Application.UseCases.Users.Commands.RegisterUser;
 using ArchDdd.Domain.AggregateRoots.Users;
 using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
-using ArchDdd.Tests.Unit.Abstractions.Constants;
 using Microsoft.AspNetCore.Identity;
 using NSubstitute;
+using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
 
 namespace ArchDdd.Tests.Unit.LayerTests.Application.Uers;
 

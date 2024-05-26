@@ -1,9 +1,9 @@
 ﻿using ArchDdd.Domain.Abstractions.BaseTypes;
-using ArchDdd.Tests.Unit.Abstractions.Constants;
 using ArchDdd.Tests.Unit.ArchitectureTests.Utilities;
 using ArchDdd.Tests.Unit.ArchitectureTests.Utilities.CustomRules;
 using NetArchTest.Rules;
 using Xunit.Abstractions;
+using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
 
 namespace ArchDdd.Tests.Unit.ArchitectureTests;
 

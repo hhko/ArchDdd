@@ -1,10 +1,10 @@
-﻿using static ArchDdd.Tests.Integration.Abstractions.Constants.IntegrationTest;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Hosting;
 using NSubstitute;
-using ArchDdd.Tests.Integration.Abstractions.Constants;
 using Microsoft.Extensions.Logging;
+using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants;
+using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants.IntegrationTest;
 
 namespace ArchDdd.Tests.Integration.Abstractions.Fixtures;
 

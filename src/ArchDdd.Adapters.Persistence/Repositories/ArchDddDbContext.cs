@@ -9,8 +9,9 @@ public sealed class ArchDddDbContext : DbContext
     {
     }
 
-    //protected override void OnModelCreating(ModelBuilder builder)
-    //{
-    //    builder.ApplyConfigurationsFromAssembly(AssemblyReference.Assembly);
-    //}
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        // IEntityTypeConfiguration 모든 클래스
+        builder.ApplyConfigurationsFromAssembly(AssemblyReference.Assembly);
+    }
 }

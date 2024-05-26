@@ -1,6 +1,6 @@
 ﻿using ArchDdd.Domain.Abstractions.BaseTypes;
 using System.Collections;
-using ArchDdd.Tests.Unit.Abstractions.Constants;
+using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;
 
 namespace ArchDdd.Tests.Unit.LayerTests.Domain.Abstractions.BaseTypes;
 
