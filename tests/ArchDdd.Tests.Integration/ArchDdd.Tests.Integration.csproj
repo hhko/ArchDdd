@@ -47,4 +47,13 @@
     <Using Include="FluentAssertions" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="ControllersUnderTest\UserControllers\UserControllerTests.RegisterUserCommand.RegisterUserCommand_UsernameIsInvalidate_ShouldBeFalse_arg=Empty.received.txt">
+      <DependentUpon>UserControllerTests.RegisterUserCommand.cs</DependentUpon>
+    </None>
+    <None Update="ControllersUnderTest\UserControllers\UserControllerTests.RegisterUserCommand.RegisterUserCommand_UsernameIsInvalidate_ShouldBeFalse_arg=TooLong.received.txt">
+      <DependentUpon>UserControllerTests.RegisterUserCommand.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+
 </Project>

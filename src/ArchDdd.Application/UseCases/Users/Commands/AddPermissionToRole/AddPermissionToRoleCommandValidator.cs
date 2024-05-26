@@ -6,6 +6,6 @@ internal sealed class AddPermissionToRoleCommandValidator : AbstractValidator<Ad
 {
     public AddPermissionToRoleCommandValidator()
     {
-        
+
     }
 }

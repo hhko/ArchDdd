@@ -1,33 +1,44 @@
 ---
-sidebar_position: 3
+sidebar_position: 8
 ---
 
 # Verify
 
 ## 구성
 - .gitattributes
+  ```
+  *.verified.txt text eol=lf working-tree-encoding=UTF-8
+  *.verified.xml text eol=lf working-tree-encoding=UTF-8
+  *.verified.json text eol=lf working-tree-encoding=UTF-8
+  ```
+- .gitignore
+  ```
+  *.received.*
+  ```
+- verify.tool 도구 설치
+  ```powershell
+  dotnet tool install -g verify.tool
+  ```
 
-```
-*.verified.txt text eol=lf working-tree-encoding=UTF-8
-*.verified.xml text eol=lf working-tree-encoding=UTF-8
-*.verified.json text eol=lf working-tree-encoding=UTF-8
-```
-
-```shell
-dotnet tool install -g verify.tool
-
-# .verified. 생성을 결정한다.
-dotnet verify review
-
-# 모든 .received. 파일을 .verified. 파일로 변환한다.
+## verify CLI
+```powershell
+# *.received.txt 모든 파일을 .verified.txt 파일로 변환한다.
+dotnet verify accept -y
 dotnet verify accept -y -w 특정_경로
+```
+![](./img/2024-05-26-12-03-17.png)
 
-# 모든 .received. 파일을 삭제한다.
+```powershell
+# *.received.txt 모든 파일을 삭제한다.
+dotnet verify reject -y
 dotnet verify reject -y -w 특정_경로
 ```
+
+```powershell
+# *.received.txt 파일 단위로 .verified.txt 생성을 결정한다.
+dotnet verify review
+```
 ![](./img/2024-05-06-15-54-04.png)
-
-
 
 
 ### WebAPI 통합 테스트
@@ -77,8 +88,8 @@ dotnet verify reject -y -w 특정_경로
           .UseParameters(id);
   }
   ```
-  - StudentControllerTest.GetStudentById_id=1.verified.txt
-  - StudentControllerTest.GetStudentById_id=2.verified.txt
+  - StudentControllerTest.GetStudentById_id`=1`.verified.txt
+  - StudentControllerTest.GetStudentById_id`=2`.verified.txt
 - TODO
   - [x] 특정 폴더 결과 생성: `Verifier.UseProjectRelativeDirectory`
   - [x] InlineData 처리: `UseParameters`

@@ -23,6 +23,16 @@ public static class VerifierInitializer
         //  - https://github.com/VerifyTests/DiffEngine/blob/main/docs/diff-tool.md
         DiffRunner.Disabled = true;
 
-        VerifyAspNetCore.Initialize();
+        // 정렬
+        // https://github.com/VerifyTests/Verify/blob/main/docs/serializer-settings.md#sortpropertiesalphabetically
+        //
+        //VerifierSettings.SortPropertiesAlphabetically();
+        //VerifierSettings.SortJsonObjects();
+
+        //VerifierSettings.Type..ModifySerialization(settings =>
+        //{
+        //    settings.TypeNameHandling = TypeNameHandling.None;
+        //});
+        //VerifyAspNetCore.Initialize();
     }
 }

@@ -31,7 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "requests", "requests", "{15
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "User", "User", "{7B96B651-1025-4F46-918C-840D5B341689}"
 	ProjectSection(SolutionItems) = preProject
-		requests\User\UserRegister.http = requests\User\UserRegister.http
+		requests\User\UserRegister.Register.http = requests\User\UserRegister.Register.http
+		requests\User\UserRegister.Register.Username.http = requests\User\UserRegister.Register.Username.http
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchDdd.Tests.Performance", "tests\ArchDdd.Tests.Performance\ArchDdd.Tests.Performance.csproj", "{D6F44887-5CFC-46A1-AA3C-377B75C91B7D}"

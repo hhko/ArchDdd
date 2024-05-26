@@ -1,0 +1,12 @@
+﻿{
+  type: ValidationError,
+  title: ValidationError,
+  status: 400,
+  detail: A validation problem occurred.,
+  errors: [
+    {
+      code: DomainErrors.Username.ContainsIllegalCharacter,
+      message: Username contains illegal character.
+    }
+  ]
+}

@@ -21,4 +21,4 @@
 
 ## 도메인
 1. 데이터 필드만 갖는 Entity와 ValueObject은?
-1. 기술 관심사(Adapter)에서도 Entity와 ValueObject를 사용할 수 있나요?
+1. 기술 관심사(Adapter)에서도 Entity와 ValueObject 등 용어를 사용할 수 있나요?

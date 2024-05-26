@@ -1,14 +1,20 @@
 ```
-verify 클래스 이름 제외
+
 username validation 통합 테스트 N개
-User 유스케이스 구현
+https://github.com/VerifyTests/Verify/blob/main/docs/parameterised.md
+---
 SQLite
+---
 로그
 opentelemetry collector
   Json 로그
   Windows 로그
   Linux 로그
   Container 로그
+----
+User 유스케이스 구현
+
+verify 클래스 이름 제외
 예외 로그
 opensearch
 opentelemetry 매트릭

@@ -1,0 +1,53 @@
+
+@hostname=localhost
+@port=54011
+@host = http://{{hostname}}:{{port}}
+@contentType = application/json
+
+
+### Success
+POST {{host}}/api/user/register
+content-type: application/json
+
+{
+    "username": "Lucas",
+    "email": "lucas@fun.com",
+    "password": "123456789#aB",
+    "confirmPassword": "123456789#aB"
+}
+
+# application/json; charset=utf-8, 35 bytes
+# {
+#   "id": "01HYSE2BZCAD4671TVX614KTDA"
+# }
+
+# Curl
+#
+# curl -X 'POST' \
+#   'http://localhost:54011/api/User/Register' \
+#   -H 'accept: */*' \
+#   -H 'Content-Type: application/json' \
+#   -d '{
+#   "username": "Lucas",
+#   "email": "lucas@fun.com",
+#   "password": "123456789#aB",
+#   "confirmPassword": "123456789#aB"
+# }'
+
+# PowerShell
+#
+# Invoke-WebRequest `
+#     -Uri http://localhost:54011/api/user/register `
+#     -Method Post `
+#     -ContentType "application/json" `
+#     -Body '{
+#         "username": "Lucas",
+#         "email": "lucas@fun.com",
+#         "password": "123456789#aB",
+#         "confirmPassword": "123456789#aB"
+#     }' |
+# ConvertFrom-Json
+#
+# id
+# --
+# 01HYSEBRPBQ0FXJ5NPHDX3YS60
