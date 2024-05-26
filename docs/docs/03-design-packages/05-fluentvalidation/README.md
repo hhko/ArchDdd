@@ -1,8 +1,10 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 # FluentValidation
+
+> `FluentValidation`은 유효성 검사를 선언적으로 수행할 수 있도록 제공하는 패키지입니다.
 
 ## 목표
 - `AbstractValidator<T>`: **유스케이스** 입력 메시지(`IRequest`) 유효성을 검사합니다.

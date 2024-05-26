@@ -1,8 +1,10 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 # MediatR
+
+> `MediatR`은 Mediator와 Decorator 디자인 패턴을 제공하는 패키지입니다.
 
 ## 목표
 - `IRequest`: 기술 관심사에서 비즈니스 관심사의 유스케이스를 호출합니다.

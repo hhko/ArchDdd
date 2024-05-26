@@ -12,10 +12,11 @@
 1. 유스케이스 요소는?
    - 내부
      - AggregateRoot(Entity)
+       - DomainEvent
+       - 메서드
      - DomainService
-     - DomainEvent
    - 외부
-     - Port Interface
+     - 외부 인터페이스(포트)
 1. 유스케이스를 생략할 수 있나요?
 
 ## 도메인
