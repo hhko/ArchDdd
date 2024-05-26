@@ -5,8 +5,18 @@ namespace ArchDdd.Adapters.Persistence.Repositories;
 
 public class UserRepository : IUserRepository
 {
+    private readonly ArchDddDbContext _dbContext;
+
+    public UserRepository(ArchDddDbContext dbContext)
+    {
+        _dbContext = dbContext;
+    }
+
     public void Add(User user)
     {
+        _dbContext
+            .Set<User>()
+            .Add(user);
     }
 
     public void Update(User user)

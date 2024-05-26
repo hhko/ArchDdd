@@ -1,9 +1,21 @@
+## SQLite
+- [x] Microsoft.EntityFrameworkCore.Sqlite
+- [x] options.UseSqlite("Data Source=TestDatabase.db");
+- [x] 의존성 등록
+- [ ] 테이블 생성
+- [ ] SQL 뷰어 VSCode 확장 도구?
+- [ ] 마이그레이션 폴더 지정
+- [ ] 마이그레이션 도구? https://github.com/hhko/SSW.CleanArchitecture/tree/main/tools/Database
+- [ ] .db 파일 제외
+- [ ] 통합 테스트?
+- [ ] Unit of Work
+- [ ] Specifications
+- [ ] Outbox
+
 ```
 username validation 통합 테스트 N개
 https://github.com/VerifyTests/Verify/blob/main/docs/parameterised.md
 verify 클래스 이름(TypeName) 생략
----
-SQLite
 ---
 로그
 opentelemetry collector
