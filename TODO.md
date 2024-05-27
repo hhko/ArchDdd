@@ -2,11 +2,14 @@
 - [x] Microsoft.EntityFrameworkCore.Sqlite
 - [x] options.UseSqlite("Data Source=TestDatabase.db");
 - [x] 의존성 등록
-- [ ] 테이블 생성
+- [x] 테이블 생성
 - [ ] SQL 뷰어 VSCode 확장 도구?
 - [ ] 마이그레이션 폴더 지정
 - [ ] 마이그레이션 도구? https://github.com/hhko/SSW.CleanArchitecture/tree/main/tools/Database
-- [ ] .db 파일 제외
+- [x] .db 파일 제외
+- [ ] IEntityTypeConfiguration 이해
+- [ ] IDesignTimeDbContextFactory args 전달하기
+- [ ] GenerateEntityIdComparer, GenerateEntityIdConverter 소스 생성기 이해
 - [ ] 통합 테스트?
 - [ ] Unit of Work
 - [ ] Specifications
