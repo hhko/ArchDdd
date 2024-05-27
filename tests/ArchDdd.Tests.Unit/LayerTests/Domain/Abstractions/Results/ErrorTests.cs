@@ -111,10 +111,7 @@ public class ErrorTests
             yield return new object[] { Error.ValidationError };
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 
     //

@@ -1,0 +1,1 @@
+dotnet verify accept -y

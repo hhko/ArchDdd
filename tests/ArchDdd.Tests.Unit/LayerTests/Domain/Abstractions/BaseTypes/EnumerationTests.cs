@@ -81,10 +81,7 @@ public sealed class EnumerationTests
             yield return new object[] { TestRole.Administrator.Id, TestRole.Administrator };
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 
     [Fact]

@@ -69,10 +69,7 @@ public sealed class RoleTests
             yield return new object[] { Role.Administrator.Id, Role.Administrator };
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 
     [Fact]

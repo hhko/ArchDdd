@@ -328,9 +328,6 @@ public sealed class ValueObjectTests
             yield return new object?[] { null, new Address("", "", ""), false };
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }

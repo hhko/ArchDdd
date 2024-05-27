@@ -10,52 +10,44 @@ public sealed partial class UserControllerTests
 {
     [Theory]
     [ClassData(typeof(InvalidData))]
-    public async Task UsernameIsInvalid_ShouldBeFalse(Dictionary<string, RegisterUserCommand> arg)
+    public async Task UsernameIsInvalid_ShouldBeFalse(string name, RegisterUserCommand command)
     {
         // Arrange
         HttpResponseMessage actual = await _sut.PostAsJsonAsync(
             "/api/user/register",
-            arg.Values.First());
+            command);
 
         // Assert
         actual.IsSuccessStatusCode.Should().BeFalse();
 
         string responseContent = await actual.Content.ReadAsStringAsync();
         await VerifyJson(responseContent)
-            .UseParameters(arg.Keys.First());
+            .UseParameters(name);
     }
-
-    //private Task VerifyWithMethodName(object target, [CallerMemberName] string? methodName = default)
-    //{
-    //    var settings = new VerifySettings();
-    //    settings.UseFileName(methodName!);
-
-    //    return Verifier.Verify(target, settings);
-    //}
 
     private class InvalidData : IEnumerable<object[]>
     {
         public IEnumerator<object[]> GetEnumerator()
         {
-            yield return new object[] { new Dictionary<string, RegisterUserCommand> {
-            {
+            yield return new object[] 
+            { 
                 "Empty",
                 new RegisterUserCommand(
                     Username: "",                                   // Invalid: Emtpy
                     Email: "hello@world.com",
                     Password: "123456890#aB",
                     ConfirmPassword: "123456890#aB")
-            } } };
-            yield return new object[] { new Dictionary<string, RegisterUserCommand> {
-            {
+            };
+            yield return new object[] 
+            { 
                 "TooLong",
                 new RegisterUserCommand(
                     Username: "1234567890123456789012345678901",    // Invalid: TooLong > 30
                     Email: "hello@world.com",
                     Password: "123456890#aB",
                     ConfirmPassword: "123456890#aB")
-            } } };
-            yield return new object[] { new Dictionary<string, RegisterUserCommand> {
+            };
+            yield return new object[] 
             {
                 "ContainsIllegalCharacter",
                 new RegisterUserCommand(
@@ -63,8 +55,8 @@ public sealed partial class UserControllerTests
                     Email: "hello@world.com",
                     Password: "123456890#aB",
                     ConfirmPassword: "123456890#aB")
-            } } };
-            yield return new object[] { new Dictionary<string, RegisterUserCommand> {
+            };
+            yield return new object[]
             {
                 "TooLong_ContainsIllegalCharacter",
                 new RegisterUserCommand(
@@ -72,12 +64,9 @@ public sealed partial class UserControllerTests
                     Email: "hello@world.com",
                     Password: "123456890#aB",
                     ConfirmPassword: "123456890#aB")
-            } } };
+            };
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return GetEnumerator();
-        }
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }

@@ -80,10 +80,7 @@
 //            yield return new object[] { new Dictionary<string, string>() };     // Invalid
 //        }
 
-//        IEnumerator IEnumerable.GetEnumerator()
-//        {
-//            return GetEnumerator();
-//        }
+//        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 //    }
 //}
 
