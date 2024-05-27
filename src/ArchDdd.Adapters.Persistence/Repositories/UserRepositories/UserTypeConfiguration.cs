@@ -1,24 +1,73 @@
 ﻿using ArchDdd.Adapters.Persistence.Repositories.Converters.EntityIds;
+using ArchDdd.Adapters.Persistence.Repositories.Converters.ValueObjects;
 using ArchDdd.Domain.AggregateRoots.Users;
 using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using static ArchDdd.Adapters.Persistence.Abstractions.Constants.Constants;
 
-namespace ArchDdd.Adapters.Persistence.Repositories;
+namespace ArchDdd.Adapters.Persistence.Repositories.UserRepositories;
 
 internal sealed class UserTypeConfiguration : IEntityTypeConfiguration<User>
 {
     public void Configure(EntityTypeBuilder<User> builder)
     {
+        // -------------------
+        // 테이블
+        // -------------------
+        // ToTable
+
+        // -------------------
+        // 컬럼
+        // -------------------
+        // Property
+        //
+        // HasKey
+        // HasConversion
+        // HasColumnType
+        // HasColumnName
+        // HasMaxLength
+        //
+        // IsRequired
+
+        // -------------------
+        // 관계
+        // -------------------
+        // HasMany
+        // HasOne
+        // HasForeignKey
+        //
+        // WithMany
+        // WithOne
+        //
+        // UsingEntity
+
+        // -------------------
+        // 인덱스
+        // -------------------
+        // HasIndex
+        // HasDatabaseName
+        //
+        // IsUnique
+
+        // -------------------------
+        // 테이블
+        // -------------------------
+
         builder.ToTable(TableName.User, SchemaName.Master);
 
-        builder.HasKey(u => u.Id);
+        // -------------------------
+        // 컬럼
+        // -------------------------
 
+        // Id
+        builder.HasKey(u => u.Id);
+        
         builder.Property(u => u.Id)
             .HasConversion<UserIdConverter, UserIdComparer>()
             .HasColumnType(ColumnType.Char(Number.UlidCharLenght));
 
+        // ?
         //builder.ConfigureAuditableEntity();
 
         builder.Property(u => u.Username)
@@ -61,6 +110,10 @@ internal sealed class UserTypeConfiguration : IEntityTypeConfiguration<User>
         //    .HasColumnType(ColumnType.DateTimeOffset(2))
         //    .IsRequired(false);
 
+        // -------------------------
+        // 관계
+        // -------------------------
+
         //builder.HasMany(u => u.Roles)
         //    .WithMany(r => r.Users)
         //    .UsingEntity<RoleUser>();
@@ -73,11 +126,15 @@ internal sealed class UserTypeConfiguration : IEntityTypeConfiguration<User>
         //    .WithOne(c => c.User)
         //    .HasForeignKey<User>(u => u.CustomerId);
 
-        ////Indexes
+        // -------------------------
+        // 인덱스
+        // -------------------------
+
         //builder
         //    .HasIndex(user => user.Username)
         //    .HasDatabaseName($"UX_{nameof(Username)}_{nameof(Email)}")
-        //    .IncludeProperties(user => user.Email)
+        //    // Microsoft.EntityFrameworkCore.SqlServer.Metadata.Internal
+        //    //.IncludeProperties(user => user.Email)
         //    .IsUnique(true);
 
         //builder

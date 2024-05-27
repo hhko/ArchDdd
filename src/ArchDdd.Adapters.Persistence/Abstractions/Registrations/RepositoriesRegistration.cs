@@ -1,4 +1,4 @@
-﻿using ArchDdd.Adapters.Persistence.Repositories;
+﻿using ArchDdd.Adapters.Persistence.Repositories.UserRepositories;
 using ArchDdd.Domain.AggregateRoots.Users;
 
 namespace Microsoft.Extensions.DependencyInjection;

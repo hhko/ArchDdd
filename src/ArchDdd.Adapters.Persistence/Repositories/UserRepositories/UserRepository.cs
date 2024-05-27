@@ -1,7 +1,7 @@
 ﻿using ArchDdd.Domain.AggregateRoots.Users;
 using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
 
-namespace ArchDdd.Adapters.Persistence.Repositories;
+namespace ArchDdd.Adapters.Persistence.Repositories.UserRepositories;
 
 // {
 //   "type": "Exception.InvalidOperationException",
@@ -41,8 +41,8 @@ public class UserRepository : IUserRepository
     public async Task<User?> GetByUsernameAsync(Username username, CancellationToken cancellationToken)
     {
         return await Task.FromResult(User.Create(
-            UserId.New(), 
-            username, 
+            UserId.New(),
+            username,
             Email.Create("hello@world.com").Value));
     }
 }
