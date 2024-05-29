@@ -1,10 +1,59 @@
+```powershell
+# 코딩 스타일
+- File scope
+- internal sealed
+- primary constructor
+- constructor ?? null 처리
+
+# 할일
+- VSCode SQLite 확장 도구
+- 사용자 추가
+- Seed Data 생성하기
+- 사용자 제거
+- 통합 테스트
+- 통합 테스트 DB 초기화
+- Unit of Work
+- 도커 컴포즈
+- xUnit 정리
+
+## 공부
+- CQRS 학습 https://www.kamilgrzybek.com/blog/posts/simple-cqrs-implementation-raw-sql-ddd
+- 데코레이터 의존성 주입을 활용한 Validation
+- DDD 리팩토링 https://www.jimmybogard.com/domain-driven-refactoring-intro/
+- DDD 리팩토링 https://github.com/ardalis/DDD-NoDuplicates
+- 코드 스타일
+- AutoFixture
+- Bogus
+- 문서화
+  - 버전
+  - 한글 검색
+  - 이미지 확대
+  - 다국어?
+```
+
+```powershell
+- 솔루션 구성
+  - 빌드 버전
+  - 빌드 옵션
+  - 패키지 버전
+  - 코딩 스타일
+  - 코드 품질
+  - 컨테이너 배포
+  - 패키지 배포
+- 아키텍처 원칙: 관심사의 분리
+- 아키텍처 역사
+- 아키텍처 구성
+
+```
+
+
 ## SQLite
 - [x] Microsoft.EntityFrameworkCore.Sqlite
 - [x] options.UseSqlite("Data Source=TestDatabase.db");
 - [x] 의존성 등록
 - [x] 테이블 생성
 - [ ] SQL 뷰어 VSCode 확장 도구?
-- [ ] 마이그레이션 폴더 지정
+- [x] 마이그레이션 폴더 지정
 - [ ] 마이그레이션 도구? https://github.com/hhko/SSW.CleanArchitecture/tree/main/tools/Database
 - [x] .db 파일 제외
 - [ ] IEntityTypeConfiguration 이해
