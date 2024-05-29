@@ -12,8 +12,6 @@ internal static class DatabaseContextRegistration
         this IServiceCollection services)
     //    bool isDevelopment)
     {
-        //var databaseOptions = services.GetOptions<DatabaseOptions>();
-
         services.AddDbContextPool<ArchDddDbContext>((serviceProvider, optionsBuilder) =>
         {
             var databaseOptions = services.GetOptions<DatabaseOptions>();
@@ -31,6 +29,7 @@ internal static class DatabaseContextRegistration
             });
 
             //if (isDevelopment)
+            //{
             optionsBuilder.EnableDetailedErrors();
             optionsBuilder.EnableSensitiveDataLogging();
             optionsBuilder.ConfigureWarnings(warnings =>
@@ -41,6 +40,7 @@ internal static class DatabaseContextRegistration
                     CoreEventId.RowLimitingOperationWithoutOrderByWarning
                 });
             });
+            //}
         });
 
         //services.AddScoped(typeof(IUnitOfWork<>), typeof(UnitOfWork<>));

@@ -42,10 +42,13 @@ public sealed class ArchDddDbContextFactory : IDesignTimeDbContextFactory<ArchDd
 
         if (args is not null)
         {
+            //Console.WriteLine(args.Single());
             Console.WriteLine("....args");
             foreach (var arg in args)
             {
+                Console.WriteLine("....args2");
                 Console.WriteLine(arg);
+                //Console.WriteLine(args.Single());
             }
         }
         
