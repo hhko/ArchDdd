@@ -123,6 +123,7 @@ Invoke-Command -Session $sessions -ScriptBlock {
 
         # ...
 
+        # 사용자 정의 출력 타입
         return Get-WmiObject -Class Win32_Service |
             Where-Object { $_.Name -eq $serviceName } |
             Select-Object -ExpandProperty ProcessId
@@ -130,6 +131,7 @@ Invoke-Command -Session $sessions -ScriptBlock {
 
     # 함수 호출
     $serviceProcessPID = Get-ServiceProcessPID -serviceName $serviceName
+}
 ```
 
 ## WinRM 주요 명령
@@ -239,14 +241,14 @@ output = Invoke-Command -Session $session -ScriptBlock {
 Write-Host $output
 ```
 
-### 파일 복사: 관리자 -ToSession-> 원격
+### 파일 복사: 관리자 -ToSession-▶ 원격
 ```powershell
 foreach ($session in $sessions) {
     Copy-Item -Path "Requesting Client 파일" -Destination "Responding Server 경로" -ToSession $session
 }
 ```
 
-### 파일 복사: 관리자 <-FromSession- 원격
+### 파일 복사: 관리자 ◀-FromSession- 원격
 ```powershell
 foreach ($session in $sessions) {
     Copy-Item -Path "Responding Server 파일" -Destination "Requesting Client 경로" -FromSession $session
