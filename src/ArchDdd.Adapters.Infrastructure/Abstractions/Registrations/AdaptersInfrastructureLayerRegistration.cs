@@ -11,8 +11,8 @@ public static class AdaptersInfrastructureLayerRegistration
     {
         services
             .RegisterOptions()
-            .RegisterServices()
-            .RegisterTelemetry(loggingBuilder);
+            .RegisterServices();
+            //.RegisterTelemetry(loggingBuilder);
 
         return services;
     }

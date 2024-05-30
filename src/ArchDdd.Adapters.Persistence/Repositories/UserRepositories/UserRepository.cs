@@ -27,6 +27,8 @@ public class UserRepository : IUserRepository
         _dbContext
             .Set<User>()
             .Add(user);
+
+        _dbContext.SaveChanges();
     }
 
     public void Update(User user)

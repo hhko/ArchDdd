@@ -48,6 +48,8 @@
 
 
 ## SQLite
+- [ ] not null: CreatedBy
+- [ ] 트랜잭션 Pipeline? 
 - [x] Microsoft.EntityFrameworkCore.Sqlite
 - [x] options.UseSqlite("Data Source=TestDatabase.db");
 - [x] 의존성 등록
@@ -63,6 +65,7 @@
 - [ ] Unit of Work
 - [ ] Specifications
 - [ ] Outbox
+
 
 ```
 컨테이너

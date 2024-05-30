@@ -19,7 +19,7 @@ sidebar_position: 1
 
 ## WSL2
 ### WSL2 설치
-```shell
+```powershell
 # 1. 관리자 권한 Windows Terminal 실행
 
 # 2. 윈도우 버전 확인
@@ -40,7 +40,7 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 # 4. Linux 커널 업데이트 패키지 다운로드 & 설치
 https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
 
-# WSL 2를 기본 버전으로 설정
+# 5. WSL 2를 기본 버전으로 설정
 wsl --set-default-version 2
 ```
 
@@ -88,7 +88,7 @@ wsl -t ubuntu20.04
 ```
 
 ### WSL2 계정
-```bash
+```powershell
 # 계정 생성
 adduser {사용자명}
 
@@ -107,8 +107,8 @@ cat /etc/group
 su - {사용자명}       # {사용자명} 계정 로그인
 ```
 
-```bash
-# root 권한, 기본 계정 지정: /etc/wsl.conf 파일을 생성한다
+```powershell
+# root 권한에서 로그인 기본 계정을 지정한다: /etc/wsl.conf 파일을 생성한다
 tee /etc/wsl.conf <<_EOF
 [user]
 default={사용자명}
@@ -155,8 +155,11 @@ ls -al
 ```
 
 ### WSL2 자원 설정
-- `%USERPROFILE%\.wslconfig`
-- [Advanced settings configuration in WSL](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)
+- 설정 범위
+  - 전역 설정: **%userprofile%**, `.wslconfig`
+  - 지역 설정: `wsl.conf`
+- 세부 정보
+  - [Advanced settings configuration in WSL](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)
 
 ```ini
 [wsl2]
@@ -164,13 +167,13 @@ memory=48GB
 processors=8
 swap=0
 localhostForwarding=true
+kernelCommandLine = "sysctl.vm.max_map_count=262144"
 ```
-
 <br/>
 
 ## SSH 구성
 ### SSH 서버: WSL Ubuntu 서버
-```bash
+```powershell
 # 시스템에 대한 모든 호스트 키를 생성합니다
 sudo ssh-keygen -A
 
@@ -222,18 +225,6 @@ Host *
 ### Docker Desktop 설치
 - https://www.docker.com/products/docker-desktop/
 
-### 자원 할당
-- 설정 범위
-  - 전역 설정: **%userprofile%**, `.wslconfig`
-  - 지역 설정: `wsl.conf`
-
-```ini
-[wsl2]
-memory=6GB
-swap=0
-kernelCommandLine="sysctl.vm.max_map_count=262144"
-```
-
 ### 이미지 기본 경로 변경
 - Case 1.
 ```powershell
@@ -264,5 +255,5 @@ mklink /j "C:\ProgramData\Docker" "E:\Docker\ProgramData"
 <br/>
 
 ## 참고 동영상
-- https://www.youtube.com/watch?v=J9pxPVcd-fY&t
-- https://www.youtube.com/watch?v=xUNDErAbRiM
+- [윈도우 개발환경 세팅 - WSL2, Windows Terminal, Docker 설치](https://www.youtube.com/watch?v=J9pxPVcd-fY&t)
+- [Windows 환경에서 리눅스를 사용해보자 - WSL2 Ubuntu 설치 및 설정 방법](https://www.youtube.com/watch?v=xUNDErAbRiM)
