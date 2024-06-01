@@ -2,7 +2,7 @@
   "profiles": {
     "ArchDdd": {
       "commandName": "Project",
-      "launchBrowser": true,
+      "launchBrowser": false,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
@@ -10,7 +10,7 @@
     },
     "고형호 | ArchDdd": {
       "commandName": "Project",
-      "launchBrowser": true,
+      "launchBrowser": false,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "고형호"
       },

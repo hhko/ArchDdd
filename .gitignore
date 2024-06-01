@@ -505,3 +505,4 @@ reports/
 
 # SQLite
 *.db
+*.db-shm

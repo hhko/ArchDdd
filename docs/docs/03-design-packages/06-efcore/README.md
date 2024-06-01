@@ -25,7 +25,30 @@ Microsoft.EntityFrameworkCore.Design
 
 # Migrations 팩토링 클래스
 IDesignTimeDbContextFactory
+```
 
+```
+
+dotnet ef migrations list -p .\src\ArchDdd.Adapters.Persistence\
+  Build started...
+  Build succeeded.
+  20240526223353_init
+  20240531232626_Refactor_IAuditable
+dotnet ef database update 20240526223353_init -p .\src\ArchDdd.Adapters.Persistence\
+  Build started...
+  Build succeeded.
+  Reverting migration '20240531232626_Refactor_IAuditable'.
+  Done.
+
+dotnet ef migrations remove -p .\src\ArchDdd.Adapters.Persistence\
+  Build started...
+  Build succeeded.
+  The entity type 'User' is configured to use schema 'Master', but SQLite does not support schemas. This configuration will be ignored by the SQLite provider.
+  Removing migration '20240531232626_Refactor_IAuditable'.
+  Reverting the model snapshot.
+  Done.
+```
+```powershell
 # Migrations 스크립트 생성
 dotnet ef migrations add init -p .\src\ArchDdd.Adapters.Persistence\
     Build started...

@@ -1,3 +1,17 @@
+```
+EFCore
+---
+컨테이너
+배포
+통합 테스트
+---
+OpenTelemetry
+OpenSeaarch(Grafana...)
+성능 테스트
+```
+
+https://codewithmukesh.com/blog/global-exception-handling-in-aspnet-core/?utm_source=github&utm_medium=social&utm_campaign=repository
+
 ```powershell
 # 코딩 스타일
 - File scope
@@ -46,10 +60,19 @@
 
 ```
 
+## 학습
+```
+generic in/out
+
+인터페이스 -> 인터페이스<T> 동시 생성?
+public interface IUnitOfWork
+public interface IUnitOfWork<out TContext> : IUnitOfWork
+```
+
 
 ## SQLite
 - [ ] not null: CreatedBy
-- [ ] 트랜잭션 Pipeline? 
+- [ ] 트랜잭션 Pipeline?
 - [x] Microsoft.EntityFrameworkCore.Sqlite
 - [x] options.UseSqlite("Data Source=TestDatabase.db");
 - [x] 의존성 등록

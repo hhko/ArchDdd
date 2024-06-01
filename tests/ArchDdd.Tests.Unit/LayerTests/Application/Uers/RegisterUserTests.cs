@@ -30,7 +30,7 @@ public sealed class RegisterUserTests
             .IsValid
             .Returns(true);
 
-        var sut = new RegisterUserCommandHandler(userRepository, passwordHasher, validator);
+        var sut = new RegisterUserCommandUseCase(userRepository, passwordHasher, validator);
 
         // Act
         var actual = await sut.Handle(

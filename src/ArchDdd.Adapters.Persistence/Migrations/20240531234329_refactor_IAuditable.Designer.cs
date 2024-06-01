@@ -3,6 +3,7 @@ using System;
 using ArchDdd.Adapters.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ArchDdd.Adapters.Persistence.Migrations
 {
     [DbContext(typeof(ArchDddDbContext))]
-    partial class ArchDddDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240531234329_refactor_IAuditable")]
+    partial class refactor_IAuditable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.5");

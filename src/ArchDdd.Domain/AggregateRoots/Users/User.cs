@@ -36,8 +36,8 @@ public sealed class User : AggregateRoot<UserId>, IAuditable
 
     public DateTimeOffset CreatedOn { get; set; }
     public DateTimeOffset? UpdatedOn { get; set; }
-    public string CreatedBy { get; set; }
-    public string? UpdatedBy { get; set; }
+    //public string CreatedBy { get; set; }
+    //public string? UpdatedBy { get; set; }
 
     public static User Create(UserId id, Username username, Email email)
     {

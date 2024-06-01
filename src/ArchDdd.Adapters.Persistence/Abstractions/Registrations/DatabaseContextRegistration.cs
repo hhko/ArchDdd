@@ -1,8 +1,10 @@
 ﻿using ArchDdd.Adapters.Infrastructure.Options;
 using ArchDdd.Adapters.Infrastructure.Utilities;
+using ArchDdd.Adapters.Persistence;
 using ArchDdd.Adapters.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
+using System.Reflection;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
@@ -16,7 +18,16 @@ internal static class DatabaseContextRegistration
         {
             var databaseOptions = services.GetOptions<DatabaseOptions>();
 
-            optionsBuilder.UseSqlite("Data Source=ArchDddDb.db", options =>
+            var assemblyLocation = Path.GetDirectoryName(ArchDdd.Adapters.Persistence.AssemblyReference.Assembly.Location)!;
+
+            // 임시
+            var absolutePath = Path.Combine(
+                "C:\\Workspace\\Github\\ArchDdd\\src\\ArchDdd.Adapters.Persistence",
+                "ArchDddDb.db");
+
+            //optionsBuilder.UseSqlite($"Data Source={absolutePath}");
+
+            optionsBuilder.UseSqlite($"Data Source={absolutePath}", options =>
             {
                 options.CommandTimeout(databaseOptions.CommandTimeout);
 
@@ -43,7 +54,7 @@ internal static class DatabaseContextRegistration
             //}
         });
 
-        //services.AddScoped(typeof(IUnitOfWork<>), typeof(UnitOfWork<>));
+        services.AddScoped(typeof(IUnitOfWork<>), typeof(UnitOfWork<>));
         return services;
     }
 }

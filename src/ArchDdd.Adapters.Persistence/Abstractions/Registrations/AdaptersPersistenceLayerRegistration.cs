@@ -1,4 +1,6 @@
-﻿namespace Microsoft.Extensions.DependencyInjection;
+﻿using ArchDdd.Adapters.Persistence.Abstractions.Registrations;
+
+namespace Microsoft.Extensions.DependencyInjection;
 
 public static class AdaptersPersistenceLayerRegistration
 {
@@ -17,7 +19,8 @@ public static class AdaptersPersistenceLayerRegistration
         services
             .RegisterDatabaseContext()
             .RegisterBackgroundJobs()
-            .RegisterRepositories();
+            .RegisterRepositories()
+            .RegisterMediator();
 
         return services;
     }

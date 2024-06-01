@@ -12,7 +12,7 @@ using static ArchDdd.Domain.AggregateRoots.Users.Errors.DomainErrors;
 
 namespace ArchDdd.Application.UseCases.Users.Commands.RegisterUser;
 
-internal sealed class RegisterUserCommandHandler(
+internal sealed class RegisterUserCommandUseCase(
     IUserRepository userRepository,
     IPasswordHasher<User> passwordHasher,
     IValidator validator)
