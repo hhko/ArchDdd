@@ -6,28 +6,61 @@ sidebar_position: 6
 
 ORM(Object Relational Mapping)
 
+## 개요
+### 도구
 ```powershell
-# Microsoft.EntityFrameworkCore.Design
-
 # 도구 설치
 dotnet tool install --global dotnet-ef
 
 # 도구 업데이트
 dotnet tool update --global dotnet-ef
 
+# 도구 목록
 dotnet tool list -g
+
+# 도구 버전
 dotnet-ef --version
 ```
 
+### 패키지 및 인터페이스
 ```powershell
 # ef tool 사용을 위한 패키지
 Microsoft.EntityFrameworkCore.Design
 
 # Migrations 팩토링 클래스
 IDesignTimeDbContextFactory
+  # 참조 추가
+```
+
+## Migration
+
+```powershell
+dotnet ef migrations add init -p .\src\Migrators\Migrators.Sqlite\
+dotnet ef database update -p .\src\Migrators\Migrators.Sqlite\
+```
+
+### Rollback
+```powershell
+# 마이그레이션 적용 전 Rollback
+dotnet ef migrations list -p {마이그레이션_프로젝트}
+  20240602112440_init (Pending)
+dotnet ef migrations remove -p {마이그레이션_프로젝트}
+
+# 마이그레이션 적용 후 Rollback
+dotnet ef migrations list -p .{마이그레이션_프로젝트}
+dotnet ef database update {마이그레이션명} -p {마이그레이션_프로젝트}
+dotnet ef migrations remove -p {마이그레이션_프로젝트}
+```
+
+### Database
+```powershell
+dotnet ef migrations add {메시지} -p {마이그레이션_프로젝트}
 ```
 
 ```
+dotnet ef migrations list -p .\src\ArchDdd.Adapters.Persistence\
+dotnet ef database update 20240526223353_init -p .\src\ArchDdd.Adapters.Persistence\
+dotnet ef migrations remove -p .\src\ArchDdd.Adapters.Persistence\
 
 dotnet ef migrations list -p .\src\ArchDdd.Adapters.Persistence\
   Build started...

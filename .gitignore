@@ -504,5 +504,6 @@ api/
 reports/
 
 # SQLite
-*.db
+#*.db
 *.db-shm
+*.db-wal

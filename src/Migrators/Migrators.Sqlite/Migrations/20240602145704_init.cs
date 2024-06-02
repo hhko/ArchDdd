@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ArchDdd.Adapters.Persistence.Migrations
+namespace Migrators.Sqlite.Migrations
 {
     /// <inheritdoc />
     public partial class init : Migration
@@ -24,9 +24,7 @@ namespace ArchDdd.Adapters.Persistence.Migrations
                     Email = table.Column<string>(type: "TEXT", maxLength: 40, nullable: false),
                     PasswordHash = table.Column<string>(type: "NChar(514)", nullable: false),
                     CreatedOn = table.Column<DateTimeOffset>(type: "TEXT", nullable: false),
-                    UpdatedOn = table.Column<DateTimeOffset>(type: "TEXT", nullable: true),
-                    CreatedBy = table.Column<string>(type: "TEXT", nullable: false),
-                    UpdatedBy = table.Column<string>(type: "TEXT", nullable: true)
+                    UpdatedOn = table.Column<DateTimeOffset>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

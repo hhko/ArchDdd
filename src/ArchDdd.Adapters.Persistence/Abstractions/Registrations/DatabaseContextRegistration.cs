@@ -18,26 +18,34 @@ internal static class DatabaseContextRegistration
         {
             var databaseOptions = services.GetOptions<DatabaseOptions>();
 
-            var assemblyLocation = Path.GetDirectoryName(ArchDdd.Adapters.Persistence.AssemblyReference.Assembly.Location)!;
-
+            //var assemblyLocation = Path.GetDirectoryName(ArchDdd.Adapters.Persistence.AssemblyReference.Assembly.Location)!;
             // 임시
-            var absolutePath = Path.Combine(
-                "C:\\Workspace\\Github\\ArchDdd\\src\\ArchDdd.Adapters.Persistence",
-                "ArchDddDb.db");
+            //var absolutePath = Path.Combine(
+            //    "C:\\Workspace\\Github\\ArchDdd\\src\\ArchDdd.Adapters.Persistence",
+            //    "ArchDddDb.db");
 
             //optionsBuilder.UseSqlite($"Data Source={absolutePath}");
 
-            optionsBuilder.UseSqlite($"Data Source={absolutePath}", options =>
-            {
-                options.CommandTimeout(databaseOptions.CommandTimeout);
+            Console.WriteLine("----");
+            Console.WriteLine(databaseOptions.ConnectionString);
+            Console.WriteLine("----");
 
-                // Sqlite NotSupported
-                //
-                //options.EnableRetryOnFailure(
-                //    databaseOptions.MaxRetryCount,
-                //    TimeSpan.FromSeconds(databaseOptions.MaxRetryDelay),
-                //    []);
+            optionsBuilder.UseSqlite($"Data Source={databaseOptions.ConnectionString}", o =>
+            {
+                //o.MigrationsAssembly("Migrators.SqLite");
+                o.CommandTimeout(databaseOptions.CommandTimeout);
             });
+            //optionsBuilder.UseSqlite($"Data Source={absolutePath}", options =>
+            //{
+            //    options.CommandTimeout(databaseOptions.CommandTimeout);
+
+            //    // Sqlite NotSupported
+            //    //
+            //    //options.EnableRetryOnFailure(
+            //    //    databaseOptions.MaxRetryCount,
+            //    //    TimeSpan.FromSeconds(databaseOptions.MaxRetryDelay),
+            //    //    []);
+            //});
 
             //if (isDevelopment)
             //{

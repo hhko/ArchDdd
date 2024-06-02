@@ -3,22 +3,19 @@ using System;
 using ArchDdd.Adapters.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace ArchDdd.Adapters.Persistence.Migrations
+namespace Migrators.Sqlite.Migrations
 {
     [DbContext(typeof(ArchDddDbContext))]
-    [Migration("20240526223353_init")]
-    partial class init
+    partial class ArchDddDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "8.0.5");
+            modelBuilder.HasAnnotation("ProductVersion", "8.0.6");
 
             modelBuilder.Entity("ArchDdd.Domain.AggregateRoots.Users.Enumerations.Role", b =>
                 {
@@ -45,10 +42,6 @@ namespace ArchDdd.Adapters.Persistence.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("Char(26)");
 
-                    b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<DateTimeOffset>("CreatedOn")
                         .HasColumnType("TEXT");
 
@@ -62,9 +55,6 @@ namespace ArchDdd.Adapters.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("NChar(514)")
                         .HasColumnName("PasswordHash");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("TEXT");
 
                     b.Property<DateTimeOffset?>("UpdatedOn")
                         .HasColumnType("TEXT");

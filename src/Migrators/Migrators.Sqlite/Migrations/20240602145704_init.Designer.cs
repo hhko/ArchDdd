@@ -8,17 +8,17 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace ArchDdd.Adapters.Persistence.Migrations
+namespace Migrators.Sqlite.Migrations
 {
     [DbContext(typeof(ArchDddDbContext))]
-    [Migration("20240531234329_refactor_IAuditable")]
-    partial class refactor_IAuditable
+    [Migration("20240602145704_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "8.0.5");
+            modelBuilder.HasAnnotation("ProductVersion", "8.0.6");
 
             modelBuilder.Entity("ArchDdd.Domain.AggregateRoots.Users.Enumerations.Role", b =>
                 {
