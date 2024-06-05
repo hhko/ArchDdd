@@ -2,7 +2,7 @@
 using ArchDdd.Domain.Abstractions.Results.Contracts;
 using MediatR;
 
-namespace ArchDdd.Adapters.Persistence.Pipelines;
+namespace ArchDdd.Adapters.Persistence.Abstractions.Pipelines;
 
 public class CommandTransactionPipelineBase<TCommandResponse>(
     IUnitOfWork<ArchDddDbContext> unitOfWork)

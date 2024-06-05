@@ -4,7 +4,7 @@ using ArchDdd.Domain.Abstractions.Results.Contracts;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace ArchDdd.Adapters.Persistence.Pipelines;
+namespace ArchDdd.Adapters.Persistence.Abstractions.Pipelines;
 
 public sealed class CommandTransactionPipeline<TCommandRequest, TCommandResponse>(IUnitOfWork<ArchDddDbContext> unitOfWork)
     : CommandTransactionPipelineBase<TCommandResponse>(unitOfWork),

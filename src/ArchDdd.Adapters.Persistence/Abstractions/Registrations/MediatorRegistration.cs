@@ -1,4 +1,4 @@
-﻿using ArchDdd.Adapters.Persistence.Pipelines;
+﻿using ArchDdd.Adapters.Persistence.Abstractions.Pipelines;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ArchDdd.Adapters.Persistence.Abstractions.Registrations;

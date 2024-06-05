@@ -1,5 +1,10 @@
 ```
 EFCore
+  배열: https://devblogs.microsoft.com/dotnet/array-mapping-in-ef-core-8/
+  트랜잭션: IExecutionStrategy, 예외 발생시?
+DTO
+  https://www.youtube.com/watch?v=Q3QGC-Llqr8&t=41s
+  https://github.com/kgrzybek/modular-monolith-with-ddd
 ---
 컨테이너
 배포
@@ -8,6 +13,11 @@ EFCore
 OpenTelemetry
 OpenSeaarch(Grafana...)
 성능 테스트
+---
+UseCase 인터페이스 호출 IValidationResult -> 데코레이터패턴
+https://blog.postsharp.net/decorator-pattern
+
+
 ```
 
 https://codewithmukesh.com/blog/global-exception-handling-in-aspnet-core/?utm_source=github&utm_medium=social&utm_campaign=repository

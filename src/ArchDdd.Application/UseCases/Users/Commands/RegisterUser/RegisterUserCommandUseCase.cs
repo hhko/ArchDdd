@@ -25,6 +25,7 @@ internal sealed class RegisterUserCommandUseCase(
 
     public async Task<IResult<RegisterUserResponse>> Handle(RegisterUserCommand command, CancellationToken cancellationToken)
     {
+        //throw new Exception("xx");
         Email email = Email.Create(command.Email).Value;
         Username username = Username.Create(command.Username).Value;
         Password password = Password.Create(command.Password).Value;
