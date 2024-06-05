@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using static ArchDdd.Application.Abstractions.Constants.Constants.ProblemDetails;
 
-namespace ArchDdd.Adapters.Presentation.Abstractions.Controllers;
+namespace ArchDdd.Adapters.Presentation.Abstractions.Utilities;
 
 public static class ProblemDetailsUtilities
 {
@@ -44,20 +44,20 @@ public static class ProblemDetailsUtilities
         return problemDetails;
     }
 
-    public static ProblemDetails CreateProblemDetails(
-        string type,
-        string title,
-        int status,
-        IList<string> errors)
-    {
-        var problemDetails = new ProblemDetails()
-        {
-            Type = type,
-            Title = title,
-            Status = status,
-            Extensions = { { nameof(errors), errors } }
-        };
+    //public static ProblemDetails CreateProblemDetails(
+    //    string type,
+    //    string title,
+    //    int status,
+    //    IList<string> errors)
+    //{
+    //    var problemDetails = new ProblemDetails()
+    //    {
+    //        Type = type,
+    //        Title = title,
+    //        Status = status,
+    //        Extensions = { { nameof(errors), errors } }
+    //    };
 
-        return problemDetails;
-    }
+    //    return problemDetails;
+    //}
 }

@@ -3,8 +3,8 @@ using ArchDdd.Domain.Abstractions.Results;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using static ArchDdd.Adapters.Presentation.Abstractions.Controllers.ProblemDetailsUtilities;
 using static ArchDdd.Application.Abstractions.Constants.Constants.ProblemDetails;
+using static ArchDdd.Adapters.Presentation.Abstractions.Utilities.ProblemDetailsUtilities;
 
 namespace ArchDdd.Adapters.Presentation.Abstractions.Middlewares;
 

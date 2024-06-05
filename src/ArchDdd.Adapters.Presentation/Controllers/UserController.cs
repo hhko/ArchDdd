@@ -8,6 +8,7 @@ using MediatR;
 using ArchDdd.Domain.Abstractions.Results.Contracts;
 using ArchDdd.Application.UseCases.Users.Queries.GetUserByUsername;
 using ArchDdd.Application.UseCases.Users.Commands.AddPermissionToRole;
+using ArchDdd.Adapters.Presentation.Abstractions.Utilities;
 
 namespace ArchDdd.Adapters.Presentation.Controllers;
 
@@ -22,12 +23,9 @@ public class UserController(ISender sender) : ApiController(sender)
     {
         IResult<RegisterUserResponse> result = await Sender.Send(command, cancellationToken);
 
-        if (result.IsFailure)
-        {
-            return HandleFailure(result);
-        }
-
-        return TypedResults.Ok(result.Value);
+        return result.IsSuccess
+            ? result.ToOkResult()
+            : result.ToProblemHttpResult();
     }
 
     [HttpPost("roles/{role}/permissions/{permission}")]
@@ -42,12 +40,9 @@ public class UserController(ISender sender) : ApiController(sender)
         var command = new AddPermissionToRoleCommand(role, permission);
         var result = await Sender.Send(command, cancellationToken);
 
-        if (result.IsFailure)
-        {
-            return HandleFailure(result);
-        }
-
-        return TypedResults.Ok();
+        return result.IsSuccess
+            ? result.ToOkResult()
+            : result.ToProblemHttpResult();
     }
 
     [HttpGet("{username}")]
@@ -61,11 +56,8 @@ public class UserController(ISender sender) : ApiController(sender)
         //var query = new GetUserByUsernameQuery(username);
         var result = await Sender.Send(query, cancellationToken);
 
-        if (result.IsFailure)
-        {
-            return HandleFailure(result);
-        }
-
-        return TypedResults.Ok(result.Value);
+        return result.IsSuccess
+            ? result.ToOkResult()
+            : result.ToProblemHttpResult();
     }
 }
