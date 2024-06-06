@@ -2,8 +2,9 @@
 
 namespace ArchDdd.Application.UseCases.Users.Queries.GetUserByUsername;
 
-public sealed record UserResponse(
-    Ulid Id,
+public sealed record GetUserByUsernameResponse(
+    //Ulid Id,
+    string Id,
     string Username,
     string Email
     //Ulid? CustomerId

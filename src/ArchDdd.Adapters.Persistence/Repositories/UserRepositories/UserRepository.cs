@@ -1,8 +1,8 @@
-﻿using ArchDdd.Domain.AggregateRoots.Users;
+﻿using ArchDdd.Application.UseCases.Users.Queries.GetUserByUsername;
+using ArchDdd.Domain.AggregateRoots.Users;
 using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
-using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
-using System.Drawing;
 
 namespace ArchDdd.Adapters.Persistence.Repositories.UserRepositories;
 
@@ -52,14 +52,63 @@ public class UserRepository : IUserRepository
 
     public async Task<bool> IsEmailTakenAsync(Email email, CancellationToken cancellationToken)
     {
-        return await Task.FromResult(false);
+        // info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+        //       Executed DbCommand (8ms)
+        //       [Parameters=[
+        //          @__email_0='lucas@fun.com' (Size = 13)],
+        //          CommandType='Text', CommandTimeout='1'
+        //       ]
+        //       SELECT EXISTS (
+        //           SELECT 1
+        //           FROM "User" AS "u"
+        //           WHERE "u"."Email" = @__email_0)
+
+        return await _dbContext
+           .Set<User>()
+           .Where(user => user.Email == email)
+           .AnyAsync(cancellationToken);
     }
 
     public async Task<User?> GetByUsernameAsync(Username username, CancellationToken cancellationToken)
     {
-        return await Task.FromResult(User.Create(
-            UserId.New(),
-            username,
-            Email.Create("hello@world.com").Value));
+        // info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+        //      Executed DbCommand(41ms)
+        //      [Parameters= [
+        //          @__username_0 = 'Lucas'(Size = 5)],
+        //          CommandType = 'Text',
+        //          CommandTimeout = '1'
+        //      ]
+        //      SELECT "u"."Id", "u"."CreatedOn", "u"."Email", "u"."PasswordHash", "u"."UpdatedOn", "u"."Username"
+        //      FROM "User" AS "u"
+        //      WHERE "u"."Username" = @__username_0
+        //      LIMIT 1
+
+        return await _dbContext
+            .Set<User>()
+            //.Include(user => user.Roles)
+            //    .ThenInclude(role => role.Permissions)
+            .Where(user => user.Username == username)
+            .FirstOrDefaultAsync(cancellationToken);
+    }
+
+    public async Task<IReadOnlyCollection<T>> SqlQueryAsync<T>(FormattableString sql, CancellationToken cancellationToken) where T : class
+    {
+        return await _dbContext.Database
+            .SqlQuery<T>(sql)
+            .ToListAsync(cancellationToken);
+    }
+
+    public async Task<T?> SqlQuerySingleAsync<T>(FormattableString sql, CancellationToken cancellationToken) where T : class
+    {
+        return await _dbContext.Database
+            .SqlQuery<T>(sql)
+            .FirstOrDefaultAsync(cancellationToken);
+    }
+
+    public async Task<bool> SqlQuerySingleAsync(FormattableString sql, CancellationToken cancellationToken)
+    {
+        return await _dbContext.Database
+            .SqlQuery<bool>(sql)
+            .AnyAsync(cancellationToken);
     }
 }

@@ -12,6 +12,11 @@ public sealed class Validator : IValidator
     public bool IsValid => _errors.IsNullOrEmpty();
     public bool IsInvalid => !IsValid;
 
+    // 유효성 검사 수행: 실패시 에러 코드 수집
+    //  - bool
+    //  - IResult
+    //  - IResult<TType>
+    //  - ValidationResult<TType>
     public IValidator If(bool condition, Error thenError)
     {
         if (condition is true)
@@ -52,6 +57,9 @@ public sealed class Validator : IValidator
         return this;
     }
 
+    // 유효성 검사 결과: 실패시 ValidationResult 생성
+    //  - ValidationResult
+    //  - ValidationResult<TResponse>
     public ValidationResult<TResponse> Failure<TResponse>()
         where TResponse : IResponse
     {

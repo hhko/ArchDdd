@@ -25,17 +25,17 @@ internal sealed class RegisterUserCommandUseCase(
 
     public async Task<IResult<RegisterUserResponse>> Handle(RegisterUserCommand command, CancellationToken cancellationToken)
     {
-        //throw new Exception("xx");
+        // 데이터 유효성
         Email email = Email.Create(command.Email).Value;
         Username username = Username.Create(command.Username).Value;
         Password password = Password.Create(command.Password).Value;
 
-        bool emailIsTaken = await _userRepository
-            .IsEmailTakenAsync(email, cancellationToken);
+        // 비즈니스 규칙 유효성
+        bool emailIsTaken = await _userRepository.IsEmailTakenAsync(email, cancellationToken);
 
-        _validator
-            .If(emailIsTaken, thenError: EmailError.EmailAlreadyTaken(email));
-
+        _validator.If(
+            condition: emailIsTaken,
+            thenError: EmailError.EmailAlreadyTaken(email));
         if (_validator.IsInvalid)
         {
             return _validator.Failure<RegisterUserResponse>();
@@ -48,17 +48,17 @@ internal sealed class RegisterUserCommandUseCase(
     {
         var user = User.Create(UserId.New(), username, email);
 
+        // 비즈니스 유효성
         ValidationResult<PasswordHash> passwordHashResult = PasswordHash.Create(_passwordHasher.HashPassword(user, password.Value));
-        _validator
-            .Validate(passwordHashResult);
 
+        _validator.Validate(passwordHashResult);
+        
         if (_validator.IsInvalid)
         {
             return _validator.Failure<RegisterUserResponse>();
         }
 
         user.SetHashedPassword(passwordHashResult.Value);
-
         _userRepository.Add(user);
 
         return user

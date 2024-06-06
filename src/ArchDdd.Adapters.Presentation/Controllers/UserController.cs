@@ -46,18 +46,32 @@ public class UserController(ISender sender) : ApiController(sender)
     }
 
     [HttpGet("{username}")]
-    [ProducesResponseType<UserResponse>(StatusCodes.Status200OK)]
+    [ProducesResponseType<GetUserByUsernameResponse>(StatusCodes.Status200OK)]
     [ProducesResponseType<ProblemDetails>(StatusCodes.Status400BadRequest)]
-    public async Task<Results<Ok<UserResponse>, ProblemHttpResult>> GetUserByUsername(
-        //[FromRoute] string username,
-        [FromBody] GetUserByUsernameQuery query,
+    public async Task<Results<Ok<GetUserByUsernameResponse>, ProblemHttpResult>> GetUserByUsername(
+        [FromRoute] string username,
         CancellationToken cancellationToken)
     {
-        //var query = new GetUserByUsernameQuery(username);
-        var result = await Sender.Send(query, cancellationToken);
+        var result = await Sender.Send(
+            new GetUserByUsernameQuery(username),
+            cancellationToken);
 
         return result.IsSuccess
             ? result.ToOkResult()
             : result.ToProblemHttpResult();
     }
+
+    //[HttpGet("{query}")]
+    //[ProducesResponseType<GetUserByUsernameResponse>(StatusCodes.Status200OK)]
+    //[ProducesResponseType<ProblemDetails>(StatusCodes.Status400BadRequest)]
+    //public async Task<Results<Ok<GetUserByUsernameResponse>, ProblemHttpResult>> GetUserByUsername(
+    //    [FromBody] GetUserByUsernameQuery query,
+    //    CancellationToken cancellationToken)
+    //{
+    //    var result = await Sender.Send(query, cancellationToken);
+
+    //    return result.IsSuccess
+    //        ? result.ToOkResult()
+    //        : result.ToProblemHttpResult();
+    //}
 }

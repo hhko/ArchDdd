@@ -11,15 +11,15 @@ public static class UserMapping
         return new RegisterUserResponse(userToCreate.Id.Value);
     }
 
-    public static UserResponse ToResponse(this User user)
-    {
-        return new UserResponse(
-            user.Id.Value,
-            user.Username.Value,
-            user.Email.Value
-            //user.CustomerId?.Value
-        );
-    }
+    //public static GetUserByUsernameResponse ToResponse(this User user)
+    //{
+    //    return new GetUserByUsernameResponse(
+    //        user.Id.Value,
+    //        user.Username.Value,
+    //        user.Email.Value
+    //        //user.CustomerId?.Value
+    //    );
+    //}
 
     //public static RolesResponse ToResponse(this IReadOnlyCollection<Role> roles)
     //{

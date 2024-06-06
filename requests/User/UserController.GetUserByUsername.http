@@ -1,0 +1,17 @@
+
+@hostname=localhost
+@port=54011
+@host = http://{{hostname}}:{{port}}
+@contentType = application/json
+
+
+### FromRoute
+GET {{host}}/api/user/Lucas
+
+# application/json; charset=utf-8, 78 bytes
+# 
+# {
+#   "id": "01HZMKCPQ61Q8ED5SPXN0XZYYY",
+#   "username": "Lucas",
+#   "email": "lucas@fun.com"
+# }

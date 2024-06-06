@@ -1,0 +1,111 @@
+
+@hostname=localhost
+@port=54011
+@host = http://{{hostname}}:{{port}}
+@contentType = application/json
+
+
+### Failure: Username
+# - 빈문자열
+POST {{host}}/api/user/register
+content-type: application/json
+
+{
+    "username": "",
+    "email": "hello@world.com",
+    "password": "123456789#aB",
+    "confirmPassword": "123456789#aB"
+}
+
+# {
+#   "type": "ValidationError",
+#   "title": "ValidationError",
+#   "status": 400,
+#   "detail": "A validation problem occurred.",
+#   "errors": [
+#     {
+#       "code": "DomainErrors.Username.Empty",
+#       "message": "Username name is empty."
+#     }
+#   ]
+# }
+
+### Failure: Username
+# - 31 길이
+POST {{host}}/api/user/register
+content-type: application/json
+
+{
+    "username": "1234567890123456789012345678901",
+    "email": "hello@world.com",
+    "password": "123456789#aB",
+    "confirmPassword": "123456789#aB"
+}
+
+# {
+#   "type": "ValidationError",
+#   "title": "ValidationError",
+#   "status": 400,
+#   "detail": "A validation problem occurred.",
+#   "errors": [
+#     {
+#       "code": "DomainErrors.Username.TooLong",
+#       "message": "Username name must be at most 30 characters."
+#     }
+#   ]
+# }
+
+### Failure: Username
+# - 특수 문자
+POST {{host}}/api/user/register
+content-type: application/json
+
+{
+    "username": "#",
+    "email": "hello@world.com",
+    "password": "123456789#aB",
+    "confirmPassword": "123456789#aB"
+}
+
+# {
+#   "type": "ValidationError",
+#   "title": "ValidationError",
+#   "status": 400,
+#   "detail": "A validation problem occurred.",
+#   "errors": [
+#     {
+#       "code": "DomainErrors.Username.ContainsIllegalCharacter",
+#       "message": "Username contains illegal character."
+#     }
+#   ]
+# }
+
+### Failure: Username
+# - 31 길이
+# - 특수 문자
+POST {{host}}/api/user/register
+content-type: application/json
+
+{
+    "username": "1234567890123456789012345678901#",
+    "email": "hello@world.com",
+    "password": "123456789#aB",
+    "confirmPassword": "123456789#aB"
+}
+
+# {
+#   "type": "ValidationError",
+#   "title": "ValidationError",
+#   "status": 400,
+#   "detail": "A validation problem occurred.",
+#   "errors": [
+#     {
+#       "code": "DomainErrors.Username.TooLong",
+#       "message": "Username name must be at most 30 characters."
+#     },
+#     {
+#       "code": "DomainErrors.Username.ContainsIllegalCharacter",
+#       "message": "Username contains illegal character."
+#     }
+#   ]
+# }

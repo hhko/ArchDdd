@@ -5,6 +5,8 @@ EFCore
 DTO
   https://www.youtube.com/watch?v=Q3QGC-Llqr8&t=41s
   https://github.com/kgrzybek/modular-monolith-with-ddd
+
+  ISql 구현
 ---
 컨테이너
 배포
@@ -13,14 +15,19 @@ DTO
 OpenTelemetry
 OpenSeaarch(Grafana...)
 성능 테스트
+  https://github.com/RickStrahl/HighPerformanceAspNet
 ---
 UseCase 인터페이스 호출 IValidationResult -> 데코레이터패턴
 https://blog.postsharp.net/decorator-pattern
-
-
 ```
 
+- blog 엔진 소스
+  - https://github.com/linkdotnet/Blog
+
 https://codewithmukesh.com/blog/global-exception-handling-in-aspnet-core/?utm_source=github&utm_medium=social&utm_campaign=repository
+
+- [CQRS 패턴](https://learn.microsoft.com/ko-kr/azure/architecture/patterns/cqrs)
+  - 쿼리는 데이터베이스를 수정하지 않습니다. 쿼리는 도메인 정보를 캡슐화하지 않는 **DTO를 반환합니다.**
 
 ```powershell
 # 코딩 스타일

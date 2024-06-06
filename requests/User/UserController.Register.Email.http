@@ -1,0 +1,30 @@
+
+@hostname=localhost
+@port=54011
+@host = http://{{hostname}}:{{port}}
+@contentType = application/json
+
+
+### Failure: Email
+POST {{host}}/api/user/register
+content-type: application/json
+
+{
+    "username": "Lucas",
+    "email": "lucas@fun.com",
+    "password": "123456789#aB",
+    "confirmPassword": "123456789#aB"
+}
+
+# {
+#   "type": "ValidationError",
+#   "title": "ValidationError",
+#   "status": 400,
+#   "detail": "A validation problem occurred.",
+#   "errors": [
+#     {
+#       "code": "DomainErrors.Email.EmailAlreadyTaken",
+#       "message": "Email is already taken. the current value is lucas@fun.com."
+#     }
+#   ]
+# }
