@@ -77,7 +77,9 @@
 - [ ] 소스 | [How To Use Domain-Driven Design In Clean Architecture](https://www.youtube.com/watch?v=1Lcr2c3MVF4)
 - [ ] 소스 | [Refactoring From Transaction Script to Domain-Driven Design](https://www.youtube.com/watch?v=KTSpDZNfjhU)
 - [ ] 소스 | [Domain-Driven Refactoring - Jimmy Bogard](https://www.youtube.com/watch?v=f64tZ90Dntg)
-
+- [ ] 문서 | [Repeatable execution](https://blog.ploeh.dk/2020/03/23/repeatable-execution/)
+- [ ] 문서 | [Repeatable execution in C#](https://blog.ploeh.dk/2020/04/06/repeatable-execution-in-c/)
+- [ ] 문서 | [Discerning and maintaining purity](https://blog.ploeh.dk/2020/02/24/discerning-and-maintaining-purity/)
 
 ## EF Core
 - [ ] 소스 | [efcore-concurrency-handling](https://github.com/kgrzybek/efcore-concurrency-handling)
