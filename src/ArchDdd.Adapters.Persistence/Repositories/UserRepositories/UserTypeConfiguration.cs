@@ -4,7 +4,7 @@ using ArchDdd.Domain.AggregateRoots.Users;
 using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using static ArchDdd.Adapters.Persistence.Abstractions.Constants.Constants;
+using static ArchDdd.Adapters.Persistence.Abstractions.Constants.DbConstants;
 
 namespace ArchDdd.Adapters.Persistence.Repositories.UserRepositories;
 

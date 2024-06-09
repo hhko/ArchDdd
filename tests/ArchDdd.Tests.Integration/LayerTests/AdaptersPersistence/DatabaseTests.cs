@@ -1,4 +1,4 @@
-using ArchDdd.Adapters.Infrastructure.Options;
+using ArchDdd.Adapters.Persistence.Options.Database;
 using ArchDdd.Tests.Integration.Abstractions.Fixtures;
 using Microsoft.Extensions.Options;
 using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants;

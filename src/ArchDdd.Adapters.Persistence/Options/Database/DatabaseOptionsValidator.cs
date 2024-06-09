@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Options;
 using PrimitiveUtilities;
 
-namespace ArchDdd.Adapters.Infrastructure.Options;
+namespace ArchDdd.Adapters.Persistence.Options.Database;
 
 public class DatabaseOptionsValidator
     : IValidateOptions<DatabaseOptions>

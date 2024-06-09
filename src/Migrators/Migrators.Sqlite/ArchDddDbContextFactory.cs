@@ -13,7 +13,7 @@ public sealed class ArchDddDbContextFactory : IDesignTimeDbContextFactory<ArchDd
         // ArchDdd.db
         optionsBuilder.UseSqlite($"Data Source={nameof(ArchDdd)}.db", optionBuilder =>
         {
-            // Migrators.Sqlite
+            // Migrators.Sqlite.dll
             optionBuilder.MigrationsAssembly($"{nameof(Migrators)}.{nameof(Sqlite)}");
         });
 

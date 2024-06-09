@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 
-namespace ArchDdd.Adapters.Infrastructure.Options;
+namespace ArchDdd.Adapters.Persistence.Options.Database;
 
 internal sealed class DatabaseOptionsSetup(
     IConfiguration configuration,
@@ -30,5 +30,15 @@ internal sealed class DatabaseOptionsSetup(
         _configuration
             .GetSection(_configurationSectionName)
             .Bind(options);
+
+        // Provider 출력?
+        //services.AddOptions<DatabaseSettings>()
+        //    .BindConfiguration(nameof(DatabaseSettings))
+        //    .PostConfigure(databaseSettings =>
+        //    {
+        //        _logger.Information("Current DB Provider: {dbProvider}", databaseSettings.DBProvider);
+        //    })
+        //    .ValidateDataAnnotations()
+        //    .ValidateOnStart();
     }
 }

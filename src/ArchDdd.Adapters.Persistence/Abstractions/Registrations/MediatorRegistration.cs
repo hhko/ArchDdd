@@ -1,7 +1,6 @@
 ﻿using ArchDdd.Adapters.Persistence.Abstractions.Pipelines;
-using Microsoft.Extensions.DependencyInjection;
 
-namespace ArchDdd.Adapters.Persistence.Abstractions.Registrations;
+namespace Microsoft.Extensions.DependencyInjection;
 
 internal static class MediatorRegistration
 {
@@ -9,7 +8,7 @@ internal static class MediatorRegistration
     {
         services.AddMediatR(configuration =>
         {
-            configuration.RegisterServicesFromAssembly(Adapters.Persistence.AssemblyReference.Assembly);
+            configuration.RegisterServicesFromAssembly(ArchDdd.Adapters.Persistence.AssemblyReference.Assembly);
 
             // Behavior 순서는 중요하다.
             configuration.AddOpenBehavior(typeof(CommandTransactionPipeline<,>));

@@ -3,9 +3,9 @@ using ArchDdd.Domain.AggregateRoots.Users;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
-internal static class RepositoriesRegistration
+internal static class DatabaseRepositoriesRegistration
 {
-    internal static IServiceCollection RegisterRepositories(this IServiceCollection services)
+    internal static IServiceCollection RegisterDatabaseRepositories(this IServiceCollection services)
     {
         services.AddScoped<IUserRepository, UserRepository>();
 

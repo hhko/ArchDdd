@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace Migrators.Sqlite;
+namespace Migrators.PostgreSQL;
 
 public sealed class ArchDddDbContextFactory : IDesignTimeDbContextFactory<ArchDddDbContext>
 {
@@ -10,11 +10,11 @@ public sealed class ArchDddDbContextFactory : IDesignTimeDbContextFactory<ArchDd
     {
         var optionsBuilder = new DbContextOptionsBuilder<ArchDddDbContext>();
 
-        // ArchDdd.db
-        optionsBuilder.UseSqlite($"Data Source={nameof(ArchDdd)}.db", optionBuilder =>
+        // "Host=my_host;Database=my_db;Username=my_user;Password=my_pw"
+        optionsBuilder.UseNpgsql("", optionBuilder =>
         {
-            // Migrators.Sqlite
-            optionBuilder.MigrationsAssembly($"{nameof(Migrators)}.{nameof(Sqlite)}");
+            // Migrators.PostgreSQL.dll
+            optionBuilder.MigrationsAssembly($"{nameof(Migrators)}.{nameof(PostgreSQL)}");
         });
 
         return new ArchDddDbContext(optionsBuilder.Options);

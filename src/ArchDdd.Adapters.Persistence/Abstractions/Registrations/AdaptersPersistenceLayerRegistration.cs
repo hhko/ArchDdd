@@ -1,6 +1,4 @@
-﻿using ArchDdd.Adapters.Persistence.Abstractions.Registrations;
-
-namespace Microsoft.Extensions.DependencyInjection;
+﻿namespace Microsoft.Extensions.DependencyInjection;
 
 public static class AdaptersPersistenceLayerRegistration
 {
@@ -17,9 +15,10 @@ public static class AdaptersPersistenceLayerRegistration
         this IServiceCollection services)
     {
         services
+            .RegisterOptions()
             .RegisterDatabaseContext()
+            .RegisterDatabaseRepositories()
             .RegisterBackgroundJobs()
-            .RegisterRepositories()
             .RegisterMediator();
 
         return services;
