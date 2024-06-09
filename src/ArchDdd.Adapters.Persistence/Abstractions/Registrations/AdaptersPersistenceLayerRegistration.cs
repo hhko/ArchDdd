@@ -1,4 +1,6 @@
-﻿namespace Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Hosting;
+
+namespace Microsoft.Extensions.DependencyInjection;
 
 public static class AdaptersPersistenceLayerRegistration
 {
@@ -12,11 +14,12 @@ public static class AdaptersPersistenceLayerRegistration
     //}
 
     public static IServiceCollection RegisterAdaptersPersistenceLayer(
-        this IServiceCollection services)
+        this IServiceCollection services,
+        IHostEnvironment environment)
     {
         services
             .RegisterOptions()
-            .RegisterDatabaseContext()
+            .RegisterDatabaseContext(environment.IsDevelopment())
             .RegisterDatabaseRepositories()
             .RegisterBackgroundJobs()
             .RegisterMediator();

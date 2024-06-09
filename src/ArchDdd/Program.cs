@@ -11,7 +11,7 @@ builder
 
 builder.Services
     .RegisterAdaptersInfrastructureLayer(builder.Logging)
-    .RegisterAdaptersPersistenceLayer()
+    .RegisterAdaptersPersistenceLayer(builder.Environment)
     .RegisterAdaptersPresentationLayer()
     .RegisterApplicationLayer();
 

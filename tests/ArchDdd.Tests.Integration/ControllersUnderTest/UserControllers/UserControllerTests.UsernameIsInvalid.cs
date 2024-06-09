@@ -1,7 +1,9 @@
 ﻿using ArchDdd.Application.UseCases.Users.Commands.RegisterUser;
 using ArchDdd.Tests.Integration.Abstractions.WebApi;
+using Google.Protobuf.WellKnownTypes;
 using System.Collections;
 using System.Net.Http.Json;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 
 namespace ArchDdd.Tests.Integration.ControllersUnderTest.UserControllers;
@@ -29,8 +31,8 @@ public sealed partial class UserControllerTests
     {
         public IEnumerator<object[]> GetEnumerator()
         {
-            yield return new object[] 
-            { 
+            yield return new object[]
+            {
                 "Empty",
                 new RegisterUserCommand(
                     Username: "",                                   // Invalid: Emtpy
@@ -38,8 +40,8 @@ public sealed partial class UserControllerTests
                     Password: "123456890#aB",
                     ConfirmPassword: "123456890#aB")
             };
-            yield return new object[] 
-            { 
+            yield return new object[]
+            {
                 "TooLong",
                 new RegisterUserCommand(
                     Username: "1234567890123456789012345678901",    // Invalid: TooLong > 30
@@ -47,7 +49,7 @@ public sealed partial class UserControllerTests
                     Password: "123456890#aB",
                     ConfirmPassword: "123456890#aB")
             };
-            yield return new object[] 
+            yield return new object[]
             {
                 "ContainsIllegalCharacter",
                 new RegisterUserCommand(

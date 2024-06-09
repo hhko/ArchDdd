@@ -12,8 +12,8 @@ namespace Microsoft.Extensions.DependencyInjection;
 internal static class DatabaseContextRegistration
 {
     internal static IServiceCollection RegisterDatabaseContext(
-        this IServiceCollection services)
-    //    bool isDevelopment)
+        this IServiceCollection services,
+        bool isDevelopment)
     {
         services.AddDbContextPool<ArchDddDbContext>((serviceProvider, optionsBuilder) =>
         {
@@ -21,19 +21,19 @@ internal static class DatabaseContextRegistration
 
             optionsBuilder.UseDatabase(databaseOptions);
 
-            //if (isDevelopment)
-            //{
-            optionsBuilder.EnableDetailedErrors();
-            optionsBuilder.EnableSensitiveDataLogging();
-            optionsBuilder.ConfigureWarnings(warnings =>
+            if (isDevelopment)
             {
-                warnings.Log(new Logging.EventId[]
+                optionsBuilder.EnableDetailedErrors();
+                optionsBuilder.EnableSensitiveDataLogging();
+                optionsBuilder.ConfigureWarnings(warnings =>
                 {
-                    CoreEventId.FirstWithoutOrderByAndFilterWarning,
-                    CoreEventId.RowLimitingOperationWithoutOrderByWarning
+                    warnings.Log(new Logging.EventId[]
+                    {
+                        CoreEventId.FirstWithoutOrderByAndFilterWarning,
+                        CoreEventId.RowLimitingOperationWithoutOrderByWarning
+                    });
                 });
-            });
-            //}
+            }
         });
 
         services.AddScoped(typeof(IUnitOfWork<>), typeof(UnitOfWork<>));

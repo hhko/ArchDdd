@@ -1,10 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
-using Microsoft.AspNetCore.Hosting;
 using NSubstitute;
 using Microsoft.Extensions.Logging;
 using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants;
 using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants.IntegrationTest;
+using Microsoft.Extensions.Hosting;
 
 namespace ArchDdd.Tests.Integration.Abstractions.Fixtures;
 
@@ -47,11 +47,14 @@ public static class ServiceProviderFactory
         var services = new ServiceCollection();
         var configurations = GetConfiguration();
 
+        IHostEnvironment environment = Substitute.For<IHostEnvironment>();
+        environment.IsDevelopment().Returns(true);
+
         services
             .AddTransient(_ => configurations)
-            .AddTransient(_ => Substitute.For<IWebHostEnvironment>())
+            .AddTransient(_ => environment)
             .RegisterAdaptersInfrastructureLayer(Substitute.For<ILoggingBuilder>())
-            .RegisterAdaptersPersistenceLayer();
+            .RegisterAdaptersPersistenceLayer(environment);
 
         return services.BuildServiceProvider();
     }
