@@ -26,7 +26,7 @@ If builders built buildings the way programmers wrote programs, then the first w
 ![](./img/soc.png)
 
 ## 참고 자료
-### 소프트웨어 아키텍처의 중요성 
+### 소프트웨어 아키텍처의 중요성
 [![](https://img.youtube.com/vi/4E1BHTvhB7Y/0.jpg)](https://www.youtube.com/watch?v=4E1BHTvhB7Y)
 
 ### 테스트 주도 개발(TDD)의 장단점

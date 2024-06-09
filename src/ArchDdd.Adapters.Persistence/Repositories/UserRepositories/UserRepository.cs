@@ -104,11 +104,4 @@ public class UserRepository : IUserRepository
             .SqlQuery<T>(sql)
             .FirstOrDefaultAsync(cancellationToken);
     }
-
-    public async Task<bool> SqlQuerySingleAsync(FormattableString sql, CancellationToken cancellationToken)
-    {
-        return await _dbContext.Database
-            .SqlQuery<bool>(sql)
-            .AnyAsync(cancellationToken);
-    }
 }

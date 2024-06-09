@@ -11,7 +11,7 @@ using static ArchDdd.Domain.AggregateRoots.Users.Errors.DomainErrors;
 
 namespace ArchDdd.Application.UseCases.Users.Commands.AddPermissionToRole;
 
-internal sealed class AddPermissionToRoleCommandHandler(
+internal sealed class AddPermissionToRoleCommandUseCase(
     IUserRepository userRepository,
     IValidator validator)
     : ICommandUseCase<AddPermissionToRoleCommand>

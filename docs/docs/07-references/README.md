@@ -78,20 +78,19 @@
 - [ ] 소스 | [Refactoring From Transaction Script to Domain-Driven Design](https://www.youtube.com/watch?v=KTSpDZNfjhU)
 - [ ] 소스 | [Domain-Driven Refactoring - Jimmy Bogard](https://www.youtube.com/watch?v=f64tZ90Dntg)
 
+### MediatR
+- [ ] 영상 | [MediatR in depth](https://www.youtube.com/watch?v=BcQVuuMQrJs&list=PLtgaC3-iBpdjckV1yLezLNeJwRpOnY5XT)
 
 ## EF Core
 - [ ] 소스 | [efcore-concurrency-handling](https://github.com/kgrzybek/efcore-concurrency-handling)
-
 
 ## ASP.NET
 - [ ] 문서 | [Using the ProblemDetails Class in ASP.NET Core Web API](https://code-maze.com/using-the-problemdetails-class-in-asp-net-core-web-api/)
 - [ ] 소스 | [AspNetCoreDiagnosticScenarios](https://github.com/davidfowl/AspNetCoreDiagnosticScenarios)
 
-
 ## Primitives
 - [ ] 문서 | [IComparable vs IComparer vs Comparison Delegate](https://code-maze.com/csharp-icomparable-icomparer-comparison-delegate/)
 - [ ] 문서 | [문자열 이야기 (6) - Equals 와 == 연산자](http://www.simpleisbest.net/archive/2005/08/17/206.aspx)
-
 
 ## 테스트
 ### 단위 테스트
