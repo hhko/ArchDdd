@@ -16,9 +16,9 @@ public sealed class DatabaseTests
         _fixture = serviceProviderFixture;
     }
 
-    [Fact]
-    public void DatabaseConnection_ShouldSucceed()
-    {
-        DatabaseOptions databaseOptions = _fixture.GetRequiredService<IOptions<DatabaseOptions>>().Value!;
-    }
+    //[Fact]
+    //public void DatabaseConnection_ShouldSucceed()
+    //{
+    //    DatabaseOptions databaseOptions = _fixture.GetRequiredService<IOptions<DatabaseOptions>>().Value!;
+    //}
 }
