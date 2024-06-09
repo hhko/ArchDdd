@@ -24,12 +24,18 @@
 관심사를 **비즈니스와 기술**로 분리하고, **비즈니스 유스케이스 중심**으로 관심사를 구성합니다.
 ![](./docs//docs/01-architecture/01-overview/img/soc.png)
 
+## 아키텍처 솔루션 구성
+![](./docs/docs/01-architecture/02-rules/img/SolutionExplorer.png)
 
-### 소프트웨어 아키텍처의 중요성 
+- 관심사를 레이어 단위로 관리합니다.
+  - **기술 관심사**
+    - `Adapter`: 외부 시스템과의 상호작용
+  - **비즈니스 관심사**
+    - `Application`: UseCase
+    - `Domain`: AggregateRoot
+
+### 소프트웨어 아키텍처의 중요성
 [![](https://img.youtube.com/vi/4E1BHTvhB7Y/0.jpg)](https://www.youtube.com/watch?v=4E1BHTvhB7Y)
-
-### 테스트 주도 개발(TDD)의 장단점
-[![](https://img.youtube.com/vi/eRxc4PD6RN0/0.jpg)](https://www.youtube.com/watch?v=eRxc4PD6RN0)
 
 ## 개발 환경
 - .NET 8.x

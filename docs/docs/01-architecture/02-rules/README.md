@@ -5,7 +5,7 @@ sidebar_position: 2
 # 아키텍처 규칙
 
 ## 솔루션
-![](./img/2024-05-20-23-44-39.png)
+![](./img/SolutionExplorer.png)
 
 ```
 솔루션명
