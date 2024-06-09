@@ -28,22 +28,6 @@ internal sealed class GetUserByUsernameQueryUseCase(
 
     public async Task<IResult<GetUserByUsernameResponse>> Handle(GetUserByUsernameQuery query, CancellationToken cancellationToken)
     {
-        // info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-        //       Executed DbCommand(13ms) [
-        //          Parameters= [
-        //              p0 = 'Lucas'(Size = 5)
-        //          ],
-        //          CommandType = 'Text',
-        //          CommandTimeout = '1'
-        //       ]
-        //       SELECT "a"."Email", "a"."Id", "a"."Username"                   <-- 제거 방법은?
-        //       FROM(
-        //           SELECT "u"."Id", "u"."Username", "u"."Email"
-        //               FROM "User" AS "u"
-        //               WHERE "u"."Username" = @p0
-        //               LIMIT 1
-        //       ) AS "a"
-        //       LIMIT 1
         var response = await _userRepository.SqlQuerySingleAsync<GetUserByUsernameResponse>($"""
             SELECT "u"."Id", "u"."Username", "u"."Email"
                 FROM "User" AS "u"

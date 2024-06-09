@@ -1,5 +1,18 @@
 # 링크
 
+## 동영상
+### 아키텍처
+#### 아키텍처 정의와 중요성
+[![](https://img.youtube.com/vi/4E1BHTvhB7Y/0.jpg)](https://www.youtube.com/watch?v=4E1BHTvhB7Y)
+
+### DTO
+#### DTO와 도메인을 분리해야 하는 이유
+[![](https://img.youtube.com/vi/OV8e88kIU-U/0.jpg)](https://www.youtube.com/watch?v=OV8e88kIU-U)
+
+#### DTO는 어디서 사용하지
+[![](https://img.youtube.com/vi/Q3QGC-Llqr8/0.jpg)](https://www.youtube.com/watch?v=Q3QGC-Llqr8)
+
+
 ## 아키텍처
 ### 아키텍처 기초
 - [ ] 문서 | [아키텍처 (Architecture)란 무엇인가](https://brunch.co.kr/@taehyo/223)
@@ -126,3 +139,4 @@
 ## 구성
 ### 빌드 환경
 - [ ] 문서 | [Understand Directory.Build.props: Centralizing .NET Project Configurations](https://blog.ndepend.com/directory-build-props/)
+

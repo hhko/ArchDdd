@@ -1,17 +1,16 @@
 - [x] 설정에 Provider 지정
 - [x] 설정 Provider 기준으로 Use...
 - [x] 설정 N개 파일로 분리하기
+- [x] DTO 동영상 리뷰
+- [ ] Migration 실행
 
 ```
-
 EFCore
   배열: https://devblogs.microsoft.com/dotnet/array-mapping-in-ef-core-8/
   트랜잭션: IExecutionStrategy, 예외 발생시?
 DTO
   https://www.youtube.com/watch?v=Q3QGC-Llqr8&t=41s
   https://github.com/kgrzybek/modular-monolith-with-ddd
-
-  ISql 구현
 ---
 컨테이너
 배포
