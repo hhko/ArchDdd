@@ -2,6 +2,7 @@
 - [x] 설정 Provider 기준으로 Use...
 - [x] 설정 N개 파일로 분리하기
 - [x] DTO 동영상 리뷰
+- [x] xUnit 테스트 전용 .db 파일 지정
 - [ ] Migration 실행
 
 ```
