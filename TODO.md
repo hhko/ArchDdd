@@ -5,6 +5,12 @@
 - [x] xUnit 테스트 전용 .db 파일 지정
 - [ ] Migration 실행
 
+https://blog.jetbrains.com/dotnet/2013/09/03/duplicate-finder-part-of-resharper-command-line-tools/
+https://www.jetbrains.com/resharper/features/command-line.html
+https://blog.jetbrains.com/ko/2019/01/17/copypaste/
+
+https://github.com/dlidstrom/Duplo
+
 ```
 EFCore
   배열: https://devblogs.microsoft.com/dotnet/array-mapping-in-ef-core-8/

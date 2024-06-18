@@ -4,6 +4,10 @@ sidebar_position: 1
 
 # 아키텍처 이해
 
+## 아키텍처
+[![](https://img.youtube.com/vi/4E1BHTvhB7Y/0.jpg)](https://www.youtube.com/watch?v=4E1BHTvhB7Y)
+
+
 ## 아키텍처 중요성
 건축업자가 프로그래머의 프로그램 작성 방식에 따라 건물을 짓는다면 가장 먼저 도착하는 딱따구리가 문명을 파괴할 것입니다.  
 If builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy civilization. - Gerald Weinberg
@@ -24,10 +28,3 @@ If builders built buildings the way programmers wrote programs, then the first w
 
 관심사를 **비즈니스와 기술**로 분리하고, **비즈니스 유스케이스 중심**으로 관심사를 구성합니다.
 ![](./img/soc.png)
-
-## 참고 자료
-### 소프트웨어 아키텍처의 중요성
-[![](https://img.youtube.com/vi/4E1BHTvhB7Y/0.jpg)](https://www.youtube.com/watch?v=4E1BHTvhB7Y)
-
-### 테스트 주도 개발(TDD)의 장단점
-[![](https://img.youtube.com/vi/eRxc4PD6RN0/0.jpg)](https://www.youtube.com/watch?v=eRxc4PD6RN0)
