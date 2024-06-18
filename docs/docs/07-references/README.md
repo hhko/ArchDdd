@@ -1,17 +1,17 @@
 # 링크
 
-## 동영상
-### 아키텍처
-#### 아키텍처 정의와 중요성
+## 한국어
+### 아키텍처 정의와 중요성
 [![](https://img.youtube.com/vi/4E1BHTvhB7Y/0.jpg)](https://www.youtube.com/watch?v=4E1BHTvhB7Y)
 
-### DTO
-#### DTO와 도메인을 분리해야 하는 이유
+### DTO와 도메인을 분리해야 하는 이유
 [![](https://img.youtube.com/vi/OV8e88kIU-U/0.jpg)](https://www.youtube.com/watch?v=OV8e88kIU-U)
 
-#### DTO는 어디서 사용하지
+### DTO는 어디서 사용하지
 [![](https://img.youtube.com/vi/Q3QGC-Llqr8/0.jpg)](https://www.youtube.com/watch?v=Q3QGC-Llqr8)
 
+### 클린아키텍쳐로 이사가기
+[![](https://img.youtube.com/vi/G5s1ZQiPBv8/0.jpg)](https://www.youtube.com/watch?v=G5s1ZQiPBv8)
 
 ## 아키텍처
 ### 아키텍처 기초
