@@ -23,21 +23,78 @@ WinRM은 Windows Remote Management의 약자로 표준 SOAP(Simple Object Access
 ## WinRM 구성
 ### 관리자 서버
 ```powershell
-# PSRemoting 활성화
+#
+# 1. 사전 확인
+#   Powershell 버전 확인 : 3.0+
+#
+$PSVersionTable
+
+#
+# 2. PowerShell 원격 활성화 설정
+#   네트워크 카테고리가 Public이면 WinRM Authentication Basic을 사용할 수 없다.
+#
 Enable-PSRemoting -SkipNetworkProfileCheck -Force
+# Authentication Basic일 때
+#   Set-NetConnectionProfile -NetworkCategory Private
+#   Get-NetConnectionProfile
+#
+#  - 요청을 수신하도록 WinRM이 업데이트되었습니다.
+#  - WinRM 서비스 종류가 변경되었습니다.
+#  - WinRM 서비스를 시작했습니다.
+#  - 원격 관리를 위한 WinRM이 업데이트되었습니다.
+#  - WinRM 방화벽 예외를 사용합니다.
+#  - 로컬 사용자에게 원격으로 관리자 권한을 부여하도록 LocalAccountTokenFilterPolicy를 구성했습니다.
+#
+# Disable-PSRemoting -Force
+#
+#   winrm get winrm/config/service
+#       Get-ChildItem WSMan:\localhost\service
+#
+#   winrm e winrm/config/listener
+#       Get-ChildItem WSMan:\localhost\Listener
 
-# PSRemoting 5985/http 방화벽 허용
-New-NetFirewallRule -DisplayName "WinRM-HTTP-In-TCP" -Direction Inbound -Protocol TCP -LocalPort 5985 -Action Allow | Out-Null
+#
+# 3. 5985/tcp 방화벽 허용
+#
+New-NetFirewallRule -DisplayName "WinRM-HTTP-In-TCP" -Direction Inbound -Protocol TCP -LocalPort 5985 -Action Allow
+#   Set-NetFirewallProfile -Profile Domain, Public, Private -Enabled True
+#   Get-NetFirewallRule -Name 'WINRM-HTTP-In-TCP' | Select-Object -Property Name, Direction, Action
+#   Get-NetFirewallRule -Name winrm* | Select-Object Name, DisplayName, Profile, Enabled | Format-Table
 
-# TrustedHosts 신대 대상 추가
+#
+# 4. TrustedHosts 신대 대상 추가
+#
 Set-Item WSMAN:\localhost\Client\TrustedHosts * -Force | Out-Null
+#   Get-Item WSMAN:\localhost\Client\TrustedHosts
+
+#
+# 5. (Ansible 접속일 때 필수)RootSDDL에 계정 추가
+#  - Add-WinRMDaclRule.ps1: https://gist.github.com/jborean93/6d9aaf868d1d40344188984ebb431b04
+#  - AddSecurityPrincipalonDefaultWinRMSDDL.ps1: https://gist.github.com/jfrmilner/84314d79bf2708abff15313ff5f5d1ee
+#
+winrm configSDDL default
+
+#
+# 6. PowerShell 추가
+#
+Set-PssessionConfiguration microsoft.powershell -showsecuritydescriptor
+#   Get-PSSessionConfiguration | Format-Table -Property Name, Permission
+#   Name                   Permission
+#   ----                   ----------
+#   microsoft.powershell   NT AUTHORITY\INTERACTIVE AccessAllowed, 
+#                                   BUILTIN\Administrators AccessAllowed, 
+#                                   BUILTIN\Remote Management Users AccessAllowed, 
+#                                   {Non-Administrator 계정}
+
 
 #
 # 설정 확인
 #
 Get-Service -Name "WinRM"
-Get-NetFirewallRule -Name 'WINRM-HTTP-In-TCP' | Select-Object -Property Name, Direction, Action
-Get-Item WSMAN:\localhost\Client\TrustedHosts
+Get-LocalGroupMember -Group "Remote Management Users"
+    ObjectClass Name                    PrincipalSource
+    ----------- ----                    ---------------
+    User        {호스트 이름}\{계정 이름} Local                                
 ```
 
 ### 원격 서버
