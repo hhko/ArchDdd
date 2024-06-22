@@ -5,7 +5,7 @@ using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants;
 
 namespace ArchDdd.Tests.Integration.LayerTests.AdaptersPersistence;
 
-[Collection(CollectionName.ServiceProviderCollection)]
+[Collection(CollectionName.ServiceProviderCollectionDefinition)]
 [Trait(nameof(IntegrationTest), IntegrationTest.DatabaseOptions)]
 public sealed class DatabaseTests
 {

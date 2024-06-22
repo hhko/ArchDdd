@@ -8,11 +8,13 @@ using Microsoft.Extensions.Hosting;
 
 namespace ArchDdd.Tests.Integration.Abstractions.Fixtures;
 
-// ServiceProviderFixtureCollection          : Collection 사용
-// ServiceProviderFixtureCollectionFixture   : Collection 정의
-// ServiceProviderFixture                    : Fixture
+// ServiceProviderCollectionDefinition  : CollectionDefinition
+//                                         ↓
+// ServiceProviderCollectionFixture     : CollectionFixture
+//                                         ↓
+// ServiceProviderFixture               : Fixture
 
-[CollectionDefinition(CollectionName.ServiceProviderCollection)]
+[CollectionDefinition(CollectionName.ServiceProviderCollectionDefinition)]
 public sealed class ServiceProviderCollectionFixture
     : ICollectionFixture<ServiceProviderFixture>
 {

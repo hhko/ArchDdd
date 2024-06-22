@@ -4,13 +4,15 @@ using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
 using static ArchDdd.Tests.Integration.Abstractions.Constants.Constants;
 
-namespace ArchDdd.Tests.Integration.Abstractions.WebApi;
+namespace ArchDdd.Tests.Integration.Abstractions.Fixtures;
 
-// WebAppFactoryCollection          : Collection 사용
-// WebAppFactoryCollectionFixture   : Collection 정의
-// WebAppFactoryFixture             : Fixture
+// WebAppFactoryCollectionDefinition    : CollectionDefinition
+//                                         ↓
+// WebAppFactoryCollectionFixture       : CollectionFixture
+//                                         ↓
+// WebAppFactoryFixture                 : Fixture
 
-[CollectionDefinition(CollectionName.WebAppFactoryCollection)]
+[CollectionDefinition(CollectionName.WebAppFactoryCollectionDefinition)]
 public sealed class WebAppFactoryCollectionFixture
     : ICollectionFixture<WebAppFactoryFixture>
 {

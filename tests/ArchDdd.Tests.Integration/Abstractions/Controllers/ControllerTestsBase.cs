@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc.Testing;
+﻿using ArchDdd.Tests.Integration.Abstractions.Fixtures;
+using Microsoft.AspNetCore.Mvc.Testing;
 
-namespace ArchDdd.Tests.Integration.Abstractions.WebApi;
+namespace ArchDdd.Tests.Integration.Abstractions.Controllers;
 
 public abstract class ControllerTestsBase
 {

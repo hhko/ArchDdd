@@ -1,3 +1,11 @@
+- [ ] Persistence: Migration 개별 -> 통합
+- [ ] Persistence: DB -> 코드
+- [ ] Persistence: DB 변화 코드 확인(소스 생성기)?
+- [ ] Persistence: 코드 기반 DB 시각화?
+- [ ] Persistence: EF PowerTools 이해
+
+<br/>
+
 - [x] 설정에 Provider 지정
 - [x] 설정 Provider 기준으로 Use...
 - [x] 설정 N개 파일로 분리하기

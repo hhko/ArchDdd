@@ -1,12 +1,8 @@
 ﻿using ArchDdd.Application.UseCases.Users.Commands.RegisterUser;
-using ArchDdd.Tests.Integration.Abstractions.WebApi;
-using Google.Protobuf.WellKnownTypes;
 using System.Collections;
 using System.Net.Http.Json;
-using System.Reflection;
-using System.Runtime.CompilerServices;
 
-namespace ArchDdd.Tests.Integration.ControllersUnderTest.UserControllers;
+namespace ArchDdd.Tests.Integration.ControllerTests.UserControllers;
 
 public sealed partial class UserControllerTests
 {
