@@ -93,6 +93,7 @@
 
 ## EF Core
 - [ ] 소스 | [efcore-concurrency-handling](https://github.com/kgrzybek/efcore-concurrency-handling)
+- [ ] 영상 | [Mapping Domain-Driven Design Concepts To The Database With EF Core(IEntityTypeConfiguration)](https://www.youtube.com/watch?v=IlXnIe6p_Uk)
 
 ## ASP.NET
 - [ ] 문서 | [Using the ProblemDetails Class in ASP.NET Core Web API](https://code-maze.com/using-the-problemdetails-class-in-asp-net-core-web-api/)

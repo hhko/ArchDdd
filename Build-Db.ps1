@@ -24,3 +24,9 @@
 #
 # dotnet ef migrations list -p .\src\ArchDdd.Adapters.Persistence\
 # dotnet ef migrations remove -p .\src\ArchDdd.Adapters.Persistence\
+
+
+Unable to create a 'DbContext' of type ''. 
+The exception 'Unable to resolve service for type 
+    'Microsoft.EntityFrameworkCore.DbContextOptions' while attempting to activate 
+    '{프로젝트}.{클래스}DbContext'.' was thrown while attempting to create an instance.

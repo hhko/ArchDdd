@@ -1,8 +1,54 @@
 - [ ] Persistence: Migration 개별 -> 통합
+
+```
+Services.AddContext
+DbContext
+  OnConfiguring
+  {
+    .Use...
+  }
+
+  DbSet
+
+--- vs ---
+
+DbContext
+  OnModelCreating
+  {
+    ApplyConfigurationsFromAssembly
+  }
+IDesignTimeDbContextFactory
+  {
+    .Use
+  }
+IEntityTypeConfiguration
+
+
+OnConfig
+{
+  UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+}
+
+MigrationsHistoryTable(HistoryResitory
+  .DefaultTableName,
+  "xxx")
+```
+
 - [ ] Persistence: DB -> 코드
 - [ ] Persistence: DB 변화 코드 확인(소스 생성기)?
 - [ ] Persistence: 코드 기반 DB 시각화?
 - [ ] Persistence: EF PowerTools 이해
+- [ ] Persistence: Sqlite 기반 CRUD 테스트(데이터 초기화)
+- [ ] Persistence: IEntityTypeConfiguration 이해
+
+```
+컨테이너 기반 Sqlite
+컨테이너 기반 Sqlite 통합 테스트
+
+Specifications 패턴
+Outbox 패턴
+Cache
+```
 
 <br/>
 
