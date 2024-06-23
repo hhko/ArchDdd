@@ -28,13 +28,6 @@ internal sealed class GetUserByUsernameQueryUseCase(
 
     public async Task<IResult<GetUserByUsernameResponse>> Handle(GetUserByUsernameQuery query, CancellationToken cancellationToken)
     {
-        //var response = await _userRepository.SqlQuerySingleAsync<GetUserByUsernameResponse>($"""
-        //    SELECT "u"."Id", "u"."Username", "u"."Email"
-        //        FROM "User" AS "u"
-        //        WHERE "u"."Username" = {query.Username}
-        //        LIMIT 1
-        //    """, cancellationToken);
-
         var response = await _userRepository.SqlQuerySingleAsync<GetUserByUsernameResponse>($"""
             SELECT u.Id, u.Username, u.Email
                 FROM User AS u

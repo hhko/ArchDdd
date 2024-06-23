@@ -52,7 +52,7 @@
 //                //Console.WriteLine(args.Single());
 //            }
 //        }
-        
+
 //        //optionsBuilder.UseSqlite(configuration.GetConnectionString(DefaultConnection));
 
 //        optionsBuilder.UseSqlite(configuration.GetConnectionString(DefaultConnection), o =>
@@ -63,3 +63,46 @@
 //        return new ArchDddDbContext(optionsBuilder.Options);
 //    }
 //}
+
+using ArchDdd.Adapters.Persistence.Repositories;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
+
+public class ArchDddDbContextFactory : IDesignTimeDbContextFactory<ArchDddDbContext>
+{
+    public ArchDddDbContext CreateDbContext(string[] args)
+    {
+        //var configuration = new ConfigurationBuilder().AddJsonFile(ConnectionStringJsonFile).Build();
+
+        IConfigurationRoot configuration = new ConfigurationBuilder()
+            .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), $"../../{nameof(ArchDdd)}"))
+            .AddJsonFile("appsettings.json")
+            .AddCommandLine(args)
+            .Build();
+
+        //var optionsBuilder = new DbContextOptionsBuilder<ShopwayDbContext>();
+        var optionsBuilder = new DbContextOptionsBuilder<ArchDddDbContext>();
+
+        //if (args is not null && args.Contains(TestConnection) is true)
+        //{
+        //    optionsBuilder.UseSqlServer(configuration.GetConnectionString(TestConnection));
+        //}
+        //else if (args is not null && args.Length is 1)
+        //{
+        //    optionsBuilder.UseSqlServer(args.Single());
+        //}
+        //else
+        //{
+        //    optionsBuilder.UseSqlServer(configuration.GetConnectionString(DefaultConnection));
+        //}
+        optionsBuilder.UseSqlite("Data Source=Xyz.db");
+        //builder.UseSqlite($"Data Source={nameof(ArchDdd)}.db", optionsBuilder =>
+        //{
+        //    // Migrators.Sqlite.dll
+        //    optionsBuilder.MigrationsAssembly($"{nameof(Migrators)}.{nameof(Sqlite)}");
+        //});
+
+        return new ArchDddDbContext(optionsBuilder.Options);
+    }
+}

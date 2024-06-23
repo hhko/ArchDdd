@@ -6,8 +6,9 @@ var builder = WebApplication.CreateBuilder(new WebApplicationOptions
     ContentRootPath = Directory.GetCurrentDirectory()
 });
 
+// .json 파일
 builder
-    .AddConfigurations();
+    .AddJsonConfigurationFiles();
 
 builder.Services
     .RegisterAdaptersInfrastructureLayer(builder.Logging)

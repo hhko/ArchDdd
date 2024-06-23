@@ -48,7 +48,10 @@ dotnet ef migrations remove -p {마이그레이션_프로젝트}
 
 # 마이그레이션 적용 후 Rollback
 dotnet ef migrations list -p .{마이그레이션_프로젝트}
+
 dotnet ef database update {마이그레이션명} -p {마이그레이션_프로젝트}
+dotnet ef database update 0
+
 dotnet ef migrations remove -p {마이그레이션_프로젝트}
 ```
 
@@ -82,7 +85,7 @@ dotnet ef migrations remove -p .\src\ArchDdd.Adapters.Persistence\
   Done.
 ```
 ```powershell
-# Migrations 스크립트 생성
+# Migrations 생성
 dotnet ef migrations add init -p .\src\ArchDdd.Adapters.Persistence\
     Build started...
     Build succeeded.
@@ -105,7 +108,7 @@ dotnet ef database update -p .\src\ArchDdd.Adapters.Persistence\
 ```powershell
 # arguments 1개 전달
 // args[0] = "arg0 arg0"
-dotnet ef migrations add init -p .\src\ArchDdd.Adapters.Persistence\ -- "arg0 arg0"
+dotnet ef migrations add init -p .\src\ArchDdd.Adapters.Persistence\ -- "arg0"
 
 # arguments N개 전달
 // args[0] = arg0
@@ -116,6 +119,8 @@ dotnet ef migrations add init -p .\src\ArchDdd.Adapters.Persistence\ -- arg0 arg
 ```powershell
 dotnet ef database update
 dotnet ef database update -- --environment Production
+
+dotnet ef migrations add InitialMigration --ConnectionStrings:DefaultConnection="YourConnectionString"
 ```
 ```powershell
 Usage: dotnet ef migrations add [arguments] [options]

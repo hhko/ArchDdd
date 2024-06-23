@@ -1,0 +1,14 @@
+{
+  "OpenTelemetryOptions": {
+    "TeamName": "고형호",
+    "ApplicationName": "ArchDdd",
+    "Version": "1.0",
+    "OtlpCollectorHost": "localhost",
+    "Meters": [
+      "Microsoft.AspNetCore.Hosting",
+      "Microsoft.AspNetCore.Server.Kestrel",
+      "System.Net.Http",
+      "ArchDdd.Application"
+    ]
+  }
+}
