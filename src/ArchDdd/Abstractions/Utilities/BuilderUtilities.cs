@@ -7,9 +7,6 @@ public static class BuilderUtilities
     public static IHostApplicationBuilder AddJsonConfigurationFiles(this IHostApplicationBuilder builder)
     {
         var env = builder.Environment;
-
-        Console.WriteLine($"------------------------->");
-        Console.WriteLine($"{env.EnvironmentName}");
         string configurationsDirectory = Path.Combine(Path.GetDirectoryName(AssemblyReference.Assembly.Location)!, "Configurations");
 
         //builder.Configuration
