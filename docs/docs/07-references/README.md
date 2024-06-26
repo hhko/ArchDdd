@@ -1,11 +1,27 @@
 # 링크
 
+## 용어
+- `Value Object` : 비즈니스 용어를 나타내는 불변 객체
+- `Entity` : 속성이 아닌 식별성을 기준으로 정의되는 도메인 객체, 여러 Value Object로 구성(예: DB의 한 개 row)
+- `Service` : 도메인 객체에 포함할 수 없는 오퍼레이션 연산을 갖는 객체
+- `Aggregate` : 연관된 Value Object와 Entity의 묶음
+- `Factory` : 복잡한 Entity, Aggregate를 캡슐화하여 여러 객체를 동시에 생성
+- `Repository` : Aggregate의 영속성 및 등록·수정·삭제·조회 시 일관성 관리
+
 ## 한국어
-- [아키텍처 정의와 중요성](https://www.youtube.com/watch?v=4E1BHTvhB7Y)
-- [DTO와 도메인을 분리해야 하는 이유](https://www.youtube.com/watch?v=OV8e88kIU-U)
-- [DTO는 어디서 사용하지](https://www.youtube.com/watch?v=Q3QGC-Llqr8)
-- [클린아키텍쳐로 이사가기](https://www.youtube.com/watch?v=G5s1ZQiPBv8)
-- [지속 성장 가능한 코드를 만들어가는 방법](https://www.youtube.com/watch?v=RVO02Z1dLF8)
+- 영상 | [아키텍처 정의와 중요성](https://www.youtube.com/watch?v=4E1BHTvhB7Y)
+- 영상 | [DTO와 도메인을 분리해야 하는 이유](https://www.youtube.com/watch?v=OV8e88kIU-U)
+- 영상 | [DTO는 어디서 사용하지](https://www.youtube.com/watch?v=Q3QGC-Llqr8)
+- 영상 | [클린아키텍쳐로 이사가기](https://www.youtube.com/watch?v=G5s1ZQiPBv8)
+- 영상 | [지속 성장 가능한 코드를 만들어가는 방법](https://www.youtube.com/watch?v=RVO02Z1dLF8)
+- 문서 | [마이크로서비스 내부아키텍처 - 1회 : 데이터 중심 아키텍처의 문제점](https://engineering-skcc.github.io/microservice%20inner%20achitecture/inner-architecture-1/)
+- 문서 | [마이크로서비스 내부아키텍처 - 2회 : 클린 아키텍처와 헥사고널 아키텍처](https://engineering-skcc.github.io/microservice%20inner%20achitecture/inner-architecture-2/)
+- 문서 | [마이크로서비스 내부아키텍처 - 3회 : 어플리케이션 구성 패턴](https://engineering-skcc.github.io/microservice%20inner%20achitecture/inner-architecture-3/)
+- 문서 | [레거시 시스템의 새로운 비즈니스 가치 창출 - IT 현대화(Modernization) 방안과 사례](https://www.samsungsds.com/kr/insights/it_modernization.html?referrer=https://www.google.com/)
+- 문서 | [박용우 1회, 제임스 루이스와 마틴 파울러의 MSA](https://www.datanet.co.kr/news/articleView.html?idxno=176304)
+- 문서 | [박용우 2회, 처음부터 MSA로 시작하는 것은 위험하다](https://www.datanet.co.kr/news/articleView.html?idxno=177591)
+- 문서 | [박용우 3회, 서비스 메시와 아키텍처 결정 포인트](https://www.datanet.co.kr/news/articleView.html?idxno=179757)
+- 문서 | [박용우 4회, NCD 기반 애플리케이션 현대화](https://www.datanet.co.kr/news/articleView.html?idxno=181865)
 
 ## 아키텍처
 ### 아키텍처 기초
