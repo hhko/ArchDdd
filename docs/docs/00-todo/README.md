@@ -1,13 +1,14 @@
-## 할일
+# 할일
 
 1. **솔루션 구성**
    - 솔루션 설정
      - [ ] 빌드 버전
      - [ ] 빌드 옵션
      - [ ] 패키지 버전
+     - [ ] appsettings.json/launchSettings.json
    - 프로젝트 레이어
      - [ ] 레이어 이름 규칙
-     - [ ] 레이어 의존성
+     - [ ] 레이어 의존성 등록
      - [ ] 어셈블리
    - 코드 매트릭
      - [ ] 코드 정적 분석
@@ -27,9 +28,11 @@
      - [ ] Value Object
      - [ ] Entity
      - [ ] EntityId
+     - [ ] Auditable
      - [ ] Aggregate Root
      - [ ] Domain Event
      - [ ] Enumeration(패키지 도입)
+     - [ ] Specification
    - 출력 타입(패키지 도입?)
      - [ ] Result
      - [ ] ValidationResult
@@ -76,7 +79,7 @@
      - [ ] Container
      - [ ] Background Job
    - Web
-     - [ ] WebApi
+     - [ ] WebApi(FastEndpoints?)
      - [ ] Swagger
    - Message
      - [ ] RabbitMQ
@@ -86,6 +89,7 @@
      - [ ] Cache
    - Network
      - [ ] FtP
+     - [ ] gRPC
    - Resource
      - [ ] 다국어
 1. **Test Automation**
@@ -97,15 +101,25 @@
      - [ ] 의존성
      - [ ] 코딩컨벤션
    - 통합 테스트
+     - [ ] 옵션
+   - 통합 테스트, 운영
      - [ ] Container
      - [ ] Background Job
-     - [ ] WebApi
+   - 통합 테스트, Web
+     - [ ] WebApi(FastEndpoints?)
+     - [ ] Swagger
+   - 통합 테스트, Message
      - [ ] RabbitMQ
+   - 통합 테스트, Database
      - [ ] PostgreSQL
      - [ ] Sqlite
-     - [ ] Database 초기화
+     - [ ] Cache
+   - 통합 테스트, Network
      - [ ] FtP
-   - 성능 테스트
+     - [ ] gRPC
+   - 통합 테스트, Resource
+     - [ ] 다국어
+   - 통합 테스트, 성능 테스트
      - [ ] ?
    - E2E 테스트
      - [ ] ?
@@ -133,6 +147,7 @@
      - [ ] Web
    - Health Check
      - [ ] Container
+       - [Clean Architecture Template, SSW](https://github.com/SSWConsulting/SSW.CleanArchitecture)
      - [ ] WebApi
      - [ ] PostgreSQL
      - [ ] RabbitMQ
@@ -153,3 +168,31 @@
      - [ ] 프로젝트 다이어그램
      - [ ] 데이터베이스 스키마 다이어그램
      - [ ] 중요 인터페이스 클래스 다이어그램
+1. 사례
+   - [ ] [Clean Architecture Template, Ardalis](https://github.com/ardalis/CleanArchitecture)
+   - [ ] [Clean Architecture Template, Amichai Mantinband](https://github.com/amantinband/clean-architecture)
+   - [ ] [Clean Architecture Template, Jason Taylordev](https://github.com/jasontaylordev/CleanArchitecture)
+   - [ ] [Clean Architecture Template, SSW](https://github.com/SSWConsulting/SSW.CleanArchitecture)
+     ```
+     Application
+     public static IServiceCollection AddApplication(this IServiceCollection services)
+     {
+         services.AddMediatR(config =>
+         {
+             config.AddOpenBehavior(typeof(UnhandledExceptionBehaviour<,>));      <- 어셈블리 기준
+             config.AddOpenBehavior(typeof(ValidationBehaviour<,>));
+             config.AddOpenBehavior(typeof(PerformanceBehaviour<,>));
+         });
+         return services;
+     }
+     ```
+   - [ ] [Clean Architecture Template, Phong Nguyen](https://github.com/phongnguyend/Practical.CleanArchitecture)
+   - [ ] [Clean Architecture Template, Casey](https://github.com/cbcrouse/CleanArchitecture)
+   - [ ] [modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd)
+
+```
+사용자_정의_입력(Primitive 매개변수, 사용자 정의 DTO, ...)
+  : IRequest<출력_Primitive 매개변수 or 출력_사용자 정의 DTO>
+
+Assembly.GetExecutingAssembly()
+```
