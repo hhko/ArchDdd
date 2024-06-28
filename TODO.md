@@ -1,3 +1,5 @@
+- [x] 할일 문서 정리
+- [ ] 기존 코드 이해
 - [ ] Persistence: Migration 개별 -> 통합
 
 ```
