@@ -202,8 +202,10 @@
 - DDD
   - [tdd-ddd-demo-dotnet](https://github.com/chrissimon-au/tdd-ddd-demo-dotnet), [영상](https://www.youtube.com/watch?v=gXz7gKtRVpM)
   - [Stop using Entity Framework as a DTO provider!](https://github.com/ChrisKlug/efcore-dto-demo/tree/main), [영상](https://www.youtube.com/watch?v=N_eLotlcjXo)
+  - [better-code-with-ddd](https://github.com/asc-lab/better-code-with-ddd/tree/ef_core)
 - CQRS
   - [CQRS in Practice](https://github.com/vkhorikov/CqrsInPractice)
+  - [dotnet-cqrs-intro](https://github.com/asc-lab/dotnet-cqrs-intro/tree/master)
 
 ```
 사용자_정의_입력(Primitive 매개변수, 사용자 정의 DTO, ...)
