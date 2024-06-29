@@ -1,7 +1,7 @@
 # 할일
 
 ## 로드맵
-- **1단계**: 템플릿 생성 <- 현재
+- **1단계**: 템플릿 생성(_현재_)
   - 기능 구현
   - 기능 예제
   - 템플릿
@@ -193,7 +193,7 @@
 - [ ] 중요 인터페이스 클래스 다이어그램
 
 ## 사례
-### 클린 아키텍처
+### 아키텍처
 - [ ] [Clean Architecture Template, Ardalis](https://github.com/ardalis/CleanArchitecture)
 - [ ] [Clean Architecture Template, Amichai Mantinband](https://github.com/amantinband/clean-architecture)
 - [ ] [Clean Architecture Template, Jason Taylordev](https://github.com/jasontaylordev/CleanArchitecture)
@@ -214,6 +214,7 @@
 - [ ] [Clean Architecture Template, Phong Nguyen](https://github.com/phongnguyend/Practical.CleanArchitecture)
 - [ ] [Clean Architecture Template, Casey](https://github.com/cbcrouse/CleanArchitecture)
 - [ ] [modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd)
+- [ ] [VerticalSliceArchitecture](https://github.com/nadirbad/VerticalSliceArchitecture/tree/main)
 ### DDD
 - [tdd-ddd-demo-dotnet](https://github.com/chrissimon-au/tdd-ddd-demo-dotnet), [영상](https://www.youtube.com/watch?v=gXz7gKtRVpM)
 - [Stop using Entity Framework as a DTO provider!](https://github.com/ChrisKlug/efcore-dto-demo/tree/main), [영상](https://www.youtube.com/watch?v=N_eLotlcjXo)

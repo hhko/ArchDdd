@@ -1,6 +1,15 @@
 - [x] 할일 문서 정리
 - [ ] 기존 코드 이해
 - [ ] Persistence: Migration 개별 -> 통합
+- [ ] [How to Use FakeLogger to Test Logging Code in .NET](https://code-maze.com/dotnet-how-to-use-fakelogger/)
+  - https://johnnyreilly.com/snapshot-log-tests-dotnet
+  - https://blog.elmah.io/testing-logging-code-with-microsoft-extensions-logging-and-fakelogger/
+  - https://devblogs.microsoft.com/dotnet/fake-it-til-you-make-it-to-production/
+
+
+https://www.mytechramblings.com/posts/getting-started-with-opentelemetry-metrics-and-dotnet-part-1/
+https://www.mytechramblings.com/posts/getting-started-with-opentelemetry-metrics-and-dotnet-part-2/
+https://github.com/karlospn/opentelemetry-metrics-demo
 
 ```
 Services.AddContext

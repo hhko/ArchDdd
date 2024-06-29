@@ -1,10 +1,12 @@
 # CLEAN ARCHITECTURE and DOMAIN-DRIVEN DESIGN
+> 지속 가능한 코드 성장을 위한 클린 아키텍처와 도메인 주도 설계의 예술
+
 [![ArchDdd Build](https://github.com/hhko/ArchDdd/actions/workflows/build.yml/badge.svg)](https://github.com/hhko/ArchDdd/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/hhko/ArchDdd/graph/badge.svg?token=VK8HUZTA7K)](https://codecov.io/gh/hhko/ArchDdd)
 
-> Learning is **Excitement(설렘)**.  
-> Learning is **Humility(겸손)**.  
-> Learning is **Altruism(이타심)**.
+> 배움은 **설렘**이다.  
+> 배움은 **겸손**이다.  
+> 배움은 **이타심**이다.
 
 ## 목표
 디자인 타임(클린 아키텍처와 도메인 주도 설계)을 런타임(관찰 가능성) 정량 데이터로 지속적으로 성장 시킵니다.
