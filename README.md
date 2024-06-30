@@ -7,8 +7,9 @@
 > 배움은 **겸손**이다.  
 > 배움은 **이타심**이다.
 
-## Goal
-We use runtime data (observability) to measure compile time (clean architecture and domain-driven design) and continuously improve our code.
+## GOAL
+- We use **runtime data(observability)** to measure **compile time(clean architecture and domain-driven design)** and continuously improve our code.
+- We can identify **code placements(clean architecture and domain-driven design)** according to requirements.
 
 ![](./.images/Goal.png)
 
