@@ -1,6 +1,26 @@
+- [ ] Permission 클래스
+- [ ] Permission 데이터베이스화
+- [ ] Permission API 이해
+- [ ] NXM 관계 api
+---
+- [ ] NxM 관계 api 통합 테스트
+- [ ] 통합 테스트 데이터베이스 초기화 복원
+---
+- [ ] 데이터베이스 다이어그램
+---
+- [ ] HasConversion 소스 생성기
+
+## 2024-06-30(일)
 - [x] 할일 문서 정리
-- [ ] 기존 코드 이해
-- [ ] Persistence: Migration 개별 -> 통합
+- [x] 기존 코드 이해
+- [x] ~~Persistence: Migration 개별 -> 통합~~
+- [x] NxM 관계 이해 및 EFCore 구현: User NxM Role
+- [x] Role 기본 데이터 EFCore 구현
+- [x] dotnet ef 명령어 스크립트화
+
+
+<br/>
+
 - [ ] [How to Use FakeLogger to Test Logging Code in .NET](https://code-maze.com/dotnet-how-to-use-fakelogger/)
   - https://johnnyreilly.com/snapshot-log-tests-dotnet
   - https://blog.elmah.io/testing-logging-code-with-microsoft-extensions-logging-and-fakelogger/

@@ -1,7 +1,7 @@
 ﻿using ArchDdd.Domain.Abstractions.BaseTypes;
 using PrimitiveUtilities;
 
-namespace ArchDdd.Domain.AggregateRoots.Users.Enumerations;
+namespace ArchDdd.Domain.AggregateRoots.Users.Authorization;
 
 public sealed class Permission : Enumeration<Permission>
 {

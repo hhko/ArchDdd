@@ -17,24 +17,47 @@ namespace Migrators.Sqlite.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.6");
 
-            modelBuilder.Entity("ArchDdd.Domain.AggregateRoots.Users.Enumerations.Role", b =>
+            modelBuilder.Entity("ArchDdd.Domain.AggregateRoots.Users.Authorization.Role", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("VarChar(128)");
+
+                    b.HasKey("Name");
+
+                    b.ToTable("Role", "Master");
+
+                    b.HasData(
+                        new
+                        {
+                            Name = "Customer"
+                        },
+                        new
+                        {
+                            Name = "Employee"
+                        },
+                        new
+                        {
+                            Name = "Manager"
+                        },
+                        new
+                        {
+                            Name = "Administrator"
+                        });
+                });
+
+            modelBuilder.Entity("ArchDdd.Domain.AggregateRoots.Users.Authorization.RoleUser", b =>
+                {
+                    b.Property<string>("RoleName")
+                        .HasColumnType("VarChar(128)");
 
                     b.Property<string>("UserId")
                         .HasColumnType("Char(26)");
 
-                    b.HasKey("Id");
+                    b.HasKey("RoleName", "UserId");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Role");
+                    b.ToTable("RoleUser", "Master");
                 });
 
             modelBuilder.Entity("ArchDdd.Domain.AggregateRoots.Users.User", b =>
@@ -70,16 +93,19 @@ namespace Migrators.Sqlite.Migrations
                     b.ToTable("User", "Master");
                 });
 
-            modelBuilder.Entity("ArchDdd.Domain.AggregateRoots.Users.Enumerations.Role", b =>
+            modelBuilder.Entity("ArchDdd.Domain.AggregateRoots.Users.Authorization.RoleUser", b =>
                 {
-                    b.HasOne("ArchDdd.Domain.AggregateRoots.Users.User", null)
-                        .WithMany("Roles")
-                        .HasForeignKey("UserId");
-                });
+                    b.HasOne("ArchDdd.Domain.AggregateRoots.Users.Authorization.Role", null)
+                        .WithMany()
+                        .HasForeignKey("RoleName")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-            modelBuilder.Entity("ArchDdd.Domain.AggregateRoots.Users.User", b =>
-                {
-                    b.Navigation("Roles");
+                    b.HasOne("ArchDdd.Domain.AggregateRoots.Users.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

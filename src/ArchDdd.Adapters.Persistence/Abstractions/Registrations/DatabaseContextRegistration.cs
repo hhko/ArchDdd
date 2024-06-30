@@ -3,9 +3,7 @@ using ArchDdd.Adapters.Persistence.Options.Database;
 using ArchDdd.Adapters.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using Microsoft.Extensions.Options;
-using Quartz.Impl.AdoJobStore.Common;
-using static ArchDdd.Adapters.Persistence.Abstractions.Constants.DbConstants;
+using static ArchDdd.Adapters.Persistence.Abstractions.Constants.Constants;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
@@ -44,14 +42,16 @@ internal static class DatabaseContextRegistration
     {
         return databaseOptions.Provider.ToLowerInvariant() switch
         {
-            Provider.PostgreSQL => builder.UseNpgsql(databaseOptions.ConnectionString, options =>
-                {
-
-                }),
-            Provider.Sqlite => builder.UseSqlite(databaseOptions.ConnectionString, options =>
-                {
-                    options.CommandTimeout(databaseOptions.CommandTimeout);
-                }),
+            Provider.PostgreSQL => builder
+                .UseNpgsql(databaseOptions.ConnectionString, options =>
+                    {
+                        // TODO
+                    }),
+            Provider.Sqlite => builder
+                .UseSqlite(databaseOptions.ConnectionString, options =>
+                    {
+                        options.CommandTimeout(databaseOptions.CommandTimeout);
+                    }),
             _ => throw new InvalidOperationException($"DB Provider {databaseOptions.Provider} is not supported."),
         };
     }

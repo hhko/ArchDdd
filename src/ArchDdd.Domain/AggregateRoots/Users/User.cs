@@ -1,8 +1,8 @@
 ﻿using ArchDdd.Domain.Abstractions.BaseTypes.Contracts;
 using ArchDdd.Domain.Abstractions.BaseTypes;
-using ArchDdd.Domain.AggregateRoots.Users.Enumerations;
 using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
 using ArchDdd.Domain.AggregateRoots.Users.Events;
+using ArchDdd.Domain.AggregateRoots.Users.Authorization;
 
 namespace ArchDdd.Domain.AggregateRoots.Users;
 
@@ -17,10 +17,24 @@ public sealed class User : AggregateRoot<UserId>, IAuditable
         Email = email;
     }
 
-    // Empty constructor in this case is required by EF Core
+    // EFCore을 위한 기본 생성자
     private User()
     {
     }
+
+    // NxM
+    //  builder.HasMany(u => u.Roles)  // User -> Roles: public IReadOnlyCollection<Role> Roles => _roles.AsReadOnly();
+    //    .WithMany(r => r.Users)      // Role -> User:  public ICollection<User> Users { get; init; }
+    //    .UsingEntity<RoleUser>();    // RoleUser:      public RoleUser(string roleName, UserId userId)
+
+    // CREATE TABLE "User" (
+    //     "Id" Char(26) NOT NULL CONSTRAINT "PK_User" PRIMARY KEY,
+    //     "Username" TEXT NOT NULL,
+    //     "Email" TEXT NOT NULL,
+    //     "PasswordHash" NChar(514) NOT NULL,
+    //     "CreatedOn" TEXT NOT NULL,
+    //     "UpdatedOn" TEXT NULL
+    // )
 
     //public Username Username { get; set; }
     //public Email Email { get; set; }

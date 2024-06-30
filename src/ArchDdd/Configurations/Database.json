@@ -1,9 +1,0 @@
-{
-  "DatabaseOptions": {
-    "Provider": "sqlite",
-    "ConnectionString": "Data Source=./../Migrators/Migrators.Sqlite/ArchDdd.db",
-    "MaxRetryCount": 1,
-    "MaxRetryDelay": 1,
-    "CommandTimeout": 1
-  }
-}

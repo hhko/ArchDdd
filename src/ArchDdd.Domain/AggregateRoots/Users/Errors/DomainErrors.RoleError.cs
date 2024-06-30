@@ -1,5 +1,5 @@
 ﻿using ArchDdd.Domain.Abstractions.Results;
-using ArchDdd.Domain.AggregateRoots.Users.Enumerations;
+using ArchDdd.Domain.AggregateRoots.Users.Authorization;
 
 namespace ArchDdd.Domain.AggregateRoots.Users.Errors;
 

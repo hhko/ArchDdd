@@ -167,3 +167,5 @@ dotnet ef migrations list
 dotnet ef migrations remove
 dotnet ef migrations script
 ```
+
+- [EF Core Migrations](https://www.learnentityframeworkcore.com/migrations)

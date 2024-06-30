@@ -45,6 +45,7 @@ public class UserController(ISender sender) : ApiController(sender)
             : result.ToProblemHttpResult();
     }
 
+    // GET /api/user/Lucas
     [HttpGet("{username}")]
     [ProducesResponseType<GetUserByUsernameResponse>(StatusCodes.Status200OK)]
     [ProducesResponseType<ProblemDetails>(StatusCodes.Status400BadRequest)]
@@ -61,16 +62,21 @@ public class UserController(ISender sender) : ApiController(sender)
             : result.ToProblemHttpResult();
     }
 
-    //[HttpGet("{query}")]
-    //[ProducesResponseType<GetUserByUsernameResponse>(StatusCodes.Status200OK)]
+    //// POST /api/{username}/roles/{customer}
+    //[HttpPost("{username}/roles/{role}")]
+    ////[RequiredRoles(RoleName.Administrator)]
     //[ProducesResponseType<ProblemDetails>(StatusCodes.Status400BadRequest)]
-    //public async Task<Results<Ok<GetUserByUsernameResponse>, ProblemHttpResult>> GetUserByUsername(
-    //    [FromBody] GetUserByUsernameQuery query,
-    //    CancellationToken cancellationToken)
+    //public async Task<Results<Ok, ProblemHttpResult>> AddRoleToUser
+    //(
+    //    [FromRoute] string username,
+    //    [FromRoute] string role,
+    //    CancellationToken cancellationToken
+    //)
     //{
-    //    var result = await Sender.Send(query, cancellationToken);
+    //    var command = new AddRoleToUserCommand(username, role);
+    //    var result = await Sender.Send(command, cancellationToken);
 
-    //    return result.IsSuccess
+    //    return result.IsFailure
     //        ? result.ToOkResult()
     //        : result.ToProblemHttpResult();
     //}

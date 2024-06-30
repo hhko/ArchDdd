@@ -1,9 +1,12 @@
 ﻿using ArchDdd.Application.UseCases.Users.Queries.GetUserByUsername;
 using ArchDdd.Domain.AggregateRoots.Users;
 using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
+using SQLitePCL;
 using System.Collections.Generic;
 using System.Data;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ArchDdd.Adapters.Persistence.Repositories.UserRepositories;
 
@@ -16,6 +19,14 @@ namespace ArchDdd.Adapters.Persistence.Repositories.UserRepositories;
 //   "errors": null,
 //   "RequestId": "0HN3T76J0SHN0:00000001"
 // }
+
+
+// INNER JOIN: 공통된 값을 가진 행들만 반환.
+// LEFT  JOIN: 왼쪽 테이블의 모든 행과 오른쪽 테이블의 일치하는 행들.
+// RIGHT JOIN: 오른쪽 테이블의 모든 행과 왼쪽 테이블의 일치하는 행들 (SQLite는 직접 지원하지 않음).
+// FULL  JOIN: 양쪽 테이블의 모든 행을 반환(SQLite는 직접 지원하지 않음).
+// CROSS JOIN: 두 테이블 간의 모든 행의 조합.
+// SELF  JOIN: 동일한 테이블 내의 행들 간의 조인.
 
 public class UserRepository : IUserRepository
 {

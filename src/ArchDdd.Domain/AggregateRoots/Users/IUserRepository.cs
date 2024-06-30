@@ -3,7 +3,7 @@ using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
 
 namespace ArchDdd.Domain.AggregateRoots.Users;
 
-public interface IUserRepository : IRepository
+public interface IUserRepository : IQueryRepository
 {
     //Task<User?> GetByIdAsync(UserId id, CancellationToken cancellationToken);
 

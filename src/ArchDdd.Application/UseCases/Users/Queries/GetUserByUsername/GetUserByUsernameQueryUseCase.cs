@@ -1,18 +1,10 @@
 ﻿using ArchDdd.Domain.Abstractions.Results.Contracts;
-using ArchDdd.Domain.Abstractions.Results;
-using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
 using ArchDdd.Domain.AggregateRoots.Users;
-using MediatR;
 using ArchDdd.Application.Abstractions;
 using static ArchDdd.Domain.AggregateRoots.Users.Errors.DomainErrors;
-using ArchDdd.Application.UseCases.Users.Mappings;
 using ArchDdd.Application.Abstractions.Utilities;
 using ArchDdd.Application.Abstractions.CQRS;
-using ArchDdd.Application.UseCases.Users.Commands.RegisterUser;
-using ArchDdd.Domain.Abstractions.Contracts;
-using System.Collections.Generic;
-using System.Data;
-using System.Drawing;
+using System.Threading;
 
 namespace ArchDdd.Application.UseCases.Users.Queries.GetUserByUsername;
 
@@ -28,12 +20,9 @@ internal sealed class GetUserByUsernameQueryUseCase(
 
     public async Task<IResult<GetUserByUsernameResponse>> Handle(GetUserByUsernameQuery query, CancellationToken cancellationToken)
     {
-        var response = await _userRepository.SqlQuerySingleAsync<GetUserByUsernameResponse>($"""
-            SELECT u.Id, u.Username, u.Email
-                FROM User AS u
-                WHERE u.Username = {query.Username}
-                LIMIT 1
-            """, cancellationToken);
+        var response = await _userRepository.SqlQuerySingleAsync<GetUserByUsernameResponse>(
+            QueryUserByUsername(query.Username),
+            cancellationToken);
 
         _validator.If(
             condition: response is null,
@@ -44,6 +33,16 @@ internal sealed class GetUserByUsernameQueryUseCase(
         }
 
         return response!.ToResult();
+    }
+
+    private FormattableString QueryUserByUsername(string username)
+    {
+        return $"""
+            SELECT u.Id, u.Username, u.Email
+                FROM User AS u
+                WHERE u.Username = {username}
+                LIMIT 1
+            """;
     }
 
     //public async Task<IResult<GetUserByUsernameResponse>> Handle(GetUserByUsernameQuery query, CancellationToken cancellationToken)

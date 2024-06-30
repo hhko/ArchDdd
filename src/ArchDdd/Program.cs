@@ -1,14 +1,8 @@
-﻿using ArchDdd.Abstractions.Utilities;
-
-var builder = WebApplication.CreateBuilder(new WebApplicationOptions
+﻿var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
     Args = args,
     ContentRootPath = Directory.GetCurrentDirectory()
 });
-
-// .json 파일
-builder
-    .AddJsonConfigurationFiles();
 
 builder.Services
     .RegisterAdaptersInfrastructureLayer(builder.Logging)

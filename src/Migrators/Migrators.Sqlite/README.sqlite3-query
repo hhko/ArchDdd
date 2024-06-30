@@ -1,0 +1,133 @@
+-- database: ./ArchDdd.db
+
+-- Table
+CREATE TABLE "User" (
+    "Id" Char(26) NOT NULL CONSTRAINT "PK_User" PRIMARY KEY,
+    "Username" TEXT NOT NULL,
+    "Email" TEXT NOT NULL,
+    "PasswordHash" NChar(514) NOT NULL,
+    "CreatedOn" TEXT NOT NULL,
+    "UpdatedOn" TEXT NULL
+);
+
+CREATE TABLE "RoleUser" (
+    "RoleName" VarChar(128) NOT NULL,
+    "UserId" Char(26) NOT NULL,
+    CONSTRAINT "PK_RoleUser" PRIMARY KEY("RoleName", "UserId"),
+    CONSTRAINT "FK_RoleUser_Role_RoleName" FOREIGN KEY("RoleName") REFERENCES "Role" ("Name") ON DELETE CASCADE,
+    CONSTRAINT "FK_RoleUser_User_UserId" FOREIGN KEY("UserId") REFERENCES "User" ("Id") ON DELETE CASCADE
+);
+
+CREATE TABLE "Role" (
+    "Name" VarChar(128) NOT NULL CONSTRAINT "PK_Role" PRIMARY KEY,
+    "Id" INTEGER NOT NULL
+);
+
+-- DELETE
+DELETE FROM RoleUser;
+DELETE FROM Role;
+DELETE FROM User;
+
+-- SELECT
+SELECT * FROM RoleUser;
+SELECT * FROM Role;
+SELECT * FROM User;
+
+-- INSERT
+INSERT INTO "User" ("Id", "Username", "Email", "PasswordHash", "CreatedOn", "UpdatedOn")
+VALUES
+    ('1', 'user1', 'user1@example.com', 'hashedpassword1', '2024-06-30', '2024-06-30'),
+    ('2', 'user2', 'user2@example.com', 'hashedpassword2', '2024-06-30', NULL),
+    ('3', 'user3', 'user3@example.com', 'hashedpassword2', '2024-06-30', NULL);
+
+INSERT INTO "Role" ("Name", "Id")
+VALUES
+    ('Customer', 1),
+    ('Employee', 2),
+    ('Manager', 3),
+    ('Administrator', 4);
+
+INSERT INTO "RoleUser" ("RoleName", "UserId")
+VALUES
+    ('Customer', '1'),
+    ('Customer', '2'),
+    ('Employee', '2');
+
+
+SELECT * FROM RoleUser;
+SELECT * FROM Role;
+SELECT * FROM User;
+
+-- user1 > Customer
+-- user2 > Customer, Employee
+-- user3
+
+-- INNER 조인 1개
+SELECT
+    u.Id AS UserId,
+    u.Username,
+    u.Email,
+    ru.RoleName
+FROM
+    User u          -- LEFT Table
+INNER JOIN
+    RoleUser ru     -- RIGHT Table
+    ON u.Id = ru.UserId;
+
+-- LEFT 조인 1개
+SELECT
+    u.Id AS UserId,
+    u.Username,
+    u.Email,
+    ru.RoleName
+FROM
+    User u          -- LEFT  Table
+LEFT JOIN
+    RoleUser ru     -- RIGHT Table
+    ON u.Id = ru.UserId;
+
+-- INNER 조인 N개
+
+SELECT
+    u.Id AS UserId,
+    u.Username,
+    u.Email,
+    r.Name
+FROM
+    User u          -- LEFT Table
+INNER JOIN
+    RoleUser ru     -- RIGHT Table
+    ON u.Id = ru.UserId
+INNER JOIN
+    Role r
+    ON r.Name = ru.RoleName;
+
+-- LEFT 조인 N개
+SELECT
+    u.Id AS UserId,
+    u.Username,
+    u.Email,
+    r.Name
+FROM
+    User u          -- LEFT Table
+LEFT JOIN
+    RoleUser ru     -- RIGHT Table
+    ON u.Id = ru.UserId
+LEFT JOIN
+    Role r          -- RIGHT Table
+    ON r.Name = ru.RoleName;
+
+
+SELECT
+    u.Id AS UserId,
+    u.Username,
+    u.Email,
+    r.Name
+FROM
+    User u
+LEFT JOIN
+    RoleUser ru
+    ON u.Id = ru.UserId
+LEFT JOIN
+    Role r
+    ON r.Name = ru.RoleName;
