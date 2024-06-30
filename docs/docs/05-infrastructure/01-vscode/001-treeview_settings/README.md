@@ -2,7 +2,7 @@
 
 - [Improve the tree view settings in Visual Studio Code](https://www.meziantou.net/improve-the-tree-view-settings-in-visual-studio-code.htm)
 
-> `Ctrl+P: > Preferences: Open User Settings (JSON)
+> `Ctrl+P - Preferences: Open User Settings (JSON)
 
 ```json
 {

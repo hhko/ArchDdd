@@ -2,20 +2,13 @@
 using Microsoft.EntityFrameworkCore;
 using static ArchDdd.Adapters.Persistence.Abstractions.Constants.Constants;
 using ArchDdd.Domain.AggregateRoots.Users.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace ArchDdd.Adapters.Persistence.Repositories.UserRepositories.TypeConfigurations;
 
 
 // CREATE TABLE "Role" (
-//     "Name" VarChar(128) NOT NULL CONSTRAINT "PK_Role" PRIMARY KEY,
-//     "Id" INTEGER NOT NULL
-// )
-
-// CREATE TABLE "Role" (
-//     "Id" INTEGER NOT NULL CONSTRAINT "PK_Role" PRIMARY KEY AUTOINCREMENT,
-//     "UserId" Char(26) NULL,
-//     "Name" TEXT NOT NULL,
-//     CONSTRAINT "FK_Role_User_UserId" FOREIGN KEY("UserId") REFERENCES "User" ("Id")
+//     "Name" VarChar(128) NOT NULL CONSTRAINT "PK_Role" PRIMARY KEY
 // )
 
 internal class RoleConfiguration : IEntityTypeConfiguration<Role>
