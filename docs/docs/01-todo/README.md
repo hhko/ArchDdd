@@ -192,6 +192,48 @@
 - [ ] 데이터베이스 스키마 다이어그램
 - [ ] 중요 인터페이스 클래스 다이어그램
 
+```
+  - 솔루션 설정
+    - [x] 빌드 버전
+    - [x] 빌드 옵션
+    - [x] 패키지 버전
+    - [ ] 옵션, development까지 반영?
+    - [ ] 코드 정적 분석
+    - [ ] 코딩컨벤션    
+    - [ ] 코드 중복도
+    - [ ] 도커 컴포즈
+  - 솔루션 구성
+    - [ ] 레이어
+    - [x] 레이어 의존성 시각화 https://github.com/nkolev92/DependencyVisualizer
+    - [x] 레이어 의존성 테스트  
+  - 솔루션 디자인 패턴
+    - [ ] Stragegy 패턴
+    - [ ] Docorator 패턴
+    - [ ] Mediator 패턴
+    - [ ] CQRS 패턴
+    - [ ] Repository 패턴
+    - [ ] Unit of Work 패턴
+    - [ ] OutBox 패턴
+    - [ ] Cache Aside 패턴
+    - [ ] Saga?
+    - [x] 레이어 통합 Mediator 패턴
+    - [x] 레이어 통합 CQRS 패턴
+    - [x] 유스케이스 파이프라인 입력 유효성 검사
+    - [ ] 유스케이스 파이프라인 Command 트랜잭션
+    - [x] 유스케이스 파이프라인 성공/실패 로그
+    - [x] 유스케이스 파이프라인 예외 처리
+    - [x] 유스케이스 파이프라인 긴 작업 로그
+    - [x] 유스케이스 Query DTO
+  - 솔루션 테스트
+    - [x] 애플리케이션 레이어 테스트(단위 테스트: 값, 코딩컨벤션, 의존성)
+    - [x] 어답터 레이어 테스트(통합 테스트)
+    - [ ] 어답터 레이어 컨테이너 기반 테스트(통합 테스트: Container, WebApi, RabbitMQ, PostgreSQL, ...)
+    - [ ] 어답터 레이어 컨테이너 기반 성능 테스트(통합 테스트)
+    - [ ] E2E 테스트
+  - CI/CD
+  - Observability
+```
+
 ## 사례
 ### 아키텍처
 - [ ] [Clean Architecture Template, Ardalis](https://github.com/ardalis/CleanArchitecture)
