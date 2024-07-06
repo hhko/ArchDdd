@@ -1,8 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 ---
 
-# MediatR
+# MediatR I/O
 
 > Mediator와 Decorator 디자인 패턴
 

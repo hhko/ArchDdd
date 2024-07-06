@@ -1,3 +1,51 @@
+```
+Entity Framework Visual Editor
+https://marketplace.visualstudio.com/items?itemName=michaelsawczyn.EFDesigner2022
+
+https://www.thereformedprogrammer.net/creating-domain-driven-design-entity-classes-with-entity-framework-core/
+https://learn.microsoft.com/en-us/ef/core/modeling/relationships/one-to-one
+
+
+http://www.ch-werner.de/sqliteodbc/
+
+Aggregate to Relational Database Steps
+1. Table
+   - Table Splitting/Table Sharing: ValueObject을 Entity 테이블에 표현하기
+1. Foreign Keys
+   - 부모 Key: 외래 키
+   - 부모 Key, 부모n부모 Key: 외래 키
+   - Composite Key
+   - Surrogate Key: 데이터베이스가 생성하는 키
+1. Types & Other Constraints
+   - Owned Entity
+
+값 / EntityId / Id
+
+.ValueGeneratedNever()
+.HasConversion(
+    id => id.Value,
+    value => 값.Create(value)
+)
+
+OwnOne()
+
+
+.ToTable("");
+.WithOwner().HasForeignKey("");
+.HasKey("")
+.Propperty(x => x. ...)
+  .HasColumnName("")
+  .ValueGeneratedNever()
+  .HasConversion(
+      id => id.Value,
+      value => 값.Create(value)
+  )
+
+```
+
+
+
+
 - [ ] Permission 클래스
 - [ ] Permission 데이터베이스화
 - [ ] Permission API 이해
