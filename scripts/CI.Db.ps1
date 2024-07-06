@@ -1,85 +1,85 @@
-# ----------------------
-# migrations 조회
-# ----------------------
+# # ----------------------
+# # migrations 조회
+# # ----------------------
 
-dotnet ef migrations list -p .\src\Migrators\Migrators.Sqlite\
+# dotnet ef migrations list -p .\src\Migrators\Migrators.Sqlite\
 
-#  Build started...
-#  Build succeeded.
-#    20240602145704_init
-#    20240629062941_Add1 (Pending)
+# #  Build started...
+# #  Build succeeded.
+# #    20240602145704_init
+# #    20240629062941_Add1 (Pending)
 
-# ----------------------
-# migrations 추가
-# ----------------------
+# # ----------------------
+# # migrations 추가
+# # ----------------------
 
-dotnet ef migrations add Init -p .\src\Migrators\Migrators.Sqlite\
+# dotnet ef migrations add Init -p .\src\Migrators\Migrators.Sqlite\
 
-# IDesignTimeDbContextFactory<ArchDddDbContext>
-#     new ArchDddDbContext
-#
-# --> ArchDddDbContext
-#     protected override void OnModelCreating(ModelBuilder builder)
-#     {
-#         // IEntityTypeConfiguration 모든 클래스
-#         builder.ApplyConfigurationsFromAssembly(AssemblyReference.Assembly);
-#     }
-#
-# --> N개: ... : : IEntityTypeConfiguration<User>
+# # IDesignTimeDbContextFactory<ArchDddDbContext>
+# #     new ArchDddDbContext
+# #
+# # --> ArchDddDbContext
+# #     protected override void OnModelCreating(ModelBuilder builder)
+# #     {
+# #         // IEntityTypeConfiguration 모든 클래스
+# #         builder.ApplyConfigurationsFromAssembly(AssemblyReference.Assembly);
+# #     }
+# #
+# # --> N개: ... : : IEntityTypeConfiguration<User>
 
-# -- 구성 --
-#   프로젝트\
-#     Migrations\
-#       {시간}_{메시지}.cs
-#       {시간}_{메시지}.Designer.cs
-#       {DbContext 클래스}ModelSnapshot.cs
-#
-# -- 사례 --
-#   Migrators.Sqlite\
-#     Migrations\
-#       20240602145704_init.cs
-#       20240602145704_init.Designer.cs
-#       ArchDddDbContextModelSnapshot.cs
-#     ArchDdd.db                          <-- Sqlite 파일
+# # -- 구성 --
+# #   프로젝트\
+# #     Migrations\
+# #       {시간}_{메시지}.cs
+# #       {시간}_{메시지}.Designer.cs
+# #       {DbContext 클래스}ModelSnapshot.cs
+# #
+# # -- 사례 --
+# #   Migrators.Sqlite\
+# #     Migrations\
+# #       20240602145704_init.cs
+# #       20240602145704_init.Designer.cs
+# #       ArchDddDbContextModelSnapshot.cs
+# #     ArchDdd.db                          <-- Sqlite 파일
 
-# ----------------------
-# database 목록 조회
-# ----------------------
+# # ----------------------
+# # database 목록 조회
+# # ----------------------
 
-# (Pending) 중인 모든 Migrations을 데이터베이스에 업데이트합니다.
-dotnet ef database update -p .\src\Migrators\Migrators.Sqlite\
+# # (Pending) 중인 모든 Migrations을 데이터베이스에 업데이트합니다.
+# dotnet ef database update -p .\src\Migrators\Migrators.Sqlite\
 
-# ----------------------
-# rollback 목록 조회
-# ----------------------
+# # ----------------------
+# # rollback 목록 조회
+# # ----------------------
 
-```
-#
-# Database
-#
+# ```
+# #
+# # Database
+# #
 
-# Database 특정 Rollback
-dotnet ef database update {Migration_이름} -p .\src\Migrators\Migrators.Sqlite\
+# # Database 특정 Rollback
+# dotnet ef database update {Migration_이름} -p .\src\Migrators\Migrators.Sqlite\
 
-# __EFMigrationHistory
-#   MigrationId             <-- Migration_이름
-#   ProductVersion
+# # __EFMigrationHistory
+# #   MigrationId             <-- Migration_이름
+# #   ProductVersion
 
-# Database 전체 Rollback
-dotnet ef database update 0 -p .\src\Migrators\Migrators.Sqlite\
+# # Database 전체 Rollback
+# dotnet ef database update 0 -p .\src\Migrators\Migrators.Sqlite\
 
-#
-# Migration
-#
+# #
+# # Migration
+# #
 
-# Migration Rollback
-#   한번에 한개 migration만 삭제 가능합니다.
-dotnet ef migrations remove -p .\src\Migrators\Migrators.Sqlite\
-```
-
-
+# # Migration Rollback
+# #   한번에 한개 migration만 삭제 가능합니다.
+# dotnet ef migrations remove -p .\src\Migrators\Migrators.Sqlite\
+# ```
 
 
+
+########################################################
 
 
 

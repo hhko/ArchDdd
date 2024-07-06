@@ -1,10 +1,9 @@
 # 기본 경로
-$sln_dir        = split-path -parent $MyInvocation.MyCommand.Definition
+$sln_dir        = Json-Path(Split-Path -parent $MyInvocation.MyCommand.Definition, "..")
 $sln_path       = Join-Path $sln_dir "ArchDdd.sln"
 $results_dir    = Join-Path $sln_dir ".results"
 $coverage_dir   = Join-Path $results_dir "coverage"
 $coverage_path  = Join-Path $coverage_dir "coverage.cobertura.merged.xml"
-$doc_dir        = Join-Path $sln_dir "site"
 
 #
 # 준비

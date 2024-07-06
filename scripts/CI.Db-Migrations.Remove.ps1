@@ -1,10 +1,10 @@
 # .\CI.Build-Migrations.Remove.ps1
 # .\CI.Build-Migrations.Remove.ps1 -n 3
-# .\CI.Build-Migrations.Remove.ps1 -p ".\src\Migrators\Migrators.Sqlite\" -n 3
+# .\CI.Build-Migrations.Remove.ps1 -p ".\..\src\Migrators\Migrators.Sqlite\" -n 3
 
 param(
     [Alias("p", "project")]
-    [string]$projectPath = ".\src\Migrators\Migrators.Sqlite\",
+    [string]$projectPath = ".\..\src\Migrators\Migrators.Sqlite\",
 
     [Alias("n", "number")]
     [int]$numOfMigrationsToRemove = 1

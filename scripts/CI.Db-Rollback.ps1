@@ -1,9 +1,9 @@
 # .\CI.Db-Update.ps1
-# .\CI.Db-Update.ps1 -p ".\src\Migrators\Migrators.Sqlite\"
+# .\CI.Db-Update.ps1 -p ".\..\src\Migrators\Migrators.Sqlite\"
 
 param(
     [Alias("p", "project")]
-    [string]$projectPath = ".\src\Migrators\Migrators.Sqlite\",
+    [string]$projectPath = ".\..\src\Migrators\Migrators.Sqlite\",
 
     [Alias("m", "msg")]
     [string]$message

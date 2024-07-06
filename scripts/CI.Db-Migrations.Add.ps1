@@ -1,6 +1,6 @@
 # .\CI.Build-Migrations.Add.ps1
 # .\CI.Build-Migrations.Add.ps1 -m "Init"
-# .\CI.Build-Migrations.Add.ps1 -p ".\src\Migrators\Migrators.Sqlite\" -m "Init"
+# .\CI.Build-Migrations.Add.ps1 -p ".\..\src\Migrators\Migrators.Sqlite\" -m "Init"
 
 # message은 공백없이 입력합니다.
 # 예.
@@ -8,7 +8,7 @@
 
 param(
     [Alias("p", "project")]
-    [string]$projectPath = ".\src\Migrators\Migrators.Sqlite\",
+    [string]$projectPath = ".\..\src\Migrators\Migrators.Sqlite\",
 
     [Alias("m", "msg")]
     [string]$message
