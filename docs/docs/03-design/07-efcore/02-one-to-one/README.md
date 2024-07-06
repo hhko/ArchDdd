@@ -1,6 +1,10 @@
 # 일대일 관계
 - [One-to-one relationships](https://learn.microsoft.com/en-us/ef/core/modeling/relationships/one-to-one)
 
+```sql
+SELECT sqlite_version();
+```
+
 ## Required one-to-one
 
 ```sql
