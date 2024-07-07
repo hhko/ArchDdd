@@ -1,4 +1,4 @@
-﻿using ArchDdd.Adapters.Persistence.Options.Database;
+﻿using ArchDdd.Adapters.Persistence.Abstractions.Options.Database;
 using Microsoft.Extensions.Options;
 
 namespace Microsoft.Extensions.DependencyInjection;

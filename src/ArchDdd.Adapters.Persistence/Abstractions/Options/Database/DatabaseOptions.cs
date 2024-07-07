@@ -1,4 +1,4 @@
-﻿namespace ArchDdd.Adapters.Persistence.Options.Database;
+﻿namespace ArchDdd.Adapters.Persistence.Abstractions.Options.Database;
 
 public sealed class DatabaseOptions
 {

@@ -5,6 +5,13 @@ https://marketplace.visualstudio.com/items?itemName=michaelsawczyn.EFDesigner202
 https://www.thereformedprogrammer.net/creating-domain-driven-design-entity-classes-with-entity-framework-core/
 https://learn.microsoft.com/en-us/ef/core/modeling/relationships/one-to-one
 
+https://github.com/k1LoW/tbls
+https://github.com/gman-au/siren
+https://github.com/JonPSmith/EfCore.TestSupport
+https://github.com/JonPSmith/EfCore.SchemaCompare
+
+Creating Domain-Driven Design entity classes with Entity Framework Core
+https://www.thereformedprogrammer.net/creating-domain-driven-design-entity-classes-with-entity-framework-core/
 
 http://www.ch-werner.de/sqliteodbc/
 

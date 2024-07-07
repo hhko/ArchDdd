@@ -2,11 +2,11 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 
-namespace ArchDdd.Adapters.Persistence.Options.Database;
+namespace ArchDdd.Adapters.Persistence.Abstractions.Options.Database;
 
 internal sealed class DatabaseOptionsSetup(
     IConfiguration configuration,
-    IWebHostEnvironment environment) 
+    IWebHostEnvironment environment)
     : IConfigureOptions<DatabaseOptions>
 {
     private readonly IConfiguration _configuration = configuration;

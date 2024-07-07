@@ -7,27 +7,33 @@ SELECT sqlite_version();
 
 ## Required one-to-one
 
+<!--- SIREN_START -->
+```mermaid
+	%%{init: {'theme':'neutral'}}%%
+	erDiagram
+	Blog {
+		INTEGER Id
+	}
+	BlogHeader {
+		INTEGER Id
+		INTEGER BlogId FK
+	}
+BlogHeader|o--||Blog : ""
+```
+<!--- SIREN_END -->
+
 ```sql
 CREATE TABLE "Blogs"(
   "Id" INTEGER NOT NULL CONSTRAINT "PK_Blogs" PRIMARY KEY AUTOINCREMENT
 )
 
-CREATE TABLE "BlogHeaders"(
+CREATE TABLE "BlogHeaders" (
   "Id" INTEGER NOT NULL CONSTRAINT "PK_BlogHeaders" PRIMARY KEY AUTOINCREMENT,
   "BlogId" INTEGER NOT NULL,
-  CONSTRAINT "FK_BlogHeaders_Blogs_BlogId" FOREIGN KEY("BlogId") REFERENCES "Blogs"("Id") ON DELETE CASCADE
+  CONSTRAINT "FK_BlogHeaders_Blogs_BlogId" FOREIGN KEY ("BlogId") REFERENCES "Blogs" ("Id") ON DELETE CASCADE
 )
-```
 
-```cs
-protected override void OnModelCreating(ModelBuilder builder)
-{
-  builder.Entity<Blog>()
-    .HasOne(blog => blog.Header)
-    .WithOne(blogHeader => blogHeader.Blog)
-    .HasForeignKey<BlogHeader>(blogHeader => blogHeader.BlogId)
-    .IsRequired();
-}
+CREATE UNIQUE INDEX "IX_BlogHeaders_BlogId" ON "BlogHeaders" ("BlogId")
 ```
 
 ```cs
@@ -47,8 +53,32 @@ public class BlogHeader
 }
 ```
 
+```cs
+protected override void OnModelCreating(ModelBuilder builder)
+{
+  builder.Entity<Blog>()
+    .HasOne(blog => blog.Header)
+    .WithOne(blogHeader => blogHeader.Blog)
+    .HasForeignKey<BlogHeader>(blogHeader => blogHeader.BlogId)
+    .IsRequired();
+}
+```
+
 ## Required one-to-one with primary key to primary key relationship
-### 암시적
+<!--- SIREN_START -->
+```mermaid
+	%%{init: {'theme':'neutral'}}%%
+	erDiagram
+	Blog {
+		INTEGER Id
+	}
+	BlogHeader {
+		INTEGER Id FK
+	}
+BlogHeader|o--||Blog : ""
+```
+<!--- SIREN_END -->
+
 ```sql
 CREATE TABLE "Blogs"(
       "Id" INTEGER NOT NULL CONSTRAINT "PK_Blogs" PRIMARY KEY AUTOINCREMENT
@@ -56,18 +86,8 @@ CREATE TABLE "Blogs"(
 
 CREATE TABLE "BlogHeaders" (
   "Id" INTEGER NOT NULL CONSTRAINT "PK_BlogHeaders" PRIMARY KEY,
-  CONSTRAINT "FK_BlogHeaders_Blogs_Id" FOREIGN KEY("Id") REFERENCES "Blogs" ("Id") ON DELETE CASCADE
+  CONSTRAINT "FK_BlogHeaders_Blogs_Id" FOREIGN KEY ("Id") REFERENCES "Blogs" ("Id") ON DELETE CASCADE
 )
-```
-
-```cs
-protected override void OnModelCreating(ModelBuilder builder)
-{
-  builder.Entity<Blog>()
-    .HasOne(blog => blog.Header)
-    .WithOne(blogHeader => blogHeader.Blog)
-    .HasForeignKey<BlogHeader>();
-}
 ```
 
 ```cs
@@ -83,31 +103,56 @@ public class BlogHeader
 {
   public int Id { get; set; }
   public Blog Blog { get; set; } = null!; // Required reference navigation to principal
+}
+```
+
+```cs
+protected override void OnModelCreating(ModelBuilder builder)
+{
+  // 암시적
+  builder.Entity<Blog>()
+    .HasOne(blog => blog.Header)
+    .WithOne(blogHeader => blogHeader.Blog)
+    .HasForeignKey<BlogHeader>();           // <-- primary key relationship
+
+  // 명시적
+  //builder.Entity<Blog>()
+  //  .HasOne(blog => blog.Header)
+  //  .WithOne(blogHeader => blogHeader.Blog)
+  //  .HasForeignKey<BlogHeader>(blogHeader => blogHeader.Id)
+  //  .IsRequired();
 }
 ```
 
 ## Required one-to-one with shadow foreign key
+
+<!--- SIREN_START -->
+```mermaid
+	%%{init: {'theme':'neutral'}}%%
+	erDiagram
+	Blog {
+		INTEGER Id
+	}
+	BlogHeader {
+		INTEGER Id
+		INTEGER BlogId FK
+	}
+BlogHeader|o--||Blog : ""
+```
+<!--- SIREN_END -->
+
 ```sql
-CREATE TABLE "Blogs"(
-  "Id" INTEGER NOT NULL CONSTRAINT "PK_Blogs" PRIMARY KEY AUTOINCREMENT
+CREATE TABLE "Blogs" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Blogs" PRIMARY KEY AUTOINCREMENT
 )
 
 CREATE TABLE "BlogHeaders" (
-  "Id" INTEGER NOT NULL CONSTRAINT "PK_BlogHeaders" PRIMARY KEY AUTOINCREMENT,
-  "BlogId" INTEGER NOT NULL,
-  CONSTRAINT "FK_BlogHeaders_Blogs_BlogId" FOREIGN KEY ("BlogId") REFERENCES "Blogs" ("Id") ON DELETE CASCADE
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_BlogHeaders" PRIMARY KEY AUTOINCREMENT,
+    "BlogId" INTEGER NOT NULL,
+    CONSTRAINT "FK_BlogHeaders_Blogs_BlogId" FOREIGN KEY ("BlogId") REFERENCES "Blogs" ("Id") ON DELETE CASCADE
 )
-```
 
-```cs
-protected override void OnModelCreating(ModelBuilder builder)
-{
-  builder.Entity<Blog>()
-    .HasOne(blog => blog.Header)
-    .WithOne(blogHeader => blogHeader.Blog)
-    .HasForeignKey<BlogHeader>(blogHeader => blogHeader.Id)   // 데이터베이스 전용 변수
-    .IsRequired();
-}
+CREATE UNIQUE INDEX "IX_BlogHeaders_BlogId" ON "BlogHeaders" ("BlogId")
 ```
 
 ```cs
@@ -123,5 +168,15 @@ public class BlogHeader
 {
   public int Id { get; set; }
   public Blog Blog { get; set; } = null!; // Required reference navigation to principal
+}
+```
+
+```cs
+protected override void OnModelCreating(ModelBuilder builder)
+{
+  builder.Entity<Blog>()
+    .HasOne(blog => blog.Header)
+    .WithOne(blogHeader => blogHeader.Blog)
+    .HasForeignKey<BlogHeader>("BlogId");       // <-- shadow foreign key
 }
 ```

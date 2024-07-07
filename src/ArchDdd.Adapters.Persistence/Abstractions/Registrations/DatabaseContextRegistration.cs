@@ -1,5 +1,5 @@
 ﻿using ArchDdd.Adapters.Infrastructure.Utilities;
-using ArchDdd.Adapters.Persistence.Options.Database;
+using ArchDdd.Adapters.Persistence.Abstractions.Options.Database;
 using ArchDdd.Adapters.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
