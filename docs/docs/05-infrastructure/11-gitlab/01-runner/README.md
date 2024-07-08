@@ -30,6 +30,7 @@ C:\Workspace\GitLab-Runner\gitlab-runner-windows-amd64.exe
 ```
 
 ## 5. Runner 서버 등록
+![](./.images/RegistrationToken.png)
 
 ```shell
 # --url: 저장소 URL
