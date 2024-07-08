@@ -7,6 +7,7 @@ dotnet tool install --global dotnet-coverage --version 17.9.6
 dotnet tool install --global dotnet-reportgenerator-globaltool --version 5.2.0
 dotnet tool install --global dotnet-format --version 5.1.250801
 dotnet tool install --global verify.tool --version 0.6.0
+dotnet tool install --global Gman.Siren --version 6.0.6
 
 # nodejs 설치
 # create-docusaurus 버전 확인

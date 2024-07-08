@@ -40,8 +40,8 @@ public sealed class Role
     }
 
     public string Name { get; init; }
-    public ICollection<User> Users { get; set; }
-    //public ICollection<Permission> Permissions { get; set; }
+    public ICollection<User> Users { get; init; }
+    public ICollection<Permission> Permissions { get; init; }
 
     // 사전 정의된 Role 목록을 반환한다
     public static List<Role> GetPredefinedRoles()

@@ -3,7 +3,7 @@
 	%%{init: {'theme':'neutral'}}%%
 	erDiagram
 	OrderHeader {
-		Char26 Id 
+		Char26 Id PK
 		VarChar30 CreatedBy 
 		DateTimeOffset2 CreatedOn 
 		Bit SoftDeleted 
@@ -15,7 +15,7 @@
 		Char26 UserId FK
 	}
 	OrderLine {
-		Char26 Id 
+		Char26 Id PK
 		int Amount 
 		VarChar30 CreatedBy 
 		DateTimeOffset2 CreatedOn 
@@ -25,7 +25,7 @@
 		DateTimeOffset7 UpdatedOn 
 	}
 	Payment {
-		Char26 Id 
+		Char26 Id PK
 		VarChar30 CreatedBy 
 		DateTimeOffset2 CreatedOn 
 		Bit IsRefunded 
@@ -35,7 +35,7 @@
 		DateTimeOffset7 UpdatedOn 
 	}
 	Product {
-		Char26 Id 
+		Char26 Id PK
 		VarChar30 CreatedBy 
 		DateTimeOffset2 CreatedOn 
 		decimal10_2 Price 
@@ -46,7 +46,7 @@
 		DateTimeOffset7 UpdatedOn 
 	}
 	Review {
-		Char26 Id 
+		Char26 Id PK
 		VarChar30 CreatedBy 
 		DateTimeOffset2 CreatedOn 
 		nvarchar600 Description 
@@ -58,21 +58,25 @@
 		nvarchar30 Username 
 	}
 	Permission {
-		VarChar128 Name 
+		VarChar128 Name PK
 		nvarcharmax Properties 
 		VarChar128 RelatedAggregateRoot 
 		VarChar128 RelatedEntity 
 		VarChar6 Type 
 	}
 	Role {
-		VarChar128 Name 
+		VarChar128 Name PK
 	}
 	RolePermission {
 		VarChar128 RoleName FK
-		VarChar128 PermissionName FK
+		VarChar128 PermissionName PK,FK
+	}
+	RoleUser {
+		VarChar128 RoleName FK
+		Char26 UserId PK,FK
 	}
 	Customer {
-		Char26 Id 
+		Char26 Id PK
 		VarChar30 CreatedBy 
 		DateTimeOffset2 CreatedOn 
 		DateTimeOffset2 DateOfBirth 
@@ -85,9 +89,8 @@
 		DateTimeOffset7 UpdatedOn 
 		Char26 UserId 
 	}
-	
 	User {
-		Char26 Id 
+		Char26 Id PK
 		VarChar30 CreatedBy 
 		DateTimeOffset2 CreatedOn 
 		Char26 CustomerId FK
@@ -102,12 +105,8 @@
 		DateTimeOffset7 UpdatedOn 
 		nvarchar30 Username 
 	}
-	RoleUser {
-		VarChar128 RoleName FK
-		Char26 UserId FK
-	}
 	OutboxMessage {
-		Char26 Id 
+		Char26 Id PK
 		TinyInt AttemptCount 
 		VarChar5000 Content 
 		VarChar8000 Error 
@@ -119,7 +118,7 @@
 	}
 	OutboxMessageConsumer {
 		Char26 Id 
-		nvarchar450 Name 
+		nvarchar450 Name PK
 	}
 OrderHeader}o--||User : ""
 OrderLine}o--||OrderHeader : ""

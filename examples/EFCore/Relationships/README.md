@@ -28,7 +28,14 @@ siren-gen `
     ".\OneToOne_03_ShadowForeignKey\bin\Debug\net8.0\OneToOne_03_ShadowForeignKey.dll" `
     ".\OneToOne_03_ShadowForeignKey\ERD.md"
 ```
-
+```
+# AarchDdd
 siren-gen `
-    "C:\Workspace\Github\ArchDdd\src\ArchDdd.Adapters.Persistence\bin\Debug\net8.0\ArchDdd.Adapters.Persistence.dll" `
-    "C:\Workspace\Github\ArchDdd\src\ArchDdd.Adapters.Persistence\ERD.md"
+    "C:\Workspace\Github\ArchDdd\src\Migrators\Migrators.Sqlite\bin\Debug\net8.0\Migrators.Sqlite.dll" `
+    "C:\Workspace\Github\ArchDdd\src\Migrators\Migrators.Sqlite\ERD.md"
+
+# DDD
+siren-gen `
+    "C:\Workspace\Github\DomainDrivenDesignUniversity\bin\Debug\Shopway.Persistence.dll" `
+    "C:\Workspace\Github\DomainDrivenDesignUniversity\ERD.md"
+```

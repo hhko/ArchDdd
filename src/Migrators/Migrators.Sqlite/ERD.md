@@ -3,14 +3,14 @@
 	%%{init: {'theme':'neutral'}}%%
 	erDiagram
 	Role {
-		VarChar128 Name 
+		VarChar128 Name PK
 	}
 	RoleUser {
 		VarChar128 RoleName FK
-		Char26 UserId FK
+		Char26 UserId PK,FK
 	}
 	User {
-		Char26 Id 
+		Char26 Id PK
 		TEXT CreatedOn 
 		TEXT Email 
 		NChar514 PasswordHash 

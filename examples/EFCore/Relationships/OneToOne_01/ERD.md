@@ -3,10 +3,10 @@
 	%%{init: {'theme':'neutral'}}%%
 	erDiagram
 	Blog {
-		INTEGER Id 
+		INTEGER Id PK
 	}
 	BlogHeader {
-		INTEGER Id 
+		INTEGER Id PK
 		INTEGER BlogId FK
 	}
 BlogHeader|o--||Blog : ""
