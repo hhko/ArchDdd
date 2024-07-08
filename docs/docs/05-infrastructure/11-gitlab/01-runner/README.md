@@ -30,6 +30,7 @@ C:\Workspace\GitLab-Runner\gitlab-runner-windows-amd64.exe
 ```
 
 ## 5. Runner 서버 등록
+
 ```shell
 # --url: 저장소 URL
 #     --url "https://www.foo.com"
