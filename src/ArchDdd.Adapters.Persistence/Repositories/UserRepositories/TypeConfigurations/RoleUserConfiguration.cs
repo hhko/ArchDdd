@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using static ArchDdd.Adapters.Persistence.Abstractions.Constants.Constants;
-using ArchDdd.Domain.AggregateRoots.Users.Authorization;
+using ArchDdd.Domain.AggregateRoots.Users.Enumerations;
 
 namespace ArchDdd.Adapters.Persistence.Repositories.UserRepositories.TypeConfigurations;
 

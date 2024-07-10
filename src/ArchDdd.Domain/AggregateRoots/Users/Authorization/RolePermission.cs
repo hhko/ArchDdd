@@ -1,18 +1,18 @@
-﻿namespace ArchDdd.Domain.AggregateRoots.Users.Authorization;
+﻿//namespace ArchDdd.Domain.AggregateRoots.Users.Authorization;
 
-public sealed class RolePermission
-{
-    public RolePermission(string roleName, string permissionName)
-    {
-        RoleName = roleName;
-        PermissionName = permissionName;
-    }
+//public sealed class RolePermission
+//{
+//    public RolePermission(string roleName, string permissionName)
+//    {
+//        RoleName = roleName;
+//        PermissionName = permissionName;
+//    }
 
-    private RolePermission()
-    {
-    }
+//    private RolePermission()
+//    {
+//    }
 
-    public string RoleName { get; init; }
+//    public string RoleName { get; init; }
 
-    public string PermissionName { get; init; }
-}
+//    public string PermissionName { get; init; }
+//}

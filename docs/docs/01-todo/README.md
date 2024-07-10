@@ -232,6 +232,7 @@
     - [ ] E2E 테스트
   - CI/CD
   - Observability
+  - Modular Monoliths
 ```
 
 ## 사례
@@ -257,6 +258,9 @@
 - [ ] [Clean Architecture Template, Casey](https://github.com/cbcrouse/CleanArchitecture)
 - [ ] [modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd)
 - [ ] [VerticalSliceArchitecture](https://github.com/nadirbad/VerticalSliceArchitecture/tree/main)
+- [ ] [.NET-Domain-Driven-Design-Template](https://github.com/evgenirusev/.NET-Domain-Driven-Design-Template)
+- [ ] [modulith](https://github.com/ardalis/modulith)
+
 ### DDD
 - [tdd-ddd-demo-dotnet](https://github.com/chrissimon-au/tdd-ddd-demo-dotnet), [영상](https://www.youtube.com/watch?v=gXz7gKtRVpM)
 - [Stop using Entity Framework as a DTO provider!](https://github.com/ChrisKlug/efcore-dto-demo/tree/main), [영상](https://www.youtube.com/watch?v=N_eLotlcjXo)

@@ -7,7 +7,7 @@ using static PrimitiveUtilities.ListUtilities;
 
 namespace ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
 
-public sealed class Username : ValueObject
+public sealed partial class Username : ValueObject
 {
     //
     // 유효성 검사 규칙

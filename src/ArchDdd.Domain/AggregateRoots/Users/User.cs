@@ -2,7 +2,7 @@
 using ArchDdd.Domain.Abstractions.BaseTypes;
 using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
 using ArchDdd.Domain.AggregateRoots.Users.Events;
-using ArchDdd.Domain.AggregateRoots.Users.Authorization;
+using ArchDdd.Domain.AggregateRoots.Users.Enumerations;
 
 namespace ArchDdd.Domain.AggregateRoots.Users;
 

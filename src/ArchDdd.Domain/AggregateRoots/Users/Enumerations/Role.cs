@@ -1,7 +1,7 @@
 ﻿using ArchDdd.Domain.Abstractions.BaseTypes;
 using System.Reflection;
 
-namespace ArchDdd.Domain.AggregateRoots.Users.Authorization;
+namespace ArchDdd.Domain.AggregateRoots.Users.Enumerations;
 
 //public enum RoleName
 //{
@@ -41,7 +41,7 @@ public sealed class Role
 
     public string Name { get; init; }
     public ICollection<User> Users { get; init; }
-    public ICollection<Permission> Permissions { get; init; }
+    //public ICollection<Permission> Permissions { get; init; }
 
     // 사전 정의된 Role 목록을 반환한다
     public static List<Role> GetPredefinedRoles()

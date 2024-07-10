@@ -1,4 +1,4 @@
-﻿namespace ArchDdd.Domain.AggregateRoots.Users.Authorization;
+﻿namespace ArchDdd.Domain.AggregateRoots.Users.Enumerations;
 
 public sealed class RoleUser
 {

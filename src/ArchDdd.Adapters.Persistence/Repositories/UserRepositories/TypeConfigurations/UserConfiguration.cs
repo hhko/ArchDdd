@@ -1,7 +1,7 @@
 ﻿using ArchDdd.Adapters.Persistence.Repositories.Converters.EntityIds;
 using ArchDdd.Adapters.Persistence.Repositories.Converters.ValueObjects;
 using ArchDdd.Domain.AggregateRoots.Users;
-using ArchDdd.Domain.AggregateRoots.Users.Authorization;
+using ArchDdd.Domain.AggregateRoots.Users.Enumerations;
 using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;

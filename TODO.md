@@ -1,4 +1,54 @@
 ```
+Permission
+  CreatePermission
+  DeletePermission
+ValueObject
+----
+Role
+  User <-> Role <-> Permission
+    1xN
+    NxM
+
+// User
+UserId
+private readonly List<Role> _roles = [];
+public IReadOnlyCollection<Role> Roles => _roles.AsReadOnly();
+
+public void AddRole(Role role)
+{
+    _roles.Add(role);
+}
+
+public void RemoveRole(Role role)
+{
+    _roles.Remove(role);
+}
+
+->
+public RoleUser(string roleName, UserId userId)
+->
+
+// Role
+public string Name { get; init; }
+public ICollection<User> Users { get; init; }
+
+public ICollection<Permission> Permissions { get; init; }
+---------------------------
+
+->
+public RolePermission(string roleName, string permissionName)
+->
+
+
+NxM
+  Nx1
+
+1 -> N
+N <- 1
+---------
+1 -> N
+
+```
 Entity Framework Visual Editor
 https://marketplace.visualstudio.com/items?itemName=michaelsawczyn.EFDesigner2022
 
