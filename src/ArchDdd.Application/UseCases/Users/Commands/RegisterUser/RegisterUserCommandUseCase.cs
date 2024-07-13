@@ -13,13 +13,15 @@ using static ArchDdd.Domain.AggregateRoots.Users.Errors.DomainErrors;
 namespace ArchDdd.Application.UseCases.Users.Commands.RegisterUser;
 
 internal sealed class RegisterUserCommandUseCase(
-    IUserRepository userRepository,
+    IUserRepositoryCommand userRepositoryCommand,
+    IUserRepositoryQuery userRepositoryQuery,
     IPasswordHasher<User> passwordHasher,
     IValidator validator)
     //: IRequestHandler<RegisterUserCommand, IResult<RegisterUserResponse>>
     : ICommandUseCase<RegisterUserCommand, RegisterUserResponse>
 {
-    private readonly IUserRepository _userRepository = userRepository;
+    private readonly IUserRepositoryCommand _userRepositoryCommand = userRepositoryCommand;
+    private readonly IUserRepositoryQuery _userRepositoryQuery = userRepositoryQuery;
     private readonly IPasswordHasher<User> _passwordHasher = passwordHasher;
     private readonly IValidator _validator = validator;
 
@@ -31,7 +33,7 @@ internal sealed class RegisterUserCommandUseCase(
         Password password = Password.Create(command.Password).Value;
 
         // 비즈니스 규칙 유효성
-        bool emailIsTaken = await _userRepository.IsEmailTakenAsync(email, cancellationToken);
+        bool emailIsTaken = await _userRepositoryQuery.IsEmailTakenAsync(email, cancellationToken);
 
         _validator.If(
             condition: emailIsTaken,
@@ -59,7 +61,7 @@ internal sealed class RegisterUserCommandUseCase(
         }
 
         user.SetHashedPassword(passwordHashResult.Value);
-        _userRepository.Add(user);
+        _userRepositoryCommand.Add(user);
 
         return user
             .ToCreateResponse()

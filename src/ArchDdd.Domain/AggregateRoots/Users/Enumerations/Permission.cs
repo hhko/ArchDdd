@@ -47,74 +47,95 @@
 
 
 
-//public sealed partial class Permission
-//{
-//    private const char _floor = '_';
-//    public static Permission INVALID_PERMISSION = new(nameof(INVALID_PERMISSION)) //Test purposes
-//    {
-//        Type = PermissionType.Other
-//    };
+using ArchDdd.Domain.Abstractions.Results;
+using PrimitiveUtilities;
+using static PrimitiveUtilities.ListUtilities;
 
-//    public string Name { get; init; }
-//    public PermissionType Type { get; init; } = PermissionType.Other;
-//    public string? RelatedAggregateRoot { get; init; }
-//    public string? RelatedEntity { get; init; }
-//    public List<string>? Properties { get; init; } = null;
+public sealed partial class Permission
+{
+    private const char _floor = '_';
+    //    public static Permission INVALID_PERMISSION = new(nameof(INVALID_PERMISSION)) //Test purposes
+    //    {
+    //        Type = PermissionType.Other
+    //    };
 
-//    private Permission(string name)
-//    {
-//        Name = name;
-//    }
+    public string Name { get; init; }
+    //    public PermissionType Type { get; init; } = PermissionType.Other;
+    //    public string? RelatedAggregateRoot { get; init; }
+    //    public string? RelatedEntity { get; init; }
+    //    public List<string>? Properties { get; init; } = null;
 
-//    //public static ValidationResult<Email> Create(string email)
-//    //{
-//    //    var errors = Validate(email);
-//    //    return errors.CreateValidationResult(() => new Email(email));
-//    //}
+    private Permission(string name)
+    {
+        Name = name;
+    }
 
-//    //public static IList<Error> Validate(string email)
-//    //{
-//    //    return EmptyList<Error>()
+    //public static ValidationResult<Permission> Create(
+    //    string name,
+    //    string relatedAggregateRoot,
+    //    string relatedEntity,
+    //    string permissionTypeAsString,
+    //    List<string>? allowedProperties = null)
+    //{
 
-//    public static Result<Permission> CreatePermission(
-//        string name,
-//        string relatedAggregateRoot,
-//        string relatedEntity,
-//        string permissionTypeAsString,
-//        List<string>? allowedProperties = null)
-//    {
-//        var parsePermissionTypeResult = Enum.TryParse<PermissionType>(permissionTypeAsString, out var permissionType);
+    //}
 
-//        //var errors = Validate(name, relatedAggregateRoot, relatedEntity, parsePermissionTypeResult, permissionTypeAsString, allowedProperties);
+    //public static IList<Error> Validate(
+    //    string name,
+    //    string relatedAggregateRoot,
+    //    string relatedEntity,
+    //    bool parsePermissionTypeResult,
+    //    string permissionTypeAsString,
+    //    List<string>? allowedProperties = null)
+    //{
 
-//        //if (errors.NotNullOrEmpty())
-//        //{
-//        //    return ValidationResult<Permission>.WithErrors([.. errors]);
-//        //}
+    //    return EmptyList<Error>()
+    //        .If(name.NotContains(_floor), Error.InvalidArgument($"Permission must contain '{_floor}'."))
+    //        .If(parsePermissionTypeResult is false, Error.InvalidArgument($"{permissionTypeAsString} is not a valid PermissionType. Valid PermissionTypes: {string.Join(", ", PermissionType.Other.GetEnumNames())}"))
+    //        .If(IsAggregateRoot(relatedAggregateRoot) is false, Error.InvalidArgument($"{relatedAggregateRoot} is not a valid RelatedAggregateRoot"))
+    //        .If(IsEntity(relatedEntity) is false, Error.InvalidArgument($"{relatedEntity} is not a valid Entity"))
+    //        .If(IsEntity(relatedEntity) && ReatedEntityPropertiesAreInvalid(relatedEntity, allowedProperties), Error.InvalidArgument($"{relatedEntity} is not a valid Entity"));
+    //}
 
-//        return new Permission(name)
-//        {
-//            RelatedAggregateRoot = relatedAggregateRoot,
-//            RelatedEntity = relatedEntity,
-//            Type = permissionType,
-//            Properties = allowedProperties
-//        };
-//    }
+    //    public static Result<Permission> CreatePermission(
+    //        string name,
+    //        string relatedAggregateRoot,
+    //        string relatedEntity,
+    //        string permissionTypeAsString,
+    //        List<string>? allowedProperties = null)
+    //    {
+    //        var parsePermissionTypeResult = Enum.TryParse<PermissionType>(permissionTypeAsString, out var permissionType);
 
-//    //public static IList<Error> Validate(
-//    //    string name,
-//    //    string relatedAggregateRoot,
-//    //    string relatedEntity,
-//    //    bool parsePermissionTypeResult,
-//    //    string permissionTypeAsString,
-//    //    List<string>? allowedProperties = null)
-//    //{
+    //        //var errors = Validate(name, relatedAggregateRoot, relatedEntity, parsePermissionTypeResult, permissionTypeAsString, allowedProperties);
 
-//    //    return EmptyList<Error>()
-//    //        .If(name.NotContains(_floor), Error.InvalidArgument($"Permission must contain '{_floor}'."))
-//    //        .If(parsePermissionTypeResult is false, Error.InvalidArgument($"{permissionTypeAsString} is not a valid PermissionType. Valid PermissionTypes: {string.Join(", ", PermissionType.Other.GetEnumNames())}"))
-//    //        .If(IsAggregateRoot(relatedAggregateRoot) is false, Error.InvalidArgument($"{relatedAggregateRoot} is not a valid RelatedAggregateRoot"))
-//    //        .If(IsEntity(relatedEntity) is false, Error.InvalidArgument($"{relatedEntity} is not a valid Entity"))
-//    //        .If(IsEntity(relatedEntity) && ReatedEntityPropertiesAreInvalid(relatedEntity, allowedProperties), Error.InvalidArgument($"{relatedEntity} is not a valid Entity"));
-//    //}
-//}
+    //        //if (errors.NotNullOrEmpty())
+    //        //{
+    //        //    return ValidationResult<Permission>.WithErrors([.. errors]);
+    //        //}
+
+    //        return new Permission(name)
+    //        {
+    //            RelatedAggregateRoot = relatedAggregateRoot,
+    //            RelatedEntity = relatedEntity,
+    //            Type = permissionType,
+    //            Properties = allowedProperties
+    //        };
+    //    }
+
+    //    //public static IList<Error> Validate(
+    //    //    string name,
+    //    //    string relatedAggregateRoot,
+    //    //    string relatedEntity,
+    //    //    bool parsePermissionTypeResult,
+    //    //    string permissionTypeAsString,
+    //    //    List<string>? allowedProperties = null)
+    //    //{
+
+    //    //    return EmptyList<Error>()
+    //    //        .If(name.NotContains(_floor), Error.InvalidArgument($"Permission must contain '{_floor}'."))
+    //    //        .If(parsePermissionTypeResult is false, Error.InvalidArgument($"{permissionTypeAsString} is not a valid PermissionType. Valid PermissionTypes: {string.Join(", ", PermissionType.Other.GetEnumNames())}"))
+    //    //        .If(IsAggregateRoot(relatedAggregateRoot) is false, Error.InvalidArgument($"{relatedAggregateRoot} is not a valid RelatedAggregateRoot"))
+    //    //        .If(IsEntity(relatedEntity) is false, Error.InvalidArgument($"{relatedEntity} is not a valid Entity"))
+    //    //        .If(IsEntity(relatedEntity) && ReatedEntityPropertiesAreInvalid(relatedEntity, allowedProperties), Error.InvalidArgument($"{relatedEntity} is not a valid Entity"));
+    //    //}
+}

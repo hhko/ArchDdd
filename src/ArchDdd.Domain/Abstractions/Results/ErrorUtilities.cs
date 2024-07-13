@@ -5,7 +5,8 @@ namespace ArchDdd.Domain.Abstractions.Results;
 
 public static class ErrorUtilities
 {
-    public static TResult CreateValidationResult<TResult>(this ICollection<Error> errors)
+    public static TResult CreateValidationResult<TResult>(
+        this ICollection<Error> errors)
         where TResult : class, IResult
     {
         if (typeof(TResult) == typeof(Result))
@@ -24,7 +25,8 @@ public static class ErrorUtilities
 
     public static ValidationResult<TValueObject> CreateValidationResult<TValueObject>(
         this ICollection<Error> errors,
-        Func<TValueObject> createValueObject) where TValueObject : ValueObject
+        Func<TValueObject> createValueObject) 
+        where TValueObject : ValueObject
     {
         // if (errors is null)
         //     throw new ArgumentNullException($"{nameof(errors)} must not be null");

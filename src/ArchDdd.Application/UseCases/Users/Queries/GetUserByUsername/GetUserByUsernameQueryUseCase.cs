@@ -4,24 +4,23 @@ using ArchDdd.Application.Abstractions;
 using static ArchDdd.Domain.AggregateRoots.Users.Errors.DomainErrors;
 using ArchDdd.Application.Abstractions.Utilities;
 using ArchDdd.Application.Abstractions.CQRS;
-using System.Threading;
 
 namespace ArchDdd.Application.UseCases.Users.Queries.GetUserByUsername;
 
 internal sealed class GetUserByUsernameQueryUseCase(
-    IUserRepository userRepository, 
+    IUserRepositoryQuery userRepositoryQuery, 
     IValidator validator)
     // 이전: IResult 출력 타입 단순화
     //  : IRequestHandler<GetUserByUsernameQuery, IResult<UserResponse>>
     : IQueryUseCase<GetUserByUsernameQuery, GetUserByUsernameResponse>
 {
-    private readonly IUserRepository _userRepository = userRepository;
+    private readonly IUserRepositoryQuery _userRepositoryQuery = userRepositoryQuery;
     private readonly IValidator _validator = validator;
 
     public async Task<IResult<GetUserByUsernameResponse>> Handle(GetUserByUsernameQuery query, CancellationToken cancellationToken)
     {
-        var response = await _userRepository.SqlQuerySingleAsync<GetUserByUsernameResponse>(
-            QueryUserByUsername(query.Username),
+        var response = await _userRepositoryQuery.GetByUsernameAsync<GetUserByUsernameResponse>(//.SqlQuerySingleAsync<GetUserByUsernameResponse>(
+            query.Username,
             cancellationToken);
 
         _validator.If(
@@ -35,15 +34,7 @@ internal sealed class GetUserByUsernameQueryUseCase(
         return response!.ToResult();
     }
 
-    private FormattableString QueryUserByUsername(string username)
-    {
-        return $"""
-            SELECT u.Id, u.Username, u.Email
-                FROM User AS u
-                WHERE u.Username = {username}
-                LIMIT 1
-            """;
-    }
+    
 
     //public async Task<IResult<GetUserByUsernameResponse>> Handle(GetUserByUsernameQuery query, CancellationToken cancellationToken)
     //{

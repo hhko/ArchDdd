@@ -15,8 +15,9 @@ public sealed class RegisterUserTests
     public async Task RegisterUser_IsValid_ShouldBeSuccess()
     {
         // Arrange
-        IUserRepository userRepository = Substitute.For<IUserRepository>();
-        userRepository
+        IUserRepositoryCommand userRepositoryCommand = Substitute.For<IUserRepositoryCommand>();
+        IUserRepositoryQuery userRepositoryQuery = Substitute.For<IUserRepositoryQuery>();
+        userRepositoryQuery
             .IsEmailTakenAsync(Arg.Any<Email>(), Arg.Any<CancellationToken>())
             .Returns(Task.FromResult(false));
 
@@ -30,7 +31,11 @@ public sealed class RegisterUserTests
             .IsValid
             .Returns(true);
 
-        var sut = new RegisterUserCommandUseCase(userRepository, passwordHasher, validator);
+        var sut = new RegisterUserCommandUseCase(
+            userRepositoryCommand,
+            userRepositoryQuery,
+            passwordHasher,
+            validator);
 
         // Act
         var actual = await sut.Handle(

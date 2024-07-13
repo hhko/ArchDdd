@@ -16,6 +16,18 @@ content-type: application/json
     "confirmPassword": "123456789#aB"
 }
 
+### Success
+POST {{host}}/api/user/register
+content-type: application/json
+
+{
+    "username": "Gabriel",
+    "email": "gabriel@fun.com",
+    "password": "123456789#aB",
+    "confirmPassword": "123456789#aB"
+}
+
+
 # application/json; charset=utf-8, 35 bytes
 # {
 #   "id": "01HYSE2BZCAD4671TVX614KTDA"

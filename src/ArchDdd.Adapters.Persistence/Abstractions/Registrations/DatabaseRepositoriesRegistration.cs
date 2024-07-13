@@ -7,7 +7,8 @@ internal static class DatabaseRepositoriesRegistration
 {
     internal static IServiceCollection RegisterDatabaseRepositories(this IServiceCollection services)
     {
-        services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IUserRepositoryQuery, UserRepositoryQuery>();
+        services.AddScoped<IUserRepositoryCommand, UserRepositoryCommand>();
 
         return services;
     }

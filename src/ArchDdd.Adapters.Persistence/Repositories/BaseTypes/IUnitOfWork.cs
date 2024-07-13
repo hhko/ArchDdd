@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore;
 
-namespace ArchDdd.Adapters.Persistence.Repositories;
+namespace ArchDdd.Adapters.Persistence.Repositories.BaseTypes;
 
 public interface IUnitOfWork
 {

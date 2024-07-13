@@ -8,6 +8,9 @@
 ### FromRoute
 GET {{host}}/api/user/Lucas
 
+### FromRoute
+GET {{host}}/api/user/Gabriel
+
 # application/json; charset=utf-8, 78 bytes
 # 
 # {

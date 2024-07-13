@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore;
 //using static Microsoft.EntityFrameworkCore.EntityState;
 
-namespace ArchDdd.Adapters.Persistence.Repositories;
+namespace ArchDdd.Adapters.Persistence.Repositories.BaseTypes;
 
 //UnitOfWork class to handler transactions
 //Benefits:

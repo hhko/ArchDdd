@@ -1,24 +1,20 @@
-﻿using ArchDdd.Domain.Abstractions.Contracts;
+﻿using ArchDdd.Domain.Abstractions.Repositories;
 using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
 
 namespace ArchDdd.Domain.AggregateRoots.Users;
 
-public interface IUserRepository : IQueryRepository
+public interface IUserRepositoryQuery : IRepositoryQuery
 {
     //Task<User?> GetByIdAsync(UserId id, CancellationToken cancellationToken);
 
     //Task<User?> GetByEmailAsync(Email email, CancellationToken cancellationToken);
 
-    Task<User?> GetByUsernameAsync(Username username, CancellationToken cancellationToken);
+    Task<T?> GetByUsernameAsync<T>(string username, CancellationToken cancellationToken) where T : class;
     //Task<GetUserByUsernameResponse> GetByUsernameAsync2(Username username, CancellationToken cancellationToken);
 
     //Task<Role?> GetRolePermissionsAsync(Role role, CancellationToken cancellationToken);
 
     //Task<bool> IsEmailUniqueAsync(Email email, CancellationToken cancellationToken);
 
-    Task<bool> IsEmailTakenAsync(Email email, CancellationToken cancellationToken);
-
-    void Add(User user);
-
-    void Update(User user);
+    Task<bool> IsEmailTakenAsync(string email, CancellationToken cancellationToken);
 }

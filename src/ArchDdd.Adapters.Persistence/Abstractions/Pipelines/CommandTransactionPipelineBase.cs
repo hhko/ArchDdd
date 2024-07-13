@@ -1,4 +1,5 @@
 ﻿using ArchDdd.Adapters.Persistence.Repositories;
+using ArchDdd.Adapters.Persistence.Repositories.BaseTypes;
 using ArchDdd.Domain.Abstractions.Results.Contracts;
 using MediatR;
 
