@@ -1,8 +1,12 @@
+- [x] Query vs. Command Repository 분리
+- [ ] Dapper
+
 ```
 Permission
   CreatePermission
   DeletePermission
 ValueObject
+EFCore 코드 생성기
 ----
 Role
   User <-> Role <-> Permission

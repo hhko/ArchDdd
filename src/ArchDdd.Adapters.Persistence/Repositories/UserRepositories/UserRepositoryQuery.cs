@@ -50,16 +50,15 @@ internal class UserRepositoryQuery
     //        .FirstOrDefaultAsync(cancellationToken);
     //}
 
-    public Task<bool> IsEmailTakenAsync(string email, CancellationToken cancellationToken)
+    public async Task<bool> IsEmailTakenAsync(string email, CancellationToken cancellationToken)
     {
-        //return await SqlQuerySingleAsync<bool>($"""
-        //    SELECT EXISTS (
-        //        SELECT 1
-        //        FROM User AS u
-        //        WHERE u.Email = {email})
-        //    """,
-        //   cancellationToken);
-        throw new NotImplementedException();
+        // no such column: t.Value
+        return await SqlQueryScalarAsync<bool>($"""
+            SELECT EXISTS (
+                SELECT 1
+                FROM User AS u
+                WHERE u.Email = {email}) as VALUE
+            """, cancellationToken);
     }
 
     //public async Task<bool> IsEmailTakenAsync(Email email, CancellationToken cancellationToken)

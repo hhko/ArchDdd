@@ -266,14 +266,21 @@
 - [Stop using Entity Framework as a DTO provider!](https://github.com/ChrisKlug/efcore-dto-demo/tree/main), [영상](https://www.youtube.com/watch?v=N_eLotlcjXo)
 - [better-code-with-ddd](https://github.com/asc-lab/better-code-with-ddd/tree/ef_core)
 - [DDD, D:](https://www.youtube.com/watch?v=0t6TcRCvtyE&t=326s)
+
 ### CQRS
 - [CQRS in Practice](https://github.com/vkhorikov/CqrsInPractice)
 - [dotnet-cqrs-intro](https://github.com/asc-lab/dotnet-cqrs-intro/tree/master)
 
-## 학습
+### EFCore
+- [ ] [SQL Queries](https://learn.microsoft.com/en-us/ef/core/querying/sql-queries#querying-scalar-non-entity-types)
+- [ ] [EF8 – Row SQL returning Non-entities](https://www.codeproject.com/Articles/5379996/EF8-Row-SQL-returning-Non-entities)
+
 ### DDD
 - [x] []DTO와 도메인을 분리해야 하는 이유](https://www.youtube.com/watch?v=OV8e88kIU-U&t)
 - [x] [엄예림 - DTO | 백엔드 데브코스 5기](https://www.youtube.com/watch?v=Q3QGC-Llqr8)
+
+### Test
+- [ ] [Snapshot Testing in .NET with Verify](https://blog.jetbrains.com/dotnet/2024/07/11/snapshot-testing-in-net-with-verify/)
 
 ```
 사용자_정의_입력(Primitive 매개변수, 사용자 정의 DTO, ...)
