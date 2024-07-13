@@ -18,7 +18,7 @@ public sealed class RegisterUserTests
         IUserRepositoryCommand userRepositoryCommand = Substitute.For<IUserRepositoryCommand>();
         IUserRepositoryQuery userRepositoryQuery = Substitute.For<IUserRepositoryQuery>();
         userRepositoryQuery
-            .IsEmailTakenAsync(Arg.Any<Email>(), Arg.Any<CancellationToken>())
+            .IsEmailTakenAsync(Arg.Any<string>(), Arg.Any<CancellationToken>())
             .Returns(Task.FromResult(false));
 
         IPasswordHasher<User> passwordHasher = Substitute.For<IPasswordHasher<User>>();
