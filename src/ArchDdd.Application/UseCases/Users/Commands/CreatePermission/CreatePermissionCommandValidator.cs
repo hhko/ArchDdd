@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ArchDdd.Application.UseCases.Users.Commands.RegisterUser;
+using FluentValidation;
 
-namespace ArchDdd.Application.UseCases.Users.Commands.CreatePermission
+namespace ArchDdd.Application.UseCases.Users.Commands.CreatePermission;
+
+internal sealed class CreatePermissionCommandValidator : AbstractValidator<CreatePermissionCommand>
 {
-    internal class CreatePermissionCommandValidator
+    public CreatePermissionCommandValidator()
     {
+
     }
 }

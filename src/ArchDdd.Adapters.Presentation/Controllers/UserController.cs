@@ -7,6 +7,7 @@ using MediatR;
 using ArchDdd.Domain.Abstractions.Results.Contracts;
 using ArchDdd.Application.UseCases.Users.Queries.GetUserByUsername;
 using ArchDdd.Adapters.Presentation.Abstractions.Utilities;
+using ArchDdd.Application.UseCases.Users.Commands.CreatePermission;
 
 namespace ArchDdd.Adapters.Presentation.Controllers;
 
@@ -14,7 +15,7 @@ public class UserController(ISender sender) : ApiController(sender)
 {
     // POST {{host}}/api/user/register
     // content-type: application/json
-    // 
+    //
     // {
     //     "username": "Lucas",
     //     "email": "lucas@fun.com",
@@ -52,6 +53,21 @@ public class UserController(ISender sender) : ApiController(sender)
             : result.ToProblemHttpResult();
     }
 
+    [HttpPost("permissions")]
+    //[RequiredRoles(RoleName.Administrator)]
+    //[ProducesResponseType<RolesResponse>(StatusCodes.Status200OK)]
+    [ProducesResponseType<ProblemDetails>(StatusCodes.Status400BadRequest)]
+    public async Task<Results<Ok, ProblemHttpResult>> CreatePermission(
+        [FromBody] CreatePermissionCommand command,
+        CancellationToken cancellationToken)
+    {
+        var result = await Sender.Send(command, cancellationToken);
+
+        return result.IsFailure
+            ? result.ToOkResult()
+            : result.ToProblemHttpResult();
+    }
+
     //[HttpPost("roles/{role}/permissions/{permission}")]
     ////[RequiredRoles(Domain.Enums.Role.Administrator)]
     //[ProducesResponseType(StatusCodes.Status200OK)]
@@ -69,7 +85,7 @@ public class UserController(ISender sender) : ApiController(sender)
     //        : result.ToProblemHttpResult();
     //}
 
-    
+
 
     //// POST /api/{username}/roles/{customer}
     //[HttpPost("{username}/roles/{role}")]

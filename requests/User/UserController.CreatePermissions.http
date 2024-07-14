@@ -1,0 +1,42 @@
+
+@hostname=localhost
+@port=54011
+@host = http://{{hostname}}:{{port}}
+@contentType = application/json
+
+
+### CreatePermission.Valid
+POST {{host}}/api/user/permissions
+content-type: application/json
+
+{
+	"permissionName": "OrderHeader_Read_Customer",
+	"relatedAggregateRoot": "OrderHeader",
+	"relatedEntity": "OrderHeader",
+	"permissionType": "Read",
+	"allowedProperties": [
+		"Id"
+	]
+}
+
+### CreatePermission.AllProperties.Valid
+POST {{host}}/api/user/permissions
+content-type: application/json
+
+{
+	"permissionName": "OrderHeader_Read_Customer",
+	"relatedAggregateRoot": "OrderHeader",
+	"relatedEntity": "OrderHeader",
+	"permissionType": "Read"
+}
+
+### CreatePermission.User.AllProperties.Valid
+POST {{host}}/api/user/permissions
+content-type: application/json
+
+{
+	"permissionName": "User_Read_Customer",
+	"relatedAggregateRoot": "User",
+	"relatedEntity": "User",
+	"permissionType": "Read"
+}

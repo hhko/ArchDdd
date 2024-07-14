@@ -61,7 +61,7 @@ internal class UserRepositoryQuery
             """, cancellationToken);
     }
 
-    //public async Task<bool> IsEmailTakenAsync(Email email, CancellationToken cancellationToken)
+    //public async Task<bool> (Email email, CancellationToken cancellationToken)
     //{
     //    // info: Microsoft.EntityFrameworkCore.Database.Command[20101]
     //    //       Executed DbCommand (8ms)

@@ -84,8 +84,8 @@ public class RepositoryQuery : IRepositoryQuery
     {
         // ToListAsync vs. SingleOrDefaultAsync
         //
-        //  - ToListAsync          : 추가 SELECT 구문 없음
-        //  - SingleOrDefaultAsync : 추가 SELECT 구문 있음
+        //  - ToListAsync          : 중첩 SELECT 구문 없음
+        //  - SingleOrDefaultAsync : 중첩 SELECT 구문 있음
 
         // info: Microsoft.EntityFrameworkCore.Database.Command[20101]
         //   Executed DbCommand(35ms) [Parameters= [p0 = '?'(Size = 15)], CommandType = 'Text', CommandTimeout = '1']
@@ -101,7 +101,7 @@ public class RepositoryQuery : IRepositoryQuery
 
         // info: Microsoft.EntityFrameworkCore.Database.Command[20101]
         //   Executed DbCommand(22ms) [Parameters= [p0 = '?'(Size = 15)], CommandType = 'Text', CommandTimeout = '1']
-        //   SELECT "t"."Value"                         <-- 추가 SELECT 구문 생성
+        //   SELECT "t"."Value"                         <-- 중첩 SELECT 구문 생성
         //   FROM(
         //       SELECT EXISTS(
         //           SELECT 1
