@@ -1,14 +1,9 @@
 ﻿using ArchDdd.Domain.Abstractions.Repositories;
-using ArchDdd.Domain.AggregateRoots.Users;
-using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
-using Google.Protobuf.WellKnownTypes;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Data;
 
 namespace ArchDdd.Adapters.Persistence.Repositories.BaseTypes;
 
-public class RepositoryQuery : IRepositoryQuery
+internal class RepositoryQuery : IRepositoryQuery
 {
     protected readonly ArchDddDbContext DbContext;
 

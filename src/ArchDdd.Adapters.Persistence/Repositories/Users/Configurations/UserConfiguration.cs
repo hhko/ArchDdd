@@ -1,5 +1,5 @@
-﻿using ArchDdd.Adapters.Persistence.Repositories.Converters.EntityIds;
-using ArchDdd.Adapters.Persistence.Repositories.Converters.ValueObjects;
+﻿using ArchDdd.Adapters.Persistence.Repositories.Users.Converters.EntityIds;
+using ArchDdd.Adapters.Persistence.Repositories.Users.Converters.ValueObjects;
 using ArchDdd.Domain.AggregateRoots.Users;
 using ArchDdd.Domain.AggregateRoots.Users.Enumerations;
 using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using static ArchDdd.Adapters.Persistence.Abstractions.Constants.Constants;
 
-namespace ArchDdd.Adapters.Persistence.Repositories.UserRepositories.TypeConfigurations;
+namespace ArchDdd.Adapters.Persistence.Repositories.Users.Configurations;
 
 // CREATE TABLE "User" (
 //     "Id" Char(26) NOT NULL CONSTRAINT "PK_User" PRIMARY KEY,
@@ -17,6 +17,8 @@ namespace ArchDdd.Adapters.Persistence.Repositories.UserRepositories.TypeConfigu
 //     "CreatedOn" TEXT NOT NULL,
 //     "UpdatedOn" TEXT NULL
 // )
+
+// CREATE UNIQUE INDEX `sqlite_autoindex_User_1` ON `User` (Id)
 
 internal sealed class UserConfiguration : IEntityTypeConfiguration<User>
 {

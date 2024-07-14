@@ -7,5 +7,7 @@ internal static partial class Constants
         internal const string User = nameof(User);
         internal const string Role = nameof(Role);
         internal const string RoleUser = nameof(RoleUser);
+
+        internal const string Permission = nameof(Permission);
     }
 }

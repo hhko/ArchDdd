@@ -1,5 +1,5 @@
-﻿using ArchDdd.Adapters.Persistence.Repositories.UserRepositories;
-using ArchDdd.Domain.AggregateRoots.Users;
+﻿using ArchDdd.Adapters.Persistence.Repositories.Users;
+using ArchDdd.Domain.AggregateRoots.Users.Repositories;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
@@ -9,6 +9,8 @@ internal static class DatabaseRepositoriesRegistration
     {
         services.AddScoped<IUserRepositoryQuery, UserRepositoryQuery>();
         services.AddScoped<IUserRepositoryCommand, UserRepositoryCommand>();
+
+        services.AddScoped<IAuthorizationRepositoryQuery, AuthorizationRepositoryQuery>();
 
         return services;
     }

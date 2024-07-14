@@ -2,12 +2,15 @@
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ArchDdd.Adapters.Persistence.Repositories.Converters.ValueObjects;
+namespace ArchDdd.Adapters.Persistence.Repositories.Users.Converters.ValueObjects;
 
 public sealed class UsernameConverter : ValueConverter<Username, string>
 {
     public UsernameConverter()
-        : base(username => username.Value,
+        : base(
+            // object -> string
+            username => username.Value,
+            // string -> object
             @string => Username.Create(@string).Value)
     {
     }

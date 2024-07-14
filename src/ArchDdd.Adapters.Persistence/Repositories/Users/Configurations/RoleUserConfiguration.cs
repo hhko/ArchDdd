@@ -1,10 +1,10 @@
-﻿using ArchDdd.Adapters.Persistence.Repositories.Converters.EntityIds;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
 using static ArchDdd.Adapters.Persistence.Abstractions.Constants.Constants;
 using ArchDdd.Domain.AggregateRoots.Users.Enumerations;
+using ArchDdd.Adapters.Persistence.Repositories.Users.Converters.EntityIds;
 
-namespace ArchDdd.Adapters.Persistence.Repositories.UserRepositories.TypeConfigurations;
+namespace ArchDdd.Adapters.Persistence.Repositories.Users.Configurations;
 
 // CREATE TABLE "RoleUser" (
 //     "RoleName" VarChar(128) NOT NULL,
@@ -14,7 +14,10 @@ namespace ArchDdd.Adapters.Persistence.Repositories.UserRepositories.TypeConfigu
 //     CONSTRAINT "FK_RoleUser_User_UserId" FOREIGN KEY("UserId") REFERENCES "User" ("Id") ON DELETE CASCADE
 // )
 
-internal class RoleUserConfiguration : IEntityTypeConfiguration<RoleUser>
+// CREATE INDEX "IX_RoleUser_UserId" ON "RoleUser" ("UserId")
+// CREATE UNIQUE INDEX `sqlite_autoindex_RoleUser_1` ON `RoleUser` (RoleName, UserId)
+
+internal sealed class RoleUserConfiguration : IEntityTypeConfiguration<RoleUser>
 {
     public void Configure(EntityTypeBuilder<RoleUser> builder)
     {

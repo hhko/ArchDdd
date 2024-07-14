@@ -5,8 +5,8 @@ using ArchDdd.Application.UseCases.Users.Mappings;
 using ArchDdd.Domain.Abstractions.Results;
 using ArchDdd.Domain.Abstractions.Results.Contracts;
 using ArchDdd.Domain.AggregateRoots.Users;
+using ArchDdd.Domain.AggregateRoots.Users.Repositories;
 using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
-using MediatR;
 using Microsoft.AspNetCore.Identity;
 using static ArchDdd.Domain.AggregateRoots.Users.Errors.DomainErrors;
 
@@ -27,7 +27,6 @@ internal sealed class RegisterUserCommandUseCase(
 
     public async Task<IResult<RegisterUserResponse>> Handle(RegisterUserCommand command, CancellationToken cancellationToken)
     {
-        // 데이터 유효성
         Email email = Email.Create(command.Email).Value;
         Username username = Username.Create(command.Username).Value;
         Password password = Password.Create(command.Password).Value;

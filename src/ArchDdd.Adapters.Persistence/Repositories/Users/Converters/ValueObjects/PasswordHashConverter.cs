@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ArchDdd.Adapters.Persistence.Repositories.Converters.ValueObjects;
+namespace ArchDdd.Adapters.Persistence.Repositories.Users.Converters.ValueObjects;
 
 public sealed class PasswordHashConverter : ValueConverter<PasswordHash, string>
 {

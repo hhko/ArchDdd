@@ -29,14 +29,14 @@ public sealed class Role
     public static readonly Role Manager = new(nameof(Manager));
     public static readonly Role Administrator = new(nameof(Administrator));
 
-    public Role(string name)
-    {
-        Name = name;
-    }
-
     // EFCore을 위한 기본 생성자
     private Role()
     {
+    }
+
+    public Role(string name)
+    {
+        Name = name;
     }
 
     public string Name { get; init; }

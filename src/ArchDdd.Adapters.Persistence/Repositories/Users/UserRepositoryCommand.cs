@@ -1,15 +1,7 @@
-﻿using ArchDdd.Adapters.Persistence.Repositories.BaseTypes;
-using ArchDdd.Application.UseCases.Users.Queries.GetUserByUsername;
-using ArchDdd.Domain.AggregateRoots.Users;
-using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.EntityFrameworkCore;
-using SQLitePCL;
-using System.Collections.Generic;
-using System.Data;
-using static System.Net.Mime.MediaTypeNames;
+﻿using ArchDdd.Domain.AggregateRoots.Users;
+using ArchDdd.Domain.AggregateRoots.Users.Repositories;
 
-namespace ArchDdd.Adapters.Persistence.Repositories.UserRepositories;
+namespace ArchDdd.Adapters.Persistence.Repositories.Users;
 
 // {
 //   "type": "Exception.InvalidOperationException",
@@ -29,7 +21,7 @@ namespace ArchDdd.Adapters.Persistence.Repositories.UserRepositories;
 // CROSS JOIN: 두 테이블 간의 모든 행의 조합.
 // SELF  JOIN: 동일한 테이블 내의 행들 간의 조인.
 
-public class UserRepositoryCommand
+internal sealed class UserRepositoryCommand
     : IUserRepositoryCommand
 {
     private readonly ArchDddDbContext _dbContext;

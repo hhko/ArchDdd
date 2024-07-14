@@ -1,11 +1,9 @@
 ﻿using ArchDdd.Adapters.Persistence.Repositories.BaseTypes;
-using ArchDdd.Domain.AggregateRoots.Users;
-using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
-using Microsoft.EntityFrameworkCore;
+using ArchDdd.Domain.AggregateRoots.Users.Repositories;
 
-namespace ArchDdd.Adapters.Persistence.Repositories.UserRepositories;
+namespace ArchDdd.Adapters.Persistence.Repositories.Users;
 
-internal class UserRepositoryQuery 
+internal sealed class UserRepositoryQuery 
     : RepositoryQuery
     , IUserRepositoryQuery
 {
