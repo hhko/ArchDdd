@@ -2,6 +2,15 @@
 - [ ] Dapper
 
 ```
+1. public async Task<T?> GetPermissionAsync<T>(PermissionName permission, CancellationToken cancellationToken)
+    where T : class
+
+T -> Permission으로 변경?
+
+2. Permission으로 구현
+```
+
+```
 Permission
   CreatePermission
   DeletePermission

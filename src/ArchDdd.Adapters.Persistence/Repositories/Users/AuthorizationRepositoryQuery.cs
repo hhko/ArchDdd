@@ -4,14 +4,14 @@ using ArchDdd.Domain.AggregateRoots.Users.Repositories;
 
 namespace ArchDdd.Adapters.Persistence.Repositories.Users;
 
-internal sealed class AuthorizationRepositoryQuery 
+internal sealed class AuthorizationRepositoryQuery
     : RepositoryQuery
     , IAuthorizationRepositoryQuery
 {
     public AuthorizationRepositoryQuery(ArchDddDbContext dbContext)
         : base(dbContext)
     {
-        
+
     }
 
     public async Task<T?> GetPermissionAsync<T>(PermissionName permission, CancellationToken cancellationToken)
