@@ -63,7 +63,7 @@ public class UserController(ISender sender) : ApiController(sender)
     {
         var result = await Sender.Send(command, cancellationToken);
 
-        return result.IsFailure
+        return result.IsSuccess
             ? result.ToOkResult()
             : result.ToProblemHttpResult();
     }

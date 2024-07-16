@@ -7,7 +7,7 @@ public interface IAuthorizationRepositoryQuery
     //Task CreatePermissionAsync(Permission value);
     //Task DeletePermissionAsync(Permission permission);
 
-    Task<Permission?> GetPermissionAsync(PermissionName permission, CancellationToken cancellationToken);
+    Task<T?> GetPermissionAsync<T>(PermissionName permission, CancellationToken cancellationToken) where T : class;
     //Task<HashSet<string>> GetPermissionsAsync(UserId userId);
     //Task<Role?> GetRolePermissionsAsync(RoleName role, CancellationToken cancellationToken);
     //Task<bool> HasPermissionsAsync(UserId userId, PermissionName[] requiredPermissions, LogicalOperation logicalOperation = LogicalOperation.And);

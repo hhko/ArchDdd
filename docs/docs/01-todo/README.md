@@ -281,6 +281,8 @@
 
 ### Test
 - [ ] [Snapshot Testing in .NET with Verify](https://blog.jetbrains.com/dotnet/2024/07/11/snapshot-testing-in-net-with-verify/)
+- [ ] [박정국 CTO가 알려주는 ‘서버 성능 측정 방법’ (포브스 선정, 신입 개발자, API, 백엔드)](https://www.youtube.com/watch?v=HSNyJnobBws)
+- [ ] [[10분 테코톡] 베베, 허브의 성능 테스트](https://www.youtube.com/watch?v=3cTn53dtzJI)
 
 ```
 사용자_정의_입력(Primitive 매개변수, 사용자 정의 DTO, ...)

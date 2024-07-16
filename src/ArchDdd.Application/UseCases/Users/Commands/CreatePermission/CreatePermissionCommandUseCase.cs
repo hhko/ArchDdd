@@ -32,7 +32,7 @@ internal sealed class CreatePermissionCommandUseCase(
             return _validator.Failure();
         }
 
-        var permissionFromDatabase = await _authorizationRepositoryQuery.GetPermissionAsync(Enum.Parse<PermissionName>(permissionToCreateResult.Value.Name), cancellationToken);
+        var permissionFromDatabase = await _authorizationRepositoryQuery.GetPermissionAsync<Permission>(Enum.Parse<PermissionName>(permissionToCreateResult.Value.Name), cancellationToken);
 
         //_validator
         //    .If(permissionFromDatabase is not null, Error.AlreadyExists<Permission>(permissionToCreateResult.Value.Name));
