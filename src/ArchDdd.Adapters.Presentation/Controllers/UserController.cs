@@ -22,6 +22,7 @@ public class UserController(ISender sender) : ApiController(sender)
     //     "password": "123456789#aB",
     //     "confirmPassword": "123456789#aB"
     // }
+    //
     [HttpPost("[action]")]
     [ProducesResponseType<RegisterUserResponse>(StatusCodes.Status200OK)]
     [ProducesResponseType<ProblemDetails>(StatusCodes.Status400BadRequest)]
@@ -37,6 +38,7 @@ public class UserController(ISender sender) : ApiController(sender)
     }
 
     // GET {{host}}/api/user/Lucas
+    //
     [HttpGet("{username}")]
     [ProducesResponseType<GetUserByUsernameResponse>(StatusCodes.Status200OK)]
     [ProducesResponseType<ProblemDetails>(StatusCodes.Status400BadRequest)]
@@ -53,6 +55,16 @@ public class UserController(ISender sender) : ApiController(sender)
             : result.ToProblemHttpResult();
     }
 
+    // POST {{host}}/api/user/permissions
+    // content-type: application/json
+    //
+    // {
+    //   "permissionName": "User_Read_Customer",
+    //   "relatedAggregateRoot": "User",
+    //   "relatedEntity": "User",
+    //   "permissionType": "Read"
+    // }
+    //
     [HttpPost("permissions")]
     //[RequiredRoles(RoleName.Administrator)]
     //[ProducesResponseType<RolesResponse>(StatusCodes.Status200OK)]

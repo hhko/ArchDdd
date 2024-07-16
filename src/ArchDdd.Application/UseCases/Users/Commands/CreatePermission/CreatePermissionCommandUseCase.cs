@@ -9,10 +9,12 @@ namespace ArchDdd.Application.UseCases.Users.Commands.CreatePermission;
 
 internal sealed class CreatePermissionCommandUseCase(
     IAuthorizationRepositoryQuery authorizationRepositoryQuery,
+    IAuthorizationRepositoryCommand authorizationRepositoryCommand,
     IValidator validator)
     : ICommandUseCase<CreatePermissionCommand>
 {
     private readonly IAuthorizationRepositoryQuery _authorizationRepositoryQuery = authorizationRepositoryQuery;
+    private readonly IAuthorizationRepositoryCommand _authorizationRepositoryCommand = authorizationRepositoryCommand;
     private readonly IValidator _validator = validator;
 
     public async Task<IResult> Handle(CreatePermissionCommand command, CancellationToken cancellationToken)
@@ -42,9 +44,8 @@ internal sealed class CreatePermissionCommandUseCase(
             return _validator.Failure();
         }
 
-        //await _authorizationRepository
-        //    .CreatePermissionAsync(permissionToCreateResult.Value);
-        await Task.CompletedTask;
+        await _authorizationRepositoryCommand
+            .CreatePermissionAsync(permissionToCreateResult.Value);
 
         return Result.Success();
     }

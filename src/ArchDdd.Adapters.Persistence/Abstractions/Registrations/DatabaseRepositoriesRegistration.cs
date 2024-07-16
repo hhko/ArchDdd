@@ -11,6 +11,7 @@ internal static class DatabaseRepositoriesRegistration
         services.AddScoped<IUserRepositoryCommand, UserRepositoryCommand>();
 
         services.AddScoped<IAuthorizationRepositoryQuery, AuthorizationRepositoryQuery>();
+        services.AddScoped<IAuthorizationRepositoryCommand, AuthorizationRepositoryCommand>();
 
         return services;
     }
