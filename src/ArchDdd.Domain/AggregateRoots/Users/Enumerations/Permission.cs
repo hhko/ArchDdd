@@ -1,4 +1,5 @@
 ﻿using ArchDdd.Domain.Abstractions.Results;
+using PrimitiveUtilities;
 using static PrimitiveUtilities.ListUtilities;
 
 namespace ArchDdd.Domain.AggregateRoots.Users.Enumerations;
@@ -115,13 +116,12 @@ public sealed partial class Permission
         string permissionTypeAsString,
         List<string>? allowedProperties = null)
     {
-        return EmptyList<Error>();
-        //return EmptyList<Error>()
-        //    .If(name.NotContains(_floor), Error.InvalidArgument($"Permission must contain '{_floor}'."))
-        //    .If(parsePermissionTypeResult is false, Error.InvalidArgument($"{permissionTypeAsString} is not a valid PermissionType. Valid PermissionTypes: {string.Join(", ", PermissionType.Other.GetEnumNames())}"))
-        //    .If(IsAggregateRoot(relatedAggregateRoot) is false, Error.InvalidArgument($"{relatedAggregateRoot} is not a valid RelatedAggregateRoot"))
-        //    .If(IsEntity(relatedEntity) is false, Error.InvalidArgument($"{relatedEntity} is not a valid Entity"))
-        //    .If(IsEntity(relatedEntity) && ReatedEntityPropertiesAreInvalid(relatedEntity, allowedProperties), Error.InvalidArgument($"{relatedEntity} is not a valid Entity"));
+        return EmptyList<Error>()
+            .If(name.NotContains(_floor), Error.InvalidArgument($"Permission must contain '{_floor}'."))
+            .If(parsePermissionTypeResult is false, Error.InvalidArgument($"{permissionTypeAsString} is not a valid PermissionType. Valid PermissionTypes: {string.Join(", ", PermissionType.Other.GetEnumNames())}"));
+            //.If(IsAggregateRoot(relatedAggregateRoot) is false, Error.InvalidArgument($"{relatedAggregateRoot} is not a valid RelatedAggregateRoot"))
+            //.If(IsEntity(relatedEntity) is false, Error.InvalidArgument($"{relatedEntity} is not a valid Entity"))
+            //.If(IsEntity(relatedEntity) && ReatedEntityPropertiesAreInvalid(relatedEntity, allowedProperties), Error.InvalidArgument($"{relatedEntity} is not a valid Entity"));
     }
 
     //if (errors.NotNullOrEmpty())

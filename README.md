@@ -7,11 +7,19 @@
 > 배움은 **겸손**이다.  
 > 배움은 **이타심**이다.
 
-## GOAL
-- We use runtime data(observability) to measure compile time(clean architecture and domain-driven design) and continuously improve our code.
-- We can identify code placements(clean architecture and domain-driven design) according to requirements.
+## 개요
+### 배경
+- **개발은 글쓰기와 같습니다.**  
+  개발자는 프로그래밍 언어로 이야기를 코드로 써 내려갑니다.
+- **솔루션 탐색기의 폴더 구성은 책의 목차와 같습니다.**  
+  각 폴더는 책의 챕터처럼 관련 내용(관심사)을 담고 있습니다.
+- **목차를 따라 코드를 읽으면 비즈니스의 흐름을 이해할 수 있습니다.**   
+  코드는 비즈니스의 작동 방식을 설명하는 상세한 설명서와 같기 때문입니다.
 
-![](./.images/Goal.png)
+### 목표
+- 지속 가능한 성장
+  - `코드  --{글 읽기}--> 비즈니스 이해`: 코드를 읽으면 비즈니스를 이해할 수 있습니다.
+  - `코드 <--{글 쓰기}--  비즈니스 이해`: 비즈니스를 이해하면 코드를 작성할 수 있습니다.
 
 ## 아키텍처 이해
 **관심사의 분리(SoC, Separation of Concerns)은** 중요한 아키텍처 원칙 중 하나입니다. 이는 **관심사**를 분리함으로써 코드를 더 잘 관리할 수 있다는 개념입니다. 아키텍처 수준의 관심사는 각각의 **레이어**로 나눠져 관리됩니다.

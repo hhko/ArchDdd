@@ -68,6 +68,7 @@ public class UserController(ISender sender) : ApiController(sender)
     [HttpPost("permissions")]
     //[RequiredRoles(RoleName.Administrator)]
     //[ProducesResponseType<RolesResponse>(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType<ProblemDetails>(StatusCodes.Status400BadRequest)]
     public async Task<Results<Ok, ProblemHttpResult>> CreatePermission(
         [FromBody] CreatePermissionCommand command,

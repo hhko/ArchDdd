@@ -2,6 +2,32 @@
 - [ ] Dapper
 
 ```
+## User
+User : Role = 1 : N   // Role 가별 테이블: Entity
+User : Role = 1 : N   // Role 불변 테이블: Enumeration
+
+private readonly List<Role> _roles = [];
+public IReadOnlyCollection<Role> Roles => _roles.AsReadOnly();
+  _roles.Add(role);
+  _roles.Remove(role);
+
+builder.HasMany(u => u.Roles)
+    .WithMany(r => r.Users)
+    .UsingEntity<RoleUser>();       <-- NxM 관계 테이블
+
+---
+## Role
+public ICollection<User> Users { get; init; }
+builder.HasMany(r => r.Users)
+    .WithMany(u => u.Roles);
+
+---
+## RoleUser
+builder.HasKey(x => new { x.RoleName, x.UserId });
+
+```
+```
+
 1. public async Task<T?> GetPermissionAsync<T>(PermissionName permission, CancellationToken cancellationToken)
     where T : class
 

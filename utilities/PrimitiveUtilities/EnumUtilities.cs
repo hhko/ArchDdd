@@ -8,11 +8,11 @@ public static class EnumUtilities
     //    return Enum.GetNames(typeof(TEnum));
     //}
 
-    //public static IEnumerable<string> GetEnumNames<TType>(this TType type)
-    //    where TType : Enum
-    //{
-    //    return Enum.GetNames(type.GetType());
-    //}
+    public static IEnumerable<string> GetEnumNames<TType>(this TType type)
+        where TType : Enum
+    {
+        return Enum.GetNames(type.GetType());
+    }
 
     //public static HashSet<string> GetNamesOf<TType>()
     //    where TType : Enum
