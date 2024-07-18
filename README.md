@@ -22,6 +22,7 @@
   - `코드 <--{글 쓰기}--  비즈니스 이해`: 비즈니스를 이해하면 코드를 작성할 수 있습니다.
 
 ## 아키텍처 이해
+### 아키텍처 원칙
 **관심사의 분리(SoC, Separation of Concerns)은** 중요한 아키텍처 원칙 중 하나입니다. 이는 **관심사**를 분리함으로써 코드를 더 잘 관리할 수 있다는 개념입니다. 아키텍처 수준의 관심사는 각각의 **레이어**로 나눠져 관리됩니다.
 > **레이어 기반 아키텍처 패턴의 역사**는 **관심사**를 관리하기 위한 **레이어 배치의 역사**입니다.
 
@@ -33,10 +34,11 @@
 
 ![ArchitecturePatternHistory](./docs/docs/03-design/01-architecture/01-overview/img/ArchitecturePatternHistory.png)
 
+### 아키텍처 중심
 관심사를 **비즈니스와 기술**로 분리하고, **비즈니스 유스케이스 중심**으로 관심사를 구성합니다.
 ![](./docs/docs/03-design/01-architecture/01-overview/img/soc.png)
 
-## 아키텍처 솔루션 구성
+### 아키텍처 레이어
 ![](./docs/docs/01-architecture/02-rules/img/SolutionExplorer.png)
 
 - 관심사를 레이어 단위로 관리합니다.
