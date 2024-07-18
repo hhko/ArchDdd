@@ -39,7 +39,7 @@
 ![](./docs/docs/03-design/01-architecture/01-overview/img/soc.png)
 
 ### 아키텍처 레이어
-![](./docs/docs/01-architecture/02-rules/img/SolutionExplorer.png)
+![](./docs/docs/03-design/01-architecture/02-rules/img/SolutionExplorer.png)
 
 - 관심사를 레이어 단위로 관리합니다.
   - **기술 관심사**
