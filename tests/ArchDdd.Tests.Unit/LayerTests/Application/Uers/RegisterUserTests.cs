@@ -1,8 +1,8 @@
 ﻿using ArchDdd.Application.Abstractions;
+using ArchDdd.Application.UseCases.Users.Commands;
 using ArchDdd.Application.UseCases.Users.Commands.RegisterUser;
+using ArchDdd.Application.UseCases.Users.Queries;
 using ArchDdd.Domain.AggregateRoots.Users;
-using ArchDdd.Domain.AggregateRoots.Users.Repositories;
-using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
 using Microsoft.AspNetCore.Identity;
 using NSubstitute;
 using static ArchDdd.Tests.Unit.Abstractions.Constants.Constants;

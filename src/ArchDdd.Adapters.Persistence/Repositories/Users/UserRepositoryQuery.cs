@@ -1,5 +1,5 @@
 ﻿using ArchDdd.Adapters.Persistence.Repositories.BaseTypes;
-using ArchDdd.Domain.AggregateRoots.Users.Repositories;
+using ArchDdd.Application.UseCases.Users.Queries;
 
 namespace ArchDdd.Adapters.Persistence.Repositories.Users;
 

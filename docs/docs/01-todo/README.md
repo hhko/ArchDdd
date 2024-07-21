@@ -278,11 +278,22 @@
 ### DDD
 - [x] []DTO와 도메인을 분리해야 하는 이유](https://www.youtube.com/watch?v=OV8e88kIU-U&t)
 - [x] [엄예림 - DTO | 백엔드 데브코스 5기](https://www.youtube.com/watch?v=Q3QGC-Llqr8)
+- [ ] [Xer Projects](https://github.com/XerProjects)
 
 ### Test
 - [ ] [Snapshot Testing in .NET with Verify](https://blog.jetbrains.com/dotnet/2024/07/11/snapshot-testing-in-net-with-verify/)
 - [ ] [박정국 CTO가 알려주는 ‘서버 성능 측정 방법’ (포브스 선정, 신입 개발자, API, 백엔드)](https://www.youtube.com/watch?v=HSNyJnobBws)
 - [ ] [[10분 테코톡] 베베, 허브의 성능 테스트](https://www.youtube.com/watch?v=3cTn53dtzJI)
+
+
+## 예제
+- [ ] [booking-microservices](https://github.com/meysamhadeli/booking-microservices)
+  ```
+  dotnet dev-certs https -ep %USERPROFILE%\.aspnet\https\aspnetapp.pfx -p password
+  dotnet dev-certs https --trust
+  ```
+- [ ] [TodoApi](https://github.com/davidfowl/TodoApi)
+- [ ] [IDDD_Samples_NET](https://github.com/VaughnVernon/IDDD_Samples_NET/tree/master)
 
 ```
 사용자_정의_입력(Primitive 매개변수, 사용자 정의 DTO, ...)

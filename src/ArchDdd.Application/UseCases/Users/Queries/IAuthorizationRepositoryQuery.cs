@@ -1,6 +1,6 @@
 ﻿using ArchDdd.Domain.AggregateRoots.Users.Enumerations;
 
-namespace ArchDdd.Domain.AggregateRoots.Users.Repositories;
+namespace ArchDdd.Application.UseCases.Users.Queries;
 
 public interface IAuthorizationRepositoryQuery
 {

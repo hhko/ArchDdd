@@ -1,5 +1,5 @@
-﻿using ArchDdd.Domain.AggregateRoots.Users;
-using ArchDdd.Domain.AggregateRoots.Users.Repositories;
+﻿using ArchDdd.Application.UseCases.Users.Commands;
+using ArchDdd.Domain.AggregateRoots.Users;
 
 namespace ArchDdd.Adapters.Persistence.Repositories.Users;
 

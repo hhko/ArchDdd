@@ -4,6 +4,12 @@ namespace ArchDdd.Domain.Abstractions.Results;
 
 public sealed partial class Error
 {
+    public static Error AlreadyExists<TEntity>(string key)
+    {
+        return New($"{typeof(TEntity).Name}.{nameof(AlreadyExists)}", $"{typeof(TEntity).Name} '{key}' already exists.");
+    }
+
+
     //    public static Error NullReference(string subject)
     //    {
     //        return New($"{subject}.{nameof(NullReference)}", $"{subject} is null.");
@@ -58,21 +64,21 @@ public sealed partial class Error
     //    ///// <param name="name">name of the entity type. Use "nameof(TValue)" syntax</param>
     //    ///// <param name="uniqueValue">unique value of the entity that was not found</param>
     //    ///// <returns>NotFound error</returns>
-    //    //public static Error NotFound(string subjectToFind, string uniqueValue, string additionalMessage)
-    //    //{
-    //    //    return New($"{subjectToFind}.{nameof(NotFound)}", $"{subjectToFind} for '{uniqueValue}' was not found. {additionalMessage}");
-    //    //}
+    public static Error NotFound(string subjectToFind, string uniqueValue, string additionalMessage)
+    {
+        return New($"{subjectToFind}.{nameof(NotFound)}", $"{subjectToFind} for '{uniqueValue}' was not found. {additionalMessage}");
+    }
 
     //    ///// <summary>
     //    ///// Create an Error based on the unique key
     //    ///// </summary>
     //    ///// <param name="key">unique key of the entity that is already in the database</param>
     //    ///// <returns>AlreadyExists error</returns>
-    //    //public static Error AlreadyExists<TUniqueKey>(TUniqueKey key)
-    //    //    where TUniqueKey : IUniqueKey
-    //    //{
-    //    //    return New($"{typeof(TUniqueKey).Name}.{nameof(AlreadyExists)}", $"{typeof(TUniqueKey).Name} '{key}' already exists.");
-    //    //}
+    //public static Error AlreadyExists<TUniqueKey>(TUniqueKey key)
+    //    where TUniqueKey : IUniqueKey
+    //{
+    //    return New($"{typeof(TUniqueKey).Name}.{nameof(AlreadyExists)}", $"{typeof(TUniqueKey).Name} '{key}' already exists.");
+    //}
 
     //    ///// <summary>
     //    ///// Create an Error based on the unique key

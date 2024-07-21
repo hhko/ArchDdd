@@ -3,7 +3,7 @@ using ArchDdd.Domain.Abstractions.Results.Contracts;
 using ArchDdd.Application.Abstractions;
 using ArchDdd.Application.Abstractions.CQRS;
 using ArchDdd.Domain.AggregateRoots.Users.Enumerations;
-using ArchDdd.Domain.AggregateRoots.Users.Repositories;
+using ArchDdd.Application.UseCases.Users.Queries;
 
 namespace ArchDdd.Application.UseCases.Users.Commands.CreatePermission;
 
@@ -19,6 +19,7 @@ internal sealed class CreatePermissionCommandUseCase(
 
     public async Task<IResult> Handle(CreatePermissionCommand command, CancellationToken cancellationToken)
     {
+        // 도메인 객체 생성: Permission
         var permissionToCreateResult = Permission.Create(
             command.PermissionName,
             command.RelatedAggregateRoot,
@@ -34,16 +35,20 @@ internal sealed class CreatePermissionCommandUseCase(
             return _validator.Failure();
         }
 
-        var permissionFromDatabase = await _authorizationRepositoryQuery.GetPermissionAsync<Permission>(Enum.Parse<PermissionName>(permissionToCreateResult.Value.Name), cancellationToken);
+        // 존재 유무 확인
+        var permissionFromDatabase = await _authorizationRepositoryQuery.GetPermissionAsync<Permission>(
+            Enum.Parse<PermissionName>(permissionToCreateResult.Value.Name), 
+            cancellationToken);
 
-        //_validator
-        //    .If(permissionFromDatabase is not null, Error.AlreadyExists<Permission>(permissionToCreateResult.Value.Name));
+        _validator
+            .If(permissionFromDatabase is not null, Error.AlreadyExists<Permission>(permissionToCreateResult.Value.Name));
 
         if (_validator.IsInvalid)
         {
             return _validator.Failure();
         }
 
+        // 
         await _authorizationRepositoryCommand
             .CreatePermissionAsync(permissionToCreateResult.Value);
 

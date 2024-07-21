@@ -3,7 +3,6 @@ using ArchDdd.Application.Abstractions;
 using static ArchDdd.Domain.AggregateRoots.Users.Errors.DomainErrors;
 using ArchDdd.Application.Abstractions.Utilities;
 using ArchDdd.Application.Abstractions.CQRS;
-using ArchDdd.Domain.AggregateRoots.Users.Repositories;
 
 namespace ArchDdd.Application.UseCases.Users.Queries.GetUserByUsername;
 

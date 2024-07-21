@@ -8,6 +8,7 @@ using ArchDdd.Domain.Abstractions.Results.Contracts;
 using ArchDdd.Application.UseCases.Users.Queries.GetUserByUsername;
 using ArchDdd.Adapters.Presentation.Abstractions.Utilities;
 using ArchDdd.Application.UseCases.Users.Commands.CreatePermission;
+using ArchDdd.Application.UseCases.Users.Commands.DeletePermission;
 
 namespace ArchDdd.Adapters.Presentation.Controllers;
 
@@ -55,6 +56,8 @@ public class UserController(ISender sender) : ApiController(sender)
             : result.ToProblemHttpResult();
     }
 
+    // --------------------------------------------------
+
     // POST {{host}}/api/user/permissions
     // content-type: application/json
     //
@@ -74,6 +77,23 @@ public class UserController(ISender sender) : ApiController(sender)
         [FromBody] CreatePermissionCommand command,
         CancellationToken cancellationToken)
     {
+        var result = await Sender.Send(command, cancellationToken);
+
+        return result.IsSuccess
+            ? result.ToOkResult()
+            : result.ToProblemHttpResult();
+    }
+
+    [HttpDelete("permissions/{permission}")]
+    //[RequiredRoles(RoleName.Administrator)]
+    //[ProducesResponseType<RolesResponse>(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType<ProblemDetails>(StatusCodes.Status400BadRequest)]
+    public async Task<Results<Ok, ProblemHttpResult>> DeletePermission(
+        [FromRoute] string permission,
+        CancellationToken cancellationToken)
+    {
+        var command = new DeletePermissionCommand(permission);
         var result = await Sender.Send(command, cancellationToken);
 
         return result.IsSuccess

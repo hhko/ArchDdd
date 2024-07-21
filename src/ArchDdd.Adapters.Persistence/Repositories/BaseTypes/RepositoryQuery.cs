@@ -1,9 +1,8 @@
-﻿using ArchDdd.Domain.Abstractions.Repositories;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace ArchDdd.Adapters.Persistence.Repositories.BaseTypes;
 
-internal class RepositoryQuery : IRepositoryQuery
+internal class RepositoryQuery //: IRepositoryQuery
 {
     protected readonly ArchDddDbContext DbContext;
 

@@ -1,9 +1,6 @@
-﻿using ArchDdd.Domain.Abstractions.Repositories;
-using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
+﻿namespace ArchDdd.Application.UseCases.Users.Queries;
 
-namespace ArchDdd.Domain.AggregateRoots.Users.Repositories;
-
-public interface IUserRepositoryQuery : IRepositoryQuery
+public interface IUserRepositoryQuery //: IRepositoryQuery
 {
     //Task<User?> GetByIdAsync(UserId id, CancellationToken cancellationToken);
 

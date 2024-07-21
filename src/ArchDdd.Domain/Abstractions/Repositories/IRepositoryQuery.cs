@@ -1,5 +1,5 @@
-﻿namespace ArchDdd.Domain.Abstractions.Repositories;
+﻿//namespace ArchDdd.Domain.Abstractions.Repositories;
 
-public interface IRepositoryQuery
-{
-}
+//public interface IRepositoryQuery
+//{
+//}

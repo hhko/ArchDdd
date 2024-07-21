@@ -2,10 +2,10 @@
 using ArchDdd.Application.Abstractions.CQRS;
 using ArchDdd.Application.Abstractions.Utilities;
 using ArchDdd.Application.UseCases.Users.Mappings;
+using ArchDdd.Application.UseCases.Users.Queries;
 using ArchDdd.Domain.Abstractions.Results;
 using ArchDdd.Domain.Abstractions.Results.Contracts;
 using ArchDdd.Domain.AggregateRoots.Users;
-using ArchDdd.Domain.AggregateRoots.Users.Repositories;
 using ArchDdd.Domain.AggregateRoots.Users.ValueObjects;
 using Microsoft.AspNetCore.Identity;
 using static ArchDdd.Domain.AggregateRoots.Users.Errors.DomainErrors;

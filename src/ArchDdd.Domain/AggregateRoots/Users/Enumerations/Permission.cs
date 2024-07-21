@@ -59,22 +59,6 @@ public sealed partial class Permission
         Name = name;
     }
 
-    //// Email 예
-    ////
-    ////public static ValidationResult<Email> Create(string email)
-    ////{
-    ////    var errors = Validate(email);
-    ////    return errors.CreateValidationResult(() => new Email(email));
-    ////}
-    ////
-    ////public static IList<Error> Validate(string email)
-    ////{
-    ////    return EmptyList<Error>()
-    ////        .If(email.IsNullOrEmptyOrWhiteSpace(), EmailError.Empty())
-    ////        .If(email.Length > MaxLength, EmailError.TooLong(email))
-    ////        .If(_regex.NotMatch(email), EmailError.Invalid(email));
-    ////}
-
     //public static Result<Permission> CreatePermission(
     //public static ValidationResult<Permission> Create(
     public static Result<Permission> Create(
@@ -123,20 +107,6 @@ public sealed partial class Permission
             //.If(IsEntity(relatedEntity) is false, Error.InvalidArgument($"{relatedEntity} is not a valid Entity"))
             //.If(IsEntity(relatedEntity) && ReatedEntityPropertiesAreInvalid(relatedEntity, allowedProperties), Error.InvalidArgument($"{relatedEntity} is not a valid Entity"));
     }
-
-    //if (errors.NotNullOrEmpty())
-    //{
-    //    return ValidationResult<Permission>.WithErrors([.. errors]);
-    //}
-
-    //return new Permission(name)
-    //{
-    //    RelatedAggregateRoot = relatedAggregateRoot,
-    //    RelatedEntity = relatedEntity,
-    //    Type = permissionType,
-    //    Properties = allowedProperties
-    //};
-    //}
 
     //public static Result<Permission> CreatePermission<TAggregateRoot, TEntity>(
     //    string name,
