@@ -235,7 +235,18 @@
   - Modular Monoliths
 ```
 
-## 사례
+## 학습
+### 컨테이너
+- [ ] [.NET 앱 컨테이너화](https://learn.microsoft.com/ko-kr/dotnet/core/docker/build-container?tabs=windows&pivots=dotnet-8-0)
+- [ ] [.NET Core Diagnostics Tools and Containers](https://www.nocture.dk/2020/06/17/dotnetcore-diagnostics-tools-and-containers/)
+- [ ] [Dockerfile](https://gist.github.com/sandcastle/faa4e0bf1f8e8d5fc6506d1c5dbb1f45)
+- [ ] [Tracing and Profiling a .NET Core Application on Azure Kubernetes Service with a Sidecar Container](https://thecloudblog.net/post/tracing-and-profiling-a-net-core-application-on-azure-kubernetes-service-with-a-sidecar-container/)
+- [ ] [.NET 8 - ASP.NET Core Metrics](https://community.abp.io/posts/asp.net-core-metrics-with-.net-8.0-1xnw1apc)
+---
+- [ ] [2022.05.22 Getting telemetry data from inside or outside a .NET application](https://www.meziantou.net/getting-telemetry-data-from-inside-or-outside-a-dotnet-application.htm)
+- [ ] [2021.11.15 Monitoring a .NET application using OpenTelemetry](https://www.meziantou.net/monitoring-a-dotnet-application-using-opentelemetry.htm)
+
+
 ### 아키텍처
 - [ ] [Clean Architecture Template, Ardalis](https://github.com/ardalis/CleanArchitecture)
 - [ ] [Clean Architecture Template, Amichai Mantinband](https://github.com/amantinband/clean-architecture)
