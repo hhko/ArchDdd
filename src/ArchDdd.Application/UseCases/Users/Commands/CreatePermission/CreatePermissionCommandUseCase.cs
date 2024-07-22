@@ -35,7 +35,7 @@ internal sealed class CreatePermissionCommandUseCase(
             return _validator.Failure();
         }
 
-        // 존재 유무 확인
+        // 도메인 객체 유/무
         var permissionFromDatabase = await _authorizationRepositoryQuery.GetPermissionAsync<Permission>(
             Enum.Parse<PermissionName>(permissionToCreateResult.Value.Name), 
             cancellationToken);
@@ -48,7 +48,7 @@ internal sealed class CreatePermissionCommandUseCase(
             return _validator.Failure();
         }
 
-        // 
+        // 도매인 객체 추가
         await _authorizationRepositoryCommand
             .CreatePermissionAsync(permissionToCreateResult.Value);
 

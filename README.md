@@ -34,9 +34,13 @@
 
 ![ArchitecturePatternHistory](./docs/docs/03-design/01-architecture/01-overview/img/ArchitecturePatternHistory.png)
 
-### 아키텍처 중심
+### 아키텍처 관심사
 관심사를 **비즈니스와 기술**로 분리하고, **비즈니스 유스케이스 중심**으로 관심사를 구성합니다.
 ![](./docs/docs/03-design/01-architecture/01-overview/img/soc.png)
+
+### 아키텍처 DevOps
+![](./.images/DevOpspng)
+- 아키텍처는 DevOps **선순환(Good Cycle)** 성장의 시작입니다.
 
 ### 아키텍처 레이어
 ![](./docs/docs/03-design/01-architecture/02-rules/img/SolutionExplorer.png)
@@ -47,6 +51,7 @@
   - **비즈니스 관심사**
     - `Application`: UseCase
     - `Domain`: AggregateRoot
+
 
 ## 개발 환경
 - .NET 8.x

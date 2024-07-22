@@ -1,0 +1,14 @@
+
+@hostname=localhost
+@port=54011
+@host = http://{{hostname}}:{{port}}
+@contentType = application/json
+
+
+###
+DELETE {{host}}/api/user/permissions/OrderHeader_Read_Customer
+
+
+###
+DELETE {{host}}/api/user/permissions/User_Read_Customer
+

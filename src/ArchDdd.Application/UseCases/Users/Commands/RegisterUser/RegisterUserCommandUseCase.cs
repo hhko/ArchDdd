@@ -27,11 +27,12 @@ internal sealed class RegisterUserCommandUseCase(
 
     public async Task<IResult<RegisterUserResponse>> Handle(RegisterUserCommand command, CancellationToken cancellationToken)
     {
+        // 도메인 객체 생성
         Email email = Email.Create(command.Email).Value;
         Username username = Username.Create(command.Username).Value;
         Password password = Password.Create(command.Password).Value;
 
-        // 비즈니스 규칙 유효성
+        // 도메인 객체 유/무: 비즈니스 규칙
         bool emailIsTaken = await _userRepositoryQuery.IsEmailTakenAsync(email, cancellationToken);
 
         _validator.If(
@@ -42,6 +43,7 @@ internal sealed class RegisterUserCommandUseCase(
             return _validator.Failure<RegisterUserResponse>();
         }
 
+        // 도메인 객체 생성
         return RegisterUser(email, username, password);
     }
 

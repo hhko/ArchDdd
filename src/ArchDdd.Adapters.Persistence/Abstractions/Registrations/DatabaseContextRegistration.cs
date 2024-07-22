@@ -20,9 +20,14 @@ internal static class DatabaseContextRegistration
 
             optionsBuilder.UseDatabase(databaseOptions);
 
-            if (isDevelopment)
+            //if (isDevelopment)
             {
                 optionsBuilder.EnableDetailedErrors();
+
+                //
+                // Executed DbCommand(13ms) [Parameters= [p0 = 'OrderHeader_Read_Customer'(Size = 25)], ... ]}
+                // Parameters 세부 값을 확인할 수 있습니다.
+                //
                 optionsBuilder.EnableSensitiveDataLogging();
                 optionsBuilder.ConfigureWarnings(warnings =>
                 {

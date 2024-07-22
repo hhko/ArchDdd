@@ -19,7 +19,7 @@ internal sealed class DeletePermissionCommandUseCase(
 
     public async Task<IResult> Handle(DeletePermissionCommand command, CancellationToken cancellationToken)
     {
-        // 도메인 타입 생성
+        // 도메인 객체 생성
         var parsePermissionNameResult = Enum.TryParse<PermissionName>(command.PermissionName, out var permissionName);
 
         _validator
@@ -30,7 +30,7 @@ internal sealed class DeletePermissionCommandUseCase(
             return _validator.Failure();
         }
 
-        // 도메인 존재 유/무
+        // 도메인 객체 유/무
         var permission = await _authorizationRepositoryQuery.GetPermissionAsync<Permission>(
             permissionName, 
             cancellationToken);
@@ -47,7 +47,7 @@ internal sealed class DeletePermissionCommandUseCase(
             return _validator.Failure();
         }
 
-        // 도메인 삭제
+        // 도메인 객체 삭제
         await _authorizationRepositoryCommand
             .DeletePermissionAsync(permission!);
 

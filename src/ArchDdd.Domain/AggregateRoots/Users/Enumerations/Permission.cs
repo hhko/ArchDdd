@@ -43,11 +43,18 @@ public sealed partial class Permission
     //    Type = PermissionType.Other
     //};
 
-    public string Name { get; init; }
-    public PermissionType Type { get; init; } = PermissionType.Other;
-    public string? RelatedAggregateRoot { get; init; }
-    public string? RelatedEntity { get; init; }
-    public List<string>? Properties { get; init; } = null;
+    //public string Name { get; init; }
+    //public PermissionType Type { get; init; } = PermissionType.Other;
+    //public string? RelatedAggregateRoot { get; init; }
+    //public string? RelatedEntity { get; init; }
+    //public List<string>? Properties { get; init; } = null;
+
+    public string Name { get; set; }
+    public PermissionType Type { get; set; } = PermissionType.Other;
+    public string? RelatedAggregateRoot { get; set; }
+    public string? RelatedEntity { get; set; }
+    public List<string>? Properties { get; set; } = null;
+
 
     // EF Core을 위한 생성자
     private Permission()
