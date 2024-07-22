@@ -39,7 +39,7 @@
 ![](./docs/docs/03-design/01-architecture/01-overview/img/soc.png)
 
 ### 아키텍처 DevOps
-![](./.images/DevOpspng)
+![](./.images/DevOps.png)
 - 아키텍처는 DevOps **선순환(Good Cycle)** 성장의 시작입니다.
 
 ### 아키텍처 레이어
