@@ -30,9 +30,9 @@
 - [ ] 코드 스타일 규칙
 - [ ] 코드 포맷
 ### 코드 다이어그램
-  - [ ] 프로젝트 다이어그램
-  - [ ] 데이터베이스 스키마 다이어그램
-  - [ ] 중요 인터페이스 클래스 다이어그램
+- [ ] 프로젝트 참조 다이어그램
+- [ ] 데이터베이스 스키마 다이어그램
+- [ ] 중요 인터페이스 클래스 다이어그램
 
 ## 도메인 레이어
 ### 소스 생성기
@@ -58,9 +58,12 @@
 - [ ] CQRS 패턴
 - [ ] Decorator 패턴
 - [ ] Strategy 패턴
+- [ ] Publish/Subscribe 패턴
 - [ ] Repository패턴
 - [ ] Unit of Work 패턴(Repository 패턴)
 - [ ] OutBox 패턴
+- [ ] 재시도
+- [ ] DI
 ### Pipeline(Decorator 패턴)
 - [ ] UseCase 성공/실패 로그
 - [ ] Long 처리 UseCase 로그
