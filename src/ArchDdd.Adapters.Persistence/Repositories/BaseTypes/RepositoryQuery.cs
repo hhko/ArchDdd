@@ -2,7 +2,7 @@
 
 namespace ArchDdd.Adapters.Persistence.Repositories.BaseTypes;
 
-internal class RepositoryQuery //: IRepositoryQuery
+internal class RepositoryQuery
 {
     protected readonly ArchDddDbContext DbContext;
 
@@ -47,9 +47,9 @@ internal class RepositoryQuery //: IRepositoryQuery
         // ) AS "a"
         // LIMIT 1
         //
-
-        // VS.
-
+        //
+        //          VS.
+        //
         // ------------------------------------------------------
         // ToListAsync일 때는 중첩 SELECT가 생성되지 않는다.
         // ------------------------------------------------------
@@ -81,18 +81,16 @@ internal class RepositoryQuery //: IRepositoryQuery
         //  - ToListAsync          : 중첩 SELECT 구문 없음
         //  - SingleOrDefaultAsync : 중첩 SELECT 구문 있음
 
-        // info: Microsoft.EntityFrameworkCore.Database.Command[20101]
-        //   Executed DbCommand(35ms) [Parameters= [p0 = '?'(Size = 15)], CommandType = 'Text', CommandTimeout = '1']
-        //   SELECT EXISTS(
-        //       SELECT 1
-        //       FROM User AS u
-        //       WHERE u.Email = @p0) as VALUE
-        var _ = await DbContext.Database
-            .SqlQuery<T>(sql)
-            .ToListAsync(cancellationToken);
-
-        return _[0];
-
+        // ------------------------------------------------------
+        // SingleOrDefaultAsync일 때는 중첩 SELECT가 생성된다.
+        // ------------------------------------------------------
+        //
+        // - EFCore
+        // return await DbContext.Database
+        //    .SqlQuery<T>(sql)
+        //    .SingleOrDefaultAsync(cancellationToken);
+        //
+        // - SQL
         // info: Microsoft.EntityFrameworkCore.Database.Command[20101]
         //   Executed DbCommand(22ms) [Parameters= [p0 = '?'(Size = 15)], CommandType = 'Text', CommandTimeout = '1']
         //   SELECT "t"."Value"                         <-- 중첩 SELECT 구문 생성
@@ -104,8 +102,22 @@ internal class RepositoryQuery //: IRepositoryQuery
         //   ) AS "t"
         //   LIMIT 2
         //
-        //return await DbContext.Database
-        //    .SqlQuery<T>(sql)
-        //    .SingleOrDefaultAsync(cancellationToken);
+        //          VS.
+        //
+        // ------------------------------------------------------
+        // ToListAsync일 때는 중첩 SELECT가 생성되지 않는다.
+        // ------------------------------------------------------
+        //
+        // info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+        //   Executed DbCommand(35ms) [Parameters= [p0 = '?'(Size = 15)], CommandType = 'Text', CommandTimeout = '1']
+        //   SELECT EXISTS(
+        //       SELECT 1
+        //       FROM User AS u
+        //       WHERE u.Email = @p0) as VALUE
+        var _ = await DbContext.Database
+            .SqlQuery<T>(sql)
+            .ToListAsync(cancellationToken);
+
+        return _[0];
     }
 }

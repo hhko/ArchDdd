@@ -1,6 +1,6 @@
 ﻿namespace ArchDdd.Application.UseCases.Users.Queries;
 
-public interface IUserRepositoryQuery //: IRepositoryQuery
+public interface IUserRepositoryQuery
 {
     //Task<User?> GetByIdAsync(UserId id, CancellationToken cancellationToken);
 

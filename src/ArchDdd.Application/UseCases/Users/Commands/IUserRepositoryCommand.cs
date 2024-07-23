@@ -2,7 +2,7 @@
 
 namespace ArchDdd.Application.UseCases.Users.Commands;
 
-public interface IUserRepositoryCommand //: IRepositoryCommand
+public interface IUserRepositoryCommand
 {
     void Add(User user);
 
