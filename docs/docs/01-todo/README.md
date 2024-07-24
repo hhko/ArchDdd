@@ -276,6 +276,34 @@
 - [ ] [modulith](https://github.com/ardalis/modulith)
 
 ### DDD
+- 도메인 로직(비즈니스 로직)
+  - [Business logic](https://en.wikipedia.org/wiki/Business_logic)
+  - [비즈니스 로직, 도메인 로직이 도대체 뭐지?](https://velog.io/@eddy_song/domain-logic)
+  - [비즈니스 로직(Business Logic)이란?](https://mommoo.tistory.com/67)
+  - Vladimir Khorikov
+    - [What is domain logic?](https://enterprisecraftsmanship.com/posts/what-is-domain-logic/)
+    - [Domain model isolation](https://enterprisecraftsmanship.com/posts/domain-model-isolation/)
+    - [How to know if your Domain model is properly isolated?](https://enterprisecraftsmanship.com/posts/how-to-know-if-your-domain-model-is-properly-isolated/)
+  - CodeOpinion
+    - [Domain Logic: Where does it go?](https://codeopinion.com/domain-logic-where-does-it-go/)
+    - [STOP doing dogmatic Domain Driven Design](https://codeopinion.com/stop-doing-dogmatic-domain-driven-design/)
+    - [Aggregate Design: Using Invariants as a Guide](https://codeopinion.com/aggregate-design-using-invariants-as-a-guide/)
+    - [Aggregate (Root) Design: Behavior & Data](https://codeopinion.com/aggregate-root-design-behavior-data/)
+- 유효한(Valid)
+  - Vladimir Khorikov
+    - [Validation and DDD](https://enterprisecraftsmanship.com/posts/validation-and-ddd/)
+    - [Always-Valid Domain Model](https://enterprisecraftsmanship.com/posts/always-valid-domain-model/)
+    - [Always valid vs not always valid domain model](https://enterprisecraftsmanship.com/posts/always-valid-vs-not-always-valid-domain-model/)
+    - [C# code contracts vs input validation](https://enterprisecraftsmanship.com/posts/code-contracts-vs-input-validation/)
+    - [Exceptions for flow control in C#](https://enterprisecraftsmanship.com/posts/exceptions-for-flow-control/)
+    - [Advanced error handling techniques](https://enterprisecraftsmanship.com/posts/advanced-error-handling-techniques/)
+    - [How to Strengthen Requirements for Pre-existing Data](https://enterprisecraftsmanship.com/posts/strengthening-requirements-pre-existing-data/)
+- 객체지향(Object-Oriented): 캡슐화(역할과 책임), 메시지(협력), 다형성(런타임)
+  - Vladimir Khorikov
+    - [Encapsulation revisited](https://enterprisecraftsmanship.com/posts/encapsulation-revisited/)
+    - [Cohesion and Coupling: the difference](https://enterprisecraftsmanship.com/posts/cohesion-coupling-difference/)
+    - [Fail Fast principle](https://enterprisecraftsmanship.com/posts/fail-fast-principle)
+    - [C# and F# approaches to illegal state](https://enterprisecraftsmanship.com/posts/c-and-f-approaches-to-illegal-state/)
 - [tdd-ddd-demo-dotnet](https://github.com/chrissimon-au/tdd-ddd-demo-dotnet), [영상](https://www.youtube.com/watch?v=gXz7gKtRVpM)
 - [Stop using Entity Framework as a DTO provider!](https://github.com/ChrisKlug/efcore-dto-demo/tree/main), [영상](https://www.youtube.com/watch?v=N_eLotlcjXo)
 - [better-code-with-ddd](https://github.com/asc-lab/better-code-with-ddd/tree/ef_core)
