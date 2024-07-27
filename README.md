@@ -29,7 +29,7 @@
 ![](./docs/docs/03-design/01-architecture/01-overview/img/ArchitectureCategory.png)
 
 ```
-Architecture Architecture
+Application Architecture
   ├─ Backend
   │   ├─ Monolithic Architecture
   │   ├─ Modular Monolithic Architecture
@@ -37,9 +37,9 @@ Architecture Architecture
   │   └─ Microservices Architecture
   │       ├─ Microservices Inner Architecture
   │       │    └─ Layered Architecture
-  │       │         ├─ Hexagonal Architecture
+  │       │         ├─ Hexagonal Architecture       <--
   │       │         ├─ Onion Architecture
-  │       │         ├─ Clean Architecture
+  │       │         ├─ Clean Architecture           <--
   │       │         └─ Vertical Slice Architecture
   │       │
   │       └─ Microservices Outer Architecture
@@ -47,9 +47,9 @@ Architecture Architecture
   │
   └─ Frontend
       └─ Layered Architecture
-           ├─ Hexagonal Architecture
+           ├─ Hexagonal Architecture                <--
            ├─ Onion Architecture
-           ├─ Clean Architecture
+           ├─ Clean Architecture                    <--
            ├─ Vertical Slice Architecture
            └─ UI 특화 Architecture: 예. MVVM, ...
 ```
