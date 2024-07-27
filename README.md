@@ -17,6 +17,7 @@
   코드는 비즈니스의 작동 방식을 설명하는 상세한 설명서와 같기 때문입니다.
 
 > 글쓰기 핵심은 **구조를 짜는 것입니다**.
+> 솔루션 탐색기의 폴더 구성은 **코드의 구조입니다.**
 
 ### 목표
 - 지속 가능한 성장
@@ -24,6 +25,36 @@
   - `코드 <--{글 쓰기}--  비즈니스 이해`: 비즈니스를 이해하면 코드를 작성할 수 있습니다.
 
 ## 아키텍처 이해
+### 아키텍처 범주
+![](./docs/docs/03-design/01-architecture/01-overview/img/ArchitectureCategory.png)
+
+```
+Architecture Architecture
+  ├─ Backend
+  │   ├─ Monolithic Architecture
+  │   ├─ Modular Monolithic Architecture
+  │   ├─ N-tier Architecture
+  │   └─ Microservices Architecture
+  │       ├─ Microservices Inner Architecture
+  │       │    └─ Layered Architecture
+  │       │         ├─ Hexagonal Architecture
+  │       │         ├─ Onion Architecture
+  │       │         ├─ Clean Architecture
+  │       │         └─ Vertical Slice Architecture
+  │       │
+  │       └─ Microservices Outer Architecture
+  │            └─ 외부 시스템 구성 아키텍처
+  │
+  └─ Frontend
+      └─ Layered Architecture
+           ├─ Hexagonal Architecture
+           ├─ Onion Architecture
+           ├─ Clean Architecture
+           ├─ Vertical Slice Architecture
+           └─ UI 특화 Architecture: 예. MVVM, ...
+```
+- 백엔드와 프론트엔드 대부분에서 계층형 아키텍처 기반의 진화된 아키텍처를 사용합니다.
+
 ### 아키텍처 원칙
 **관심사의 분리(SoC, Separation of Concerns)은** 중요한 아키텍처 원칙 중 하나입니다. 이는 **관심사**를 분리함으로써 코드를 더 잘 관리할 수 있다는 개념입니다. 아키텍처 수준의 관심사는 각각의 **레이어**로 나눠져 관리됩니다.
 > **레이어 기반 아키텍처 패턴의 역사**는 **관심사**를 관리하기 위한 **레이어 배치의 역사**입니다.
