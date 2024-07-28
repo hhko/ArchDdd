@@ -26,6 +26,12 @@
 <br/>
 
 ## 아키텍처 이해
+### 아키텍처 중요성
+건축업자가 프로그래머의 프로그램 작성 방식에 따라 건물을 짓는다면 가장 먼저 도착하는 딱따구리가 문명을 파괴할 것입니다.  
+If builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy civilization. - Gerald Weinberg
+- Architecting is a series of **trade-offs**.
+- The architecture should scream **the intent of the system**.
+
 ### 아키텍처 정의
 ![](./docs/docs/03-design/01-architecture/01-overview/img/ArchitectureDefine.png)
 ※ 출처: [Making Architecture Matter, 소프트웨어 아키텍처의 중요성](https://www.youtube.com/watch?v=4E1BHTvhB7Y)  
