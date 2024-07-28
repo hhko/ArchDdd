@@ -78,7 +78,7 @@ Application Architecture
 - 백엔드와 프론트엔드 대부분 **관심사를 계층(Layer)로 관리하는** 계층형 아키텍처 기반의 진화된 아키텍처를 사용합니다.
 
 ### 아키텍처 역사
-![ArchitecturePatternHistory](./img/ArchitecturePatternHistory.png)
+![](./img/ArchitectureHistory.png)
 
 - 1992년부터 아키텍처 수준에서는 관심사를 계층(Layer)으로 나누고, 객체 수준에서는 관심사를 엔티티(Entity)로 관리하는 방법이 제시되었습니다.
 - 즉, 시스템의 큰 구조는 여러 계층으로 나누어 관리하고, 각 계층 내의 세부 사항은 엔티티로 나누어 관리하는 방식입니다.
