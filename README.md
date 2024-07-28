@@ -33,7 +33,6 @@ If builders built buildings the way programmers wrote programs, then the first w
 - The architecture should scream **the intent of the system**.
 
 ### 아키텍처 정의
-![](2024-07-28-23-41-18.png)
 ![](./docs/docs/03-design/01-architecture/01-overview/img/ArchitectureDefinition.png)
 ※ 출처: [Making Architecture Matter, 소프트웨어 아키텍처의 중요성](https://www.youtube.com/watch?v=4E1BHTvhB7Y)  
 
