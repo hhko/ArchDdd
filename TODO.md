@@ -1,6 +1,14 @@
 - [x] Query vs. Command Repository 분리
 - [ ] Dapper
 
+---
+- [ ] .NET Core Configure Open telemetry & enhance your automated testing setup
+  - https://www.youtube.com/watch?v=abmjFyMaKjs
+- [ ] GitHub 컨테이너 배포: https://blog.martincostello.com/look-ma-no-hands-publishing-containers-with-the-dotnet-sdk/
+- [ ] Transactional outbox pattern meets distributed tracing and OpenTelemetry
+  - https://github.com/joaofbantunes/OutboxPatternMeetsOpenTelemetrySample
+  - https://blog.codingmilitia.com/2024/06/17/transactional-outbox-pattern-meets-distributed-tracing-and-opentelemetry/
+
 ```
 ## User
 User : Role = 1 : N   // Role 가별 테이블: Entity
