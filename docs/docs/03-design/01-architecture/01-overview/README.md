@@ -32,7 +32,7 @@ If builders built buildings the way programmers wrote programs, then the first w
 - The architecture should scream **the intent of the system**.
 
 ### 아키텍처 정의
-![](./docs/docs/03-design/01-architecture/01-overview/img/ArchitectureDefine.png)
+![](./img/ArchitectureDefine.png)
 ※ 출처: [Making Architecture Matter, 소프트웨어 아키텍처의 중요성](https://www.youtube.com/watch?v=4E1BHTvhB7Y)  
 
 - 아키텍처는 제품의 지속 가능한 성장을 주도하는 중요한 모든 것(`The important stuff whatever that is`)입니다.
@@ -47,7 +47,7 @@ If builders built buildings the way programmers wrote programs, then the first w
   - 기술적 구현에 의존하지 않고도 비즈니스만을 집중하여 테스트하고 개선할 수 있습니다.
 
 ### 아키텍처 범주
-![](./docs/docs/03-design/01-architecture/01-overview/img/ArchitectureCategory.png)
+![](./img/ArchitectureCategory.png)
 ※ 출처: [Making old applications new again](https://sellingsimplifiedinsights.com/asset/app-development/ASSET_co-modernization-whitepaper-inc0460201-122016kata-v1-en_1511772094768.pdf)
 
 ```
@@ -78,12 +78,12 @@ Application Architecture
 - 백엔드와 프론트엔드 대부분 **관심사를 계층(Layer)로 관리하는** 계층형 아키텍처 기반의 진화된 아키텍처를 사용합니다.
 
 ### 아키텍처 역사
-![ArchitecturePatternHistory](./docs/docs/03-design/01-architecture/01-overview/img/ArchitecturePatternHistory.png)
+![ArchitecturePatternHistory](./img/ArchitecturePatternHistory.png)
 
 - 1992년부터 아키텍처 수준에서는 관심사를 계층(Layer)으로 나누고, 객체 수준에서는 관심사를 엔티티(Entity)로 관리하는 방법이 제시되었습니다.
 - 즉, 시스템의 큰 구조는 여러 계층으로 나누어 관리하고, 각 계층 내의 세부 사항은 엔티티로 나누어 관리하는 방식입니다.
 
 ### 아키텍처 역할
-![](./docs/docs/03-design/01-architecture/01-overview/img/ArchitectureDevOps.png)
+![](./img/ArchitectureDevOps.png)
 
 - 아키텍처는 제품의 **선순환(Good Cycle)** 성장의 시작점입니다.
