@@ -39,6 +39,3 @@ content-type: application/json
 	"relatedEntity": "User",
 	"permissionType": "Read"
 }
-
-###
-DELETE {{host}}/api/user/permissions/xyz

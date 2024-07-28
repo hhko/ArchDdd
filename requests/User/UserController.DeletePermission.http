@@ -5,10 +5,12 @@
 @contentType = application/json
 
 
-###
+### 성공
 DELETE {{host}}/api/user/permissions/OrderHeader_Read_Customer
 
 
-###
+### 성공
 DELETE {{host}}/api/user/permissions/User_Read_Customer
 
+### 실패
+DELETE {{host}}/api/user/permissions/xyz
