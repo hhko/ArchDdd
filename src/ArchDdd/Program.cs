@@ -1,4 +1,6 @@
-﻿var builder = WebApplication.CreateBuilder(new WebApplicationOptions
+﻿using ArchDdd.Application.Abstractions.Registrations;
+
+var builder = WebApplication.CreateBuilder(new WebApplicationOptions
 {
     Args = args,
     ContentRootPath = Directory.GetCurrentDirectory()

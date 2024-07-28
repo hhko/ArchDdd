@@ -1,4 +1,3 @@
-
 @hostname=localhost
 @port=54011
 @host = http://{{hostname}}:{{port}}
@@ -40,3 +39,6 @@ content-type: application/json
 	"relatedEntity": "User",
 	"permissionType": "Read"
 }
+
+###
+DELETE {{host}}/api/user/permissions/xyz

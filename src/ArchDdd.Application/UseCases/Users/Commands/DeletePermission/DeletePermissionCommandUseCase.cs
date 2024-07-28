@@ -19,18 +19,18 @@ internal sealed class DeletePermissionCommandUseCase(
 
     public async Task<IResult> Handle(DeletePermissionCommand command, CancellationToken cancellationToken)
     {
-        //var permissionName = Enum.Parse<PermissionName>(command.PermissionName);
+        var permissionName = Enum.Parse<PermissionName>(command.PermissionName);
 
-        //도메인 객체 생성
-        var parsePermissionNameResult = Enum.TryParse<PermissionName>(command.PermissionName, out var permissionName);
+        ////도메인 객체 생성
+        //var parsePermissionNameResult = Enum.TryParse<PermissionName>(command.PermissionName, out var permissionName);
 
-        _validator.If(parsePermissionNameResult is false, 
-            Error.InvalidArgument($"{command.PermissionName} is not a valid PermissionName"));
+        //_validator.If(parsePermissionNameResult is false, 
+        //    Error.InvalidArgument($"{command.PermissionName} is not a valid PermissionName"));
 
-        if (_validator.IsInvalid)
-        {
-            return _validator.Failure();
-        }
+        //if (_validator.IsInvalid)
+        //{
+        //    return _validator.Failure();
+        //}
 
         // 도메인 객체 유/무
         var permission = await _authorizationRepositoryQuery.GetPermissionAsync<Permission>(

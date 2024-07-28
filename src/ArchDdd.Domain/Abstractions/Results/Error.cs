@@ -2,7 +2,7 @@
 
 public sealed partial class Error : IEquatable<Error>
 {
-    //private const string SerializationSeparator = ": ";
+    private const string SerializationSeparator = ": ";
 
     // 성공 Error 타입
     public static readonly Error None = new(string.Empty, string.Empty);
@@ -130,10 +130,10 @@ public sealed partial class Error : IEquatable<Error>
         return HashCode.Combine(Code, Message);
     }
 
-    //public string Serialize()
-    //{
-    //    return $"{Code}{SerializationSeparator}{Message}";
-    //}
+    public string Serialize()
+    {
+        return $"{Code}{SerializationSeparator}{Message}";
+    }
 
     //public static Error Deserialize(string serializedError)
     //{

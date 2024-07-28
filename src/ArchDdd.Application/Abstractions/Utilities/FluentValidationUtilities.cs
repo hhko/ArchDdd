@@ -25,4 +25,18 @@ public static class FluentValidationUtilities
             }
         });
     }
+
+    public static IRuleBuilderOptions<TInput, string> MustBeAnEnum<TInput, TEnum>(
+        this IRuleBuilder<TInput, string> ruleBuilder)
+        where TEnum : struct, Enum
+    {
+        return (IRuleBuilderOptions<TInput, string>)ruleBuilder.Custom((value, context) =>
+        {
+            if (Enum.TryParse<TEnum>(value, out var _) is false)
+            {
+                context.AddFailure(
+                    Error.InvalidArgument($"{value} is not a valid {typeof(TEnum).Name}").Serialize());
+            }
+        });
+    }
 }

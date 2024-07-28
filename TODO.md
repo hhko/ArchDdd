@@ -1196,3 +1196,19 @@ info: Microsoft.Hosting.Lifetime[0]
 info: Quartz.Core.QuartzScheduler[0]
       Scheduler QuartzScheduler_$_NON_CLUSTERED started.
 ```
+
+```
+- 대상: 함께 이해하고 있어야 하는 것  
+  `Expert developers' shared understanding of the system design`  
+  전문 개발자들은 시스템 디자인에 대한 지식을 공유한다.
+- 조건: 바꾸기 어려운 것  
+  - `The set of design decisions that must be made early"  
+    아키텍처 디자인은 우선적으로 진행되어야 한다.
+  - `The decisions that you wish you could get right early`
+    올바른 결정은 더 빨리 내려지는 것을 원한다.
+  - `The decisions that are hard to change`
+    결정은 변경하기 어렵다.
+- 정의  
+  `The important stuff whatever that is"  
+  뭐든간에 중요한 것을
+```
