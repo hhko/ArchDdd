@@ -41,6 +41,8 @@ If builders built buildings the way programmers wrote programs, then the first w
     - **끝 지정(부수 효과, Side Effect)를** 모두 인지하는 것은 쉽지 않습니다.
 
 ### 아키텍처 원칙
+![](./img/ArchitectureSoC.png)
+
 - 관심사의 분리(SoC, Separation of Concerns)
   - 아키텍처 수준에서는 **비즈니스와 기술적인 관심사**를 명확히 구분합니다.
   - 비즈니스와 관련된 부분은 비즈니스 영역에서, 기술적인 부분은 기술 영역에서 각각 다루어지도록 하는 것입니다.
