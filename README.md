@@ -93,6 +93,11 @@ Application Architecture
 
 <br/>
 
+## 아키텍처 구현
+- TODO: 주요 구현을 정리합니다.
+
+<br/>
+
 ## 개발 환경
 - .NET 8.x
 - Visual Studio Code
