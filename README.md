@@ -81,12 +81,13 @@ Application Architecture
   │            └─ 외부 시스템 구성 아키텍처: 예. CNCF Landscape
   │
   └─ Frontend
-      └─ Layered Architecture
-          ├─ Hexagonal Architecture                 <--
-          ├─ Onion Architecture
-          ├─ Clean Architecture                     <--
-          ├─ Vertical Slice Architecture
-          └─ + UI 특화 Architecture: 예. MVVM, ...
+      └─ Inner Architecture
+          └─ Layered Architecture
+               ├─ Hexagonal Architecture            <--
+               ├─ Onion Architecture
+               ├─ Clean Architecture                <--
+               ├─ Vertical Slice Architecture
+               └─ + UI 특화 Architecture: 예. MVVM, ...
 ```
 - 백엔드와 프론트엔드 대부분 **관심사를 계층(Layer)로 관리하는** 계층형 아키텍처 기반의 진화된 아키텍처를 사용합니다.
 
