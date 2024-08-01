@@ -12,13 +12,14 @@
 지속 가능한 코드
 
 > **회귀 버그**
-> - 개발: 배포 전
+> - `개발: 배포 전`
 >   - 부수 효과(Side Effect)
-> - 운영: 배포 후
+>   - 성능
+> - `운영: 배포 후`
 >   - 재배포 속도
 >   - 장애 사전 예측 속도
 >   - 장애 사후 복구 속도
->   - 표준 운영 절차(SOP, Standard operating procedure)
+>   - 표준 운영 절차 문서(SOP, Standard operating procedure)
 
 ### 배경
 

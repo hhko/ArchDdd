@@ -9,10 +9,14 @@ public static class ErrorUtilities
         this ICollection<Error> errors)
         where TResult : class, IResult
     {
-        if (typeof(TResult) == typeof(Result))
+        if (typeof(TResult) == typeof(Result) || typeof(TResult) == typeof(IResult))
         {
             return (ValidationResult.WithErrors(errors) as TResult)!;
         }
+        //if (typeof(TResult) == typeof(Result))
+        //{
+        //    return (ValidationResult.WithErrors(errors) as TResult)!;
+        //}
 
         //var result = typeof(TResult);
         ////var validationMethod = typeof(ValidationResult<>)
