@@ -18,6 +18,7 @@
 >   - 재배포 속도
 >   - 장애 사전 예측 속도
 >   - 장애 사후 복구 속도
+>   - 표준 운영 절차(SOP, Standard operating procedure)
 
 ### 배경
 
