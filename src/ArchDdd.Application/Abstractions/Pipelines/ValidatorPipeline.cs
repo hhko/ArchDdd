@@ -3,7 +3,7 @@ using ArchDdd.Domain.Abstractions.Results.Contracts;
 using FluentValidation;
 using MediatR;
 using PrimitiveUtilities;
-using static ArchDdd.Application.Abstractions.Cache.ApplicationCache;
+//using static ArchDdd.Application.Abstractions.Cache.ApplicationCache;
 
 namespace ArchDdd.Application.Abstractions.Pipelines;
 
@@ -51,8 +51,8 @@ public sealed class ValidatorPipeline<TRequest, TResponse>(IEnumerable<IValidato
 
         if (errors.Length is not 0)
         {
-            //return errors.CreateValidationResult<TResponse>();
-            return (TResponse)ValidationResultCache[typeof(TResponse)](errors);
+            return errors.CreateValidationResult<TResponse>();
+            //return (TResponse)ValidationResultCache[typeof(TResponse)](errors);
         }
 
         return await next();

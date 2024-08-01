@@ -14,6 +14,25 @@ public static class ErrorUtilities
             return (ValidationResult.WithErrors(errors) as TResult)!;
         }
 
+        //var result = typeof(TResult);
+        ////var validationMethod = typeof(ValidationResult<>)
+        ////    .GetGenericTypeDefinition()
+        ////    .MakeGenericType(result)
+        ////    .GetMethod(nameof(ValidationResult.WithErrors))!;
+        //var x1 = typeof(ValidationResult<>);
+        //var x2 = x1.GetGenericTypeDefinition();
+        //var x3 = x2.MakeGenericType(result);
+        //var x4 = x3.GetMethod(nameof(ValidationResult.WithErrors))!;
+        //var validationResult = x4.Invoke(null, [errors])!;
+
+        //var x1 = typeof(ValidationResult<>);
+        //var x2 = x1.GetGenericTypeDefinition();
+        //var y0 = typeof(TResult);
+        //var y1 = typeof(TResult).GenericTypeArguments[0];
+        //var x3 = x2.MakeGenericType(y1);
+        //var x4 = x3.GetMethod(nameof(ValidationResult.WithErrors));
+        //object validationResult = x4.Invoke(null, [errors])!;
+
         object validationResult = typeof(ValidationResult<>)
             .GetGenericTypeDefinition()
             .MakeGenericType(typeof(TResult).GenericTypeArguments[0])

@@ -32,6 +32,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "User", "User", "{7B96B651-1025-4F46-918C-840D5B341689}"
 	ProjectSection(SolutionItems) = preProject
 		requests\User\UserController.CreatePermissions.http = requests\User\UserController.CreatePermissions.http
+		requests\User\UserController.DeletePermission.http = requests\User\UserController.DeletePermission.http
 		requests\User\UserController.GetUserByUsername.http = requests\User\UserController.GetUserByUsername.http
 		requests\User\UserController.Register.Email.http = requests\User\UserController.Register.Email.http
 		requests\User\UserController.Register.http = requests\User\UserController.Register.http

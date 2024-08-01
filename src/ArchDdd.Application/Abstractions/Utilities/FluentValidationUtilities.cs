@@ -35,7 +35,8 @@ public static class FluentValidationUtilities
             if (Enum.TryParse<TEnum>(value, out var _) is false)
             {
                 context.AddFailure(
-                    Error.InvalidArgument($"{value} is not a valid {typeof(TEnum).Name}").Serialize());
+                    Error.InvalidArgument($"{value} is not a valid {typeof(TEnum).Name}")
+                         .Serialize());
             }
         });
     }

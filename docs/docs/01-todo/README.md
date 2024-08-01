@@ -343,3 +343,7 @@
 
 Assembly.GetExecutingAssembly()
 ```
+```
+The Tell Don't Ask Principle
+https://giannisakritidis.com/blog/Tell-Dont-Ask/
+```
