@@ -131,6 +131,7 @@ Application Architecture
 
 #### 비즈니스 입/출력 의존성 제거(Strategy 패턴)
 ![](./docs/docs/03-design/01-architecture/01-overview/img/LayerInputOutputStrategyPattern.png)
+![](./docs/docs/03-design/01-architecture/01-overview/img/LayerInputOutputStrategyPatternUnit.png)
 
 #### 비즈니스 입/출력 의존성 제거(Mediator 패턴)
 - TODO
