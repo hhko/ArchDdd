@@ -252,14 +252,14 @@ Application Architecture
     ```
     {솔루션}
       ├─ {솔루션}.sln
-      ├─ Directory.Build.props       (1)
+      ├─ Directory.Build.props       (1) 모든 프로젝트만 대상
       │
       ├─ Src
       │   ├─ {프로젝트1}
       │   └─ {프로젝트2}
       │
       └─ Tests
-          ├─ Directory.Build.props   (2)
+          ├─ Directory.Build.props   (2) 모든 프로젝트만 대상 + 테스트 프로젝트만 대상
           ├─ {테스트 프로젝트1}
           └─ {테스트 프로젝트2}
     ```
