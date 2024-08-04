@@ -146,7 +146,6 @@ Application Architecture
   │  // 형상관리
   ├─ .gitignore                         # Git 형상관리 제외 대상
   ├─ .gitattributes                     # Git 형상관리 파일 처리
-  ├─ .dockerignore                      # Dockerfile 빌드 제외 대상
   │
   │  // .NET 설정
   ├─ global.json                        # 빌드 버전
@@ -156,7 +155,8 @@ Application Architecture
   ├─ Directory.Packages.props           # 패키지 버전
   ├─ .editorconfig                      # 코드 컨벤션
   │
-  │  // Docker
+  │  // 컨테이너
+  ├─ .dockerignore                      # Dockerfile 빌드 제외 대상
   ├─ Dockerfile                         # 도커 파일
   ├─ docker-compose.yml                 # 도커 컴포즈
   ├─ docker-compose.override.yml        # 도커 컴포즈
@@ -182,7 +182,6 @@ Application Architecture
      - text: .verified.txt, .verified.xml, .verified.json 확장자를 가진 파일들이 모두 텍스트 파일로 처리되며,
      - eol=lf: 체크아웃 시 개행 문자가 LF(Line Feed)로 설정되고,
      - working-tree-encoding=UTF-8: UTF-8 인코딩이 사용되도록 합니다.
-1. `.dockerignore`: Docker가 이미지를 만들 때 제외할 파일과 폴더를 지정하는 파일입니다.
 
 #### .NET 설정
 1. `global.json`: .NET SDK 버전을 설정하는 파일입니다.
@@ -334,6 +333,9 @@ Application Architecture
 1.`.editorconfig`
 1. `dotnet-tools.json`
    - %USERPROFILE%\.dotnet\tools
+
+#### 컨테이너
+1. `.dockerignore`: Docker가 이미지를 만들 때 제외할 파일과 폴더를 지정하는 파일입니다.
 
 <br/>
 
