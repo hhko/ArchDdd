@@ -1,17 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <IsPackable>false</IsPackable>
-    <IsTestProject>true</IsTestProject>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="TestResults\**" />
-  </ItemGroup>
-
   <ItemGroup>
     <Content Include="appsettings.Integration.json" CopyToOutputDirectory="PreserveNewest" />
-    <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
@@ -45,15 +35,6 @@
   <ItemGroup>
     <Using Include="Xunit" />
     <Using Include="FluentAssertions" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="ControllersUnderTest\UserControllers\UserControllerTests.RegisterUserCommand.RegisterUserCommand_UsernameIsInvalidate_ShouldBeFalse_arg=Empty.received.txt">
-      <DependentUpon>UserControllerTests.RegisterUserCommand.cs</DependentUpon>
-    </None>
-    <None Update="ControllersUnderTest\UserControllers\UserControllerTests.RegisterUserCommand.RegisterUserCommand_UsernameIsInvalidate_ShouldBeFalse_arg=TooLong.received.txt">
-      <DependentUpon>UserControllerTests.RegisterUserCommand.cs</DependentUpon>
-    </None>
   </ItemGroup>
 
 </Project>

@@ -39,8 +39,8 @@ public sealed class Role
         Name = name;
     }
 
-    public string Name { get; init; }
-    public ICollection<User> Users { get; init; }
+    public string Name { get; init; } = null!;
+    public ICollection<User> Users { get; init; } = null!;
     //public ICollection<Permission> Permissions { get; init; }
 
     // 사전 정의된 Role 목록을 반환한다

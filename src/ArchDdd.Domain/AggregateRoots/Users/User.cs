@@ -38,11 +38,11 @@ public sealed class User : AggregateRoot<UserId>, IAuditable
 
     //public Username Username { get; set; }
     //public Email Email { get; set; }
-    public Username Username { get; }
-    public Email Email { get; }
+    public Username Username { get; } = null!;
+    public Email Email { get; } = null!;
     public IReadOnlyCollection<Role> Roles => _roles.AsReadOnly();
 
-    public PasswordHash PasswordHash { get; set; }
+    public PasswordHash PasswordHash { get; set; } = null!;
 
     //
     // IAuditable

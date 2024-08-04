@@ -12,7 +12,7 @@ public sealed class RoleUser
     {
     }
 
-    public string RoleName { get; init; }
+    public string RoleName { get; init; } = null!;
 
     public UserId UserId { get; init; }
 }

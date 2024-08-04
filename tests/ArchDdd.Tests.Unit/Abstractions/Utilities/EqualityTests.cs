@@ -120,7 +120,7 @@ public static class EqualityTests
     {
         return SafeCall("GetHashCode", () =>
         {
-            if (obj1.GetHashCode() != obj2.GetHashCode())
+            if (obj1!.GetHashCode() != obj2!.GetHashCode())
                 return TestResult.CreateFailure("GetHashCode of equal objects returned different values.");
 
             return TestResult.CreateSuccess();
@@ -131,7 +131,7 @@ public static class EqualityTests
     {
         return SafeCall("Equals", () =>
         {
-            if (obj.Equals(new object()))
+            if (obj!.Equals(new object()))
                 return TestResult.CreateFailure("Equals returned true when comparing with object of a different type.");
 
             return TestResult.CreateSuccess();
@@ -141,7 +141,7 @@ public static class EqualityTests
     private static TestResult TestEqualsReceivingNull<T>(T obj)
     {
         if (typeof(T).IsClass)
-            return TestEquals<T>(obj, default(T), false);
+            return TestEquals<T>(obj, default(T)!, false);
 
         return TestResult.CreateSuccess();
     }
@@ -149,7 +149,7 @@ public static class EqualityTests
     private static TestResult TestEqualsOfTReceivingNull<T>(T obj)
     {
         if (typeof(T).IsClass)
-            return TestEqualsOfT<T>(obj, default(T), false);
+            return TestEqualsOfT<T>(obj, default(T)!, false);
 
         return TestResult.CreateSuccess();
     }
@@ -158,7 +158,7 @@ public static class EqualityTests
     {
         return SafeCall("Equals", () =>
         {
-            if (obj1.Equals((object)obj2) != expectedEqual)
+            if (obj1!.Equals((object)obj2!) != expectedEqual)
             {
                 return TestResult.CreateFailure(string.Format(
                     "Equals returns {0} on {1}equal objects.",
@@ -245,7 +245,7 @@ public static class EqualityTests
     private static TestResult TestInequalityOperatorReceivingNull<T>(T obj, bool expectedEqual)
     {
         if (typeof(T).IsClass)
-            return TestInequalityOperator<T>(obj, default(T), expectedEqual);
+            return TestInequalityOperator<T>(obj, default(T)!, expectedEqual);
 
         return TestResult.CreateSuccess();
     }
@@ -253,7 +253,7 @@ public static class EqualityTests
     private static TestResult TestInequalityOperatorReceivingNull<T>(bool expectedEqual)
     {
         if (typeof(T).IsClass)
-            return TestInequalityOperator<T>(default(T), default(T), expectedEqual);
+            return TestInequalityOperator<T>(default(T)!, default(T)!, expectedEqual);
 
         return TestResult.CreateSuccess();
     }

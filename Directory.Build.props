@@ -5,15 +5,18 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
-    <!--
+    <!-- 경고를 Error로 취급합니다 -->
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    -->
   </PropertyGroup>
 
   <!-- Remove this to turn on warnings for missing XML Comments -->
   <!--
   <PropertyGroup>
     <NoWarn>1591</NoWarn>
+
+    Working with Nullable Reference Types
+    https://learn.microsoft.com/en-us/ef/core/miscellaneous/nullable-reference-types
+    <NoWarn>CS8618</NoWarn>
   </PropertyGroup>
   -->
 

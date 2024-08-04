@@ -49,7 +49,7 @@ public sealed partial class Permission
     //public string? RelatedEntity { get; init; }
     //public List<string>? Properties { get; init; } = null;
 
-    public string Name { get; set; }
+    public string Name { get; set; } = null!;
     public PermissionType Type { get; set; } = PermissionType.Other;
     public string? RelatedAggregateRoot { get; set; }
     public string? RelatedEntity { get; set; }

@@ -20,3 +20,5 @@ app.UseAdaptersPresentationLayer();
 
 app.MapControllers();
 app.Run();
+
+sealed partial class Program;
