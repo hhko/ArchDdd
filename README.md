@@ -291,7 +291,7 @@ Application Architecture
           └─ {테스트 프로젝트2}
     ```
     - (1), Directory.Build.props: 모든 프로젝트 대상
-      ```
+      ```xml
       <Project>
 
         <PropertyGroup>
