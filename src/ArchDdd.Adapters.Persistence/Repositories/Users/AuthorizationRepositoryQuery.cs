@@ -1,8 +1,6 @@
 ﻿using ArchDdd.Adapters.Persistence.Repositories.BaseTypes;
 using ArchDdd.Application.UseCases.Users.Queries;
 using ArchDdd.Domain.AggregateRoots.Users.Enumerations;
-using Microsoft.EntityFrameworkCore;
-using System.Data;
 
 namespace ArchDdd.Adapters.Persistence.Repositories.Users;
 

@@ -14,3 +14,6 @@ DELETE {{host}}/api/user/permissions/User_Read_Customer
 
 ### 실패
 DELETE {{host}}/api/user/permissions/xyz
+
+### 실패
+DELETE {{host}}/api/user/permissions/4

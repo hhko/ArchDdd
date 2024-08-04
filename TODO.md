@@ -1,3 +1,71 @@
+```
+Gatsby Tutorial
+https://www.youtube.com/watch?v=Qms4k6y7OgI&list=PL4cUxeGkcC9hw1g77I35ZivVLe8k2nvjB
+
+choco install nodejs-lts --version="20.16.0" -y
+choco install git
+choco install vscode
+
+npm install -g gatsby-cli     # 버전 명시?, # 버전 목록
+gatsby --version
+gatsby --help
+
+https://www.gatsbyjs.com/starters/
+  gatsby new my-hello-world-starter https://github.com/gatsbyjs/gatsby-starter-hello-world
+  gatsby new gatsby-gitbook-starter https://github.com/hasura/gatsby-gitbook-starter
+
+  gatsby new docs https://github.com/hasura/gatsby-gitbook-starter
+
+
+
+ES7 React/Redux/GraphQL/React-Native snippets
+
+gatsby new docs2 https://github.com/codebushi/gatsby-theme-document-example
+gatsby new docs3 https://github.com/jpedroschmitz/gatsby-starter-rocketdocs
+
+https://github.com/jpedroschmitz/rocketdocs
+
+
+
+
+Part 0: Set Up Your Development Environment
+https://www.gatsbyjs.com/docs/tutorial/getting-started/part-0/
+
+choco install nodejs-lts --version="20.16.0" -y
+choco install git
+choco install vscode
+
+npm install -g gatsby-cli     # 버전 명시?, # 버전 목록
+gatsby --version
+gatsby --help
+
+
+Part 1: Create and Deploy Your First Gatsby Site
+https://www.gatsbyjs.com/docs/tutorial/getting-started/part-1/
+
+gatsby new
+
+npm run develop
+gatsby develop
+gatsby develop --host=0.0.0.0       # IP, Port?
+
+http://localhost:8000/
+http://localhost:8000/___graphql
+
+
+git remote add origin https:// ... .git
+git branch -M main
+git push -u origin main
+
+Part 2: Use and Style React Components
+https://www.gatsbyjs.com/docs/tutorial/getting-started/part-2/
+
+
+
+npm init gatsby my-site-name -- -y -ts
+```
+
+
 - [x] Query vs. Command Repository 분리
 - [ ] Dapper
 

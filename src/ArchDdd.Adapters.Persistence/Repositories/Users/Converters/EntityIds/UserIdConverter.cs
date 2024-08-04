@@ -23,7 +23,3 @@ public sealed class UserIdComparer : ValueComparer<UserId>
     {
     }
 }
-
-
-
-//

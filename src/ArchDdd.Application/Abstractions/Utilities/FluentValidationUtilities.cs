@@ -18,10 +18,10 @@ public static class FluentValidationUtilities
             {
                 foreach (var error in errors)
                 {
-                    //context.AddFailure(
-                    //    propertyName: error.Code,
-                    //    errorMessage: error.Message); // (error.Serialize());
-                    context.AddFailure(error.Serialize());
+                    context.AddFailure(
+                        propertyName: error.Code,
+                        errorMessage: error.Message); // (error.Serialize());
+                    //context.AddFailure(error.Serialize());
                 }
             }
         });
@@ -41,8 +41,8 @@ public static class FluentValidationUtilities
             //}
             if (int.TryParse(value, out var _) || Enum.TryParse<TEnum>(value, out var _) is false)
             {
-                context.AddFailure(Error.InvalidArgument($"'{value}' is not a valid {typeof(TEnum).Name}")
-                                        .Serialize());
+                context.AddFailure(Error.InvalidArgument($"'{value}' is not a valid {typeof(TEnum).Name}"));
+                                        //.Serialize());
             }
         });
     }
