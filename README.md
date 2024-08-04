@@ -215,7 +215,39 @@ Application Architecture
        dotnet --version
           8.0.100                        # global.json으로 결정된 .NET SDK 버전
        ```
-1. `nuget.config`: NuGet 패키지 관리에서 패키지 소스, 설정, 자격 증명 등을 구성
+1. `nuget.config`: NuGet 패키지 관리에서 패키지 소스, 설정, 자격 증명 등을 구성하는 파일입니다.
+   ```
+   dotnet new nuget.config
+   ```
+   ```xml
+   <?xml version="1.0" encoding="utf-8"?>
+   <configuration>
+     <packageRestore>
+       <add key="enabled" value="True" />
+       <add key="automatic" value="True" />
+     </packageRestore>
+
+     <packageSources>
+       <clear />
+       <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
+     </packageSources>
+
+     <packageSourceMapping>
+       <packageSource key="nuget.org">
+         <package pattern="*" />
+       </packageSource>
+     </packageSourceMapping>
+
+     <bindingRedirects>
+       <add key="skip" value="False" />
+     </bindingRedirects>
+
+     <packageManagement>
+       <add key="format" value="0" />
+       <add key="disabled" value="False" />
+     </packageManagement>
+   </configuration>
+   ```
 1. `Directory.Build.props`
 1. `Directory.Packages.props`
 1.`.editorconfig`
