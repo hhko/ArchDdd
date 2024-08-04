@@ -108,15 +108,15 @@ Application Architecture
 - 아키텍처는 제품의 **선순환(Good Cycle)** 성장의 시작점입니다.
 
 ### 아키텍처 의사 결정 기록
-> ADR(Architectural Decision Records)
-아키텍쳐와 관련된 중요한 의사 결정을 기록해 두는 문서입니다.
+> ADR(Architectural Decision Records)  
+> 아키텍쳐와 관련된 중요한 의사 결정을 기록해 두는 문서입니다.
 - 사례: https://sswconsulting.github.io/SSW.CleanArchitecture/
 
 <br/>
 
 ## 아키텍처 구현
 ### 관심사의 분리
-> *레이어 단위로** 특정 관심사를 정의하고 처리합니다
+> **레이어 단위로** 특정 관심사를 정의하고 처리합니다
 > - Tech. 관심사
 >   - Tech. 입/출력: Adapter 레이어(사용자 인터페이이스, 데이터 저장소, ...)
 > - Biz. 관심사
