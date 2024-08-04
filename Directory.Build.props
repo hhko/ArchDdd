@@ -6,10 +6,10 @@
     <Nullable>enable</Nullable>
 
     <!-- 경고를 Error로 취급합니다 -->
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!-- <TreatWarningsAsErrors>true</TreatWarningsAsErrors> -->
+    <TreatWarningsAsErrors Condition="'$(Configuration)' != 'Debug'">true</TreatWarningsAsErrors>
   </PropertyGroup>
 
-  <!-- Remove this to turn on warnings for missing XML Comments -->
   <!--
   <PropertyGroup>
     <NoWarn>1591</NoWarn>

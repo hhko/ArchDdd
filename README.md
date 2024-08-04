@@ -57,13 +57,14 @@ If builders built buildings the way programmers wrote programs, then the first w
 
 ### 아키텍처 원칙
 ![](./docs/docs/03-design/01-architecture/01-overview/img/ArchitectureSoC.png)
+![](2024-08-05-00-43-24.png)
 
 - 관심사의 분리(SoC, Separation of Concerns)
   - 아키텍처 수준에서는 **비즈니스와 기술적인 관심사**를 명확히 구분합니다.
   - 비즈니스와 관련된 부분은 비즈니스 영역에서, 기술적인 부분은 기술 영역에서 각각 다루어지도록 하는 것입니다.
   - 기술적 구현에 의존하지 않고도 비즈니스만을 집중하여 테스트하고 개선할 수 있습니다.
 
-### 아키텍처 범주
+### 아키텍처 분류
 ![](./docs/docs/03-design/01-architecture/01-overview/img/ArchitectureCategory.png)
 ※ 출처: [Making old applications new again](https://sellingsimplifiedinsights.com/asset/app-development/ASSET_co-modernization-whitepaper-inc0460201-122016kata-v1-en_1511772094768.pdf)
 
@@ -106,9 +107,33 @@ Application Architecture
 
 - 아키텍처는 제품의 **선순환(Good Cycle)** 성장의 시작점입니다.
 
+### 아키텍처 의사 결정 기록
+> ADR(Architectural Decision Records)
+아키텍쳐와 관련된 중요한 의사 결정을 기록해 두는 문서입니다.
+- 사례: https://sswconsulting.github.io/SSW.CleanArchitecture/
+
 <br/>
 
 ## 아키텍처 구현
+### 관심사의 분리
+> **레이어**: 관심사를 레이어로 정의하여 관리합니다.
+> - Tech. 관심사
+?   - Tech. 입/출력: Adapter 레이어(사용자 인터페이이스, 데이터 저장소, ...)
+> - Biz. 관심사
+>   - Biz. 흐름: Application 레이어
+>   - Biz. 단위: Domain 레이어
+
+#### 관심사 세부 분류
+![](./docs/docs/03-design/01-architecture/01-overview/img/ArchitectureSoCDetails.png)
+
+#### 비즈니스 입/출력
+![](./docs/docs/03-design/01-architecture/01-overview/img/LayerInputOutput.png)
+
+#### 비즈니스 입/출력 의존성 제거(Strategy 패턴)
+![](./docs/docs/03-design/01-architecture/01-overview/img/LayerInputOutputStrategyPattern.png)
+
+#### 비즈니스 입/출력 의존성 제거(Mediator 패턴)
+- TODO
 
 ### 솔루션 기본 구성
 ```
