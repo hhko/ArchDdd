@@ -117,9 +117,9 @@ Application Architecture
   ├─ {솔루션}.sln
   │
   │  // 형상관리
-  ├─ .gitignore                         # git
-  ├─ .gitattributes                     # git
-  ├─ .dockerignore                      # Dockerfile
+  ├─ .gitignore                         # Git 형상관리 제외 대상
+  ├─ .gitattributes                     # Git 형상관리 파일 처리
+  ├─ .dockerignore                      # Dockerfile 빌드 제외 대상
   │
   │  // .NET 설정
   ├─ global.json                        # 빌드 버전
@@ -130,11 +130,11 @@ Application Architecture
   ├─ .editorconfig                      # 코드 컨벤션
   │
   │  // Docker
-  ├─ Dockerfile
-  ├─ docker-compose.yml
-  ├─ docker-compose.override.yml
-  ├─ launchSettings.json
-  ├─ docker-compose.dcproj
+  ├─ Dockerfile                         # 도커 파일
+  ├─ docker-compose.yml                 # 도커 컴포즈
+  ├─ docker-compose.override.yml        # 도커 컴포즈
+  ├─ launchSettings.json                # 도커 컴포즈 구성
+  ├─ docker-compose.dcproj              # 도커 컴포즈 프로젝트
 ```
 #### 형상관리
 1. `.gitignore`: Git 형상 관리에서 제외할 파일과 폴더를 지정하는 파일입니다.
