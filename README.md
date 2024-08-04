@@ -256,14 +256,14 @@ Application Architecture
       │
       ├─ Src
       │   ├─ {프로젝트1}
-      │   └─ {프로젝트1}
+      │   └─ {프로젝트2}
       │
       └─ Tests
           ├─ Directory.Build.props   (2)
-          ├─ {프로젝트1}
-          └─ {프로젝트1}
+          ├─ {테스트 프로젝트1}
+          └─ {테스트 프로젝트2}
     ```
-    - (1), Directory.Build.props
+    - (1), Directory.Build.props: 모든 프로젝트 대상
       ```
       <Project>
 
@@ -278,7 +278,7 @@ Application Architecture
 
       </Project>
       ```
-    - (2), Directory.Build.props
+    - (2), Directory.Build.props: 테스트 프로젝트만 대상
       ```xml
       <Project>
 
@@ -303,7 +303,6 @@ Application Architecture
 
       </Project>
       ```
-
 1. `Directory.Packages.props`: 여러 프로젝트에 공통 패키지 버전을 지정하는 파일입니다.
 1.`.editorconfig`
 1. `dotnet-tools.json`
