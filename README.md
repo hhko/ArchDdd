@@ -109,7 +109,118 @@ Application Architecture
 <br/>
 
 ## 아키텍처 구현
-- TODO: 주요 구현을 정리합니다.
+
+### 솔루션 기본 구성
+```
+{솔루션}
+  ├─ README.md
+  ├─ {솔루션}.sln
+  │
+  │  // 형상관리
+  ├─ .gitignore                         # git
+  ├─ .gitattributes                     # git
+  ├─ .dockerignore                      # Dockerfile
+  │
+  │  // .NET 설정
+  ├─ global.json                        # 빌드 버전
+  ├─ nuget.config                       # NuGet 저장소
+  ├─ dotnet-tools.json                  # .NET 로컬 도구
+  ├─ Directory.Build.props              # 빌드 옵션
+  ├─ Directory.Packages.props           # 패키지 버전
+  ├─ .editorconfig                      # 코드 컨벤션
+  │
+  │  // Docker
+  ├─ Dockerfile
+  ├─ docker-compose.yml
+  ├─ docker-compose.override.yml
+  ├─ launchSettings.json
+  ├─ docker-compose.dcproj
+```
+#### 형상관리
+1. `.gitignore`: Git 형상 관리에서 제외할 파일과 폴더를 지정하는 파일입니다.
+   ```shell
+   dotnet new gitignore
+   ```
+   - [Verify Received and Verified files](https://github.com/VerifyTests/Verify?tab=readme-ov-file#includesexcludes)
+     ```
+     *.received.*
+     ```
+1. `.gitattributes`: Git 형상 관리에서 파일의 속성과 처리 방식을 지정하는 파일입니다.
+   - [Verify Received and Verified files, Text file settings](https://github.com/VerifyTests/Verify?tab=readme-ov-file#text-file-settings)
+     ```
+     *.verified.txt text eol=lf working-tree-encoding=UTF-8
+     *.verified.xml text eol=lf working-tree-encoding=UTF-8
+     *.verified.json text eol=lf working-tree-encoding=UTF-8
+     ```
+     - text: .verified.txt, .verified.xml, .verified.json 확장자를 가진 파일들이 모두 텍스트 파일로 처리되며,
+     - eol=lf: 체크아웃 시 개행 문자가 LF(Line Feed)로 설정되고,
+     - working-tree-encoding=UTF-8: UTF-8 인코딩이 사용되도록 합니다.
+1. `.dockerignore`: Docker가 이미지를 만들 때 제외할 파일과 폴더를 지정하는 파일입니다.
+
+#### .NET 설정
+1. `global.json`: .NET SDK 버전을 설정하는 파일입니다.
+   - 버전 형식: "[global.json 개요](https://learn.microsoft.com/ko-kr/dotnet/core/tools/global-json)", 지정된 버전에서부터 상위 버전(rollForward)
+     ```
+     x.y.znn
+     ```
+     - x: major
+     - y: minor
+     - z: feature, 0 ~ 9
+     - n: patch, 0 ~ 99
+   - 예제
+     - latestFeature: 8.0.302 이상 8.0.xxx 버전(예: 8.0.303 또는 8.0.402)
+       ```json
+       {
+         "sdk": {
+           "version": "8.0.302",
+           "rollForward": "latestFeature"
+         }
+       }
+       ```
+     - latestPatch: 8.0.102 이상 8.0.1xx 버전(예: 8.0.103 또는 8.0.199)
+       ```json
+       {
+         "sdk": {
+           "version": "8.0.102",
+           "rollForward": "latestPatch"
+         }
+       }
+       ```
+   - .NET SDK 버전 명령
+     - dotnet --info: 현재 경로의 .NET SDK 정보를 출력합니다.
+       ```shell
+       dotnet --info
+          .NET SDK:                      # global.json으로 결정된 .NET SDK 버전
+            Version:           8.0.100
+            Commit:            57efcf1350
+            Workload version:  8.0.100-manifests.aea97431
+
+          Host:                          # 호스트에 설치된 .NET Runtime 최진 버전
+            Version:      8.0.7
+            Architecture: x64
+            Commit:       2aade6beb0
+
+          .NET SDKs installed:           # 호스트에 설치된 .NET SDK 버전 목록
+            5.0.301 [C:\Program Files\dotnet\sdk]
+            6.0.100 [C:\Program Files\dotnet\sdk]
+            7.0.100 [C:\Program Files\dotnet\sdk]
+            8.0.100 [C:\Program Files\dotnet\sdk]
+            8.0.303 [C:\Program Files\dotnet\sdk]
+
+          global.json file:              # 인지된 global.json
+            C:\Workspace\Helloworld\global.json
+       ```
+     - dotnet --version: 현재 경로의 global.json으로 결정된 .NET SDK 버전을 출력합니다.
+       ```shell
+       dotnet --version
+          8.0.100                        # global.json으로 결정된 .NET SDK 버전
+       ```
+1. `nuget.config`: NuGet 패키지 관리에서 패키지 소스, 설정, 자격 증명 등을 구성
+1. `Directory.Build.props`
+1. `Directory.Packages.props`
+1.`.editorconfig`
+1. `dotnet-tools.json`
+   - %USERPROFILE%\.dotnet\tools
 
 <br/>
 
