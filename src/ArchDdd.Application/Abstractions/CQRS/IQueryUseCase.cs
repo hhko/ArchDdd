@@ -15,7 +15,7 @@ namespace ArchDdd.Application.Abstractions.CQRS;
 //
 // 변경 후
 // : IQueryHandler<GetUserByUsernameQuery, UserResponse>
-public interface IQueryUseCase<in TQuery, TResponse> 
+public interface IQueryUseCase<in TQuery, TResponse>
     : IRequestHandler<TQuery, IResult<TResponse>>
     where TQuery : IQuery<TResponse>
     where TResponse : IResponse

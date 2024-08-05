@@ -110,8 +110,11 @@ Application Architecture
 ### 아키텍처 의사 결정 기록
 > ADR(Architectural Decision Records)  
 > 아키텍쳐와 관련된 중요한 의사 결정을 기록해 두는 문서입니다.
-- 사례: https://sswconsulting.github.io/SSW.CleanArchitecture/
-
+- 사례
+  - https://sswconsulting.github.io/SSW.CleanArchitecture/
+- 도구
+  - [dotnet-adr](https://github.com/endjin/dotnet-adr)
+  - [log4brains](https://github.com/thomvaill/log4brains)
 <br/>
 
 ## 아키텍처 구현
