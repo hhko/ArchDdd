@@ -205,7 +205,7 @@ Application Architecture
 ![](.images/BizLayer_MediatorPattern_DecoratorPattern.png)
 
 - Decorator 패턴
-  - 메시지 핸들러 호출 전후에 추가적인 공통 기능을 손쉽게 추가할 수 있습니다."
+  - 메시지 핸들러 호출 전후에 추가적인 공통 기능을 손쉽게 추가할 수 있습니다.
 
 #### 비즈니스 Unknown 출력
 ![](.images/BizLayer_MediatorPattern_StrategyPattern.png)
@@ -218,8 +218,14 @@ Application Architecture
 - 메시지 분리
 
 #### 가변, Command 메시지
+- TODO
 
 #### 불변, Query 메시지
+- TODO
+
+### 성공/실패 처리
+- TODO: [Railway-Oriented Programming](https://fsharpforfunandprofit.com/rop/)
+- TODO: 로그 통합
 
 ### 솔루션 구성
 ```
