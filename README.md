@@ -119,23 +119,72 @@ Application Architecture
 
 ## 아키텍처 구현
 ### 관심사의 분리
-> **레이어 단위로** 특정 관심사를 정의하고 처리합니다
-> - Tech. 관심사
->   - Tech. 입/출력: Adapter 레이어(사용자 인터페이이스, 데이터 저장소, ...)
-> - Biz. 관심사
->   - Biz. 흐름: Application 레이어
->   - Biz. 단위: Domain 레이어
-
 #### 관심사 세부 분류
 ![](./docs/docs/03-design/01-architecture/01-overview/img/ArchitectureSoCDetails.png)
 
-#### 비즈니스 입/출력
-![](./docs/docs/03-design/01-architecture/01-overview/img/LayerInputOutput.png)
+> **레이어 단위로** 특정 관심사를 정의하고 처리합니다
+> - Tech. 관심사: Non-deterministic
+>   - Tech. 입/출력: Adapter 레이어(사용자 인터페이이스, 데이터 저장소, ...)
+> - Biz. 관심사: Deterministic
+>   - Biz. 흐름: Application 레이어
+>   - Biz. 단위: Domain 레이어
 
-#### 비즈니스 입/출력 의존성 제거(Strategy 패턴)
-![](./docs/docs/03-design/01-architecture/01-overview/img/LayerInputOutputStrategyPattern.png)
+- 레이어 이름 규칙
+  ```
+  T1.T2{.T3}
+
+  T1: 솔루션
+  T2: 레이어(Domain, Application, Adapter)
+  T3: 세부 분류(생략 가능)
+  ```
+- 레이어 이름 적용
+  ```
+  {솔루션}                            // Tech. 관심사, Non-deterministic, Host
+  {솔루션}.Adapters.Infrastructure    // Tech. 관심사, Non-deterministic
+  {솔루션}.Adapters.Persistence       // Tech. 관심사, Non-deterministic
+  {솔루션}.Adapters.Presentation      // Tech. 관심사, Non-deterministic
+  {솔루션}.Application                // Biz. 관심사, Deterministic
+  {솔루션}.Domain                     // Biz. 관심사, Deterministic
+  ```
+
+#### 비즈니스 입/출력
+![](./.images/LayerInputOutput.png)
+
+#### 비즈니스 입/출력: 의존성 제거(Strategy 패턴)
+![](.images/LayerInputOutput_StrategyPattern.png)
+
+#### 비즈니스 입/출력: Deterministic과 Non-deterministic 분리
+![](.images/LayerInputOutput_Deterministic.png)
+
+#### 비즈니스 입/출력: 테스트
+![](.images/LayerInputOutput_Test.png)
+> **테스트**
+> - 단위 테스트(Unit Test): Biz. 관심사(Deterministic과)을 테스트합니다.
+> - 통합 테스트(Integration Test): Tech. 관심사(Non-deterministic)부터 테스트합니다.
+
+- 레이어 이름 규칙
+  ```
+  T1.T2.T3
+
+  T1: 솔루션
+  T2: 레이어(Test)
+  T3: 세부 분류(Unit, Integration, E2E)
+  ```
+- 레이어 이름 적용
+  ```
+  {솔루션}.Tests.Unit                 // Biz. 관심사, deterministic
+  {솔루션}.Tests.Integration          // Tech. 관심사, Non-deterministic
+  ```
+
+#### 비즈니스 입/출력: 의존성 제거(Mediator 패턴)
+![](.images/LayerInputOutput_MediatorPattern.png)
+
 &nbsp;&nbsp;
-![](./docs/docs/03-design/01-architecture/01-overview/img/LayerInputOutputStrategyPatternUnit.png)
+
+![](.images/LayerInputOutput_MediatorPattern_Comments.png)
+
+- Mediator 패턴
+  - 입/출력 메시지를 이용하여 Mediator을 통해 간접적으로 "Biz. 관심사"를 호출합니다.
 
 #### 비즈니스 입/출력 의존성 제거(Mediator 패턴)
 - TODO
