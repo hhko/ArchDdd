@@ -47,7 +47,7 @@ If builders built buildings the way programmers wrote programs, then the first w
 - The architecture should scream **the intent of the system**.
 
 ### 아키텍처 정의
-![](./docs/docs/03-design/01-architecture/01-overview/img/ArchitectureDefinition.png)
+![](./.images/ArchitectureDefinition.png)
 ※ 출처: [Making Architecture Matter, 소프트웨어 아키텍처의 중요성](https://www.youtube.com/watch?v=4E1BHTvhB7Y)  
 
 - 아키텍처는 제품의 지속 가능한 성장을 주도하는 중요한 모든 것(`The important stuff whatever that is`)입니다.
@@ -56,8 +56,7 @@ If builders built buildings the way programmers wrote programs, then the first w
     - **끝 지정(부수 효과, Side Effect)를** 모두 인지하는 것은 쉽지 않습니다.
 
 ### 아키텍처 원칙
-![](./docs/docs/03-design/01-architecture/01-overview/img/ArchitectureSoC.png)
-![](2024-08-05-00-43-24.png)
+![](./.images/ArchitectureSoc.png)
 
 - 관심사의 분리(SoC, Separation of Concerns)
   - 아키텍처 수준에서는 **비즈니스와 기술적인 관심사**를 명확히 구분합니다.
@@ -65,7 +64,7 @@ If builders built buildings the way programmers wrote programs, then the first w
   - 기술적 구현에 의존하지 않고도 비즈니스만을 집중하여 테스트하고 개선할 수 있습니다.
 
 ### 아키텍처 분류
-![](./docs/docs/03-design/01-architecture/01-overview/img/ArchitectureCategory.png)
+![](./.images/ArchitectureCategory.png)
 ※ 출처: [Making old applications new again](https://sellingsimplifiedinsights.com/asset/app-development/ASSET_co-modernization-whitepaper-inc0460201-122016kata-v1-en_1511772094768.pdf)
 
 ```
@@ -97,13 +96,13 @@ Application Architecture
 - 백엔드와 프론트엔드 대부분 **관심사를 계층(Layer)로 관리하는** 계층형 아키텍처 기반의 진화된 아키텍처를 사용합니다.
 
 ### 아키텍처 역사
-![](./docs/docs/03-design/01-architecture/01-overview/img/ArchitectureHistory.png)
+![](./.images/ArchitectureHistory.png)
 
 - 1992년부터 아키텍처 수준에서는 관심사를 계층(Layer)으로 나누고, 객체 수준에서는 관심사를 엔티티(Entity)로 관리하는 방법이 제시되었습니다.
 - 즉, 시스템의 큰 구조는 여러 계층으로 나누어 관리하고, 각 계층 내의 세부 사항은 엔티티로 나누어 관리하는 방식입니다.
 
 ### 아키텍처 역할
-![](./docs/docs/03-design/01-architecture/01-overview/img/ArchitectureDevOps.png)
+![](./.images/ArchitectureDevOps.png)
 
 - 아키텍처는 제품의 **선순환(Good Cycle)** 성장의 시작점입니다.
 
@@ -118,9 +117,9 @@ Application Architecture
 <br/>
 
 ## 아키텍처 구현
-### 관심사의 분리
+### 레이어
 #### 관심사 세부 분류
-![](./docs/docs/03-design/01-architecture/01-overview/img/ArchitectureSoCDetails.png)
+![](./.images/ArchitectureSoC_Details.png)
 
 > **레이어 단위로** 특정 관심사를 정의하고 처리합니다
 > - Tech. 관심사: Non-deterministic
@@ -147,17 +146,24 @@ Application Architecture
   {솔루션}.Domain                     // Biz. 관심사, Deterministic
   ```
 
+### 불순(Impure)
 #### 비즈니스 입/출력
-![](./.images/LayerInputOutput.png)
+![](./.images/BizLayer.png)
+- Biz. 관심사(Biz. 흐름과 Biz. 단위)는 비결정론적(Non-deterministic) Tech 관심사에(Tech. 출력)에 의존하기 때문에 결정론적(Deterministic) 성질을 잃게 됩니다.
+  - `결정론적(Deterministic)`: 예측할 수 있음
+    - 정확한 수학적 관계식에 의해 예측
+    - 오차(불확실성)를 허용하지 않음
+  - `비결정론적(Non-deterministic)`: 예측 불가능
+    - 다만, 통계적인 방법으로 만 추정
+    - 오차(불확실성)를 허용함
 
-#### 비즈니스 입/출력: 의존성 제거(Strategy 패턴)
-![](.images/LayerInputOutput_StrategyPattern.png)
+### 순수(Pure, Strategy 패턴)
+#### 비즈니스 입/출력 의존성 제거
+![](./.images/BizLayer_StrategyPattern.png)
 
-#### 비즈니스 입/출력: Deterministic과 Non-deterministic 분리
-![](.images/LayerInputOutput_Deterministic.png)
+#### 비즈니스 입/출력 테스트
+![](.images/BizLayer_Test.png)
 
-#### 비즈니스 입/출력: 테스트
-![](.images/LayerInputOutput_Test.png)
 > **테스트**
 > - 단위 테스트(Unit Test): Biz. 관심사(Deterministic과)을 테스트합니다.
 > - 통합 테스트(Integration Test): Tech. 관심사(Non-deterministic)부터 테스트합니다.
@@ -176,18 +182,36 @@ Application Architecture
   {솔루션}.Tests.Integration          // Tech. 관심사, Non-deterministic
   ```
 
-#### 비즈니스 입/출력: 의존성 제거(Mediator 패턴)
-![](.images/LayerInputOutput_MediatorPattern.png)
+### 순수(Pure, Mediator 패턴)
+#### 비즈니스 입/출력 의존성 제거
+![](.images/BizLayer_MediatorPattern.png)
 
-&nbsp;&nbsp;
-
-![](.images/LayerInputOutput_MediatorPattern_Comments.png)
+#### 비즈니스 입/출력 메시지
+![](.images/BizLayer_MediatorPattern_Message.png)
 
 - Mediator 패턴
-  - 입/출력 메시지를 이용하여 Mediator을 통해 간접적으로 "Biz. 관심사"를 호출합니다.
+  - 입/출력 메시지를 이용하여 Mediator로 "Biz. 관심사"를 간접적으로 호출합니다.
+  - 런타임에도 메시지 핸들러 인스턴스를 직접 참조하지 않습니다.
 
-#### 비즈니스 입/출력 의존성 제거(Mediator 패턴)
-- TODO
+#### 비즈니스 Known 입/출력 메시지
+![](.images/BizLayer_MediatorPattern_Message_Handler.png)
+
+- Mediator 패턴
+  - 입/출력 메시지는 메시지 핸들러 Signature에 정의되어 알 수 있습니다(Known).
+
+#### 비즈니스 Known 입/출력 메시지 부가 기능
+![](.images/BizLayer_MediatorPattern_DecoratorPattern.png)
+
+#### 비즈니스 Unknown 출력
+![](.images/BizLayer_MediatorPattern_StrategyPattern.png)
+
+### 메시지 구분
+- 데이터 모델 분리
+- 메시지 분리
+
+#### 가변, Command 메시지
+
+#### 불변, Query 메시지
 
 ### 솔루션 기본 구성
 ```
