@@ -233,7 +233,7 @@ Application Architecture
 - Strategy 패턴
   - 메시지 핸들러 Signature에 정의 안된 출력을 처리합니다.
 
-### 메시지 구분
+### TODO. 메시지 구분
 - 데이터 모델 분리
 - 메시지 분리
 
@@ -243,7 +243,7 @@ Application Architecture
 #### 불변, Query 메시지
 - TODO
 
-### 성공/실패 처리
+### TODO. 성공/실패 처리
 - TODO: [Railway-Oriented Programming](https://fsharpforfunandprofit.com/rop/)
 - TODO: 로그 통합
 
