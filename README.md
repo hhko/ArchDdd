@@ -149,7 +149,7 @@ Application Architecture
 ### 불순(Impure)
 #### 비즈니스 입/출력
 ![](./.images/BizLayer.png)
-- Biz. 관심사(Biz. 흐름과 Biz. 단위)는 비결정론적(Non-deterministic) Tech 관심사에(Tech. 출력)에 의존하기 때문에 결정론적(Deterministic) 성질을 잃게 됩니다.
+- Biz. 관심사(Biz. 흐름과 Biz. 단위)는 비결정론적(Non-deterministic) Tech 관심사(Tech. 출력)에 의존하기 때문에 결정론적(Deterministic) 성질을 잃게 됩니다.
   - `결정론적(Deterministic)`: 예측할 수 있음
     - 정확한 수학적 관계식에 의해 예측
     - 오차(불확실성)를 허용하지 않음
@@ -197,13 +197,19 @@ Application Architecture
 ![](.images/BizLayer_MediatorPattern_Message_Handler.png)
 
 - Mediator 패턴
-  - 입/출력 메시지는 메시지 핸들러 Signature에 정의되어 알 수 있습니다(Known).
+  - 입/출력 메시지는 메시지 핸들러 Signature에 정의되어 있습니다(Known).
 
-#### 비즈니스 Known 입/출력 메시지 부가 기능
+#### 비즈니스 Known 입/출력 메시지 추가 기능
 ![](.images/BizLayer_MediatorPattern_DecoratorPattern.png)
+
+- Decorator 패턴
+  - 메시지 핸들러 호출 전후에 추가적인 공통 기능을 손쉽게 추가할 수 있습니다."
 
 #### 비즈니스 Unknown 출력
 ![](.images/BizLayer_MediatorPattern_StrategyPattern.png)
+
+- Strategy 패턴
+  - 메시지 핸들러 Signature에 정의 안된 출력을 처리합니다.
 
 ### 메시지 구분
 - 데이터 모델 분리
@@ -213,7 +219,7 @@ Application Architecture
 
 #### 불변, Query 메시지
 
-### 솔루션 기본 구성
+### 솔루션 구성
 ```
 {솔루션}
   ├─ README.md
