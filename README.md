@@ -139,9 +139,11 @@ Application Architecture
 - 레이어 이름 적용
   ```
   {솔루션}                            // Tech. 관심사, Non-deterministic, Host
+
   {솔루션}.Adapters.Infrastructure    // Tech. 관심사, Non-deterministic
   {솔루션}.Adapters.Persistence       // Tech. 관심사, Non-deterministic
   {솔루션}.Adapters.Presentation      // Tech. 관심사, Non-deterministic
+
   {솔루션}.Application                // Biz. 관심사, Deterministic
   {솔루션}.Domain                     // Biz. 관심사, Deterministic
   ```
@@ -150,10 +152,10 @@ Application Architecture
 #### 비즈니스 입/출력
 ![](./.images/BizLayer.png)
 - Biz. 관심사(Biz. 흐름과 Biz. 단위)는 비결정론적(Non-deterministic) Tech 관심사(Tech. 출력)에 의존하기 때문에 결정론적(Deterministic) 성질을 잃게 됩니다.
-  - `결정론적(Deterministic)`: 예측할 수 있음
+  - **결정론적(Deterministic)**: 예측할 수 있음
     - 정확한 수학적 관계식에 의해 예측
     - 오차(불확실성)를 허용하지 않음
-  - `비결정론적(Non-deterministic)`: 예측 불가능
+  - **비결정론적(Non-deterministic)**: 예측 불가능
     - 다만, 통계적인 방법으로 만 추정
     - 오차(불확실성)를 허용함
 
@@ -165,8 +167,8 @@ Application Architecture
 ![](.images/BizLayer_Test.png)
 
 > **테스트**
-> - 단위 테스트(Unit Test): Biz. 관심사(Deterministic과)을 테스트합니다.
-> - 통합 테스트(Integration Test): Tech. 관심사(Non-deterministic)부터 테스트합니다.
+> - 단위 테스트(Unit Test): Biz. 관심사을 외부 환경에 의존하지 않고 테스트합니다.(Deterministic).
+> - 통합 테스트(Integration Test): Tech. 관심사부터 테스트합니다(Non-deterministic).
 
 - 레이어 이름 규칙
   ```
