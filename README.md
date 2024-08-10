@@ -87,6 +87,9 @@ If builders built buildings the way programmers wrote programs, then the first w
 ![](./.images/ArchitectureCategory.png)
 ※ 출처: [Making old applications new again](https://sellingsimplifiedinsights.com/asset/app-development/ASSET_co-modernization-whitepaper-inc0460201-122016kata-v1-en_1511772094768.pdf)
 
+![](./.images/ArchitectureExternal_vs_Internal.png)
+※ 출처: [DDD 및 CQRS 패턴을 사용하여 마이크로 서비스에서 비즈니스 복잡성 처리](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/)
+
 ```
 Application Architecture
   ├─ Backend
@@ -94,18 +97,18 @@ Application Architecture
   │   ├─ Modular Monolithic Architecture
   │   ├─ N-tier Architecture
   │   └─ Microservices Architecture
-  │       ├─ Inner Architecture
+  │       ├─ Internal Architecture
   │       │    └─ Layered Architecture
   │       │         ├─ Hexagonal Architecture
   │       │         ├─ Onion Architecture
   │       │         ├─ Clean Architecture
   │       │         └─ Vertical Slice Architecture
   │       │
-  │       └─ Outer Architecture
+  │       └─ External Architecture
   │            └─ 외부 시스템 구성 아키텍처: 예. CNCF Landscape
   │
   └─ Frontend
-      └─ Inner Architecture
+      └─ Internal Architecture
           └─ Layered Architecture
                ├─ Hexagonal Architecture
                ├─ Onion Architecture
@@ -152,20 +155,20 @@ Application Architecture
   ```
   T1.T2{.T3}
 
-  T1: 솔루션
+  T1: 프로젝트
   T2: 레이어(Domain, Application, Adapter)
   T3: 세부 분류(생략 가능)
   ```
 - 레이어 이름 적용
   ```
-  {솔루션}                            // Tech. 관심사, Non-deterministic, Host
+  {프로젝트}                            // Tech. 관심사, Non-deterministic, Host
 
-  {솔루션}.Adapters.Infrastructure    // Tech. 관심사, Non-deterministic
-  {솔루션}.Adapters.Persistence       // Tech. 관심사, Non-deterministic
-  {솔루션}.Adapters.Presentation      // Tech. 관심사, Non-deterministic
+  {프로젝트}.Adapters.Infrastructure    // Tech. 관심사, Non-deterministic
+  {프로젝트}.Adapters.Persistence       // Tech. 관심사, Non-deterministic
+  {프로젝트}.Adapters.Presentation      // Tech. 관심사, Non-deterministic
 
-  {솔루션}.Application                // Biz. 관심사, Deterministic
-  {솔루션}.Domain                     // Biz. 관심사, Deterministic
+  {프로젝트}.Application                // Biz. 관심사, Deterministic
+  {프로젝트}.Domain                     // Biz. 관심사, Deterministic
   ```
 
 ### 불순(Impure)
@@ -183,6 +186,9 @@ Application Architecture
 #### 비즈니스 입/출력 의존성 제거
 ![](./.images/BizLayer_StrategyPattern.png)
 
+- 인터페이스: Strategy 패턴
+  - TODO. 세부 설명, 예제 코드
+
 #### 비즈니스 입/출력 테스트
 ![](.images/BizLayer_Test.png)
 
@@ -194,44 +200,43 @@ Application Architecture
   ```
   T1.T2.T3
 
-  T1: 솔루션
+  T1: 프로젝트
   T2: 레이어(Test)
   T3: 세부 분류(Unit, Integration, E2E)
   ```
 - 레이어 이름 적용
   ```
-  {솔루션}.Tests.Unit                 // Biz. 관심사, deterministic
-  {솔루션}.Tests.Integration          // Tech. 관심사, Non-deterministic
+  {프로젝트}.Tests.Unit                 // Biz. 관심사, deterministic
+  {프로젝트}.Tests.Integration          // Tech. 관심사, Non-deterministic
   ```
 
 ### 순수(Pure, Mediator 패턴)
 #### 비즈니스 입/출력 의존성 제거
 ![](.images/BizLayer_MediatorPattern.png)
 
-#### 비즈니스 입/출력 메시지
-![](.images/BizLayer_MediatorPattern_Message.png)
-
-- Mediator 패턴
+- 중재자와 메시지: Mediator 패턴
   - 입/출력 메시지를 이용하여 Mediator로 "Biz. 관심사"를 간접적으로 호출합니다.
   - 런타임에도 메시지 핸들러 인스턴스를 직접 참조하지 않습니다.
 
-#### 비즈니스 Known 입/출력 메시지
-![](.images/BizLayer_MediatorPattern_Message_Handler.png)
+#### 비즈니스 Known 입/출력
+![](.images/BizLayer_KnownInputOutput.png)
 
 - Mediator 패턴
   - 입/출력 메시지는 메시지 핸들러 Signature에 정의되어 있습니다(Known).
-
-#### 비즈니스 Known 입/출력 메시지 추가 기능
-![](.images/BizLayer_MediatorPattern_DecoratorPattern.png)
-
-- Decorator 패턴
-  - 메시지 핸들러 호출 전후에 추가적인 공통 기능을 손쉽게 추가할 수 있습니다.
+  - TODO. 예제 코드
 
 #### 비즈니스 Unknown 출력
-![](.images/BizLayer_MediatorPattern_StrategyPattern.png)
+![](.images/BizLayer_UnkownOutput.png)
 
 - Strategy 패턴
   - 메시지 핸들러 Signature에 정의 안된 출력을 처리합니다.
+
+#### 비즈니스 입/출력 부가 기능
+![](.images/BizLayer_MediatorStrategyDecoratorPatterns.png)
+
+- 인터페이스: Decorator 패턴
+  - 메시지 핸들러 호출 전후에 추가적인 공통 기능을 손쉽게 추가할 수 있습니다.
+  - TODO. 예제 코드
 
 ### TODO. 메시지 구분
 - 데이터 모델 분리
