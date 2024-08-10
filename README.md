@@ -84,9 +84,11 @@ If builders built buildings the way programmers wrote programs, then the first w
   - 기술적 구현에 의존하지 않고도 비즈니스만을 집중하여 테스트하고 개선할 수 있습니다.
 
 ### 아키텍처 분류
+#### Application Architecture
 ![](./.images/ArchitectureCategory.png)
 ※ 출처: [Making old applications new again](https://sellingsimplifiedinsights.com/asset/app-development/ASSET_co-modernization-whitepaper-inc0460201-122016kata-v1-en_1511772094768.pdf)
 
+#### Internal vs External Architecture
 ![](./.images/ArchitectureExternal_vs_Internal.png)
 ※ 출처: [DDD 및 CQRS 패턴을 사용하여 마이크로 서비스에서 비즈니스 복잡성 처리](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/)
 
