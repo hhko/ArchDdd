@@ -21,7 +21,7 @@
 - **이 코드가 다른 사람들과 협업하는 데 있어 장애물이 되지 않을까?**
 - **이 코드가 변화하는 요구사항에 유연하게 대응할 수 있을까?**
 
-이러한 질문들은 제가 지속 가능한 코드를 작성하는 데 있어 나침반 역할을 해줍니다. 가독성이 높은 코드, 잘 정의된 인터페이스, 그리고 적절한 테스트 케이스는 제가 추구하는 지속 가능한 코드의 요소들입니다.  
+이러한 질문들은 지속 가능한 코드를 작성하는 데 있어 나침반 역할을 해줍니다. 가독성이 높은 코드, 잘 정의된 인터페이스, 그리고 적절한 테스트 케이스는 지속 가능한 코드의 핵심 요소들입니다.  
 
 그러나 지속 가능한 코드를 작성하는 일은 결코 쉬운 일이 아닙니다. 때로는 당장의 마감 기한에 쫓겨 임시방편으로 문제를 해결하고 싶은 유혹에 빠지기도 합니다. 그러나 언제나 긴 호흡으로 바라봐야 합니다. 일시적인 해결책보다는 장기적인 관점에서의 품질을 더 중요하게 생각해야 합니다.  
 
@@ -159,7 +159,7 @@ Application Architecture
 
   T1: 프로젝트
   T2: 레이어(Domain, Application, Adapter)
-  T3: 세부 분류(생략 가능)
+  T3: 세부 레이어(생략 가능)
   ```
 - 레이어 이름 적용
   ```
@@ -169,8 +169,8 @@ Application Architecture
   {프로젝트}.Adapters.Persistence       // Tech. 관심사, Non-deterministic
   {프로젝트}.Adapters.Presentation      // Tech. 관심사, Non-deterministic
 
-  {프로젝트}.Application                // Biz. 관심사, Deterministic
-  {프로젝트}.Domain                     // Biz. 관심사, Deterministic
+  {프로젝트}.Application                // Biz. 관심사(Biz. 흐름), Deterministic
+  {프로젝트}.Domain                     // Biz. 관심사(Biz. 단위), Deterministic
   ```
 
 ### 불순(Impure)
@@ -204,7 +204,7 @@ Application Architecture
 
   T1: 프로젝트
   T2: 레이어(Test)
-  T3: 세부 분류(Unit, Integration, E2E)
+  T3: 세부 레이어(Unit, Integration, E2E)
   ```
 - 레이어 이름 적용
   ```
@@ -493,3 +493,14 @@ Application Architecture
 
 ### 도구
 - `verify.tool`
+
+
+## 참고 자료
+- [DDD-NoDuplicates](https://github.com/ardalis/DDD-NoDuplicates/tree/master)
+- [DDDPracticeDomainEvents](https://github.com/GLARDEN/DDDPracticeDomainEvents): 11장 예제 확장
+---
+- [CleanArchitecture | ardalis](https://github.com/ardalis/CleanArchitecture)
+- [CleanArchitecture](https://github.com/alex289/CleanArchitecture/tree/main): gRPC 테스트 포함
+- [pluralsight-ddd-fundamentals](https://github.com/ardalis/pluralsight-ddd-fundamentals/tree/main)
+- [modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd): CQRS
+- [clean-architecture-core](https://github.com/matthewrenze/clean-architecture-core): EF Core 분리
