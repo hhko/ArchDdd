@@ -456,6 +456,25 @@ Application Architecture
 
 <br/>
 
+```cs
+public class TimeUtility
+{
+    // Pure
+    public static string IsAmOrPm(DateTime specificTime)
+    {
+        return specificTime.Hour < 12 ? "AM" : "PM";
+    }
+}
+
+// Pure
+DateTime specificTime = new DateTime(2024, 8, 7, 10, 30, 0);
+string isAmOrPm = TimeUtility.IsAmOrPm(specificTime);
+
+// Impure
+DateTime now = DateTime.Now();
+string isAmOrPm = TimeUtility.IsAmOrPm(now);
+```
+
 ## 개발 환경
 - .NET 8.x
 - Visual Studio Code
@@ -494,6 +513,7 @@ Application Architecture
 ### 도구
 - `verify.tool`
 
+<br/>
 
 ## 참고 자료
 - [DDD-NoDuplicates](https://github.com/ardalis/DDD-NoDuplicates/tree/master)
@@ -504,3 +524,16 @@ Application Architecture
 - [pluralsight-ddd-fundamentals](https://github.com/ardalis/pluralsight-ddd-fundamentals/tree/main)
 - [modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd): CQRS
 - [clean-architecture-core](https://github.com/matthewrenze/clean-architecture-core): EF Core 분리
+---
+### Metrics
+- [Collect metrics](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/metrics-collection?view=aspnetcore-8.0): 콘솔 기반 매트릭 -> Prometheus
+- [ASP.NET Core metrics](https://learn.microsoft.com/en-us/aspnet/core/log-mon/metrics/metrics?view=aspnetcore-8.0): ASP.NET WebApi, 통합 테스트
+
+### HealthCheck
+- [.NET app health checks in C#](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/diagnostic-health-checks?view=aspnetcore-8.0): 콘솔 기반 HealthCheck
+- [ASP.NET Core의 상태 검사](https://learn.microsoft.com/ko-kr/aspnet/core/host-and-deploy/health-checks?view=aspnetcore-8.0)
+- [.net 5.0 Integration Test, Health check endpoint not found](https://stackoverflow.com/questions/68564315/net-5-0-integration-test-health-check-endpoint-not-found): 테스트
+  - [Implementing Health Checks in .NET 8](https://medium.com/@jeslurrahman/implementing-health-checks-in-net-8-c3ba10af83c3)
+
+### DB
+- [EF Core 사용시 첫 번째 쿼리가 느린 문제](https://forum.dotnetdev.kr/t/ef-core/11401)
