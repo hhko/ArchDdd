@@ -537,3 +537,25 @@ string isAmOrPm = TimeUtility.IsAmOrPm(now);
 
 ### DB
 - [EF Core 사용시 첫 번째 쿼리가 느린 문제](https://forum.dotnetdev.kr/t/ef-core/11401)
+
+<br/>
+
+## 예제 코드
+### CodeMaze
+#### 아키텍처
+- [Clean Architecture in .NET](https://code-maze.com/dotnet-clean-architecture/)
+- [Onion Architecture in ASP.NET Core](https://code-maze.com/onion-architecture-in-aspnetcore/)
+- [What are the Differences Between Onion Architecture and Clean Architecture in .NET?](https://code-maze.com/dotnet-differences-between-onion-architecture-and-clean-architecture/)
+- [Vertical Slice Architecture in ASP.NET Core](https://code-maze.com/vertical-slice-architecture-aspnet-core/)
+
+#### 테스트
+- [How to Test IServiceCollection Registrations in .NET](https://code-maze.com/dotnet-how-to-test-iservicecollection-registrations/)
+- [Architecture Tests in .NET with NetArchTest.Rules](https://code-maze.com/csharp-architecture-tests-with-netarchtest-rules/)
+- [CQRS and MediatR in ASP.NET Core](https://code-maze.com/cqrs-mediatr-in-aspnet-core/)
+
+#### MediatR
+- [CQRS Validation Pipeline with MediatR and FluentValidation](https://code-maze.com/cqrs-mediatr-fluentvalidation/)
+- [CQRS and MediatR in ASP.NET Core](https://code-maze.com/cqrs-mediatr-in-aspnet-core/)
+- [MediatR Publish and Send Methods](https://code-maze.com/csharp-mediatr-publish-and-send-methods/)
+- [Global Exception Handling for MediatR Requests](https://code-maze.com/csharp-global-exception-handling-for-mediatr-requests/)
+- [How to Solve The type ‘TRequest’ Cannot be Used as Type Parameter in MediatR](https://code-maze.com/type-trequest-cannot-be-used-in-mediatr/)
