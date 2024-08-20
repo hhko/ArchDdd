@@ -142,6 +142,21 @@ Application Architecture
 <br/>
 
 ## 아키텍처 구현
+
+> 1. 요구사항을 **물리적 트랜잭션 단위**로 구분합니다.
+> 1. 요구사항에서 **물리적 요구사항 단위**로 분리합니다. <- Adapter 레이어
+>    | 기술 관심사                       | 레이어                             |
+>    | ---                              | ---                                |
+>    | 기반 기술 관심사              | Adapters.Infrastructure 레이어  |
+>    | 데이터 영속성 기술 관심사      | Adapters.Persistence 레이어    |
+>    | 사용자 인터페이스 기술 관심사  | Adapters.Presentation 레이어    |
+> 1. 논리적 요구사항에서 **상태가 없는 비즈니스 흐름**을 분리합니다.    <-- Application 렝이어
+> 1. 논리적 요구사항에서 **상태가 있는 비즈니스 단위**를 분리합니다.    <-- Domain 레이어
+>    | 기준 | 단위 |
+>    | --- | --- |
+>    | Lifecycle가 있는 단위 | Entity |
+>    | Lifecycle이 없는 단위 | Domain | 
+
 ### 레이어
 #### 관심사 세부 분류
 ![](./.images/ArchitectureSoC_Details.png)
