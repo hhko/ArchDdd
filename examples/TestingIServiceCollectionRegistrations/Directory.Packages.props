@@ -1,0 +1,8 @@
+<Project>
+
+  <!-- Central Package Management 활성화 -->
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+</Project>

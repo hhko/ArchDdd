@@ -5,6 +5,10 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helloworld", "Helloworld\Helloworld.csproj", "{3D9B4210-7DAC-4104-918A-DC86612C4FFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helloworld.Tests.Unit", "Helloworld.Tests.Unit\Helloworld.Tests.Unit.csproj", "{495CC8B2-A50D-4C3B-9FA8-3C26C20EC193}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helloworld.Adapters.Infrastructure", "Helloworld.Adapters.Infrastructure\Helloworld.Adapters.Infrastructure.csproj", "{7EE8BB72-88CF-4364-A351-F27FF6323B34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{3D9B4210-7DAC-4104-918A-DC86612C4FFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D9B4210-7DAC-4104-918A-DC86612C4FFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D9B4210-7DAC-4104-918A-DC86612C4FFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{495CC8B2-A50D-4C3B-9FA8-3C26C20EC193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{495CC8B2-A50D-4C3B-9FA8-3C26C20EC193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{495CC8B2-A50D-4C3B-9FA8-3C26C20EC193}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{495CC8B2-A50D-4C3B-9FA8-3C26C20EC193}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EE8BB72-88CF-4364-A351-F27FF6323B34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EE8BB72-88CF-4364-A351-F27FF6323B34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EE8BB72-88CF-4364-A351-F27FF6323B34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EE8BB72-88CF-4364-A351-F27FF6323B34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
