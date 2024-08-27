@@ -546,6 +546,9 @@ string isAmOrPm = TimeUtility.IsAmOrPm(now);
 - [Collect metrics](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/metrics-collection?view=aspnetcore-8.0): 콘솔 기반 매트릭 -> Prometheus
 - [ASP.NET Core metrics](https://learn.microsoft.com/en-us/aspnet/core/log-mon/metrics/metrics?view=aspnetcore-8.0): ASP.NET WebApi, 통합 테스트
 
+### Logs
+- [How to unit test Serilog LogContext with TestCorrelator](https://daninacan.com/how-to-unit-test-serilog-logcontext-with-testcorrelator/)
+
 ### HealthCheck
 - [.NET app health checks in C#](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/diagnostic-health-checks?view=aspnetcore-8.0): 콘솔 기반 HealthCheck
 - [ASP.NET Core의 상태 검사](https://learn.microsoft.com/ko-kr/aspnet/core/host-and-deploy/health-checks?view=aspnetcore-8.0)
