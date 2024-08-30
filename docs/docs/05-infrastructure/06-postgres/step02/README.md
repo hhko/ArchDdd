@@ -155,3 +155,7 @@ dbConnection.OpenAsync().Wait();
 Respawner  respawner = Respawner.CreateAsync(dbConnection, respawnerOptions).Result;
 respawner.ResetAsync(dbConnection);
 ```
+
+- https://khalidabuhakmeh.com/faster-dotnet-database-integration-tests-with-respawn-and-xunit
+- https://medium.com/@kova98/easy-test-database-reset-in-net-with-respawn-d5a59f995e9d
+- https://daninacan.com/how-to-test-a-database-in-c-with-testcontainers/
