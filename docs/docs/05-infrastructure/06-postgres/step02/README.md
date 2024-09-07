@@ -77,3 +77,85 @@ INSERT INTO test (name, archived)
   ('test row 2', false);
 ```
 
+```cs
+// Npgsql.EntityFrameworkCore.PostgreSQL
+
+public class Test
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public bool Archived { get; set; }
+}
+
+// DbContext class
+public class AppDbContext : DbContext
+{
+    public DbSet<Test> Tests { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        // Replace the connection string with your own Postgres connection string
+        optionsBuilder.UseNpgsql("Host=localhost;Database=mydb;Username=myuser;Password=mypassword");
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        // Optional: Configure the Test entity mapping if necessary
+        modelBuilder.Entity<Test>(entity =>
+        {
+            entity.ToTable("test");
+
+            entity.Property(e => e.Id)
+                  .HasColumnName("id")
+                  .ValueGeneratedOnAdd();
+
+            entity.Property(e => e.Name)
+                  .HasColumnName("name")
+                  .IsRequired();
+
+            entity.Property(e => e.Archived)
+                  .HasColumnName("archived")
+                  .HasDefaultValue(false);
+        });
+    }
+}
+
+using (var context = new AppDbContext())
+{
+    // Ensure database and tables are created (for demo purposes)
+    context.Database.EnsureCreated();
+
+    // Query to retrieve all rows from the 'test' table
+    var tests = context.Tests.ToList();
+
+    foreach (var test in tests)
+    {
+        Console.WriteLine($"Id: {test.Id}, Name: {test.Name}, Archived: {test.Archived}");
+    }
+}
+```
+
+```cs
+var respawnerOptions = new RespawnerOptions
+{
+    SchemasToInclude = 
+    [
+        "dbo"
+    ],
+    TablesToIgnore = 
+    [
+        "__EFMigrationsHistory",
+        "Helloworld"
+    ],
+    DbAdapter = DbAdapter.SqlServer
+};
+
+DbConnection dbConnection = _dbContext.Database.GetDbConnection();
+dbConnection.OpenAsync().Wait();
+Respawner  respawner = Respawner.CreateAsync(dbConnection, respawnerOptions).Result;
+respawner.ResetAsync(dbConnection);
+```
+
+- https://khalidabuhakmeh.com/faster-dotnet-database-integration-tests-with-respawn-and-xunit
+- https://medium.com/@kova98/easy-test-database-reset-in-net-with-respawn-d5a59f995e9d
+- https://daninacan.com/how-to-test-a-database-in-c-with-testcontainers/
