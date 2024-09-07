@@ -145,15 +145,17 @@ Application Architecture
 
 > [!IMPORTANT]
 > 1. 요구사항을 **트랜잭션 단위**로 식별합니다.
-> 1. 한 트랜잭션 요구사항에서 **기술 요구사항(Tech. 관심사)을** 분리합니다.                    _<-- Adapter 레이어_
+> 1. 요구사항에서 **기술 요구사항(Tech. 관심사)을** 분리합니다.                    _<-- Adapter 레이어_
 >    | 기술 관심사                   | 레이어                         |
 >    | ---                          | ---                            |
 >    | 기반 기술 관심사              | Adapters.Infrastructure 레이어  |
 >    | 데이터 영속성 기술 관심사      | Adapters.Persistence 레이어    |
 >    | 사용자 인터페이스 기술 관심사  | Adapters.Presentation 레이어    |
-> 1. 한 트랜잭션 요구사항에서 **상태가 없는 비즈니스 로직(Biz. 관심사)을** 추출합니다.          _<-- Application 레이어_
->    - 상태가 없는 비즈니스 로직(Application Service/UseCase)이 **요구사항을 주관합니다.**
-> 1. 한 트랜잭션 요구사항에서 **상태가 있는 비즈니스 단위(Biz. 관심사)를** 추출합니다.          _<-- Domain 레이어_
+> 1. 요구사항에서 **상태가 없는 비즈니스 로직(Biz. 관심사)을** 추출합니다.          _<-- Application 레이어_
+>    - 상태가 없는 비즈니스 로직(Application Service/UseCase)가 **요구사항을 주관합니다.**
+>    - 상태가 없는 비즈니스 로직는 Impure을 외곽에 배치하고, Pure는 중심에 배치합니다.
+>      ![](./.images/ImpureToPure.png)
+> 1. 요구사항에서 **상태가 있는 비즈니스 단위(Biz. 관심사)를** 추출합니다.          _<-- Domain 레이어_
 >    | 상태가 있는 Biz. 관심사  | 단위   |
 >    | ---                    | ---    |
 >    | Lifecycle가 있는 단위   | Entity |
@@ -541,7 +543,11 @@ string isAmOrPm = TimeUtility.IsAmOrPm(now);
 - [pluralsight-ddd-fundamentals](https://github.com/ardalis/pluralsight-ddd-fundamentals/tree/main)
 - [modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd): CQRS
 - [clean-architecture-core](https://github.com/matthewrenze/clean-architecture-core): EF Core 분리
----
+
+### Tell Don't Ask(≒ Anemic Domain Model, Law of Demeter, CQRS)
+- [The Tell Don't Ask Principle](https://giannisakritidis.com/blog/Tell-Dont-Ask/)
+- [The Tell Don’t Ask Principle Explained](https://danparkin.com/2018/09/18/tell-dont-ask/)
+
 ### Metrics
 - [Collect metrics](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/metrics-collection?view=aspnetcore-8.0): 콘솔 기반 매트릭 -> Prometheus
 - [ASP.NET Core metrics](https://learn.microsoft.com/en-us/aspnet/core/log-mon/metrics/metrics?view=aspnetcore-8.0): ASP.NET WebApi, 통합 테스트
