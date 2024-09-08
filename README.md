@@ -157,7 +157,12 @@ Application Architecture
 <br/>
 
 # 아키텍처 구현
-사용 사례(Use Case)가 요구사항을 주관합니다.
+> [!NOTE]
+> - **Application 레이어: 사용 사례(Use Case)가 요구사항을 주관합니다.**
+> - Domain 레이어: Biz. 관심사(비즈니스 규칙 구현)
+>   - Entity
+>   - ValueObject
+> - Adapter 레이어: Tech. 관심사(기술 구현)
 
 > [!IMPORTANT]
 > 1. 요구사항을 **트랜잭션 단위로** 나눕니다.
