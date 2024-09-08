@@ -53,18 +53,18 @@
   코드는 비즈니스의 작동 방식을 설명하는 상세한 설명서와 같기 때문입니다.
 
 ## 핵심 개념
-### 소프트웨어 아키텍처의 중요성
-[![](https://img.youtube.com/vi/4E1BHTvhB7Y/0.jpg)](https://www.youtube.com/watch?v=4E1BHTvhB7Y)
-
 ### Moving IO to the edges of your app
 [![](https://img.youtube.com/vi/P1vES9AgfC4/0.jpg)](https://www.youtube.com/watch?v=P1vES9AgfC4)
+- 아키텍처 관점에서 Pure Function을 중심에 배치하고 Impure Function을 외곽에 베치하는 이유를 이해합니다.
 
 ### Repeatable Execution
 [![](https://img.youtube.com/vi/Ak1hGQuGBhY/0.jpg)](https://www.youtube.com/watch?v=Ak1hGQuGBhY)
-- [Repeatable execution](https://blog.ploeh.dk/2020/03/23/repeatable-execution/)
-- [Discerning and maintaining purity](https://blog.ploeh.dk/2020/02/24/discerning-and-maintaining-purity/)
-- [Repeatable execution in C#](https://blog.ploeh.dk/2020/04/06/repeatable-execution-in-c/)
-- [reservation-api-slice-csharp, github](https://github.com/ploeh/reservation-api-slice-csharp)
+- 아키텍처 관점에서 로그 예제를 통해 Pure Function 중앙 배치의 가치를 이해합니다.
+- 참고 자료
+  - [Repeatable execution](https://blog.ploeh.dk/2020/03/23/repeatable-execution/)
+  - [Discerning and maintaining purity](https://blog.ploeh.dk/2020/02/24/discerning-and-maintaining-purity/)
+  - [Repeatable execution in C#](https://blog.ploeh.dk/2020/04/06/repeatable-execution-in-c/)
+  - [reservation-api-slice-csharp, github](https://github.com/ploeh/reservation-api-slice-csharp)
 
 ## 목표
 - 지속 가능한 코드: 코드가 문서입니다.
