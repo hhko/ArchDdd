@@ -166,7 +166,8 @@ Application Architecture
 > 1. 각 트랜잭션에 맞는 **사용 사례(Use Case)을** 정의합니다.                       _<-- Application 레이어_
 >    - 트랜잭션이 처리되는 과정을 단계별로 설명하는 로직을 정의합니다.
 >    - **사용 사례는 상태(멤버 변수)를 가지고 있지 않습니다.**
-> 1. 사용 사례는 **I/O에 의존하는 코드는(Impure)** 외곽에 배치하고, 중심에는 **I/O에 의존하지 앟는 코드을(Pure, 비즈니스 규칙)** 배치합니다.
+> 1. 사용 사례는 **I/O에 의존하는 코드는(Impure)** 외곽에 배치하고,  
+>    중심에는 **I/O에 의존하지 앟는 코드을(Pure, 비즈니스 규칙)** 배치합니다.
 >    ![](./.images/ImpureToPure.png)
 >    - **Biz. 관심사**: I/O에 의존하지 앟는 코드을(Pure, 비즈니스 규칙)             _<-- Domain 레이어_  
 >      순수한 코드(Pure)은 외부 시스템이나 데이터베이스에 의존하지 않습니다.  
@@ -175,10 +176,11 @@ Application Architecture
 >      비순수한 코드(Impure)은 데이터베이스 저장이나 외부 서비스 호출처럼 시스템의 외부 환경에 영향을 받습니다.  
 >      그 자체로 작동하지 않고, 테스트도 쉽게 할 수 없습니다(외부 환경 조건이 만족해야 테스트할 수 있습니다).
 > 1. **Lifecycle 기준으로** 비즈니스 규칙(순수한 코드, Pure)을 정의합니다.
->    | 구분           | 생명 주기 | 상태 | 행위  | 불변 | 비교 |
->    | ------------- | --------- | ---- | ---- | ---- | ---- |
->    | `Entity`      | 있음(有)   | O    | O    | X    | Identifier Equality: Id 비교    |
->    | `ValueObject` | 없음(無)   | O    | O    | O    | Structural Equality: Value 비교 |
+>    | 구분           | 생명 주기 | 상태           | 행위  | 비교 |
+>    | ------------- | --------- | -------------- | ---- | ----- |
+>    | `Entity`      | 있음(有)   | 가변, Mutable  | O    | Identifier Equality: Id 비교    |
+>    | `ValueObject` | 없음(無)   | 불변, Immutable | O    | Structural Equality: Value 비교 |
+>
 >    ![](./.images/Equalities.png)
 >    - 불변: 생성 후 변경할 수 없다.
 
