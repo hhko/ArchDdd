@@ -52,6 +52,11 @@
 - **목차를 따라 코드를 읽으면 비즈니스의 흐름을 이해할 수 있습니다.**   
   코드는 비즈니스의 작동 방식을 설명하는 상세한 설명서와 같기 때문입니다.
 
+## 목표
+- 지속 가능한 코드: 코드가 문서입니다.
+  - **`비즈니스 이해  --{글 쓰기}--> 코드`**: 비즈니스를 이해하면 코드를 배치할 수 있습니다.
+  - **`비즈니스 이해 <--{글 읽기}--  코드`**: 코드를 읽으면 비즈니스를 이해할 수 있습니다.
+
 ## 핵심 개념
 ### Moving IO to the edges of your app
 [![](https://img.youtube.com/vi/P1vES9AgfC4/0.jpg)](https://www.youtube.com/watch?v=P1vES9AgfC4)
@@ -65,11 +70,6 @@
   - [Discerning and maintaining purity](https://blog.ploeh.dk/2020/02/24/discerning-and-maintaining-purity/)
   - [Repeatable execution in C#](https://blog.ploeh.dk/2020/04/06/repeatable-execution-in-c/)
   - [reservation-api-slice-csharp, github](https://github.com/ploeh/reservation-api-slice-csharp)
-
-## 목표
-- 지속 가능한 코드: 코드가 문서입니다.
-  - **`비즈니스 이해  --{글 쓰기}--> 코드`**: 비즈니스를 이해하면 코드를 배치할 수 있습니다.
-  - **`비즈니스 이해 <--{글 읽기}--  코드`**: 코드를 읽으면 비즈니스를 이해할 수 있습니다.
 
 <br/>
 
