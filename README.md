@@ -1,4 +1,4 @@
-# CLEAN ARCHITECTURE and DOMAIN-DRIVEN DESIGN
+# ARCHITECTURE and DOMAIN-DRIVEN DESIGN
 
 [![ArchDdd Build](https://github.com/hhko/ArchDdd/actions/workflows/build.yml/badge.svg)](https://github.com/hhko/ArchDdd/actions/workflows/build.yml)
 [![codecov](https://codecov.io/gh/hhko/ArchDdd/graph/badge.svg?token=VK8HUZTA7K)](https://codecov.io/gh/hhko/ArchDdd)
@@ -7,7 +7,7 @@
 > 배움은 **겸손**이다.  
 > 배움은 **이타심**이다.
 
-## 개요
+# 개요
 
 > **지속 가능한 코드**
 
@@ -43,7 +43,7 @@
 >     - 장애 사후 복구 속도
 >     - 표준 운영 절차 문서(SOP, Standard operating procedure)
 
-### 배경
+## 배경
 
 - **개발은 글쓰기와 같습니다.**  
   개발자는 프로그래밍 언어로 이야기를 코드로 써 내려갑니다.
@@ -52,21 +52,35 @@
 - **목차를 따라 코드를 읽으면 비즈니스의 흐름을 이해할 수 있습니다.**   
   코드는 비즈니스의 작동 방식을 설명하는 상세한 설명서와 같기 때문입니다.
 
-### 목표
+## 핵심 개념
+### 소프트웨어 아키텍처의 중요성
+[![](https://img.youtube.com/vi/4E1BHTvhB7Y/0.jpg)](https://www.youtube.com/watch?v=4E1BHTvhB7Y)
+
+### Moving IO to the edges of your app
+[![](https://img.youtube.com/vi/P1vES9AgfC4/0.jpg)](https://www.youtube.com/watch?v=P1vES9AgfC4)
+
+### Repeatable Execution
+[![](https://img.youtube.com/vi/Ak1hGQuGBhY/0.jpg)](https://www.youtube.com/watch?v=Ak1hGQuGBhY)
+- [Repeatable execution](https://blog.ploeh.dk/2020/03/23/repeatable-execution/)
+- [Discerning and maintaining purity](https://blog.ploeh.dk/2020/02/24/discerning-and-maintaining-purity/)
+- [Repeatable execution in C#](https://blog.ploeh.dk/2020/04/06/repeatable-execution-in-c/)
+- [reservation-api-slice-csharp, github](https://github.com/ploeh/reservation-api-slice-csharp)
+
+## 목표
 - 지속 가능한 코드: 코드가 문서입니다.
   - **`비즈니스 이해  --{글 쓰기}--> 코드`**: 비즈니스를 이해하면 코드를 배치할 수 있습니다.
   - **`비즈니스 이해 <--{글 읽기}--  코드`**: 코드를 읽으면 비즈니스를 이해할 수 있습니다.
 
 <br/>
 
-## 아키텍처 이해
-### 아키텍처 중요성
+# 아키텍처 이해
+## 아키텍처 중요성
 건축업자가 프로그래머의 프로그램 작성 방식에 따라 건물을 짓는다면 가장 먼저 도착하는 딱따구리가 문명을 파괴할 것입니다.  
 If builders built buildings the way programmers wrote programs, then the first woodpecker that came along would destroy civilization. - Gerald Weinberg
 - Architecting is a series of **trade-offs**.
 - The architecture should scream **the intent of the system**.
 
-### 아키텍처 정의
+## 아키텍처 정의
 ![](./.images/ArchitectureDefinition.png)
 ※ 출처: [Making Architecture Matter, 소프트웨어 아키텍처의 중요성](https://www.youtube.com/watch?v=4E1BHTvhB7Y)  
 
@@ -75,7 +89,7 @@ If builders built buildings the way programmers wrote programs, then the first w
     - 관련 코드의 시작 지점을 찾는 것은 쉽지만, 그 기능이 미치는 영향을 끝까지 파악하는 것은 어렵습니다.
     - **끝 지정(부수 효과, Side Effect)를** 모두 인지하는 것은 쉽지 않습니다.
 
-### 아키텍처 원칙
+## 아키텍처 원칙
 ![](./.images/ArchitectureSoc.png)
 
 - 관심사의 분리(SoC, Separation of Concerns)
@@ -83,12 +97,12 @@ If builders built buildings the way programmers wrote programs, then the first w
   - 비즈니스와 관련된 부분은 비즈니스 영역에서, 기술적인 부분은 기술 영역에서 각각 다루어지도록 하는 것입니다.
   - 기술적 구현에 의존하지 않고도 비즈니스만을 집중하여 테스트하고 개선할 수 있습니다.
 
-### 아키텍처 분류
-#### Application Architecture
+## 아키텍처 분류
+### Application Architecture
 ![](./.images/ArchitectureCategory.png)
 ※ 출처: [Making old applications new again](https://sellingsimplifiedinsights.com/asset/app-development/ASSET_co-modernization-whitepaper-inc0460201-122016kata-v1-en_1511772094768.pdf)
 
-#### Internal vs External Architecture
+### Internal vs External Architecture
 ![](./.images/ArchitectureExternal_vs_Internal.png)
 ※ 출처: [DDD 및 CQRS 패턴을 사용하여 마이크로 서비스에서 비즈니스 복잡성 처리](https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/)
 
@@ -120,18 +134,18 @@ Application Architecture
 ```
 - 백엔드와 프론트엔드 대부분 **관심사를 계층(Layer)로 관리하는** 계층형 아키텍처 기반의 진화된 아키텍처를 사용합니다.
 
-### 아키텍처 역사
+## 아키텍처 역사
 ![](./.images/ArchitectureHistory.png)
 
 - 1992년부터 아키텍처 수준에서는 관심사를 계층(Layer)으로 나누고, 객체 수준에서는 관심사를 엔티티(Entity)로 관리하는 방법이 제시되었습니다.
 - 즉, 시스템의 큰 구조는 여러 계층으로 나누어 관리하고, 각 계층 내의 세부 사항은 엔티티로 나누어 관리하는 방식입니다.
 
-### 아키텍처 역할
+## 아키텍처 역할
 ![](./.images/ArchitectureDevOps.png)
 
 - 아키텍처는 제품의 **선순환(Good Cycle)** 성장의 시작점입니다.
 
-### 아키텍처 의사 결정 기록
+## 아키텍처 의사 결정 기록
 > ADR(Architectural Decision Records)  
 > 아키텍쳐와 관련된 중요한 의사 결정을 기록해 두는 문서입니다.
 - 사례
@@ -139,30 +153,37 @@ Application Architecture
 - 도구
   - [dotnet-adr](https://github.com/endjin/dotnet-adr)
   - [log4brains](https://github.com/thomvaill/log4brains)
+
 <br/>
 
-## 아키텍처 구현
+# 아키텍처 구현
+사용 사례(Use Case)가 요구사항을 주관합니다.
 
 > [!IMPORTANT]
-> 1. 요구사항을 **트랜잭션 단위**로 식별합니다.
-> 1. 요구사항에서 **기술 요구사항(Tech. 관심사)을** 분리합니다.                    _<-- Adapter 레이어_
->    | 기술 관심사                   | 레이어                         |
->    | ---                          | ---                            |
->    | 기반 기술 관심사              | Adapters.Infrastructure 레이어  |
->    | 데이터 영속성 기술 관심사      | Adapters.Persistence 레이어    |
->    | 사용자 인터페이스 기술 관심사  | Adapters.Presentation 레이어    |
-> 1. 요구사항에서 **상태가 없는 비즈니스 로직(Biz. 관심사)을** 추출합니다.          _<-- Application 레이어_
->    - 상태가 없는 비즈니스 로직(Application Service/UseCase)가 **요구사항을 주관합니다.**
->    - 상태가 없는 비즈니스 로직는 Impure을 외곽에 배치하고, Pure는 중심에 배치합니다.
->      ![](./.images/ImpureToPure.png)
-> 1. 요구사항에서 **상태가 있는 비즈니스 단위(Biz. 관심사)를** 추출합니다.          _<-- Domain 레이어_
->    | 상태가 있는 Biz. 관심사  | 단위   |
->    | ---                    | ---    |
->    | Lifecycle가 있는 단위   | Entity |
->    | Lifecycle이 없는 단위   | Domain |
+> 1. 요구사항을 **트랜잭션 단위로** 나눕니다.
+>    - 트랜잭션은 하나의 비즈니스 작업이 완료되는 단위입니다.
+>    - 예를 들어, "사용자가 물건을 구매한다"는 하나의 트랜잭션입니다.
+> 1. 각 트랜잭션에 맞는 **사용 사례(Use Case)을** 정의합니다.                       _<-- Application 레이어_
+>    - 트랜잭션이 처리되는 과정을 단계별로 설명하는 로직을 정의합니다.
+>    - **사용 사례는 상태(멤버 변수)를 가지고 있지 않습니다.**
+> 1. 사용 사례는 **I/O에 의존하는 코드는(Impure)** 외곽에 배치하고, 중심에는 **I/O에 의존하지 앟는 코드을(Pure, 비즈니스 규칙)** 배치합니다.
+>    ![](./.images/ImpureToPure.png)
+>    - **Biz. 관심사**: I/O에 의존하지 앟는 코드을(Pure, 비즈니스 규칙)             _<-- Domain 레이어_  
+>      순수한 코드(Pure)은 외부 시스템이나 데이터베이스에 의존하지 않습니다.  
+>      그 자체로 작동하고, 테스트도 쉽게 할 수 있습니다.
+>    - **Tech. 관심사**: I/O에 의존하는 코드는(Impure)                             _<-- Adapter 레이어_  
+>      비순수한 코드(Impure)은 데이터베이스 저장이나 외부 서비스 호출처럼 시스템의 외부 환경에 영향을 받습니다.  
+>      그 자체로 작동하지 않고, 테스트도 쉽게 할 수 없습니다(외부 환경 조건이 만족해야 테스트할 수 있습니다).
+> 1. **Lifecycle 기준으로** 비즈니스 규칙(순수한 코드, Pure)을 정의합니다.
+>    | 구분           | 생명 주기 | 상태 | 행위  | 불변 | 비교 |
+>    | ------------- | --------- | ---- | ---- | ---- | ---- |
+>    | `Entity`      | 있음(有)   | O    | O    | X    | Identifier Equality: Id 비교    |
+>    | `ValueObject` | 없음(無)   | O    | O    | O    | Structural Equality: Value 비교 |
+>    ![](./.images/Equalities.png)
+>    - 불변: 생성 후 변경할 수 없다.
 
-### 레이어
-#### 관심사 세부 분류
+## 레이어
+### 관심사 분류
 ![](./.images/ArchitectureSoC_Details.png)
 
 > **레이어 단위로** 특정 관심사를 정의하고 처리합니다
@@ -192,8 +213,8 @@ Application Architecture
   {프로젝트}.Domain                     // Biz. 관심사(Biz. 단위), Deterministic
   ```
 
-### 불순(Impure)
-#### 비즈니스 입/출력
+## 불순(Impure)
+### 비즈니스 입/출력
 ![](./.images/BizLayer.png)
 - Biz. 관심사(Biz. 흐름과 Biz. 단위)는 비결정론적(Non-deterministic) Tech 관심사(Tech. 출력)에 의존하기 때문에 결정론적(Deterministic) 성질을 잃게 됩니다.
   - **결정론적(Deterministic)**: 예측 가능
@@ -203,14 +224,14 @@ Application Architecture
     - 다만, 통계적인 방법으로 만 추정
     - 오차(불확실성)를 허용함
 
-### 순수(Pure, Strategy 패턴)
-#### 비즈니스 입/출력 의존성 제거
+## 순수(Pure, Strategy 패턴)
+### 비즈니스 입/출력 의존성 제거
 ![](./.images/BizLayer_StrategyPattern.png)
 
 - 인터페이스: Strategy 패턴
   - TODO. 세부 설명, 예제 코드
 
-#### 비즈니스 입/출력 테스트
+### 비즈니스 입/출력 테스트
 ![](.images/BizLayer_Test.png)
 
 > **테스트**
@@ -231,49 +252,51 @@ Application Architecture
   {프로젝트}.Tests.Integration          // Tech. 관심사, Non-deterministic
   ```
 
-### 순수(Pure, Mediator 패턴)
-#### 비즈니스 입/출력 의존성 제거
+## 순수(Pure, Mediator 패턴)
+### 비즈니스 입/출력 의존성 제거
 ![](.images/BizLayer_MediatorPattern.png)
 
 - 중재자와 메시지: Mediator 패턴
   - 입/출력 메시지를 이용하여 Mediator로 "Biz. 관심사"를 간접적으로 호출합니다.
   - 런타임에도 메시지 핸들러 인스턴스를 직접 참조하지 않습니다.
 
-#### 비즈니스 Known 입/출력
+### 비즈니스 Known 입/출력
 ![](.images/BizLayer_KnownInputOutput.png)
 
 - Mediator 패턴
   - 입/출력 메시지는 메시지 핸들러 Signature에 정의되어 있습니다(Known).
   - TODO. 예제 코드
 
-#### 비즈니스 Unknown 출력
+### 비즈니스 Unknown 출력
 ![](.images/BizLayer_UnkownOutput.png)
 
 - Strategy 패턴
   - 메시지 핸들러 Signature에 정의 안된 출력을 처리합니다.
 
-#### 비즈니스 입/출력 부가 기능
+### 비즈니스 입/출력 부가 기능
 ![](.images/BizLayer_MediatorStrategyDecoratorPatterns.png)
 
 - 인터페이스: Decorator 패턴
   - 메시지 핸들러 호출 전후에 추가적인 공통 기능을 손쉽게 추가할 수 있습니다.
   - TODO. 예제 코드
 
-### TODO. 메시지 구분
+## TODO. 메시지 구분
 - 데이터 모델 분리
 - 메시지 분리
 
-#### 가변, Command 메시지
+### 가변, Command 메시지
 - TODO
 
-#### 불변, Query 메시지
+### 불변, Query 메시지
 - TODO
 
-### TODO. 성공/실패 처리
+## TODO. 성공/실패 처리
 - TODO: [Railway-Oriented Programming](https://fsharpforfunandprofit.com/rop/)
 - TODO: 로그 통합
 
-### 솔루션 구성
+<br/>
+
+# 아키텍처 솔루션 구성
 ```
 {솔루션}
   ├─ README.md
@@ -283,7 +306,7 @@ Application Architecture
   ├─ .gitignore                         # Git 형상관리 제외 대상
   ├─ .gitattributes                     # Git 형상관리 파일 처리
   │
-  │  // .NET 설정
+  │  // .NET
   ├─ global.json                        # 빌드 버전
   ├─ nuget.config                       # NuGet 저장소
   ├─ dotnet-tools.json                  # .NET 로컬 도구
@@ -299,7 +322,8 @@ Application Architecture
   ├─ launchSettings.json                # 도커 컴포즈 구성
   ├─ docker-compose.dcproj              # 도커 컴포즈 프로젝트
 ```
-#### 형상관리
+
+## 형상관리
 1. `.gitignore`: Git 형상 관리에서 제외할 파일과 폴더를 지정하는 파일입니다.
    ```shell
    dotnet new gitignore
@@ -319,159 +343,170 @@ Application Architecture
      - eol=lf: 체크아웃 시 개행 문자가 LF(Line Feed)로 설정되고,
      - working-tree-encoding=UTF-8: UTF-8 인코딩이 사용되도록 합니다.
 
-#### .NET 설정
-1. `global.json`: .NET SDK 버전을 설정하는 파일입니다.
-   - 버전 형식: "[global.json 개요](https://learn.microsoft.com/ko-kr/dotnet/core/tools/global-json)", 지정된 버전에서부터 상위 버전(rollForward)
-     ```
-     x.y.znn
-     ```
-     - x: major
-     - y: minor
-     - z: feature, 0 ~ 9
-     - n: patch, 0 ~ 99
-   - 예제
-     - `latestFeature`: 8.0.302 이상 8.0.xxx 버전(예: 8.0.303 또는 8.0.402)
-       ```json
-       {
-         "sdk": {
-           "version": "8.0.302",
-           "rollForward": "latestFeature"
-         }
-       }
-       ```
-     - `latestPatch`: 8.0.102 이상 8.0.1xx 버전(예: 8.0.103 또는 8.0.199)
-       ```json
-       {
-         "sdk": {
-           "version": "8.0.102",
-           "rollForward": "latestPatch"
-         }
-       }
-       ```
-   - .NET SDK 버전 명령
-     - `dotnet --info`: 현재 경로의 .NET SDK 정보를 출력합니다.
-       ```shell
-       dotnet --info
-          .NET SDK:                      # global.json으로 결정된 .NET SDK 버전
-            Version:           8.0.100
-            Commit:            57efcf1350
-            Workload version:  8.0.100-manifests.aea97431
-
-          Host:                          # 호스트에 설치된 .NET Runtime 최진 버전
-            Version:      8.0.7
-            Architecture: x64
-            Commit:       2aade6beb0
-
-          .NET SDKs installed:           # 호스트에 설치된 .NET SDK 버전 목록
-            5.0.301 [C:\Program Files\dotnet\sdk]
-            6.0.100 [C:\Program Files\dotnet\sdk]
-            7.0.100 [C:\Program Files\dotnet\sdk]
-            8.0.100 [C:\Program Files\dotnet\sdk]
-            8.0.303 [C:\Program Files\dotnet\sdk]
-
-          global.json file:              # 인지된 global.json
-            C:\Workspace\Helloworld\global.json
-       ```
-     - `dotnet --version`: 현재 경로의 global.json으로 결정된 .NET SDK 버전을 출력합니다.
-       ```shell
-       dotnet --version
-          8.0.100                        # global.json으로 결정된 .NET SDK 버전
-       ```
-1. `nuget.config`: NuGet 패키지 관리에서 패키지 소스, 설정, 자격 증명 등을 구성하는 파일입니다.
-   ```
-   dotnet new nuget.config
-   ```
-   ```xml
-   <?xml version="1.0" encoding="utf-8"?>
-   <configuration>
-     <packageRestore>
-       <add key="enabled" value="True" />
-       <add key="automatic" value="True" />
-     </packageRestore>
-
-     <packageSources>
-       <clear />
-       <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
-     </packageSources>
-
-     <packageSourceMapping>
-       <packageSource key="nuget.org">
-         <package pattern="*" />
-       </packageSource>
-     </packageSourceMapping>
-
-     <bindingRedirects>
-       <add key="skip" value="False" />
-     </bindingRedirects>
-
-     <packageManagement>
-       <add key="format" value="0" />
-       <add key="disabled" value="False" />
-     </packageManagement>
-   </configuration>
-   ```
-1. `Directory.Build.props`: 여러 프로젝트에 공통 빌드 속성을 지정하는 파일입니다.
+## .NET
+### .NET SDK 빌드
+- `global.json` 파일: .NET SDK 버전을 설정하는 파일입니다.
+- 버전 형식: "[global.json 개요](https://learn.microsoft.com/ko-kr/dotnet/core/tools/global-json)", 지정된 버전에서부터 상위 버전(rollForward)
+  ```
+  x.y.znn
+  ```
+  - x: `major`
+  - y: `minor`
+  - z: `feature`, 0 ~ 9
+  - n: `patch`, 0 ~ 99
+- 예제
+  - `latestFeature`: 8.0.302 이상 8.0.xxx 버전(예: 8.0.303 또는 8.0.402)
+    ```json
+    {
+      "sdk": {
+        "version": "8.0.302",
+        "rollForward": "latestFeature"
+      }
+    }
     ```
-    {솔루션}
-      ├─ {솔루션}.sln
-      ├─ Directory.Build.props       (1) 모든 프로젝트만 대상
-      │
-      ├─ Src
-      │   ├─ {프로젝트1}
-      │   └─ {프로젝트2}
-      │
-      └─ Tests
-          ├─ Directory.Build.props   (2) 모든 프로젝트만 대상 + 테스트 프로젝트만 대상
-          ├─ {테스트 프로젝트1}
-          └─ {테스트 프로젝트2}
+  - `latestPatch`: 8.0.102 이상 8.0.1xx 버전(예: 8.0.103 또는 8.0.199)
+    ```json
+    {
+      "sdk": {
+        "version": "8.0.102",
+        "rollForward": "latestPatch"
+      }
+    }
     ```
-    - (1), Directory.Build.props: 모든 프로젝트 대상
-      ```xml
-      <Project>
+- `dotnet --info`: 현재 경로의 .NET SDK 정보를 출력합니다.
+  ```shell
+  dotnet --info
+     .NET SDK:                      # global.json으로 결정된 .NET SDK 버전
+       Version:           8.0.100
+       Commit:            57efcf1350
+       Workload version:  8.0.100-manifests.aea97431
 
-        <PropertyGroup>
-          <TargetFramework>net8.0</TargetFramework>
-          <ImplicitUsings>enable</ImplicitUsings>
-          <Nullable>enable</Nullable>
+     Host:                          # 호스트에 설치된 .NET Runtime 최진 버전
+       Version:      8.0.7
+       Architecture: x64
+       Commit:       2aade6beb0
 
-          <!-- 경고를 Error로 취급합니다 -->
-          <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-        </PropertyGroup>
+     .NET SDKs installed:           # 호스트에 설치된 .NET SDK 버전 목록
+       5.0.301 [C:\Program Files\dotnet\sdk]
+       6.0.100 [C:\Program Files\dotnet\sdk]
+       7.0.100 [C:\Program Files\dotnet\sdk]
+       8.0.100 [C:\Program Files\dotnet\sdk]
+       8.0.303 [C:\Program Files\dotnet\sdk]
 
-      </Project>
-      ```
-    - (2), Directory.Build.props: 테스트 프로젝트만 대상
-      ```xml
-      <Project>
+     global.json file:              # 인지된 global.json
+       C:\Workspace\Helloworld\global.json
+  ```
+- `dotnet --version`: 현재 경로의 global.json으로 결정된 .NET SDK 버전을 출력합니다.
+  ```shell
+  dotnet --version
+     8.0.100                        # global.json으로 결정된 .NET SDK 버전
+  ```
 
-        <!-- 상위 Directory.Build.props 파일 지정-->
-        <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+### NuGet 패키지 소스
+- `nuget.config`: NuGet 패키지 관리에서 패키지 소스, 설정, 자격 증명 등을 구성하는 파일입니다.
+  ```
+  dotnet new nuget.config
+  ```
+- nuget.config 파일
+  ```xml
+  <?xml version="1.0" encoding="utf-8"?>
+  <configuration>
+    <packageRestore>
+      <add key="enabled" value="True" />
+      <add key="automatic" value="True" />
+    </packageRestore>
 
-        <!-- 테스트 프로젝트 공통 속성 -->
-        <PropertyGroup>
-          <IsPackable>false</IsPackable>
-          <IsTestProject>true</IsTestProject>
-        </PropertyGroup>
+    <packageSources>
+      <clear />
+      <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
+    </packageSources>
 
-        <!-- 솔루션 탐색기에서 TestResults 폴더 제외 -->
-        <ItemGroup>
-          <None Remove="TestResults\**" />
-        </ItemGroup>
+    <packageSourceMapping>
+      <packageSource key="nuget.org">
+        <package pattern="*" />
+      </packageSource>
+    </packageSourceMapping>
 
-        <!-- xunit.runner.json 설정 -->
-        <ItemGroup>
-          <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
-        </ItemGroup>
+    <bindingRedirects>
+      <add key="skip" value="False" />
+    </bindingRedirects>
 
-      </Project>
-      ```
-1. `Directory.Packages.props`: 여러 프로젝트에 공통 패키지 버전을 지정하는 파일입니다.
-1.`.editorconfig`
-1. `dotnet-tools.json`
-   - %USERPROFILE%\.dotnet\tools
+    <packageManagement>
+      <add key="format" value="0" />
+      <add key="disabled" value="False" />
+    </packageManagement>
+  </configuration>
+  ```
 
-#### 컨테이너
-1. `.dockerignore`: Docker가 이미지를 만들 때 제외할 파일과 폴더를 지정하는 파일입니다.
+### 빌드 옵션 중앙화
+- `Directory.Build.props`: 여러 프로젝트에 공통 빌드 속성을 지정하는 파일입니다.
+  ```
+  {솔루션}
+    ├─ {솔루션}.sln
+    ├─ Directory.Build.props       (1) 모든 프로젝트만 대상
+    │
+    ├─ Src
+    │   ├─ {프로젝트1}
+    │   └─ {프로젝트2}
+    │
+    └─ Tests
+        ├─ Directory.Build.props   (2) 모든 프로젝트만 대상 + 테스트 프로젝트만 대상
+        ├─ {테스트 프로젝트1}
+        └─ {테스트 프로젝트2}
+  ```
+- `(1), Directory.Build.props`: 모든 프로젝트 대상
+  ```xml
+  <Project>
+
+    <PropertyGroup>
+      <TargetFramework>net8.0</TargetFramework>
+      <ImplicitUsings>enable</ImplicitUsings>
+      <Nullable>enable</Nullable>
+
+      <!-- 경고를 Error로 취급합니다 -->
+      <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
+
+  </Project>
+  ```
+- `(2), Directory.Build.props`: 테스트 프로젝트만 대상
+  ```xml
+  <Project>
+
+    <!-- 상위 Directory.Build.props 파일 지정-->
+    <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+
+    <!-- 테스트 프로젝트 공통 속성 -->
+    <PropertyGroup>
+      <IsPackable>false</IsPackable>
+      <IsTestProject>true</IsTestProject>
+    </PropertyGroup>
+
+    <!-- 솔루션 탐색기에서 TestResults 폴더 제외 -->
+    <ItemGroup>
+      <None Remove="TestResults\**" />
+    </ItemGroup>
+
+    <!-- xunit.runner.json 설정 -->
+    <ItemGroup>
+      <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
+    </ItemGroup>
+
+  </Project>
+  ```
+
+### 패키지 버전 중앙화
+- `Directory.Packages.props`: 여러 프로젝트에 공통 패키지 버전을 지정하는 파일입니다.
+
+### 코드 컨벤션
+- `.editorconfig`
+
+### .NET 도구
+- `dotnet-tools.json`: %USERPROFILE%\.dotnet\tools
+
+
+## 컨테이너
+- `.dockerignore`: Docker가 이미지를 만들 때 제외할 파일과 폴더를 지정하는 파일입니다.
 
 <br/>
 
@@ -494,7 +529,10 @@ DateTime now = DateTime.Now();
 string isAmOrPm = TimeUtility.IsAmOrPm(now);
 ```
 
-## 개발 환경
+<br/>
+
+# 개발 환경
+## .NET
 - .NET 8.x
 - Visual Studio Code
   - C#
@@ -509,7 +547,7 @@ string isAmOrPm = TimeUtility.IsAmOrPm(now);
   - ~~Codecov YAML Validator~~
   - REST Client
 
-### 패키지
+## .NET 패키지
 - `Ulid`: GUID
 - `Quartz`: 백그라운드 작업
 - `MediatR`: Mediator 패턴
@@ -517,7 +555,7 @@ string isAmOrPm = TimeUtility.IsAmOrPm(now);
 - `OpenTelemetry`: Telemetry
 - `FluentValidation`: 유효성 검사 선언형
 
-### 테스트
+## .NET 테스트
 - `xunit`: 단위 테스트
 - `Verify.Xunit`: Snapshot 테스트
 - `FluentAssertions`: Assert 선언형
@@ -526,15 +564,16 @@ string isAmOrPm = TimeUtility.IsAmOrPm(now);
 - `Xunit.DependencyInjection`: xUnit 의존성
 - `Microsoft.AspNetCore.Mvc.Testing`: 통합 테스트
 
-### 문서
+## 문서
 - `docusaurus`
 
-### 도구
+## .NET 도구
 - `verify.tool`
 
 <br/>
 
-## 참고 문서
+# 참고 문서
+## 아키텍처
 - [DDD-NoDuplicates](https://github.com/ardalis/DDD-NoDuplicates/tree/master)
 - [DDDPracticeDomainEvents](https://github.com/GLARDEN/DDDPracticeDomainEvents): 11장 예제 확장
 ---
@@ -544,10 +583,12 @@ string isAmOrPm = TimeUtility.IsAmOrPm(now);
 - [modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd): CQRS
 - [clean-architecture-core](https://github.com/matthewrenze/clean-architecture-core): EF Core 분리
 
+## 객체지향
 ### Tell Don't Ask(≒ Anemic Domain Model, Law of Demeter, CQRS)
 - [The Tell Don't Ask Principle](https://giannisakritidis.com/blog/Tell-Dont-Ask/)
 - [The Tell Don’t Ask Principle Explained](https://danparkin.com/2018/09/18/tell-dont-ask/)
 
+## Observability
 ### Metrics
 - [Collect metrics](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/metrics-collection?view=aspnetcore-8.0): 콘솔 기반 매트릭 -> Prometheus
 - [ASP.NET Core metrics](https://learn.microsoft.com/en-us/aspnet/core/log-mon/metrics/metrics?view=aspnetcore-8.0): ASP.NET WebApi, 통합 테스트
@@ -561,12 +602,12 @@ string isAmOrPm = TimeUtility.IsAmOrPm(now);
 - [.net 5.0 Integration Test, Health check endpoint not found](https://stackoverflow.com/questions/68564315/net-5-0-integration-test-health-check-endpoint-not-found): 테스트
   - [Implementing Health Checks in .NET 8](https://medium.com/@jeslurrahman/implementing-health-checks-in-net-8-c3ba10af83c3)
 
-### DB
+## DB
 - [EF Core 사용시 첫 번째 쿼리가 느린 문제](https://forum.dotnetdev.kr/t/ef-core/11401)
 
 <br/>
 
-## 예제 코드
+# 예제 코드
 - [CodeMaze | Architecture | Clean Architecture in .NET](https://code-maze.com/dotnet-clean-architecture/)
 - [CodeMaze | Architecture | Onion Architecture in ASP.NET Core](https://code-maze.com/onion-architecture-in-aspnetcore/)
 - [CodeMaze | Architecture | What are the Differences Between Onion Architecture and Clean Architecture in .NET?](https://code-maze.com/dotnet-differences-between-onion-architecture-and-clean-architecture/)
