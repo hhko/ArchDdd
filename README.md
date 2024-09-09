@@ -199,7 +199,7 @@ Application Architecture
 > - Tech. 관심사: Non-deterministic
 >   - Tech. 입/출력: Adapter 레이어(사용자 인터페이이스, 데이터 저장소, ...)
 > - Biz. 관심사: Deterministic
->   - Biz. 흐름: Application 레이어
+>   - Biz. 로직: Application 레이어
 >   - Biz. 단위: Domain 레이어
 
 - 레이어 이름 규칙
@@ -218,14 +218,15 @@ Application Architecture
   {프로젝트}.Adapters.Persistence       // Tech. 관심사, Non-deterministic
   {프로젝트}.Adapters.Presentation      // Tech. 관심사, Non-deterministic
 
-  {프로젝트}.Application                // Biz. 관심사(Biz. 흐름), Deterministic
+  {프로젝트}.Application                // Biz. 관심사(Biz. 로직), Deterministic
   {프로젝트}.Domain                     // Biz. 관심사(Biz. 단위), Deterministic
   ```
 
 ## 불순(Impure)
 ### 비즈니스 입/출력
 ![](./.images/BizLayer.png)
-- Biz. 관심사(Biz. 흐름과 Biz. 단위)는 비결정론적(Non-deterministic) Tech 관심사(Tech. 출력)에 의존하기 때문에 결정론적(Deterministic) 성질을 잃게 됩니다.
+
+- Biz. 관심사(Biz. 로직과 Biz. 단위)는 비결정론적(Non-deterministic) Tech 관심사(Tech. 출력)에 의존하기 때문에 결정론적(Deterministic) 성질을 잃게 됩니다.
   - **결정론적(Deterministic)**: 예측 가능
     - 정확한 수학적 관계식에 의해 예측
     - 오차(불확실성)를 허용하지 않음
