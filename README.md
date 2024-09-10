@@ -627,3 +627,6 @@ string isAmOrPm = TimeUtility.IsAmOrPm(now);
 ---
 - [Packt | DDD | Hands-On-Domain-Driven-Design-with-.NET-Core](https://github.com/PacktPublishing/Hands-On-Domain-Driven-Design-with-.NET-Core)
 - [Packt | Architecture | Clean-Architecture-with-.NET](https://github.com/PacktPublishing/Clean-Architecture-with-.NET)
+---
+- [Pluralsight | EF Core 8 DDD](https://github.com/julielerman/EFCoreDDDPluralsight)
+- [Pluralsight | EF Core 6 DDD](https://github.com/julielerman/EFCore6andDDDPluralsight)
