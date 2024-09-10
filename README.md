@@ -587,6 +587,11 @@ string isAmOrPm = TimeUtility.IsAmOrPm(now);
 - [modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd): CQRS
 - [clean-architecture-core](https://github.com/matthewrenze/clean-architecture-core): EF Core 분리
 
+## DDD
+- **[DDD 핵심만 빠르게 이해하기](https://happycloud-lee.tistory.com/94)**
+- [Bounded Contexts | The difference between domains, subdomains and bounded contexts](https://ddd-practitioners.com/2023/03/07/the-difference-between-domains-subdomains-and-bounded-contexts/)
+- [Bounded Contexts | Strategic DDD Remote Collaboration Toolkit](https://medium.com/nick-tune-tech-strategy-blog/strategic-ddd-remote-collaboration-toolkit-ab3176f878aa)
+  
 ## 객체지향
 ### Tell Don't Ask(≒ Anemic Domain Model, Law of Demeter, CQRS)
 - [The Tell Don't Ask Principle](https://giannisakritidis.com/blog/Tell-Dont-Ask/)
