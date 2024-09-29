@@ -73,6 +73,8 @@
 
 <br/>
 
+---
+
 # 아키텍처 이해
 ## 아키텍처 중요성
 건축업자가 프로그래머의 프로그램 작성 방식에 따라 건물을 짓는다면 가장 먼저 도착하는 딱따구리가 문명을 파괴할 것입니다.  
@@ -156,9 +158,19 @@ Application Architecture
 
 <br/>
 
+---
+
 # 아키텍처 구현
+## 설계 전략
+> 전략 설계(Strategic Design) -> 전술 설계(Tactical Design)
+![](https://alok-mishra.com/wp-content/uploads/2021/06/ddd-at-a-high-level.jpg)
+
+## 전략 설계 요약
+- TODO.
+
+## 전술 설계 요약
 > [!NOTE]
-> 사용 사례(Use Case)가 요구사항을 주관합니다.
+> 사용 사례(Use Case)가 아키텍처를 주관합니다.
 
 > [!IMPORTANT]
 > 1. 요구사항을 **트랜잭션 단위로** 나눕니다.
