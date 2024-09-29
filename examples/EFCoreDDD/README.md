@@ -7,8 +7,13 @@
 ## What is Strategic Design
 - https://thedomaindrivendesign.io/what-is-strategic-design/
 
+#### Bounded context
 ![](https://thedomaindrivendesign.io/wp-content/uploads/2019/03/BoundedContext.png)
+
+#### Ubiquitous Language
 ![](https://thedomaindrivendesign.io/wp-content/uploads/2019/03/UbiquitousLanguage.png)
+
+#### Context Maps
 ![](https://thedomaindrivendesign.io/wp-content/uploads/2019/03/ContextMap.png)
 
 ---
