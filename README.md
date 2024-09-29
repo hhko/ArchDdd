@@ -75,6 +75,8 @@
 
 ---
 
+<br/>
+
 # 아키텍처 이해
 ## 아키텍처 중요성
 건축업자가 프로그래머의 프로그램 작성 방식에 따라 건물을 짓는다면 가장 먼저 도착하는 딱따구리가 문명을 파괴할 것입니다.  
@@ -160,9 +162,12 @@ Application Architecture
 
 ---
 
+<br/>
+
 # 아키텍처 구현
 ## 설계 전략
 > 전략 설계(Strategic Design) -> 전술 설계(Tactical Design)
+
 ![](https://alok-mishra.com/wp-content/uploads/2021/06/ddd-at-a-high-level.jpg)
 
 ## 전략 설계 요약
@@ -312,7 +317,12 @@ Application Architecture
 
 <br/>
 
+---
+
+<br/>
+
 # 아키텍처 솔루션 구성
+
 ```
 {솔루션}
   ├─ README.md
@@ -547,6 +557,10 @@ string isAmOrPm = TimeUtility.IsAmOrPm(now);
 
 <br/>
 
+---
+
+<br/>
+
 # 개발 환경
 ## .NET
 - .NET 8.x
@@ -588,26 +602,34 @@ string isAmOrPm = TimeUtility.IsAmOrPm(now);
 
 <br/>
 
+---
+
+<br/>
+
 # 참고 문서
-## 아키텍처
+## 설계
+### 아키텍처
 - [DDD-NoDuplicates](https://github.com/ardalis/DDD-NoDuplicates/tree/master)
 - [DDDPracticeDomainEvents](https://github.com/GLARDEN/DDDPracticeDomainEvents): 11장 예제 확장
----
 - [CleanArchitecture | ardalis](https://github.com/ardalis/CleanArchitecture)
 - [CleanArchitecture](https://github.com/alex289/CleanArchitecture/tree/main): gRPC 테스트 포함
 - [pluralsight-ddd-fundamentals](https://github.com/ardalis/pluralsight-ddd-fundamentals/tree/main)
 - [modular-monolith-with-ddd](https://github.com/kgrzybek/modular-monolith-with-ddd): CQRS
 - [clean-architecture-core](https://github.com/matthewrenze/clean-architecture-core): EF Core 분리
 
-## DDD
+### DDD
 - **[DDD 핵심만 빠르게 이해하기](https://happycloud-lee.tistory.com/94)**
 - [Bounded Contexts | The difference between domains, subdomains and bounded contexts](https://ddd-practitioners.com/2023/03/07/the-difference-between-domains-subdomains-and-bounded-contexts/)
 - [Bounded Contexts | Strategic DDD Remote Collaboration Toolkit](https://medium.com/nick-tune-tech-strategy-blog/strategic-ddd-remote-collaboration-toolkit-ab3176f878aa)
   
-## 객체지향
-### Tell Don't Ask(≒ Anemic Domain Model, Law of Demeter, CQRS)
-- [The Tell Don't Ask Principle](https://giannisakritidis.com/blog/Tell-Dont-Ask/)
-- [The Tell Don’t Ask Principle Explained](https://danparkin.com/2018/09/18/tell-dont-ask/)
+### 객체지향
+- Tell Don't Ask(≒ Anemic Domain Model, Law of Demeter, CQRS)
+  - [The Tell Don't Ask Principle](https://giannisakritidis.com/blog/Tell-Dont-Ask/)
+  - [The Tell Don’t Ask Principle Explained](https://danparkin.com/2018/09/18/tell-dont-ask/)
+
+## 컨테이너
+- watch
+- /tmp
 
 ## Observability
 ### Metrics
@@ -618,15 +640,25 @@ string isAmOrPm = TimeUtility.IsAmOrPm(now);
 - [How to unit test Serilog LogContext with TestCorrelator](https://daninacan.com/how-to-unit-test-serilog-logcontext-with-testcorrelator/)
 
 ### HealthCheck
+- [Best way Health Checks in .NET Core](https://medium.com/@hasanmcse/best-way-health-checks-in-net-core-04572f9ae96f)
+- [Automatic Web API Heath Checking using .NET with Dapper](https://medium.com/@hasanmcse/automatic-web-api-heath-checking-using-net-with-dapper-124b39d366b8)
 - [.NET app health checks in C#](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/diagnostic-health-checks?view=aspnetcore-8.0): 콘솔 기반 HealthCheck
 - [ASP.NET Core의 상태 검사](https://learn.microsoft.com/ko-kr/aspnet/core/host-and-deploy/health-checks?view=aspnetcore-8.0)
 - [.net 5.0 Integration Test, Health check endpoint not found](https://stackoverflow.com/questions/68564315/net-5-0-integration-test-health-check-endpoint-not-found): 테스트
   - [Implementing Health Checks in .NET 8](https://medium.com/@jeslurrahman/implementing-health-checks-in-net-8-c3ba10af83c3)
 
-## DB
+## 패키지
+### DB
 - [EF Core 사용시 첫 번째 쿼리가 느린 문제](https://forum.dotnetdev.kr/t/ef-core/11401)
 
+### RabbitMQ
+- [Why & How You Use Message Broker using .NET Core](https://medium.com/@hasanmcse/why-how-you-use-message-broker-using-net-core-3b7d68edb186)
+
+---
+
 <br/>
+
+---
 
 # 예제 코드
 - [CodeMaze | Architecture | Clean Architecture in .NET](https://code-maze.com/dotnet-clean-architecture/)
