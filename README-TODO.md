@@ -9,6 +9,19 @@
    - 폴더 구성
      - Common
      - Service
+1. 패턴
+   - 주요 패턴
+     - CQRS
+     - Decorator
+     - Strategy
+     - Unit of Work
+     - Repository: DTO Direct(Query) VS. DTO Indirect(Command)
+     - DTO
+     - Validator
+     - Result/Error
+   - 부가 패턴
+     - Outbox
+     - Saga
 1. 테스트
    - 단위 테스트
      - 아키텍처 테스트
