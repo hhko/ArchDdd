@@ -22,6 +22,10 @@
    - 부가 패턴
      - Outbox
      - Saga
+1. 기술
+   - OpenTelemetry
+   - MassTransit
+   - EFCore
 1. 테스트
    - 단위 테스트
      - 아키텍처 테스트
