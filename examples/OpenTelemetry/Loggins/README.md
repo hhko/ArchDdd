@@ -90,3 +90,100 @@ public class Foo
 
 // TODO: 구조적 로그 사전 정의(Microsoft)
 ```
+
+## 출력 예
+
+### Serilog
+```
+[01:03:32 INF] Foo is good.
+[01:03:32 INF] Application started. Press Ctrl+C to shut down.
+[01:03:32 INF] Hosting environment: Production
+[01:03:32 INF] Content root path: C:\Temp\OpenTelemetryFileLogging
+[01:03:34 INF] Application is shutting down...
+```
+
+### Serilog + OpenTelemetry
+```
+[01:04:05 INF] Foo is good.
+LogRecord.Timestamp:               2024-10-08T16:04:05.9803102Z
+LogRecord.CategoryName:            Foo
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+LogRecord.FormattedMessage:        Foo is good.
+LogRecord.Body:                    {xyz} is good.
+LogRecord.Attributes (Key:Value):
+    xyz: Foo
+    OriginalFormat (a.k.a Body): {xyz} is good.
+
+Resource associated with LogRecord:
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.9.0
+service.name: unknown_service:OpenTelemetryFileLogging
+
+[01:04:06 INF] Application started. Press Ctrl+C to shut down.
+LogRecord.Timestamp:               2024-10-08T16:04:06.0182013Z
+LogRecord.CategoryName:            Microsoft.Hosting.Lifetime
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+LogRecord.FormattedMessage:        Application started. Press Ctrl+C to shut down.
+LogRecord.Body:                    Application started. Press Ctrl+C to shut down.
+LogRecord.Attributes (Key:Value):
+    OriginalFormat (a.k.a Body): Application started. Press Ctrl+C to shut down.
+
+Resource associated with LogRecord:
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.9.0
+service.name: unknown_service:OpenTelemetryFileLogging
+
+[01:04:06 INF] Hosting environment: Production
+LogRecord.Timestamp:               2024-10-08T16:04:06.0198475Z
+LogRecord.CategoryName:            Microsoft.Hosting.Lifetime
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+LogRecord.FormattedMessage:        Hosting environment: Production
+LogRecord.Body:                    Hosting environment: {EnvName}
+LogRecord.Attributes (Key:Value):
+    EnvName: Production
+    OriginalFormat (a.k.a Body): Hosting environment: {EnvName}
+
+Resource associated with LogRecord:
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.9.0
+service.name: unknown_service:OpenTelemetryFileLogging
+
+[01:04:06 INF] Content root path: C:\Temp\OpenTelemetryFileLogging
+LogRecord.Timestamp:               2024-10-08T16:04:06.0211068Z
+LogRecord.CategoryName:            Microsoft.Hosting.Lifetime
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+LogRecord.FormattedMessage:        Content root path: C:\Temp\OpenTelemetryFileLogging
+LogRecord.Body:                    Content root path: {ContentRoot}
+LogRecord.Attributes (Key:Value):
+    ContentRoot: C:\Temp\OpenTelemetryFileLogging
+    OriginalFormat (a.k.a Body): Content root path: {ContentRoot}
+
+Resource associated with LogRecord:
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.9.0
+service.name: unknown_service:OpenTelemetryFileLogging
+
+[01:16:44 INF] Application is shutting down...
+LogRecord.Timestamp:               2024-10-08T16:16:44.4162686Z
+LogRecord.CategoryName:            Microsoft.Hosting.Lifetime
+LogRecord.Severity:                Info
+LogRecord.SeverityText:            Information
+LogRecord.FormattedMessage:        Application is shutting down...
+LogRecord.Body:                    Application is shutting down...
+LogRecord.Attributes (Key:Value):
+    OriginalFormat (a.k.a Body): Application is shutting down...
+
+Resource associated with LogRecord:
+telemetry.sdk.name: opentelemetry
+telemetry.sdk.language: dotnet
+telemetry.sdk.version: 1.9.0
+service.name: unknown_service:OpenTelemetryFileLogging
+```
