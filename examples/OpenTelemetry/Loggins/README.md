@@ -1,17 +1,23 @@
 ## 목표
 - OpenTelemetry와 Serilog 통합
-  - 로그: Microsoft
+  - **로그**: Microsoft
     ```
     ILogger<Foo> logger
     ```
-  - 콘솔: Serilog
+  - **콘솔**: Serilog
     ```
-    Log.Logger
+    .WriteTo.Console()          // Serilog
+    .AddConsoleExporter()       // OpenTelemetry
     ```
-  - 전송: OpenTelemetry
+  - **파일**: Serilog
     ```
-    AddOtlpExporter
+    .WriteTo.File( ... )
     ```
+  - **전송**: OpenTelemetry
+    ```
+    .AddOtlpExporter( ... )
+    ```
+- `OpenTelemetry은 OpenTelemetry.Exporter.File을 제공하지 않습니다.`
 
 ```shell
 dotnet add package Microsoft.Extensions.Hosting --version 8.0.1
