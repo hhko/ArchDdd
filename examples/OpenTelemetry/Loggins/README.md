@@ -94,6 +94,7 @@ public class Foo
 ## 출력 예
 
 ### Serilog
+![](./.images/Serilog.png)
 ```
 [01:03:32 INF] Foo is good.
 [01:03:32 INF] Application started. Press Ctrl+C to shut down.
@@ -103,6 +104,7 @@ public class Foo
 ```
 
 ### Serilog + OpenTelemetry
+![](./.images/Serilog_OpenTelemetry.png)
 ```
 [01:04:05 INF] Foo is good.
 LogRecord.Timestamp:               2024-10-08T16:04:05.9803102Z
